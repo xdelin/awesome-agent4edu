@@ -1,12 +1,25 @@
 # Claude Skills for Education & Learning
 
-A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5 Sonnet / Opus) focused on education, learning, academic research, and student productivity.
+A collection of **Skills and Prompts** focused on **Claude** (specifically Claude 3.5 Sonnet / Opus) for education, learning, academic research, and student productivity.
+
+If you are looking for MCP Servers, please check the main [README](./README.md).
 
 [English](./CLAUDE_SKILLS_EN.md) | [中文](./CLAUDE_SKILLS.md)
 
-## 🏫 Educational AI & Tutoring
+## Table of Contents
 
-> General teaching skills designed for teachers, students, and educators.
+- [🏫 Education & Tutoring](#education-tutoring)
+- [📚 Academic & Writing](#academic-writing)
+- [💻 Coding & Data](#coding-data)
+- [🎨 Visual & Presentation](#visual-presentation)
+- [🧠 Productivity & Career](#productivity-career)
+- [🛠️ MCP & Meta Skills](#mcp-meta-skills)
+
+---
+
+## <a id='education-tutoring'></a>🏫 Education & Tutoring
+
+> General teaching skills, math/science assistants, and educational tools.
 
 - **[claude-educational-ai-skills](https://github.com/ChatGPT3a01/claude-educational-ai-skills)**
   - **Description**: AI skills set for educational researchers, teachers, and digital learning platform developers. Includes curriculum design, assessment generation, etc.
@@ -24,9 +37,13 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: App generating general knowledge quizzes using GenAI and Claude Code.
   - **Use Case**: Quick classroom quizzes, self-testing, flashcard creation.
 
-## ✍️ Writing & Content Creation
+- **[Kvante](https://github.com/MaxPowerBoy1980/Kvante)**
+  - **Description**: AI math assistant helping students recognize handwritten math problems via OCR and providing **step-by-step solutions** (rather than just answers).
+  - **Use Case**: Math tutoring, homework assistance, understanding problem-solving logic.
 
-> Enhancing quality from creative writing to professional copy, including "de-AI" and stylization tools.
+## <a id='academic-writing'></a>📚 Academic & Writing
+
+> Academic research, paper writing, and creative content creation.
 
 - **[writing-agent](https://github.com/dongbeixiaohuo/writing-agent)**
   - **Description**: An "Anti-AI-flavor" writing system based on Claude Code Skills. Supports full workflow from topic generation, style modeling to publication review.
@@ -48,10 +65,6 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: A wiki-style methodology for fiction writing collaboration with AI.
   - **Use Case**: Exploring new modes of human-machine collaborative creation.
 
-## 📚 Research & Academic
-
-> Professional skills assisting academic literature reading, thesis planning, and writing.
-
 - **[academic-paper-skills](https://github.com/lishix520/academic-paper-skills)**
   - **Description**: System framework using Claude Code to plan and write academic papers. Includes "Strategist" (planning) and "Composer" (writing) skills.
   - **Use Case**: Graduate thesis writing, academic publishing planning.
@@ -68,9 +81,13 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: Claude Code and Codex assistance capabilities optimized specifically for academic writing scenarios.
   - **Use Case**: Improving standardization and logic of academic language.
 
-## 💻 Coding & Technical Education
+- **[GPT Researcher](https://github.com/assafelovic/gpt-researcher)**
+  - **Description**: An autonomous agent that conducts deep research on any topic, scraping and aggregating info from web sources with citations.
+  - **Use Case**: Generating literature reviews, gathering unbiased information without hallucination.
 
-> Using Claude's powerful coding capabilities to assist computer science education.
+## <a id='coding-data'></a>💻 Coding & Data
+
+> Computer science education, data analysis, visualization, and technical design.
 
 - **[awesome-vibe-coding](https://github.com/adriannoes/awesome-vibe-coding)**
   - **Description**: Resource library for non-technical builders. Includes Cursor/Claude Rules, AI Prompts, and automation templates.
@@ -96,9 +113,9 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: Interactive form helping non-technical students generate high-quality Claude/ChatGPT prompts for building PWA apps.
   - **Use Case**: Intro coding courses, teaching software building via natural language.
 
-## 📊 Data Analysis & Visualization
-
-> Tools assisting in data processing, chart generation, and insight.
+- **[GenAI Toolbox](https://github.com/googleapis/genai-toolbox)**
+  - **Description**: Official Google tools for BigQuery, AlloyDB, etc. Interact with massive datasets using natural language.
+  - **Use Case**: Learning cloud data warehousing and big data analysis.
 
 - **[claude-skill-data-cleaner](https://github.com/brook-miller/claude-skill-data-cleaner)**
   - **Description**: Lets Claude check CSV files and create a Python script to clean data and prepare for analysis.
@@ -108,17 +125,9 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: Weekly productivity analysis using ActivityWatch data. Calculates focus scores, detects "death loops," and generates insights.
   - **Use Case**: Quantified Self, improving learning efficiency.
 
-- **[Observable-Plot-Claude-Skill](https://github.com/jkoets/Observable-Plot-Claude-Skill)**
-  - **Description**: Skill guiding creation of data visualizations using Observable Plot (JS library).
-  - **Use Case**: Learning modern Web data visualization.
-
 - **[chartjs-expert](https://github.com/sjnims/chartjs-expert)**
   - **Description**: Chart.js expert skill supporting interactive code generation and multi-framework integration (React/Vue/etc.).
   - **Use Case**: Frontend developers learning chart library integration.
-
-## ♿ Accessibility & UX Design
-
-> Professional skills focusing on inclusive design and user experience.
 
 - **[a11y-specialist-skills](https://github.com/masuP9/a11y-specialist-skills)**
   - **Description**: Accessibility specialist skill plugin for Claude Code.
@@ -128,13 +137,25 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: Comprehensive UX/UI design system skill - includes WCAG 2.2 AA audit, design consistency checks, and Refactoring UI principles.
   - **Use Case**: UI/UX design students, full-stack developers improving design sense.
 
+## <a id='visual-presentation'></a>🎨 Visual & Presentation
+
+> PowerPoint generation, visual design, and presentation tools.
+
+- **[census-demographics-skill](https://github.com/baofeng-dong/census-demographics-skill)**
+  - **Description**: Data visualization skill for Claude Code creating maps showing education, income, and demographic data.
+  - **Use Case**: Sociology research, GIS courses, data journalism.
+
+- **[Observable-Plot-Claude-Skill](https://github.com/jkoets/Observable-Plot-Claude-Skill)**
+  - **Description**: Skill guiding creation of data visualizations using Observable Plot (JS library).
+  - **Use Case**: Learning modern Web data visualization.
+
 - **[neurodivergent-visual-org](https://github.com/JackReis/neurodivergent-visual-org)**
   - **Description**: Visual organization tool designed for Neurodivergent thinking - providing empathetic task breakdown and decision trees.
   - **Use Case**: ADHD students' time management, assisting executive dysfunction.
 
-## 🧠 Productivity & Second Brain
+## <a id='productivity-career'></a>🧠 Productivity & Career
 
-> Knowledge management skills combining tools like Obsidian, Notion.
+> Personal productivity, knowledge management, and career development.
 
 - **[claudian](https://github.com/YishenTu/claudian)**
   - **Description**: Obsidian plugin embedding Claude Code into your note vault as an AI collaborator.
@@ -152,18 +173,6 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: Comprehensive guide for writing professional Claude prompts, including MCP, Skills integration. Aligns with Anthropic official best practices.
   - **Use Case**: Learning how to better control AI models.
 
-## 🔬 Math & Science Assistant
-
-- **[Kvante](https://github.com/MaxPowerBoy1980/Kvante)**
-  - **Description**: AI math assistant helping students recognize handwritten math problems via OCR and providing **step-by-step solutions** (rather than just answers).
-  - **Use Case**: Math tutoring, homework assistance, understanding problem-solving logic.
-
-- **[census-demographics-skill](https://github.com/baofeng-dong/census-demographics-skill)**
-  - **Description**: Data visualization skill for Claude Code creating maps showing education, income, and demographic data.
-  - **Use Case**: Sociology research, GIS courses, data journalism.
-
-## 🎓 Career & Resume
-
 - **[Resume-Analysis-Assistant](https://github.com/amogh-vardhan/Resume-Analysis-and-Recruitment-Assistant)**
   - **Description**: Uses NLP and Claude integration to analyze resume vs. job description (JD) matching.
   - **Use Case**: Graduate job hunting, resume optimization, mock interview prep.
@@ -172,18 +181,17 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: Intelligent career guidance Agent for resume review, skill gap analysis, and learning path planning.
   - **Use Case**: Career planning, skill improvement roadmap.
 
-- **[linkedin-mcp](https://github.com/pegasusheavy/linkedin-mcp)**
-  - **Description**: Model Context Protocol (MCP) server for managing LinkedIn profile, skills, and education background.
-  - **Use Case**: Personal branding, auto-updating career history.
+## <a id='mcp-meta-skills'></a>🛠️ MCP & Meta Skills
 
-## 🛠️ MCP & Meta Skills
-
-> Advanced user skills extending Claude's underlying capabilities.
+> Meta-skills for prompting and Model Context Protocol servers.
 
 - **[awesome-claude-skills (mejba13)](https://github.com/mejba13/awesome-claude-skills)**
+  - **Description**: Verified Claude Skills collection.
+  - **Use Case**: Good source of skill collections.
+
 - **[awesome-claude-skills (ponderous)](https://github.com/ponderous-dustiness314/awesome-claude-skills)**
-  - **Description**: Two high-quality repos of the same name collecting many verified Claude Skills. Covers document processing, data analysis, etc.
-  - **Content**: Good source of skill collections.
+  - **Description**: Verified Claude Skills collection.
+  - **Use Case**: Good source of skill collections.
 
 - **[everything-claude-code](https://github.com/affaan-m/everything-claude-code)**
   - **Description**: Ultimate collection of Claude Code configurations - Agents, Skills, Hooks, MCPs.
@@ -193,7 +201,11 @@ A curated collection of Prompts and Skills for **Claude** (especially Claude 3.5
   - **Description**: "Meta-skill" for optimizing Claude Skill descriptions using data-driven analysis.
   - **Use Case**: Used when developing your own Claude skills.
 
+- **[Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers)**
+  - **Description**: Converts documentation websites, git repos, and PDFs into structured Claude AI Skills to teach Claude new domains.
+  - **Use Case**: Mastering a new framework by converting documentation into an AI tutor.
+
 ---
 
-*Last updated: 2026-01-22*
+*Last updated: 2026-02-05*
 *Note: This file is automatically generated based on GitHub search results.*

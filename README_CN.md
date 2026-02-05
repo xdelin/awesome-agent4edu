@@ -1,197 +1,152 @@
-# Awesome Education & Productivity MCP Servers
+# Awesome Education MCP / 教育领域 MCP 服务器精选
 
-精选的 Model Context Protocol (MCP) 服务列表，专注于教育、校园生活、办公生产力、学术研究及个性化学习领域。
+精选的 **Model Context Protocol (MCP)** 服务器列表，专注于教育、学术研究、生产力和知识管理。
+
+如果您正在寻找 Claude Prompts & Skills，请查看 [CLAUDE_SKILLS.md](./CLAUDE_SKILLS.md)。
 
 [English](./README.md) | [中文](./README_CN.md)
 
-## 📖 目录
+## 目录
 
-- [🏫 校园与学生管理 (Campus & Student Management)](#-校园与学生管理-campus--student-management)
-  - [课程与 LMS 集成 (LMS Integration)](#课程与-lms-集成-lms-integration)
-  - [学生事务与规划](#学生事务与规划)
-- [📚 学习工具与助手 (Study Tools & Assistants)](#-学习工具与助手-study-tools--assistants)
-  - [测验与备考 (Quiz & Exam Prep)](#测验与备考-quiz--exam-prep)
-  - [语言学习 (Language Learning)](#语言学习-language-learning)
-  - [学科专项 (Math & Science)](#学科专项-math--science)
-- [🚀 生产力与知识库 (Productivity & Knowledge Base)](#-生产力与知识库-productivity--knowledge-base)
-  - [Notion 集成](#notion-集成)
-  - [Obsidian 笔记](#obsidian-笔记)
-  - [总结与摘要工具](#总结与摘要工具)
-- [🎨 教学设计 (Teaching Design)](#-教学设计-teaching-design)
-  - [PPT 演示文稿](#ppt-演示文稿)
-  - [动画制作](#动画制作)
-  - [图表与可视化](#图表与可视化)
-- [📝 学术写作 (Academic Writing)](#-学术写作-academic-writing)
-  - [论文逻辑与结构](#论文逻辑与结构-1)
-  - [排版与文献管理](#排版与文献管理-1)
-- [💻 编程教育 (Coding Education)](#-编程教育-coding-education)
+- [📚 学术与写作](#academic-writing)
+- [💻 编程与数据](#coding-data)
+- [🎨 视觉与演示 (PPT)](#visual-presentation)
+- [🧠 生产力与职业](#productivity-career)
 
 ---
 
-## 🏫 校园与学生管理 (Campus & Student Management)
+## <a id='academic-writing'></a>📚 Academic & Writing (学术与写作)
 
-连接学校系统，管理课程表和作业。
+> 学术研究、论文写作及创意内容创作。
 
-### 课程与 LMS 集成 (LMS Integration)
-直接在 AI 中访问 Canvas, Brightspace 等学习管理系统。
+- **[Arxiv MCP Server](https://github.com/blazickjp/arxiv-mcp-server)**
+  - **描述**: 一个专门用于从 arXiv 数据库搜索、检索和分析学术论文的 MCP 服务器。
+  - **适用场景**: 需要在 Claude 中直接快速访问最新预印本的 STEM 研究人员。
 
-- **[makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server)** (Official)
-  通过官方 Notion MCP 管理学习笔记和任务看板。
+- **[ZotLink](https://github.com/TonybotNi/ZotLink)**
+  - **描述**: 生产就绪的 Zotero MCP 服务器。可保存带有丰富元数据和智能 PDF 附件的开放预印本。
+  - **适用场景**: 管理大量参考书目的学者，希望自动化“从论文到资料库”的工作流程。
 
-- **[akshsgaur/CMUCanvasMCPSErver](https://github.com/akshsgaur/CMUCanvasMCPSErver)**
-  Canvas LMS 集成，让学生通过 AI 对话查询课程、作业截止日期和待办事项（专为 CMU 设计但可适配）。
+- **[Firecrawl MCP](https://github.com/firecrawl/firecrawl-mcp-server)**
+  - **描述**: 高级 Web 抓取/爬行 MCP，将网站转换为 LLM 可读的 Markdown。可处理动态内容。
+  - **适用场景**: 从网络构建自定义数据集用于研究或分析。
 
-- **[pranav-vijayananth/brightspace-mcp-server](https://github.com/pranav-vijayananth/brightspace-mcp-server)**
-  连接 Brightspace 账户，获取课程信息。
+- **[BrowserBase MCP](https://github.com/browserbase/mcp-server-browserbase)**
+  - **描述**: 基于云的 AI 无头浏览器。允许在安全云环境中运行浏览器自动化脚本。
+  - **适用场景**: 自动化需要完整浏览器上下文的复杂 Web 任务。
 
-- **[MisterCommand/mcp-canvas-lms](https://github.com/MisterCommand/mcp-canvas-lms)**
-  TypeScript 编写的 Canvas LMS 访问工具。
+## <a id='coding-data'></a>💻 Coding & Data (编程与数据)
 
-- **[markmusic27/stanford-mcp](https://github.com/markmusic27/stanford-mcp)**
-  斯坦福课程目录查询工具，包含课程评分查询。
+> 计算机科学教育、数据分析、可视化及技术设计。
 
-### 学生事务与规划
-管理学业进度和校园生活。
+- **[GitHub MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/github)**
+  - **描述**: GitHub 官方 MCP 协议集成。直接管理 Issues、PR 并分析仓库内容。
+  - **适用场景**: 学习版本控制工作流，自动化代码审查。
 
-- **[tejpalvirk/student](https://github.com/tejpalvirk/student)**
-  基于知识图谱的学生上下文管理，关联课程、作业和考试信息。
+- **[Playwright MCP](https://github.com/executeautomation/mcp-playwright)**
+  - **描述**: 浏览器自动化服务器，让 Claude 能够浏览网页、测试站点并截图。
+  - **适用场景**: 学习自动化测试，为项目抓取数据。
 
-- **[Nitishroy-7033/Student_MCP_Server](https://github.com/Nitishroy-7033/Student_MCP_Server)**
-  模块化的学院管理系统接口，涵盖费用、学科和考试结构。
+- **[Desktop Commander](https://github.com/wonderwhy-er/DesktopCommanderMCP)**
+  - **描述**: 对桌面操作系统的深度控制。文件管理、终端执行和窗口控制。
+  - **适用场景**: 学习命令行操作，自动化本地文件任务。
 
-- **[abhijeetgiram/mcp-student-leave-copilot-ab](https://github.com/abhijeetgiram/mcp-student-leave-copilot-ab)**
-  集成 GitHub Copilot 的学生请假申请管理工具。
+- **[Kubernetes MCP](https://github.com/fluxninja/mcp-kubernetes)**
+  - **描述**: 与 Kubernetes 集群交互。查看日志、描述 Pod 和管理资源。
+  - **适用场景**: 高级 DevOps 学习，集群监控。
 
----
+- **[Sentry MCP](https://github.com/sentry-demos/mcp-server-sentry)**
+  - **描述**: 检索 Sentry 问题和错误，以便结合上下文更快地调试应用程序。
+  - **适用场景**: 学习生产环境调试和错误追踪。
 
-## 📚 学习工具与助手 (Study Tools & Assistants)
+- **[Octocode MCP](https://github.com/bgauryy/octocode-mcp)**
+  - **描述**: 用于跨仓库进行语义代码研究的 MCP 服务器，允许你查找真实的代码实现。
+  - **适用场景**: 计算机学生学习特定算法如何在开源项目中实现。
 
-### 测验与备考 (Quiz & Exam Prep)
-自动生成测验，辅助备考。
+- **[MindsDB MCP](https://github.com/mindsdb/mindsdb)**
+  - **描述**: 将 Claude 连接到 MindsDB 的数据库 AI 层。通过 SQL 训练模型并进行预测。
+  - **适用场景**: 使用标准 SQL 语法学习应用机器学习。
 
-- **[cardea-mcp/ExamPrepAgent](https://github.com/cardea-mcp/ExamPrepAgent)**
-  智能备考伴侣，利用 LLM 协助学生准备各类认证考试。
+- **[SQLite Explorer](https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server)**
+  - **描述**: 对 SQLite 数据库的安全只读访问。安全地探索表和架构。
+  - **适用场景**: 初学者学习数据库架构和 SQL 查询。
 
-- **[RidiculousBuffal/quizAgent](https://github.com/RidiculousBuffal/quizAgent)**
-  AI 增强的测验代理，支持 SSO 登录。
+- **[DBHub](https://github.com/bytebase/dbhub)**
+  - **描述**: 数据库版本控制和协作工具。类似于数据库架构的 GitHub。
+  - **适用场景**: 学习数据库迁移和架构生命周期管理。
 
-- **[kkjzio/mcp-quiz-generator](https://github.com/kkjzio/mcp-quiz-generator)**
-  根据需求生成 Markdown 格式的题目，并可转换为 HTML 和 Word 测验文件。
+- **[Neon MCP](https://github.com/neondatabase/mcp-server-neon)**
+  - **描述**: 通过 MCP 进行 Serverless Postgres 操作。为测试扩展特定的数据分支。
+  - **适用场景**: 现代云原生数据库开发。
 
-- **[sheikhcoders/interleaved-learning-mcp](https://github.com/sheikhcoders/interleaved-learning-mcp)**
-  综合学习工具：包含学习日程安排、测验生成、闪卡洗牌和学习追踪。
+## <a id='visual-presentation'></a>🎨 Visual & Presentation (视觉与演示 (PPT))
 
-- **[PratyayRajak/todopomo-mcp](https://github.com/PratyayRajak/todopomo-mcp)**
-  结合待办事项与番茄工作法（Pomodoro）的学习辅助工具。
+> PowerPoint 生成、视觉设计及演示工具。
 
-### 语言学习 (Language Learning)
-辅助外语习得。
+- **[Git MCP](https://github.com/idosal/git-mcp)**
+  - **描述**: 用于读取、搜索和操作本地 Git 仓库的工具。可视化历史记录和差异。
+  - **适用场景**: 理解本地 Git 历史，调试复杂的合并问题。
 
-- **[w41ch0ng/MandarinMCP](https://github.com/w41ch0ng/MandarinMCP)**
-  中文（普通话）学习工具，覆盖 HSK 1-6 级词汇，支持进度追踪和 Anki 导出。
+- **[Docker MCP](https://github.com/ckreiling/mcp-server-docker)**
+  - **描述**: 直接从 Claude 聊天中管理 Docker 容器、镜像和卷。
+  - **适用场景**: 学习容器化概念，调试开发环境。
 
-- **[satish-kori-27/swedish-language-mcp-server](https://github.com/satish-kori-27/swedish-language-mcp-server)**
-  瑞典语学习辅助。
+- **[Figma Context MCP](https://github.com/GLips/Figma-Context-MCP)**
+  - **描述**: 从 Figma 设计中提取操作上下文，帮助 Claude 理解 UI 结构。
+  - **适用场景**: 将设计模型转化为代码的学习。
 
-- **[Jonathan-Racaud/Glossa](https://github.com/Jonathan-Racaud/Glossa)**
-  通用的语言学习 MCP 服务器。
+- **[pptx-mcp](https://github.com/samos123/pptx-mcp)**
+  - **描述**: 使用 Python PPTX 库创建幻灯片的简单 MCP 服务器。
+  - **适用场景**: 从文本大纲快速生成基本幻灯片。
 
-### 学科专项 (Math & Science)
-特定领域的深度学习工具。
+- **[mcp-server-okppt](https://github.com/NeekChaw/mcp-server-okppt)**
+  - **描述**: 从 LLM 生成的 SVG 图像生成高质量 PPTX 幻灯片。确保矢量质量。
+  - **适用场景**: 直接从 Claude 创建包含复杂图表的视觉设计幻灯片。
 
-- **[clouatre-labs/math-mcp-learning-server](https://github.com/clouatre-labs/math-mcp-learning-server)**
-  支持矩阵运算、数据可视化的数学教学服务器，带有持久化工作区。
+- **[Office-PowerPoint-MCP-Server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server)**
+  - **描述**: 一个强大的 PowerPoint 操作 MCP 服务器。使用 python-pptx 创建、编辑和处理演示文稿。
+  - **适用场景**: 自动化幻灯片创建、更新图表和批量编辑。
 
-- **[Augmented-Nature/GeneOntology-MCP-Server](https://github.com/Augmented-Nature/GeneOntology-MCP-Server)**
-  生物信息学工具，访问基因本体论 (GO) 数据，进行本体分析和富集研究。
+## <a id='productivity-career'></a>🧠 Productivity & Career (生产力与职业)
 
-- **[cyanheads/clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server)**
-  搜索和检索 ClinicalTrials.gov 的临床试验数据，适合医学研究。
+> 个人生产力、知识管理及职业发展。
 
-- **[ebrandler/mcportfolio](https://github.com/ebrandler/mcportfolio)**
-  金融学学生的利器，提供 9 种专业工具进行投资组合优化和量化分析。
+- **[Slack MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/slack)**
+  - **描述**: 与 Slack 频道和消息交互。总结讨论串或起草回复。
+  - **适用场景**: 学习团队沟通管理。
 
----
+- **[Discord MCP](https://github.com/v-v-vishnu/discord-mcp-server)**
+  - **描述**: 将 Claude 连接到 Discord 服务器。阅读消息并管理社区。
+  - **适用场景**: 管理学习小组或学生社区。
 
-## 🚀 生产力与知识库 (Productivity & Knowledge Base)
+- **[Linear MCP](https://github.com/jerhadf/linear-mcp-server)**
+  - **描述**: 在 Linear 中管理任务和问题。从对话中创建工单。
+  - **适用场景**: 学生学习敏捷/Scrum 项目管理。
 
-### Notion 集成
-最流行的多合一笔记工具集成。
+- **[Todoist MCP](https://github.com/actionsOnGoogle/todoist-mcp-server)**
+  - **描述**: 直接管理 Todoist 任务。添加作业或项目截止日期。
+  - **适用场景**: 个人任务追踪和截止日期管理。
 
-- **[makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server)** 🔥
-  **官方** Notion MCP 服务器。
+- **[NotebookLM MCP](https://github.com/PleasePrompto/notebooklm-mcp)**
+  - **描述**: 将 Claude 与 Google NotebookLM 集成，允许你的 AI 代理通过有根据的回答来研究你自己的文档。
+  - **适用场景**: 与你的课堂笔记或教科书“对话”，使用特定材料准备考试。
 
-- **[suekou/mcp-notion-server](https://github.com/suekou/mcp-notion-server)**
-  社区广受欢迎的实现，功能丰富。
+- **[Official Notion MCP Server](https://github.com/makenotion/notion-mcp-server)**
+  - **描述**: Notion 官方 MCP 服务器。支持从 Claude 直接阅读页面、搜索数据库和创建内容。
+  - **适用场景**: 整理课程表、更新研究 Wiki 或追踪申请进度。
 
-- **[Badhansen/notion-mcp](https://github.com/Badhansen/notion-mcp)**
-  专注于简单的个人待办事项管理。
+- **[Anki MCP Server](https://github.com/nailuoGG/anki-mcp-server)**
+  - **描述**: 通过 AnkiConnect 将 Claude 连接到 Anki。从对话生成抽认卡并自动添加到牌组。
+  - **适用场景**: 将课堂笔记或词汇表即时转换为可复习的抽认卡。
 
-### Obsidian 笔记
-本地优先的知识管理与第二大脑。
+- **[PDF Reader MCP](https://github.com/SylphxAI/pdf-reader-mcp)**
+  - **描述**: 高性能 PDF 处理服务器，针对文本提取的速度（快 10 倍）和准确性进行了优化。
+  - **适用场景**: 快速总结长篇教科书、提取数据表或转换作业。
 
-- **[MarkusPfundstein/mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian)** 🔥
-  (2.7k+ Stars) 通过 Local REST API 插件与 Obsidian 交互，极为流行。
-
-- **[cyanheads/obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server)**
-  功能全面的工具套件，支持读取、写入、搜索笔记以及管理 Frontmatter。
-
-- **[entanglr/zettelkasten-mcp](https://github.com/entanglr/zettelkasten-mcp)**
-  专门实现 **卢曼卡片盒笔记法 (Zettelkasten)** 的工具，帮助根据原子笔记建立知识连接。
-
-### 总结与摘要工具
-快速消化视频与文档内容。
-
-- **[5hivanand/mcp-youtube-video-summary](https://github.com/5hivanand/mcp-youtube-video-summary)**
-  获取 YouTube 视频字幕并在本地生成可定制的摘要。
-
-- **[dEitY719/mcp-youtube-summary](https://github.com/dEitY719/mcp-youtube-summary)**
-  基于 FastMCP 构建的 YouTube 视频智能摘要工具。
-
----
-
-## 🎨 教学设计 (Teaching Design)
-
-### PPT 演示文稿
-- **[samos123/pptx-mcp](https://github.com/samos123/pptx-mcp)**
-  自然语言生成 PPT，基于 python-pptx。
-- **[Weichenleeeee123/ppt-mcp-server](https://github.com/Weichenleeeee123/ppt-mcp-server)**
-  全面的 PPT 编辑功能。
-
-### 动画制作
-- **[wstcpyt/manim-mcp](https://github.com/wstcpyt/manim-mcp)**
-  基于 Manim 引擎的数学动画制作。
-- **[ampersante/spine2d-animation-mcp](https://github.com/ampersante/spine2d-animation-mcp)**
-  Spine2D 骨骼动画工具。
-
-### 图表与可视化
-- **[skmprb/md-mermaid-chart-pdf-mcp](https://github.com/skmprb/md-mermaid-chart-pdf-mcp)**
-  Mermaid 图表转 PDF。
-- **[TakanariShimbo/quickchart-mcp-server](https://github.com/TakanariShimbo/quickchart-mcp-server)**
-  调用 QuickChart 生成统计图。
+- **[linkedin-mcp](https://github.com/pegasusheavy/linkedin-mcp)**
+  - **描述**: Model Context Protocol (MCP) 服务器，用于管理 LinkedIn 个人资料、技能和教育背景。
+  - **适用场景**: 个人品牌建设、自动更新职业履历。
 
 ---
 
-## 📝 学术写作 (Academic Writing)
-
-### 论文逻辑与结构
-- **[shaneholloman/mcp-knowledge-graph](https://github.com/shaneholloman/mcp-knowledge-graph)**
-  构建论文逻辑的本地知识图谱。
-
-### 排版与文献管理
-- **[cyanheads/docwriter-mcp-server](https://github.com/cyanheads/docwriter-mcp-server)**
-  LaTeX 文档结构化创建与 Biber 引用管理。
-- **[devroopsaha744/TexMCP](https://github.com/devroopsaha744/TexMCP)**
-  LaTeX 代码片段渲染微服务。
-- **[zongmin-yu/sqlite-literature-management](https://github.com/zongmin-yu/sqlite-literature-management-fastmcp-mcp-server)**
-  基于 SQLite 的文献源管理。
-
----
-
-## 💻 编程教育 (Coding Education)
-
-- **[Shen-Ming-Hong/singular-blockly](https://github.com/Shen-Ming-Hong/singular-blockly)**
-  可视化编程工具（Blockly），支持 Arduino 和 MicroPython，适合 STEM 教育。
-
-- **[parth012001/Codlab-ai-platform](https://github.com/parth012001/Codlab-ai-platform)**
-  AI 驱动的编程教育平台，包含挑战、自动评分和面试模拟。
+*Last updated/最后更新: 2026-02-05*
