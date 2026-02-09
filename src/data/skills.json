@@ -1,12 +1,12 @@
 [
   {
     "category": {
-      "en": "Education & Tutoring",
-      "zh": "教育与辅导"
+      "en": "Intelligent Tutoring",
+      "zh": "智能导学"
     },
     "description": {
-      "en": "General teaching skills, math/science assistants, and educational tools.",
-      "zh": "通用教学技能、数理科学助手及教育辅助工具。"
+      "en": "AI tutors, educational assessment, and personalized learning assistants.",
+      "zh": "AI 导师、教育评估及个性化学习助手。"
     },
     "skills": [
       {
@@ -62,6 +62,57 @@
         "type": "Skill"
       },
       {
+        "name": "apprenticemode",
+        "url": "https://github.com/yavzius/apprenticemode",
+        "description": {
+          "en": "A unique skill to detect user \"Knowledge Gaps\". Infers what you don't know from your Prompt.",
+          "zh": "一个独特的技能，用于检测用户的\"知识缺口\" (Knowledge Gaps)。通过你的 Prompt 反向推断你不知道什么。"
+        },
+        "useCase": {
+          "en": "Metacognitive learning, checking for missing knowledge, self-assessing coding level.",
+          "zh": "元认知学习、查漏补缺、自我评估编程水平。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "EduBase",
+        "url": "https://github.com/EduBase/MCP",
+        "description": {
+          "en": "Interact with EduBase, an e-learning platform with quizzing and exam management capabilities.",
+          "zh": "与 EduBase 交互，这是一个具有测验和考试管理功能的电子学习平台。"
+        },
+        "useCase": {
+          "en": "Taking quizzes, managing courses.",
+          "zh": "参加测验、管理课程。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Canvas LMS",
+        "url": "https://github.com/ahnopologetic/canvas-lms-mcp",
+        "description": {
+          "en": "Connects to the Canvas Learning Management System to access course data, assignments, and announcements.",
+          "zh": "连接到 Canvas 学习管理系统 (LMS)，以访问课程数据、作业和公告。"
+        },
+        "useCase": {
+          "en": "Checking grades, managing assignments.",
+          "zh": "检查成绩、管理作业。"
+        },
+        "type": "MCP"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Math & Science",
+      "zh": "数理科学"
+    },
+    "description": {
+      "en": "Mathematics, physics, STEM research, and scientific tools.",
+      "zh": "数学、物理、STEM 研究及科学工具。"
+    },
+    "skills": [
+      {
         "name": "Kvante",
         "url": "https://github.com/MaxPowerBoy1980/Kvante",
         "description": {
@@ -73,94 +124,546 @@
           "zh": "数学辅导、家庭作业辅助、理解解题逻辑。"
         },
         "type": "Skill"
+      },
+      {
+        "name": "MCPR (R Language)",
+        "url": "https://github.com/phisanti/MCPR",
+        "description": {
+          "en": "Enables AI agents to participate in interactive live R sessions for statistical analysis.",
+          "zh": "允许 AI 代理参与交互式实时 R 会话以进行统计分析。"
+        },
+        "useCase": {
+          "en": "Statistics courses, data analysis.",
+          "zh": "统计学课程、数据分析。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "HOCR (Math Capture)",
+        "url": "https://github.com/Wooonster/hocr_mcp_server",
+        "description": {
+          "en": "Extracts handwritten mathematical formulas from images and converts them to LaTeX.",
+          "zh": "从图像中提取手写数学公式并将其转换为 LaTeX。"
+        },
+        "useCase": {
+          "en": "Digitizing math notes, homework help.",
+          "zh": "数字化数学笔记、家庭作业帮助。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Stella MCP",
+        "url": "https://github.com/bradleylab/stella-mcp",
+        "description": {
+          "en": "Create and validate system dynamics models (.stmx files) for scientific simulation.",
+          "zh": "创建并验证用于科学模拟的系统动力学模型 (.stmx 文件)。"
+        },
+        "useCase": {
+          "en": "Systems thinking, scientific modeling courses.",
+          "zh": "系统思维、科学建模课程。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Calculator",
+        "url": "https://github.com/githejie/mcp-server-calculator",
+        "description": {
+          "en": "A precise numerical calculator to prevent LLM math hallucinations.",
+          "zh": "一个精确的数值计算器，防止 LLM 数学幻觉。"
+        },
+        "useCase": {
+          "en": "Math homework checking, basic calculations.",
+          "zh": "数学作业检查、基础计算。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Manim Composer",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/inclinedadarsh/manim-composer",
+        "description": {
+          "en": "Create mathematical animations and visualizations using the Manim engine.",
+          "zh": "使用 Manim 引擎创建数学动画和可视化效果。"
+        },
+        "useCase": {
+          "en": "Creating math tutorials, visualizing complex concepts.",
+          "zh": "制作数学教程、可视化复杂概念。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Quantum Lab",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/bramdo/quantum-lab",
+        "description": {
+          "en": "Run quantum physics simulations and Python scripts for quantum lab experiments.",
+          "zh": "运行量子物理模拟和量子实验室实验的 Python 脚本。"
+        },
+        "useCase": {
+          "en": "Physics students, quantum computing research.",
+          "zh": "物理学生、量子计算研究。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "NetKet MCP",
+        "url": "https://github.com/pathintegral-institute/mcp.science",
+        "description": {
+          "en": "Interface with NetKet for simulating quantum many-body systems using neural networks.",
+          "zh": "与 NetKet 交互，使用神经网络模拟量子多体系统。"
+        },
+        "useCase": {
+          "en": "Quantum physics research, many-body problem simulations.",
+          "zh": "量子物理研究、多体问题模拟。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Fermat Math Engine",
+        "url": "https://github.com/abhiphile/fermat-mcp",
+        "description": {
+          "en": "Unifies SymPy, NumPy, and Matplotlib into one server for symbolic algebra, numerical computing, and visualization.",
+          "zh": "将 SymPy、NumPy 和 Matplotlib 统一到一个服务器中，用于符号代数、数值计算和可视化。"
+        },
+        "useCase": {
+          "en": "Complex math problems, physics simulations.",
+          "zh": "复杂数学问题、物理模拟。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Phys-MCP",
+        "url": "https://github.com/BlinkZer0/Phys-MCP",
+        "description": {
+          "en": "A physics-focused CAS for solving physics problems with unit-aware calculations.",
+          "zh": "专注于物理的计算代数系统 (CAS)，用于解决具有单位感知计算的物理问题。"
+        },
+        "useCase": {
+          "en": "Physics homework, unit conversion, mechanics problems.",
+          "zh": "物理作业、单位换算、力学问题。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Bullet MCP Server",
+        "url": "https://github.com/devgabrielsborges/bullet-mcp-server",
+        "description": {
+          "en": "Interface with PyBullet physics engine to set up and control physics simulations.",
+          "zh": "与 PyBullet 物理引擎交互，设置和控制物理模拟。"
+        },
+        "useCase": {
+          "en": "Robotics simulation, physics demonstrations, collision detection.",
+          "zh": "机器人模拟、物理演示、碰撞检测。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "NASA MCP Server",
+        "url": "https://github.com/ProgramComputer/NASA-MCP-server",
+        "description": {
+          "en": "Access NASA's API for astronomy data, including Mars Rover photos and Earth imagery.",
+          "zh": "访问 NASA API 获取天文学数据，包括火星车照片和地球观测图像。"
+        },
+        "useCase": {
+          "en": "Astronomy education, space research, exploring the universe.",
+          "zh": "天文学教育、太空研究、探索宇宙。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Wolfram Alpha MCP",
+        "url": "https://github.com/SecretiveShell/MCP-wolfram-alpha",
+        "description": {
+          "en": "Access Wolfram Alpha's computational intelligence for math, physics, and data queries.",
+          "zh": "访问 Wolfram Alpha 的计算智能，用于数学、物理和数据查询。"
+        },
+        "useCase": {
+          "en": "Checking complex calculations, scientific fact retrieval.",
+          "zh": "检查复杂计算、科学事实检索。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "WolframAlpha",
+        "url": "https://github.com/mcp-servers/wolfram-alpha",
+        "description": {
+          "en": "Integration with WolframAlpha for computational knowledge and science data.",
+          "zh": "与 WolframAlpha 集成，提供计算知识和科学数据。"
+        },
+        "useCase": {
+          "en": "Solving complex math problems, physics calculations, chemical equations.",
+          "zh": "解决复杂的数学问题、物理计算、化学方程式。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Manim",
+        "url": "https://github.com/3b1b/manim",
+        "description": {
+          "en": "Animation engine for explanatory math videos. Create precise animations programmaticly.",
+          "zh": "用于解释数学视频的动画引擎。通过编程创建精确的动画。"
+        },
+        "useCase": {
+          "en": "Visualizing mathematical concepts, creating educational videos.",
+          "zh": "可视化数学概念，制作教育视频。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "OpenFOAM",
+        "url": "https://github.com/OpenFOAM/OpenFOAM-dev",
+        "description": {
+          "en": "Free, open source CFD (Computational Fluid Dynamics) software.",
+          "zh": "免费开源的计算流体动力学 (CFD) 软件。"
+        },
+        "useCase": {
+          "en": "Engineering simulations, fluid dynamics study.",
+          "zh": "工程仿真、流体动力学研究。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Open-Meteo MCP",
+        "url": "https://github.com/open-meteo/open-meteo",
+        "description": {
+          "en": "Weather data API integration.",
+          "zh": "天气数据 API 集成。"
+        },
+        "useCase": {
+          "en": "Earth science data collection, climate study.",
+          "zh": "地球科学数据收集、气候研究。"
+        },
+        "type": "MCP"
       }
     ]
   },
   {
     "category": {
-      "en": "Academic & Writing",
-      "zh": "学术与写作"
+      "en": "Biology & Medicine",
+      "zh": "生物与医学"
     },
     "description": {
-      "en": "Academic research, paper writing, and creative content creation.",
-      "zh": "学术研究、论文写作及创意内容创作。"
+      "en": "Genomics, protein analysis, medical research, and bioinformatics tools.",
+      "zh": "基因组学、蛋白质分析、医学研究及生物信息学工具。"
     },
     "skills": [
       {
-        "name": "writing-agent",
-        "url": "https://github.com/dongbeixiaohuo/writing-agent",
+        "name": "Bio Agents",
+        "url": "https://github.com/dogeplusplus/bio-agents-mcp",
         "description": {
-          "en": "An \"Anti-AI-flavor\" writing system based on Claude Code Skills. Supports full workflow from topic generation, style modeling to publication review.",
-          "zh": "基于 Claude Code Skills 的\"反 AI 味\"写作系统。支持从选题生成、风格建模到发布评审的完整工作流。"
+          "en": "Integration with Protein Data Bank (PDB) and ChEMBL for checking drug data and protein structures.",
+          "zh": "集成 Protein Data Bank (PDB) 和 ChEMBL，用于查询药物数据和蛋白质结构。"
         },
         "useCase": {
-          "en": "Making AI-written articles sound natural like humans, suitable for self-media and blog writing.",
-          "zh": "让 AI 写出的文章像人一样自然，适合自媒体和博客写作。"
+          "en": "Drug discovery, protein visualization, bio-activity research.",
+          "zh": "药物发现、蛋白质可视化、生物活性研究。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Ensembl MCP",
+        "url": "https://github.com/effieklimi/ensembl-mcp-server",
+        "description": {
+          "en": "Access the Ensembl database for vertebrate genomes, gene lookups, and sequence alignments.",
+          "zh": "访问 Ensembl 数据库，获取脊椎动物基因组、基因查找和序列比对数据。"
+        },
+        "useCase": {
+          "en": "Genomic research, gene sequence analysis.",
+          "zh": "基因组研究、基因序列分析。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "PubMed Search",
+        "url": "https://github.com/andybrandt/mcp-simple-pubmed",
+        "description": {
+          "en": "Search and read medical and life sciences papers from PubMed.",
+          "zh": "从 PubMed 搜索和阅读医学及生命科学论文。"
+        },
+        "useCase": {
+          "en": "Medical research, biology studies.",
+          "zh": "医学研究、生物学学习。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "ClinicalTrials.gov MCP",
+        "url": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server",
+        "description": {
+          "en": "Query the ClinicalTrials.gov API for clinical study records and eligibility criteria.",
+          "zh": "查询 ClinicalTrials.gov API 获取临床研究记录和资格标准。"
+        },
+        "useCase": {
+          "en": "Medical research, finding clinical trials, checking study details.",
+          "zh": "医学研究、查找临床试验、检查研究详情。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "AlphaFold MCP Server",
+        "url": "https://github.com/Augmented-Nature/AlphaFold-MCP-Server",
+        "description": {
+          "en": "Retrieve predicted 3D protein structures from the AlphaFold Protein Structure Database.",
+          "zh": "从 AlphaFold 蛋白质结构数据库检索预测的 3D 蛋白质结构。"
+        },
+        "useCase": {
+          "en": "Molecular biology, drug design, understanding protein function.",
+          "zh": "分子生物学、药物设计、理解蛋白质功能。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Reactome MCP Server",
+        "url": "https://github.com/Augmented-Nature/Reactome-MCP-Server",
+        "description": {
+          "en": "Interface with Reactome pathway database for systems biology analysis.",
+          "zh": "与 Reactome 通路数据库交互，用于系统生物学分析。"
+        },
+        "useCase": {
+          "en": "Studying biological pathways, metabolic research.",
+          "zh": "研究生物通路、代谢研究。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "BioThings MCP",
+        "url": "https://github.com/longevity-genie/biothings-mcp",
+        "description": {
+          "en": "Interact with BioThings APIs to retrieve gene, variant, drug, and chemical data.",
+          "zh": "与 BioThings API 交互以检索基因、变异、药物及化学数据。"
+        },
+        "useCase": {
+          "en": "Bioinformatics research, genetics class.",
+          "zh": "生物信息学研究、遗传学课程。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "UCSC Genome Browser",
+        "url": "https://github.com/hlydecker/ucsc-genome-mcp",
+        "description": {
+          "en": "Interact with the UCSC Genome Browser API to find genomes and chromosomes.",
+          "zh": "与 UCSC 基因组浏览器 API 交互以查找基因组和染色体。"
+        },
+        "useCase": {
+          "en": "Genomics education, chromosome visualization.",
+          "zh": "基因组学教育、染色体可视化。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "BioContext",
+        "url": "https://github.com/biocontext/biocontext",
+        "description": {
+          "en": "Utilities for finding and visualizing biological context in text.",
+          "zh": "用于在文本中查找和可视化生物学内容的工具/语境。"
+        },
+        "useCase": {
+          "en": "Biology research assistance.",
+          "zh": "生物学研究辅助。"
         },
         "type": "Skill"
       },
       {
-        "name": "The-Crucible-Writing-System-For-Claude",
-        "url": "https://github.com/forsonny/The-Crucible-Writing-System-For-Claude",
+        "name": "Ensembl REST",
+        "url": "https://github.com/Ensembl/ensembl-rest",
         "description": {
-          "en": "Integrated writing system with three Claude Skills, guiding writers from story concept to completed first draft. Based on a 36-beat narrative framework.",
-          "zh": "一个集成的写作系统，包含三个 Claude Skills，引导作家从故事概念到完成初稿。基于 36 拍叙事框架。"
+          "en": "Access to Ensembl genome data via REST API.",
+          "zh": "通过 REST API 访问 Ensembl 基因组数据。"
         },
         "useCase": {
-          "en": "Novel creation, screenwriting, creative writing courses.",
-          "zh": "小说创作、剧本写作、创意写作课程。"
+          "en": "Genomic data retrieval and analysis.",
+          "zh": "基因组数据检索和分析。"
+        },
+        "type": "Skill"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Chemistry & Materials",
+      "zh": "化学与材料"
+    },
+    "description": {
+      "en": "Molecular modeling, chemical data, materials science, and crystal structures.",
+      "zh": "分子建模、化学数据、材料科学及晶体结构。"
+    },
+    "skills": [
+      {
+        "name": "Materials Project MCP",
+        "url": "https://github.com/pathintegral-institute/mcp.science",
+        "description": {
+          "en": "Access data on batteries, molecules, and crystal structures via the Materials Project API.",
+          "zh": "通过 Materials Project API 访问电池、分子和晶体结构数据。"
+        },
+        "useCase": {
+          "en": "Materials discovery, battery research, crystal structure analysis.",
+          "zh": "材料发现、电池研究、晶体结构分析。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "MatMCP",
+        "url": "https://github.com/ZuchGuillotine/MatMCP",
+        "description": {
+          "en": "A dedicated server for Materials Science queries and chemical property retrieval.",
+          "zh": "用于材料科学查询和化学性质检索的专用服务器。"
+        },
+        "useCase": {
+          "en": "General chemistry queries, materials property lookup.",
+          "zh": "通用化学查询、材料性质查找。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "RDKit MCP Server",
+        "url": "https://github.com/tandemai-inc/rdkit-mcp-server",
+        "description": {
+          "en": "Wraps the RDKit library for cheminformatics tasks like SMILES generation and molecule modification.",
+          "zh": "封装 RDKit 库，用于 SMILES 生成和分子修改等化学信息学任务。"
+        },
+        "useCase": {
+          "en": "Cheminformatics, molecule design, chemical property calculation.",
+          "zh": "化学信息学、分子设计、化学性质计算。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "ChemMCP",
+        "url": "https://github.com/OSU-NLP-Group/ChemMCP",
+        "description": {
+          "en": "A comprehensive chemistry toolkit for molecular analysis and interaction.",
+          "zh": "一个用于分子分析和交互的综合化学工具包。"
+        },
+        "useCase": {
+          "en": "Complex chemistry problems, molecular analysis.",
+          "zh": "复杂化学问题、分子分析。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "XTB MCP Server",
+        "url": "https://github.com/PhelanShao/xtb-mcp-server",
+        "description": {
+          "en": "Tools for generating Extended Tight-Binding (xTB) quantum chemistry calculation input files.",
+          "zh": "用于生成扩展紧束缚 (xTB) 量子化学计算输入文件的工具。"
+        },
+        "useCase": {
+          "en": "Quantum chemistry, automated calculation workflows.",
+          "zh": "量子化学、自动化计算工作流。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Catalysis Hub",
+        "url": "https://github.com/QuentinCody/catalysishub-mcp-server",
+        "description": {
+          "en": "Search and retrieve scientific data from the Catalysis Hub database.",
+          "zh": "从 Catalysis Hub 数据库搜索和检索科学数据。"
+        },
+        "useCase": {
+          "en": "Chemistry research, catalysis experiments.",
+          "zh": "化学研究、催化实验。"
+        },
+        "type": "MCP"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Arts, Humanities & Social Sciences",
+      "zh": "艺术、人文与社会科学"
+    },
+    "description": {
+      "en": "History, Geography, Sociology, and Arts.",
+      "zh": "历史、地理、社会学及艺术。"
+    },
+    "skills": [
+      {
+        "name": "Google Maps MCP",
+        "url": "https://github.com/cablate/mcp-google-map",
+        "description": {
+          "en": "Search places, calculate distances, and get location details via Google Maps.",
+          "zh": "通过 Google Maps 搜索地点、计算距离并获取位置详情。"
+        },
+        "useCase": {
+          "en": "Geography lessons, urban planning, travel planning.",
+          "zh": "地理课程、城市规划、旅行计划。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "DeepL API",
+        "url": "https://github.com/DeepLcom/deepl-python",
+        "description": {
+          "en": "High quality machine translation library.",
+          "zh": "高质量机器翻译库。"
+        },
+        "useCase": {
+          "en": "Language learning, translation studies.",
+          "zh": "语言学习、翻译研究。"
         },
         "type": "Skill"
       },
       {
-        "name": "humanizer",
-        "url": "https://github.com/blader/humanizer",
+        "name": "Music21",
+        "url": "https://github.com/cuthbertLab/music21",
         "description": {
-          "en": "A Claude Code skill specifically for removing \"AI generation traces\" from text, making language more natural and human-like.",
-          "zh": "一个 Claude Code skill，专门用于移除文本中的\"AI 生成痕迹\"，使语言更加自然和人性化。"
+          "en": "A Toolkit for Computer-Aided Musicology.",
+          "zh": "计算机辅助音乐学工具包。"
         },
         "useCase": {
-          "en": "Polishing AI drafts to fit human expression habits better.",
-          "zh": "润色 AI 起草的草稿，使其更符合人类表达习惯。"
+          "en": "Music theory analysis, composition.",
+          "zh": "乐理分析、作曲。"
         },
         "type": "Skill"
       },
       {
-        "name": "ux-writing-skill",
-        "url": "https://github.com/content-designer/ux-writing-skill",
+        "name": "MuseScore",
+        "url": "https://github.com/musescore/MuseScore",
         "description": {
-          "en": "Systematic UX writing skill for enforcing content quality standards in design systems.",
-          "zh": "系统化的 UX 写作技能，用于强制执行设计系统中的内容质量标准。"
+          "en": "Open source music notation software.",
+          "zh": "开源音乐制谱软件。"
         },
         "useCase": {
-          "en": "Interaction design students, learning product copy specifications.",
-          "zh": "交互设计学生、产品文案规范学习。"
+          "en": "Music education, score creation.",
+          "zh": "音乐教育、乐谱创作。"
         },
         "type": "Skill"
       },
       {
-        "name": "vibe-writing",
-        "url": "https://github.com/pakholeung37/vibe-writing",
+        "name": "Google Maps MCP",
+        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps",
         "description": {
-          "en": "A wiki-style methodology for fiction writing collaboration with AI.",
-          "zh": "一种与 AI 协作进行小说创作的 wiki 风格方法论。"
+          "en": "Access to geographical data and location services.",
+          "zh": "访问地理数据和定位服务。"
         },
         "useCase": {
-          "en": "Exploring new modes of human-machine collaborative creation.",
-          "zh": "探索人机协作创作的新模式。"
+          "en": "Geography education, cultural studies.",
+          "zh": "地理教育、文化研究。"
         },
-        "type": "Skill"
-      },
+        "type": "MCP"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Computer Science & Engineering",
+      "zh": "计算机科学与工程"
+    },
+    "description": {
+      "en": "Development tools, coding assistants, database management, and DevOps.",
+      "zh": "开发工具、编程助手、数据库管理及 DevOps。"
+    },
+    "skills": [
       {
-        "name": "academic-paper-skills",
-        "url": "https://github.com/lishix520/academic-paper-skills",
+        "name": "Anthropic Web App Testing",
+        "url": "https://github.com/anthropics/anthropic-skills/tree/main/skills/webapp-testing",
         "description": {
-          "en": "System framework using Claude Code to plan and write academic papers. Includes \"Strategist\" (planning) and \"Composer\" (writing) skills.",
-          "zh": "使用 Claude Code 规划和撰写学术论文的系统框架。包含\"策略家\"(规划) 和 \"作曲家\"(写作) 技能。"
+          "en": "Automated web application testing skill using Playwright/Puppeteer concepts.",
+          "zh": "使用 Playwright/Puppeteer 概念的自动化 Web 应用程序测试技能。"
         },
         "useCase": {
-          "en": "Graduate thesis writing, academic publishing planning.",
-          "zh": "硕博研究生论文写作、学术出版规划。"
+          "en": "Learning QA automation, regression testing.",
+          "zh": "学习 QA 自动化、回归测试。"
         },
         "type": "Skill"
       },
@@ -178,108 +681,18 @@
         "type": "Skill"
       },
       {
-        "name": "research-units-pipeline-skills",
-        "url": "https://github.com/WILLOSCAR/research-units-pipeline-skills",
+        "name": "Git MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
         "description": {
-          "en": "Treating research pipelines as semantic execution units. Emphasizes evidence-first methodology to prevent hollow writing.",
-          "zh": "将研究管道视为语义执行单元。强调证据优先的方法，防止空洞的写作。"
+          "en": "Tools to read, search, and manipulate git repositories locally.",
+          "zh": "用于在本地读取、搜索和操作 Git 仓库的工具。"
         },
         "useCase": {
-          "en": "Rigorous academic research projects, literature reviews.",
-          "zh": "严谨的学术研究项目、文献综述。"
-        },
-        "type": "Skill"
-      },
-      {
-        "name": "academic-writing-skills",
-        "url": "https://github.com/bahayonghang/academic-writing-skills",
-        "description": {
-          "en": "Claude Code and Codex assistance capabilities optimized specifically for academic writing scenarios.",
-          "zh": "专门针对学术写作场景优化的 Claude Code 和 Codex 辅助能力。"
-        },
-        "useCase": {
-          "en": "Improving standardization and logic of academic language.",
-          "zh": "提升学术语言的规范性和逻辑性。"
-        },
-        "type": "Skill"
-      },
-      {
-        "name": "GPT Researcher",
-        "url": "https://github.com/assafelovic/gpt-researcher",
-        "description": {
-          "en": "An autonomous agent that conducts deep research on any topic, scraping and aggregating info from web sources with citations.",
-          "zh": "一个自主代理，可以对任何主题进行深度研究，从网络来源抓取并聚合信息，并附带引用。"
-        },
-        "useCase": {
-          "en": "Generating literature reviews, gathering unbiased information without hallucination.",
-          "zh": "生成文献综述，收集公正信息，避免幻觉。"
-        },
-        "type": "Skill"
-      },
-      {
-        "name": "Arxiv MCP Server",
-        "url": "https://github.com/blazickjp/arxiv-mcp-server",
-        "description": {
-          "en": "A specialized MCP server for searching, retrieving, and analyzing academic papers from the arXiv database.",
-          "zh": "一个专门用于从 arXiv 数据库搜索、检索和分析学术论文的 MCP 服务器。"
-        },
-        "useCase": {
-          "en": "STEM researchers needing fast access to latest preprints directly within Claude.",
-          "zh": "需要在 Claude 中直接快速访问最新预印本的 STEM 研究人员。"
+          "en": "Local version control management, committing changes, and viewing history.",
+          "zh": "本地版本控制管理、提交更改和查看历史记录。"
         },
         "type": "MCP"
       },
-      {
-        "name": "ZotLink",
-        "url": "https://github.com/TonybotNi/ZotLink",
-        "description": {
-          "en": "Production-ready MCP server for Zotero. Saves open preprints with rich metadata and smart PDF attachments.",
-          "zh": "生产就绪的 Zotero MCP 服务器。可保存带有丰富元数据和智能 PDF 附件的开放预印本。"
-        },
-        "useCase": {
-          "en": "Academics managing large bibliographies wanting to automate \"paper-to-library\" workflow.",
-          "zh": "管理大量参考书目的学者，希望自动化“从论文到资料库”的工作流程。"
-        },
-        "type": "MCP"
-      },
-      {
-        "name": "Firecrawl MCP",
-        "url": "https://github.com/firecrawl/firecrawl-mcp-server",
-        "description": {
-          "en": "Advanced web scraping/crawling MCP turning websites into LLM-ready markdown. Handles dynamic content.",
-          "zh": "高级 Web 抓取/爬行 MCP，将网站转换为 LLM 可读的 Markdown。可处理动态内容。"
-        },
-        "useCase": {
-          "en": "Building custom datasets from the web for research or analysis.",
-          "zh": "从网络构建自定义数据集用于研究或分析。"
-        },
-        "type": "MCP"
-      },
-      {
-        "name": "BrowserBase MCP",
-        "url": "https://github.com/browserbase/mcp-server-browserbase",
-        "description": {
-          "en": "Cloud-based headless browser for AI. Allows running browser automation scripts in a secure cloud environment.",
-          "zh": "基于云的 AI 无头浏览器。允许在安全云环境中运行浏览器自动化脚本。"
-        },
-        "useCase": {
-          "en": "Automating complex web tasks that require a full browser context.",
-          "zh": "自动化需要完整浏览器上下文的复杂 Web 任务。"
-        },
-        "type": "MCP"
-      }
-    ]
-  },
-  {
-    "category": {
-      "en": "Coding & Data",
-      "zh": "编程与数据"
-    },
-    "description": {
-      "en": "Computer science education, data analysis, visualization, and technical design.",
-      "zh": "计算机科学教育、数据分析、可视化及技术设计。"
-    },
-    "skills": [
       {
         "name": "GitHub MCP Server",
         "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
@@ -359,19 +772,6 @@
         "type": "Skill"
       },
       {
-        "name": "apprenticemode",
-        "url": "https://github.com/yavzius/apprenticemode",
-        "description": {
-          "en": "A unique skill to detect user \"Knowledge Gaps\". Infers what you don't know from your Prompt.",
-          "zh": "一个独特的技能，用于检测用户的\"知识缺口\" (Knowledge Gaps)。通过你的 Prompt 反向推断你不知道什么。"
-        },
-        "useCase": {
-          "en": "Metacognitive learning, checking for missing knowledge, self-assessing coding level.",
-          "zh": "元认知学习、查漏补缺、自我评估编程水平。"
-        },
-        "type": "Skill"
-      },
-      {
         "name": "coding-agent-skills",
         "url": "https://github.com/Miaoge-Ge/coding-agent-skills",
         "description": {
@@ -437,6 +837,71 @@
         "type": "MCP"
       },
       {
+        "name": "MCP JS",
+        "url": "https://github.com/r33drichards/mcp-js",
+        "description": {
+          "en": "A secure JavaScript execution sandbox using V8 for running locally generated code.",
+          "zh": "一个使用 V8 引擎的安全 JavaScript 执行沙箱，用于运行本地生成的代码。"
+        },
+        "useCase": {
+          "en": "Learning JS, testing code snippets safely.",
+          "zh": "学习 JS、安全测试代码片段。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Neovim MCP",
+        "url": "https://github.com/linw1995/nvim-mcp",
+        "description": {
+          "en": "Allows LLMs to interact directly with a Neovim instance to read buffers and edit text.",
+          "zh": "允许 LLM 直接与 Neovim 实例交互，读取缓冲区和编辑文本。"
+        },
+        "useCase": {
+          "en": "Learning Vim commands, AI-assisted coding in terminal.",
+          "zh": "学习 Vim 命令、终端 AI 辅助编程。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "VS Code MCP Server",
+        "url": "https://github.com/juehang/vscode-mcp-server",
+        "description": {
+          "en": "Allows an external agent to control VS Code, read the file tree, and see linter errors.",
+          "zh": "允许外部代理控制 VS Code，读取文件树并查看 linter 错误。"
+        },
+        "useCase": {
+          "en": "AI pair programming, fixing linting errors.",
+          "zh": "AI 结对编程、修复 Lint 错误。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Smart Contracts Wizard",
+        "url": "https://github.com/OpenZeppelin/contracts-wizard",
+        "description": {
+          "en": "Generates secure smart contracts based on OpenZeppelin templates.",
+          "zh": "基于 OpenZeppelin 模板生成安全的智能合约。"
+        },
+        "useCase": {
+          "en": "Learning Solidity and Web3 development, contract auditing.",
+          "zh": "学习 Solidity 和 Web3 开发、合约审计。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Go Language Server (gopls)",
+        "url": "https://github.com/hloiseaufcms/mcp-gopls",
+        "description": {
+          "en": "Interact with the Go Language Server Protocol to explain code and find definitions.",
+          "zh": "与 Go 语言服务器协议交互，解释代码并查找定义。"
+        },
+        "useCase": {
+          "en": "Learning Go language, understanding codebase structure.",
+          "zh": "学习 Go 语言、理解代码库结构。"
+        },
+        "type": "MCP"
+      },
+      {
         "name": "MindsDB MCP",
         "url": "https://github.com/mindsdb/mindsdb",
         "description": {
@@ -448,19 +913,6 @@
           "zh": "使用标准 SQL 语法学习应用机器学习。"
         },
         "type": "MCP"
-      },
-      {
-        "name": "GenAI Toolbox",
-        "url": "https://github.com/googleapis/genai-toolbox",
-        "description": {
-          "en": "Official Google tools for BigQuery, AlloyDB, etc. Interact with massive datasets using natural language.",
-          "zh": "Google 官方工具，用于 BigQuery、AlloyDB 等。使用自然语言与海量数据集交互。"
-        },
-        "useCase": {
-          "en": "Learning cloud data warehousing and big data analysis.",
-          "zh": "学习云数据仓库和大数据分析。"
-        },
-        "type": "Skill"
       },
       {
         "name": "SQLite Explorer",
@@ -502,6 +954,239 @@
         "type": "MCP"
       },
       {
+        "name": "a11y-specialist-skills",
+        "url": "https://github.com/masuP9/a11y-specialist-skills",
+        "description": {
+          "en": "Accessibility specialist skill plugin for Claude Code.",
+          "zh": "Claude Code 的无障碍 (Accessibility) 专家技能插件。"
+        },
+        "useCase": {
+          "en": "Learning WCAG standards, conducting website accessibility audits.",
+          "zh": "学习 WCAG 标准、进行网站无障碍审计。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Docker MCP",
+        "url": "https://github.com/ckreiling/mcp-server-docker",
+        "description": {
+          "en": "Manage Docker containers, images, and volumes directly from Claude chat.",
+          "zh": "直接从 Claude 聊天中管理 Docker 容器、镜像和卷。"
+        },
+        "useCase": {
+          "en": "Learning containerization concepts, debugging dev environments.",
+          "zh": "学习容器化概念，调试开发环境。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "LeetCode MCP",
+        "url": "https://github.com/jinzcdev/leetcode-mcp-server",
+        "description": {
+          "en": "Enable AI to search and retrieve LeetCode programming problems, solutions, and submission data.",
+          "zh": "允许 AI 搜索和检索 LeetCode 编程题目、解答和提交数据。"
+        },
+        "useCase": {
+          "en": "Algorithm study, interview preparation.",
+          "zh": "算法学习、面试准备。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "OpenAPI Explorer",
+        "url": "https://github.com/kadykov/mcp-openapi-schema-explorer",
+        "description": {
+          "en": "Explore and understand API structures by interacting with OpenAPI specifications.",
+          "zh": "通过与 OpenAPI 规范交互来探索和理解 API 结构。"
+        },
+        "useCase": {
+          "en": "Learning API design, integration testing.",
+          "zh": "学习 API 设计、集成测试。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Code Mentor",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/samuelkahessay/code-mentor",
+        "description": {
+          "en": "Comprehensive AI programming tutor for all levels of experience.",
+          "zh": "面向所有级别经验的综合型 AI 编程导师。"
+        },
+        "useCase": {
+          "en": "Learning programming concepts, code reviews, debugging assistance.",
+          "zh": "学习编程概念、代码审查、调试辅助。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Backend Patterns",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/charmmm718/backend-patterns",
+        "description": {
+          "en": "Guide to backend architecture patterns, API design, and database management.",
+          "zh": "后端架构模式、API 设计和数据库管理指南。"
+        },
+        "useCase": {
+          "en": "Learning system design, backend development best practices.",
+          "zh": "学习系统设计、后端开发最佳实践。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Git Essentials",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/arnarsson/git-essentials",
+        "description": {
+          "en": "Essential Git commands and workflows for version control mastery.",
+          "zh": "掌握版本控制所必备的 Git 命令和工作流。"
+        },
+        "useCase": {
+          "en": "Learning Git version control, mastering branching and merging.",
+          "zh": "学习 Git 版本控制、掌握分支和合并。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Docker Essentials",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/arnarsson/docker-essentials",
+        "description": {
+          "en": "Essential Docker commands and workflows for containerization.",
+          "zh": "容器化所必备的 Docker 命令和工作流。"
+        },
+        "useCase": {
+          "en": "Learning Docker, container management, devops basics.",
+          "zh": "学习 Docker、容器管理、DevOps 基础。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Postgres MCP",
+        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
+        "description": {
+          "en": "Official Postgres MCP server. Inspect schemas and run queries.",
+          "zh": "官方 Postgres MCP 服务器。检查模式并运行查询。"
+        },
+        "useCase": {
+          "en": "Database management education, SQL practice.",
+          "zh": "数据库管理教育、SQL 练习。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "LeetCode",
+        "url": "https://leetcode.com",
+        "description": {
+          "en": "Platform for learning programming and preparing for interviews.",
+          "zh": "学习编程和准备技术面试的平台。"
+        },
+        "useCase": {
+          "en": "Algorithm practice, data structure study.",
+          "zh": "算法练习、数据结构学习。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Kubernetes CLI",
+        "url": "https://github.com/kubernetes/kubernetes",
+        "description": {
+          "en": "Production-grade container orchestration.",
+          "zh": "生产级容器编排。"
+        },
+        "useCase": {
+          "en": "DevOps education, cloud engineering.",
+          "zh": "DevOps 教育、云工程。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Chrome DevTools Protocol",
+        "url": "https://github.com/ChromeDevTools/devtools-protocol",
+        "description": {
+          "en": "Tools to debug and profile web applications.",
+          "zh": "用于调试和分析 Web 应用程序的工具。"
+        },
+        "useCase": {
+          "en": "Web development education, frontend debugging.",
+          "zh": "Web 开发教育、前端调试。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Git MCP",
+        "url": "https://github.com/idosal/git-mcp",
+        "description": {
+          "en": "Tools to read, search, and manipulate local Git repositories. Visualize history and diffs.",
+          "zh": "用于读取、搜索和操作本地 Git 仓库的工具。可视化历史记录和差异。"
+        },
+        "useCase": {
+          "en": "Understanding local git history, debugging complex merges.",
+          "zh": "理解本地 Git 历史，调试复杂的合并问题。"
+        },
+        "type": "MCP"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Data & Analysis",
+      "zh": "数据与分析"
+    },
+    "description": {
+      "en": "Data science, web scraping, analytics, and big data tools.",
+      "zh": "数据科学、网络抓取、分析及大数据工具。"
+    },
+    "skills": [
+      {
+        "name": "Anthropic XLSX Skill",
+        "url": "https://github.com/anthropics/anthropic-skills/tree/main/skills/xlsx",
+        "description": {
+          "en": "Official skill for analyzing and manipulating Excel spreadsheets. Calculate data and generate insights.",
+          "zh": "用于分析和操作 Excel 电子表格的官方技能。计算数据并生成见解。"
+        },
+        "useCase": {
+          "en": "Data analysis, financial modeling, lab results processing.",
+          "zh": "数据分析、财务建模、实验室结果处理。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Firecrawl MCP",
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+        "description": {
+          "en": "Advanced web scraping/crawling MCP turning websites into LLM-ready markdown. Handles dynamic content.",
+          "zh": "高级 Web 抓取/爬行 MCP，将网站转换为 LLM 可读的 Markdown。可处理动态内容。"
+        },
+        "useCase": {
+          "en": "Building custom datasets from the web for research or analysis.",
+          "zh": "从网络构建自定义数据集用于研究或分析。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "BrowserBase MCP",
+        "url": "https://github.com/browserbase/mcp-server-browserbase",
+        "description": {
+          "en": "Cloud-based headless browser for AI. Allows running browser automation scripts in a secure cloud environment.",
+          "zh": "基于云的 AI 无头浏览器。允许在安全云环境中运行浏览器自动化脚本。"
+        },
+        "useCase": {
+          "en": "Automating complex web tasks that require a full browser context.",
+          "zh": "自动化需要完整浏览器上下文的复杂 Web 任务。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "GenAI Toolbox",
+        "url": "https://github.com/googleapis/genai-toolbox",
+        "description": {
+          "en": "Official Google tools for BigQuery, AlloyDB, etc. Interact with massive datasets using natural language.",
+          "zh": "Google 官方工具，用于 BigQuery、AlloyDB 等。使用自然语言与海量数据集交互。"
+        },
+        "useCase": {
+          "en": "Learning cloud data warehousing and big data analysis.",
+          "zh": "学习云数据仓库和大数据分析。"
+        },
+        "type": "Skill"
+      },
+      {
         "name": "claude-skill-data-cleaner",
         "url": "https://github.com/brook-miller/claude-skill-data-cleaner",
         "description": {
@@ -528,6 +1213,109 @@
         "type": "Skill"
       },
       {
+        "name": "Jupyter Notebook MCP",
+        "url": "https://github.com/datalayer/jupyter-mcp-server",
+        "description": {
+          "en": "Interact with Jupyter notebooks primarily for data analysis tasks.",
+          "zh": "与 Jupyter Notebook 交互，主要用于数据分析任务。"
+        },
+        "useCase": {
+          "en": "Data science workflows, interactive coding.",
+          "zh": "数据科学工作流、交互式编程。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "NetworkX Graph Analysis",
+        "url": "https://github.com/Bright-L01/networkx-mcp-server",
+        "description": {
+          "en": "Perform graph analysis and visualization (centrality, community detection) using NetworkX.",
+          "zh": "使用 NetworkX 进行图分析和可视化（中心性、社区检测）。"
+        },
+        "useCase": {
+          "en": "Network science, social network analysis.",
+          "zh": "网络科学、社交网络分析。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Fetch MCP",
+        "url": "https://github.com/zcaceres/fetch-mcp",
+        "description": {
+          "en": "Flexibly fetch JSON, text, and HTML data from the web. Useful for gathering dataset material.",
+          "zh": "灵活地从网络获取 JSON、文本和 HTML 数据。用于收集数据集素材。"
+        },
+        "useCase": {
+          "en": "Web scraping, data collection.",
+          "zh": "网络抓取、数据收集。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Vizro (Data Viz)",
+        "url": "https://github.com/mckinsey/vizro/tree/main/vizro-mcp",
+        "description": {
+          "en": "Tools to create validated and maintainable data charts and dashboards.",
+          "zh": "用于创建经过验证且可维护的数据图表和仪表板的工具。"
+        },
+        "useCase": {
+          "en": "Learning data visualization, creating dashboards.",
+          "zh": "学习数据可视化、创建仪表板。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Kaggle MCP",
+        "url": "https://github.com/KrishnaPramodParupudi/kaggle-mcp-server",
+        "description": {
+          "en": "Browse Kaggle competitions, leaderboards, datasets, and kernels directly.",
+          "zh": "直接浏览 Kaggle 竞赛、排行榜、数据集和 Kernels。"
+        },
+        "useCase": {
+          "en": "Data science practice, finding datasets.",
+          "zh": "数据科学练习、查找数据集。"
+        },
+        "type": "MCP"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Visual & Presentation",
+      "zh": "视觉与演示 (PPT)"
+    },
+    "description": {
+      "en": "PowerPoint generation, data visualization, UI design, and visual tools.",
+      "zh": "PowerPoint 生成、数据可视化、UI 设计及视觉工具。"
+    },
+    "skills": [
+      {
+        "name": "Anthropic PPTX Skill",
+        "url": "https://github.com/anthropics/anthropic-skills/tree/main/skills/pptx",
+        "description": {
+          "en": "Official skill for generating PowerPoint presentations programmatically.",
+          "zh": "用于以编程方式生成 PowerPoint 演示文稿的官方技能。"
+        },
+        "useCase": {
+          "en": "Creating academic presentations, lecture slides from notes.",
+          "zh": "创建学术演示、从笔记生成讲义幻灯片。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Anthropic Algorithmic Art",
+        "url": "https://github.com/anthropics/anthropic-skills/tree/main/skills/algorithmic-art",
+        "description": {
+          "en": "Generates SVG-based algorithmic art using mathematical functions.",
+          "zh": "使用数学函数生成基于 SVG 的算法艺术。"
+        },
+        "useCase": {
+          "en": "Creative coding education, generating abstract visuals.",
+          "zh": "创意编程教育、生成抽象视觉效果。"
+        },
+        "type": "Skill"
+      },
+      {
         "name": "chartjs-expert",
         "url": "https://github.com/sjnims/chartjs-expert",
         "description": {
@@ -541,44 +1329,6 @@
         "type": "Skill"
       },
       {
-        "name": "a11y-specialist-skills",
-        "url": "https://github.com/masuP9/a11y-specialist-skills",
-        "description": {
-          "en": "Accessibility specialist skill plugin for Claude Code.",
-          "zh": "Claude Code 的无障碍 (Accessibility) 专家技能插件。"
-        },
-        "useCase": {
-          "en": "Learning WCAG standards, conducting website accessibility audits.",
-          "zh": "学习 WCAG 标准、进行网站无障碍审计。"
-        },
-        "type": "Skill"
-      },
-      {
-        "name": "claude-dolphin",
-        "url": "https://github.com/nyldn/claude-dolphin",
-        "description": {
-          "en": "Comprehensive UX/UI design system skill - includes WCAG 2.2 AA audit, design consistency checks, and Refactoring UI principles.",
-          "zh": "综合 UX/UI 设计系统技能 - 包含 WCAG 2.2 AA 审计、设计一致性检查和 Refactoring UI 原则。"
-        },
-        "useCase": {
-          "en": "UI/UX design students, full-stack developers improving design sense.",
-          "zh": "UI/UX 设计学生、全栈开发者提升设计感。"
-        },
-        "type": "Skill"
-      }
-    ]
-  },
-  {
-    "category": {
-      "en": "Visual & Presentation",
-      "zh": "视觉与演示 (PPT)"
-    },
-    "description": {
-      "en": "PowerPoint generation, visual design, and presentation tools.",
-      "zh": "PowerPoint 生成、视觉设计及演示工具。"
-    },
-    "skills": [
-      {
         "name": "census-demographics-skill",
         "url": "https://github.com/baofeng-dong/census-demographics-skill",
         "description": {
@@ -590,32 +1340,6 @@
           "zh": "社会学研究、地理信息系统 (GIS) 课程、数据新闻学。"
         },
         "type": "Skill"
-      },
-      {
-        "name": "Git MCP",
-        "url": "https://github.com/idosal/git-mcp",
-        "description": {
-          "en": "Tools to read, search, and manipulate local Git repositories. Visualize history and diffs.",
-          "zh": "用于读取、搜索和操作本地 Git 仓库的工具。可视化历史记录和差异。"
-        },
-        "useCase": {
-          "en": "Understanding local git history, debugging complex merges.",
-          "zh": "理解本地 Git 历史，调试复杂的合并问题。"
-        },
-        "type": "MCP"
-      },
-      {
-        "name": "Docker MCP",
-        "url": "https://github.com/ckreiling/mcp-server-docker",
-        "description": {
-          "en": "Manage Docker containers, images, and volumes directly from Claude chat.",
-          "zh": "直接从 Claude 聊天中管理 Docker 容器、镜像和卷。"
-        },
-        "useCase": {
-          "en": "Learning containerization concepts, debugging dev environments.",
-          "zh": "学习容器化概念，调试开发环境。"
-        },
-        "type": "MCP"
       },
       {
         "name": "Observable-Plot-Claude-Skill",
@@ -694,71 +1418,499 @@
           "zh": "自动化幻灯片创建、更新图表和批量编辑。"
         },
         "type": "MCP"
+      },
+      {
+        "name": "claude-dolphin",
+        "url": "https://github.com/nyldn/claude-dolphin",
+        "description": {
+          "en": "Comprehensive UX/UI design system skill - includes WCAG 2.2 AA audit, design consistency checks, and Refactoring UI principles.",
+          "zh": "综合 UX/UI 设计系统技能 - 包含 WCAG 2.2 AA 审计、设计一致性检查和 Refactoring UI 原则。"
+        },
+        "useCase": {
+          "en": "UI/UX design students, full-stack developers improving design sense.",
+          "zh": "UI/UX 设计学生、全栈开发者提升设计感。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Markmap",
+        "url": "https://github.com/jinzcdev/markmap-mcp-server",
+        "description": {
+          "en": "Converts Markdown content into interactive mind maps for visual learning.",
+          "zh": "将 Markdown 内容转换为交互式思维导图，用于视觉学习。"
+        },
+        "useCase": {
+          "en": "Creating study outlines, brainstorming sessions.",
+          "zh": "创建学习大纲、头脑风暴会议。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Excalidraw MCP App",
+        "url": "https://github.com/antonpk1/excalidraw-mcp-app",
+        "description": {
+          "en": "Official MCP app for Excalidraw. Create and edit beautiful hand-drawn diagrams programmatically.",
+          "zh": "Excalidraw 官方 MCP 应用。以编程方式创建和编辑精美的手绘风格图表。"
+        },
+        "useCase": {
+          "en": "Creating explaining diagrams, system architecture whiteboarding.",
+          "zh": "创建解释性图表、系统架构白板演示。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "MCP Mermaid",
+        "url": "https://github.com/hustcc/mcp-mermaid",
+        "description": {
+          "en": "Generate Mermaid diagrams and charts dynamically using AI. Supports flowcharts, sequence diagrams, and more.",
+          "zh": "使用 AI 动态生成 Mermaid 图表。支持流程图、时序图等多种类型。"
+        },
+        "useCase": {
+          "en": "Visualizing processes, creating code documentation diagrams.",
+          "zh": "可视化流程、创建代码文档图表。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Leap MCP",
+        "url": "https://github.com/sid-thephysicskid/leap-mcp",
+        "description": {
+          "en": "Transform any topic into an explainer video with AI narration and 3Blue1Brown-style animations.",
+          "zh": "将任何主题转化为带有 AI 旁白和 3Blue1Brown 风格动画的解说视频。"
+        },
+        "useCase": {
+          "en": "Creating educational videos, visualizing math/physics concepts.",
+          "zh": "制作教育视频、可视化数学/物理概念。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Manim MCP",
+        "url": "https://github.com/wstcpyt/manim-mcp",
+        "description": {
+          "en": "MCP server for Manim math animation engine. Generate precise mathematical animations code.",
+          "zh": "Manim 数学动画引擎的 MCP 服务器。生成精确的数学动画代码。"
+        },
+        "useCase": {
+          "en": "Math education, dynamic geometry demonstrations.",
+          "zh": "数学教育、动态几何演示。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Kroki MCP",
+        "url": "https://github.com/utain/kroki-mcp",
+        "description": {
+          "en": "Converts textual diagram definitions (PlantUML, Mermaid, BlockDiag, etc.) into images via Kroki.",
+          "zh": "通过 Kroki 将文本图表定义（PlantUML, Mermaid, BlockDiag 等）转换为图像。"
+        },
+        "useCase": {
+          "en": "Teaching UML, visualizing software architecture.",
+          "zh": "教学 UML、可视化软件架构。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Mindmap MCP Server",
+        "url": "https://github.com/YuChenSSR/mindmap-mcp-server",
+        "description": {
+          "en": "Generate and manage mind maps. Helps in organizing thoughts and brainstorming.",
+          "zh": "生成和管理思维导图。有助于整理思路和头脑风暴。"
+        },
+        "useCase": {
+          "en": "Brainstorming, organizing lecture notes.",
+          "zh": "头脑风暴、整理课堂笔记。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "FFmpeg MCP",
+        "url": "https://github.com/egoist/ffmpeg-mcp",
+        "description": {
+          "en": "An MCP server for FFmpeg. Process video and audio simply by chatting.",
+          "zh": "FFmpeg 的 MCP 服务器。通过聊天即可处理视频和音频。"
+        },
+        "useCase": {
+          "en": "Editing lecture recordings, converting video formats.",
+          "zh": "编辑讲座录音/录像、转换视频格式。"
+        },
+        "type": "MCP"
       }
     ]
   },
   {
     "category": {
-      "en": "Productivity & Career",
-      "zh": "生产力与职业"
+      "en": "Academic & Writing",
+      "zh": "学术与写作"
     },
     "description": {
-      "en": "Personal productivity, knowledge management, and career development.",
-      "zh": "个人生产力、知识管理及职业发展。"
+      "en": "Academic research, paper writing, literature reviews, and creative writing.",
+      "zh": "学术研究、论文写作、文献综述及创意写作。"
     },
     "skills": [
       {
-        "name": "Slack MCP",
-        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+        "name": "Anthropic DOCX Skill",
+        "url": "https://github.com/anthropics/anthropic-skills/tree/main/skills/docx",
         "description": {
-          "en": "Interact with Slack channels and messages. Summarize threads or draft replies.",
-          "zh": "与 Slack 频道和消息交互。总结讨论串或起草回复。"
+          "en": "Comprehensive document creation, editing, and analysis with support for tracked changes and formatting.",
+          "zh": "全面的文档创建、编辑和分析，支持修订模式和格式保留。"
         },
         "useCase": {
-          "en": "Learning team communication management.",
-          "zh": "学习团队沟通管理。"
+          "en": "Creating new documents, modifying content, working with tracked changes.",
+          "zh": "创建新文档、修改内容、处理修订记录。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Anthropic PDF Skill",
+        "url": "https://github.com/anthropics/anthropic-skills/tree/main/skills/pdf",
+        "description": {
+          "en": "Comprehensive PDF manipulation toolkit for extracting text/tables, creating PDFs, and handling forms.",
+          "zh": "全面的 PDF 操作工具包，用于提取文本/表格、创建 PDF 和处理表单。"
+        },
+        "useCase": {
+          "en": "Extracting data from papers, filling forms, merging documents.",
+          "zh": "从论文提取数据、填写表单、合并文档。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "writing-agent",
+        "url": "https://github.com/dongbeixiaohuo/writing-agent",
+        "description": {
+          "en": "An \"Anti-AI-flavor\" writing system based on Claude Code Skills. Supports full workflow from topic generation, style modeling to publication review.",
+          "zh": "基于 Claude Code Skills 的\"反 AI 味\"写作系统。支持从选题生成、风格建模到发布评审的完整工作流。"
+        },
+        "useCase": {
+          "en": "Making AI-written articles sound natural like humans, suitable for self-media and blog writing.",
+          "zh": "让 AI 写出的文章像人一样自然，适合自媒体和博客写作。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "The-Crucible-Writing-System-For-Claude",
+        "url": "https://github.com/forsonny/The-Crucible-Writing-System-For-Claude",
+        "description": {
+          "en": "Integrated writing system with three Claude Skills, guiding writers from story concept to completed first draft. Based on a 36-beat narrative framework.",
+          "zh": "一个集成的写作系统，包含三个 Claude Skills，引导作家从故事概念到完成初稿。基于 36 拍叙事框架。"
+        },
+        "useCase": {
+          "en": "Novel creation, screenwriting, creative writing courses.",
+          "zh": "小说创作、剧本写作、创意写作课程。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "humanizer",
+        "url": "https://github.com/blader/humanizer",
+        "description": {
+          "en": "A Claude Code skill specifically for removing \"AI generation traces\" from text, making language more natural and human-like.",
+          "zh": "一个 Claude Code skill，专门用于移除文本中的\"AI 生成痕迹\"，使语言更加自然和人性化。"
+        },
+        "useCase": {
+          "en": "Polishing AI drafts to fit human expression habits better.",
+          "zh": "润色 AI 起草的草稿，使其更符合人类表达习惯。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "ux-writing-skill",
+        "url": "https://github.com/content-designer/ux-writing-skill",
+        "description": {
+          "en": "Systematic UX writing skill for enforcing content quality standards in design systems.",
+          "zh": "系统化的 UX 写作技能，用于强制执行设计系统中的内容质量标准。"
+        },
+        "useCase": {
+          "en": "Interaction design students, learning product copy specifications.",
+          "zh": "交互设计学生、产品文案规范学习。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "vibe-writing",
+        "url": "https://github.com/pakholeung37/vibe-writing",
+        "description": {
+          "en": "A wiki-style methodology for fiction writing collaboration with AI.",
+          "zh": "一种与 AI 协作进行小说创作的 wiki 风格方法论。"
+        },
+        "useCase": {
+          "en": "Exploring new modes of human-machine collaborative creation.",
+          "zh": "探索人机协作创作的新模式。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "academic-paper-skills",
+        "url": "https://github.com/lishix520/academic-paper-skills",
+        "description": {
+          "en": "System framework using Claude Code to plan and write academic papers. Includes \"Strategist\" (planning) and \"Composer\" (writing) skills.",
+          "zh": "使用 Claude Code 规划和撰写学术论文的系统框架。包含\"策略家\"(规划) 和 \"作曲家\"(写作) 技能。"
+        },
+        "useCase": {
+          "en": "Graduate thesis writing, academic publishing planning.",
+          "zh": "硕博研究生论文写作、学术出版规划。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "research-units-pipeline-skills",
+        "url": "https://github.com/WILLOSCAR/research-units-pipeline-skills",
+        "description": {
+          "en": "Treating research pipelines as semantic execution units. Emphasizes evidence-first methodology to prevent hollow writing.",
+          "zh": "将研究管道视为语义执行单元。强调证据优先的方法，防止空洞的写作。"
+        },
+        "useCase": {
+          "en": "Rigorous academic research projects, literature reviews.",
+          "zh": "严谨的学术研究项目、文献综述。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "academic-writing-skills",
+        "url": "https://github.com/bahayonghang/academic-writing-skills",
+        "description": {
+          "en": "Claude Code and Codex assistance capabilities optimized specifically for academic writing scenarios.",
+          "zh": "专门针对学术写作场景优化的 Claude Code 和 Codex 辅助能力。"
+        },
+        "useCase": {
+          "en": "Improving standardization and logic of academic language.",
+          "zh": "提升学术语言的规范性和逻辑性。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "GPT Researcher",
+        "url": "https://github.com/assafelovic/gpt-researcher",
+        "description": {
+          "en": "An autonomous agent that conducts deep research on any topic, scraping and aggregating info from web sources with citations.",
+          "zh": "一个自主代理，可以对任何主题进行深度研究，从网络来源抓取并聚合信息，并附带引用。"
+        },
+        "useCase": {
+          "en": "Generating literature reviews, gathering unbiased information without hallucination.",
+          "zh": "生成文献综述，收集公正信息，避免幻觉。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "ZotLink",
+        "url": "https://github.com/TonybotNi/ZotLink",
+        "description": {
+          "en": "Production-ready MCP server for Zotero. Saves open preprints with rich metadata and smart PDF attachments.",
+          "zh": "生产就绪的 Zotero MCP 服务器。可保存带有丰富元数据和智能 PDF 附件的开放预印本。"
+        },
+        "useCase": {
+          "en": "Academics managing large bibliographies wanting to automate \"paper-to-library\" workflow.",
+          "zh": "管理大量参考书目的学者，希望自动化“从论文到资料库”的工作流程。"
         },
         "type": "MCP"
       },
       {
-        "name": "Discord MCP",
-        "url": "https://github.com/v-v-vishnu/discord-mcp-server",
+        "name": "arXiv Search",
+        "url": "https://github.com/andybrandt/mcp-simple-arxiv",
         "description": {
-          "en": "Connects Claude to Discord servers. Read messages and manage communities.",
-          "zh": "将 Claude 连接到 Discord 服务器。阅读消息并管理社区。"
+          "en": "Search and read research papers directly from arXiv. Essential for literature review.",
+          "zh": "直接从 arXiv 搜索和阅读研究论文。文献综述的必备工具。"
         },
         "useCase": {
-          "en": "Managing study groups or student communities.",
-          "zh": "管理学习小组或学生社区。"
+          "en": "Literature review, finding latest preprints.",
+          "zh": "文献综述、查找最新预印本。"
         },
         "type": "MCP"
       },
       {
-        "name": "Linear MCP",
-        "url": "https://github.com/jerhadf/linear-mcp-server",
+        "name": "Open Library",
+        "url": "https://github.com/8enSmith/mcp-open-library",
         "description": {
-          "en": "Manage tasks and issues in Linear. Create tickets from conversations.",
-          "zh": "在 Linear 中管理任务和问题。从对话中创建工单。"
+          "en": "Search for book and author information via the Internet Archive's Open Library API.",
+          "zh": "通过 Internet Archive 的 Open Library API 搜索书籍和作者信息。"
         },
         "useCase": {
-          "en": "Students learning Agile/Scrum project management.",
-          "zh": "学生学习敏捷/Scrum 项目管理。"
+          "en": "Bibliographic data retrieval, finding book metadata.",
+          "zh": "书目数据检索、查找书籍元数据。"
         },
         "type": "MCP"
       },
       {
-        "name": "Todoist MCP",
-        "url": "https://github.com/actionsOnGoogle/todoist-mcp-server",
+        "name": "Mendeley MCP",
+        "url": "https://github.com/pallaprolus/mendeley-mcp",
         "description": {
-          "en": "Manage your Todoist tasks directly. Add homework or project deadlines.",
-          "zh": "直接管理 Todoist 任务。添加作业或项目截止日期。"
+          "en": "Search library, browse folders, and manage references in Mendeley.",
+          "zh": "在 Mendeley 中搜索资料库、浏览文件夹并管理参考文献。"
         },
         "useCase": {
-          "en": "Personal task tracking and deadline management.",
-          "zh": "个人任务追踪和截止日期管理。"
+          "en": "Reference management for thesis writing.",
+          "zh": "为论文写作管理参考文献。"
         },
         "type": "MCP"
       },
+      {
+        "name": "TexMCP",
+        "url": "https://github.com/devroopsaha744/TexMCP",
+        "description": {
+          "en": "Convert LaTeX into high-quality PDF documents or other formats.",
+          "zh": "将 LaTeX 转换为高质量的 PDF 文档或其他格式。"
+        },
+        "useCase": {
+          "en": "Compiling LaTeX papers, generating math formulas.",
+          "zh": "编译 LaTeX 论文、生成数学公式。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Doc Co-authoring",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/seanphan/doc-coauthoring",
+        "description": {
+          "en": "Structured workflow for co-authoring documents with AI, ensuring coherent voice and content.",
+          "zh": "与 AI 共同撰写文档的结构化工作流程，确保一致的语气和内容。"
+        },
+        "useCase": {
+          "en": "Collaborative writing, academic papers, reports.",
+          "zh": "协作写作、学术论文、报告。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Nano PDF",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/steipete/nano-pdf",
+        "description": {
+          "en": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
+          "zh": "使用 nano-pdf CLI 通过自然语言指令编辑 PDF。"
+        },
+        "useCase": {
+          "en": "Modifying PDF content, splitting/merging pages via chat.",
+          "zh": "通过聊天修改 PDF 内容、拆分/合并页面。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Mineru PDF Parser",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/kesslerio/mineru-pdf-parser-clawdbot-skill",
+        "description": {
+          "en": "Fast, high-quality local PDF parsing into Markdown/JSON using CPU.",
+          "zh": "利用本地 CPU 快速、高质量地将 PDF 解析为 Markdown/JSON。"
+        },
+        "useCase": {
+          "en": "Extracting clean text from complex research papers for AI analysis.",
+          "zh": "从复杂的学术论文中提取干净的文本以供 AI 分析。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Nutrient Doc Processing",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/jdrhyne/nutrient-document-processing",
+        "description": {
+          "en": "Enterprise-grade document processing: conversion, extraction, and OCR.",
+          "zh": "企业级文档处理：格式转换、内容提取和 OCR。"
+        },
+        "useCase": {
+          "en": "Digitizing scanned textbooks, handling heavy document workflows.",
+          "zh": "数字化扫描的教科书、处理繁重的文档工作流。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Markdown Converter",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/steipete/markdown-converter",
+        "description": {
+          "en": "Convert various document formats (HTML, Text, etc.) into clean Markdown.",
+          "zh": "将各种文档格式（HTML、文本等）转换为干净的 Markdown。"
+        },
+        "useCase": {
+          "en": "Standardizing study materials into a single readable format.",
+          "zh": "将学习资料标准化为统一的可读格式。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Typst MCP",
+        "url": "https://github.com/johannesbrandenburger/typst-mcp",
+        "description": {
+          "en": "Compiles and validates Typst code (a modern alternative to LaTeX).",
+          "zh": "编译并验证 Typst 代码（LaTeX 的现代替代品）。"
+        },
+        "useCase": {
+          "en": "Writing academic papers, learning typesetting.",
+          "zh": "撰写学术论文、学习排版。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "MarkItDown",
+        "url": "https://github.com/microsoft/markitdown",
+        "description": {
+          "en": "Converts various file formats (PDF, PowerPoint, Word) into clean Markdown.",
+          "zh": "将各种文件格式（PDF、PowerPoint、Word）转换为干净的 Markdown。"
+        },
+        "useCase": {
+          "en": "Summarizing lectures, converting study materials.",
+          "zh": "总结讲座、转换学习资料。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Pandoc MCP",
+        "url": "https://github.com/vivekVells/mcp-pandoc",
+        "description": {
+          "en": "Seamless document format conversion (Docx ↔ Markdown ↔ HTML ↔ PDF) using Pandoc.",
+          "zh": "使用 Pandoc 进行无缝文档格式转换（Docx ↔ Markdown ↔ HTML ↔ PDF）。"
+        },
+        "useCase": {
+          "en": "Converting assignments, formatting thesis.",
+          "zh": "转换作业、格式化论文。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Microsoft 365 MCP",
+        "url": "https://github.com/softeria/ms-365-mcp-server",
+        "description": {
+          "en": "Connects to Microsoft Graph API for Word, Excel, and Outlook.",
+          "zh": "连接 Microsoft Graph API 以使用 Word、Excel 和 Outlook。"
+        },
+        "useCase": {
+          "en": "Processing assignment docs, managing academic email.",
+          "zh": "处理作业文档、管理学术邮件。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Wikipedia MCP",
+        "url": "https://github.com/Rudra-ravi/wikipedia-mcp",
+        "description": {
+          "en": "Search and retrieve summaries from Wikipedia.",
+          "zh": "搜索并检索维基百科的摘要信息。"
+        },
+        "useCase": {
+          "en": "General knowledge, fact checking, history research.",
+          "zh": "通用知识、事实核查、历史研究。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "PDFMathTranslate",
+        "url": "https://github.com/PDFMathTranslate/PDFMathTranslate",
+        "description": {
+          "en": "Translate scientific papers while preserving layout and formulas.",
+          "zh": "在保留排版和公式的同时翻译科学论文。"
+        },
+        "useCase": {
+          "en": "Reading foreign literature, academic translation.",
+          "zh": "阅读外文文献、学术翻译。"
+        },
+        "type": "Skill"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Notes & Knowledge Base",
+      "zh": "笔记与知识库"
+    },
+    "description": {
+      "en": "Note-taking, personal knowledge management (PKM), and document processing.",
+      "zh": "笔记整理、个人知识库管理 (PKM) 及文档处理。"
+    },
+    "skills": [
       {
         "name": "claudian",
         "url": "https://github.com/YishenTu/claudian",
@@ -769,6 +1921,32 @@
         "useCase": {
           "en": "Academic note organizing, Zettelkasten maintenance, connecting thesis ideas.",
           "zh": "学术笔记整理、Zettelkasten (卡片盒笔记法) 维护、论文灵感连接。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Logseq Skill",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/juanirm/logseq",
+        "description": {
+          "en": "Commands for interacting with a local Logseq graph/knowledge base.",
+          "zh": "用于与本地 Logseq 图/知识库交互的命令。"
+        },
+        "useCase": {
+          "en": "Knowledge management, daily journaling, connecting ideas.",
+          "zh": "知识管理、每日日记、连接想法。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Rationality",
+        "url": "https://github.com/openclaw/skills/tree/main/skills/xertrov/rationality",
+        "description": {
+          "en": "A structured framework for rational thinking, bias checking, and decision making.",
+          "zh": "理性思维、偏见检查和决策的结构化框架。"
+        },
+        "useCase": {
+          "en": "Critical thinking, argument analysis, complex decision support.",
+          "zh": "批判性思维、论证分析、复杂决策支持。"
         },
         "type": "Skill"
       },
@@ -795,19 +1973,6 @@
         "useCase": {
           "en": "Quick recording of class points, meeting minutes organization.",
           "zh": "快速记录课堂重点、会议纪要整理。"
-        },
-        "type": "Skill"
-      },
-      {
-        "name": "claude-prompt-engineering-guide",
-        "url": "https://github.com/ThamJiaHe/claude-prompt-engineering-guide",
-        "description": {
-          "en": "Comprehensive guide for writing professional Claude prompts, including MCP, Skills integration. Aligns with Anthropic official best practices.",
-          "zh": "编写专业 Claude 提示词的综合指南，包含 MCP、Skills 集成。符合 Anthropic 官方最佳实践。"
-        },
-        "useCase": {
-          "en": "Learning how to better control AI models.",
-          "zh": "学习如何更好地控制 AI 模型。"
         },
         "type": "Skill"
       },
@@ -864,6 +2029,187 @@
         "type": "MCP"
       },
       {
+        "name": "Obsidian REST MCP",
+        "url": "https://github.com/MarkusPfundstein/mcp-obsidian",
+        "description": {
+          "en": "Interact with a local Obsidian vault via REST API for knowledge management.",
+          "zh": "通过 REST API 与本地 Obsidian 库交互，进行知识管理。"
+        },
+        "useCase": {
+          "en": "Managing personal knowledge base programmatically.",
+          "zh": "以编程方式管理个人知识库。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Google Drive MCP",
+        "url": "https://github.com/isaacphi/mcp-gdrive",
+        "description": {
+          "en": "Read and search for files within Google Drive.",
+          "zh": "在 Google Drive 中读取和搜索文件。"
+        },
+        "useCase": {
+          "en": "Accessing cloud documents, organizing coursework.",
+          "zh": "访问云文档、整理课程作业。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "OpenZIM MCP",
+        "url": "https://github.com/cameronrye/openzim-mcp",
+        "description": {
+          "en": "Access ZIM format knowledge bases offline (Wikipedia, etc.) without internet access.",
+          "zh": "在没有网络的情况下离线访问 ZIM 格式的知识库（如维基百科）。"
+        },
+        "useCase": {
+          "en": "Offline research, encyclopedic knowledge lookup.",
+          "zh": "离线研究、百科知识查询。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Rember (Flashcards)",
+        "url": "https://github.com/rember/rember-mcp",
+        "description": {
+          "en": "Create spaced repetition flashcards in Rember to remember anything you learn.",
+          "zh": "在 Rember 中创建间隔重复抽认卡，以记住你学到的任何东西。"
+        },
+        "useCase": {
+          "en": "Exam preparation, vocabulary learning.",
+          "zh": "备考、词汇学习。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Apple Notes MCP",
+        "url": "https://github.com/henilcalagiya/mcp-apple-notes",
+        "description": {
+          "en": "Read and write Apple Notes directly. Organize lecture notes on macOS.",
+          "zh": "直接读取和写入 Apple Notes。在 macOS 上整理课堂笔记。"
+        },
+        "useCase": {
+          "en": "Organizing class notes, syncing summaries.",
+          "zh": "整理课堂笔记、同步摘要。"
+        },
+        "type": "MCP"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Career & Productivity",
+      "zh": "职业规划与生产力"
+    },
+    "description": {
+      "en": "Career development, project management, communication, and task tracking.",
+      "zh": "职业发展、项目管理、沟通协作及任务追踪。"
+    },
+    "skills": [
+      {
+        "name": "Exa AI Search",
+        "url": "https://github.com/exa-labs/exa-mcp-server",
+        "description": {
+          "en": "A search engine designed specifically for AI agents to retrieve high-quality, relevant content.",
+          "zh": "专为 AI 代理设计的搜索引擎，用于检索高质量、相关的内容。"
+        },
+        "useCase": {
+          "en": "Deep research, finding verified sources.",
+          "zh": "深度研究、查找经过验证的来源。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Brave Search",
+        "url": "https://github.com/brave/brave-search-mcp-server",
+        "description": {
+          "en": "Privacy-focused web search to let agents find current information without tracking.",
+          "zh": "注重隐私的 Web 搜索，让代理在不被追踪的情况下查找最新信息。"
+        },
+        "useCase": {
+          "en": "General research, finding current events.",
+          "zh": "一般研究、查找时事。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Slack MCP",
+        "url": "https://github.com/jtalk22/slack-mcp-server",
+        "description": {
+          "en": "Interact with Slack channels and DMs. Good for study groups or class communication.",
+          "zh": "与 Slack 频道和私信交互。非常适合学习小组或班级交流。"
+        },
+        "useCase": {
+          "en": "Team collaboration, study group management.",
+          "zh": "团队协作、学习小组管理。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Time Tracking (Toggl)",
+        "url": "https://github.com/louis030195/toggl-mcp",
+        "description": {
+          "en": "Start and stop timers via Toggl Track. Useful for the Pomodoro technique.",
+          "zh": "通过 Toggl Track 启动和停止计时器。适用于番茄工作法。"
+        },
+        "useCase": {
+          "en": "Productivity tracking, study hour logging.",
+          "zh": "生产力追踪、学习时长记录。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Filesystem (Go)",
+        "url": "https://github.com/mark3labs/mcp-filesystem-server",
+        "description": {
+          "en": "Robust local file system access to let agents read your project files (Go implementation).",
+          "zh": "强大的本地文件系统访问，允许代理读取你的项目文件（Go 实现）。"
+        },
+        "useCase": {
+          "en": "Managing local projects, organizing downloads.",
+          "zh": "管理本地项目、整理下载内容。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Discord MCP",
+        "url": "https://github.com/v-v-vishnu/discord-mcp-server",
+        "description": {
+          "en": "Connects Claude to Discord servers. Read messages and manage communities.",
+          "zh": "将 Claude 连接到 Discord 服务器。阅读消息并管理社区。"
+        },
+        "useCase": {
+          "en": "Managing study groups or student communities.",
+          "zh": "管理学习小组或学生社区。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Linear MCP",
+        "url": "https://github.com/jerhadf/linear-mcp-server",
+        "description": {
+          "en": "Manage tasks and issues in Linear. Create tickets from conversations.",
+          "zh": "在 Linear 中管理任务和问题。从对话中创建工单。"
+        },
+        "useCase": {
+          "en": "Students learning Agile/Scrum project management.",
+          "zh": "学生学习敏捷/Scrum 项目管理。"
+        },
+        "type": "MCP"
+      },
+      {
+        "name": "Todoist MCP",
+        "url": "https://github.com/actionsOnGoogle/todoist-mcp-server",
+        "description": {
+          "en": "Manage your Todoist tasks directly. Add homework or project deadlines.",
+          "zh": "直接管理 Todoist 任务。添加作业或项目截止日期。"
+        },
+        "useCase": {
+          "en": "Personal task tracking and deadline management.",
+          "zh": "个人任务追踪和截止日期管理。"
+        },
+        "type": "MCP"
+      },
+      {
         "name": "Resume-Analysis-Assistant",
         "url": "https://github.com/amogh-vardhan/Resume-Analysis-and-Recruitment-Assistant",
         "description": {
@@ -906,14 +2252,27 @@
   },
   {
     "category": {
-      "en": "MCP & Meta Skills",
-      "zh": "MCP 与元技能"
+      "en": "Meta Skills",
+      "zh": "元技能"
     },
     "description": {
-      "en": "Meta-skills for prompting and Model Context Protocol servers.",
-      "zh": "提示词元技能及 Model Context Protocol (MCP) 服务器。"
+      "en": "Prompt engineering, MCP meta-lists, and skill development tools.",
+      "zh": "提示词工程、MCP 元列表及技能开发工具。"
     },
     "skills": [
+      {
+        "name": "claude-prompt-engineering-guide",
+        "url": "https://github.com/ThamJiaHe/claude-prompt-engineering-guide",
+        "description": {
+          "en": "Comprehensive guide for writing professional Claude prompts, including MCP, Skills integration. Aligns with Anthropic official best practices.",
+          "zh": "编写专业 Claude 提示词的综合指南，包含 MCP、Skills 集成。符合 Anthropic 官方最佳实践。"
+        },
+        "useCase": {
+          "en": "Learning how to better control AI models.",
+          "zh": "学习如何更好地控制 AI 模型。"
+        },
+        "type": "Skill"
+      },
       {
         "name": "awesome-claude-skills (mejba13)",
         "url": "https://github.com/mejba13/awesome-claude-skills",
@@ -976,6 +2335,19 @@
         "useCase": {
           "en": "Mastering a new framework by converting documentation into an AI tutor.",
           "zh": "通过将文档转换为 AI 导师来掌握新框架。"
+        },
+        "type": "Skill"
+      },
+      {
+        "name": "Anthropic MCP Builder",
+        "url": "https://github.com/anthropics/anthropic-skills/tree/main/skills/mcp-builder",
+        "description": {
+          "en": "A meta-skill that helps you build, test, and debug new MCP servers.",
+          "zh": "一个用于帮助你构建、测试和调试新 MCP 服务器的元技能。"
+        },
+        "useCase": {
+          "en": "Developing custom tools for Claude, learning MCP architecture.",
+          "zh": "为 Claude 开发自定义工具，学习 MCP 架构。"
         },
         "type": "Skill"
       }
