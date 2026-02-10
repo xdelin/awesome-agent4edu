@@ -1,0 +1,250 @@
+{
+  "name": "MCP JS",
+  "tree": [
+    {
+      "name": ".cursor",
+      "type": "folder",
+      "path": ".cursor",
+      "children": [
+        {
+          "name": "mcp.json",
+          "type": "file",
+          "path": ".cursor/mcp.json",
+          "size": 184,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "server",
+      "type": "folder",
+      "path": "server",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "server/src",
+          "children": [
+            {
+              "name": "mcp",
+              "type": "folder",
+              "path": "server/src/mcp",
+              "children": [
+                {
+                  "name": "heap_storage.rs",
+                  "type": "file",
+                  "path": "server/src/mcp/heap_storage.rs",
+                  "size": 3514,
+                  "language": "rs"
+                }
+              ]
+            },
+            {
+              "name": "main.rs",
+              "type": "file",
+              "path": "server/src/main.rs",
+              "size": 10323,
+              "language": "rs"
+            },
+            {
+              "name": "mcp.rs",
+              "type": "file",
+              "path": "server/src/mcp.rs",
+              "size": 9126,
+              "language": "rs"
+            },
+            {
+              "name": "run_js_tool_description.md",
+              "type": "file",
+              "path": "server/src/run_js_tool_description.md",
+              "size": 11001,
+              "language": "md"
+            },
+            {
+              "name": "run_js_tool_stateless.md",
+              "type": "file",
+              "path": "server/src/run_js_tool_stateless.md",
+              "size": 10896,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "tests",
+          "type": "folder",
+          "path": "server/tests",
+          "children": [
+            {
+              "name": "common",
+              "type": "folder",
+              "path": "server/tests/common",
+              "children": [
+                {
+                  "name": "mod.rs",
+                  "type": "file",
+                  "path": "server/tests/common/mod.rs",
+                  "size": 1712,
+                  "language": "rs"
+                }
+              ]
+            },
+            {
+              "name": "http_e2e.rs",
+              "type": "file",
+              "path": "server/tests/http_e2e.rs",
+              "size": 10073,
+              "language": "rs"
+            },
+            {
+              "name": "http_integration.rs",
+              "type": "file",
+              "path": "server/tests/http_integration.rs",
+              "size": 6833,
+              "language": "rs"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "server/tests/README.md",
+              "size": 10373,
+              "language": "md"
+            },
+            {
+              "name": "sse_e2e.rs",
+              "type": "file",
+              "path": "server/tests/sse_e2e.rs",
+              "size": 17060,
+              "language": "rs"
+            },
+            {
+              "name": "sse_integration.rs",
+              "type": "file",
+              "path": "server/tests/sse_integration.rs",
+              "size": 6461,
+              "language": "rs"
+            },
+            {
+              "name": "stdio_e2e.rs",
+              "type": "file",
+              "path": "server/tests/stdio_e2e.rs",
+              "size": 17937,
+              "language": "rs"
+            },
+            {
+              "name": "stdio_integration.rs",
+              "type": "file",
+              "path": "server/tests/stdio_integration.rs",
+              "size": 6675,
+              "language": "rs"
+            }
+          ]
+        },
+        {
+          "name": "Cargo.toml",
+          "type": "file",
+          "path": "server/Cargo.toml",
+          "size": 937,
+          "language": "toml"
+        }
+      ]
+    },
+    {
+      "name": "snapshot",
+      "type": "folder",
+      "path": "snapshot",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "snapshot/src",
+          "children": [
+            {
+              "name": "main.rs",
+              "type": "file",
+              "path": "snapshot/src/main.rs",
+              "size": 3126,
+              "language": "rs"
+            }
+          ]
+        },
+        {
+          "name": "Cargo.toml",
+          "type": "file",
+          "path": "snapshot/Cargo.toml",
+          "size": 155,
+          "language": "toml"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "stdio_e2e.rs",
+          "type": "file",
+          "path": "tests/stdio_e2e.rs",
+          "size": 16309,
+          "language": "rs"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 77,
+      "language": "text"
+    },
+    {
+      "name": "DOCKER.md",
+      "type": "file",
+      "path": "DOCKER.md",
+      "size": 3250,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 1233,
+      "language": "text"
+    },
+    {
+      "name": "install.sh",
+      "type": "file",
+      "path": "install.sh",
+      "size": 1424,
+      "language": "sh"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 668,
+      "language": "text"
+    },
+    {
+      "name": "notes.md",
+      "type": "file",
+      "path": "notes.md",
+      "size": 4468,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9052,
+      "language": "md"
+    },
+    {
+      "name": "SSE_IMPLEMENTATION.md",
+      "type": "file",
+      "path": "SSE_IMPLEMENTATION.md",
+      "size": 5856,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "name": "DeepL API",
+  "tree": [
+    {
+      "name": "deepl",
+      "type": "folder",
+      "path": "deepl",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "deepl/__init__.py",
+          "size": 1614,
+          "language": "py"
+        },
+        {
+          "name": "__main__.py",
+          "type": "file",
+          "path": "deepl/__main__.py",
+          "size": 23738,
+          "language": "py"
+        },
+        {
+          "name": "api_data.py",
+          "type": "file",
+          "path": "deepl/api_data.py",
+          "size": 29020,
+          "language": "py"
+        },
+        {
+          "name": "deepl_client.py",
+          "type": "file",
+          "path": "deepl/deepl_client.py",
+          "size": 27466,
+          "language": "py"
+        },
+        {
+          "name": "exceptions.py",
+          "type": "file",
+          "path": "deepl/exceptions.py",
+          "size": 2830,
+          "language": "py"
+        },
+        {
+          "name": "http_client.py",
+          "type": "file",
+          "path": "deepl/http_client.py",
+          "size": 9077,
+          "language": "py"
+        },
+        {
+          "name": "translator.py",
+          "type": "file",
+          "path": "deepl/translator.py",
+          "size": 48542,
+          "language": "py"
+        },
+        {
+          "name": "util.py",
+          "type": "file",
+          "path": "deepl/util.py",
+          "size": 6404,
+          "language": "py"
+        },
+        {
+          "name": "version.py",
+          "type": "file",
+          "path": "deepl/version.py",
+          "size": 172,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "basic_usage",
+          "type": "folder",
+          "path": "examples/basic_usage",
+          "children": [
+            {
+              "name": "__main__.py",
+              "type": "file",
+              "path": "examples/basic_usage/__main__.py",
+              "size": 1779,
+              "language": "py"
+            },
+            {
+              "name": "mypy.ini",
+              "type": "file",
+              "path": "examples/basic_usage/mypy.ini",
+              "size": 23,
+              "language": "ini"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/basic_usage/README.md",
+              "size": 187,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "json",
+          "type": "folder",
+          "path": "examples/json",
+          "children": [
+            {
+              "name": "__main__.py",
+              "type": "file",
+              "path": "examples/json/__main__.py",
+              "size": 2763,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/json/README.md",
+              "size": 1232,
+              "language": "md"
+            },
+            {
+              "name": "translate_json.py",
+              "type": "file",
+              "path": "examples/json/translate_json.py",
+              "size": 3130,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "mustache",
+          "type": "folder",
+          "path": "examples/mustache",
+          "children": [
+            {
+              "name": "__main__.py",
+              "type": "file",
+              "path": "examples/mustache/__main__.py",
+              "size": 2856,
+              "language": "py"
+            },
+            {
+              "name": "html_parsing.py",
+              "type": "file",
+              "path": "examples/mustache/html_parsing.py",
+              "size": 2988,
+              "language": "py"
+            },
+            {
+              "name": "mustache.py",
+              "type": "file",
+              "path": "examples/mustache/mustache.py",
+              "size": 4566,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/mustache/README.md",
+              "size": 2155,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "voice",
+          "type": "folder",
+          "path": "examples/voice",
+          "children": [
+            {
+              "name": "cli",
+              "type": "folder",
+              "path": "examples/voice/cli",
+              "children": [
+                {
+                  "name": "deepl-voice-api-cli.py",
+                  "type": "file",
+                  "path": "examples/voice/cli/deepl-voice-api-cli.py",
+                  "size": 14082,
+                  "language": "py"
+                },
+                {
+                  "name": "pyaudio_utils.py",
+                  "type": "file",
+                  "path": "examples/voice/cli/pyaudio_utils.py",
+                  "size": 4674,
+                  "language": "py"
+                },
+                {
+                  "name": "pyproject.toml",
+                  "type": "file",
+                  "path": "examples/voice/cli/pyproject.toml",
+                  "size": 751,
+                  "language": "toml"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "examples/voice/cli/README.md",
+                  "size": 2882,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 150,
+          "language": "py"
+        },
+        {
+          "name": "conftest.py",
+          "type": "file",
+          "path": "tests/conftest.py",
+          "size": 16679,
+          "language": "py"
+        },
+        {
+          "name": "test_cli.py",
+          "type": "file",
+          "path": "tests/test_cli.py",
+          "size": 15656,
+          "language": "py"
+        },
+        {
+          "name": "test_general.py",
+          "type": "file",
+          "path": "tests/test_general.py",
+          "size": 12745,
+          "language": "py"
+        },
+        {
+          "name": "test_glossary.py",
+          "type": "file",
+          "path": "tests/test_glossary.py",
+          "size": 10330,
+          "language": "py"
+        },
+        {
+          "name": "test_multilingual_glossary.py",
+          "type": "file",
+          "path": "tests/test_multilingual_glossary.py",
+          "size": 18787,
+          "language": "py"
+        },
+        {
+          "name": "test_rephrase_text.py",
+          "type": "file",
+          "path": "tests/test_rephrase_text.py",
+          "size": 1223,
+          "language": "py"
+        },
+        {
+          "name": "test_style_rules.py",
+          "type": "file",
+          "path": "tests/test_style_rules.py",
+          "size": 1238,
+          "language": "py"
+        },
+        {
+          "name": "test_translate_document.py",
+          "type": "file",
+          "path": "tests/test_translate_document.py",
+          "size": 11607,
+          "language": "py"
+        },
+        {
+          "name": "test_translate_text.py",
+          "type": "file",
+          "path": "tests/test_translate_text.py",
+          "size": 15265,
+          "language": "py"
+        },
+        {
+          "name": "test_util.py",
+          "type": "file",
+          "path": "tests/test_util.py",
+          "size": 1314,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".bumpversion.toml",
+      "type": "file",
+      "path": ".bumpversion.toml",
+      "size": 828,
+      "language": "toml"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 104,
+      "language": "text"
+    },
+    {
+      "name": ".gitlab-ci.yml",
+      "type": "file",
+      "path": ".gitlab-ci.yml",
+      "size": 6844,
+      "language": "yml"
+    },
+    {
+      "name": "catalog-info.yaml",
+      "type": "file",
+      "path": "catalog-info.yaml",
+      "size": 292,
+      "language": "yaml"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 18148,
+      "language": "md"
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 5654,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 1385,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1104,
+      "language": "text"
+    },
+    {
+      "name": "license_checker.sh",
+      "type": "file",
+      "path": "license_checker.sh",
+      "size": 400,
+      "language": "sh"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 1528,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 37603,
+      "language": "md"
+    },
+    {
+      "name": "SECURITY.md",
+      "type": "file",
+      "path": "SECURITY.md",
+      "size": 3408,
+      "language": "md"
+    },
+    {
+      "name": "upgrading_to_multilingual_glossaries.md",
+      "type": "file",
+      "path": "upgrading_to_multilingual_glossaries.md",
+      "size": 13730,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "name": "Ensembl MCP",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "handlers",
+          "type": "folder",
+          "path": "src/handlers",
+          "children": [
+            {
+              "name": "tools.ts",
+              "type": "file",
+              "path": "src/handlers/tools.ts",
+              "size": 18732,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types",
+          "type": "folder",
+          "path": "src/types",
+          "children": [
+            {
+              "name": "ensembl.ts",
+              "type": "file",
+              "path": "src/types/ensembl.ts",
+              "size": 1858,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "ensembl-api.ts",
+              "type": "file",
+              "path": "src/utils/ensembl-api.ts",
+              "size": 18453,
+              "language": "ts"
+            },
+            {
+              "name": "input-normalizer.ts",
+              "type": "file",
+              "path": "src/utils/input-normalizer.ts",
+              "size": 9243,
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "input-normalizer.test.ts",
+          "type": "file",
+          "path": "tests/input-normalizer.test.ts",
+          "size": 10075,
+          "language": "ts"
+        },
+        {
+          "name": "run-all-tests.ts",
+          "type": "file",
+          "path": "tests/run-all-tests.ts",
+          "size": 4924,
+          "language": "ts"
+        },
+        {
+          "name": "test-compara.ts",
+          "type": "file",
+          "path": "tests/test-compara.ts",
+          "size": 4852,
+          "language": "ts"
+        },
+        {
+          "name": "test-feature-overlap.ts",
+          "type": "file",
+          "path": "tests/test-feature-overlap.ts",
+          "size": 4426,
+          "language": "ts"
+        },
+        {
+          "name": "test-lookup.ts",
+          "type": "file",
+          "path": "tests/test-lookup.ts",
+          "size": 5660,
+          "language": "ts"
+        },
+        {
+          "name": "test-mapping.ts",
+          "type": "file",
+          "path": "tests/test-mapping.ts",
+          "size": 4155,
+          "language": "ts"
+        },
+        {
+          "name": "test-meta.ts",
+          "type": "file",
+          "path": "tests/test-meta.ts",
+          "size": 5648,
+          "language": "ts"
+        },
+        {
+          "name": "test-ontotax.ts",
+          "type": "file",
+          "path": "tests/test-ontotax.ts",
+          "size": 6702,
+          "language": "ts"
+        },
+        {
+          "name": "test-protein-features.ts",
+          "type": "file",
+          "path": "tests/test-protein-features.ts",
+          "size": 4267,
+          "language": "ts"
+        },
+        {
+          "name": "test-regulatory.ts",
+          "type": "file",
+          "path": "tests/test-regulatory.ts",
+          "size": 3826,
+          "language": "ts"
+        },
+        {
+          "name": "test-sequence.ts",
+          "type": "file",
+          "path": "tests/test-sequence.ts",
+          "size": 5881,
+          "language": "ts"
+        },
+        {
+          "name": "test-variation.ts",
+          "type": "file",
+          "path": "tests/test-variation.ts",
+          "size": 7494,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 456,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 544,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile.bun",
+      "type": "file",
+      "path": "Dockerfile.bun",
+      "size": 380,
+      "language": "bun"
+    },
+    {
+      "name": "index.ts",
+      "type": "file",
+      "path": "index.ts",
+      "size": 5598,
+      "language": "ts"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1082,
+      "language": "text"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 109378,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1370,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8403,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 469,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 769,
+      "language": "json"
+    }
+  ]
+}

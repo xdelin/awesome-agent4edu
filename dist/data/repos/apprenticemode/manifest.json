@@ -1,0 +1,89 @@
+{
+  "name": "apprenticemode",
+  "tree": [
+    {
+      "name": ".claude-plugin",
+      "type": "folder",
+      "path": ".claude-plugin",
+      "children": [
+        {
+          "name": "marketplace.json",
+          "type": "file",
+          "path": ".claude-plugin/marketplace.json",
+          "size": 657,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "plugins",
+      "type": "folder",
+      "path": "plugins",
+      "children": [
+        {
+          "name": "claudebrief",
+          "type": "folder",
+          "path": "plugins/claudebrief",
+          "children": [
+            {
+              "name": ".claude-plugin",
+              "type": "folder",
+              "path": "plugins/claudebrief/.claude-plugin",
+              "children": [
+                {
+                  "name": "plugin.json",
+                  "type": "file",
+                  "path": "plugins/claudebrief/.claude-plugin/plugin.json",
+                  "size": 431,
+                  "language": "json"
+                }
+              ]
+            },
+            {
+              "name": "commands",
+              "type": "folder",
+              "path": "plugins/claudebrief/commands",
+              "children": [
+                {
+                  "name": "reflect.md",
+                  "type": "file",
+                  "path": "plugins/claudebrief/commands/reflect.md",
+                  "size": 9322,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "CLAUDE.md",
+              "type": "file",
+              "path": "plugins/claudebrief/CLAUDE.md",
+              "size": 1649,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 199,
+      "language": "text"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 1320,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3693,
+      "language": "md"
+    }
+  ]
+}

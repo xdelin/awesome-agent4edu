@@ -1,0 +1,362 @@
+{
+  "name": "RDKit MCP Server",
+  "tree": [
+    {
+      "name": "evals",
+      "type": "folder",
+      "path": "evals",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "evals/__init__.py",
+          "size": 32,
+          "language": "py"
+        },
+        {
+          "name": "batch_comparison_dataset.py",
+          "type": "file",
+          "path": "evals/batch_comparison_dataset.py",
+          "size": 5959,
+          "language": "py"
+        },
+        {
+          "name": "compute_descriptors_dataset.py",
+          "type": "file",
+          "path": "evals/compute_descriptors_dataset.py",
+          "size": 12094,
+          "language": "py"
+        },
+        {
+          "name": "evaluators.py",
+          "type": "file",
+          "path": "evals/evaluators.py",
+          "size": 3682,
+          "language": "py"
+        },
+        {
+          "name": "rdkit_dataset.py",
+          "type": "file",
+          "path": "evals/rdkit_dataset.py",
+          "size": 8850,
+          "language": "py"
+        },
+        {
+          "name": "run_evals.py",
+          "type": "file",
+          "path": "evals/run_evals.py",
+          "size": 6080,
+          "language": "py"
+        },
+        {
+          "name": "task.py",
+          "type": "file",
+          "path": "evals/task.py",
+          "size": 4982,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "rdkit_mcp",
+      "type": "folder",
+      "path": "rdkit_mcp",
+      "children": [
+        {
+          "name": "Chem",
+          "type": "folder",
+          "path": "rdkit_mcp/Chem",
+          "children": [
+            {
+              "name": "rdchem",
+              "type": "folder",
+              "path": "rdkit_mcp/Chem/rdchem",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "rdkit_mcp/Chem/rdchem/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "Mol.py",
+                  "type": "file",
+                  "path": "rdkit_mcp/Chem/rdchem/Mol.py",
+                  "size": 3324,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "Scaffolds",
+              "type": "folder",
+              "path": "rdkit_mcp/Chem/Scaffolds",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "rdkit_mcp/Chem/Scaffolds/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "MurckoScaffold.py",
+                  "type": "file",
+                  "path": "rdkit_mcp/Chem/Scaffolds/MurckoScaffold.py",
+                  "size": 990,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "rdkit_mcp/Chem/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "Descriptors.py",
+              "type": "file",
+              "path": "rdkit_mcp/Chem/Descriptors.py",
+              "size": 7820,
+              "language": "py"
+            },
+            {
+              "name": "Draw.py",
+              "type": "file",
+              "path": "rdkit_mcp/Chem/Draw.py",
+              "size": 6000,
+              "language": "py"
+            },
+            {
+              "name": "rdDepictor.py",
+              "type": "file",
+              "path": "rdkit_mcp/Chem/rdDepictor.py",
+              "size": 2323,
+              "language": "py"
+            },
+            {
+              "name": "rdDistGeom.py",
+              "type": "file",
+              "path": "rdkit_mcp/Chem/rdDistGeom.py",
+              "size": 10857,
+              "language": "py"
+            },
+            {
+              "name": "rdMMPA.py",
+              "type": "file",
+              "path": "rdkit_mcp/Chem/rdMMPA.py",
+              "size": 2319,
+              "language": "py"
+            },
+            {
+              "name": "rdMolDescriptors.py",
+              "type": "file",
+              "path": "rdkit_mcp/Chem/rdMolDescriptors.py",
+              "size": 14543,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "DataStructs",
+          "type": "folder",
+          "path": "rdkit_mcp/DataStructs",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "rdkit_mcp/DataStructs/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "TanimotoSimilarity.py",
+              "type": "file",
+              "path": "rdkit_mcp/DataStructs/TanimotoSimilarity.py",
+              "size": 2493,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "rdkit_mcp/__init__.py",
+          "size": 940,
+          "language": "py"
+        },
+        {
+          "name": "base_tools.py",
+          "type": "file",
+          "path": "rdkit_mcp/base_tools.py",
+          "size": 6016,
+          "language": "py"
+        },
+        {
+          "name": "batch_tools.py",
+          "type": "file",
+          "path": "rdkit_mcp/batch_tools.py",
+          "size": 4985,
+          "language": "py"
+        },
+        {
+          "name": "decorators.py",
+          "type": "file",
+          "path": "rdkit_mcp/decorators.py",
+          "size": 2077,
+          "language": "py"
+        },
+        {
+          "name": "register_tools.py",
+          "type": "file",
+          "path": "rdkit_mcp/register_tools.py",
+          "size": 4269,
+          "language": "py"
+        },
+        {
+          "name": "settings.py",
+          "type": "file",
+          "path": "rdkit_mcp/settings.py",
+          "size": 332,
+          "language": "py"
+        },
+        {
+          "name": "types.py",
+          "type": "file",
+          "path": "rdkit_mcp/types.py",
+          "size": 792,
+          "language": "py"
+        },
+        {
+          "name": "utils.py",
+          "type": "file",
+          "path": "rdkit_mcp/utils.py",
+          "size": 2600,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "rdkit_mcp_clients",
+      "type": "folder",
+      "path": "rdkit_mcp_clients",
+      "children": [
+        {
+          "name": "openai.py",
+          "type": "file",
+          "path": "rdkit_mcp_clients/openai.py",
+          "size": 4110,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "test_base_tools.py",
+          "type": "file",
+          "path": "tests/test_base_tools.py",
+          "size": 5725,
+          "language": "py"
+        },
+        {
+          "name": "test_compute_descriptors.py",
+          "type": "file",
+          "path": "tests/test_compute_descriptors.py",
+          "size": 14106,
+          "language": "py"
+        },
+        {
+          "name": "test_list_tools.py",
+          "type": "file",
+          "path": "tests/test_list_tools.py",
+          "size": 1214,
+          "language": "py"
+        },
+        {
+          "name": "test_rdDistGeom.py",
+          "type": "file",
+          "path": "tests/test_rdDistGeom.py",
+          "size": 25489,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 103,
+      "language": "text"
+    },
+    {
+      "name": "CONTRIB.md",
+      "type": "file",
+      "path": "CONTRIB.md",
+      "size": 1023,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 997,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1086,
+      "language": "text"
+    },
+    {
+      "name": "list_tools.py",
+      "type": "file",
+      "path": "list_tools.py",
+      "size": 1648,
+      "language": "py"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 1430,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 2569,
+      "language": "md"
+    },
+    {
+      "name": "run_client.py",
+      "type": "file",
+      "path": "run_client.py",
+      "size": 493,
+      "language": "py"
+    },
+    {
+      "name": "run_server.py",
+      "type": "file",
+      "path": "run_server.py",
+      "size": 3321,
+      "language": "py"
+    },
+    {
+      "name": "settings.example.yaml",
+      "type": "file",
+      "path": "settings.example.yaml",
+      "size": 402,
+      "language": "yaml"
+    }
+  ]
+}

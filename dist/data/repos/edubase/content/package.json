@@ -1,0 +1,30 @@
+{
+  "name": "@edubase/mcp",
+  "version": "1.0.21",
+  "description": "EduBase MCP server",
+  "license": "MIT",
+  "author": "EduBase, LLC (https://www.edubase.net)",
+  "homepage": "https://www.edubase.net",
+  "bugs": "https://github.com/EduBase/MCP/issues",
+  "type": "module",
+  "bin": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.3",
+    "query-string": "^9.3.1",
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "shx": "^0.4.0",
+    "typescript": "^5.9.3"
+  }
+}

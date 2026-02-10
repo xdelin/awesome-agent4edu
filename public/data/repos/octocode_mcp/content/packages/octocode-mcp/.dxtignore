@@ -1,0 +1,46 @@
+# DXT packaging exclusions
+# Development files
+src/
+tests/
+*.test.ts
+*.test.js
+coverage/
+
+# Build tools
+rollup.config.js
+tsconfig.json
+tsconfig.test.json
+vitest.config.ts
+jest.config.js
+
+# Documentation
+docs/
+CHANGELOG.md
+TODO.md
+
+# Development dependencies
+.yarn/
+.yarnrc
+yarn.lock
+package-lock.json
+
+# IDE and system files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temp files
+*.log
+tmp/
+temp/
+
+# Other DXT files
+*.dxt
+
+# Test fixtures
+test/ 
+
+# sqlite DB
+mcp.sqlite

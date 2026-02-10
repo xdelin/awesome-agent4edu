@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rdkit-mcp-server"
+version = "0.2.3"
+description = "MCP Server providing RDKit cheminformatics tools."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" } # Optional: Add a license file if desired
+authors = [
+    { name = "Fred Parsons", email = "frederick.parsons@tandemai.com" },
+    { name = "Mike Rosengrant", email = "michael.rosengrant@tandemai.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Framework :: AsyncIO",
+]
+dependencies = [
+    "mcp>=1.23.0", # The MCP SDK
+    "rdkit==2025.3.1",              # RDKit library (installation might need specific handling)
+    "Pillow>=11.3.0",             # For image generation with RDKit
+    "pydantic>=2.11.5",
+    "pydantic-settings>=2.9.1",
+    "pydantic-ai[openai,mcp]>=0.1.0",
+    "pyyaml"
+]
+
+[project.optional-dependencies]
+evals = [
+    "pydantic-evals>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/tandem-ai-inc/rdkit-mcp-server"
+Repository = "https://github.com/tandem-ai-inc/rdkit-mcp-server"
+
+[project.scripts]
+rdkit-mcp-server = "rdkit_mcp_server.__main__:main" # If we want a console script
+
+[tool.hatch.build.targets.wheel]
+packages = ["rdkit_mcp", "rdkit_mcp_clients"]

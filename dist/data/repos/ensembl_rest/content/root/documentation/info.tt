@@ -1,0 +1,251 @@
+[%#
+Copyright [1999-2015] Wellcome Trust Sanger Institute and the EMBL-European Bioinformatics Institute 
+Copyright [2016-2025] EMBL-European Bioinformatics Institute
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+%]
+
+<h1 id="title">[% template_title %]</h1>
+
+<div class="row">
+<div class="span10">
+<div class="lead">
+  <p>[% endpoint.description %]</p>
+</div>
+
+<h2>Parameters</h2>
+
+<h3>Required</h3>
+[% IF endpoint.has_required_params() %]
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Name</th><th>Type</th><th>Description</th><th>Default</th><th>Example Values</th>
+  </tr>
+</thead>
+<tbody>
+	[% FOREACH p IN endpoint.params.pairs %]
+		[% NEXT IF ! p.value.required %]
+    <tr>
+    <td>
+			[% p.key %]
+			[% IF p.value.deprecated %]<br/><span class="label label-important">Deprecated: use <var>[% p.value.deprecated %]</tvart></span>[% END %]
+		</td>
+    <td><var>[% p.value.type %]</var></td>
+    <td>[% p.value.description %]</td>
+    <td><var>
+      [% IF p.value.default.defined %] [% p.value.default %] [% ELSE %] - [% END %]
+    </var></td>
+    <td>
+			[% IF p.value.example %]
+      [% FOREACH eg IN p.value.example %]
+        <var>[% eg %]</var><br>
+      [% END %]
+			[% ELSE %]
+				<var>-</var>
+			[% END %]
+    </td>
+    </tr>
+	[% END %]
+</tbody>
+</table>
+[% ELSE %]
+   <p>No required parameters</p>
+[% END %]
+
+<h3>Optional</h3>
+
+[% IF endpoint.has_optional_params() %]
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th><th>Default</th><th>Example Values</th>
+    </tr>
+  </thead>
+    <tbody>
+  	[% FOREACH p IN endpoint.params.pairs %]
+			[% NEXT IF p.value.required %]
+      <tr>
+      <td>
+				[% p.key %]
+				[% IF p.value.deprecated %]<br/><span class="label label-important">Deprecated: use <var>[% p.value.deprecated %]</var></span>[% END %]
+			</td>
+      <td><var>[% p.value.type %]</var></td>
+      <td>[% p.value.description %]</td>
+      <td><var>
+        [% IF p.value.default.defined %] [% p.value.default %] [% ELSE %] - [% END %]
+      </var></td>
+      <td>
+				[% IF p.value.example %]
+	      [% FOREACH eg IN p.value.example %]
+	        <var>[% eg %]</var><br>
+	      [% END %]
+				[% ELSE %]
+					<var>-</var>
+				[% END %]
+      </td>
+      </tr>
+  	[% END %]
+  	</tbody>
+	</table>
+[% ELSE %]
+	<p>No optional parameters</p>
+	<br/>
+[% END %]
+
+[% IF endpoint.is_post %]
+  [% example_post = endpoint.examples.values.first %]
+  <h2>Message</h2>
+  <table class="table table-condensed table-striped">
+    <tbody>
+      <tr><td><b>Content-type</b></td><td><b>Format</b></td><td><b>Example</b></td></tr>
+      <tr><td>[% example_post.content %]</td><td>[% endpoint.postformat %]</td><td>[% example_post.body %]</td></tr>
+    </tbody>
+  </table>
+
+[% END %]
+
+<h2>Example Requests</h2>
+
+[% example_types = ['perl', 'python2', 'python3', 'ruby', 'java', 'r', 'curl', 'wget'] %]
+
+[% FOREACH p IN endpoint.examples.pairs %]
+	[% NEXT IF p.value.disable %]
+
+	[% filtered_uri = p.value.example.uri.replace('\+', '%2B') %]
+
+	<h3><a href="[% filtered_uri %]">[% filtered_uri %]</a></h3>
+	<br>
+	<ul class="nav nav-pills">
+	  <li class="active"><a href="#example[% p.value.id %]" data-toggle="tab">Example output</a></li>
+    [% IF endpoint.is_post -%]
+      <li ><a href="#input[% p.value.id %]" data-toggle="tab">Example input</a></li>
+    [% END %]
+		[% FOREACH e IN example_types %]
+		  <li><a href="#[% e %][% p.value.id %]" data-toggle="tab">[% e.ucfirst %]</a></li>
+		[% END %]
+	</ul>
+	<div class='tab-content'>
+	<div class='tab-pane active' id='example[% p.value.id %]'></div>
+    <!-- START FILLING AJAX TAB -->
+    <script>
+    var method = "[% endpoint.single_method %]";
+    var params = {
+      url : "[% filtered_uri %]",
+      type : method,
+     beforeSend : function () {
+        $("#example[% p.value.id %]").append("<img src='/static/img/e-loader.gif'>");
+        return true;
+     },
+      success : function (resp) {
+
+      // If it has a documentElement we assume it is xml
+      if (resp.documentElement == undefined) {
+         if (typeof (resp) === "string") {
+            $("#example[% p.value.id %]").append("<pre class=\"pre-scrollable\"> <code class=\"json\">" + [% FILTER html %]resp[% END %] + "</code></pre>");
+    	    $("#example[% p.value.id %]").each (function (i, block) {
+                $("#example[% p.value.id %]>img").remove();
+            })
+
+         } else {
+            var json = JSON.stringify(resp, undefined, 2);
+            $("#example[% p.value.id %]").append("<pre class=\"pre-scrollable\"> <code class=\"json\">" + [% FILTER html %]json[% END %] + "</code></pre>")
+	    $("#example[% p.value.id %]").each (function (i, block) {
+	         hljs.highlightBlock(block);
+	         $("#example[% p.value.id %]>img").remove();
+	    })
+         }
+
+     } else {
+         var xmlSerial = new XMLSerializer();
+         var xml_str = xmlSerial.serializeToString(resp);
+         $("#example[% p.value.id %]").append("<pre id=\"pre[% p.value.id %]\" class=\"pre-scrollable prettyprint\"></pre>");
+         $("#pre[% p.value.id %]").text([% FILTER html %]xml_str[% END %]);
+	 $("#example[% p.value.id %]").each (function (i, block) {
+	      hljs.highlightBlock(block);
+	      $("#example[% p.value.id %]>img").remove();
+	 })
+      }
+      },
+      error : function (resp, msg) {
+         $("#example[% p.value.id %]").append("<pre id=\"pre[% p.value.id %]\"></pre>");
+         $("#pre[% p.value.id %]").text(resp.responseText);
+         $("#example[% p.value.id %]>img").remove();
+      }
+      };
+
+      if(method === "POST") {
+        params.processData = false;
+        params.data = '[% p.value.body %]';
+        params.contentType = '[% p.value.content %]';
+        params.accept = '[% p.value.accept %]';
+      }
+      $.ajax( params);
+    </script>
+    <!-- END FILLING AJAX TAB -->
+    [% IF endpoint.is_post %]
+      <div class='tab-pane' id='input[% p.value.id %]'>
+        <pre class="pre-scrollable prettyprint">
+[% p.value.body %]
+        </pre>
+      </div>
+    [% END %]
+
+<!-- PERL EXAMPLE -->
+[% INCLUDE documentation/examples/perl.tt %]
+
+<!-- Python2 EXAMPLE -->
+[% INCLUDE documentation/examples/python2.tt %]
+
+<!-- Python3 EXAMPLE -->
+[% INCLUDE documentation/examples/python3.tt %]
+
+<!-- RUBY EXAMPLE -->
+[% INCLUDE documentation/examples/ruby.tt %]
+
+<!-- JAVA EXAMPLE -->
+[% INCLUDE documentation/examples/java.tt %]
+
+<!-- R EXAMPLE -->
+[% INCLUDE documentation/examples/r.tt %]
+
+<!-- CURL EXAMPLE -->
+[% INCLUDE documentation/examples/curl.tt %]
+
+<!-- WGET EXAMPLE -->
+[% INCLUDE documentation/examples/wget.tt %]
+
+</div>
+
+[% END %] <!-- End FOREACH on endpoint examplesv -->
+
+</div>
+<div class="span2">
+  <h3>Resource Information</h3>
+  <table class="table table-condensed table-striped">
+    <tbody>
+      <tr><td>Methods</td><td>[% endpoint.method.join(',') %]</td></tr>
+      <tr><td>Response formats</td><td>[% endpoint.output.join('<br>') %]</td></tr>
+      [% IF endpoint.post_size() && endpoint.is_post %]
+        <tr><td>Maximum POST size</td><td>[% endpoint.post_size.join('<br>') %]</td></tr>
+      [% END %]
+      [% IF endpoint.slice_length() %]
+        <tr><td>Slice length</td><td>[% endpoint.slice_length.join('<br>') %]</td></tr>
+     [% END %]
+    </tbody>
+  </table>
+</div>
+
+
+
+</div>

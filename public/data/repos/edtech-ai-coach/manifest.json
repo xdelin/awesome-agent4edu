@@ -1,0 +1,61 @@
+{
+  "name": "EdTech-AI-Coach",
+  "tree": [
+    {
+      "name": "analytics.py",
+      "type": "file",
+      "path": "analytics.py",
+      "size": 6045,
+      "language": "py"
+    },
+    {
+      "name": "app.py",
+      "type": "file",
+      "path": "app.py",
+      "size": 7947,
+      "language": "py"
+    },
+    {
+      "name": "generate_feedback.py",
+      "type": "file",
+      "path": "generate_feedback.py",
+      "size": 1956,
+      "language": "py"
+    },
+    {
+      "name": "load_reports.py",
+      "type": "file",
+      "path": "load_reports.py",
+      "size": 1832,
+      "language": "py"
+    },
+    {
+      "name": "main.py",
+      "type": "file",
+      "path": "main.py",
+      "size": 244,
+      "language": "py"
+    },
+    {
+      "name": "process_student_data.py",
+      "type": "file",
+      "path": "process_student_data.py",
+      "size": 6413,
+      "language": "py"
+    },
+    {
+      "name": "prompt_templates.py",
+      "type": "file",
+      "path": "prompt_templates.py",
+      "size": 4603,
+      "language": "py"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1499,
+      "language": "md"
+    }
+  ]
+}

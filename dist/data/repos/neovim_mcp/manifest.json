@@ -1,0 +1,320 @@
+{
+  "name": "Neovim MCP",
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "docs/tools",
+          "children": [
+            {
+              "name": "buffer_diagnostics.md",
+              "type": "file",
+              "path": "docs/tools/buffer_diagnostics.md",
+              "size": 150,
+              "language": "md"
+            },
+            {
+              "name": "connect.md",
+              "type": "file",
+              "path": "docs/tools/connect.md",
+              "size": 131,
+              "language": "md"
+            },
+            {
+              "name": "get_targets.md",
+              "type": "file",
+              "path": "docs/tools/get_targets.md",
+              "size": 198,
+              "language": "md"
+            },
+            {
+              "name": "read.md",
+              "type": "file",
+              "path": "docs/tools/read.md",
+              "size": 874,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "development.md",
+          "type": "file",
+          "path": "docs/development.md",
+          "size": 4944,
+          "language": "md"
+        },
+        {
+          "name": "resources.md",
+          "type": "file",
+          "path": "docs/resources.md",
+          "size": 2162,
+          "language": "md"
+        },
+        {
+          "name": "tools.md",
+          "type": "file",
+          "path": "docs/tools.md",
+          "size": 11150,
+          "language": "md"
+        },
+        {
+          "name": "usage.md",
+          "type": "file",
+          "path": "docs/usage.md",
+          "size": 4933,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "run-cov.sh",
+          "type": "file",
+          "path": "scripts/run-cov.sh",
+          "size": 1158,
+          "language": "sh"
+        },
+        {
+          "name": "run-test.sh",
+          "type": "file",
+          "path": "scripts/run-test.sh",
+          "size": 125,
+          "language": "sh"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "neovim",
+          "type": "folder",
+          "path": "src/neovim",
+          "children": [
+            {
+              "name": "client.rs",
+              "type": "file",
+              "path": "src/neovim/client.rs",
+              "size": 147318,
+              "language": "rs"
+            },
+            {
+              "name": "connection.rs",
+              "type": "file",
+              "path": "src/neovim/connection.rs",
+              "size": 827,
+              "language": "rs"
+            },
+            {
+              "name": "error.rs",
+              "type": "file",
+              "path": "src/neovim/error.rs",
+              "size": 580,
+              "language": "rs"
+            },
+            {
+              "name": "integration_tests.rs",
+              "type": "file",
+              "path": "src/neovim/integration_tests.rs",
+              "size": 48759,
+              "language": "rs"
+            },
+            {
+              "name": "mod.rs",
+              "type": "file",
+              "path": "src/neovim/mod.rs",
+              "size": 330,
+              "language": "rs"
+            }
+          ]
+        },
+        {
+          "name": "server",
+          "type": "folder",
+          "path": "src/server",
+          "children": [
+            {
+              "name": "core.rs",
+              "type": "file",
+              "path": "src/server/core.rs",
+              "size": 12955,
+              "language": "rs"
+            },
+            {
+              "name": "hybrid_router.rs",
+              "type": "file",
+              "path": "src/server/hybrid_router.rs",
+              "size": 21758,
+              "language": "rs"
+            },
+            {
+              "name": "integration_tests.rs",
+              "type": "file",
+              "path": "src/server/integration_tests.rs",
+              "size": 67464,
+              "language": "rs"
+            },
+            {
+              "name": "lua_tools.rs",
+              "type": "file",
+              "path": "src/server/lua_tools.rs",
+              "size": 19542,
+              "language": "rs"
+            },
+            {
+              "name": "mod.rs",
+              "type": "file",
+              "path": "src/server/mod.rs",
+              "size": 175,
+              "language": "rs"
+            },
+            {
+              "name": "resources.rs",
+              "type": "file",
+              "path": "src/server/resources.rs",
+              "size": 14861,
+              "language": "rs"
+            },
+            {
+              "name": "tools.rs",
+              "type": "file",
+              "path": "src/server/tools.rs",
+              "size": 45271,
+              "language": "rs"
+            }
+          ]
+        },
+        {
+          "name": "testdata",
+          "type": "folder",
+          "path": "src/testdata",
+          "children": [
+            {
+              "name": "call_hierarchy.go",
+              "type": "file",
+              "path": "src/testdata/call_hierarchy.go",
+              "size": 525,
+              "language": "go"
+            },
+            {
+              "name": "main.go",
+              "type": "file",
+              "path": "src/testdata/main.go",
+              "size": 115,
+              "language": "go"
+            },
+            {
+              "name": "organize_imports.go",
+              "type": "file",
+              "path": "src/testdata/organize_imports.go",
+              "size": 66,
+              "language": "go"
+            },
+            {
+              "name": "type_hierarchy.go",
+              "type": "file",
+              "path": "src/testdata/type_hierarchy.go",
+              "size": 1499,
+              "language": "go"
+            }
+          ]
+        },
+        {
+          "name": "lib.rs",
+          "type": "file",
+          "path": "src/lib.rs",
+          "size": 511,
+          "language": "rs"
+        },
+        {
+          "name": "main.rs",
+          "type": "file",
+          "path": "src/main.rs",
+          "size": 8557,
+          "language": "rs"
+        },
+        {
+          "name": "test_utils.rs",
+          "type": "file",
+          "path": "src/test_utils.rs",
+          "size": 16365,
+          "language": "rs"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 123,
+      "language": "text"
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "type": "file",
+      "path": ".pre-commit-config.yaml",
+      "size": 1256,
+      "language": "yaml"
+    },
+    {
+      "name": "build.rs",
+      "type": "file",
+      "path": "build.rs",
+      "size": 3043,
+      "language": "rs"
+    },
+    {
+      "name": "Cargo.toml",
+      "type": "file",
+      "path": "Cargo.toml",
+      "size": 1915,
+      "language": "toml"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 16625,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 3425,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 11558,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3373,
+      "language": "md"
+    },
+    {
+      "name": "stylua.toml",
+      "type": "file",
+      "path": "stylua.toml",
+      "size": 275,
+      "language": "toml"
+    }
+  ]
+}

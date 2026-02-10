@@ -1,0 +1,1125 @@
+{
+  "name": "Neon MCP",
+  "tree": [
+    {
+      "name": ".agents",
+      "type": "folder",
+      "path": ".agents",
+      "children": [
+        {
+          "name": "skills",
+          "type": "folder",
+          "path": ".agents/skills",
+          "children": [
+            {
+              "name": "logging-best-practices",
+              "type": "folder",
+              "path": ".agents/skills/logging-best-practices",
+              "children": [
+                {
+                  "name": "rules",
+                  "type": "folder",
+                  "path": ".agents/skills/logging-best-practices/rules",
+                  "children": [
+                    {
+                      "name": "context.md",
+                      "type": "file",
+                      "path": ".agents/skills/logging-best-practices/rules/context.md",
+                      "size": 4963,
+                      "language": "md"
+                    },
+                    {
+                      "name": "pitfalls.md",
+                      "type": "file",
+                      "path": ".agents/skills/logging-best-practices/rules/pitfalls.md",
+                      "size": 3491,
+                      "language": "md"
+                    },
+                    {
+                      "name": "structure.md",
+                      "type": "file",
+                      "path": ".agents/skills/logging-best-practices/rules/structure.md",
+                      "size": 6135,
+                      "language": "md"
+                    },
+                    {
+                      "name": "wide-events.md",
+                      "type": "file",
+                      "path": ".agents/skills/logging-best-practices/rules/wide-events.md",
+                      "size": 3742,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "SKILL.md",
+                  "type": "file",
+                  "path": ".agents/skills/logging-best-practices/SKILL.md",
+                  "size": 4784,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".claude",
+      "type": "folder",
+      "path": ".claude",
+      "children": [
+        {
+          "name": "skills",
+          "type": "folder",
+          "path": ".claude/skills",
+          "children": [
+            {
+              "name": "logging-best-practices",
+              "type": "folder",
+              "path": ".claude/skills/logging-best-practices",
+              "children": [
+                {
+                  "name": "rules",
+                  "type": "folder",
+                  "path": ".claude/skills/logging-best-practices/rules",
+                  "children": [
+                    {
+                      "name": "context.md",
+                      "type": "file",
+                      "path": ".claude/skills/logging-best-practices/rules/context.md",
+                      "size": 4963,
+                      "language": "md"
+                    },
+                    {
+                      "name": "pitfalls.md",
+                      "type": "file",
+                      "path": ".claude/skills/logging-best-practices/rules/pitfalls.md",
+                      "size": 3491,
+                      "language": "md"
+                    },
+                    {
+                      "name": "structure.md",
+                      "type": "file",
+                      "path": ".claude/skills/logging-best-practices/rules/structure.md",
+                      "size": 6135,
+                      "language": "md"
+                    },
+                    {
+                      "name": "wide-events.md",
+                      "type": "file",
+                      "path": ".claude/skills/logging-best-practices/rules/wide-events.md",
+                      "size": 3742,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "SKILL.md",
+                  "type": "file",
+                  "path": ".claude/skills/logging-best-practices/SKILL.md",
+                  "size": 4784,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dev-notes",
+      "type": "folder",
+      "path": "dev-notes",
+      "children": [
+        {
+          "name": "read-only-mode-fix.md",
+          "type": "file",
+          "path": "dev-notes/read-only-mode-fix.md",
+          "size": 6222,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "landing",
+      "type": "folder",
+      "path": "landing",
+      "children": [
+        {
+          "name": "app",
+          "type": "folder",
+          "path": "landing/app",
+          "children": [
+            {
+              "name": ".well-known",
+              "type": "folder",
+              "path": "landing/app/.well-known",
+              "children": [
+                {
+                  "name": "oauth-authorization-server",
+                  "type": "folder",
+                  "path": "landing/app/.well-known/oauth-authorization-server",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/.well-known/oauth-authorization-server/route.ts",
+                      "size": 1518,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "oauth-protected-resource",
+                  "type": "folder",
+                  "path": "landing/app/.well-known/oauth-protected-resource",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/.well-known/oauth-protected-resource/route.ts",
+                      "size": 628,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "api",
+              "type": "folder",
+              "path": "landing/app/api",
+              "children": [
+                {
+                  "name": "[transport]",
+                  "type": "folder",
+                  "path": "landing/app/api/[transport]",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/api/[transport]/route.ts",
+                      "size": 22494,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "authorize",
+                  "type": "folder",
+                  "path": "landing/app/api/authorize",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/api/authorize/route.ts",
+                      "size": 15033,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "health",
+                  "type": "folder",
+                  "path": "landing/app/api/health",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/api/health/route.ts",
+                      "size": 248,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "register",
+                  "type": "folder",
+                  "path": "landing/app/api/register",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/api/register/route.ts",
+                      "size": 5352,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "revoke",
+                  "type": "folder",
+                  "path": "landing/app/api/revoke",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/api/revoke/route.ts",
+                      "size": 3913,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "token",
+                  "type": "folder",
+                  "path": "landing/app/api/token",
+                  "children": [
+                    {
+                      "name": "route.ts",
+                      "type": "file",
+                      "path": "landing/app/api/token/route.ts",
+                      "size": 14992,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "callback",
+              "type": "folder",
+              "path": "landing/app/callback",
+              "children": [
+                {
+                  "name": "route.ts",
+                  "type": "file",
+                  "path": "landing/app/callback/route.ts",
+                  "size": 4051,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "globals.css",
+              "type": "file",
+              "path": "landing/app/globals.css",
+              "size": 5548,
+              "language": "css"
+            },
+            {
+              "name": "layout.tsx",
+              "type": "file",
+              "path": "landing/app/layout.tsx",
+              "size": 2227,
+              "language": "tsx"
+            },
+            {
+              "name": "page.tsx",
+              "type": "file",
+              "path": "landing/app/page.tsx",
+              "size": 6135,
+              "language": "tsx"
+            }
+          ]
+        },
+        {
+          "name": "components",
+          "type": "folder",
+          "path": "landing/components",
+          "children": [
+            {
+              "name": "ui",
+              "type": "folder",
+              "path": "landing/components/ui",
+              "children": [
+                {
+                  "name": "accordion.tsx",
+                  "type": "file",
+                  "path": "landing/components/ui/accordion.tsx",
+                  "size": 2130,
+                  "language": "tsx"
+                },
+                {
+                  "name": "alert.tsx",
+                  "type": "file",
+                  "path": "landing/components/ui/alert.tsx",
+                  "size": 1620,
+                  "language": "tsx"
+                },
+                {
+                  "name": "button.tsx",
+                  "type": "file",
+                  "path": "landing/components/ui/button.tsx",
+                  "size": 2235,
+                  "language": "tsx"
+                }
+              ]
+            },
+            {
+              "name": "CodeSnippet.tsx",
+              "type": "file",
+              "path": "landing/components/CodeSnippet.tsx",
+              "size": 1035,
+              "language": "tsx"
+            },
+            {
+              "name": "CopyableCommand.tsx",
+              "type": "file",
+              "path": "landing/components/CopyableCommand.tsx",
+              "size": 722,
+              "language": "tsx"
+            },
+            {
+              "name": "CopyableUrl.tsx",
+              "type": "file",
+              "path": "landing/components/CopyableUrl.tsx",
+              "size": 1006,
+              "language": "tsx"
+            },
+            {
+              "name": "DescriptionItem.tsx",
+              "type": "file",
+              "path": "landing/components/DescriptionItem.tsx",
+              "size": 3306,
+              "language": "tsx"
+            },
+            {
+              "name": "ExternalIcon.tsx",
+              "type": "file",
+              "path": "landing/components/ExternalIcon.tsx",
+              "size": 503,
+              "language": "tsx"
+            },
+            {
+              "name": "ExternalLink.tsx",
+              "type": "file",
+              "path": "landing/components/ExternalLink.tsx",
+              "size": 439,
+              "language": "tsx"
+            },
+            {
+              "name": "Header.tsx",
+              "type": "file",
+              "path": "landing/components/Header.tsx",
+              "size": 1628,
+              "language": "tsx"
+            },
+            {
+              "name": "Introduction.tsx",
+              "type": "file",
+              "path": "landing/components/Introduction.tsx",
+              "size": 3210,
+              "language": "tsx"
+            },
+            {
+              "name": "ThemeProvider.tsx",
+              "type": "file",
+              "path": "landing/components/ThemeProvider.tsx",
+              "size": 1260,
+              "language": "tsx"
+            }
+          ]
+        },
+        {
+          "name": "icons",
+          "type": "folder",
+          "path": "landing/icons",
+          "children": [
+            {
+              "name": "github.svg",
+              "type": "file",
+              "path": "landing/icons/github.svg",
+              "size": 822,
+              "language": "svg"
+            },
+            {
+              "name": "neon.svg",
+              "type": "file",
+              "path": "landing/icons/neon.svg",
+              "size": 294,
+              "language": "svg"
+            }
+          ]
+        },
+        {
+          "name": "lib",
+          "type": "folder",
+          "path": "landing/lib",
+          "children": [
+            {
+              "name": "oauth",
+              "type": "folder",
+              "path": "landing/lib/oauth",
+              "children": [
+                {
+                  "name": "client.ts",
+                  "type": "file",
+                  "path": "landing/lib/oauth/client.ts",
+                  "size": 2214,
+                  "language": "ts"
+                },
+                {
+                  "name": "cookies.ts",
+                  "type": "file",
+                  "path": "landing/lib/oauth/cookies.ts",
+                  "size": 3844,
+                  "language": "ts"
+                },
+                {
+                  "name": "redirect-uri.ts",
+                  "type": "file",
+                  "path": "landing/lib/oauth/redirect-uri.ts",
+                  "size": 1506,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "config.ts",
+              "type": "file",
+              "path": "landing/lib/config.ts",
+              "size": 1314,
+              "language": "ts"
+            },
+            {
+              "name": "description.ts",
+              "type": "file",
+              "path": "landing/lib/description.ts",
+              "size": 3692,
+              "language": "ts"
+            },
+            {
+              "name": "errors.ts",
+              "type": "file",
+              "path": "landing/lib/errors.ts",
+              "size": 2176,
+              "language": "ts"
+            },
+            {
+              "name": "utils.ts",
+              "type": "file",
+              "path": "landing/lib/utils.ts",
+              "size": 175,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "mcp-src",
+          "type": "folder",
+          "path": "landing/mcp-src",
+          "children": [
+            {
+              "name": "analytics",
+              "type": "folder",
+              "path": "landing/mcp-src/analytics",
+              "children": [
+                {
+                  "name": "analytics.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/analytics/analytics.ts",
+                  "size": 1368,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "oauth",
+              "type": "folder",
+              "path": "landing/mcp-src/oauth",
+              "children": [
+                {
+                  "name": "kv-store.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/oauth/kv-store.ts",
+                  "size": 1678,
+                  "language": "ts"
+                },
+                {
+                  "name": "model.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/oauth/model.ts",
+                  "size": 2568,
+                  "language": "ts"
+                },
+                {
+                  "name": "utils.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/oauth/utils.ts",
+                  "size": 881,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "sentry",
+              "type": "folder",
+              "path": "landing/mcp-src/sentry",
+              "children": [
+                {
+                  "name": "instrument.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/sentry/instrument.ts",
+                  "size": 993,
+                  "language": "ts"
+                },
+                {
+                  "name": "utils.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/sentry/utils.ts",
+                  "size": 542,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "server",
+              "type": "folder",
+              "path": "landing/mcp-src/server",
+              "children": [
+                {
+                  "name": "account.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/server/account.ts",
+                  "size": 2451,
+                  "language": "ts"
+                },
+                {
+                  "name": "api.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/server/api.ts",
+                  "size": 395,
+                  "language": "ts"
+                },
+                {
+                  "name": "errors.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/server/errors.ts",
+                  "size": 2000,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/server/index.ts",
+                  "size": 7360,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "landing/mcp-src/tools",
+              "children": [
+                {
+                  "name": "handlers",
+                  "type": "folder",
+                  "path": "landing/mcp-src/tools/handlers",
+                  "children": [
+                    {
+                      "name": "connection-string.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/connection-string.ts",
+                      "size": 2230,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "data-api.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/data-api.ts",
+                      "size": 11988,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "decribe-project.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/decribe-project.ts",
+                      "size": 457,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "describe-branch.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/describe-branch.ts",
+                      "size": 2468,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "fetch.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/fetch.ts",
+                      "size": 5439,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "list-orgs.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/list-orgs.ts",
+                      "size": 704,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "list-projects.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/list-projects.ts",
+                      "size": 1664,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "neon-auth.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/neon-auth.ts",
+                      "size": 3384,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "search.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/search.ts",
+                      "size": 5263,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "urls.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/urls.ts",
+                      "size": 1029,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "utils.ts",
+                      "type": "file",
+                      "path": "landing/mcp-src/tools/handlers/utils.ts",
+                      "size": 1688,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "definitions.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/tools/definitions.ts",
+                  "size": 43899,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/tools/index.ts",
+                  "size": 154,
+                  "language": "ts"
+                },
+                {
+                  "name": "tools.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/tools/tools.ts",
+                  "size": 46825,
+                  "language": "ts"
+                },
+                {
+                  "name": "toolsSchema.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/tools/toolsSchema.ts",
+                  "size": 14877,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/tools/types.ts",
+                  "size": 1345,
+                  "language": "ts"
+                },
+                {
+                  "name": "utils.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/tools/utils.ts",
+                  "size": 9159,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "transports",
+              "type": "folder",
+              "path": "landing/mcp-src/transports",
+              "children": [
+                {
+                  "name": "stdio.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/transports/stdio.ts",
+                  "size": 433,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "types",
+              "type": "folder",
+              "path": "landing/mcp-src/types",
+              "children": [
+                {
+                  "name": "auth.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/types/auth.ts",
+                  "size": 404,
+                  "language": "ts"
+                },
+                {
+                  "name": "context.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/types/context.ts",
+                  "size": 462,
+                  "language": "ts"
+                },
+                {
+                  "name": "helpers.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/types/helpers.ts",
+                  "size": 63,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "folder",
+              "path": "landing/mcp-src/utils",
+              "children": [
+                {
+                  "name": "client-application.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/utils/client-application.ts",
+                  "size": 967,
+                  "language": "ts"
+                },
+                {
+                  "name": "logger.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/utils/logger.ts",
+                  "size": 463,
+                  "language": "ts"
+                },
+                {
+                  "name": "polyfills.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/utils/polyfills.ts",
+                  "size": 480,
+                  "language": "ts"
+                },
+                {
+                  "name": "read-only.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/utils/read-only.ts",
+                  "size": 1928,
+                  "language": "ts"
+                },
+                {
+                  "name": "trace.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/utils/trace.ts",
+                  "size": 318,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "cli.ts",
+              "type": "file",
+              "path": "landing/mcp-src/cli.ts",
+              "size": 2515,
+              "language": "ts"
+            },
+            {
+              "name": "constants.ts",
+              "type": "file",
+              "path": "landing/mcp-src/constants.ts",
+              "size": 496,
+              "language": "ts"
+            },
+            {
+              "name": "describeUtils.ts",
+              "type": "file",
+              "path": "landing/mcp-src/describeUtils.ts",
+              "size": 4604,
+              "language": "ts"
+            },
+            {
+              "name": "initConfig.ts",
+              "type": "file",
+              "path": "landing/mcp-src/initConfig.ts",
+              "size": 3865,
+              "language": "ts"
+            },
+            {
+              "name": "prompts.ts",
+              "type": "file",
+              "path": "landing/mcp-src/prompts.ts",
+              "size": 3592,
+              "language": "ts"
+            },
+            {
+              "name": "resources.ts",
+              "type": "file",
+              "path": "landing/mcp-src/resources.ts",
+              "size": 3314,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "public",
+          "type": "folder",
+          "path": "landing/public",
+          "children": [
+            {
+              "name": "apple-touch-icon.png",
+              "type": "file",
+              "path": "landing/public/apple-touch-icon.png",
+              "size": 1110,
+              "language": "png"
+            },
+            {
+              "name": "favicon.ico",
+              "type": "file",
+              "path": "landing/public/favicon.ico",
+              "size": 41662,
+              "language": "ico"
+            },
+            {
+              "name": "favicon.svg",
+              "type": "file",
+              "path": "landing/public/favicon.svg",
+              "size": 279,
+              "language": "svg"
+            },
+            {
+              "name": "llms.txt",
+              "type": "file",
+              "path": "landing/public/llms.txt",
+              "size": 863,
+              "language": "txt"
+            },
+            {
+              "name": "logo.png",
+              "type": "file",
+              "path": "landing/public/logo.png",
+              "size": 25435,
+              "language": "png"
+            },
+            {
+              "name": "og-image.png",
+              "type": "file",
+              "path": "landing/public/og-image.png",
+              "size": 16396,
+              "language": "png"
+            }
+          ]
+        },
+        {
+          "name": "scripts",
+          "type": "folder",
+          "path": "landing/scripts",
+          "children": [
+            {
+              "name": "before-publish.ts",
+              "type": "file",
+              "path": "landing/scripts/before-publish.ts",
+              "size": 1746,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": "landing/.gitignore",
+          "size": 563,
+          "language": "text"
+        },
+        {
+          "name": "CHANGELOG.md",
+          "type": "file",
+          "path": "landing/CHANGELOG.md",
+          "size": 5954,
+          "language": "md"
+        },
+        {
+          "name": "components.json",
+          "type": "file",
+          "path": "landing/components.json",
+          "size": 446,
+          "language": "json"
+        },
+        {
+          "name": "next.config.ts",
+          "type": "file",
+          "path": "landing/next.config.ts",
+          "size": 657,
+          "language": "ts"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "landing/package.json",
+          "size": 2446,
+          "language": "json"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "landing/README.md",
+          "size": 3197,
+          "language": "md"
+        },
+        {
+          "name": "tsconfig.cli.json",
+          "type": "file",
+          "path": "landing/tsconfig.cli.json",
+          "size": 556,
+          "language": "json"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "landing/tsconfig.json",
+          "size": 747,
+          "language": "json"
+        },
+        {
+          "name": "vercel-migration.md",
+          "type": "file",
+          "path": "landing/vercel-migration.md",
+          "size": 17230,
+          "language": "md"
+        },
+        {
+          "name": "vercel.json",
+          "type": "file",
+          "path": "landing/vercel.json",
+          "size": 239,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "mcp-client",
+      "type": "folder",
+      "path": "mcp-client",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "mcp-client/src",
+          "children": [
+            {
+              "name": "bin.ts",
+              "type": "file",
+              "path": "mcp-client/src/bin.ts",
+              "size": 1205,
+              "language": "ts"
+            },
+            {
+              "name": "cli-client.ts",
+              "type": "file",
+              "path": "mcp-client/src/cli-client.ts",
+              "size": 1842,
+              "language": "ts"
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "mcp-client/src/index.ts",
+              "size": 6057,
+              "language": "ts"
+            },
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "mcp-client/src/logger.ts",
+              "size": 942,
+              "language": "ts"
+            },
+            {
+              "name": "neon-cli-client.ts",
+              "type": "file",
+              "path": "mcp-client/src/neon-cli-client.ts",
+              "size": 344,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": ".env.example",
+          "type": "file",
+          "path": "mcp-client/.env.example",
+          "size": 35,
+          "language": "example"
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file",
+          "path": "mcp-client/package-lock.json",
+          "size": 28084,
+          "language": "json"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "mcp-client/package.json",
+          "size": 1124,
+          "language": "json"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "mcp-client/README.md",
+          "size": 1093,
+          "language": "md"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "mcp-client/tsconfig.json",
+          "size": 354,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 113,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 107,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 16984,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1094,
+      "language": "text"
+    },
+    {
+      "name": "PUBLISH.md",
+      "type": "file",
+      "path": "PUBLISH.md",
+      "size": 715,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 18315,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,656 @@
+{
+  "name": "a11y-specialist-skills",
+  "tree": [
+    {
+      "name": ".claude-plugin",
+      "type": "folder",
+      "path": ".claude-plugin",
+      "children": [
+        {
+          "name": "marketplace.json",
+          "type": "file",
+          "path": ".claude-plugin/marketplace.json",
+          "size": 956,
+          "language": "json"
+        },
+        {
+          "name": "plugin.json",
+          "type": "file",
+          "path": ".claude-plugin/plugin.json",
+          "size": 484,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "auditing-wcag",
+          "type": "folder",
+          "path": "skills/auditing-wcag",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/auditing-wcag/references",
+              "children": [
+                {
+                  "name": "scripts",
+                  "type": "folder",
+                  "path": "skills/auditing-wcag/references/scripts",
+                  "children": [
+                    {
+                      "name": "detectors",
+                      "type": "folder",
+                      "path": "skills/auditing-wcag/references/scripts/detectors",
+                      "children": [
+                        {
+                          "name": "index.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/detectors/index.ts",
+                          "size": 91,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "pause-control.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/detectors/pause-control.ts",
+                          "size": 8934,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "utils",
+                      "type": "folder",
+                      "path": "skills/auditing-wcag/references/scripts/utils",
+                      "children": [
+                        {
+                          "name": "annotations.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/utils/annotations.ts",
+                          "size": 11317,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "browser-context.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/utils/browser-context.ts",
+                          "size": 7403,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "image-compare.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/utils/image-compare.ts",
+                          "size": 1934,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "index.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/utils/index.ts",
+                          "size": 338,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "layout.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/utils/layout.ts",
+                          "size": 7170,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "recommendations.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/utils/recommendations.ts",
+                          "size": 4610,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "test-harness.ts",
+                          "type": "file",
+                          "path": "skills/auditing-wcag/references/scripts/utils/test-harness.ts",
+                          "size": 7907,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "auto-play-detection.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/auto-play-detection.ts",
+                      "size": 5591,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "autocomplete-audit.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/autocomplete-audit.ts",
+                      "size": 8668,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "axe-audit.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/axe-audit.ts",
+                      "size": 3966,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "constants.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/constants.ts",
+                      "size": 14984,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "focus-indicator-check.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/focus-indicator-check.ts",
+                      "size": 29828,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "IMPLEMENTATION-PLAN.md",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/IMPLEMENTATION-PLAN.md",
+                      "size": 10464,
+                      "language": "md"
+                    },
+                    {
+                      "name": "orientation-check.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/orientation-check.ts",
+                      "size": 6256,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "package-lock.json",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/package-lock.json",
+                      "size": 5603,
+                      "language": "json"
+                    },
+                    {
+                      "name": "package.json",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/package.json",
+                      "size": 1465,
+                      "language": "json"
+                    },
+                    {
+                      "name": "playwright.config.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/playwright.config.ts",
+                      "size": 355,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/README.md",
+                      "size": 6727,
+                      "language": "md"
+                    },
+                    {
+                      "name": "reflow-check.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/reflow-check.ts",
+                      "size": 3033,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "run-test.js",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/run-test.js",
+                      "size": 703,
+                      "language": "js"
+                    },
+                    {
+                      "name": "target-size-check.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/target-size-check.ts",
+                      "size": 16100,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "text-spacing-check.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/text-spacing-check.ts",
+                      "size": 11309,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "time-limit-detector.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/time-limit-detector.ts",
+                      "size": 8382,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "TODO-COVERAGE.md",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/TODO-COVERAGE.md",
+                      "size": 5950,
+                      "language": "md"
+                    },
+                    {
+                      "name": "tsconfig.json",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/tsconfig.json",
+                      "size": 408,
+                      "language": "json"
+                    },
+                    {
+                      "name": "types.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/types.ts",
+                      "size": 11405,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "zoom-200-check.ts",
+                      "type": "file",
+                      "path": "skills/auditing-wcag/references/scripts/zoom-200-check.ts",
+                      "size": 5998,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "automated-checks.ja.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/automated-checks.ja.md",
+                  "size": 14544,
+                  "language": "md"
+                },
+                {
+                  "name": "automated-checks.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/automated-checks.md",
+                  "size": 12460,
+                  "language": "md"
+                },
+                {
+                  "name": "content-checks.ja.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/content-checks.ja.md",
+                  "size": 2177,
+                  "language": "md"
+                },
+                {
+                  "name": "content-checks.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/content-checks.md",
+                  "size": 1946,
+                  "language": "md"
+                },
+                {
+                  "name": "coverage-matrix.ja.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/coverage-matrix.ja.md",
+                  "size": 6777,
+                  "language": "md"
+                },
+                {
+                  "name": "coverage-matrix.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/coverage-matrix.md",
+                  "size": 6393,
+                  "language": "md"
+                },
+                {
+                  "name": "interactive-checks.ja.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/interactive-checks.ja.md",
+                  "size": 14765,
+                  "language": "md"
+                },
+                {
+                  "name": "interactive-checks.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/interactive-checks.md",
+                  "size": 12023,
+                  "language": "md"
+                },
+                {
+                  "name": "manual-checks.ja.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/manual-checks.ja.md",
+                  "size": 2833,
+                  "language": "md"
+                },
+                {
+                  "name": "manual-checks.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/manual-checks.md",
+                  "size": 2458,
+                  "language": "md"
+                },
+                {
+                  "name": "output-format.ja.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/output-format.ja.md",
+                  "size": 3759,
+                  "language": "md"
+                },
+                {
+                  "name": "output-format.md",
+                  "type": "file",
+                  "path": "skills/auditing-wcag/references/output-format.md",
+                  "size": 3078,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "README.ja.md",
+              "type": "file",
+              "path": "skills/auditing-wcag/README.ja.md",
+              "size": 4909,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "skills/auditing-wcag/README.md",
+              "size": 4355,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.ja.md",
+              "type": "file",
+              "path": "skills/auditing-wcag/SKILL.ja.md",
+              "size": 5163,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/auditing-wcag/SKILL.md",
+              "size": 4376,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "planning-a11y-improvement",
+          "type": "folder",
+          "path": "skills/planning-a11y-improvement",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/planning-a11y-improvement/references",
+              "children": [
+                {
+                  "name": "output-templates.ja.md",
+                  "type": "file",
+                  "path": "skills/planning-a11y-improvement/references/output-templates.ja.md",
+                  "size": 12257,
+                  "language": "md"
+                },
+                {
+                  "name": "output-templates.md",
+                  "type": "file",
+                  "path": "skills/planning-a11y-improvement/references/output-templates.md",
+                  "size": 10731,
+                  "language": "md"
+                },
+                {
+                  "name": "scenario-playbooks.ja.md",
+                  "type": "file",
+                  "path": "skills/planning-a11y-improvement/references/scenario-playbooks.ja.md",
+                  "size": 10357,
+                  "language": "md"
+                },
+                {
+                  "name": "scenario-playbooks.md",
+                  "type": "file",
+                  "path": "skills/planning-a11y-improvement/references/scenario-playbooks.md",
+                  "size": 9122,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "README.ja.md",
+              "type": "file",
+              "path": "skills/planning-a11y-improvement/README.ja.md",
+              "size": 4338,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "skills/planning-a11y-improvement/README.md",
+              "size": 3871,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.ja.md",
+              "type": "file",
+              "path": "skills/planning-a11y-improvement/SKILL.ja.md",
+              "size": 16471,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/planning-a11y-improvement/SKILL.md",
+              "size": 13597,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "planning-wcag-audit",
+          "type": "folder",
+          "path": "skills/planning-wcag-audit",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/planning-wcag-audit/references",
+              "children": [
+                {
+                  "name": "audit-plan-template.ja.md",
+                  "type": "file",
+                  "path": "skills/planning-wcag-audit/references/audit-plan-template.ja.md",
+                  "size": 1770,
+                  "language": "md"
+                },
+                {
+                  "name": "audit-plan-template.md",
+                  "type": "file",
+                  "path": "skills/planning-wcag-audit/references/audit-plan-template.md",
+                  "size": 1638,
+                  "language": "md"
+                },
+                {
+                  "name": "page-selection-guide.ja.md",
+                  "type": "file",
+                  "path": "skills/planning-wcag-audit/references/page-selection-guide.ja.md",
+                  "size": 7121,
+                  "language": "md"
+                },
+                {
+                  "name": "page-selection-guide.md",
+                  "type": "file",
+                  "path": "skills/planning-wcag-audit/references/page-selection-guide.md",
+                  "size": 6271,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "README.ja.md",
+              "type": "file",
+              "path": "skills/planning-wcag-audit/README.ja.md",
+              "size": 4141,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "skills/planning-wcag-audit/README.md",
+              "size": 3783,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.ja.md",
+              "type": "file",
+              "path": "skills/planning-wcag-audit/SKILL.ja.md",
+              "size": 4440,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/planning-wcag-audit/SKILL.md",
+              "size": 3692,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "reviewing-a11y",
+          "type": "folder",
+          "path": "skills/reviewing-a11y",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/reviewing-a11y/references",
+              "children": [
+                {
+                  "name": "code-review.ja.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/code-review.ja.md",
+                  "size": 7207,
+                  "language": "md"
+                },
+                {
+                  "name": "code-review.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/code-review.md",
+                  "size": 5320,
+                  "language": "md"
+                },
+                {
+                  "name": "design-review.ja.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/design-review.ja.md",
+                  "size": 8490,
+                  "language": "md"
+                },
+                {
+                  "name": "design-review.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/design-review.md",
+                  "size": 6262,
+                  "language": "md"
+                },
+                {
+                  "name": "page-review.ja.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/page-review.ja.md",
+                  "size": 7069,
+                  "language": "md"
+                },
+                {
+                  "name": "page-review.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/page-review.md",
+                  "size": 5643,
+                  "language": "md"
+                },
+                {
+                  "name": "wcag-checklist.ja.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/wcag-checklist.ja.md",
+                  "size": 6592,
+                  "language": "md"
+                },
+                {
+                  "name": "wcag-checklist.md",
+                  "type": "file",
+                  "path": "skills/reviewing-a11y/references/wcag-checklist.md",
+                  "size": 4989,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "README.ja.md",
+              "type": "file",
+              "path": "skills/reviewing-a11y/README.ja.md",
+              "size": 7537,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "skills/reviewing-a11y/README.md",
+              "size": 6128,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.ja.md",
+              "type": "file",
+              "path": "skills/reviewing-a11y/SKILL.ja.md",
+              "size": 7042,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/reviewing-a11y/SKILL.md",
+              "size": 5293,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 432,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 1555,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1084,
+      "language": "text"
+    },
+    {
+      "name": "README.ja.md",
+      "type": "file",
+      "path": "README.ja.md",
+      "size": 5681,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 4664,
+      "language": "md"
+    }
+  ]
+}

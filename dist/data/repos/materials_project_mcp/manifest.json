@@ -1,0 +1,1216 @@
+{
+  "name": "Materials Project MCP",
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "how-to-build-your-own-mcp-server-step-by-step.md",
+          "type": "file",
+          "path": "docs/how-to-build-your-own-mcp-server-step-by-step.md",
+          "size": 17038,
+          "language": "md"
+        },
+        {
+          "name": "integrate-mcp-server-step-by-step.md",
+          "type": "file",
+          "path": "docs/integrate-mcp-server-step-by-step.md",
+          "size": 10588,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "servers",
+      "type": "folder",
+      "path": "servers",
+      "children": [
+        {
+          "name": "example-server",
+          "type": "folder",
+          "path": "servers/example-server",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/example-server/src",
+              "children": [
+                {
+                  "name": "example_server",
+                  "type": "folder",
+                  "path": "servers/example-server/src/example_server",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/example-server/src/example_server/__init__.py",
+                      "size": 46,
+                      "language": "py"
+                    },
+                    {
+                      "name": "main.py",
+                      "type": "file",
+                      "path": "servers/example-server/src/example_server/main.py",
+                      "size": 4393,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/example-server/manifest.json",
+              "size": 831,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/example-server/pyproject.toml",
+              "size": 337,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/example-server/README.md",
+              "size": 92,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "gpaw-computation",
+          "type": "folder",
+          "path": "servers/gpaw-computation",
+          "children": [
+            {
+              "name": "server_package",
+              "type": "folder",
+              "path": "servers/gpaw-computation/server_package",
+              "children": [
+                {
+                  "name": "gpaw_computation_server",
+                  "type": "folder",
+                  "path": "servers/gpaw-computation/server_package/gpaw_computation_server",
+                  "children": [
+                    {
+                      "name": "check_calculation_result",
+                      "type": "folder",
+                      "path": "servers/gpaw-computation/server_package/gpaw_computation_server/check_calculation_result",
+                      "children": [
+                        {
+                          "name": "__main__.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/check_calculation_result/__main__.py",
+                          "size": 1451,
+                          "language": "py"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "create_calculation_project",
+                      "type": "folder",
+                      "path": "servers/gpaw-computation/server_package/gpaw_computation_server/create_calculation_project",
+                      "children": [
+                        {
+                          "name": "__main__.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/create_calculation_project/__main__.py",
+                          "size": 1158,
+                          "language": "py"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "get_project_summary",
+                      "type": "folder",
+                      "path": "servers/gpaw-computation/server_package/gpaw_computation_server/get_project_summary",
+                      "children": [
+                        {
+                          "name": "__main__.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/get_project_summary/__main__.py",
+                          "size": 699,
+                          "language": "py"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "gpaw_utils",
+                      "type": "folder",
+                      "path": "servers/gpaw-computation/server_package/gpaw_computation_server/gpaw_utils",
+                      "children": [
+                        {
+                          "name": "__init__.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/gpaw_utils/__init__.py",
+                          "size": 0,
+                          "language": "py"
+                        },
+                        {
+                          "name": "data_class.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/gpaw_utils/data_class.py",
+                          "size": 42223,
+                          "language": "py"
+                        },
+                        {
+                          "name": "document.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/gpaw_utils/document.py",
+                          "size": 807,
+                          "language": "py"
+                        },
+                        {
+                          "name": "lib.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/gpaw_utils/lib.py",
+                          "size": 18887,
+                          "language": "py"
+                        },
+                        {
+                          "name": "plot_band_dos_utils.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/gpaw_utils/plot_band_dos_utils.py",
+                          "size": 25939,
+                          "language": "py"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "run_calculation",
+                      "type": "folder",
+                      "path": "servers/gpaw-computation/server_package/gpaw_computation_server/run_calculation",
+                      "children": [
+                        {
+                          "name": "__main__.py",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/server_package/gpaw_computation_server/run_calculation/__main__.py",
+                          "size": 1186,
+                          "language": "py"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/server_package/gpaw_computation_server/__init__.py",
+                      "size": 23,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "pyproject.toml",
+                  "type": "file",
+                  "path": "servers/gpaw-computation/server_package/pyproject.toml",
+                  "size": 559,
+                  "language": "toml"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "servers/gpaw-computation/server_package/README.md",
+                  "size": 1270,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/gpaw-computation/src",
+              "children": [
+                {
+                  "name": "gpaw_computation",
+                  "type": "folder",
+                  "path": "servers/gpaw-computation/src/gpaw_computation",
+                  "children": [
+                    {
+                      "name": "config",
+                      "type": "folder",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/config",
+                      "children": [
+                        {
+                          "name": "settings.toml",
+                          "type": "file",
+                          "path": "servers/gpaw-computation/src/gpaw_computation/config/settings.toml",
+                          "size": 547,
+                          "language": "toml"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/__init__.py",
+                      "size": 165,
+                      "language": "py"
+                    },
+                    {
+                      "name": "config.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/config.py",
+                      "size": 846,
+                      "language": "py"
+                    },
+                    {
+                      "name": "data_class.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/data_class.py",
+                      "size": 6179,
+                      "language": "py"
+                    },
+                    {
+                      "name": "rester.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/rester.py",
+                      "size": 392,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/server.py",
+                      "size": 12178,
+                      "language": "py"
+                    },
+                    {
+                      "name": "ssh_utils.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/ssh_utils.py",
+                      "size": 3169,
+                      "language": "py"
+                    },
+                    {
+                      "name": "structure_helper.py",
+                      "type": "file",
+                      "path": "servers/gpaw-computation/src/gpaw_computation/structure_helper.py",
+                      "size": 2740,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/gpaw-computation/manifest.json",
+              "size": 1187,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/gpaw-computation/pyproject.toml",
+              "size": 569,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/gpaw-computation/README.md",
+              "size": 2642,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "jupyter-act",
+          "type": "folder",
+          "path": "servers/jupyter-act",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/jupyter-act/src",
+              "children": [
+                {
+                  "name": "jupyter_act",
+                  "type": "folder",
+                  "path": "servers/jupyter-act/src/jupyter_act",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/jupyter-act/src/jupyter_act/__init__.py",
+                      "size": 608,
+                      "language": "py"
+                    },
+                    {
+                      "name": "schema.py",
+                      "type": "file",
+                      "path": "servers/jupyter-act/src/jupyter_act/schema.py",
+                      "size": 8190,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/jupyter-act/src/jupyter_act/server.py",
+                      "size": 16975,
+                      "language": "py"
+                    },
+                    {
+                      "name": "utils.py",
+                      "type": "file",
+                      "path": "servers/jupyter-act/src/jupyter_act/utils.py",
+                      "size": 19461,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/jupyter-act/manifest.json",
+              "size": 2244,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/jupyter-act/pyproject.toml",
+              "size": 545,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/jupyter-act/README.md",
+              "size": 5290,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "materials-project",
+          "type": "folder",
+          "path": "servers/materials-project",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/materials-project/src",
+              "children": [
+                {
+                  "name": "materials_project",
+                  "type": "folder",
+                  "path": "servers/materials-project/src/materials_project",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/__init__.py",
+                      "size": 262,
+                      "language": "py"
+                    },
+                    {
+                      "name": "__main__.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/__main__.py",
+                      "size": 62,
+                      "language": "py"
+                    },
+                    {
+                      "name": "data_class.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/data_class.py",
+                      "size": 7599,
+                      "language": "py"
+                    },
+                    {
+                      "name": "moire_helper.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/moire_helper.py",
+                      "size": 5352,
+                      "language": "py"
+                    },
+                    {
+                      "name": "plot_helper.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/plot_helper.py",
+                      "size": 12844,
+                      "language": "py"
+                    },
+                    {
+                      "name": "rester.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/rester.py",
+                      "size": 352,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/server.py",
+                      "size": 12165,
+                      "language": "py"
+                    },
+                    {
+                      "name": "structure_helper.py",
+                      "type": "file",
+                      "path": "servers/materials-project/src/materials_project/structure_helper.py",
+                      "size": 2845,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/materials-project/manifest.json",
+              "size": 2097,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/materials-project/pyproject.toml",
+              "size": 505,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/materials-project/README.md",
+              "size": 7585,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "mathematica-check",
+          "type": "folder",
+          "path": "servers/mathematica-check",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/mathematica-check/src",
+              "children": [
+                {
+                  "name": "mathematica_check",
+                  "type": "folder",
+                  "path": "servers/mathematica-check/src/mathematica_check",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/mathematica-check/src/mathematica_check/__init__.py",
+                      "size": 53,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/mathematica-check/src/mathematica_check/server.py",
+                      "size": 9601,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/mathematica-check/manifest.json",
+              "size": 1000,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/mathematica-check/pyproject.toml",
+              "size": 477,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/mathematica-check/README.md",
+              "size": 5746,
+              "language": "md"
+            },
+            {
+              "name": "setup.py",
+              "type": "file",
+              "path": "servers/mathematica-check/setup.py",
+              "size": 413,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "nemad",
+          "type": "folder",
+          "path": "servers/nemad",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/nemad/src",
+              "children": [
+                {
+                  "name": "nemad",
+                  "type": "folder",
+                  "path": "servers/nemad/src/nemad",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/nemad/src/nemad/__init__.py",
+                      "size": 501,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/nemad/src/nemad/server.py",
+                      "size": 8744,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/nemad/manifest.json",
+              "size": 1460,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/nemad/pyproject.toml",
+              "size": 391,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/nemad/README.md",
+              "size": 1642,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "netket",
+          "type": "folder",
+          "path": "servers/netket",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/netket/src",
+              "children": [
+                {
+                  "name": "netket",
+                  "type": "folder",
+                  "path": "servers/netket/src/netket",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/netket/src/netket/__init__.py",
+                      "size": 51,
+                      "language": "py"
+                    },
+                    {
+                      "name": "mcp_server.py",
+                      "type": "file",
+                      "path": "servers/netket/src/netket/mcp_server.py",
+                      "size": 42793,
+                      "language": "py"
+                    },
+                    {
+                      "name": "netket_jsons.py",
+                      "type": "file",
+                      "path": "servers/netket/src/netket/netket_jsons.py",
+                      "size": 8208,
+                      "language": "py"
+                    },
+                    {
+                      "name": "netket_schemas.py",
+                      "type": "file",
+                      "path": "servers/netket/src/netket/netket_schemas.py",
+                      "size": 26613,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "task-set",
+              "type": "folder",
+              "path": "servers/netket/task-set",
+              "children": [
+                {
+                  "name": "analyze_hubbard.py",
+                  "type": "file",
+                  "path": "servers/netket/task-set/analyze_hubbard.py",
+                  "size": 2547,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_ising.py",
+                  "type": "file",
+                  "path": "servers/netket/task-set/analyze_ising.py",
+                  "size": 3114,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_ssh.py",
+                  "type": "file",
+                  "path": "servers/netket/task-set/analyze_ssh.py",
+                  "size": 3055,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "tests",
+              "type": "folder",
+              "path": "servers/netket/tests",
+              "children": [
+                {
+                  "name": "netket",
+                  "type": "folder",
+                  "path": "servers/netket/tests/netket",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/netket/tests/netket/__init__.py",
+                      "size": 1,
+                      "language": "py"
+                    },
+                    {
+                      "name": "test_json_manager.py",
+                      "type": "file",
+                      "path": "servers/netket/tests/netket/test_json_manager.py",
+                      "size": 4241,
+                      "language": "py"
+                    },
+                    {
+                      "name": "test_schemas.py",
+                      "type": "file",
+                      "path": "servers/netket/tests/netket/test_schemas.py",
+                      "size": 2981,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "servers/netket/tests/__init__.py",
+                  "size": 1,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": ".gitignore",
+              "type": "file",
+              "path": "servers/netket/.gitignore",
+              "size": 480,
+              "language": "text"
+            },
+            {
+              "name": "DEVELOP.md",
+              "type": "file",
+              "path": "servers/netket/DEVELOP.md",
+              "size": 11166,
+              "language": "md"
+            },
+            {
+              "name": "LICENSE",
+              "type": "file",
+              "path": "servers/netket/LICENSE",
+              "size": 1100,
+              "language": "text"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/netket/pyproject.toml",
+              "size": 554,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/netket/README.md",
+              "size": 5086,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "python-code-execution",
+          "type": "folder",
+          "path": "servers/python-code-execution",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/python-code-execution/src",
+              "children": [
+                {
+                  "name": "python_code_execution",
+                  "type": "folder",
+                  "path": "servers/python-code-execution/src/python_code_execution",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/python-code-execution/src/python_code_execution/__init__.py",
+                      "size": 134,
+                      "language": "py"
+                    },
+                    {
+                      "name": "local_python_executor.py",
+                      "type": "file",
+                      "path": "servers/python-code-execution/src/python_code_execution/local_python_executor.py",
+                      "size": 57549,
+                      "language": "py"
+                    },
+                    {
+                      "name": "safe_execute.py",
+                      "type": "file",
+                      "path": "servers/python-code-execution/src/python_code_execution/safe_execute.py",
+                      "size": 3298,
+                      "language": "py"
+                    },
+                    {
+                      "name": "schemas.py",
+                      "type": "file",
+                      "path": "servers/python-code-execution/src/python_code_execution/schemas.py",
+                      "size": 3662,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/python-code-execution/src/python_code_execution/server.py",
+                      "size": 7056,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/python-code-execution/manifest.json",
+              "size": 854,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/python-code-execution/pyproject.toml",
+              "size": 663,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/python-code-execution/README.md",
+              "size": 1347,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "ssh-exec",
+          "type": "folder",
+          "path": "servers/ssh-exec",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/ssh-exec/src",
+              "children": [
+                {
+                  "name": "ssh_exec",
+                  "type": "folder",
+                  "path": "servers/ssh-exec/src/ssh_exec",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/ssh-exec/src/ssh_exec/__init__.py",
+                      "size": 4456,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/ssh-exec/src/ssh_exec/server.py",
+                      "size": 8419,
+                      "language": "py"
+                    },
+                    {
+                      "name": "ssh_client.py",
+                      "type": "file",
+                      "path": "servers/ssh-exec/src/ssh_exec/ssh_client.py",
+                      "size": 9455,
+                      "language": "py"
+                    },
+                    {
+                      "name": "utils.py",
+                      "type": "file",
+                      "path": "servers/ssh-exec/src/ssh_exec/utils.py",
+                      "size": 4065,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/ssh-exec/manifest.json",
+              "size": 3252,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/ssh-exec/pyproject.toml",
+              "size": 633,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/ssh-exec/README.md",
+              "size": 7213,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "timer",
+          "type": "folder",
+          "path": "servers/timer",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/timer/src",
+              "children": [
+                {
+                  "name": "timer",
+                  "type": "folder",
+                  "path": "servers/timer/src/timer",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/timer/src/timer/__init__.py",
+                      "size": 97,
+                      "language": "py"
+                    },
+                    {
+                      "name": "main.py",
+                      "type": "file",
+                      "path": "servers/timer/src/timer/main.py",
+                      "size": 4878,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/timer/pyproject.toml",
+              "size": 383,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/timer/README.md",
+              "size": 1261,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "tinydb",
+          "type": "folder",
+          "path": "servers/tinydb",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/tinydb/src",
+              "children": [
+                {
+                  "name": "tinydb_server",
+                  "type": "folder",
+                  "path": "servers/tinydb/src/tinydb_server",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/tinydb/src/tinydb_server/__init__.py",
+                      "size": 60,
+                      "language": "py"
+                    },
+                    {
+                      "name": "main.py",
+                      "type": "file",
+                      "path": "servers/tinydb/src/tinydb_server/main.py",
+                      "size": 6570,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "tests",
+              "type": "folder",
+              "path": "servers/tinydb/tests",
+              "children": [
+                {
+                  "name": "test_main.py",
+                  "type": "file",
+                  "path": "servers/tinydb/tests/test_main.py",
+                  "size": 9046,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/tinydb/manifest.json",
+              "size": 1417,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/tinydb/pyproject.toml",
+              "size": 459,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/tinydb/README.md",
+              "size": 6256,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "txyz-search",
+          "type": "folder",
+          "path": "servers/txyz-search",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/txyz-search/src",
+              "children": [
+                {
+                  "name": "txyz_search",
+                  "type": "folder",
+                  "path": "servers/txyz-search/src/txyz_search",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/txyz-search/src/txyz_search/__init__.py",
+                      "size": 458,
+                      "language": "py"
+                    },
+                    {
+                      "name": "server.py",
+                      "type": "file",
+                      "path": "servers/txyz-search/src/txyz_search/server.py",
+                      "size": 7549,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dockerfile",
+              "type": "file",
+              "path": "servers/txyz-search/Dockerfile",
+              "size": 1107,
+              "language": "text"
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/txyz-search/manifest.json",
+              "size": 1215,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/txyz-search/pyproject.toml",
+              "size": 447,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/txyz-search/README.md",
+              "size": 2956,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "web-fetch",
+          "type": "folder",
+          "path": "servers/web-fetch",
+          "children": [
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "servers/web-fetch/src",
+              "children": [
+                {
+                  "name": "web_fetch",
+                  "type": "folder",
+                  "path": "servers/web-fetch/src/web_fetch",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "servers/web-fetch/src/web_fetch/__init__.py",
+                      "size": 554,
+                      "language": "py"
+                    },
+                    {
+                      "name": "fetch.py",
+                      "type": "file",
+                      "path": "servers/web-fetch/src/web_fetch/fetch.py",
+                      "size": 3588,
+                      "language": "py"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dockerfile",
+              "type": "file",
+              "path": "servers/web-fetch/Dockerfile",
+              "size": 1105,
+              "language": "text"
+            },
+            {
+              "name": "manifest.json",
+              "type": "file",
+              "path": "servers/web-fetch/manifest.json",
+              "size": 980,
+              "language": "json"
+            },
+            {
+              "name": "pyproject.toml",
+              "type": "file",
+              "path": "servers/web-fetch/pyproject.toml",
+              "size": 474,
+              "language": "toml"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "servers/web-fetch/README.md",
+              "size": 1653,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "mcp_science",
+          "type": "folder",
+          "path": "src/mcp_science",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/mcp_science/__init__.py",
+              "size": 2335,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 3759,
+      "language": "text"
+    },
+    {
+      "name": "index.html",
+      "type": "file",
+      "path": "index.html",
+      "size": 6463,
+      "language": "html"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1100,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 613,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 10833,
+      "language": "md"
+    }
+  ]
+}

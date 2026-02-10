@@ -1,0 +1,16 @@
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
+db.sqlite
+.swiftpm
+.env
+data/
+data
+data_run
+data_spatial
+.cache
+.venv
+.vscode/

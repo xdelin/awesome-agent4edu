@@ -1,0 +1,82 @@
+{
+  "name": "Wolfram Alpha MCP",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "mcp_wolfram_alpha",
+          "type": "folder",
+          "path": "src/mcp_wolfram_alpha",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/mcp_wolfram_alpha/__init__.py",
+              "size": 226,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "src/mcp_wolfram_alpha/server.py",
+              "size": 4983,
+              "language": "py"
+            },
+            {
+              "name": "wolfram_client.py",
+              "type": "file",
+              "path": "src/mcp_wolfram_alpha/wolfram_client.py",
+              "size": 3418,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 159,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 157,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1089,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 478,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1881,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 661,
+      "language": "yaml"
+    }
+  ]
+}

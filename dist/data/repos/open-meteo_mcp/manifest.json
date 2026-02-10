@@ -1,0 +1,2574 @@
+{
+  "name": "Open-Meteo MCP",
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "cronjobs.md",
+          "type": "file",
+          "path": "docs/cronjobs.md",
+          "size": 15536,
+          "language": "md"
+        },
+        {
+          "name": "development.md",
+          "type": "file",
+          "path": "docs/development.md",
+          "size": 3526,
+          "language": "md"
+        },
+        {
+          "name": "downloading-datasets.md",
+          "type": "file",
+          "path": "docs/downloading-datasets.md",
+          "size": 7468,
+          "language": "md"
+        },
+        {
+          "name": "getting-started.md",
+          "type": "file",
+          "path": "docs/getting-started.md",
+          "size": 6263,
+          "language": "md"
+        },
+        {
+          "name": "sync-command.md",
+          "type": "file",
+          "path": "docs/sync-command.md",
+          "size": 4329,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "Public",
+      "type": "folder",
+      "path": "Public",
+      "children": [
+        {
+          "name": "docs",
+          "type": "folder",
+          "path": "Public/docs",
+          "children": [
+            {
+              "name": "openapi.yml",
+              "type": "file",
+              "path": "Public/docs/openapi.yml",
+              "size": 13854,
+              "language": "yml"
+            }
+          ]
+        },
+        {
+          "name": "android-chrome-192x192.png",
+          "type": "file",
+          "path": "Public/android-chrome-192x192.png",
+          "size": 6365,
+          "language": "png"
+        },
+        {
+          "name": "android-chrome-512x512.png",
+          "type": "file",
+          "path": "Public/android-chrome-512x512.png",
+          "size": 18775,
+          "language": "png"
+        },
+        {
+          "name": "apple-touch-icon.png",
+          "type": "file",
+          "path": "Public/apple-touch-icon.png",
+          "size": 6018,
+          "language": "png"
+        },
+        {
+          "name": "favicon-16x16.png",
+          "type": "file",
+          "path": "Public/favicon-16x16.png",
+          "size": 522,
+          "language": "png"
+        },
+        {
+          "name": "favicon-32x32.png",
+          "type": "file",
+          "path": "Public/favicon-32x32.png",
+          "size": 949,
+          "language": "png"
+        },
+        {
+          "name": "favicon.ico",
+          "type": "file",
+          "path": "Public/favicon.ico",
+          "size": 15406,
+          "language": "ico"
+        }
+      ]
+    },
+    {
+      "name": "Sources",
+      "type": "folder",
+      "path": "Sources",
+      "children": [
+        {
+          "name": "App",
+          "type": "folder",
+          "path": "Sources/App",
+          "children": [
+            {
+              "name": "Bom",
+              "type": "folder",
+              "path": "Sources/App/Bom",
+              "children": [
+                {
+                  "name": "BomDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Bom/BomDomain.swift",
+                  "size": 2539,
+                  "language": "swift"
+                },
+                {
+                  "name": "BomDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Bom/BomDownloader.swift",
+                  "size": 34266,
+                  "language": "swift"
+                },
+                {
+                  "name": "BomReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Bom/BomReader.swift",
+                  "size": 17578,
+                  "language": "swift"
+                },
+                {
+                  "name": "BomVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Bom/BomVariable.swift",
+                  "size": 8520,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Cams",
+              "type": "folder",
+              "path": "Sources/App/Cams",
+              "children": [
+                {
+                  "name": "CamsDaily.swift",
+                  "type": "file",
+                  "path": "Sources/App/Cams/CamsDaily.swift",
+                  "size": 675,
+                  "language": "swift"
+                },
+                {
+                  "name": "CamsDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Cams/CamsDomain.swift",
+                  "size": 17460,
+                  "language": "swift"
+                },
+                {
+                  "name": "CamsDownload.swift",
+                  "type": "file",
+                  "path": "Sources/App/Cams/CamsDownload.swift",
+                  "size": 20696,
+                  "language": "swift"
+                },
+                {
+                  "name": "CamsGreenhouseGases.swift",
+                  "type": "file",
+                  "path": "Sources/App/Cams/CamsGreenhouseGases.swift",
+                  "size": 3194,
+                  "language": "swift"
+                },
+                {
+                  "name": "CamsReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Cams/CamsReader.swift",
+                  "size": 10791,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "CMA",
+              "type": "folder",
+              "path": "Sources/App/CMA",
+              "children": [
+                {
+                  "name": "CmaDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/CMA/CmaDomain.swift",
+                  "size": 1735,
+                  "language": "swift"
+                },
+                {
+                  "name": "CmaDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/CMA/CmaDownloader.swift",
+                  "size": 19847,
+                  "language": "swift"
+                },
+                {
+                  "name": "CmaReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/CMA/CmaReader.swift",
+                  "size": 30719,
+                  "language": "swift"
+                },
+                {
+                  "name": "CmaVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/CMA/CmaVariable.swift",
+                  "size": 15814,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Cmip6",
+              "type": "folder",
+              "path": "Sources/App/Cmip6",
+              "children": [
+                {
+                  "name": "CmipDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Cmip6/CmipDownloader.swift",
+                  "size": 65411,
+                  "language": "swift"
+                },
+                {
+                  "name": "CmipReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Cmip6/CmipReader.swift",
+                  "size": 44663,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Commands",
+              "type": "folder",
+              "path": "Sources/App/Commands",
+              "children": [
+                {
+                  "name": "BenchmarkCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Commands/BenchmarkCommand.swift",
+                  "size": 5700,
+                  "language": "swift"
+                },
+                {
+                  "name": "ConvertOmCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Commands/ConvertOmCommand.swift",
+                  "size": 14581,
+                  "language": "swift"
+                },
+                {
+                  "name": "CronjobCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Commands/CronjobCommand.swift",
+                  "size": 59,
+                  "language": "swift"
+                },
+                {
+                  "name": "ExportCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Commands/ExportCommand.swift",
+                  "size": 51533,
+                  "language": "swift"
+                },
+                {
+                  "name": "MergeYearlyCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Commands/MergeYearlyCommand.swift",
+                  "size": 13425,
+                  "language": "swift"
+                },
+                {
+                  "name": "MigrationCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Commands/MigrationCommand.swift",
+                  "size": 12054,
+                  "language": "swift"
+                },
+                {
+                  "name": "SyncCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Commands/SyncCommand.swift",
+                  "size": 24577,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Controllers",
+              "type": "folder",
+              "path": "Sources/App/Controllers",
+              "children": [
+                {
+                  "name": "ForecastapiController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Controllers/ForecastapiController.swift",
+                  "size": 124519,
+                  "language": "swift"
+                },
+                {
+                  "name": "S3DataController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Controllers/S3DataController.swift",
+                  "size": 8783,
+                  "language": "swift"
+                },
+                {
+                  "name": "VariableDaily.swift",
+                  "type": "file",
+                  "path": "Sources/App/Controllers/VariableDaily.swift",
+                  "size": 17118,
+                  "language": "swift"
+                },
+                {
+                  "name": "VariableHourly.swift",
+                  "type": "file",
+                  "path": "Sources/App/Controllers/VariableHourly.swift",
+                  "size": 39831,
+                  "language": "swift"
+                },
+                {
+                  "name": "VariableMonthly.swift",
+                  "type": "file",
+                  "path": "Sources/App/Controllers/VariableMonthly.swift",
+                  "size": 14220,
+                  "language": "swift"
+                },
+                {
+                  "name": "VariableWeekly.swift",
+                  "type": "file",
+                  "path": "Sources/App/Controllers/VariableWeekly.swift",
+                  "size": 14619,
+                  "language": "swift"
+                },
+                {
+                  "name": "WebsiteController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Controllers/WebsiteController.swift",
+                  "size": 284,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Dem",
+              "type": "folder",
+              "path": "Sources/App/Dem",
+              "children": [
+                {
+                  "name": "DemController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Dem/DemController.swift",
+                  "size": 2250,
+                  "language": "swift"
+                },
+                {
+                  "name": "DownloadDem.swift",
+                  "type": "file",
+                  "path": "Sources/App/Dem/DownloadDem.swift",
+                  "size": 9637,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Dmi",
+              "type": "folder",
+              "path": "Sources/App/Dmi",
+              "children": [
+                {
+                  "name": "DmiDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Dmi/DmiDomain.swift",
+                  "size": 2704,
+                  "language": "swift"
+                },
+                {
+                  "name": "DmiDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Dmi/DmiDownloader.swift",
+                  "size": 23419,
+                  "language": "swift"
+                },
+                {
+                  "name": "DmiReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Dmi/DmiReader.swift",
+                  "size": 24518,
+                  "language": "swift"
+                },
+                {
+                  "name": "DmiVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Dmi/DmiVariable.swift",
+                  "size": 10147,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Domains",
+              "type": "folder",
+              "path": "Sources/App/Domains",
+              "children": [
+                {
+                  "name": "DebugFromGRIB.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/DebugFromGRIB.swift",
+                  "size": 3492,
+                  "language": "swift"
+                },
+                {
+                  "name": "GaussianGrid.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/GaussianGrid.swift",
+                  "size": 18667,
+                  "language": "swift"
+                },
+                {
+                  "name": "Gridable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/Gridable.swift",
+                  "size": 11303,
+                  "language": "swift"
+                },
+                {
+                  "name": "LambertAzimuthalEqualAreaProjection.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/LambertAzimuthalEqualAreaProjection.swift",
+                  "size": 2455,
+                  "language": "swift"
+                },
+                {
+                  "name": "LambertConformalConic.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/LambertConformalConic.swift",
+                  "size": 3734,
+                  "language": "swift"
+                },
+                {
+                  "name": "ProjectionGrid.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/ProjectionGrid.swift",
+                  "size": 5401,
+                  "language": "swift"
+                },
+                {
+                  "name": "RegularGrid.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/RegularGrid.swift",
+                  "size": 6001,
+                  "language": "swift"
+                },
+                {
+                  "name": "RotatedLatLon.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/RotatedLatLon.swift",
+                  "size": 2539,
+                  "language": "swift"
+                },
+                {
+                  "name": "Stereographic.swift",
+                  "type": "file",
+                  "path": "Sources/App/Domains/Stereographic.swift",
+                  "size": 2527,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Ecmwf",
+              "type": "folder",
+              "path": "Sources/App/Ecmwf",
+              "children": [
+                {
+                  "name": "DownloadEcmwfCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Ecmwf/DownloadEcmwfCommand.swift",
+                  "size": 33367,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Ecmwf/EcmwfController.swift",
+                  "size": 123,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Ecmwf/EcmwfDomain.swift",
+                  "size": 3792,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Ecmwf/EcmwfReader.swift",
+                  "size": 57204,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Ecmwf/EcmwfVariable.swift",
+                  "size": 44727,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "EcmwfEcpds",
+              "type": "folder",
+              "path": "Sources/App/EcmwfEcpds",
+              "children": [
+                {
+                  "name": "EcmwfEcdpsWamVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfEcpds/EcmwfEcdpsWamVariable.swift",
+                  "size": 1939,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfEcpdsDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfEcpds/EcmwfEcpdsDomain.swift",
+                  "size": 2377,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfEcpdsDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfEcpds/EcmwfEcpdsDownloader.swift",
+                  "size": 28265,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfEcpdsReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfEcpds/EcmwfEcpdsReader.swift",
+                  "size": 28755,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfEcpdsVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfEcpds/EcmwfEcpdsVariable.swift",
+                  "size": 16904,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "EcmwfSeas",
+              "type": "folder",
+              "path": "Sources/App/EcmwfSeas",
+              "children": [
+                {
+                  "name": "EcmwfEC46Variable.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfSeas/EcmwfEC46Variable.swift",
+                  "size": 30875,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfSeasDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfSeas/EcmwfSeasDomain.swift",
+                  "size": 4710,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfSeasDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfSeas/EcmwfSeasDownloader.swift",
+                  "size": 23341,
+                  "language": "swift"
+                },
+                {
+                  "name": "EcmwfSeasVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/EcmwfSeas/EcmwfSeasVariable.swift",
+                  "size": 40217,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Era5",
+              "type": "folder",
+              "path": "Sources/App/Era5",
+              "children": [
+                {
+                  "name": "CerraDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Era5/CerraDomain.swift",
+                  "size": 24661,
+                  "language": "swift"
+                },
+                {
+                  "name": "DownloadEra5Command.swift",
+                  "type": "file",
+                  "path": "Sources/App/Era5/DownloadEra5Command.swift",
+                  "size": 43737,
+                  "language": "swift"
+                },
+                {
+                  "name": "Era5Controller.swift",
+                  "type": "file",
+                  "path": "Sources/App/Era5/Era5Controller.swift",
+                  "size": 34601,
+                  "language": "swift"
+                },
+                {
+                  "name": "Era5Domain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Era5/Era5Domain.swift",
+                  "size": 4826,
+                  "language": "swift"
+                },
+                {
+                  "name": "Era5Variables.swift",
+                  "type": "file",
+                  "path": "Sources/App/Era5/Era5Variables.swift",
+                  "size": 23165,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "EumetsatLsaSaf",
+              "type": "folder",
+              "path": "Sources/App/EumetsatLsaSaf",
+              "children": [
+                {
+                  "name": "EumetsatLsaSafDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatLsaSaf/EumetsatLsaSafDomain.swift",
+                  "size": 1284,
+                  "language": "swift"
+                },
+                {
+                  "name": "EumetsatLsaSafDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatLsaSaf/EumetsatLsaSafDownloader.swift",
+                  "size": 11242,
+                  "language": "swift"
+                },
+                {
+                  "name": "EumetsatLsaSafReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatLsaSaf/EumetsatLsaSafReader.swift",
+                  "size": 6215,
+                  "language": "swift"
+                },
+                {
+                  "name": "EumetsatLsaSafVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatLsaSaf/EumetsatLsaSafVariable.swift",
+                  "size": 898,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "EumetsatSarah",
+              "type": "folder",
+              "path": "Sources/App/EumetsatSarah",
+              "children": [
+                {
+                  "name": "EumetsatSarahDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatSarah/EumetsatSarahDomain.swift",
+                  "size": 1002,
+                  "language": "swift"
+                },
+                {
+                  "name": "EumetsatSarahDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatSarah/EumetsatSarahDownloader.swift",
+                  "size": 11703,
+                  "language": "swift"
+                },
+                {
+                  "name": "EumetsatSarahReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatSarah/EumetsatSarahReader.swift",
+                  "size": 6207,
+                  "language": "swift"
+                },
+                {
+                  "name": "EumetsatSarahVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/EumetsatSarah/EumetsatSarahVariable.swift",
+                  "size": 1296,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Gem",
+              "type": "folder",
+              "path": "Sources/App/Gem",
+              "children": [
+                {
+                  "name": "GemController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gem/GemController.swift",
+                  "size": 25082,
+                  "language": "swift"
+                },
+                {
+                  "name": "GemDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gem/GemDomain.swift",
+                  "size": 8434,
+                  "language": "swift"
+                },
+                {
+                  "name": "GemDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gem/GemDownloader.swift",
+                  "size": 14168,
+                  "language": "swift"
+                },
+                {
+                  "name": "GemVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gem/GemVariable.swift",
+                  "size": 19409,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Gfs",
+              "type": "folder",
+              "path": "Sources/App/Gfs",
+              "children": [
+                {
+                  "name": "GfsController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gfs/GfsController.swift",
+                  "size": 33479,
+                  "language": "swift"
+                },
+                {
+                  "name": "GfsDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gfs/GfsDomain.swift",
+                  "size": 14785,
+                  "language": "swift"
+                },
+                {
+                  "name": "GfsDownload.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gfs/GfsDownload.swift",
+                  "size": 27697,
+                  "language": "swift"
+                },
+                {
+                  "name": "GfsVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gfs/GfsVariable.swift",
+                  "size": 15003,
+                  "language": "swift"
+                },
+                {
+                  "name": "GfsVariableDownloadable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gfs/GfsVariableDownloadable.swift",
+                  "size": 22724,
+                  "language": "swift"
+                },
+                {
+                  "name": "GfsWaveVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gfs/GfsWaveVariable.swift",
+                  "size": 5206,
+                  "language": "swift"
+                },
+                {
+                  "name": "PrecipitationProbability.swift",
+                  "type": "file",
+                  "path": "Sources/App/Gfs/PrecipitationProbability.swift",
+                  "size": 9119,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "GfsGraphCast",
+              "type": "folder",
+              "path": "Sources/App/GfsGraphCast",
+              "children": [
+                {
+                  "name": "GfsGraphCastDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/GfsGraphCast/GfsGraphCastDomain.swift",
+                  "size": 5311,
+                  "language": "swift"
+                },
+                {
+                  "name": "GfsGraphCastDownload.swift",
+                  "type": "file",
+                  "path": "Sources/App/GfsGraphCast/GfsGraphCastDownload.swift",
+                  "size": 19952,
+                  "language": "swift"
+                },
+                {
+                  "name": "GfsGraphCastVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/GfsGraphCast/GfsGraphCastVariable.swift",
+                  "size": 6988,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "GloFas",
+              "type": "folder",
+              "path": "Sources/App/GloFas",
+              "children": [
+                {
+                  "name": "GloFasDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/GloFas/GloFasDownloader.swift",
+                  "size": 17393,
+                  "language": "swift"
+                },
+                {
+                  "name": "GloFasReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/GloFas/GloFasReader.swift",
+                  "size": 3908,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Helper",
+              "type": "folder",
+              "path": "Sources/App/Helper",
+              "children": [
+                {
+                  "name": "Download",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/Download",
+                  "children": [
+                    {
+                      "name": "AWSSigner.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/AWSSigner.swift",
+                      "size": 7005,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Curl+CDS.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/Curl+CDS.swift",
+                      "size": 10801,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Curl+ECMWF.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/Curl+ECMWF.swift",
+                      "size": 6450,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Curl+Grib.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/Curl+Grib.swift",
+                      "size": 10813,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Curl+NetCDF.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/Curl+NetCDF.swift",
+                      "size": 2424,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Curl.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/Curl.swift",
+                      "size": 24671,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "CurlIndexed.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/CurlIndexed.swift",
+                      "size": 11238,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FileManagerExtension.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/FileManagerExtension.swift",
+                      "size": 1247,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FtpDownloader.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/FtpDownloader.swift",
+                      "size": 3478,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GribAttributes.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/GribAttributes.swift",
+                      "size": 3604,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GribStream.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/GribStream.swift",
+                      "size": 7231,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "HttpClient+Retry.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/HttpClient+Retry.swift",
+                      "size": 6800,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "HttpResponseSHA256Verifier.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/HttpResponseSHA256Verifier.swift",
+                      "size": 2178,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Spawn.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/Spawn.swift",
+                      "size": 6193,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "SwiftParallelBzip2.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/SwiftParallelBzip2.swift",
+                      "size": 17144,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "TimeoutTracker.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/TimeoutTracker.swift",
+                      "size": 1365,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "TransferAmountTracker.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Download/TransferAmountTracker.swift",
+                      "size": 4968,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "File",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/File",
+                  "children": [
+                    {
+                      "name": "DataSpatialJson.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/DataSpatialJson.swift",
+                      "size": 1436,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FullRunMetaJson.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/FullRunMetaJson.swift",
+                      "size": 3405,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "HttpMetaCache.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/HttpMetaCache.swift",
+                      "size": 4131,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "ModelMetaJson.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/ModelMetaJson.swift",
+                      "size": 4998,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "OmFileType.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/OmFileType.swift",
+                      "size": 11291,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "RemoteFileManageable.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/RemoteFileManageable.swift",
+                      "size": 1153,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "RemoteFileManageableJson.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/RemoteFileManageableJson.swift",
+                      "size": 1547,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "RemoteOmFileManager.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/File/RemoteOmFileManager.swift",
+                      "size": 18188,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "FlatBufferWriter",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/FlatBufferWriter",
+                  "children": [
+                    {
+                      "name": "FlatBuffers+AirQualityApi.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBuffers+AirQualityApi.swift",
+                      "size": 4536,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FlatBuffers+ClimateApi.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBuffers+ClimateApi.swift",
+                      "size": 6606,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FlatBuffers+EnsembleApi.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBuffers+EnsembleApi.swift",
+                      "size": 12645,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FlatBuffers+FloodApi.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBuffers+FloodApi.swift",
+                      "size": 1723,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FlatBuffers+MarineApi.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBuffers+MarineApi.swift",
+                      "size": 4719,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FlatBuffers+WeatherApi.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBuffers+WeatherApi.swift",
+                      "size": 60696,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FlatBuffersWriter.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBuffersWriter.swift",
+                      "size": 10360,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FlatBufferVariable.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/FlatBufferWriter/FlatBufferVariable.swift",
+                      "size": 4734,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Intrinsics",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/Intrinsics",
+                  "children": [
+                    {
+                      "name": "AnyAsyncSequence.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/AnyAsyncSequence.swift",
+                      "size": 1279,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "AsyncConcurrentMapSequence.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/AsyncConcurrentMapSequence.swift",
+                      "size": 6211,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "AsyncSequenceWithFinalizer.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/AsyncSequenceWithFinalizer.swift",
+                      "size": 1400,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "ByteByffer.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/ByteByffer.swift",
+                      "size": 225,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "ByteSizeParser.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/ByteSizeParser.swift",
+                      "size": 814,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Codable.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/Codable.swift",
+                      "size": 1048,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Concurrency.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/Concurrency.swift",
+                      "size": 4570,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "ConcurrentSequence.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/ConcurrentSequence.swift",
+                      "size": 6041,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Crypto.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/Crypto.swift",
+                      "size": 503,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Enums.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/Enums.swift",
+                      "size": 4163,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "FileChunksClosing.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/FileChunksClosing.swift",
+                      "size": 1718,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Sequence.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/Sequence.swift",
+                      "size": 868,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Sequence2D.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/Sequence2D.swift",
+                      "size": 1717,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "StringExtensions.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Intrinsics/StringExtensions.swift",
+                      "size": 768,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "OmReader",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/OmReader",
+                  "children": [
+                    {
+                      "name": "AtomicBlockCache.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/OmReader/AtomicBlockCache.swift",
+                      "size": 15886,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "AtomicCacheCoordinator.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/OmReader/AtomicCacheCoordinator.swift",
+                      "size": 5496,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "IsolatedSerialisationQueue.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/OmReader/IsolatedSerialisationQueue.swift",
+                      "size": 3161,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "OmHttpReaderBackend.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/OmReader/OmHttpReaderBackend.swift",
+                      "size": 5220,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "OmReaderBlockCache.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/OmReader/OmReaderBlockCache.swift",
+                      "size": 10397,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "OmWriter",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/OmWriter",
+                  "children": [
+                    {
+                      "name": "Calculators.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/OmWriter/Calculators.swift",
+                      "size": 7207,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "EnsembleMeanCalculator.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/OmWriter/EnsembleMeanCalculator.swift",
+                      "size": 3413,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Reader",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/Reader",
+                  "children": [
+                    {
+                      "name": "DerivedMapping.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/DerivedMapping.swift",
+                      "size": 21498,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GenericDomain.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/GenericDomain.swift",
+                      "size": 6046,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GenericReader.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/GenericReader.swift",
+                      "size": 11486,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GenericReaderCached.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/GenericReaderCached.swift",
+                      "size": 1956,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GenericReaderDerived.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/GenericReaderDerived.swift",
+                      "size": 4152,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GenericReaderMixerRaw.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/GenericReaderMixerRaw.swift",
+                      "size": 5497,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GenericReaderMulti.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/GenericReaderMulti.swift",
+                      "size": 5602,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "VariableAndMember.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/VariableAndMember.swift",
+                      "size": 1498,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "VariableHourlyDeriverHighLevel.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Reader/VariableHourlyDeriverHighLevel.swift",
+                      "size": 1414,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Solar",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/Solar",
+                  "children": [
+                    {
+                      "name": "DirectNormalIrradiance.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Solar/DirectNormalIrradiance.swift",
+                      "size": 5814,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GlobalTilitedIrradiance.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Solar/GlobalTilitedIrradiance.swift",
+                      "size": 5378,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "SolarPositionAlgorithm.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Solar/SolarPositionAlgorithm.swift",
+                      "size": 24161,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "SunRiseSet.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Solar/SunRiseSet.swift",
+                      "size": 8761,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Zensun.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Solar/Zensun.swift",
+                      "size": 23739,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Time",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/Time",
+                  "children": [
+                    {
+                      "name": "IsoDate.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Time/IsoDate.swift",
+                      "size": 3980,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "IsoDateTime.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Time/IsoDateTime.swift",
+                      "size": 5947,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "Time.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Time/Time.swift",
+                      "size": 19115,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "YearMonth.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Time/YearMonth.swift",
+                      "size": 1044,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Vapor",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/Vapor",
+                  "children": [
+                    {
+                      "name": "ApiKeyManager.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Vapor/ApiKeyManager.swift",
+                      "size": 8715,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "ConcurrencyGroupLimiter.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Vapor/ConcurrencyGroupLimiter.swift",
+                      "size": 2277,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "RateLimiter.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Vapor/RateLimiter.swift",
+                      "size": 6057,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "RepeatedTaskLifecycle.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Vapor/RepeatedTaskLifecycle.swift",
+                      "size": 1890,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Writer",
+                  "type": "folder",
+                  "path": "Sources/App/Helper/Writer",
+                  "children": [
+                    {
+                      "name": "ApiUrl.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/ApiUrl.swift",
+                      "size": 8044,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "CsvWriter.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/CsvWriter.swift",
+                      "size": 7047,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "ForecastApiResult.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/ForecastApiResult.swift",
+                      "size": 20013,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "GenericVariableHandle.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/GenericVariableHandle.swift",
+                      "size": 26046,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "JsonWriter.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/JsonWriter.swift",
+                      "size": 8527,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "VariablePerMemberStorage.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/VariablePerMemberStorage.swift",
+                      "size": 12918,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "XlsxFormat.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/XlsxFormat.swift",
+                      "size": 15655,
+                      "language": "swift"
+                    },
+                    {
+                      "name": "XlsxWriter.swift",
+                      "type": "file",
+                      "path": "Sources/App/Helper/Writer/XlsxWriter.swift",
+                      "size": 5366,
+                      "language": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Aggregation.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Aggregation.swift",
+                  "size": 1628,
+                  "language": "swift"
+                },
+                {
+                  "name": "AirQuality.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/AirQuality.swift",
+                  "size": 4914,
+                  "language": "swift"
+                },
+                {
+                  "name": "Array.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Array.swift",
+                  "size": 6196,
+                  "language": "swift"
+                },
+                {
+                  "name": "Array2D.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Array2D.swift",
+                  "size": 16479,
+                  "language": "swift"
+                },
+                {
+                  "name": "Array3D.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Array3D.swift",
+                  "size": 8317,
+                  "language": "swift"
+                },
+                {
+                  "name": "BiasCorrection.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/BiasCorrection.swift",
+                  "size": 30552,
+                  "language": "swift"
+                },
+                {
+                  "name": "Deaveraging.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Deaveraging.swift",
+                  "size": 6271,
+                  "language": "swift"
+                },
+                {
+                  "name": "DispatchTime.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/DispatchTime.swift",
+                  "size": 1300,
+                  "language": "swift"
+                },
+                {
+                  "name": "DomainRegistry.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/DomainRegistry.swift",
+                  "size": 21596,
+                  "language": "swift"
+                },
+                {
+                  "name": "FaoEvapotranspiration.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/FaoEvapotranspiration.swift",
+                  "size": 11851,
+                  "language": "swift"
+                },
+                {
+                  "name": "FileHandleExtensions.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/FileHandleExtensions.swift",
+                  "size": 4098,
+                  "language": "swift"
+                },
+                {
+                  "name": "FnvHash.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/FnvHash.swift",
+                  "size": 1069,
+                  "language": "swift"
+                },
+                {
+                  "name": "ForecastapiQuery.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/ForecastapiQuery.swift",
+                  "size": 37680,
+                  "language": "swift"
+                },
+                {
+                  "name": "FullRunsVariables.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/FullRunsVariables.swift",
+                  "size": 1613,
+                  "language": "swift"
+                },
+                {
+                  "name": "GenericDailyCalculator.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/GenericDailyCalculator.swift",
+                  "size": 17256,
+                  "language": "swift"
+                },
+                {
+                  "name": "Interpolation.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Interpolation.swift",
+                  "size": 9578,
+                  "language": "swift"
+                },
+                {
+                  "name": "InterpolationInplace.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/InterpolationInplace.swift",
+                  "size": 21330,
+                  "language": "swift"
+                },
+                {
+                  "name": "Meteorology.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Meteorology.swift",
+                  "size": 16102,
+                  "language": "swift"
+                },
+                {
+                  "name": "NumberExtensions.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/NumberExtensions.swift",
+                  "size": 5610,
+                  "language": "swift"
+                },
+                {
+                  "name": "OmFileSplitter.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/OmFileSplitter.swift",
+                  "size": 44458,
+                  "language": "swift"
+                },
+                {
+                  "name": "OmFileWriterHelper.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/OmFileWriterHelper.swift",
+                  "size": 7347,
+                  "language": "swift"
+                },
+                {
+                  "name": "OmSpatialTimestepWriter.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/OmSpatialTimestepWriter.swift",
+                  "size": 16235,
+                  "language": "swift"
+                },
+                {
+                  "name": "PressureVariableRespresentable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/PressureVariableRespresentable.swift",
+                  "size": 11317,
+                  "language": "swift"
+                },
+                {
+                  "name": "SiUnit.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/SiUnit.swift",
+                  "size": 3128,
+                  "language": "swift"
+                },
+                {
+                  "name": "Soil.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Soil.swift",
+                  "size": 2897,
+                  "language": "swift"
+                },
+                {
+                  "name": "Ulimit.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/Ulimit.swift",
+                  "size": 1631,
+                  "language": "swift"
+                },
+                {
+                  "name": "WeatherCode.swift",
+                  "type": "file",
+                  "path": "Sources/App/Helper/WeatherCode.swift",
+                  "size": 8118,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Icon",
+              "type": "folder",
+              "path": "Sources/App/Icon",
+              "children": [
+                {
+                  "name": "Cdo.swift",
+                  "type": "file",
+                  "path": "Sources/App/Icon/Cdo.swift",
+                  "size": 3483,
+                  "language": "swift"
+                },
+                {
+                  "name": "DownloadIconCommand.swift",
+                  "type": "file",
+                  "path": "Sources/App/Icon/DownloadIconCommand.swift",
+                  "size": 31957,
+                  "language": "swift"
+                },
+                {
+                  "name": "Icon.swift",
+                  "type": "file",
+                  "path": "Sources/App/Icon/Icon.swift",
+                  "size": 6597,
+                  "language": "swift"
+                },
+                {
+                  "name": "IconController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Icon/IconController.swift",
+                  "size": 3223,
+                  "language": "swift"
+                },
+                {
+                  "name": "IconReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Icon/IconReader.swift",
+                  "size": 39328,
+                  "language": "swift"
+                },
+                {
+                  "name": "IconVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Icon/IconVariable.swift",
+                  "size": 18042,
+                  "language": "swift"
+                },
+                {
+                  "name": "IconVariableDownloadable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Icon/IconVariableDownloadable.swift",
+                  "size": 11796,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "IconWave",
+              "type": "folder",
+              "path": "Sources/App/IconWave",
+              "children": [
+                {
+                  "name": "IconWaveDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/IconWave/IconWaveDomain.swift",
+                  "size": 7088,
+                  "language": "swift"
+                },
+                {
+                  "name": "IconWaveDownload.swift",
+                  "type": "file",
+                  "path": "Sources/App/IconWave/IconWaveDownload.swift",
+                  "size": 6285,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "ItaliaMeteoArpae",
+              "type": "folder",
+              "path": "Sources/App/ItaliaMeteoArpae",
+              "children": [
+                {
+                  "name": "ItaliaMeteoArpaeDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/ItaliaMeteoArpae/ItaliaMeteoArpaeDomain.swift",
+                  "size": 1470,
+                  "language": "swift"
+                },
+                {
+                  "name": "ItaliaMeteoArpaeDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/ItaliaMeteoArpae/ItaliaMeteoArpaeDownloader.swift",
+                  "size": 20164,
+                  "language": "swift"
+                },
+                {
+                  "name": "ItaliaMeteoArpaeReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/ItaliaMeteoArpae/ItaliaMeteoArpaeReader.swift",
+                  "size": 19159,
+                  "language": "swift"
+                },
+                {
+                  "name": "ItaliaMeteoArpaeVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/ItaliaMeteoArpae/ItaliaMeteoArpaeVariable.swift",
+                  "size": 17452,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "JaxaHimawari",
+              "type": "folder",
+              "path": "Sources/App/JaxaHimawari",
+              "children": [
+                {
+                  "name": "JaxaHimawariDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/JaxaHimawari/JaxaHimawariDomain.swift",
+                  "size": 1856,
+                  "language": "swift"
+                },
+                {
+                  "name": "JaxaHimawariDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/JaxaHimawari/JaxaHimawariDownloader.swift",
+                  "size": 13409,
+                  "language": "swift"
+                },
+                {
+                  "name": "JaxaHimawariReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/JaxaHimawari/JaxaHimawariReader.swift",
+                  "size": 6420,
+                  "language": "swift"
+                },
+                {
+                  "name": "JaxaHimawariVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/JaxaHimawari/JaxaHimawariVariable.swift",
+                  "size": 812,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "JMA",
+              "type": "folder",
+              "path": "Sources/App/JMA",
+              "children": [
+                {
+                  "name": "JmaController.swift",
+                  "type": "file",
+                  "path": "Sources/App/JMA/JmaController.swift",
+                  "size": 21700,
+                  "language": "swift"
+                },
+                {
+                  "name": "JmaDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/JMA/JmaDownloader.swift",
+                  "size": 22999,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Kma",
+              "type": "folder",
+              "path": "Sources/App/Kma",
+              "children": [
+                {
+                  "name": "KmaDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Kma/KmaDomain.swift",
+                  "size": 3386,
+                  "language": "swift"
+                },
+                {
+                  "name": "KmaDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Kma/KmaDownloader.swift",
+                  "size": 12340,
+                  "language": "swift"
+                },
+                {
+                  "name": "KmaReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Kma/KmaReader.swift",
+                  "size": 23021,
+                  "language": "swift"
+                },
+                {
+                  "name": "KmaVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Kma/KmaVariable.swift",
+                  "size": 7690,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Knmi",
+              "type": "folder",
+              "path": "Sources/App/Knmi",
+              "children": [
+                {
+                  "name": "KnmiDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Knmi/KnmiDomain.swift",
+                  "size": 2036,
+                  "language": "swift"
+                },
+                {
+                  "name": "KnmiDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Knmi/KnmiDownloader.swift",
+                  "size": 23391,
+                  "language": "swift"
+                },
+                {
+                  "name": "KnmiReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Knmi/KnmiReader.swift",
+                  "size": 24769,
+                  "language": "swift"
+                },
+                {
+                  "name": "KnmiVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Knmi/KnmiVariable.swift",
+                  "size": 8930,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "MeteoFrance",
+              "type": "folder",
+              "path": "Sources/App/MeteoFrance",
+              "children": [
+                {
+                  "name": "MeteoFranceController.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoFrance/MeteoFranceController.swift",
+                  "size": 33519,
+                  "language": "swift"
+                },
+                {
+                  "name": "MeteoFranceDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoFrance/MeteoFranceDomain.swift",
+                  "size": 21510,
+                  "language": "swift"
+                },
+                {
+                  "name": "MeteoFranceDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoFrance/MeteoFranceDownloader.swift",
+                  "size": 30606,
+                  "language": "swift"
+                },
+                {
+                  "name": "MeteoFranceVariableDownloadable.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoFrance/MeteoFranceVariableDownloadable.swift",
+                  "size": 13206,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "MeteoSwiss",
+              "type": "folder",
+              "path": "Sources/App/MeteoSwiss",
+              "children": [
+                {
+                  "name": "MeteoSwissDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoSwiss/MeteoSwissDomain.swift",
+                  "size": 3986,
+                  "language": "swift"
+                },
+                {
+                  "name": "MeteoSwissDownload.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoSwiss/MeteoSwissDownload.swift",
+                  "size": 18536,
+                  "language": "swift"
+                },
+                {
+                  "name": "MeteoSwissReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoSwiss/MeteoSwissReader.swift",
+                  "size": 18997,
+                  "language": "swift"
+                },
+                {
+                  "name": "MeteoSwissVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/MeteoSwiss/MeteoSwissVariable.swift",
+                  "size": 14056,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "MetNo",
+              "type": "folder",
+              "path": "Sources/App/MetNo",
+              "children": [
+                {
+                  "name": "MetNoController.swift",
+                  "type": "file",
+                  "path": "Sources/App/MetNo/MetNoController.swift",
+                  "size": 15458,
+                  "language": "swift"
+                },
+                {
+                  "name": "MetNoDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/MetNo/MetNoDomain.swift",
+                  "size": 5960,
+                  "language": "swift"
+                },
+                {
+                  "name": "MetNoDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/MetNo/MetNoDownloader.swift",
+                  "size": 9906,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "MfWave",
+              "type": "folder",
+              "path": "Sources/App/MfWave",
+              "children": [
+                {
+                  "name": "MfWaveDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/MfWave/MfWaveDomain.swift",
+                  "size": 2461,
+                  "language": "swift"
+                },
+                {
+                  "name": "MfWaveDownload.swift",
+                  "type": "file",
+                  "path": "Sources/App/MfWave/MfWaveDownload.swift",
+                  "size": 18352,
+                  "language": "swift"
+                },
+                {
+                  "name": "MfWaveVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/MfWave/MfWaveVariable.swift",
+                  "size": 8912,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Nbm",
+              "type": "folder",
+              "path": "Sources/App/Nbm",
+              "children": [
+                {
+                  "name": "NbmController.swift",
+                  "type": "file",
+                  "path": "Sources/App/Nbm/NbmController.swift",
+                  "size": 19791,
+                  "language": "swift"
+                },
+                {
+                  "name": "NbmDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/Nbm/NbmDomain.swift",
+                  "size": 5947,
+                  "language": "swift"
+                },
+                {
+                  "name": "NbmDownload.swift",
+                  "type": "file",
+                  "path": "Sources/App/Nbm/NbmDownload.swift",
+                  "size": 11506,
+                  "language": "swift"
+                },
+                {
+                  "name": "NbmVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Nbm/NbmVariable.swift",
+                  "size": 8187,
+                  "language": "swift"
+                },
+                {
+                  "name": "NbmVariableDownloadable.swift",
+                  "type": "file",
+                  "path": "Sources/App/Nbm/NbmVariableDownloadable.swift",
+                  "size": 5076,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "Satellite",
+              "type": "folder",
+              "path": "Sources/App/Satellite",
+              "children": [
+                {
+                  "name": "SatelliteDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/Satellite/SatelliteDownloader.swift",
+                  "size": 10530,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "UKMO",
+              "type": "folder",
+              "path": "Sources/App/UKMO",
+              "children": [
+                {
+                  "name": "UkmoDomain.swift",
+                  "type": "file",
+                  "path": "Sources/App/UKMO/UkmoDomain.swift",
+                  "size": 5908,
+                  "language": "swift"
+                },
+                {
+                  "name": "UkmoDownloader.swift",
+                  "type": "file",
+                  "path": "Sources/App/UKMO/UkmoDownloader.swift",
+                  "size": 20837,
+                  "language": "swift"
+                },
+                {
+                  "name": "UkmoReader.swift",
+                  "type": "file",
+                  "path": "Sources/App/UKMO/UkmoReader.swift",
+                  "size": 23331,
+                  "language": "swift"
+                },
+                {
+                  "name": "UkmoVariable.swift",
+                  "type": "file",
+                  "path": "Sources/App/UKMO/UkmoVariable.swift",
+                  "size": 22014,
+                  "language": "swift"
+                }
+              ]
+            },
+            {
+              "name": "configure.swift",
+              "type": "file",
+              "path": "Sources/App/configure.swift",
+              "size": 14243,
+              "language": "swift"
+            },
+            {
+              "name": "routes.swift",
+              "type": "file",
+              "path": "Sources/App/routes.swift",
+              "size": 584,
+              "language": "swift"
+            }
+          ]
+        },
+        {
+          "name": "CHelper",
+          "type": "folder",
+          "path": "Sources/CHelper",
+          "children": [
+            {
+              "name": "include",
+              "type": "folder",
+              "path": "Sources/CHelper/include",
+              "children": [
+                {
+                  "name": "shim.h",
+                  "type": "file",
+                  "path": "Sources/CHelper/include/shim.h",
+                  "size": 273,
+                  "language": "h"
+                },
+                {
+                  "name": "spa.h",
+                  "type": "file",
+                  "path": "Sources/CHelper/include/spa.h",
+                  "size": 11148,
+                  "language": "h"
+                }
+              ]
+            },
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "Sources/CHelper/src",
+              "children": [
+                {
+                  "name": "shim.c",
+                  "type": "file",
+                  "path": "Sources/CHelper/src/shim.c",
+                  "size": 3945,
+                  "language": "c"
+                },
+                {
+                  "name": "spa.c",
+                  "type": "file",
+                  "path": "Sources/CHelper/src/spa.c",
+                  "size": 38482,
+                  "language": "c"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CZlib",
+          "type": "folder",
+          "path": "Sources/CZlib",
+          "children": [
+            {
+              "name": "empty.c",
+              "type": "file",
+              "path": "Sources/CZlib/empty.c",
+              "size": 2,
+              "language": "c"
+            },
+            {
+              "name": "shim.h",
+              "type": "file",
+              "path": "Sources/CZlib/shim.h",
+              "size": 17,
+              "language": "h"
+            }
+          ]
+        },
+        {
+          "name": "Lbzip2",
+          "type": "folder",
+          "path": "Sources/Lbzip2",
+          "children": [
+            {
+              "name": "include",
+              "type": "folder",
+              "path": "Sources/Lbzip2/include",
+              "children": [
+                {
+                  "name": "shim.h",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/include/shim.h",
+                  "size": 316,
+                  "language": "h"
+                }
+              ]
+            },
+            {
+              "name": "src",
+              "type": "folder",
+              "path": "Sources/Lbzip2/src",
+              "children": [
+                {
+                  "name": "common.h",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/common.h",
+                  "size": 4231,
+                  "language": "h"
+                },
+                {
+                  "name": "crctab.c",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/crctab.c",
+                  "size": 3389,
+                  "language": "c"
+                },
+                {
+                  "name": "decode.c",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/decode.c",
+                  "size": 37956,
+                  "language": "c"
+                },
+                {
+                  "name": "decode.h",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/decode.h",
+                  "size": 2453,
+                  "language": "h"
+                },
+                {
+                  "name": "divbwt.c",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/divbwt.c",
+                  "size": 51437,
+                  "language": "c"
+                },
+                {
+                  "name": "encode.c",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/encode.c",
+                  "size": 36781,
+                  "language": "c"
+                },
+                {
+                  "name": "encode.h",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/encode.h",
+                  "size": 1377,
+                  "language": "h"
+                },
+                {
+                  "name": "main.h",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/main.h",
+                  "size": 945,
+                  "language": "h"
+                },
+                {
+                  "name": "main_OFF.c",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/main_OFF.c",
+                  "size": 1077,
+                  "language": "c"
+                },
+                {
+                  "name": "parse.c",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/parse.c",
+                  "size": 11072,
+                  "language": "c"
+                },
+                {
+                  "name": "scantab.h",
+                  "type": "file",
+                  "path": "Sources/Lbzip2/src/scantab.h",
+                  "size": 40612,
+                  "language": "h"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "openmeteo-api",
+          "type": "folder",
+          "path": "Sources/openmeteo-api",
+          "children": [
+            {
+              "name": "main.swift",
+              "type": "file",
+              "path": "Sources/openmeteo-api/main.swift",
+              "size": 920,
+              "language": "swift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tests",
+      "type": "folder",
+      "path": "Tests",
+      "children": [
+        {
+          "name": "AppTests",
+          "type": "folder",
+          "path": "Tests/AppTests",
+          "children": [
+            {
+              "name": "AirQualityTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/AirQualityTests.swift",
+              "size": 3047,
+              "language": "swift"
+            },
+            {
+              "name": "ApiTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/ApiTests.swift",
+              "size": 6488,
+              "language": "swift"
+            },
+            {
+              "name": "ArrayTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/ArrayTests.swift",
+              "size": 19403,
+              "language": "swift"
+            },
+            {
+              "name": "BiasCorrectionTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/BiasCorrectionTests.swift",
+              "size": 1685,
+              "language": "swift"
+            },
+            {
+              "name": "DataTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/DataTests.swift",
+              "size": 48677,
+              "language": "swift"
+            },
+            {
+              "name": "DomainTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/DomainTests.swift",
+              "size": 10700,
+              "language": "swift"
+            },
+            {
+              "name": "DownloaderTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/DownloaderTests.swift",
+              "size": 1900,
+              "language": "swift"
+            },
+            {
+              "name": "HelperTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/HelperTests.swift",
+              "size": 7787,
+              "language": "swift"
+            },
+            {
+              "name": "IntrinsicsTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/IntrinsicsTests.swift",
+              "size": 504,
+              "language": "swift"
+            },
+            {
+              "name": "MeteorologyTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/MeteorologyTests.swift",
+              "size": 13149,
+              "language": "swift"
+            },
+            {
+              "name": "MigrationTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/MigrationTests.swift",
+              "size": 819,
+              "language": "swift"
+            },
+            {
+              "name": "OmReaderTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/OmReaderTests.swift",
+              "size": 8756,
+              "language": "swift"
+            },
+            {
+              "name": "OutputformatTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/OutputformatTests.swift",
+              "size": 42419,
+              "language": "swift"
+            },
+            {
+              "name": "TimeTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/TimeTests.swift",
+              "size": 4708,
+              "language": "swift"
+            },
+            {
+              "name": "ZensunTests.swift",
+              "type": "file",
+              "path": "Tests/AppTests/ZensunTests.swift",
+              "size": 29509,
+              "language": "swift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 155,
+      "language": "text"
+    },
+    {
+      "name": ".swiftlint.yml",
+      "type": "file",
+      "path": ".swiftlint.yml",
+      "size": 3291,
+      "language": "yml"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 1012,
+      "language": "yml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 1915,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile.development",
+      "type": "file",
+      "path": "Dockerfile.development",
+      "size": 712,
+      "language": "development"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 35182,
+      "language": "text"
+    },
+    {
+      "name": "openapi.yml",
+      "type": "file",
+      "path": "openapi.yml",
+      "size": 13851,
+      "language": "yml"
+    },
+    {
+      "name": "openapi_historical_weather_api.yml",
+      "type": "file",
+      "path": "openapi_historical_weather_api.yml",
+      "size": 7974,
+      "language": "yml"
+    },
+    {
+      "name": "Package.swift",
+      "type": "file",
+      "path": "Package.swift",
+      "size": 4900,
+      "language": "swift"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13418,
+      "language": "md"
+    }
+  ]
+}

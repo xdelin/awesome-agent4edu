@@ -1,0 +1,440 @@
+<!-- Background image implementation following theme's approach -->
+<article class="max-w-full prose dark:prose-invert">
+  <div class="relative">
+    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+    <div class="mx-auto max-w-7xl p-0">
+      <div class="relative sm:overflow-hidden">
+        <div class="fixed inset-x-0 top-0" style="z-index:-10">
+          {{ $homepageImage := "" }}
+          {{ with .Site.Params.defaultBackgroundImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ with .Site.Params.homepage.homepageImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ if $homepageImage }}
+            <img class="w-full h-[1000px] object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}" role="presentation" style="margin: 0">
+            <div class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+            <div class="opacity-60 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<!-- QuickConfig utility page -->
+<article class="max-w-full prose dark:prose-invert">
+  <div class="relative px-4 py-6 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">QuickConfig</h1>
+      <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+        This utility automatically generates the MCP configuration for your selected ChemMCP tools.
+      </p>
+
+      <!-- Tool Selection Area -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-2 text-neutral-900 dark:text-neutral-100">Select Tools</h2>
+        <div class="mb-3">
+          <button id="select-all" class="text-sm underline text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-medium py-1">
+            Select All
+          </button>
+          <span class="inline-block w-12"></span>
+          <button id="select-none" class="text-sm underline text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-medium py-1">
+            Select None
+          </button>
+        </div>
+        <div class="bg-neutral-100 dark:bg-neutral-800 p-5 rounded-lg shadow-sm">
+          <div id="tool-checkboxes" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-0 gap-x-4 max-h-[500px] overflow-y-auto py-2">
+            <!-- Checkboxes will be added here by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Configuration Display Area -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">Configuration</h2>
+        <p id="config-description" class="mb-3 text-neutral-700 dark:text-neutral-300"></p>
+        <div class="highlight-wrapper">
+          <div class="highlight">
+            <pre tabindex="0" class="chroma"><code id="config-display" class="language-json" data-lang="json"></code></pre>
+          </div>
+        </div>
+        <p id="no-tools-message" class="mb-3 text-red-500 font-medium hidden">No tool selected. You should select at least 1 tool from above to use.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- JavaScript for tool selection and configuration generation -->
+<script>
+  document.addEventListener('DOMContentLoaded', async function() {
+    // Load tools data
+    const dataUrl = '{{ "data/tool_envs/all_tool_envs.json" | absURL }}';
+    const response = await fetch(dataUrl);
+    const toolsEnvsDict = await response.json();
+    const allTools = Object.keys(toolsEnvsDict).sort(); // Sort tools alphabetically
+    
+    const toolCheckboxesContainer = document.getElementById('tool-checkboxes');
+    const configDisplay = document.getElementById('config-display');
+    const selectAllBtn = document.getElementById('select-all');
+    const selectNoneBtn = document.getElementById('select-none');
+    
+    // Helper function to create tool category header
+    function createCategoryHeader(title) {
+      const header = document.createElement('div');
+      header.className = 'col-span-2 sm:col-span-3 md:col-span-4 mt-3 mb-2 pb-1 border-b border-neutral-200 dark:border-neutral-700';
+      const headerText = document.createElement('h3');
+      headerText.className = 'text-sm font-bold text-primary-600 dark:text-primary-400';
+      headerText.textContent = title;
+      header.appendChild(headerText);
+      return header;
+    }
+    
+    // Optional: Categorize tools (modify this to match your categorization)
+    const toolCategories = {
+      "General Tools": ["WebSearch", "PubchemSearch", "PubchemSearchQA"],
+      "Molecule Tools": ["MoleculeCaptioner", "MoleculeGenerator", "MoleculeSimilarity", "MoleculeWeight", "FunctionalGroups", 
+                         "SmilesCanonicalization", "MoleculeAtomCount", "MoleculePrice", "PatentCheck", "SolubilityPredictor", 
+                         "LogDPredictor", "BbbpPredictor", "ToxicityPredictor", "HivInhibitorPredictor", "SideEffectPredictor", 
+                         "Iupac2Smiles", "Smiles2Iupac", "Smiles2Formula", "Name2Smiles", "Selfies2Smiles", "Smiles2Selfies"],
+      "Reaction Tools": ["ForwardSynthesis", "Retrosynthesis"]
+    };
+    
+    // Check if we want to categorize tools
+    const useCategorization = false;
+    
+    // Add tools to the UI with optional categorization
+    if (useCategorization) {
+      // Process tools by category
+      Object.entries(toolCategories).forEach(([category, categoryTools]) => {
+        // Add category header
+        toolCheckboxesContainer.appendChild(createCategoryHeader(category));
+        
+        // Add tools in this category
+        categoryTools.forEach(toolName => {
+          if (allTools.includes(toolName)) {
+            addToolCheckbox(toolName);
+          }
+        });
+      });
+      
+      // Add any uncategorized tools
+      const categorizedTools = Object.values(toolCategories).flat();
+      const uncategorizedTools = allTools.filter(tool => !categorizedTools.includes(tool));
+      
+      if (uncategorizedTools.length > 0) {
+        toolCheckboxesContainer.appendChild(createCategoryHeader("Other Tools"));
+        uncategorizedTools.forEach(toolName => {
+          addToolCheckbox(toolName);
+        });
+      }
+    } else {
+      // Add all tools without categorization
+      allTools.forEach(toolName => {
+        addToolCheckbox(toolName);
+      });
+    }
+    
+    // Function to create a tool checkbox
+    function addToolCheckbox(toolName) {
+      // Create a container element
+      const checkboxDiv = document.createElement('div');
+      checkboxDiv.className = 'flex items-center px-3 py-2 rounded-md tool-item';
+      
+      // Create the checkbox element
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = `tool-${toolName}`;
+      checkbox.name = 'tools';
+      checkbox.value = toolName;
+      checkbox.checked = true; // Default: all tools are selected
+      checkbox.className = 'h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-600 cursor-pointer tool-checkbox';
+      checkbox.addEventListener('change', updateConfig);
+      
+      // Create the label that wraps everything - this ensures clicking anywhere toggles the checkbox
+      const label = document.createElement('label');
+      label.htmlFor = `tool-${toolName}`;
+      label.className = 'flex items-center w-full cursor-pointer';
+      
+      // Add checkbox to label
+      label.appendChild(checkbox);
+      
+      // Add a small spacer
+      const spacer = document.createElement('span');
+      spacer.className = 'ml-3';
+      
+      // Add text node
+      const textSpan = document.createElement('span');
+      textSpan.textContent = toolName;
+      textSpan.className = 'text-sm font-medium text-neutral-800 dark:text-neutral-200';
+      
+      // Put it all together
+      label.appendChild(spacer);
+      label.appendChild(textSpan);
+      checkboxDiv.appendChild(label);
+      
+      toolCheckboxesContainer.appendChild(checkboxDiv);
+    }
+    
+    // Select All button
+    selectAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.tool-checkbox').forEach(checkbox => {
+        checkbox.checked = true;
+      });
+      updateConfig();
+    });
+    
+    // Select None button
+    selectNoneBtn.addEventListener('click', () => {
+      document.querySelectorAll('.tool-checkbox').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      updateConfig();
+    });
+    
+    // Generate configuration based on selected tools
+    function updateConfig() {
+      const selectedTools = [];
+      document.querySelectorAll('.tool-checkbox:checked').forEach(checkbox => {
+        selectedTools.push(checkbox.value);
+      });
+      
+      // Get DOM elements for toggling visibility
+      const configDescription = document.getElementById('config-description');
+      const configContainer = document.querySelector('.highlight-wrapper');
+      const noToolsMessage = document.getElementById('no-tools-message');
+      
+      // Check if any tools are selected
+      if (selectedTools.length === 0) {
+        // Hide config display and show message
+        configDescription.classList.add('hidden');
+        configContainer.style.display = 'none';
+        noToolsMessage.classList.remove('hidden');
+        return;
+      }
+      
+      // Show config display and hide message
+      configDescription.classList.remove('hidden');
+      configContainer.style.display = 'block';
+      noToolsMessage.classList.add('hidden');
+      
+      // Generate environment variables
+      const finalToolsEnvsDict = {};
+      selectedTools.forEach(toolName => {
+        const toolEnvsDict = toolsEnvsDict[toolName];
+        Object.assign(finalToolsEnvsDict, toolEnvsDict);
+      });
+      
+      // Special handling for LLMs
+      if (finalToolsEnvsDict.__llms__) {
+        delete finalToolsEnvsDict.__llms__;
+        finalToolsEnvsDict.LLM_MODEL_NAME = "The name of the LLM to use. See [LiteLLM](https://docs.litellm.ai/docs/#basic-usage) for more details.";
+        finalToolsEnvsDict.OTHER_LLM_CREDENTIALS = "Other LLM credentials are required to be set in the `env` field. See [LiteLLM](https://docs.litellm.ai/docs/#basic-usage) for more details.";
+      }
+      
+      // Create the config object
+      let selectToolCommand = [];
+      if (selectedTools.length !== allTools.length) {
+        selectToolCommand = ["--tools", ...selectedTools];
+      }
+      
+      const configTemplate = {
+        "command": "/ABSTRACT/PATH/TO/uv",
+        "args": ["--directory", "/ABSTRACT/PATH/TO/ChemMCP", "run", "chemmcp", ...selectToolCommand],
+        "toolCallTimeoutMillis": 300000,
+        "env": finalToolsEnvsDict
+      };
+      
+      // Update description and display the JSON
+      configDescription.textContent = `Here is the configuration for using your chosen ${selectedTools.length} tools in ChemMCP:`;
+      
+      // Format the JSON with proper indentation
+      const configStr = JSON.stringify(configTemplate, null, 4);
+      
+      // Set content with syntax highlighting
+      configDisplay.innerHTML = syntaxHighlightJSON(configStr);
+    }
+    
+    // Function to add syntax highlighting to JSON
+    function syntaxHighlightJSON(json) {
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        let cls = 's'; // string
+        if (/^"/.test(match)) {
+          if (/:$/.test(match)) {
+            cls = 'nt'; // key/property name
+            match = match.replace(/:$/, ''); // Remove the colon from the match
+            return '<span class="nt">' + match + '</span>:';
+          } else {
+            cls = 's2'; // string value
+          }
+        } else if (/true|false/.test(match)) {
+          cls = 'kc'; // boolean
+        } else if (/null/.test(match)) {
+          cls = 'kc'; // null
+        } else if (/-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/.test(match)) {
+          cls = 'mi'; // number
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+      })
+      .replace(/({|}|\[|\]|,)/g, function(match) {
+        return '<span class="p">' + match + '</span>';  // punctuation
+      });
+    }
+    
+    // Initialize with all tools selected
+    updateConfig();
+    
+    // Add copy button functionality to match Blowfish theme behavior
+    function createCopyButton(highlightDiv) {
+      const button = document.createElement("button");
+      button.className = "copy-button";
+      button.type = "button";
+      button.ariaLabel = "Copy";
+      button.innerText = "Copy";
+      button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
+      addCopyButtonToDom(button, highlightDiv);
+    }
+    
+    async function copyCodeToClipboard(button, highlightDiv) {
+      const codeToCopy = highlightDiv.querySelector(":last-child").innerText;
+      try {
+        result = await navigator.permissions.query({ name: "clipboard-write" });
+        if (result.state == "granted" || result.state == "prompt") {
+          await navigator.clipboard.writeText(codeToCopy);
+        } else {
+          copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+        }
+      } catch (_) {
+        copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+      } finally {
+        codeWasCopied(button);
+      }
+    }
+    
+    function copyCodeBlockExecCommand(codeToCopy, highlightDiv) {
+      const textArea = document.createElement("textArea");
+      textArea.contentEditable = "true";
+      textArea.readOnly = "false";
+      textArea.className = "copy-textarea";
+      textArea.value = codeToCopy;
+      highlightDiv.insertBefore(textArea, highlightDiv.firstChild);
+      const range = document.createRange();
+      range.selectNodeContents(textArea);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      textArea.setSelectionRange(0, 999999);
+      document.execCommand("copy");
+      highlightDiv.removeChild(textArea);
+    }
+    
+    function codeWasCopied(button) {
+      button.blur();
+      button.innerText = "Copied";
+      setTimeout(function () {
+        button.innerText = "Copy";
+      }, 2000);
+    }
+    
+    function addCopyButtonToDom(button, highlightDiv) {
+      highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    }
+    
+    // Add copy button to the highlight div
+    setTimeout(() => {
+      const highlightDiv = document.querySelector('.highlight');
+      if (highlightDiv) {
+        createCopyButton(highlightDiv);
+      }
+    }, 100);
+  });
+</script>
+
+<style>
+  /* Code highlighting styles from Blowfish theme */
+  .highlight-wrapper {
+    @apply block;
+  }
+
+  .highlight {
+    @apply relative z-0 shadow-sm;
+  }
+
+  .highlight:hover>.copy-button {
+    @apply visible;
+  }
+
+  .copy-button {
+    @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200;
+  }
+
+  .copy-button:hover,
+  .copy-button:focus,
+  .copy-button:active,
+  .copy-button:active:hover {
+    @apply bg-primary-100 dark:bg-primary-600;
+  }
+
+  .copy-textarea {
+    @apply absolute opacity-5 -z-10;
+  }
+
+  /* Chroma Highlight */
+  .chroma {
+    @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
+  }
+
+  pre {
+    @apply block w-auto px-6 py-4 overflow-auto text-base;
+  }
+  
+  /* Clean tool item styles without hover effects */
+  .tool-item {
+    @apply border-b border-neutral-200 dark:border-neutral-700;
+    margin-bottom: -1px;
+  }
+
+  /* Last rows shouldn't have bottom borders */
+  @media (min-width: 640px) {
+    .tool-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tool-item:nth-last-child(-n+3) {
+      border-bottom: none;
+    }
+  }
+
+  /* Equal column heights */
+  #tool-checkboxes {
+    grid-auto-rows: minmax(45px, auto);
+  }
+  
+  /* Custom checkbox styling */
+  .tool-checkbox {
+    @apply rounded !important;
+  }
+</style> 
+
+{{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+{{ end }}

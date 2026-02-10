@@ -1,0 +1,18 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=auto]
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+        exclude: ^\.
+      - id: check-added-large-files
+        args: ['--maxkb=50000']
+      - id: check-case-conflict
+  - repo: meta
+    hooks:
+      - id: check-useless-excludes

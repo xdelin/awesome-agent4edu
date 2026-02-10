@@ -1,0 +1,89 @@
+{
+  "name": "Stella MCP",
+  "tree": [
+    {
+      "name": "stella_mcp",
+      "type": "folder",
+      "path": "stella_mcp",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "stella_mcp/__init__.py",
+          "size": 105,
+          "language": "py"
+        },
+        {
+          "name": "server.py",
+          "type": "file",
+          "path": "stella_mcp/server.py",
+          "size": 16967,
+          "language": "py"
+        },
+        {
+          "name": "validator.py",
+          "type": "file",
+          "path": "stella_mcp/validator.py",
+          "size": 11813,
+          "language": "py"
+        },
+        {
+          "name": "xmile.py",
+          "type": "file",
+          "path": "stella_mcp/xmile.py",
+          "size": 76673,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 24,
+          "language": "py"
+        },
+        {
+          "name": "test_positioning.py",
+          "type": "file",
+          "path": "tests/test_positioning.py",
+          "size": 34695,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 510,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1090,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 859,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5561,
+      "language": "md"
+    }
+  ]
+}

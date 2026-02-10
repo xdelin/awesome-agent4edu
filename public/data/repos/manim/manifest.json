@@ -1,0 +1,1090 @@
+{
+  "name": "Manim",
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "source",
+          "type": "folder",
+          "path": "docs/source",
+          "children": [
+            {
+              "name": "_static",
+              "type": "folder",
+              "path": "docs/source/_static",
+              "children": [
+                {
+                  "name": "icon.png",
+                  "type": "file",
+                  "path": "docs/source/_static/icon.png",
+                  "size": 188788,
+                  "language": "png"
+                }
+              ]
+            },
+            {
+              "name": "development",
+              "type": "folder",
+              "path": "docs/source/development",
+              "children": [
+                {
+                  "name": "about.rst",
+                  "type": "file",
+                  "path": "docs/source/development/about.rst",
+                  "size": 1188,
+                  "language": "rst"
+                },
+                {
+                  "name": "changelog.rst",
+                  "type": "file",
+                  "path": "docs/source/development/changelog.rst",
+                  "size": 34858,
+                  "language": "rst"
+                },
+                {
+                  "name": "contributing.rst",
+                  "type": "file",
+                  "path": "docs/source/development/contributing.rst",
+                  "size": 1841,
+                  "language": "rst"
+                }
+              ]
+            },
+            {
+              "name": "documentation",
+              "type": "folder",
+              "path": "docs/source/documentation",
+              "children": [
+                {
+                  "name": "animation",
+                  "type": "folder",
+                  "path": "docs/source/documentation/animation",
+                  "children": [
+                    {
+                      "name": "index.rst",
+                      "type": "file",
+                      "path": "docs/source/documentation/animation/index.rst",
+                      "size": 34,
+                      "language": "rst"
+                    }
+                  ]
+                },
+                {
+                  "name": "camera",
+                  "type": "folder",
+                  "path": "docs/source/documentation/camera",
+                  "children": [
+                    {
+                      "name": "index.rst",
+                      "type": "file",
+                      "path": "docs/source/documentation/camera/index.rst",
+                      "size": 28,
+                      "language": "rst"
+                    }
+                  ]
+                },
+                {
+                  "name": "mobject",
+                  "type": "folder",
+                  "path": "docs/source/documentation/mobject",
+                  "children": [
+                    {
+                      "name": "index.rst",
+                      "type": "file",
+                      "path": "docs/source/documentation/mobject/index.rst",
+                      "size": 30,
+                      "language": "rst"
+                    }
+                  ]
+                },
+                {
+                  "name": "scene",
+                  "type": "folder",
+                  "path": "docs/source/documentation/scene",
+                  "children": [
+                    {
+                      "name": "index.rst",
+                      "type": "file",
+                      "path": "docs/source/documentation/scene/index.rst",
+                      "size": 26,
+                      "language": "rst"
+                    }
+                  ]
+                },
+                {
+                  "name": "shaders",
+                  "type": "folder",
+                  "path": "docs/source/documentation/shaders",
+                  "children": [
+                    {
+                      "name": "index.rst",
+                      "type": "file",
+                      "path": "docs/source/documentation/shaders/index.rst",
+                      "size": 30,
+                      "language": "rst"
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "folder",
+                  "path": "docs/source/documentation/utils",
+                  "children": [
+                    {
+                      "name": "index.rst",
+                      "type": "file",
+                      "path": "docs/source/documentation/utils/index.rst",
+                      "size": 26,
+                      "language": "rst"
+                    }
+                  ]
+                },
+                {
+                  "name": "constants.rst",
+                  "type": "file",
+                  "path": "docs/source/documentation/constants.rst",
+                  "size": 6853,
+                  "language": "rst"
+                },
+                {
+                  "name": "custom_config.rst",
+                  "type": "file",
+                  "path": "docs/source/documentation/custom_config.rst",
+                  "size": 5171,
+                  "language": "rst"
+                }
+              ]
+            },
+            {
+              "name": "getting_started",
+              "type": "folder",
+              "path": "docs/source/getting_started",
+              "children": [
+                {
+                  "name": "configuration.rst",
+                  "type": "file",
+                  "path": "docs/source/getting_started/configuration.rst",
+                  "size": 6568,
+                  "language": "rst"
+                },
+                {
+                  "name": "example_scenes.rst",
+                  "type": "file",
+                  "path": "docs/source/getting_started/example_scenes.rst",
+                  "size": 30864,
+                  "language": "rst"
+                },
+                {
+                  "name": "installation.rst",
+                  "type": "file",
+                  "path": "docs/source/getting_started/installation.rst",
+                  "size": 2211,
+                  "language": "rst"
+                },
+                {
+                  "name": "quickstart.rst",
+                  "type": "file",
+                  "path": "docs/source/getting_started/quickstart.rst",
+                  "size": 7910,
+                  "language": "rst"
+                },
+                {
+                  "name": "structure.rst",
+                  "type": "file",
+                  "path": "docs/source/getting_started/structure.rst",
+                  "size": 7539,
+                  "language": "rst"
+                },
+                {
+                  "name": "whatsnew.rst",
+                  "type": "file",
+                  "path": "docs/source/getting_started/whatsnew.rst",
+                  "size": 10762,
+                  "language": "rst"
+                }
+              ]
+            },
+            {
+              "name": "conf.py",
+              "type": "file",
+              "path": "docs/source/conf.py",
+              "size": 1165,
+              "language": "py"
+            },
+            {
+              "name": "index.rst",
+              "type": "file",
+              "path": "docs/source/index.rst",
+              "size": 950,
+              "language": "rst"
+            },
+            {
+              "name": "manim_example_ext.py",
+              "type": "file",
+              "path": "docs/source/manim_example_ext.py",
+              "size": 2589,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "example.py",
+          "type": "file",
+          "path": "docs/example.py",
+          "size": 1313,
+          "language": "py"
+        },
+        {
+          "name": "make.bat",
+          "type": "file",
+          "path": "docs/make.bat",
+          "size": 799,
+          "language": "bat"
+        },
+        {
+          "name": "Makefile",
+          "type": "file",
+          "path": "docs/Makefile",
+          "size": 658,
+          "language": "text"
+        },
+        {
+          "name": "requirements.txt",
+          "type": "file",
+          "path": "docs/requirements.txt",
+          "size": 59,
+          "language": "txt"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "folder",
+      "path": "logo",
+      "children": [
+        {
+          "name": "cropped.png",
+          "type": "file",
+          "path": "logo/cropped.png",
+          "size": 154686,
+          "language": "png"
+        },
+        {
+          "name": "graph.png",
+          "type": "file",
+          "path": "logo/graph.png",
+          "size": 116608,
+          "language": "png"
+        },
+        {
+          "name": "logo.py",
+          "type": "file",
+          "path": "logo/logo.py",
+          "size": 6179,
+          "language": "py"
+        },
+        {
+          "name": "transparent_graph.png",
+          "type": "file",
+          "path": "logo/transparent_graph.png",
+          "size": 93155,
+          "language": "png"
+        },
+        {
+          "name": "white_with_name.png",
+          "type": "file",
+          "path": "logo/white_with_name.png",
+          "size": 77512,
+          "language": "png"
+        },
+        {
+          "name": "with_name.png",
+          "type": "file",
+          "path": "logo/with_name.png",
+          "size": 111118,
+          "language": "png"
+        },
+        {
+          "name": "with_subtext.png",
+          "type": "file",
+          "path": "logo/with_subtext.png",
+          "size": 161453,
+          "language": "png"
+        }
+      ]
+    },
+    {
+      "name": "manimlib",
+      "type": "folder",
+      "path": "manimlib",
+      "children": [
+        {
+          "name": "animation",
+          "type": "folder",
+          "path": "manimlib/animation",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "manimlib/animation/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "animation.py",
+              "type": "file",
+              "path": "manimlib/animation/animation.py",
+              "size": 7593,
+              "language": "py"
+            },
+            {
+              "name": "composition.py",
+              "type": "file",
+              "path": "manimlib/animation/composition.py",
+              "size": 6276,
+              "language": "py"
+            },
+            {
+              "name": "creation.py",
+              "type": "file",
+              "path": "manimlib/animation/creation.py",
+              "size": 7970,
+              "language": "py"
+            },
+            {
+              "name": "fading.py",
+              "type": "file",
+              "path": "manimlib/animation/fading.py",
+              "size": 6240,
+              "language": "py"
+            },
+            {
+              "name": "growing.py",
+              "type": "file",
+              "path": "manimlib/animation/growing.py",
+              "size": 1548,
+              "language": "py"
+            },
+            {
+              "name": "indication.py",
+              "type": "file",
+              "path": "manimlib/animation/indication.py",
+              "size": 13730,
+              "language": "py"
+            },
+            {
+              "name": "movement.py",
+              "type": "file",
+              "path": "manimlib/animation/movement.py",
+              "size": 3447,
+              "language": "py"
+            },
+            {
+              "name": "numbers.py",
+              "type": "file",
+              "path": "manimlib/animation/numbers.py",
+              "size": 1859,
+              "language": "py"
+            },
+            {
+              "name": "rotation.py",
+              "type": "file",
+              "path": "manimlib/animation/rotation.py",
+              "size": 2268,
+              "language": "py"
+            },
+            {
+              "name": "specialized.py",
+              "type": "file",
+              "path": "manimlib/animation/specialized.py",
+              "size": 1710,
+              "language": "py"
+            },
+            {
+              "name": "transform.py",
+              "type": "file",
+              "path": "manimlib/animation/transform.py",
+              "size": 10260,
+              "language": "py"
+            },
+            {
+              "name": "transform_matching_parts.py",
+              "type": "file",
+              "path": "manimlib/animation/transform_matching_parts.py",
+              "size": 6830,
+              "language": "py"
+            },
+            {
+              "name": "update.py",
+              "type": "file",
+              "path": "manimlib/animation/update.py",
+              "size": 2084,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "camera",
+          "type": "folder",
+          "path": "manimlib/camera",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "manimlib/camera/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "camera.py",
+              "type": "file",
+              "path": "manimlib/camera/camera.py",
+              "size": 8967,
+              "language": "py"
+            },
+            {
+              "name": "camera_frame.py",
+              "type": "file",
+              "path": "manimlib/camera/camera_frame.py",
+              "size": 9064,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "event_handler",
+          "type": "folder",
+          "path": "manimlib/event_handler",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "manimlib/event_handler/__init__.py",
+              "size": 225,
+              "language": "py"
+            },
+            {
+              "name": "event_dispatcher.py",
+              "type": "file",
+              "path": "manimlib/event_handler/event_dispatcher.py",
+              "size": 3951,
+              "language": "py"
+            },
+            {
+              "name": "event_listner.py",
+              "type": "file",
+              "path": "manimlib/event_handler/event_listner.py",
+              "size": 846,
+              "language": "py"
+            },
+            {
+              "name": "event_type.py",
+              "type": "file",
+              "path": "manimlib/event_handler/event_type.py",
+              "size": 354,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "mobject",
+          "type": "folder",
+          "path": "manimlib/mobject",
+          "children": [
+            {
+              "name": "svg",
+              "type": "folder",
+              "path": "manimlib/mobject/svg",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "brace.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/brace.py",
+                  "size": 6255,
+                  "language": "py"
+                },
+                {
+                  "name": "drawings.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/drawings.py",
+                  "size": 25516,
+                  "language": "py"
+                },
+                {
+                  "name": "old_tex_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/old_tex_mobject.py",
+                  "size": 11063,
+                  "language": "py"
+                },
+                {
+                  "name": "special_tex.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/special_tex.py",
+                  "size": 2925,
+                  "language": "py"
+                },
+                {
+                  "name": "string_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/string_mobject.py",
+                  "size": 21860,
+                  "language": "py"
+                },
+                {
+                  "name": "svg_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/svg_mobject.py",
+                  "size": 14367,
+                  "language": "py"
+                },
+                {
+                  "name": "tex_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/tex_mobject.py",
+                  "size": 9203,
+                  "language": "py"
+                },
+                {
+                  "name": "text_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/svg/text_mobject.py",
+                  "size": 16513,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "types",
+              "type": "folder",
+              "path": "manimlib/mobject/types",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/types/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "dot_cloud.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/types/dot_cloud.py",
+                  "size": 5667,
+                  "language": "py"
+                },
+                {
+                  "name": "image_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/types/image_mobject.py",
+                  "size": 2618,
+                  "language": "py"
+                },
+                {
+                  "name": "point_cloud_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/types/point_cloud_mobject.py",
+                  "size": 3821,
+                  "language": "py"
+                },
+                {
+                  "name": "surface.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/types/surface.py",
+                  "size": 13385,
+                  "language": "py"
+                },
+                {
+                  "name": "vectorized_mobject.py",
+                  "type": "file",
+                  "path": "manimlib/mobject/types/vectorized_mobject.py",
+                  "size": 53989,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "manimlib/mobject/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "boolean_ops.py",
+              "type": "file",
+              "path": "manimlib/mobject/boolean_ops.py",
+              "size": 4384,
+              "language": "py"
+            },
+            {
+              "name": "changing.py",
+              "type": "file",
+              "path": "manimlib/mobject/changing.py",
+              "size": 5940,
+              "language": "py"
+            },
+            {
+              "name": "coordinate_systems.py",
+              "type": "file",
+              "path": "manimlib/mobject/coordinate_systems.py",
+              "size": 26261,
+              "language": "py"
+            },
+            {
+              "name": "frame.py",
+              "type": "file",
+              "path": "manimlib/mobject/frame.py",
+              "size": 1425,
+              "language": "py"
+            },
+            {
+              "name": "functions.py",
+              "type": "file",
+              "path": "manimlib/mobject/functions.py",
+              "size": 3961,
+              "language": "py"
+            },
+            {
+              "name": "geometry.py",
+              "type": "file",
+              "path": "manimlib/mobject/geometry.py",
+              "size": 49314,
+              "language": "py"
+            },
+            {
+              "name": "interactive.py",
+              "type": "file",
+              "path": "manimlib/mobject/interactive.py",
+              "size": 19955,
+              "language": "py"
+            },
+            {
+              "name": "matrix.py",
+              "type": "file",
+              "path": "manimlib/mobject/matrix.py",
+              "size": 9716,
+              "language": "py"
+            },
+            {
+              "name": "mobject.py",
+              "type": "file",
+              "path": "manimlib/mobject/mobject.py",
+              "size": 83080,
+              "language": "py"
+            },
+            {
+              "name": "mobject_update_utils.py",
+              "type": "file",
+              "path": "manimlib/mobject/mobject_update_utils.py",
+              "size": 3187,
+              "language": "py"
+            },
+            {
+              "name": "number_line.py",
+              "type": "file",
+              "path": "manimlib/mobject/number_line.py",
+              "size": 10743,
+              "language": "py"
+            },
+            {
+              "name": "numbers.py",
+              "type": "file",
+              "path": "manimlib/mobject/numbers.py",
+              "size": 8841,
+              "language": "py"
+            },
+            {
+              "name": "probability.py",
+              "type": "file",
+              "path": "manimlib/mobject/probability.py",
+              "size": 10718,
+              "language": "py"
+            },
+            {
+              "name": "shape_matchers.py",
+              "type": "file",
+              "path": "manimlib/mobject/shape_matchers.py",
+              "size": 3982,
+              "language": "py"
+            },
+            {
+              "name": "three_dimensions.py",
+              "type": "file",
+              "path": "manimlib/mobject/three_dimensions.py",
+              "size": 12456,
+              "language": "py"
+            },
+            {
+              "name": "value_tracker.py",
+              "type": "file",
+              "path": "manimlib/mobject/value_tracker.py",
+              "size": 1947,
+              "language": "py"
+            },
+            {
+              "name": "vector_field.py",
+              "type": "file",
+              "path": "manimlib/mobject/vector_field.py",
+              "size": 16923,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "scene",
+          "type": "folder",
+          "path": "manimlib/scene",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "manimlib/scene/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "interactive_scene.py",
+              "type": "file",
+              "path": "manimlib/scene/interactive_scene.py",
+              "size": 24228,
+              "language": "py"
+            },
+            {
+              "name": "scene.py",
+              "type": "file",
+              "path": "manimlib/scene/scene.py",
+              "size": 33087,
+              "language": "py"
+            },
+            {
+              "name": "scene_embed.py",
+              "type": "file",
+              "path": "manimlib/scene/scene_embed.py",
+              "size": 9157,
+              "language": "py"
+            },
+            {
+              "name": "scene_file_writer.py",
+              "type": "file",
+              "path": "manimlib/scene/scene_file_writer.py",
+              "size": 13738,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "shaders",
+          "type": "folder",
+          "path": "manimlib/shaders",
+          "children": [
+            {
+              "name": "inserts",
+              "type": "folder",
+              "path": "manimlib/shaders/inserts",
+              "children": [
+                {
+                  "name": "NOTE.md",
+                  "type": "file",
+                  "path": "manimlib/shaders/inserts/NOTE.md",
+                  "size": 569,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "manimlib/utils",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "manimlib/utils/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "bezier.py",
+              "type": "file",
+              "path": "manimlib/utils/bezier.py",
+              "size": 13485,
+              "language": "py"
+            },
+            {
+              "name": "cache.py",
+              "type": "file",
+              "path": "manimlib/utils/cache.py",
+              "size": 832,
+              "language": "py"
+            },
+            {
+              "name": "color.py",
+              "type": "file",
+              "path": "manimlib/utils/color.py",
+              "size": 5680,
+              "language": "py"
+            },
+            {
+              "name": "debug.py",
+              "type": "file",
+              "path": "manimlib/utils/debug.py",
+              "size": 919,
+              "language": "py"
+            },
+            {
+              "name": "dict_ops.py",
+              "type": "file",
+              "path": "manimlib/utils/dict_ops.py",
+              "size": 721,
+              "language": "py"
+            },
+            {
+              "name": "directories.py",
+              "type": "file",
+              "path": "manimlib/utils/directories.py",
+              "size": 1092,
+              "language": "py"
+            },
+            {
+              "name": "family_ops.py",
+              "type": "file",
+              "path": "manimlib/utils/family_ops.py",
+              "size": 1515,
+              "language": "py"
+            },
+            {
+              "name": "file_ops.py",
+              "type": "file",
+              "path": "manimlib/utils/file_ops.py",
+              "size": 1600,
+              "language": "py"
+            },
+            {
+              "name": "images.py",
+              "type": "file",
+              "path": "manimlib/utils/images.py",
+              "size": 957,
+              "language": "py"
+            },
+            {
+              "name": "iterables.py",
+              "type": "file",
+              "path": "manimlib/utils/iterables.py",
+              "size": 4939,
+              "language": "py"
+            },
+            {
+              "name": "paths.py",
+              "type": "file",
+              "path": "manimlib/utils/paths.py",
+              "size": 1957,
+              "language": "py"
+            },
+            {
+              "name": "rate_functions.py",
+              "type": "file",
+              "path": "manimlib/utils/rate_functions.py",
+              "size": 2784,
+              "language": "py"
+            },
+            {
+              "name": "shaders.py",
+              "type": "file",
+              "path": "manimlib/utils/shaders.py",
+              "size": 3200,
+              "language": "py"
+            },
+            {
+              "name": "simple_functions.py",
+              "type": "file",
+              "path": "manimlib/utils/simple_functions.py",
+              "size": 2490,
+              "language": "py"
+            },
+            {
+              "name": "sounds.py",
+              "type": "file",
+              "path": "manimlib/utils/sounds.py",
+              "size": 1170,
+              "language": "py"
+            },
+            {
+              "name": "space_ops.py",
+              "type": "file",
+              "path": "manimlib/utils/space_ops.py",
+              "size": 14289,
+              "language": "py"
+            },
+            {
+              "name": "tex.py",
+              "type": "file",
+              "path": "manimlib/utils/tex.py",
+              "size": 1394,
+              "language": "py"
+            },
+            {
+              "name": "tex_file_writing.py",
+              "type": "file",
+              "path": "manimlib/utils/tex_file_writing.py",
+              "size": 4529,
+              "language": "py"
+            },
+            {
+              "name": "tex_to_symbol_count.py",
+              "type": "file",
+              "path": "manimlib/utils/tex_to_symbol_count.py",
+              "size": 3730,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "manimlib/__init__.py",
+          "size": 2920,
+          "language": "py"
+        },
+        {
+          "name": "__main__.py",
+          "type": "file",
+          "path": "manimlib/__main__.py",
+          "size": 1686,
+          "language": "py"
+        },
+        {
+          "name": "config.py",
+          "type": "file",
+          "path": "manimlib/config.py",
+          "size": 13545,
+          "language": "py"
+        },
+        {
+          "name": "constants.py",
+          "type": "file",
+          "path": "manimlib/constants.py",
+          "size": 6470,
+          "language": "py"
+        },
+        {
+          "name": "default_config.yml",
+          "type": "file",
+          "path": "manimlib/default_config.yml",
+          "size": 5890,
+          "language": "yml"
+        },
+        {
+          "name": "extract_scene.py",
+          "type": "file",
+          "path": "manimlib/extract_scene.py",
+          "size": 6916,
+          "language": "py"
+        },
+        {
+          "name": "logger.py",
+          "type": "file",
+          "path": "manimlib/logger.py",
+          "size": 252,
+          "language": "py"
+        },
+        {
+          "name": "module_loader.py",
+          "type": "file",
+          "path": "manimlib/module_loader.py",
+          "size": 6587,
+          "language": "py"
+        },
+        {
+          "name": "shader_wrapper.py",
+          "type": "file",
+          "path": "manimlib/shader_wrapper.py",
+          "size": 17923,
+          "language": "py"
+        },
+        {
+          "name": "tex_templates.yml",
+          "type": "file",
+          "path": "manimlib/tex_templates.yml",
+          "size": 20309,
+          "language": "yml"
+        },
+        {
+          "name": "typing.py",
+          "type": "file",
+          "path": "manimlib/typing.py",
+          "size": 1741,
+          "language": "py"
+        },
+        {
+          "name": "window.py",
+          "type": "file",
+          "path": "manimlib/window.py",
+          "size": 8587,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 2406,
+      "language": "text"
+    },
+    {
+      "name": "example_scenes.py",
+      "type": "file",
+      "path": "example_scenes.py",
+      "size": 27243,
+      "language": "py"
+    },
+    {
+      "name": "LICENSE.md",
+      "type": "file",
+      "path": "LICENSE.md",
+      "size": 1098,
+      "language": "md"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 50,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 6722,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 388,
+      "language": "txt"
+    },
+    {
+      "name": "setup.py",
+      "type": "file",
+      "path": "setup.py",
+      "size": 37,
+      "language": "py"
+    }
+  ]
+}

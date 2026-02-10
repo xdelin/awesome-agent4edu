@@ -1,0 +1,284 @@
+# Note: This GitLab CI configuration is used for internal testing, users can ignore it.
+include:
+  - project: '${CI_PROJECT_NAMESPACE}/ci-libs-for-client-libraries'
+    file:
+      - '/${CI_PROJECT_NAME}/.gitlab-ci.yml'
+  - project: 'deepl/ops/ci-cd-infrastructure/gitlab-ci-lib'
+    file:
+      - '/templates/.buildkit.yml'
+      - '/templates/.secret-detection.yml'
+      - '/templates/.gitlab-release.yml'
+  - template: Security/SAST.gitlab-ci.yml
+
+# Global --------------------------
+
+image: python:3.13
+
+variables:
+  PIP_CACHE_DIR: "${CI_PROJECT_DIR}/.cache/pip"
+  XDG_CACHE_HOME: "${CI_PROJECT_DIR}/.cache"
+  POETRY_VIRTUALENVS_IN_PROJECT: "true"
+  REQUESTS_CA_BUNDLE: "/etc/ssl/certs/ca-certificates.crt"
+  GITLAB_ADVANCED_SAST_ENABLED: 'true'
+
+cache:
+  key:
+    prefix: ${CI_JOB_IMAGE}
+    files:
+      - pyproject.toml
+      - poetry.lock
+  paths:
+    - .cache/pip
+    - .venv
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_TAG
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
+stages:
+  - check
+  - build
+  - test
+  - publish
+
+
+before_script:
+  - python3 -m venv .venv
+  - source .venv/bin/activate
+  - pip install --upgrade pip
+  - pip install poetry==2.1.2
+  - poetry --version
+  - poetry install -vv -E keyring
+
+# stage: check ----------------------
+
+.black_base:
+  stage: check
+  script: poetry run black --check .
+
+black_scheduled:
+  extends: .black_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  retry: 2
+
+black_manual:
+  extends: .black_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+.flake8_base:
+  stage: check
+  script: poetry run flake8 deepl tests
+
+flake8_scheduled:
+  extends: .flake8_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  retry: 2
+
+flake8_manual:
+  extends: .flake8_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+.license_check_base:
+  stage: check
+  script:
+    - ./license_checker.sh '*.py' | tee license_check_output.txt
+    - '[ ! -s license_check_output.txt ]'
+
+license_check_scheduled:
+  extends: .license_check_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  retry: 2
+
+license_check_manual:
+  extends: .license_check_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+secret_detection:
+  extends: .secret-detection
+  stage: check
+  image: !reference [.secret-detection, image]
+  before_script:
+    - echo "overriding default before_script..."
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+.mypy_base:
+  stage: check
+  script: poetry run mypy --exclude 'examples/' .
+
+mypy_scheduled:
+  extends: .mypy_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  retry: 2
+
+mypy_manual:
+  extends: .mypy_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+gitlab-advanced-sast:
+  stage: check
+  before_script:
+    - ''
+  rules:
+    - when: always
+  variables:
+    SAST_EXCLUDED_PATHS: '$DEFAULT_SAST_EXCLUDED_PATHS'
+    GIT_STRATEGY: clone
+
+semgrep-sast:
+  stage: check
+  before_script:
+    - ''
+  rules:
+    - when: always
+  variables:
+    SAST_EXCLUDED_PATHS: '$DEFAULT_SAST_EXCLUDED_PATHS'
+    GIT_STRATEGY: clone
+
+# stage: build ----------------------
+
+package:
+  stage: build
+  script:
+    - poetry build --verbose --no-interaction
+  artifacts:
+    paths:
+      - dist/
+
+# stage: test -------------------------
+
+.test_base:
+  stage: test
+  extends: .test
+  parallel:
+    matrix:
+      - DOCKER_IMAGE: "python:3.13"
+      - DOCKER_IMAGE: "python:3.9"
+        USE_MOCK_SERVER: "use mock server"
+      - DOCKER_IMAGE: "python:3.10"
+        USE_MOCK_SERVER: "use mock server"
+      - DOCKER_IMAGE: "python:3.11"
+        USE_MOCK_SERVER: "use mock server"
+      - DOCKER_IMAGE: "python:3.12"
+        USE_MOCK_SERVER: "use mock server"
+      - DOCKER_IMAGE: "python:3.13"
+        USE_MOCK_SERVER: "use mock server"
+  image: ${DOCKER_IMAGE}
+  script:
+    - >
+      if [[ ! -z "${EXTRA_POETRY_ADD_ARGUMENT}" ]]; then
+        echo "Running poetry add ${EXTRA_POETRY_ADD_ARGUMENT}"
+        poetry add ${EXTRA_POETRY_ADD_ARGUMENT}
+      fi
+    - >
+      if [[ ! -z "${USE_MOCK_SERVER}" ]]; then
+        echo "Using mock server"
+        export DEEPL_SERVER_URL=http://deepl-mock:3000
+        export DEEPL_MOCK_SERVER_PORT=3000
+        export DEEPL_PROXY_URL=http://deepl-mock:3001
+        export DEEPL_MOCK_PROXY_SERVER_PORT=3001
+      fi
+    - poetry run coverage run -m pytest --junit-xml test_report.xml
+    - poetry run coverage report
+    - poetry run coverage xml
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+      junit:
+        - test_report.xml
+    when: always
+
+test_scheduled:
+  extends: .test_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  retry: 2
+
+test_manual:
+  stage: test
+  extends: .test_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+.mustache_example_base:
+  stage: test
+  extends: .test
+  script:
+    - cd examples/mustache
+    - pip install deepl
+    - python . --help
+    - python . --from en --to de "Hello {{user}}, your balance is {{{balance}}} dollars." > mustache_result.txt
+    - cat mustache_result.txt
+    - grep -q "{{user}}" mustache_result.txt
+    - grep -q "{{{balance}}}" mustache_result.txt
+
+mustache_example_scheduled:
+  extends: .mustache_example_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  retry: 2
+
+mustache_example_manual:
+  stage: test
+  extends: .mustache_example_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+.basic_usage_example_base:
+  stage: test
+  extends: .test
+  script:
+    - poetry build --verbose --no-interaction
+    - cd examples/basic_usage
+    - python3 -m venv .examplevenv
+    - source .examplevenv/bin/activate
+    - pip install ../../dist/deepl-*.tar.gz
+    - set -o pipefail
+    - python . 2>&1 | tee basic_usage_result.txt
+    - grep -q "Success" basic_usage_result.txt
+    - pip install mypy
+    - mypy .
+
+basic_usage_example_scheduled:
+  extends: .basic_usage_example_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  retry: 2
+
+basic_usage_example_manual:
+  stage: test
+  extends: .basic_usage_example_base
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+# stage: publish -------------------------
+
+pypi upload:
+  extends: .publish
+  stage: publish
+  dependencies:
+    - package
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+  script:
+    - poetry publish --verbose --no-interaction
+
+gitlab release:
+  stage: publish
+  extends: .create_gitlab_release
+  before_script:
+    - echo "overriding default before_script..."
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'

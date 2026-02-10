@@ -1,0 +1,296 @@
+<!-- Background image implementation following theme's approach -->
+<article class="max-w-full prose dark:prose-invert">
+  <div class="relative">
+    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+    <div class="mx-auto max-w-7xl p-0">
+      <div class="relative sm:overflow-hidden">
+        <div class="fixed inset-x-0 top-0" style="z-index:-10">
+          {{ $bubbleBg := resources.Get "img/bubble_background.svg" }}
+          {{ $staticBg := resources.Get "img/background.svg" }}
+          
+          <script>
+            // Check if the browser is Firefox or Firefox-based
+            const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ||
+                            navigator.userAgent.toLowerCase().indexOf('librewolf') > -1;
+            
+            document.addEventListener('DOMContentLoaded', function() {
+              if (isFirefox) {
+                document.getElementById('dynamic-background').style.display = 'none';
+                document.getElementById('static-background').style.display = 'block';
+              } else {
+                document.getElementById('dynamic-background').style.display = 'block';
+                document.getElementById('static-background').style.display = 'none';
+              }
+            });
+          </script>
+          
+          <!-- Dynamic background for Chrome/Safari -->
+          <img id="dynamic-background" class="w-full h-[1000px] object-cover m-0 nozoom" src="{{ $bubbleBg.RelPermalink }}" role="presentation" style="margin: 0; opacity: 0.5;">
+          
+          <!-- Static background for Firefox/LibreWolf -->
+          <img id="static-background" class="w-full h-[1000px] object-cover m-0 nozoom firefox-bg" src="{{ $staticBg.RelPermalink }}" role="presentation" style="margin: 0; opacity: 0.7; display: none;">
+          
+          <div class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+          <div class="opacity-60 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+        </div>
+
+        <!-- ChemMCP homepage content -->
+        <div class="relative px-1 py-1 flex flex-col items-center justify-center text-center">
+          <div class="max-w-3xl mx-auto text-center px-4 mt-24">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 480px;">
+                <span style="font-size: 84px; font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;">
+                    ChemMCP
+                </span>
+                <p class="text-2xl font-medium mt-2 mb-20 text-neutral-700 dark:text-neutral-200 max-w-3xl mx-auto" style="letter-spacing: 0.1em; padding: 0 20px; padding-top: 8px; padding-bottom: 8px; font-family: 'Arial', sans-serif; transform: scale(1, 1.03);">Build Your Chemistry Co-Scientist</p>
+
+                <div class="flex justify-center gap-4 mb-16">
+                  <a href="/tools/" target="_self" role="button" class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700">
+                    Browse Tools
+                  </a>
+                  <a href="/get-started/" target="_self" role="button" class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700">
+                    Quick Start
+                  </a>
+                  <a href="https://github.com/OSU-NLP-Group/ChemMCP/" target="_self" role="button" class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700">
+                    Github Repo
+                  </a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- What is ChemMCP? Section -->
+<section class="relative z-10 w-full py-16 border-t border-neutral-200 dark:border-neutral-700">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">What is ChemMCP?</h2>
+    <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">ChemMCP is an easy-to-use and extensible
+      chemistry toolkit for LLMs and AI assistants, compatible with the <a href="https://modelcontextprotocol.org/"
+        target="_blank"
+        class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">Model Context
+        Protocol (MCP)</a>. By integrating powerful chemistry tools, ChemMCP can make general AI models capable of chemistry capabilities, performing molecular analysis, property prediction, and reaction synthesis tasks, without requiring domain-specific training. ChemMCP can also be easily integrated in your research for data processing, agentic applications, and more. The ChemMCP toolset is largely extended and updated from our prior paper <a href="https://osu-nlp-group.github.io/ChemToolAgent/" target="_blank" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">ChemToolAgent</a>, and will be continuously updated and expanded in the future.</p>
+      <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">Join our <a href="https://discord.gg/sfZ26Qt3" target="_blank" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">Discord community</a> to discuss ChemMCP, get help, and build together!</p>
+    <div class="mx-auto mb-12 rounded-lg overflow-hidden shadow-xl">
+      <video controls class="w-full h-auto" preload="metadata">
+        <source src="/ChemMCP-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Key features</h3>
+    
+    <div class="space-y-8">
+      <div class="flex items-start py-2">
+        <div class="flex-1">
+          <p class="text-md font-medium text-neutral-800 dark:text-neutral-200"><strong>🔌 Plug-and-Play Chemistry Tools for AI Assistants</strong>: ChemMCP tools can be integrated into any <a href="https://github.com/punkpeye/awesome-mcp-clients" target="_blank" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">MCP-enabled LLM clients</a> in just minutes, allowing researchers to augment LLMs with chemistry capabilities without additional training.</p>
+        </div>
+      </div>
+      
+      <div class="flex items-start py-2">
+        <div class="flex-1">
+          <p class="text-md font-medium text-neutral-800 dark:text-neutral-200"><strong>🛠️ Standalone Toolkit for Custom Workflows</strong>: With its decoupled design and unified interfaces, ChemMCP tools can be easily imported into your workflow, to process data, assemble pipeline steps, or build bespoke agentic applications — via MCP or Python, whichever you prefer.</p>
+        </div>
+      </div>
+      
+      <div class="flex items-start py-2">
+        <div class="flex-1">
+          <p class="text-md font-medium text-neutral-800 dark:text-neutral-200"><strong>🤖 Native RL Agent Framework</strong>: ChemMCP natively supports multi-turn interactive loops between agents and tool, providing an ideal infrastructure and testbed for scientific tool-using agents.</p>
+        </div>
+      </div>
+      
+      <div class="flex items-start py-2">
+        <div class="flex-1">
+          <p class="text-md font-medium text-neutral-800 dark:text-neutral-200"><strong>📦 Modular and Extensible Design</strong>: Adding a new tool is as simple as writing a Python file (see <a href="https://osu-nlp-group.github.io/ChemMCP/dev-guide/" target="_blank" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">here</a>). All tools follow a consistent schema, ensuring clear interfaces, easy maintenance, and automatic documentation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Where to Start? Section -->
+<section class="relative z-10 w-full py-16 border-t border-neutral-200 dark:border-neutral-700">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">Where to Start?</h2>
+    <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-2">Follow the steps below to embrace ChemMCP:</p>
+    <!-- Steps in numbered list -->
+    <div class="mt-4 text-lg text-neutral-700 dark:text-neutral-300">
+      <div class="mb-2">
+        <span class="font-bold">1. Read </span>
+        <a href="/get-started" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500 font-bold">Get Started</a>
+        <span>: Learn the fundamentals of using ChemMCP through our comprehensive guide.</span>
+      </div>
+      
+      <div class="mb-2">
+        <span class="font-bold">2. Explore </span>
+        <a href="/tools" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500 font-bold">Tools</a>
+        <span>: Browse our extensive collection of chemistry tools and their detailed documentation.</span>
+      </div>
+      
+      <div class="mb-2">
+        <span class="font-bold">3. Configure with <a href="/quick-config" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500 font-bold">QuickConfig</a> </span>
+        <span>: Easily customize your tool selection and configuration with our easy-to-use utility.</span>
+      </div>
+      
+      <div class="mb-2">
+        <span class="font-bold">4. Contribute to ChemMCP</span>
+        <span>: Join our community by implementing new tools following our <a href="/dev-guide" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">development guide</a>, or help improve ChemMCP by reporting issues and suggesting features on </span>
+        <a href="https://github.com/OSU-NLP-Group/ChemMCP" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">GitHub</a>
+        <span>.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-16">
+
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section class="relative z-10 w-full py-16 border-t border-neutral-200 dark:border-neutral-700">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">About Us</h2>
+    <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+      ChemMCP is an open-source project developed by <a href="https://x.com/osunlp" target="_blank" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">the OSU NLP Group</a> and led by <a href="https://btyu.github.io/" target="_blank" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">Botao Yu</a>. We're pioneering the integration of advanced chemistry tools with large language models, bridging the gap between computational chemistry and AI. Our vision is to democratize access to sophisticated chemistry tools, empowering researchers and practitioners to tackle complex scientific challenges with the assistance of AI technology.
+    </p>
+    
+    <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">Citations</h3>
+    <p class="text-md text-neutral-700 dark:text-neutral-300 mb-4">
+      If ChemMCP is valuable to your research or development, please kindly cite our works:
+    </p>
+    
+    <div class="highlight-wrapper">
+      <div class="highlight bg-neutral-100 dark:bg-neutral-800 rounded-md shadow-sm">
+        <pre tabindex="0" class="chroma language-bibtex bg-transparent dark:bg-transparent px-6 py-4 text-sm text-neutral-800 dark:text-neutral-200 overflow-auto"><code>@misc{yu2025chemmcp,
+  author       = {Botao Yu and Huan Sun},
+  title        = {ChemMCP: An Easy-to-Use and Extensible Toolkit for Chemistry Agents},
+  year         = {2025},
+  url          = {https://osu-nlp-group.github.io/ChemMCP/},
+  note         = {2025-06-05-01}
+}
+
+@article{yu2024chemtoolagent,
+  title={ChemToolAgent: The Impact of Tools on Language Agents for Chemistry Problem Solving},
+  author={Botao Yu and Frazier N. Baker and Ziru Chen and Garrett Herb and Boyu Gou and Daniel Adu-Ampratwum and Xia Ning and Huan Sun},
+  journal={arXiv preprint arXiv:2411.07228},
+  year={2024}
+}</code></pre>
+      </div>
+    </div>
+    
+    <h3 class="text-xl font-bold mb-3 mt-6 text-neutral-900 dark:text-neutral-100">Contact</h3>
+    <p class="text-md text-neutral-700 dark:text-neutral-300 mb-4">
+      Have questions or feedback?
+    </p>
+    
+    <div class="text-md text-neutral-700 dark:text-neutral-300 mb-3 ml-4">
+      <div class="flex items-start mb-2">
+        <span class="mr-2">•</span>
+        <div>Join our <a href="https://discord.gg/sfZ26Qt3" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">Discord community</a> to discuss ChemMCP, get help, and connect with other users!</div>
+      </div>
+      <div class="flex items-start mb-2">
+        <span class="mr-2">•</span>
+        <div>Open an issue for bug reports or feature requests on our <a href="https://github.com/OSU-NLP-Group/ChemMCP" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">GitHub repository</a>.</div>
+      </div>
+      <div class="flex items-start mb-2">
+        <span class="mr-2">•</span>
+        <div>Email us at <a href="mailto:yu.3737@osu.edu" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-500">yu.3737@osu.edu</a> – we are eager to know your ideas and suggestions!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add Prism.js for BibTeX syntax highlighting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+
+<style>
+  /* Code highlighting styles to match QuickConfig page */
+  .highlight-wrapper {
+    @apply block;
+  }
+
+  .highlight {
+    @apply relative z-0;
+  }
+
+  /* Code block styling */
+  pre.chroma {
+    margin: 0 !important;
+  }
+
+  /* Override Prism.js styles */
+  pre.language-bibtex {
+    text-shadow: none !important;
+    background: none !important;
+  }
+</style>
+
+{{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    // Check if the browser is Firefox or Firefox-based
+    const isFirefoxBrowser = navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ||
+                     navigator.userAgent.toLowerCase().indexOf('librewolf') > -1;
+    
+    // For Firefox/LibreWolf, don't use dynamic effects
+    if (isFirefoxBrowser) {
+        // Apply static styling without animations
+        const background_blur = document.getElementById('background-blur');
+        if (background_blur) {
+            background_blur.style.backdropFilter = 'none';
+            background_blur.classList.add('firefox-optimized');
+        }
+    } else {
+        // Only use scroll effects for non-Firefox browsers
+        function throttle(callback, limit) {
+            let wait = false;
+            return function() {
+                if (!wait) {
+                    callback.apply(null, arguments);
+                    wait = true;
+                    setTimeout(function() {
+                        wait = false;
+                    }, limit);
+                }
+            };
+        }
+
+        // Add scroll event only for non-Firefox browsers
+        window.addEventListener('scroll', throttle(function(e) {
+            var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            var background_blur = document.getElementById('background-blur');
+            
+            requestAnimationFrame(function() {
+                background_blur.style.opacity = (scroll / 130);
+            });
+        }, 16));
+    }
+</script>
+
+<style>
+    /* Styles for Firefox static background */
+    .firefox-bg {
+        opacity: 0.8 !important;
+    }
+    
+    /* Optimized styles for Firefox - static effect without animations */
+    .firefox-optimized {
+        background-color: rgba(245, 245, 245, 0.7);
+        backdrop-filter: none !important;
+        opacity: 0.7 !important; /* Static opacity */
+    }
+    
+    .firefox-static-effect {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        .firefox-optimized {
+            background-color: rgba(38, 38, 38, 0.7);
+        }
+    }
+</style>
+{{ end }}

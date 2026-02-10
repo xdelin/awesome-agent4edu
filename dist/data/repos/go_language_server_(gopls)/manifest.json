@@ -1,0 +1,397 @@
+{
+  "name": "Go Language Server (gopls)",
+  "tree": [
+    {
+      "name": ".cursor",
+      "type": "folder",
+      "path": ".cursor",
+      "children": [
+        {
+          "name": "mcp.json",
+          "type": "file",
+          "path": ".cursor/mcp.json",
+          "size": 132,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "cmd",
+      "type": "folder",
+      "path": "cmd",
+      "children": [
+        {
+          "name": "mcp-gopls",
+          "type": "folder",
+          "path": "cmd/mcp-gopls",
+          "children": [
+            {
+              "name": "main.go",
+              "type": "file",
+              "path": "cmd/mcp-gopls/main.go",
+              "size": 4822,
+              "language": "go"
+            },
+            {
+              "name": "main_test.go",
+              "type": "file",
+              "path": "cmd/mcp-gopls/main_test.go",
+              "size": 6122,
+              "language": "go"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "docker-mcp.yaml",
+          "type": "file",
+          "path": "docs/docker-mcp.yaml",
+          "size": 194,
+          "language": "yaml"
+        },
+        {
+          "name": "tools.json",
+          "type": "file",
+          "path": "docs/tools.json",
+          "size": 3413,
+          "language": "json"
+        },
+        {
+          "name": "usage.md",
+          "type": "file",
+          "path": "docs/usage.md",
+          "size": 2125,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "internal",
+      "type": "folder",
+      "path": "internal",
+      "children": [
+        {
+          "name": "goenv",
+          "type": "folder",
+          "path": "internal/goenv",
+          "children": [
+            {
+              "name": "goenv.go",
+              "type": "file",
+              "path": "internal/goenv/goenv.go",
+              "size": 877,
+              "language": "go"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pkg",
+      "type": "folder",
+      "path": "pkg",
+      "children": [
+        {
+          "name": "lsp",
+          "type": "folder",
+          "path": "pkg/lsp",
+          "children": [
+            {
+              "name": "client",
+              "type": "folder",
+              "path": "pkg/lsp/client",
+              "children": [
+                {
+                  "name": "gopls.go",
+                  "type": "file",
+                  "path": "pkg/lsp/client/gopls.go",
+                  "size": 27982,
+                  "language": "go"
+                },
+                {
+                  "name": "gopls_diagnostics_test.go",
+                  "type": "file",
+                  "path": "pkg/lsp/client/gopls_diagnostics_test.go",
+                  "size": 1781,
+                  "language": "go"
+                },
+                {
+                  "name": "gopls_env_test.go",
+                  "type": "file",
+                  "path": "pkg/lsp/client/gopls_env_test.go",
+                  "size": 2035,
+                  "language": "go"
+                },
+                {
+                  "name": "gopls_helpers_test.go",
+                  "type": "file",
+                  "path": "pkg/lsp/client/gopls_helpers_test.go",
+                  "size": 6811,
+                  "language": "go"
+                },
+                {
+                  "name": "gopls_path_test.go",
+                  "type": "file",
+                  "path": "pkg/lsp/client/gopls_path_test.go",
+                  "size": 2402,
+                  "language": "go"
+                },
+                {
+                  "name": "interface.go",
+                  "type": "file",
+                  "path": "pkg/lsp/client/interface.go",
+                  "size": 1648,
+                  "language": "go"
+                }
+              ]
+            },
+            {
+              "name": "protocol",
+              "type": "folder",
+              "path": "pkg/lsp/protocol",
+              "children": [
+                {
+                  "name": "jsonrpc.go",
+                  "type": "file",
+                  "path": "pkg/lsp/protocol/jsonrpc.go",
+                  "size": 2255,
+                  "language": "go"
+                },
+                {
+                  "name": "progress.go",
+                  "type": "file",
+                  "path": "pkg/lsp/protocol/progress.go",
+                  "size": 1960,
+                  "language": "go"
+                },
+                {
+                  "name": "protocol_test.go",
+                  "type": "file",
+                  "path": "pkg/lsp/protocol/protocol_test.go",
+                  "size": 2607,
+                  "language": "go"
+                },
+                {
+                  "name": "transport.go",
+                  "type": "file",
+                  "path": "pkg/lsp/protocol/transport.go",
+                  "size": 4547,
+                  "language": "go"
+                },
+                {
+                  "name": "types.go",
+                  "type": "file",
+                  "path": "pkg/lsp/protocol/types.go",
+                  "size": 4043,
+                  "language": "go"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "server",
+          "type": "folder",
+          "path": "pkg/server",
+          "children": [
+            {
+              "name": "config.go",
+              "type": "file",
+              "path": "pkg/server/config.go",
+              "size": 1247,
+              "language": "go"
+            },
+            {
+              "name": "prompts.go",
+              "type": "file",
+              "path": "pkg/server/prompts.go",
+              "size": 2163,
+              "language": "go"
+            },
+            {
+              "name": "resources.go",
+              "type": "file",
+              "path": "pkg/server/resources.go",
+              "size": 2830,
+              "language": "go"
+            },
+            {
+              "name": "server.go",
+              "type": "file",
+              "path": "pkg/server/server.go",
+              "size": 4917,
+              "language": "go"
+            },
+            {
+              "name": "service.go",
+              "type": "file",
+              "path": "pkg/server/service.go",
+              "size": 691,
+              "language": "go"
+            },
+            {
+              "name": "service_test.go",
+              "type": "file",
+              "path": "pkg/server/service_test.go",
+              "size": 9999,
+              "language": "go"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "pkg/tools",
+          "children": [
+            {
+              "name": "diagnostics.go",
+              "type": "file",
+              "path": "pkg/tools/diagnostics.go",
+              "size": 1626,
+              "language": "go"
+            },
+            {
+              "name": "insight.go",
+              "type": "file",
+              "path": "pkg/tools/insight.go",
+              "size": 3406,
+              "language": "go"
+            },
+            {
+              "name": "lsp_tools.go",
+              "type": "file",
+              "path": "pkg/tools/lsp_tools.go",
+              "size": 11147,
+              "language": "go"
+            },
+            {
+              "name": "lsp_tools_test.go",
+              "type": "file",
+              "path": "pkg/tools/lsp_tools_test.go",
+              "size": 2458,
+              "language": "go"
+            },
+            {
+              "name": "navigation.go",
+              "type": "file",
+              "path": "pkg/tools/navigation.go",
+              "size": 3286,
+              "language": "go"
+            },
+            {
+              "name": "notifications.go",
+              "type": "file",
+              "path": "pkg/tools/notifications.go",
+              "size": 891,
+              "language": "go"
+            },
+            {
+              "name": "refactor.go",
+              "type": "file",
+              "path": "pkg/tools/refactor.go",
+              "size": 4472,
+              "language": "go"
+            },
+            {
+              "name": "testing.go",
+              "type": "file",
+              "path": "pkg/tools/testing.go",
+              "size": 5328,
+              "language": "go"
+            },
+            {
+              "name": "testing_test.go",
+              "type": "file",
+              "path": "pkg/tools/testing_test.go",
+              "size": 1425,
+              "language": "go"
+            },
+            {
+              "name": "tools_end_to_end_test.go",
+              "type": "file",
+              "path": "pkg/tools/tools_end_to_end_test.go",
+              "size": 9454,
+              "language": "go"
+            },
+            {
+              "name": "workspace.go",
+              "type": "file",
+              "path": "pkg/tools/workspace.go",
+              "size": 4853,
+              "language": "go"
+            },
+            {
+              "name": "workspace_test.go",
+              "type": "file",
+              "path": "pkg/tools/workspace_test.go",
+              "size": 1565,
+              "language": "go"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "tidy-check.sh",
+          "type": "file",
+          "path": "scripts/tidy-check.sh",
+          "size": 1008,
+          "language": "sh"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 9,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 2330,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 462,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 11558,
+      "language": "text"
+    },
+    {
+      "name": "Makefile",
+      "type": "file",
+      "path": "Makefile",
+      "size": 1182,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 19854,
+      "language": "md"
+    }
+  ]
+}

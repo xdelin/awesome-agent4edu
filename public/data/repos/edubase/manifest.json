@@ -1,0 +1,187 @@
+{
+  "name": "EduBase",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "classes.ts",
+              "type": "file",
+              "path": "src/tools/classes.ts",
+              "size": 8720,
+              "language": "ts"
+            },
+            {
+              "name": "exams.ts",
+              "type": "file",
+              "path": "src/tools/exams.ts",
+              "size": 8377,
+              "language": "ts"
+            },
+            {
+              "name": "integrations.ts",
+              "type": "file",
+              "path": "src/tools/integrations.ts",
+              "size": 6788,
+              "language": "ts"
+            },
+            {
+              "name": "metrics.ts",
+              "type": "file",
+              "path": "src/tools/metrics.ts",
+              "size": 972,
+              "language": "ts"
+            },
+            {
+              "name": "organizations.ts",
+              "type": "file",
+              "path": "src/tools/organizations.ts",
+              "size": 18487,
+              "language": "ts"
+            },
+            {
+              "name": "permissions.ts",
+              "type": "file",
+              "path": "src/tools/permissions.ts",
+              "size": 54166,
+              "language": "ts"
+            },
+            {
+              "name": "plays.ts",
+              "type": "file",
+              "path": "src/tools/plays.ts",
+              "size": 10434,
+              "language": "ts"
+            },
+            {
+              "name": "questions.ts",
+              "type": "file",
+              "path": "src/tools/questions.ts",
+              "size": 51099,
+              "language": "ts"
+            },
+            {
+              "name": "quizes.ts",
+              "type": "file",
+              "path": "src/tools/quizes.ts",
+              "size": 7213,
+              "language": "ts"
+            },
+            {
+              "name": "tags.ts",
+              "type": "file",
+              "path": "src/tools/tags.ts",
+              "size": 35098,
+              "language": "ts"
+            },
+            {
+              "name": "users.ts",
+              "type": "file",
+              "path": "src/tools/users.ts",
+              "size": 14546,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "helpers.ts",
+          "type": "file",
+          "path": "src/helpers.ts",
+          "size": 262,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 17295,
+          "language": "ts"
+        },
+        {
+          "name": "prompts.ts",
+          "type": "file",
+          "path": "src/prompts.ts",
+          "size": 165,
+          "language": "ts"
+        },
+        {
+          "name": "tools.ts",
+          "type": "file",
+          "path": "src/tools.ts",
+          "size": 3777,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 45,
+      "language": "text"
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "type": "file",
+      "path": ".pre-commit-config.yaml",
+      "size": 481,
+      "language": "yaml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 502,
+      "language": "text"
+    },
+    {
+      "name": "inspector.sh",
+      "type": "file",
+      "path": "inspector.sh",
+      "size": 81,
+      "language": "sh"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1085,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 744,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8665,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 887,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 389,
+      "language": "json"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+node_modules/
+*.log
+.env
+dist/
+build/
+.DS_Store
+
+# IDE stuff
+.history
+.idea
+
+# claude 
+plans
+.serena

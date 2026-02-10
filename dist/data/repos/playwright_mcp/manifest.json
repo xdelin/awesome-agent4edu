@@ -1,0 +1,1006 @@
+{
+  "name": "Playwright MCP",
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "docs",
+          "type": "folder",
+          "path": "docs/docs",
+          "children": [
+            {
+              "name": "ai-courses",
+              "type": "folder",
+              "path": "docs/docs/ai-courses",
+              "children": [
+                {
+                  "name": "img",
+                  "type": "folder",
+                  "path": "docs/docs/ai-courses/img",
+                  "children": [
+                    {
+                      "name": "GenAI.png",
+                      "type": "file",
+                      "path": "docs/docs/ai-courses/img/GenAI.png",
+                      "size": 314863,
+                      "language": "png"
+                    }
+                  ]
+                },
+                {
+                  "name": "_category_.json",
+                  "type": "file",
+                  "path": "docs/docs/ai-courses/_category_.json",
+                  "size": 232,
+                  "language": "json"
+                }
+              ]
+            },
+            {
+              "name": "img",
+              "type": "folder",
+              "path": "docs/docs/img",
+              "children": [
+                {
+                  "name": "mcp-server.png",
+                  "type": "file",
+                  "path": "docs/docs/img/mcp-server.png",
+                  "size": 425821,
+                  "language": "png"
+                }
+              ]
+            },
+            {
+              "name": "local-setup",
+              "type": "folder",
+              "path": "docs/docs/local-setup",
+              "children": [
+                {
+                  "name": "img",
+                  "type": "folder",
+                  "path": "docs/docs/local-setup/img",
+                  "children": [
+                    {
+                      "name": "mcp-server-running.png",
+                      "type": "file",
+                      "path": "docs/docs/local-setup/img/mcp-server-running.png",
+                      "size": 95449,
+                      "language": "png"
+                    },
+                    {
+                      "name": "mcp-server.png",
+                      "type": "file",
+                      "path": "docs/docs/local-setup/img/mcp-server.png",
+                      "size": 425821,
+                      "language": "png"
+                    }
+                  ]
+                },
+                {
+                  "name": "_category_.json",
+                  "type": "file",
+                  "path": "docs/docs/local-setup/_category_.json",
+                  "size": 217,
+                  "language": "json"
+                }
+              ]
+            },
+            {
+              "name": "playwright-api",
+              "type": "folder",
+              "path": "docs/docs/playwright-api",
+              "children": [
+                {
+                  "name": "_category_.json",
+                  "type": "file",
+                  "path": "docs/docs/playwright-api/_category_.json",
+                  "size": 204,
+                  "language": "json"
+                },
+                {
+                  "name": "Examples.md",
+                  "type": "file",
+                  "path": "docs/docs/playwright-api/Examples.md",
+                  "size": 4351,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "playwright-web",
+              "type": "folder",
+              "path": "docs/docs/playwright-web",
+              "children": [
+                {
+                  "name": "img",
+                  "type": "folder",
+                  "path": "docs/docs/playwright-web/img",
+                  "children": [
+                    {
+                      "name": "mcp-execution.png",
+                      "type": "file",
+                      "path": "docs/docs/playwright-web/img/mcp-execution.png",
+                      "size": 555511,
+                      "language": "png"
+                    }
+                  ]
+                },
+                {
+                  "name": "_category_.json",
+                  "type": "file",
+                  "path": "docs/docs/playwright-web/_category_.json",
+                  "size": 215,
+                  "language": "json"
+                },
+                {
+                  "name": "Device-Quick-Reference.md",
+                  "type": "file",
+                  "path": "docs/docs/playwright-web/Device-Quick-Reference.md",
+                  "size": 7288,
+                  "language": "md"
+                },
+                {
+                  "name": "Examples.md",
+                  "type": "file",
+                  "path": "docs/docs/playwright-web/Examples.md",
+                  "size": 5337,
+                  "language": "md"
+                },
+                {
+                  "name": "Resize-Prompts-Guide.md",
+                  "type": "file",
+                  "path": "docs/docs/playwright-web/Resize-Prompts-Guide.md",
+                  "size": 9325,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "testing-videos",
+              "type": "folder",
+              "path": "docs/docs/testing-videos",
+              "children": [
+                {
+                  "name": "_category_.json",
+                  "type": "file",
+                  "path": "docs/docs/testing-videos/_category_.json",
+                  "size": 225,
+                  "language": "json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "docs/src",
+          "children": [
+            {
+              "name": "components",
+              "type": "folder",
+              "path": "docs/src/components",
+              "children": [
+                {
+                  "name": "HomepageFeatures",
+                  "type": "folder",
+                  "path": "docs/src/components/HomepageFeatures",
+                  "children": [
+                    {
+                      "name": "index.tsx",
+                      "type": "file",
+                      "path": "docs/src/components/HomepageFeatures/index.tsx",
+                      "size": 1765,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "styles.module.css",
+                      "type": "file",
+                      "path": "docs/src/components/HomepageFeatures/styles.module.css",
+                      "size": 149,
+                      "language": "css"
+                    },
+                    {
+                      "name": "YouTubeVideoEmbed.tsx",
+                      "type": "file",
+                      "path": "docs/src/components/HomepageFeatures/YouTubeVideoEmbed.tsx",
+                      "size": 399,
+                      "language": "tsx"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "css",
+              "type": "folder",
+              "path": "docs/src/css",
+              "children": [
+                {
+                  "name": "custom.css",
+                  "type": "file",
+                  "path": "docs/src/css/custom.css",
+                  "size": 1072,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "pages",
+              "type": "folder",
+              "path": "docs/src/pages",
+              "children": [
+                {
+                  "name": "index.module.css",
+                  "type": "file",
+                  "path": "docs/src/pages/index.module.css",
+                  "size": 388,
+                  "language": "css"
+                },
+                {
+                  "name": "index.tsx",
+                  "type": "file",
+                  "path": "docs/src/pages/index.tsx",
+                  "size": 1308,
+                  "language": "tsx"
+                },
+                {
+                  "name": "markdown-page.md",
+                  "type": "file",
+                  "path": "docs/src/pages/markdown-page.md",
+                  "size": 125,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "static",
+          "type": "folder",
+          "path": "docs/static",
+          "children": [
+            {
+              "name": "img",
+              "type": "folder",
+              "path": "docs/static/img",
+              "children": [
+                {
+                  "name": "docusaurus-social-card.jpg",
+                  "type": "file",
+                  "path": "docs/static/img/docusaurus-social-card.jpg",
+                  "size": 55746,
+                  "language": "jpg"
+                },
+                {
+                  "name": "docusaurus.png",
+                  "type": "file",
+                  "path": "docs/static/img/docusaurus.png",
+                  "size": 5142,
+                  "language": "png"
+                },
+                {
+                  "name": "EA-Icon.jpg",
+                  "type": "file",
+                  "path": "docs/static/img/EA-Icon.jpg",
+                  "size": 148175,
+                  "language": "jpg"
+                },
+                {
+                  "name": "EA-Icon.svg",
+                  "type": "file",
+                  "path": "docs/static/img/EA-Icon.svg",
+                  "size": 2333,
+                  "language": "svg"
+                },
+                {
+                  "name": "easy-to-use.svg",
+                  "type": "file",
+                  "path": "docs/static/img/easy-to-use.svg",
+                  "size": 154068,
+                  "language": "svg"
+                },
+                {
+                  "name": "favicon.ico",
+                  "type": "file",
+                  "path": "docs/static/img/favicon.ico",
+                  "size": 3626,
+                  "language": "ico"
+                },
+                {
+                  "name": "logo.svg",
+                  "type": "file",
+                  "path": "docs/static/img/logo.svg",
+                  "size": 6438,
+                  "language": "svg"
+                },
+                {
+                  "name": "node.svg",
+                  "type": "file",
+                  "path": "docs/static/img/node.svg",
+                  "size": 4158,
+                  "language": "svg"
+                },
+                {
+                  "name": "playwright.svg",
+                  "type": "file",
+                  "path": "docs/static/img/playwright.svg",
+                  "size": 128067,
+                  "language": "svg"
+                },
+                {
+                  "name": "undraw_docusaurus_mountain.svg",
+                  "type": "file",
+                  "path": "docs/static/img/undraw_docusaurus_mountain.svg",
+                  "size": 31657,
+                  "language": "svg"
+                },
+                {
+                  "name": "undraw_docusaurus_react.svg",
+                  "type": "file",
+                  "path": "docs/static/img/undraw_docusaurus_react.svg",
+                  "size": 36172,
+                  "language": "svg"
+                },
+                {
+                  "name": "undraw_docusaurus_tree.svg",
+                  "type": "file",
+                  "path": "docs/static/img/undraw_docusaurus_tree.svg",
+                  "size": 11927,
+                  "language": "svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "docusaurus.config.ts",
+          "type": "file",
+          "path": "docs/docusaurus.config.ts",
+          "size": 3610,
+          "language": "ts"
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file",
+          "path": "docs/package-lock.json",
+          "size": 676655,
+          "language": "json"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "docs/package.json",
+          "size": 1235,
+          "language": "json"
+        },
+        {
+          "name": "sidebars.ts",
+          "type": "file",
+          "path": "docs/sidebars.ts",
+          "size": 893,
+          "language": "ts"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "docs/tsconfig.json",
+          "size": 223,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "http-mode-example.md",
+          "type": "file",
+          "path": "examples/http-mode-example.md",
+          "size": 586,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "__tests__",
+          "type": "folder",
+          "path": "src/__tests__",
+          "children": [
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "src/__tests__/tools",
+              "children": [
+                {
+                  "name": "api",
+                  "type": "folder",
+                  "path": "src/__tests__/tools/api",
+                  "children": [
+                    {
+                      "name": "requests.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/api/requests.test.ts",
+                      "size": 20110,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "browser",
+                  "type": "folder",
+                  "path": "src/__tests__/tools/browser",
+                  "children": [
+                    {
+                      "name": "advancedInteraction.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/advancedInteraction.test.ts",
+                      "size": 7956,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "console.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/console.test.ts",
+                      "size": 4846,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "goNavigation.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/goNavigation.test.ts",
+                      "size": 4490,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "interaction.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/interaction.test.ts",
+                      "size": 15855,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "navigation.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/navigation.test.ts",
+                      "size": 5272,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "output.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/output.test.ts",
+                      "size": 4211,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "resize.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/resize.test.ts",
+                      "size": 11872,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "screenshot.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/screenshot.test.ts",
+                      "size": 5999,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "visiblePage.test.ts",
+                      "type": "file",
+                      "path": "src/__tests__/tools/browser/visiblePage.test.ts",
+                      "size": 11966,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "codegen.test.ts",
+              "type": "file",
+              "path": "src/__tests__/codegen.test.ts",
+              "size": 7911,
+              "language": "ts"
+            },
+            {
+              "name": "logging.test.ts",
+              "type": "file",
+              "path": "src/__tests__/logging.test.ts",
+              "size": 3925,
+              "language": "ts"
+            },
+            {
+              "name": "toolHandler.test.ts",
+              "type": "file",
+              "path": "src/__tests__/toolHandler.test.ts",
+              "size": 14672,
+              "language": "ts"
+            },
+            {
+              "name": "tools.test.ts",
+              "type": "file",
+              "path": "src/__tests__/tools.test.ts",
+              "size": 5289,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "evals",
+          "type": "folder",
+          "path": "src/evals",
+          "children": [
+            {
+              "name": "evals.ts",
+              "type": "file",
+              "path": "src/evals/evals.ts",
+              "size": 2109,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "logging",
+          "type": "folder",
+          "path": "src/logging",
+          "children": [
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/logging/index.ts",
+              "size": 118,
+              "language": "ts"
+            },
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/logging/logger.ts",
+              "size": 8630,
+              "language": "ts"
+            },
+            {
+              "name": "middleware.ts",
+              "type": "file",
+              "path": "src/logging/middleware.ts",
+              "size": 13206,
+              "language": "ts"
+            },
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "src/logging/types.ts",
+              "size": 1765,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "monitoring",
+          "type": "folder",
+          "path": "src/monitoring",
+          "children": [
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/monitoring/index.ts",
+              "size": 87,
+              "language": "ts"
+            },
+            {
+              "name": "system.ts",
+              "type": "file",
+              "path": "src/monitoring/system.ts",
+              "size": 8213,
+              "language": "ts"
+            },
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "src/monitoring/types.ts",
+              "size": 2113,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "rate-limiting",
+          "type": "folder",
+          "path": "src/rate-limiting",
+          "children": [
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/rate-limiting/index.ts",
+              "size": 91,
+              "language": "ts"
+            },
+            {
+              "name": "limiter.ts",
+              "type": "file",
+              "path": "src/rate-limiting/limiter.ts",
+              "size": 6499,
+              "language": "ts"
+            },
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "src/rate-limiting/types.ts",
+              "size": 2379,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "sse",
+          "type": "folder",
+          "path": "src/sse",
+          "children": [
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/sse/index.ts",
+              "size": 95,
+              "language": "ts"
+            },
+            {
+              "name": "server.ts",
+              "type": "file",
+              "path": "src/sse/server.ts",
+              "size": 2073,
+              "language": "ts"
+            },
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "src/sse/types.ts",
+              "size": 1494,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "api",
+              "type": "folder",
+              "path": "src/tools/api",
+              "children": [
+                {
+                  "name": "base.ts",
+                  "type": "file",
+                  "path": "src/tools/api/base.ts",
+                  "size": 2024,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/api/index.ts",
+                  "size": 127,
+                  "language": "ts"
+                },
+                {
+                  "name": "requests.ts",
+                  "type": "file",
+                  "path": "src/tools/api/requests.ts",
+                  "size": 9214,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "browser",
+              "type": "folder",
+              "path": "src/tools/browser",
+              "children": [
+                {
+                  "name": "base.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/base.ts",
+                  "size": 3249,
+                  "language": "ts"
+                },
+                {
+                  "name": "console.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/console.ts",
+                  "size": 1976,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/index.ts",
+                  "size": 366,
+                  "language": "ts"
+                },
+                {
+                  "name": "interaction.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/interaction.ts",
+                  "size": 8562,
+                  "language": "ts"
+                },
+                {
+                  "name": "navigation.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/navigation.ts",
+                  "size": 3980,
+                  "language": "ts"
+                },
+                {
+                  "name": "output.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/output.ts",
+                  "size": 978,
+                  "language": "ts"
+                },
+                {
+                  "name": "resize.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/resize.ts",
+                  "size": 3943,
+                  "language": "ts"
+                },
+                {
+                  "name": "response.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/response.ts",
+                  "size": 2759,
+                  "language": "ts"
+                },
+                {
+                  "name": "screenshot.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/screenshot.ts",
+                  "size": 2442,
+                  "language": "ts"
+                },
+                {
+                  "name": "useragent.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/useragent.ts",
+                  "size": 1380,
+                  "language": "ts"
+                },
+                {
+                  "name": "visiblePage.ts",
+                  "type": "file",
+                  "path": "src/tools/browser/visiblePage.ts",
+                  "size": 7673,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "codegen",
+              "type": "folder",
+              "path": "src/tools/codegen",
+              "children": [
+                {
+                  "name": "generator.ts",
+                  "type": "file",
+                  "path": "src/tools/codegen/generator.ts",
+                  "size": 6246,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/codegen/index.ts",
+                  "size": 6270,
+                  "language": "ts"
+                },
+                {
+                  "name": "recorder.ts",
+                  "type": "file",
+                  "path": "src/tools/codegen/recorder.ts",
+                  "size": 1967,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/codegen/types.ts",
+                  "size": 673,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "common",
+              "type": "folder",
+              "path": "src/tools/common",
+              "children": [
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/common/types.ts",
+                  "size": 1159,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/tools/index.ts",
+              "size": 662,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "http-server.ts",
+          "type": "file",
+          "path": "src/http-server.ts",
+          "size": 9605,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 4844,
+          "language": "ts"
+        },
+        {
+          "name": "requestHandler.ts",
+          "type": "file",
+          "path": "src/requestHandler.ts",
+          "size": 3522,
+          "language": "ts"
+        },
+        {
+          "name": "toolHandler.ts",
+          "type": "file",
+          "path": "src/toolHandler.ts",
+          "size": 23101,
+          "language": "ts"
+        },
+        {
+          "name": "tools.ts",
+          "type": "file",
+          "path": "src/tools.ts",
+          "size": 20013,
+          "language": "ts"
+        },
+        {
+          "name": "types.ts",
+          "type": "file",
+          "path": "src/types.ts",
+          "size": 414,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 2202,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 12372,
+      "language": "md"
+    },
+    {
+      "name": "docker-build.sh",
+      "type": "file",
+      "path": "docker-build.sh",
+      "size": 608,
+      "language": "sh"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 545,
+      "language": "yml"
+    },
+    {
+      "name": "DOCKER.md",
+      "type": "file",
+      "path": "DOCKER.md",
+      "size": 6461,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 704,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1095,
+      "language": "text"
+    },
+    {
+      "name": "mcp-config.json",
+      "type": "file",
+      "path": "mcp-config.json",
+      "size": 147,
+      "language": "json"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 335680,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1754,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 11544,
+      "language": "md"
+    },
+    {
+      "name": "run-tests.js",
+      "type": "file",
+      "path": "run-tests.js",
+      "size": 309,
+      "language": "js"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 403,
+      "language": "yaml"
+    },
+    {
+      "name": "test-import.js",
+      "type": "file",
+      "path": "test-import.js",
+      "size": 304,
+      "language": "js"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 447,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.test.json",
+      "type": "file",
+      "path": "tsconfig.test.json",
+      "size": 222,
+      "language": "json"
+    }
+  ]
+}

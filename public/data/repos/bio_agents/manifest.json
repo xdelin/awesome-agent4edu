@@ -1,0 +1,537 @@
+{
+  "name": "Bio Agents",
+  "tree": [
+    {
+      "name": "chembl_mcp",
+      "type": "folder",
+      "path": "chembl_mcp",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "chembl_mcp/src",
+          "children": [
+            {
+              "name": "chembl_mcp",
+              "type": "folder",
+              "path": "chembl_mcp/src/chembl_mcp",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "chembl_mcp/src/chembl_mcp/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "constants.py",
+                  "type": "file",
+                  "path": "chembl_mcp/src/chembl_mcp/constants.py",
+                  "size": 24,
+                  "language": "py"
+                },
+                {
+                  "name": "main.py",
+                  "type": "file",
+                  "path": "chembl_mcp/src/chembl_mcp/main.py",
+                  "size": 109,
+                  "language": "py"
+                },
+                {
+                  "name": "molecules.py",
+                  "type": "file",
+                  "path": "chembl_mcp/src/chembl_mcp/molecules.py",
+                  "size": 1561,
+                  "language": "py"
+                },
+                {
+                  "name": "server.py",
+                  "type": "file",
+                  "path": "chembl_mcp/src/chembl_mcp/server.py",
+                  "size": 397,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "chembl_mcp/src/__init__.py",
+              "size": 0,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "Dockerfile",
+          "type": "file",
+          "path": "chembl_mcp/Dockerfile",
+          "size": 645,
+          "language": "text"
+        },
+        {
+          "name": "pyproject.toml",
+          "type": "file",
+          "path": "chembl_mcp/pyproject.toml",
+          "size": 500,
+          "language": "toml"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "chembl_mcp/README.md",
+          "size": 4207,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "llm_client",
+      "type": "folder",
+      "path": "llm_client",
+      "children": [
+        {
+          "name": ".chainlit",
+          "type": "folder",
+          "path": "llm_client/.chainlit",
+          "children": [
+            {
+              "name": "translations",
+              "type": "folder",
+              "path": "llm_client/.chainlit/translations",
+              "children": [
+                {
+                  "name": "bn.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/bn.json",
+                  "size": 16647,
+                  "language": "json"
+                },
+                {
+                  "name": "en-US.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/en-US.json",
+                  "size": 7333,
+                  "language": "json"
+                },
+                {
+                  "name": "gu.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/gu.json",
+                  "size": 14900,
+                  "language": "json"
+                },
+                {
+                  "name": "he-IL.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/he-IL.json",
+                  "size": 12646,
+                  "language": "json"
+                },
+                {
+                  "name": "hi.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/hi.json",
+                  "size": 15748,
+                  "language": "json"
+                },
+                {
+                  "name": "ja.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/ja.json",
+                  "size": 11060,
+                  "language": "json"
+                },
+                {
+                  "name": "kn.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/kn.json",
+                  "size": 17410,
+                  "language": "json"
+                },
+                {
+                  "name": "ml.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/ml.json",
+                  "size": 18053,
+                  "language": "json"
+                },
+                {
+                  "name": "mr.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/mr.json",
+                  "size": 15099,
+                  "language": "json"
+                },
+                {
+                  "name": "nl-NL.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/nl-NL.json",
+                  "size": 7652,
+                  "language": "json"
+                },
+                {
+                  "name": "ta.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/ta.json",
+                  "size": 17439,
+                  "language": "json"
+                },
+                {
+                  "name": "te.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/te.json",
+                  "size": 17100,
+                  "language": "json"
+                },
+                {
+                  "name": "zh-CN.json",
+                  "type": "file",
+                  "path": "llm_client/.chainlit/translations/zh-CN.json",
+                  "size": 8879,
+                  "language": "json"
+                }
+              ]
+            },
+            {
+              "name": "config.toml",
+              "type": "file",
+              "path": "llm_client/.chainlit/config.toml",
+              "size": 3061,
+              "language": "toml"
+            }
+          ]
+        },
+        {
+          "name": "conf",
+          "type": "folder",
+          "path": "llm_client/conf",
+          "children": [
+            {
+              "name": "config.yaml",
+              "type": "file",
+              "path": "llm_client/conf/config.yaml",
+              "size": 296,
+              "language": "yaml"
+            }
+          ]
+        },
+        {
+          "name": "chainlit.md",
+          "type": "file",
+          "path": "llm_client/chainlit.md",
+          "size": 775,
+          "language": "md"
+        },
+        {
+          "name": "chainlit.yaml",
+          "type": "file",
+          "path": "llm_client/chainlit.yaml",
+          "size": 852,
+          "language": "yaml"
+        },
+        {
+          "name": "chainlit_ui.py",
+          "type": "file",
+          "path": "llm_client/chainlit_ui.py",
+          "size": 3058,
+          "language": "py"
+        },
+        {
+          "name": "client.py",
+          "type": "file",
+          "path": "llm_client/client.py",
+          "size": 6888,
+          "language": "py"
+        },
+        {
+          "name": "Dockerfile",
+          "type": "file",
+          "path": "llm_client/Dockerfile",
+          "size": 696,
+          "language": "text"
+        },
+        {
+          "name": "pyproject.toml",
+          "type": "file",
+          "path": "llm_client/pyproject.toml",
+          "size": 357,
+          "language": "toml"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "llm_client/README.md",
+          "size": 1152,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "protein_data_bank_mcp",
+      "type": "folder",
+      "path": "protein_data_bank_mcp",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "protein_data_bank_mcp/src",
+          "children": [
+            {
+              "name": "protein_data_bank_mcp",
+              "type": "folder",
+              "path": "protein_data_bank_mcp/src/protein_data_bank_mcp",
+              "children": [
+                {
+                  "name": "pdb_store",
+                  "type": "folder",
+                  "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/pdb_store",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/pdb_store/__init__.py",
+                      "size": 0,
+                      "language": "py"
+                    },
+                    {
+                      "name": "storage.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/pdb_store/storage.py",
+                      "size": 2005,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "rest_api",
+                  "type": "folder",
+                  "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/__init__.py",
+                      "size": 55,
+                      "language": "py"
+                    },
+                    {
+                      "name": "assembly.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/assembly.py",
+                      "size": 348,
+                      "language": "py"
+                    },
+                    {
+                      "name": "chemical_component.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/chemical_component.py",
+                      "size": 479,
+                      "language": "py"
+                    },
+                    {
+                      "name": "constants.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/constants.py",
+                      "size": 71,
+                      "language": "py"
+                    },
+                    {
+                      "name": "entity.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/entity.py",
+                      "size": 981,
+                      "language": "py"
+                    },
+                    {
+                      "name": "entity_instance.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/entity_instance.py",
+                      "size": 833,
+                      "language": "py"
+                    },
+                    {
+                      "name": "entry.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/entry.py",
+                      "size": 467,
+                      "language": "py"
+                    },
+                    {
+                      "name": "groups.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/groups.py",
+                      "size": 760,
+                      "language": "py"
+                    },
+                    {
+                      "name": "interface.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/interface.py",
+                      "size": 392,
+                      "language": "py"
+                    },
+                    {
+                      "name": "repository_holdings.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/repository_holdings.py",
+                      "size": 1649,
+                      "language": "py"
+                    },
+                    {
+                      "name": "schema.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/schema.py",
+                      "size": 1909,
+                      "language": "py"
+                    },
+                    {
+                      "name": "utils.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/rest_api/utils.py",
+                      "size": 673,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "main.py",
+                  "type": "file",
+                  "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/main.py",
+                  "size": 120,
+                  "language": "py"
+                },
+                {
+                  "name": "server.py",
+                  "type": "file",
+                  "path": "protein_data_bank_mcp/src/protein_data_bank_mcp/server.py",
+                  "size": 1825,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "protein_data_bank_mcp/src/__init__.py",
+              "size": 0,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "tests",
+          "type": "folder",
+          "path": "protein_data_bank_mcp/tests",
+          "children": [
+            {
+              "name": "protein_data_bank_mcp",
+              "type": "folder",
+              "path": "protein_data_bank_mcp/tests/protein_data_bank_mcp",
+              "children": [
+                {
+                  "name": "pdb_store",
+                  "type": "folder",
+                  "path": "protein_data_bank_mcp/tests/protein_data_bank_mcp/pdb_store",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/tests/protein_data_bank_mcp/pdb_store/__init__.py",
+                      "size": 0,
+                      "language": "py"
+                    },
+                    {
+                      "name": "test_pdb_storage.py",
+                      "type": "file",
+                      "path": "protein_data_bank_mcp/tests/protein_data_bank_mcp/pdb_store/test_pdb_storage.py",
+                      "size": 458,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "protein_data_bank_mcp/tests/protein_data_bank_mcp/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "protein_data_bank_mcp/tests/__init__.py",
+              "size": 0,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "Dockerfile",
+          "type": "file",
+          "path": "protein_data_bank_mcp/Dockerfile",
+          "size": 656,
+          "language": "text"
+        },
+        {
+          "name": "pyproject.toml",
+          "type": "file",
+          "path": "protein_data_bank_mcp/pyproject.toml",
+          "size": 504,
+          "language": "toml"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "protein_data_bank_mcp/README.md",
+          "size": 1476,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 136,
+      "language": "text"
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "type": "file",
+      "path": ".pre-commit-config.yaml",
+      "size": 734,
+      "language": "yaml"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 1219,
+      "language": "yml"
+    },
+    {
+      "name": "Makefile",
+      "type": "file",
+      "path": "Makefile",
+      "size": 1260,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3968,
+      "language": "md"
+    }
+  ]
+}

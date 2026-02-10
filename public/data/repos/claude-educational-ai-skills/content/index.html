@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Educational AI Skills - 教育 AI 技能工具箱</title>
+    <meta name="description" content="專為教育研究者、教師、數位學習平台開發者設計的 AI 技能集">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.4em;
+            color: #333;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 1.15em;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .badges {
+            margin-bottom: 25px;
+        }
+        .badges img {
+            margin: 3px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-secondary {
+            background: #333;
+            color: white;
+        }
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Toolbox Section */
+        .toolbox-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        .toolbox-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .toolbox-header h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .toolbox-intro {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Audience Selector */
+        .audience-selector {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .audience-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            border-radius: 50px;
+            background: #f5f5f5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .audience-card:hover {
+            background: #e8e8ff;
+            border-color: #667eea;
+        }
+        .audience-card.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+        .audience-icon {
+            font-size: 1.3em;
+        }
+        .audience-label {
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        .category-tab {
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: #f0f0f0;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        .category-tab:hover {
+            background: #e8e8ff;
+        }
+        .category-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        /* Tool Cards Grid */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        /* Tool Card */
+        .tool-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e8e8ff;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
+        }
+        .tool-card.hidden {
+            display: none;
+        }
+        .tool-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .tool-number {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+        .tool-icon {
+            font-size: 1.8em;
+        }
+        .tool-title {
+            color: white;
+            font-size: 1.15em;
+            font-weight: 600;
+            flex: 1;
+        }
+        .tool-category-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+        }
+
+        /* Audience Descriptions */
+        .tool-audiences {
+            padding: 20px;
+            min-height: 120px;
+        }
+        .audience-desc {
+            display: none;
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        .audience-desc.show {
+            display: block;
+        }
+        .audience-desc.teacher-desc {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+        .audience-desc.researcher-desc {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+        }
+        .audience-desc.developer-desc {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+        }
+        .audience-desc-label {
+            font-weight: 600;
+            font-size: 0.8em;
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        /* Tool Buttons */
+        .tool-buttons {
+            display: flex;
+            gap: 10px;
+            padding: 0 20px 20px;
+        }
+        .tool-btn {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tool-btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .tool-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        .tool-btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+        .tool-btn-secondary:hover {
+            background: #e8e8ff;
+            border-color: #667eea;
+        }
+
+        /* Stats */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        /* Author Section */
+        .author {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 35px 40px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .author h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .author-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .author-links a {
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+        .author-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            padding: 25px;
+            font-size: 0.95em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            .hero, .toolbox-section, .author {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            .audience-selector {
+                gap: 8px;
+            }
+            .audience-card {
+                padding: 10px 16px;
+            }
+            .stats-bar {
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Claude Educational AI Skills</h1>
+            <p class="subtitle">教育 AI 技能工具箱<br>專為教師、研究者、開發者打造的提示詞生成器</p>
+
+            <div class="badges">
+                <img src="https://img.shields.io/badge/Skills-15-blue" alt="Skills">
+                <img src="https://img.shields.io/badge/Categories-7-green" alt="Categories">
+                <img src="https://img.shields.io/badge/Claude-Opus%204.5%20%7C%20Sonnet%204-blueviolet" alt="Claude">
+                <img src="https://img.shields.io/badge/GPT-5.1%20%7C%205.2-74aa9c" alt="GPT">
+                <img src="https://img.shields.io/badge/Gemini-2.5%20%7C%203.0-4285F4" alt="Gemini">
+            </div>
+
+            <div class="btn-group">
+                <a href="https://github.com/ChatGPT3a01/claude-educational-ai-skills" class="btn btn-primary" target="_blank">
+                    GitHub Repo
+                </a>
+                <a href="https://github.com/ChatGPT3a01/claude-educational-ai-skills/blob/master/README.md" class="btn btn-secondary" target="_blank">
+                    完整文件
+                </a>
+            </div>
+        </div>
+
+        <!-- Toolbox Section -->
+        <div class="toolbox-section" id="toolbox">
+            <div class="toolbox-header">
+                <h2>選擇你的身份，開始使用工具</h2>
+                <p class="toolbox-intro">每個工具都提供「提示詞生成器」與「技能文件」雙入口</p>
+            </div>
+
+            <!-- Audience Selector -->
+            <div class="audience-selector">
+                <div class="audience-card active" data-audience="all" onclick="selectAudience('all')">
+                    <span class="audience-icon">👥</span>
+                    <span class="audience-label">全部</span>
+                </div>
+                <div class="audience-card" data-audience="teacher" onclick="selectAudience('teacher')">
+                    <span class="audience-icon">👨‍🏫</span>
+                    <span class="audience-label">教師</span>
+                </div>
+                <div class="audience-card" data-audience="researcher" onclick="selectAudience('researcher')">
+                    <span class="audience-icon">🔬</span>
+                    <span class="audience-label">研究者</span>
+                </div>
+                <div class="audience-card" data-audience="developer" onclick="selectAudience('developer')">
+                    <span class="audience-icon">💻</span>
+                    <span class="audience-label">開發者</span>
+                </div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="all" onclick="filterCategory('all')">全部技能</div>
+                <div class="category-tab" data-category="teaching" onclick="filterCategory('teaching')">教學設計</div>
+                <div class="category-tab" data-category="analytics" onclick="filterCategory('analytics')">學習分析</div>
+                <div class="category-tab" data-category="rural" onclick="filterCategory('rural')">偏鄉教育</div>
+                <div class="category-tab" data-category="ai-tools" onclick="filterCategory('ai-tools')">AI工具</div>
+                <div class="category-tab" data-category="ict" onclick="filterCategory('ict')">ICT融入</div>
+                <div class="category-tab" data-category="math" onclick="filterCategory('math')">數學科技</div>
+                <div class="category-tab" data-category="research" onclick="filterCategory('research')">研究方法</div>
+            </div>
+
+            <!-- Tool Cards Grid -->
+            <div class="tool-grid" id="tool-grid">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">專業技能</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">領域分類</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">提示詞範本</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Author Section -->
+        <div class="author">
+            <h2>作者</h2>
+            <p><strong>曾慶良 (Ching-Liang Tseng)</strong></p>
+            <p style="color: #666; margin-top: 10px;">研究領域：AI 教育、數位學習、偏鄉教育、差異化教學</p>
+            <div class="author-links">
+                <a href="https://www.facebook.com/?locale=zh_TW" target="_blank">Facebook</a>
+                <a href="https://www.youtube.com/@Liang-yt02" target="_blank">YouTube</a>
+                <a href="https://www.facebook.com/groups/2754139931432955" target="_blank">3A科技研究社</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>讓 AI 教育不再只屬於資源豐富的都會學校，而是能在偏鄉生根發芽</p>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // 技能資料
+        // ============================================
+        const toolsData = [
+            {
+                id: 'differentiated-instruction',
+                title: '差異化教學策略',
+                icon: '📚',
+                category: 'teaching',
+                categoryName: '教學設計',
+                file: 'skills/%E6%95%99%E5%AD%B8%E8%A8%AD%E8%A8%88/differentiated-instruction.md',
+                audiences: {
+                    teacher: '設計分層教案、多層次學習單，滿足不同程度學生需求',
+                    researcher: '研究差異化教學成效、分析教學策略對學習成果的影響',
+                    developer: '開發自適應學習平台的差異化內容推送系統'
+                }
+            },
+            {
+                id: 'adaptive-learning-design',
+                title: '自適應學習設計',
+                icon: '🎯',
+                category: 'teaching',
+                categoryName: '教學設計',
+                file: 'skills/%E6%95%99%E5%AD%B8%E8%A8%AD%E8%A8%88/adaptive-learning-design.md',
+                audiences: {
+                    teacher: '設計依學生表現動態調整的學習單元與路徑',
+                    researcher: '分析學習路徑數據、研究自適應學習機制的效果',
+                    developer: '建構自適應學習引擎、設計學習路徑演算法'
+                }
+            },
+            {
+                id: 'lesson-plan-generator',
+                title: 'AI 教案產生器',
+                icon: '📝',
+                category: 'teaching',
+                categoryName: '教學設計',
+                file: 'skills/%E6%95%99%E5%AD%B8%E8%A8%AD%E8%A8%88/lesson-plan-generator.md',
+                audiences: {
+                    teacher: '快速生成符合課綱的完整教案，節省備課時間',
+                    researcher: '研究 AI 輔助教學設計的品質與效率',
+                    developer: '整合教案生成 API、建立自動化備課系統'
+                }
+            },
+            {
+                id: 'learning-analytics',
+                title: '學習分析技術',
+                icon: '📊',
+                category: 'analytics',
+                categoryName: '學習分析',
+                file: 'skills/%E5%AD%B8%E7%BF%92%E5%88%86%E6%9E%90/learning-analytics.md',
+                audiences: {
+                    teacher: '分析班級學習數據、識別學習困難學生',
+                    researcher: '設計學習分析研究、建立學習預警模型',
+                    developer: '開發學習儀表板、建構數據視覺化系統'
+                }
+            },
+            {
+                id: 'student-profiling',
+                title: '學生學習輪廓分析',
+                icon: '👤',
+                category: 'analytics',
+                categoryName: '學習分析',
+                file: 'skills/%E5%AD%B8%E7%BF%92%E5%88%86%E6%9E%90/student-profiling.md',
+                audiences: {
+                    teacher: '建立學生學習畫像、規劃個人化教學策略',
+                    researcher: '研究學習者特徵與學習成效的關聯',
+                    developer: '設計學習者模型系統、建構個人化推薦引擎'
+                }
+            },
+            {
+                id: 'localized-content-design',
+                title: '在地化內容設計',
+                icon: '🏔️',
+                category: 'rural',
+                categoryName: '偏鄉教育',
+                file: 'skills/%E5%81%8F%E9%84%89%E6%95%99%E8%82%B2/localized-content-design.md',
+                audiences: {
+                    teacher: '設計融入在地文化與原住民族元素的教材',
+                    researcher: '研究在地化教材對學習動機與成效的影響',
+                    developer: '開發支援多元文化的教材編輯與呈現系統'
+                }
+            },
+            {
+                id: 'rural-education-platform',
+                title: '偏鄉教育平台設計',
+                icon: '💻',
+                category: 'rural',
+                categoryName: '偏鄉教育',
+                file: 'skills/%E5%81%8F%E9%84%89%E6%95%99%E8%82%B2/rural-education-platform.md',
+                audiences: {
+                    teacher: '了解偏鄉數位學習平台的功能與應用方式',
+                    researcher: '研究偏鄉數位學習的挑戰與解決方案',
+                    developer: '設計低頻寬、離線優先的教育平台架構'
+                }
+            },
+            {
+                id: 'ai-teaching-tools',
+                title: 'AI 教學工具全覽',
+                icon: '🤖',
+                category: 'ai-tools',
+                categoryName: 'AI工具應用',
+                file: 'skills/AI%E5%B7%A5%E5%85%B7%E6%87%89%E7%94%A8/ai-teaching-tools.md',
+                audiences: {
+                    teacher: '選擇適合教學需求的 AI 工具、快速上手應用',
+                    researcher: '比較各類 AI 工具的教育應用效果',
+                    developer: '整合多種 AI 工具 API、建立教學工具生態系'
+                }
+            },
+            {
+                id: 'generative-ai-education',
+                title: '生成式 AI 教育應用',
+                icon: '✨',
+                category: 'ai-tools',
+                categoryName: 'AI工具應用',
+                file: 'skills/AI%E5%B7%A5%E5%85%B7%E6%87%89%E7%94%A8/generative-ai-education.md',
+                audiences: {
+                    teacher: '運用 Claude/GPT/Gemini 生成教學內容與評量',
+                    researcher: '研究生成式 AI 對教育的影響與倫理議題',
+                    developer: '開發基於 LLM 的教育應用、設計提示詞工程'
+                }
+            },
+            {
+                id: 'ict-integration',
+                title: 'ICT 融入教學',
+                icon: '🖥️',
+                category: 'ict',
+                categoryName: 'ICT科技融入',
+                file: 'skills/ICT%E7%A7%91%E6%8A%80%E8%9E%8D%E5%85%A5/ict-integration.md',
+                audiences: {
+                    teacher: '運用 SAMR/TPACK 模型設計科技融入課程',
+                    researcher: '研究 ICT 融入教學的成效與最佳實踐',
+                    developer: '開發支援混成教學的平台與工具'
+                }
+            },
+            {
+                id: 'math-technology',
+                title: '數學科技教育',
+                icon: '📐',
+                category: 'math',
+                categoryName: '數學科技教育',
+                file: 'skills/%E6%95%B8%E5%AD%B8%E7%A7%91%E6%8A%80%E6%95%99%E8%82%B2/math-technology.md',
+                audiences: {
+                    teacher: '設計 GeoGebra、Desmos 互動教學活動',
+                    researcher: '研究數學視覺化工具對概念理解的影響',
+                    developer: '開發數學互動教材、整合數學運算引擎'
+                }
+            },
+            {
+                id: 'education-research-design',
+                title: '教育研究設計',
+                icon: '🔬',
+                category: 'research',
+                categoryName: '研究方法',
+                file: 'skills/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/education-research-design.md',
+                audiences: {
+                    teacher: '規劃行動研究、設計教學改進實驗',
+                    researcher: '發展研究問題、設計嚴謹的研究方案',
+                    developer: '了解教育研究需求、設計研究支援工具'
+                }
+            },
+            {
+                id: 'mixed-methods',
+                title: '混合研究方法',
+                icon: '🔄',
+                category: 'research',
+                categoryName: '研究方法',
+                file: 'skills/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/mixed-methods.md',
+                audiences: {
+                    teacher: '整合量化與質性資料分析教學成效',
+                    researcher: '設計混合研究、規劃資料整合策略',
+                    developer: '開發支援混合研究的資料收集與分析工具'
+                }
+            },
+            {
+                id: 'competency-based-assessment',
+                title: '素養導向評量',
+                icon: '📋',
+                category: 'analytics',
+                categoryName: '學習分析',
+                file: 'skills/%E5%AD%B8%E7%BF%92%E5%88%86%E6%9E%90/competency-based-assessment.md',
+                audiences: {
+                    teacher: '設計符合108課綱的素養導向評量試題',
+                    researcher: '研究素養評量的信效度與實施成效',
+                    developer: '開發素養題庫系統、自動化評分工具'
+                }
+            },
+            {
+                id: 'project-based-learning',
+                title: '專題導向學習 (PBL)',
+                icon: '🎯',
+                category: 'teaching',
+                categoryName: '教學設計',
+                file: 'skills/%E6%95%99%E5%AD%B8%E8%A8%AD%E8%A8%88/project-based-learning.md',
+                audiences: {
+                    teacher: '設計跨領域專題式學習活動與驅動問題',
+                    researcher: '研究 PBL 對學習動機與成效的影響',
+                    developer: '開發專題管理平台、協作學習工具'
+                }
+            },
+            {
+                id: 'empirical-research-automation',
+                title: '實證研究自動化',
+                icon: '📊',
+                category: 'research',
+                categoryName: '研究方法',
+                file: 'skills/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/empirical-research-automation.md',
+                audiences: {
+                    teacher: '自動化資料分析與教學成效研究，提升研究效率',
+                    researcher: '從資料收集、統計分析到論文撰寫的完整工作流',
+                    developer: '開發研究自動化工具、統計分析 API 整合'
+                }
+            },
+            {
+                id: 'quasi-experimental-design',
+                title: '準實驗研究設計助手',
+                icon: '🔬',
+                category: 'research',
+                categoryName: '研究方法',
+                file: 'skills/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/quasi-experimental-design.md',
+                audiences: {
+                    teacher: '設計嚴謹的教學介入研究，評估教學方法成效',
+                    researcher: '規劃準實驗設計、選擇統計方法、IRB 倫理審查',
+                    developer: '開發研究設計輔助工具、統計檢定力計算器'
+                }
+            },
+            {
+                id: 'sel-activity-designer',
+                title: 'SEL 教學活動設計',
+                icon: '😊',
+                category: 'teaching',
+                categoryName: '教學設計',
+                file: 'skills/%E6%95%99%E5%AD%B8%E8%A8%AD%E8%A8%88/sel-activity-designer.md',
+                audiences: {
+                    teacher: '設計融入課堂的社會情緒學習活動，培養學生情緒管理能力',
+                    researcher: '研究 SEL 課程對學習成效與情緒調節的影響',
+                    developer: '開發 SEL 學習平台、情緒追蹤與分析工具'
+                }
+            },
+            {
+                id: 'gamified-learning',
+                title: '遊戲化學習設計',
+                icon: '🎮',
+                category: 'teaching',
+                categoryName: '教學設計',
+                file: 'skills/%E6%95%99%E5%AD%B8%E8%A8%AD%E8%A8%88/gamified-learning.md',
+                audiences: {
+                    teacher: '運用積分、徽章、排行榜提升學生學習動機與參與度',
+                    researcher: '研究遊戲化機制對學習成效與持續性的影響',
+                    developer: '開發遊戲化學習平台、成就系統與進度追蹤'
+                }
+            },
+            {
+                id: 'peer-assessment',
+                title: '同儕互評機制設計',
+                icon: '📋',
+                category: 'analytics',
+                categoryName: '學習分析',
+                file: 'skills/%E5%AD%B8%E7%BF%92%E5%88%86%E6%9E%90/peer-assessment.md',
+                audiences: {
+                    teacher: '設計有效的同儕評量與回饋機制，培養學生批判思考能力',
+                    researcher: '研究同儕互評信效度、評量者訓練與品質保證機制',
+                    developer: '開發線上互評平台、評分一致性分析工具'
+                }
+            }
+        ];
+
+        // ============================================
+        // 全域變數
+        // ============================================
+        let currentAudience = 'all';
+        let currentCategory = 'all';
+
+        // ============================================
+        // 初始化
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            renderToolCards();
+        });
+
+        // ============================================
+        // 渲染工具卡片
+        // ============================================
+        function renderToolCards() {
+            const grid = document.getElementById('tool-grid');
+            grid.innerHTML = '';
+
+            toolsData.forEach((tool, index) => {
+                const card = document.createElement('div');
+                card.className = 'tool-card';
+                card.dataset.category = tool.category;
+                card.dataset.toolId = tool.id;
+
+                const num = String(index + 1).padStart(2, '0');
+                const fileUrl = `https://github.com/ChatGPT3a01/claude-educational-ai-skills/blob/master/${tool.file}`;
+
+                card.innerHTML = `
+                    <div class="tool-card-header">
+                        <div class="tool-number">${num}</div>
+                        <span class="tool-icon">${tool.icon}</span>
+                        <span class="tool-title">${tool.title}</span>
+                        <span class="tool-category-badge">${tool.categoryName}</span>
+                    </div>
+                    <div class="tool-audiences">
+                        <div class="audience-desc teacher-desc ${currentAudience === 'all' || currentAudience === 'teacher' ? 'show' : ''}">
+                            <div class="audience-desc-label">👨‍🏫 教師應用</div>
+                            ${tool.audiences.teacher}
+                        </div>
+                        <div class="audience-desc researcher-desc ${currentAudience === 'all' || currentAudience === 'researcher' ? 'show' : ''}">
+                            <div class="audience-desc-label">🔬 研究應用</div>
+                            ${tool.audiences.researcher}
+                        </div>
+                        <div class="audience-desc developer-desc ${currentAudience === 'all' || currentAudience === 'developer' ? 'show' : ''}">
+                            <div class="audience-desc-label">💻 開發應用</div>
+                            ${tool.audiences.developer}
+                        </div>
+                    </div>
+                    <div class="tool-buttons">
+                        <a href="tools/${tool.id}.html" class="tool-btn tool-btn-primary">
+                            ⚡ 開啟生成器
+                        </a>
+                        <a href="${fileUrl}" target="_blank" class="tool-btn tool-btn-secondary">
+                            📖 技能文件
+                        </a>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            applyFilters();
+        }
+
+        // ============================================
+        // 身份切換
+        // ============================================
+        function selectAudience(audience) {
+            currentAudience = audience;
+
+            // 更新按鈕狀態
+            document.querySelectorAll('.audience-card').forEach(card => {
+                card.classList.remove('active');
+                if (card.dataset.audience === audience) {
+                    card.classList.add('active');
+                }
+            });
+
+            // 更新卡片內的說明顯示
+            document.querySelectorAll('.tool-card').forEach(card => {
+                const teacherDesc = card.querySelector('.teacher-desc');
+                const researcherDesc = card.querySelector('.researcher-desc');
+                const developerDesc = card.querySelector('.developer-desc');
+
+                if (audience === 'all') {
+                    teacherDesc.classList.add('show');
+                    researcherDesc.classList.add('show');
+                    developerDesc.classList.add('show');
+                } else {
+                    teacherDesc.classList.toggle('show', audience === 'teacher');
+                    researcherDesc.classList.toggle('show', audience === 'researcher');
+                    developerDesc.classList.toggle('show', audience === 'developer');
+                }
+            });
+        }
+
+        // ============================================
+        // 分類篩選
+        // ============================================
+        function filterCategory(category) {
+            currentCategory = category;
+
+            // 更新標籤狀態
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.category === category) {
+                    tab.classList.add('active');
+                }
+            });
+
+            applyFilters();
+        }
+
+        // ============================================
+        // 套用篩選
+        // ============================================
+        function applyFilters() {
+            document.querySelectorAll('.tool-card').forEach(card => {
+                const matchCategory = currentCategory === 'all' || card.dataset.category === currentCategory;
+                card.classList.toggle('hidden', !matchCategory);
+            });
+        }
+    </script>
+</body>
+</html>

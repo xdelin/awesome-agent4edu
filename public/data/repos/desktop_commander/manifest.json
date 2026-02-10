@@ -1,0 +1,1209 @@
+{
+  "name": "Desktop Commander",
+  "tree": [
+    {
+      "name": ".claude",
+      "type": "folder",
+      "path": ".claude",
+      "children": [
+        {
+          "name": "settings.local.json",
+          "type": "file",
+          "path": ".claude/settings.local.json",
+          "size": 189,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "screenshots",
+      "type": "folder",
+      "path": "screenshots",
+      "children": [
+        {
+          "name": "docker-config.png",
+          "type": "file",
+          "path": "screenshots/docker-config.png",
+          "size": 205716,
+          "language": "png"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "analyze-fuzzy-logs.js",
+          "type": "file",
+          "path": "scripts/analyze-fuzzy-logs.js",
+          "size": 8736,
+          "language": "js"
+        },
+        {
+          "name": "clear-fuzzy-logs.js",
+          "type": "file",
+          "path": "scripts/clear-fuzzy-logs.js",
+          "size": 1617,
+          "language": "js"
+        },
+        {
+          "name": "export-fuzzy-logs.js",
+          "type": "file",
+          "path": "scripts/export-fuzzy-logs.js",
+          "size": 4760,
+          "language": "js"
+        },
+        {
+          "name": "ripgrep-wrapper.js",
+          "type": "file",
+          "path": "scripts/ripgrep-wrapper.js",
+          "size": 2410,
+          "language": "js"
+        },
+        {
+          "name": "sync-version.js",
+          "type": "file",
+          "path": "scripts/sync-version.js",
+          "size": 1851,
+          "language": "js"
+        },
+        {
+          "name": "validate-tools-sync.js",
+          "type": "file",
+          "path": "scripts/validate-tools-sync.js",
+          "size": 5376,
+          "language": "js"
+        },
+        {
+          "name": "view-fuzzy-logs.js",
+          "type": "file",
+          "path": "scripts/view-fuzzy-logs.js",
+          "size": 3081,
+          "language": "js"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "data",
+          "type": "folder",
+          "path": "src/data",
+          "children": [
+            {
+              "name": "onboarding-prompts.json",
+              "type": "file",
+              "path": "src/data/onboarding-prompts.json",
+              "size": 3613,
+              "language": "json"
+            }
+          ]
+        },
+        {
+          "name": "handlers",
+          "type": "folder",
+          "path": "src/handlers",
+          "children": [
+            {
+              "name": "edit-search-handlers.ts",
+              "type": "file",
+              "path": "src/handlers/edit-search-handlers.ts",
+              "size": 326,
+              "language": "ts"
+            },
+            {
+              "name": "filesystem-handlers.ts",
+              "type": "file",
+              "path": "src/handlers/filesystem-handlers.ts",
+              "size": 13198,
+              "language": "ts"
+            },
+            {
+              "name": "history-handlers.ts",
+              "type": "file",
+              "path": "src/handlers/history-handlers.ts",
+              "size": 1243,
+              "language": "ts"
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/handlers/index.ts",
+              "size": 299,
+              "language": "ts"
+            },
+            {
+              "name": "process-handlers.ts",
+              "type": "file",
+              "path": "src/handlers/process-handlers.ts",
+              "size": 561,
+              "language": "ts"
+            },
+            {
+              "name": "search-handlers.ts",
+              "type": "file",
+              "path": "src/handlers/search-handlers.ts",
+              "size": 8491,
+              "language": "ts"
+            },
+            {
+              "name": "terminal-handlers.ts",
+              "type": "file",
+              "path": "src/handlers/terminal-handlers.ts",
+              "size": 1506,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "npm-scripts",
+          "type": "folder",
+          "path": "src/npm-scripts",
+          "children": [
+            {
+              "name": "remote.ts",
+              "type": "file",
+              "path": "src/npm-scripts/remote.ts",
+              "size": 1278,
+              "language": "ts"
+            },
+            {
+              "name": "setup.ts",
+              "type": "file",
+              "path": "src/npm-scripts/setup.ts",
+              "size": 1427,
+              "language": "ts"
+            },
+            {
+              "name": "uninstall.ts",
+              "type": "file",
+              "path": "src/npm-scripts/uninstall.ts",
+              "size": 1467,
+              "language": "ts"
+            },
+            {
+              "name": "verify-ripgrep.ts",
+              "type": "file",
+              "path": "src/npm-scripts/verify-ripgrep.ts",
+              "size": 1183,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "remote-device",
+          "type": "folder",
+          "path": "src/remote-device",
+          "children": [
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "src/remote-device/scripts",
+              "children": [
+                {
+                  "name": "blocking-offline-update.js",
+                  "type": "file",
+                  "path": "src/remote-device/scripts/blocking-offline-update.js",
+                  "size": 2100,
+                  "language": "js"
+                }
+              ]
+            },
+            {
+              "name": ".gitignore",
+              "type": "file",
+              "path": "src/remote-device/.gitignore",
+              "size": 26,
+              "language": "text"
+            },
+            {
+              "name": "desktop-commander-integration.ts",
+              "type": "file",
+              "path": "src/remote-device/desktop-commander-integration.ts",
+              "size": 9049,
+              "language": "ts"
+            },
+            {
+              "name": "device-authenticator.ts",
+              "type": "file",
+              "path": "src/remote-device/device-authenticator.ts",
+              "size": 6748,
+              "language": "ts"
+            },
+            {
+              "name": "device.ts",
+              "type": "file",
+              "path": "src/remote-device/device.ts",
+              "size": 16102,
+              "language": "ts"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "src/remote-device/README.md",
+              "size": 5558,
+              "language": "md"
+            },
+            {
+              "name": "remote-channel.ts",
+              "type": "file",
+              "path": "src/remote-device/remote-channel.ts",
+              "size": 17871,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "pdf",
+              "type": "folder",
+              "path": "src/tools/pdf",
+              "children": [
+                {
+                  "name": "lib",
+                  "type": "folder",
+                  "path": "src/tools/pdf/lib",
+                  "children": [
+                    {
+                      "name": "pdf2md.ts",
+                      "type": "file",
+                      "path": "src/tools/pdf/lib/pdf2md.ts",
+                      "size": 3971,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "extract-images.ts",
+                  "type": "file",
+                  "path": "src/tools/pdf/extract-images.ts",
+                  "size": 7256,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/pdf/index.ts",
+                  "size": 414,
+                  "language": "ts"
+                },
+                {
+                  "name": "manipulations.ts",
+                  "type": "file",
+                  "path": "src/tools/pdf/manipulations.ts",
+                  "size": 5428,
+                  "language": "ts"
+                },
+                {
+                  "name": "markdown.ts",
+                  "type": "file",
+                  "path": "src/tools/pdf/markdown.ts",
+                  "size": 8618,
+                  "language": "ts"
+                },
+                {
+                  "name": "utils.ts",
+                  "type": "file",
+                  "path": "src/tools/pdf/utils.ts",
+                  "size": 1384,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "config.ts",
+              "type": "file",
+              "path": "src/tools/config.ts",
+              "size": 5843,
+              "language": "ts"
+            },
+            {
+              "name": "edit.ts",
+              "type": "file",
+              "path": "src/tools/edit.ts",
+              "size": 18821,
+              "language": "ts"
+            },
+            {
+              "name": "feedback.ts",
+              "type": "file",
+              "path": "src/tools/feedback.ts",
+              "size": 5302,
+              "language": "ts"
+            },
+            {
+              "name": "filesystem.ts",
+              "type": "file",
+              "path": "src/tools/filesystem.ts",
+              "size": 34450,
+              "language": "ts"
+            },
+            {
+              "name": "fuzzySearch.ts",
+              "type": "file",
+              "path": "src/tools/fuzzySearch.ts",
+              "size": 5268,
+              "language": "ts"
+            },
+            {
+              "name": "improved-process-tools.ts",
+              "type": "file",
+              "path": "src/tools/improved-process-tools.ts",
+              "size": 23612,
+              "language": "ts"
+            },
+            {
+              "name": "mime-types.ts",
+              "type": "file",
+              "path": "src/tools/mime-types.ts",
+              "size": 943,
+              "language": "ts"
+            },
+            {
+              "name": "process.ts",
+              "type": "file",
+              "path": "src/tools/process.ts",
+              "size": 1894,
+              "language": "ts"
+            },
+            {
+              "name": "prompts.ts",
+              "type": "file",
+              "path": "src/tools/prompts.ts",
+              "size": 10500,
+              "language": "ts"
+            },
+            {
+              "name": "schemas.ts",
+              "type": "file",
+              "path": "src/tools/schemas.ts",
+              "size": 7144,
+              "language": "ts"
+            },
+            {
+              "name": "usage.ts",
+              "type": "file",
+              "path": "src/tools/usage.ts",
+              "size": 632,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types",
+          "type": "folder",
+          "path": "src/types",
+          "children": [
+            {
+              "name": "caffeinate.d.ts",
+              "type": "file",
+              "path": "src/types/caffeinate.d.ts",
+              "size": 232,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "files",
+              "type": "folder",
+              "path": "src/utils/files",
+              "children": [
+                {
+                  "name": "base.ts",
+                  "type": "file",
+                  "path": "src/utils/files/base.ts",
+                  "size": 5953,
+                  "language": "ts"
+                },
+                {
+                  "name": "binary.ts",
+                  "type": "file",
+                  "path": "src/utils/files/binary.ts",
+                  "size": 2515,
+                  "language": "ts"
+                },
+                {
+                  "name": "excel.ts",
+                  "type": "file",
+                  "path": "src/utils/files/excel.ts",
+                  "size": 18212,
+                  "language": "ts"
+                },
+                {
+                  "name": "factory.ts",
+                  "type": "file",
+                  "path": "src/utils/files/factory.ts",
+                  "size": 3659,
+                  "language": "ts"
+                },
+                {
+                  "name": "image.ts",
+                  "type": "file",
+                  "path": "src/utils/files/image.ts",
+                  "size": 2772,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/files/index.ts",
+                  "size": 461,
+                  "language": "ts"
+                },
+                {
+                  "name": "pdf.ts",
+                  "type": "file",
+                  "path": "src/utils/files/pdf.ts",
+                  "size": 5540,
+                  "language": "ts"
+                },
+                {
+                  "name": "text.ts",
+                  "type": "file",
+                  "path": "src/utils/files/text.ts",
+                  "size": 15660,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "ab-test.ts",
+              "type": "file",
+              "path": "src/utils/ab-test.ts",
+              "size": 4148,
+              "language": "ts"
+            },
+            {
+              "name": "capture.ts",
+              "type": "file",
+              "path": "src/utils/capture.ts",
+              "size": 11724,
+              "language": "ts"
+            },
+            {
+              "name": "dockerPrompt.ts",
+              "type": "file",
+              "path": "src/utils/dockerPrompt.ts",
+              "size": 3262,
+              "language": "ts"
+            },
+            {
+              "name": "feature-flags.ts",
+              "type": "file",
+              "path": "src/utils/feature-flags.ts",
+              "size": 6534,
+              "language": "ts"
+            },
+            {
+              "name": "fuzzySearchLogger.ts",
+              "type": "file",
+              "path": "src/utils/fuzzySearchLogger.ts",
+              "size": 5323,
+              "language": "ts"
+            },
+            {
+              "name": "lineEndingHandler.ts",
+              "type": "file",
+              "path": "src/utils/lineEndingHandler.ts",
+              "size": 2508,
+              "language": "ts"
+            },
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/utils/logger.ts",
+              "size": 2936,
+              "language": "ts"
+            },
+            {
+              "name": "open-browser.ts",
+              "type": "file",
+              "path": "src/utils/open-browser.ts",
+              "size": 1397,
+              "language": "ts"
+            },
+            {
+              "name": "process-detection.ts",
+              "type": "file",
+              "path": "src/utils/process-detection.ts",
+              "size": 4832,
+              "language": "ts"
+            },
+            {
+              "name": "ripgrep-resolver.ts",
+              "type": "file",
+              "path": "src/utils/ripgrep-resolver.ts",
+              "size": 2851,
+              "language": "ts"
+            },
+            {
+              "name": "system-info.ts",
+              "type": "file",
+              "path": "src/utils/system-info.ts",
+              "size": 31741,
+              "language": "ts"
+            },
+            {
+              "name": "toolHistory.ts",
+              "type": "file",
+              "path": "src/utils/toolHistory.ts",
+              "size": 6571,
+              "language": "ts"
+            },
+            {
+              "name": "trackTools.ts",
+              "type": "file",
+              "path": "src/utils/trackTools.ts",
+              "size": 2674,
+              "language": "ts"
+            },
+            {
+              "name": "usageTracker.ts",
+              "type": "file",
+              "path": "src/utils/usageTracker.ts",
+              "size": 20121,
+              "language": "ts"
+            },
+            {
+              "name": "welcome-onboarding.ts",
+              "type": "file",
+              "path": "src/utils/welcome-onboarding.ts",
+              "size": 2883,
+              "language": "ts"
+            },
+            {
+              "name": "withTimeout.ts",
+              "type": "file",
+              "path": "src/utils/withTimeout.ts",
+              "size": 2155,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "command-manager.ts",
+          "type": "file",
+          "path": "src/command-manager.ts",
+          "size": 10716,
+          "language": "ts"
+        },
+        {
+          "name": "config-manager.ts",
+          "type": "file",
+          "path": "src/config-manager.ts",
+          "size": 8451,
+          "language": "ts"
+        },
+        {
+          "name": "config.ts",
+          "type": "file",
+          "path": "src/config.ts",
+          "size": 534,
+          "language": "ts"
+        },
+        {
+          "name": "custom-stdio.ts",
+          "type": "file",
+          "path": "src/custom-stdio.ts",
+          "size": 13111,
+          "language": "ts"
+        },
+        {
+          "name": "error-handlers.ts",
+          "type": "file",
+          "path": "src/error-handlers.ts",
+          "size": 473,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 6415,
+          "language": "ts"
+        },
+        {
+          "name": "search-manager.ts",
+          "type": "file",
+          "path": "src/search-manager.ts",
+          "size": 28538,
+          "language": "ts"
+        },
+        {
+          "name": "server.ts",
+          "type": "file",
+          "path": "src/server.ts",
+          "size": 74447,
+          "language": "ts"
+        },
+        {
+          "name": "terminal-manager.ts",
+          "type": "file",
+          "path": "src/terminal-manager.ts",
+          "size": 20459,
+          "language": "ts"
+        },
+        {
+          "name": "types.ts",
+          "type": "file",
+          "path": "src/types.ts",
+          "size": 1936,
+          "language": "ts"
+        },
+        {
+          "name": "version.ts",
+          "type": "file",
+          "path": "src/version.ts",
+          "size": 34,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "type": "folder",
+      "path": "test",
+      "children": [
+        {
+          "name": "test_output",
+          "type": "folder",
+          "path": "test/test_output",
+          "children": [
+            {
+              "name": "file_with_1500_lines.txt",
+              "type": "file",
+              "path": "test/test_output/file_with_1500_lines.txt",
+              "size": 106893,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "ab-test.test.js",
+          "type": "file",
+          "path": "test/ab-test.test.js",
+          "size": 7585,
+          "language": "js"
+        },
+        {
+          "name": "enhanced-repl-example.js",
+          "type": "file",
+          "path": "test/enhanced-repl-example.js",
+          "size": 4368,
+          "language": "js"
+        },
+        {
+          "name": "large_test_file.txt",
+          "type": "file",
+          "path": "test/large_test_file.txt",
+          "size": 512000,
+          "language": "txt"
+        },
+        {
+          "name": "modified-test.js",
+          "type": "file",
+          "path": "test/modified-test.js",
+          "size": 2039,
+          "language": "js"
+        },
+        {
+          "name": "repl-via-terminal-example.js",
+          "type": "file",
+          "path": "test/repl-via-terminal-example.js",
+          "size": 4536,
+          "language": "js"
+        },
+        {
+          "name": "run-all-tests.js",
+          "type": "file",
+          "path": "test/run-all-tests.js",
+          "size": 8863,
+          "language": "js"
+        },
+        {
+          "name": "simple-node-repl-test.js",
+          "type": "file",
+          "path": "test/simple-node-repl-test.js",
+          "size": 1318,
+          "language": "js"
+        },
+        {
+          "name": "simple-python-test.js",
+          "type": "file",
+          "path": "test/simple-python-test.js",
+          "size": 2441,
+          "language": "js"
+        },
+        {
+          "name": "simple-repl-test.js",
+          "type": "file",
+          "path": "test/simple-repl-test.js",
+          "size": 837,
+          "language": "js"
+        },
+        {
+          "name": "test-allowed-directories.js",
+          "type": "file",
+          "path": "test/test-allowed-directories.js",
+          "size": 18884,
+          "language": "js"
+        },
+        {
+          "name": "test-blocked-commands.js",
+          "type": "file",
+          "path": "test/test-blocked-commands.js",
+          "size": 9535,
+          "language": "js"
+        },
+        {
+          "name": "test-blocklist-bypass.js",
+          "type": "file",
+          "path": "test/test-blocklist-bypass.js",
+          "size": 3030,
+          "language": "js"
+        },
+        {
+          "name": "test-conditional-tools.js",
+          "type": "file",
+          "path": "test/test-conditional-tools.js",
+          "size": 2987,
+          "language": "js"
+        },
+        {
+          "name": "test-default-shell.js",
+          "type": "file",
+          "path": "test/test-default-shell.js",
+          "size": 15175,
+          "language": "js"
+        },
+        {
+          "name": "test-directory-creation.js",
+          "type": "file",
+          "path": "test/test-directory-creation.js",
+          "size": 4204,
+          "language": "js"
+        },
+        {
+          "name": "test-edit-block-line-endings.js",
+          "type": "file",
+          "path": "test/test-edit-block-line-endings.js",
+          "size": 15358,
+          "language": "js"
+        },
+        {
+          "name": "test-edit-block-occurrences.js",
+          "type": "file",
+          "path": "test/test-edit-block-occurrences.js",
+          "size": 11340,
+          "language": "js"
+        },
+        {
+          "name": "test-enhanced-repl.js",
+          "type": "file",
+          "path": "test/test-enhanced-repl.js",
+          "size": 4766,
+          "language": "js"
+        },
+        {
+          "name": "test-error-sanitization.js",
+          "type": "file",
+          "path": "test/test-error-sanitization.js",
+          "size": 7871,
+          "language": "js"
+        },
+        {
+          "name": "test-excel-files.js",
+          "type": "file",
+          "path": "test/test-excel-files.js",
+          "size": 11929,
+          "language": "js"
+        },
+        {
+          "name": "test-file-handlers.js",
+          "type": "file",
+          "path": "test/test-file-handlers.js",
+          "size": 10962,
+          "language": "js"
+        },
+        {
+          "name": "test-home-directory.js",
+          "type": "file",
+          "path": "test/test-home-directory.js",
+          "size": 9892,
+          "language": "js"
+        },
+        {
+          "name": "test-literal-search.js",
+          "type": "file",
+          "path": "test/test-literal-search.js",
+          "size": 15015,
+          "language": "js"
+        },
+        {
+          "name": "test-negative-offset-analysis.js",
+          "type": "file",
+          "path": "test/test-negative-offset-analysis.js",
+          "size": 1560,
+          "language": "js"
+        },
+        {
+          "name": "test-negative-offset-readfile.js",
+          "type": "file",
+          "path": "test/test-negative-offset-readfile.js",
+          "size": 9701,
+          "language": "js"
+        },
+        {
+          "name": "test-node-repl.js",
+          "type": "file",
+          "path": "test/test-node-repl.js",
+          "size": 4935,
+          "language": "js"
+        },
+        {
+          "name": "test-pdf-creation.js",
+          "type": "file",
+          "path": "test/test-pdf-creation.js",
+          "size": 5208,
+          "language": "js"
+        },
+        {
+          "name": "test-pdf-parsing.js",
+          "type": "file",
+          "path": "test/test-pdf-parsing.js",
+          "size": 6831,
+          "language": "js"
+        },
+        {
+          "name": "test-process-pagination.js",
+          "type": "file",
+          "path": "test/test-process-pagination.js",
+          "size": 9209,
+          "language": "js"
+        },
+        {
+          "name": "test-read-completed-process.js",
+          "type": "file",
+          "path": "test/test-read-completed-process.js",
+          "size": 3542,
+          "language": "js"
+        },
+        {
+          "name": "test-repl-interaction.js",
+          "type": "file",
+          "path": "test/test-repl-interaction.js",
+          "size": 8861,
+          "language": "js"
+        },
+        {
+          "name": "test-search-code-edge-cases.js",
+          "type": "file",
+          "path": "test/test-search-code-edge-cases.js",
+          "size": 18986,
+          "language": "js"
+        },
+        {
+          "name": "test-search-code.js",
+          "type": "file",
+          "path": "test/test-search-code.js",
+          "size": 17961,
+          "language": "js"
+        },
+        {
+          "name": "test-symlink-security.js",
+          "type": "file",
+          "path": "test/test-symlink-security.js",
+          "size": 10399,
+          "language": "js"
+        },
+        {
+          "name": "test.js",
+          "type": "file",
+          "path": "test/test.js",
+          "size": 2778,
+          "language": "js"
+        },
+        {
+          "name": "test_enhanced_read.js",
+          "type": "file",
+          "path": "test/test_enhanced_read.js",
+          "size": 4092,
+          "language": "js"
+        },
+        {
+          "name": "test_improved_search_truncation.js",
+          "type": "file",
+          "path": "test/test_improved_search_truncation.js",
+          "size": 5196,
+          "language": "js"
+        },
+        {
+          "name": "test_search_truncation.js",
+          "type": "file",
+          "path": "test/test_search_truncation.js",
+          "size": 4346,
+          "language": "js"
+        }
+      ]
+    },
+    {
+      "name": "testemonials",
+      "type": "folder",
+      "path": "testemonials",
+      "children": [
+        {
+          "name": "analyticsindiamag.png",
+          "type": "file",
+          "path": "testemonials/analyticsindiamag.png",
+          "size": 598315,
+          "language": "png"
+        },
+        {
+          "name": "img.png",
+          "type": "file",
+          "path": "testemonials/img.png",
+          "size": 21794,
+          "language": "png"
+        },
+        {
+          "name": "img_1.png",
+          "type": "file",
+          "path": "testemonials/img_1.png",
+          "size": 39027,
+          "language": "png"
+        },
+        {
+          "name": "img_2.png",
+          "type": "file",
+          "path": "testemonials/img_2.png",
+          "size": 35095,
+          "language": "png"
+        },
+        {
+          "name": "img_3.png",
+          "type": "file",
+          "path": "testemonials/img_3.png",
+          "size": 11549,
+          "language": "png"
+        },
+        {
+          "name": "img_4.png",
+          "type": "file",
+          "path": "testemonials/img_4.png",
+          "size": 38941,
+          "language": "png"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 792,
+      "language": "text"
+    },
+    {
+      "name": "CLINE_NOTIFICATION_PROBLEM.md",
+      "type": "file",
+      "path": "CLINE_NOTIFICATION_PROBLEM.md",
+      "size": 8343,
+      "language": "md"
+    },
+    {
+      "name": "config.json",
+      "type": "file",
+      "path": "config.json",
+      "size": 218,
+      "language": "json"
+    },
+    {
+      "name": "CUSTOM_STDIO_EXPLANATION.md",
+      "type": "file",
+      "path": "CUSTOM_STDIO_EXPLANATION.md",
+      "size": 9033,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 660,
+      "language": "text"
+    },
+    {
+      "name": "FAQ.md",
+      "type": "file",
+      "path": "FAQ.md",
+      "size": 30576,
+      "language": "md"
+    },
+    {
+      "name": "header.png",
+      "type": "file",
+      "path": "header.png",
+      "size": 411790,
+      "language": "png"
+    },
+    {
+      "name": "icon.png",
+      "type": "file",
+      "path": "icon.png",
+      "size": 72340,
+      "language": "png"
+    },
+    {
+      "name": "install-docker.ps1",
+      "type": "file",
+      "path": "install-docker.ps1",
+      "size": 35428,
+      "language": "ps1"
+    },
+    {
+      "name": "install-docker.sh",
+      "type": "file",
+      "path": "install-docker.sh",
+      "size": 22575,
+      "language": "sh"
+    },
+    {
+      "name": "install.sh",
+      "type": "file",
+      "path": "install.sh",
+      "size": 1474,
+      "language": "sh"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1128,
+      "language": "text"
+    },
+    {
+      "name": "logo.png",
+      "type": "file",
+      "path": "logo.png",
+      "size": 82798,
+      "language": "png"
+    },
+    {
+      "name": "manifest.template.json",
+      "type": "file",
+      "path": "manifest.template.json",
+      "size": 7000,
+      "language": "json"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 479043,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 4676,
+      "language": "json"
+    },
+    {
+      "name": "PRIVACY.md",
+      "type": "file",
+      "path": "PRIVACY.md",
+      "size": 9800,
+      "language": "md"
+    },
+    {
+      "name": "PUBLISH.md",
+      "type": "file",
+      "path": "PUBLISH.md",
+      "size": 6882,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 44901,
+      "language": "md"
+    },
+    {
+      "name": "SECURITY.md",
+      "type": "file",
+      "path": "SECURITY.md",
+      "size": 2396,
+      "language": "md"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 685,
+      "language": "json"
+    },
+    {
+      "name": "server.yaml",
+      "type": "file",
+      "path": "server.yaml",
+      "size": 2932,
+      "language": "yaml"
+    },
+    {
+      "name": "setup-claude-server.js",
+      "type": "file",
+      "path": "setup-claude-server.js",
+      "size": 38332,
+      "language": "js"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 448,
+      "language": "yaml"
+    },
+    {
+      "name": "test-listener-bug.js",
+      "type": "file",
+      "path": "test-listener-bug.js",
+      "size": 6591,
+      "language": "js"
+    },
+    {
+      "name": "track-installation.js",
+      "type": "file",
+      "path": "track-installation.js",
+      "size": 12115,
+      "language": "js"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 482,
+      "language": "json"
+    },
+    {
+      "name": "uninstall-claude-server.js",
+      "type": "file",
+      "path": "uninstall-claude-server.js",
+      "size": 29135,
+      "language": "js"
+    }
+  ]
+}

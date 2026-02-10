@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "apprenticemode",
+  "version": "1.0.0",
+  "description": "Plugins for learning and growing with Claude Code",
+  "owner": {
+    "name": "apprenticemode",
+    "email": "hello@apprenticemode.com"
+  },
+  "plugins": [
+    {
+      "name": "claudebrief",
+      "description": "Surface knowledge gaps from your Claude Code sessions. Detects dangerous verbs that hide required decisions.",
+      "version": "1.0.0",
+      "source": "./plugins/claudebrief",
+      "category": "learning",
+      "author": {
+        "name": "apprenticemode"
+      }
+    }
+  ]
+}

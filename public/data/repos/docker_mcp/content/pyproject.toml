@@ -1,0 +1,36 @@
+[project]
+name = "mcp-server-docker"
+version = "0.2.1"
+description = "A Docker MCP Server"
+readme = "README.md"
+dependencies = [
+    "docker>=7.1.0",
+    "mcp>=1.1.0,<2.0",
+    "paramiko>=3.5.1,<4.0",
+    "pydantic>=2.10.3",
+    "pydantic-settings>=2.6.1",
+]
+license = { file = "LICENSE" }
+keywords = ["docker", "mcp", "server"]
+
+requires-python = ">=3.12"
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Repository = "https://github.com/ckreiling/mcp-server-docker"
+Issues = "https://github.com/ckreiling/mcp-server-docker/issues"
+
+[[project.authors]]
+name = "Christian Kreiling"
+email = "kreiling@hey.com"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+mcp-server-docker = "mcp_server_docker:main"

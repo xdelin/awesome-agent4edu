@@ -1,0 +1,152 @@
+{
+  "name": "mlx-dev-skill",
+  "tree": [
+    {
+      "name": ".claude-plugin",
+      "type": "folder",
+      "path": ".claude-plugin",
+      "children": [
+        {
+          "name": "marketplace.json",
+          "type": "file",
+          "path": ".claude-plugin/marketplace.json",
+          "size": 385,
+          "language": "json"
+        },
+        {
+          "name": "plugin.json",
+          "type": "file",
+          "path": ".claude-plugin/plugin.json",
+          "size": 578,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "mlx-dev",
+          "type": "folder",
+          "path": "skills/mlx-dev",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/mlx-dev/references",
+              "children": [
+                {
+                  "name": "array-indexing.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/array-indexing.md",
+                  "size": 4104,
+                  "language": "md"
+                },
+                {
+                  "name": "compilation.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/compilation.md",
+                  "size": 3668,
+                  "language": "md"
+                },
+                {
+                  "name": "dtypes.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/dtypes.md",
+                  "size": 3101,
+                  "language": "md"
+                },
+                {
+                  "name": "error-decoder.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/error-decoder.md",
+                  "size": 3922,
+                  "language": "md"
+                },
+                {
+                  "name": "gradients.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/gradients.md",
+                  "size": 3005,
+                  "language": "md"
+                },
+                {
+                  "name": "memory-management.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/memory-management.md",
+                  "size": 3461,
+                  "language": "md"
+                },
+                {
+                  "name": "neural-networks.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/neural-networks.md",
+                  "size": 3190,
+                  "language": "md"
+                },
+                {
+                  "name": "pytorch-migration.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/pytorch-migration.md",
+                  "size": 4039,
+                  "language": "md"
+                },
+                {
+                  "name": "random.md",
+                  "type": "file",
+                  "path": "skills/mlx-dev/references/random.md",
+                  "size": 3056,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "skills/mlx-dev/scripts",
+              "children": [
+                {
+                  "name": "check_memory.py",
+                  "type": "file",
+                  "path": "skills/mlx-dev/scripts/check_memory.py",
+                  "size": 3944,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/mlx-dev/SKILL.md",
+              "size": 6820,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 185,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1077,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3039,
+      "language": "md"
+    }
+  ]
+}

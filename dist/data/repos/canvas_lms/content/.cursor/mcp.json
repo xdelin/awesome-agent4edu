@@ -1,0 +1,24 @@
+{
+    "mcpServers": {
+        "canvas": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "$PROJECT_ROOT",
+                "run",
+                "src/canvas_lms_mcp/main.py"
+            ],
+            "env": {
+                "CANVAS_API_TOKEN": "$CANVAS_API_TOKEN",
+                "CANVAS_BASE_URL": "$CANVAS_BASE_URL"
+            }
+        },
+        "time": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-time",
+                "--local-timezone=America/New_York"
+            ]
+        }
+    }
+}

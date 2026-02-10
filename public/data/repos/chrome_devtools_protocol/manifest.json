@@ -1,0 +1,152 @@
+{
+  "name": "Chrome DevTools Protocol",
+  "tree": [
+    {
+      "name": "json",
+      "type": "folder",
+      "path": "json",
+      "children": [
+        {
+          "name": "js_protocol.json",
+          "type": "file",
+          "path": "json/js_protocol.json",
+          "size": 185449,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": "scripts/.gitignore",
+          "size": 32,
+          "language": "text"
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file",
+          "path": "scripts/package-lock.json",
+          "size": 6256,
+          "language": "json"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "scripts/package.json",
+          "size": 472,
+          "language": "json"
+        },
+        {
+          "name": "protocol-dts-generator.ts",
+          "type": "file",
+          "path": "scripts/protocol-dts-generator.ts",
+          "size": 16126,
+          "language": "ts"
+        },
+        {
+          "name": "protocol-schema.d.ts",
+          "type": "file",
+          "path": "scripts/protocol-schema.d.ts",
+          "size": 2707,
+          "language": "ts"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "scripts/tsconfig.json",
+          "size": 369,
+          "language": "json"
+        },
+        {
+          "name": "update-n-publish-docs.sh",
+          "type": "file",
+          "path": "scripts/update-n-publish-docs.sh",
+          "size": 1028,
+          "language": "sh"
+        },
+        {
+          "name": "update-to-latest.sh",
+          "type": "file",
+          "path": "scripts/update-to-latest.sh",
+          "size": 3885,
+          "language": "sh"
+        }
+      ]
+    },
+    {
+      "name": "types",
+      "type": "folder",
+      "path": "types",
+      "children": [
+        {
+          "name": "protocol-mapping.d.ts",
+          "type": "file",
+          "path": "types/protocol-mapping.d.ts",
+          "size": 251210,
+          "language": "ts"
+        },
+        {
+          "name": "protocol-proxy-api.d.ts",
+          "type": "file",
+          "path": "types/protocol-proxy-api.d.ts",
+          "size": 224669,
+          "language": "ts"
+        },
+        {
+          "name": "protocol-tests-proxy-api.d.ts",
+          "type": "file",
+          "path": "types/protocol-tests-proxy-api.d.ts",
+          "size": 323318,
+          "language": "ts"
+        },
+        {
+          "name": "protocol.d.ts",
+          "type": "file",
+          "path": "types/protocol.d.ts",
+          "size": 751440,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 9,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1586,
+      "language": "text"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 255,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 445,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1337,
+      "language": "md"
+    }
+  ]
+}

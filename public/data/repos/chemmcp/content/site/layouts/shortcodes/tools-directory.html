@@ -1,0 +1,614 @@
+<div class="tools-directory flex flex-row gap-8 w-full">
+  <div class="tools-sidebar w-64">
+    <input type="text" id="tools-search" placeholder="Search tools..." class="tools-search-input w-full p-2 mb-4 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900" />
+    <!-- Sidebar filters for desktop/tablet -->
+    <div class="tools-filters-sidebar mb-8">
+      <div class="filters-card">
+        <div class="filters-content">
+          <div class="filters-group mb-4">
+            <div class="filters-group-title">Categories</div>
+            <ul id="tools-categories-list-desktop" class="space-y-1">
+              {{ $categories := slice }}
+              {{ $tools := where site.RegularPages "Section" "tools" }}
+              {{ range $tools }}
+                {{ with .Params.categories }}
+                  {{ range . }}
+                    {{ $categories = $categories | append . }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              {{ range (sort (uniq $categories)) }}
+                <li><label class="flex items-center gap-2"><input type="checkbox" class="tools-category-filter pretty-checkbox" value="{{ . }}"><span class="ml-3">{{ . }}</span></label></li>
+              {{ end }}
+            </ul>
+          </div>
+          <div class="filters-divider"></div>
+          <div class="filters-group">
+            <div class="filters-group-title">Tags</div>
+            <ul id="tools-tags-list-desktop" class="space-y-1">
+              {{ $tags := slice }}
+              {{ $tools := where site.RegularPages "Section" "tools" }}
+              {{ range $tools }}
+                {{ with .Params.tags }}
+                  {{ range . }}
+                    {{ $tags = $tags | append . }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              {{ range (sort (uniq $tags)) }}
+                <li><label class="flex items-center gap-2"><input type="checkbox" class="tools-tag-filter pretty-checkbox" value="{{ . }}"><span class="ml-3">{{ . }}</span></label></li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal filter for mobile -->
+    <div class="tools-filters-mobile mb-8">
+      <button class="filters-chip" id="filters-chip-btn" onclick="toggleFilterModal()" aria-label="Show filters">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="margin-right: 0.4em; vertical-align: middle;"><path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="filters-chip-label">Filters</span>
+      </button>
+      <div id="filters-modal" class="filters-modal" style="display: none;">
+        <div class="filters-modal-backdrop" onclick="toggleFilterModal()"></div>
+        <div class="filters-modal-content">
+          <div class="filters-modal-header">
+            <span class="filters-modal-title">Filters</span>
+            <button class="filters-modal-close" onclick="toggleFilterModal()" aria-label="Close filters">&times;</button>
+          </div>
+          <div class="filters-modal-scroll">
+            <div class="filters-modal-section">
+              <div class="filters-group-title">Categories</div>
+              <ul id="tools-categories-list" class="filters-list">
+                {{ $categories := slice }}
+                {{ $tools := where site.RegularPages "Section" "tools" }}
+                {{ range $tools }}
+                  {{ with .Params.categories }}
+                    {{ range . }}
+                      {{ $categories = $categories | append . }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+                {{ range (sort (uniq $categories)) }}
+                  <li><label class="filters-checkbox-label"><input type="checkbox" class="tools-category-filter pretty-checkbox" value="{{ . }}"><span class="ml-3">{{ . }}</span></label></li>
+                {{ end }}
+              </ul>
+            </div>
+            <div class="filters-divider"></div>
+            <div class="filters-modal-section">
+              <div class="filters-group-title">Tags</div>
+              <ul id="tools-tags-list" class="filters-list">
+                {{ $tags := slice }}
+                {{ $tools := where site.RegularPages "Section" "tools" }}
+                {{ range $tools }}
+                  {{ with .Params.tags }}
+                    {{ range . }}
+                      {{ $tags = $tags | append . }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+                {{ range (sort (uniq $tags)) }}
+                  <li><label class="filters-checkbox-label"><input type="checkbox" class="tools-tag-filter pretty-checkbox" value="{{ . }}"><span class="ml-3">{{ . }}</span></label></li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tools-list flex-1 grid w-full gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" id="tools-list">
+    {{ $tools := where site.RegularPages "Section" "tools" }}
+    {{ range sort $tools "Params.weight" }}
+      <div class="border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-2xl bg-white dark:bg-neutral-900 p-6 flex flex-col justify-between min-h-[160px]">
+        <a href="{{ .RelPermalink }}" class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral mb-2">{{ .Title }}</a>
+        <div class="text-base text-neutral-500 dark:text-neutral-400 mb-3" data-full-description="{{ .Params.description }}">
+          {{ if gt (len .Params.description) 180 }}
+            {{ slicestr .Params.description 0 180 }}...
+          {{ else }}
+            {{ .Params.description }}
+          {{ end }}
+        </div>
+        <div class="flex flex-row flex-wrap mt-auto">
+          {{ range .Params.categories }}
+            <span class="rounded-md border border-primary-400 px-2 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400 mr-2 mb-2">{{ . }}</span>
+          {{ end }}
+          {{ range .Params.languages }}
+            <span class="rounded-md border border-primary-400 px-2 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400 mr-2 mb-2">{{ . }}</span>
+          {{ end }}
+          {{ range .Params.tags }}
+            <span class="rounded-md border border-primary-400 px-2 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400 mr-2 mb-2">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.tools-directory {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+}
+.tools-sidebar {
+  min-width: 220px;
+  max-width: 260px;
+}
+.tools-search-input {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc !important;
+  color: #0f172a !important;
+  background: #fff !important;
+  color-scheme: light dark;
+}
+.dark .tools-search-input {
+  color: #e5e7eb !important;
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+.tools-filters {
+  width: 100%;
+}
+.filters-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.35em 1em 0.35em 0.7em;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.15s, border 0.15s;
+  margin-bottom: 0.5em;
+}
+.filters-chip:hover, .filters-chip:focus {
+  background: #e0f2fe;
+  border-color: #38bdf8;
+}
+.dark .filters-chip {
+  background: #1e293b;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+.filters-chip.active {
+  background: #bae6fd;
+  color: #0369a1;
+  border-color: #38bdf8;
+}
+.filters-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filters-modal-backdrop {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,41,59,0.35);
+  z-index: 1;
+}
+.filters-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 90vh;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 40px rgba(30,41,59,0.18), 0 1.5px 8px rgba(30,41,59,0.10);
+  border: 1.5px solid #e2e8f0;
+  padding: 2.7em 2.5em 2.5em 2.5em;
+  width: 90%;
+  margin: 2.5vh auto;
+}
+.dark .filters-modal-content {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-color: #334155;
+}
+.filters-modal-header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+  padding-bottom: 0.2em;
+  border-bottom: 1.5px solid #e2e8f0;
+}
+.dark .filters-modal-header {
+  border-bottom: 1.5px solid #334155;
+}
+.filters-modal-title {
+  font-size: 1.45em;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #0f172a;
+}
+.dark .filters-modal-title {
+  color: #e5e7eb;
+}
+.filters-modal-close {
+  background: none;
+  border: none;
+  font-size: 2.1em;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0 0.3em;
+  line-height: 1;
+  border-radius: 6px;
+  margin-left: 1em;
+  margin-right: -0.3em;
+  transition: background 0.15s;
+}
+.filters-modal-close:hover, .filters-modal-close:focus {
+  background: #e0f2fe;
+}
+.dark .filters-modal-close {
+  color: #e5e7eb;
+}
+.filters-modal-scroll {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  min-height: 0;
+  margin-top: 0.5em;
+}
+.filters-modal-section {
+  margin-bottom: 1.7em;
+}
+.filters-group-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-bottom: 0.7em;
+  margin-top: 0.2em;
+  color: #0f172a;
+  letter-spacing: 0.01em;
+}
+.dark .filters-group-title {
+  color: #e5e7eb;
+}
+.filters-divider {
+  border-top: 1.5px solid #e2e8f0;
+  margin: 0.7em 0 1.3em 0;
+}
+.dark .filters-divider {
+  border-top: 1.5px solid #334155;
+}
+.filters-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+.filters-checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 1.08em;
+  font-weight: 500;
+  color: #334155;
+  padding: 0.2em 0.1em;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.filters-checkbox-label:hover {
+  background: #f1f5f9;
+}
+.dark .filters-checkbox-label {
+  color: #e5e7eb;
+}
+.dark .filters-checkbox-label:hover {
+  background: #334155;
+}
+@media (max-width: 1024px) {
+  .tools-directory {
+    gap: 1rem;
+  }
+  .tools-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1em;
+  }
+  .tools-sidebar {
+    min-width: 180px;
+    max-width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .tools-directory {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .tools-sidebar {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-bottom: 1.5em;
+  }
+  .tools-list {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .filters-modal-content {
+    min-width: 0;
+    width: 98vw;
+    padding: 1.2em 0.5em 1em 0.5em;
+  }
+}
+.tool-card.dark-card {
+  background: #1a2236;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  color: #fff;
+  overflow: hidden;
+  border: 1px solid #232b45;
+  max-width: 420px;
+  margin-bottom: 1.5em;
+}
+.tool-card-header {
+  height: 140px;
+  background: #232b45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tool-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #232b45;
+}
+.tool-card-pattern {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(135deg, #6ee7f7 0 20px, #232b45 20px 40px);
+  opacity: 0.7;
+}
+.tool-card-body {
+  padding: 1.5em 1.5em 1em 1.5em;
+}
+.tool-card-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0 0 0.2em 0;
+  color: #6ee7f7;
+}
+.tool-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.tool-card-meta {
+  font-size: 1em;
+  color: #b0b8d1;
+  margin-bottom: 0.5em;
+}
+.tool-card-desc {
+  color: #b0b8d1;
+  margin-bottom: 1em;
+}
+.tool-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+.tool-tag.tool-tag-outline {
+  display: inline-block;
+  border: 1.5px solid #6ee7f7;
+  color: #6ee7f7;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.2em 0.9em;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+  transition: background 0.2s, color 0.2s;
+}
+.tool-tag.tool-tag-outline:hover {
+  background: #6ee7f7;
+  color: #1a2236;
+}
+.pretty-checkbox {
+  width: 1.05em;
+  height: 1.05em;
+  border-radius: 0.25em;
+  border: 1.5px solid #94a3b8;
+  background: transparent;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+}
+.pretty-checkbox:checked {
+  border-color: #38bdf8;
+  background: #38bdf8;
+}
+.pretty-checkbox:checked:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0.28em;
+  top: 0.08em;
+  width: 0.35em;
+  height: 0.6em;
+  border: solid #fff;
+  border-width: 0 0.18em 0.18em 0;
+  transform: rotate(45deg);
+}
+.pretty-checkbox:focus {
+  box-shadow: 0 0 0 2px #bae6fd;
+  border-color: #38bdf8;
+}
+
+.dark .pretty-checkbox {
+  border-color: #334155;
+  background: #0f172a;
+}
+.dark .pretty-checkbox:checked {
+  border-color: #38bdf8;
+  background: #38bdf8;
+}
+.filter-toggle {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+@media (max-width: 600px) {
+  .filters-modal-content {
+    min-width: 0;
+    width: 98vw;
+    padding: 1.3em 0.7em 1.1em 0.7em;
+    border-radius: 14px;
+  }
+  .filters-modal-title {
+    font-size: 1.15em;
+  }
+  .filters-group-title {
+    font-size: 1em;
+  }
+}
+/* Responsive filter sidebar and modal */
+.tools-filters-sidebar { display: block; }
+.tools-filters-mobile { display: none; }
+@media (max-width: 900px) {
+  .tools-filters-sidebar { display: none !important; }
+  .tools-filters-mobile { display: block !important; }
+  .tools-directory {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .tools-list {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .tools-sidebar {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-bottom: 1.5em;
+  }
+}
+.tools-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  width: 100%;
+  grid-auto-rows: min-content;
+  align-content: start;
+}
+/* Prevent tool cards from stretching too much in height */
+.tools-list > div {
+  height: auto;
+  align-self: flex-start;
+  max-height: none;
+}
+</style>
+
+<script>
+// Simple client-side filtering and search
+(function() {
+  const searchInput = document.getElementById('tools-search');
+  const categoryFilters = document.querySelectorAll('.tools-category-filter');
+  const tagFilters = document.querySelectorAll('.tools-tag-filter');
+  const toolCards = document.querySelectorAll('.tools-list > div');
+
+  function filterTools() {
+    const search = searchInput.value.toLowerCase();
+    const selectedCategories = Array.from(categoryFilters).filter(cb => cb.checked).map(cb => cb.value);
+    const selectedTags = Array.from(tagFilters).filter(cb => cb.checked).map(cb => cb.value);
+    toolCards.forEach(card => {
+      const title = card.querySelector('a').textContent.toLowerCase();
+      const descElem = card.querySelector('.text-base');
+      const desc = descElem ? descElem.getAttribute('data-full-description').toLowerCase() : '';
+      const tags = Array.from(card.querySelectorAll('span')).map(t => t.textContent.toLowerCase());
+      let show = true;
+      if (search && !tags.concat([title, desc]).some(t => t.includes(search))) show = false;
+      if (selectedCategories.length && !selectedCategories.some(cat => tags.includes(cat.toLowerCase()))) show = false;
+      if (selectedTags.length && !selectedTags.some(tag => tags.includes(tag.toLowerCase()))) show = false;
+      card.style.display = show ? '' : 'none';
+    });
+  }
+  searchInput.addEventListener('input', filterTools);
+  categoryFilters.forEach(cb => cb.addEventListener('change', filterTools));
+  tagFilters.forEach(cb => cb.addEventListener('change', filterTools));
+})();
+
+function toggleFilter(type) {
+  if (type === 'filters') {
+    const content = document.getElementById('tools-filters-content');
+    const arrow = document.getElementById('filters-arrow');
+    const header = document.querySelector('.filters-header');
+    const expanded = header.getAttribute('aria-expanded') === 'true';
+    if (!expanded) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      header.setAttribute('aria-expanded', 'true');
+    } else {
+      content.style.maxHeight = '0px';
+      header.setAttribute('aria-expanded', 'false');
+    }
+    return;
+  }
+  const content = document.getElementById(`tools-${type}-list`);
+  const arrow = document.getElementById(`${type}-arrow`);
+  if (content && arrow) {
+    if (content.style.display === 'none') {
+      content.style.display = '';
+      arrow.textContent = '▲';
+    } else {
+      content.style.display = 'none';
+      arrow.textContent = '▼';
+    }
+  }
+}
+
+function toggleFilterModal() {
+  const modal = document.getElementById('filters-modal');
+  if (modal.style.display === 'none' || !modal.style.display) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  } else {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+function updateFiltersChip() {
+  const chip = document.getElementById('filters-chip-btn');
+  const label = document.getElementById('filters-chip-label');
+  // Count checked checkboxes in the modal
+  const checked = document.querySelectorAll('.tools-filters-mobile input[type="checkbox"]:checked').length;
+  if (checked > 0) {
+    chip.classList.add('active');
+    label.textContent = `Filters: ${checked}`;
+  } else {
+    chip.classList.remove('active');
+    label.textContent = 'Filters';
+  }
+}
+
+// Listen for changes on all filter checkboxes (mobile)
+document.addEventListener('change', function(e) {
+  if (e.target.closest('.tools-filters-mobile') && e.target.type === 'checkbox') {
+    updateFiltersChip();
+  }
+});
+
+// Also update on modal open (in case filters were changed elsewhere)
+const chipBtn = document.getElementById('filters-chip-btn');
+if (chipBtn) {
+  chipBtn.addEventListener('click', updateFiltersChip);
+}
+</script> 

@@ -1,0 +1,54 @@
+{
+  "name": "MatMCP",
+  "tree": [
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 364,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 1446,
+      "language": "md"
+    },
+    {
+      "name": "explore_gnome_api.py",
+      "type": "file",
+      "path": "explore_gnome_api.py",
+      "size": 4575,
+      "language": "py"
+    },
+    {
+      "name": "mcp_server.py",
+      "type": "file",
+      "path": "mcp_server.py",
+      "size": 3226,
+      "language": "py"
+    },
+    {
+      "name": "progress_summary.md",
+      "type": "file",
+      "path": "progress_summary.md",
+      "size": 3321,
+      "language": "md"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 478,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 2477,
+      "language": "md"
+    }
+  ]
+}

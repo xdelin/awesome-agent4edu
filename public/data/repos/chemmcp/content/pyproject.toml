@@ -1,0 +1,38 @@
+[project]
+name = "ChemMCP"
+description = "Chemistry MCP ToolKit"
+readme = "README.md"
+requires-python = ">=3.11"
+dynamic = ["version"]
+dependencies = [
+    "docker>=7.1.0",
+    "jupyter>=1.1.1",
+    "litellm==1.65.8",
+    "lmdb>=1.6.2",
+    "mcp[cli]>=1.6.0",
+    "molbloom>=2.3.4",
+    "pandas>=2.2.3",
+    "pubchempy>=1.0.4",
+    "rdchiral>=1.1.0",
+    "rdkit>=2024.9.6",
+    "requests>=2.32.3",
+    "rxn4chemistry>=1.14.0",
+    "scikit-learn>=1.6.1",
+    "selfies>=2.2.0",
+    "sentencepiece>=0.2.0",
+    "synspace>=1.0.0",
+    "tavily-python>=0.7.0",
+    "torch==2.5",
+    "transformers>=4.51.3",
+    "unicore",
+]
+
+[tool.uv.sources]
+unicore = { git = "https://github.com/btyu/Uni-Core.git", rev = "ea7db06540c007158a216156d77595799e42ae0c" }
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = ["chemmcp"]
+
+[tool.setuptools.dynamic]
+version = { attr = "chemmcp.__version__" }

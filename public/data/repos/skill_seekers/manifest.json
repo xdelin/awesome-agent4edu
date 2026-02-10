@@ -1,0 +1,3638 @@
+{
+  "name": "Skill Seekers",
+  "tree": [
+    {
+      "name": ".claude",
+      "type": "folder",
+      "path": ".claude",
+      "children": [
+        {
+          "name": "mcp_config.example.json",
+          "type": "file",
+          "path": ".claude/mcp_config.example.json",
+          "size": 299,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "type": "folder",
+      "path": "api",
+      "children": [
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": "api/.gitignore",
+          "size": 80,
+          "language": "text"
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "api/__init__.py",
+          "size": 123,
+          "language": "py"
+        },
+        {
+          "name": "config_analyzer.py",
+          "type": "file",
+          "path": "api/config_analyzer.py",
+          "size": 11860,
+          "language": "py"
+        },
+        {
+          "name": "main.py",
+          "type": "file",
+          "path": "api/main.py",
+          "size": 6276,
+          "language": "py"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "api/README.md",
+          "size": 6427,
+          "language": "md"
+        },
+        {
+          "name": "requirements.txt",
+          "type": "file",
+          "path": "api/requirements.txt",
+          "size": 71,
+          "language": "txt"
+        }
+      ]
+    },
+    {
+      "name": "configs",
+      "type": "folder",
+      "path": "configs",
+      "children": [
+        {
+          "name": "astrovalley_unified.json",
+          "type": "file",
+          "path": "configs/astrovalley_unified.json",
+          "size": 974,
+          "language": "json"
+        },
+        {
+          "name": "blender-unified.json",
+          "type": "file",
+          "path": "configs/blender-unified.json",
+          "size": 7380,
+          "language": "json"
+        },
+        {
+          "name": "claude-code.json",
+          "type": "file",
+          "path": "configs/claude-code.json",
+          "size": 5698,
+          "language": "json"
+        },
+        {
+          "name": "godot.json",
+          "type": "file",
+          "path": "configs/godot.json",
+          "size": 1503,
+          "language": "json"
+        },
+        {
+          "name": "httpx_comprehensive.json",
+          "type": "file",
+          "path": "configs/httpx_comprehensive.json",
+          "size": 2555,
+          "language": "json"
+        },
+        {
+          "name": "medusa-mercurjs.json",
+          "type": "file",
+          "path": "configs/medusa-mercurjs.json",
+          "size": 4922,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "archive",
+          "type": "folder",
+          "path": "docs/archive",
+          "children": [
+            {
+              "name": "historical",
+              "type": "folder",
+              "path": "docs/archive/historical",
+              "children": [
+                {
+                  "name": "ARCHITECTURE_VERIFICATION_REPORT.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/ARCHITECTURE_VERIFICATION_REPORT.md",
+                  "size": 26603,
+                  "language": "md"
+                },
+                {
+                  "name": "HTTPX_SKILL_GRADING.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/HTTPX_SKILL_GRADING.md",
+                  "size": 32626,
+                  "language": "md"
+                },
+                {
+                  "name": "IMPLEMENTATION_SUMMARY_THREE_STREAM.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/IMPLEMENTATION_SUMMARY_THREE_STREAM.md",
+                  "size": 15552,
+                  "language": "md"
+                },
+                {
+                  "name": "LOCAL_REPO_TEST_RESULTS.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/LOCAL_REPO_TEST_RESULTS.md",
+                  "size": 14084,
+                  "language": "md"
+                },
+                {
+                  "name": "SKILL_QUALITY_FIX_PLAN.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/SKILL_QUALITY_FIX_PLAN.md",
+                  "size": 10446,
+                  "language": "md"
+                },
+                {
+                  "name": "TEST_MCP_IN_CLAUDE_CODE.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/TEST_MCP_IN_CLAUDE_CODE.md",
+                  "size": 7926,
+                  "language": "md"
+                },
+                {
+                  "name": "THREE_STREAM_COMPLETION_SUMMARY.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/THREE_STREAM_COMPLETION_SUMMARY.md",
+                  "size": 13351,
+                  "language": "md"
+                },
+                {
+                  "name": "THREE_STREAM_STATUS_REPORT.md",
+                  "type": "file",
+                  "path": "docs/archive/historical/THREE_STREAM_STATUS_REPORT.md",
+                  "size": 12265,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "plans",
+              "type": "folder",
+              "path": "docs/archive/plans",
+              "children": [
+                {
+                  "name": "2025-10-24-active-skills-design.md",
+                  "type": "file",
+                  "path": "docs/archive/plans/2025-10-24-active-skills-design.md",
+                  "size": 24781,
+                  "language": "md"
+                },
+                {
+                  "name": "2025-10-24-active-skills-phase1.md",
+                  "type": "file",
+                  "path": "docs/archive/plans/2025-10-24-active-skills-phase1.md",
+                  "size": 20458,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "research",
+              "type": "folder",
+              "path": "docs/archive/research",
+              "children": [
+                {
+                  "name": "PDF_EXTRACTOR_POC.md",
+                  "type": "file",
+                  "path": "docs/archive/research/PDF_EXTRACTOR_POC.md",
+                  "size": 11111,
+                  "language": "md"
+                },
+                {
+                  "name": "PDF_IMAGE_EXTRACTION.md",
+                  "type": "file",
+                  "path": "docs/archive/research/PDF_IMAGE_EXTRACTION.md",
+                  "size": 13327,
+                  "language": "md"
+                },
+                {
+                  "name": "PDF_PARSING_RESEARCH.md",
+                  "type": "file",
+                  "path": "docs/archive/research/PDF_PARSING_RESEARCH.md",
+                  "size": 12583,
+                  "language": "md"
+                },
+                {
+                  "name": "PDF_SYNTAX_DETECTION.md",
+                  "type": "file",
+                  "path": "docs/archive/research/PDF_SYNTAX_DETECTION.md",
+                  "size": 15014,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "blog",
+          "type": "folder",
+          "path": "docs/blog",
+          "children": [
+            {
+              "name": "UNIVERSAL_RAG_PREPROCESSOR.md",
+              "type": "file",
+              "path": "docs/blog/UNIVERSAL_RAG_PREPROCESSOR.md",
+              "size": 19283,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "case-studies",
+          "type": "folder",
+          "path": "docs/case-studies",
+          "children": [
+            {
+              "name": "deepwiki-open.md",
+              "type": "file",
+              "path": "docs/case-studies/deepwiki-open.md",
+              "size": 11929,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "features",
+          "type": "folder",
+          "path": "docs/features",
+          "children": [
+            {
+              "name": "BOOTSTRAP_SKILL.md",
+              "type": "file",
+              "path": "docs/features/BOOTSTRAP_SKILL.md",
+              "size": 18422,
+              "language": "md"
+            },
+            {
+              "name": "BOOTSTRAP_SKILL_TECHNICAL.md",
+              "type": "file",
+              "path": "docs/features/BOOTSTRAP_SKILL_TECHNICAL.md",
+              "size": 18181,
+              "language": "md"
+            },
+            {
+              "name": "ENHANCEMENT.md",
+              "type": "file",
+              "path": "docs/features/ENHANCEMENT.md",
+              "size": 9381,
+              "language": "md"
+            },
+            {
+              "name": "ENHANCEMENT_MODES.md",
+              "type": "file",
+              "path": "docs/features/ENHANCEMENT_MODES.md",
+              "size": 14467,
+              "language": "md"
+            },
+            {
+              "name": "HOW_TO_GUIDES.md",
+              "type": "file",
+              "path": "docs/features/HOW_TO_GUIDES.md",
+              "size": 34830,
+              "language": "md"
+            },
+            {
+              "name": "PATTERN_DETECTION.md",
+              "type": "file",
+              "path": "docs/features/PATTERN_DETECTION.md",
+              "size": 13723,
+              "language": "md"
+            },
+            {
+              "name": "PDF_ADVANCED_FEATURES.md",
+              "type": "file",
+              "path": "docs/features/PDF_ADVANCED_FEATURES.md",
+              "size": 14019,
+              "language": "md"
+            },
+            {
+              "name": "PDF_CHUNKING.md",
+              "type": "file",
+              "path": "docs/features/PDF_CHUNKING.md",
+              "size": 13726,
+              "language": "md"
+            },
+            {
+              "name": "PDF_MCP_TOOL.md",
+              "type": "file",
+              "path": "docs/features/PDF_MCP_TOOL.md",
+              "size": 10801,
+              "language": "md"
+            },
+            {
+              "name": "PDF_SCRAPER.md",
+              "type": "file",
+              "path": "docs/features/PDF_SCRAPER.md",
+              "size": 14338,
+              "language": "md"
+            },
+            {
+              "name": "TEST_EXAMPLE_EXTRACTION.md",
+              "type": "file",
+              "path": "docs/features/TEST_EXAMPLE_EXTRACTION.md",
+              "size": 12079,
+              "language": "md"
+            },
+            {
+              "name": "UNIFIED_SCRAPING.md",
+              "type": "file",
+              "path": "docs/features/UNIFIED_SCRAPING.md",
+              "size": 16474,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "guides",
+          "type": "folder",
+          "path": "docs/guides",
+          "children": [
+            {
+              "name": "HTTP_TRANSPORT.md",
+              "type": "file",
+              "path": "docs/guides/HTTP_TRANSPORT.md",
+              "size": 7337,
+              "language": "md"
+            },
+            {
+              "name": "MCP_SETUP.md",
+              "type": "file",
+              "path": "docs/guides/MCP_SETUP.md",
+              "size": 34595,
+              "language": "md"
+            },
+            {
+              "name": "MIGRATION_GUIDE.md",
+              "type": "file",
+              "path": "docs/guides/MIGRATION_GUIDE.md",
+              "size": 13127,
+              "language": "md"
+            },
+            {
+              "name": "MULTI_AGENT_SETUP.md",
+              "type": "file",
+              "path": "docs/guides/MULTI_AGENT_SETUP.md",
+              "size": 15212,
+              "language": "md"
+            },
+            {
+              "name": "SETUP_QUICK_REFERENCE.md",
+              "type": "file",
+              "path": "docs/guides/SETUP_QUICK_REFERENCE.md",
+              "size": 7505,
+              "language": "md"
+            },
+            {
+              "name": "TESTING_GUIDE.md",
+              "type": "file",
+              "path": "docs/guides/TESTING_GUIDE.md",
+              "size": 22758,
+              "language": "md"
+            },
+            {
+              "name": "UPLOAD_GUIDE.md",
+              "type": "file",
+              "path": "docs/guides/UPLOAD_GUIDE.md",
+              "size": 11335,
+              "language": "md"
+            },
+            {
+              "name": "USAGE.md",
+              "type": "file",
+              "path": "docs/guides/USAGE.md",
+              "size": 19165,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "integrations",
+          "type": "folder",
+          "path": "docs/integrations",
+          "children": [
+            {
+              "name": "CHROMA.md",
+              "type": "file",
+              "path": "docs/integrations/CHROMA.md",
+              "size": 26335,
+              "language": "md"
+            },
+            {
+              "name": "CLINE.md",
+              "type": "file",
+              "path": "docs/integrations/CLINE.md",
+              "size": 25255,
+              "language": "md"
+            },
+            {
+              "name": "CONTINUE_DEV.md",
+              "type": "file",
+              "path": "docs/integrations/CONTINUE_DEV.md",
+              "size": 25854,
+              "language": "md"
+            },
+            {
+              "name": "CURSOR.md",
+              "type": "file",
+              "path": "docs/integrations/CURSOR.md",
+              "size": 17645,
+              "language": "md"
+            },
+            {
+              "name": "FAISS.md",
+              "type": "file",
+              "path": "docs/integrations/FAISS.md",
+              "size": 15556,
+              "language": "md"
+            },
+            {
+              "name": "GEMINI_INTEGRATION.md",
+              "type": "file",
+              "path": "docs/integrations/GEMINI_INTEGRATION.md",
+              "size": 10100,
+              "language": "md"
+            },
+            {
+              "name": "HAYSTACK.md",
+              "type": "file",
+              "path": "docs/integrations/HAYSTACK.md",
+              "size": 21977,
+              "language": "md"
+            },
+            {
+              "name": "INTEGRATIONS.md",
+              "type": "file",
+              "path": "docs/integrations/INTEGRATIONS.md",
+              "size": 19050,
+              "language": "md"
+            },
+            {
+              "name": "LANGCHAIN.md",
+              "type": "file",
+              "path": "docs/integrations/LANGCHAIN.md",
+              "size": 13511,
+              "language": "md"
+            },
+            {
+              "name": "LLAMA_INDEX.md",
+              "type": "file",
+              "path": "docs/integrations/LLAMA_INDEX.md",
+              "size": 12993,
+              "language": "md"
+            },
+            {
+              "name": "MULTI_LLM_SUPPORT.md",
+              "type": "file",
+              "path": "docs/integrations/MULTI_LLM_SUPPORT.md",
+              "size": 10375,
+              "language": "md"
+            },
+            {
+              "name": "OPENAI_INTEGRATION.md",
+              "type": "file",
+              "path": "docs/integrations/OPENAI_INTEGRATION.md",
+              "size": 12365,
+              "language": "md"
+            },
+            {
+              "name": "PINECONE.md",
+              "type": "file",
+              "path": "docs/integrations/PINECONE.md",
+              "size": 22185,
+              "language": "md"
+            },
+            {
+              "name": "QDRANT.md",
+              "type": "file",
+              "path": "docs/integrations/QDRANT.md",
+              "size": 24201,
+              "language": "md"
+            },
+            {
+              "name": "RAG_PIPELINES.md",
+              "type": "file",
+              "path": "docs/integrations/RAG_PIPELINES.md",
+              "size": 30143,
+              "language": "md"
+            },
+            {
+              "name": "WEAVIATE.md",
+              "type": "file",
+              "path": "docs/integrations/WEAVIATE.md",
+              "size": 27605,
+              "language": "md"
+            },
+            {
+              "name": "WINDSURF.md",
+              "type": "file",
+              "path": "docs/integrations/WINDSURF.md",
+              "size": 24192,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "reference",
+          "type": "folder",
+          "path": "docs/reference",
+          "children": [
+            {
+              "name": "AI_SKILL_STANDARDS.md",
+              "type": "file",
+              "path": "docs/reference/AI_SKILL_STANDARDS.md",
+              "size": 29102,
+              "language": "md"
+            },
+            {
+              "name": "API_REFERENCE.md",
+              "type": "file",
+              "path": "docs/reference/API_REFERENCE.md",
+              "size": 24426,
+              "language": "md"
+            },
+            {
+              "name": "C3_x_Router_Architecture.md",
+              "type": "file",
+              "path": "docs/reference/C3_x_Router_Architecture.md",
+              "size": 73809,
+              "language": "md"
+            },
+            {
+              "name": "CLAUDE_INTEGRATION.md",
+              "type": "file",
+              "path": "docs/reference/CLAUDE_INTEGRATION.md",
+              "size": 21068,
+              "language": "md"
+            },
+            {
+              "name": "CODE_QUALITY.md",
+              "type": "file",
+              "path": "docs/reference/CODE_QUALITY.md",
+              "size": 17253,
+              "language": "md"
+            },
+            {
+              "name": "FEATURE_MATRIX.md",
+              "type": "file",
+              "path": "docs/reference/FEATURE_MATRIX.md",
+              "size": 11358,
+              "language": "md"
+            },
+            {
+              "name": "GIT_CONFIG_SOURCES.md",
+              "type": "file",
+              "path": "docs/reference/GIT_CONFIG_SOURCES.md",
+              "size": 21422,
+              "language": "md"
+            },
+            {
+              "name": "LARGE_DOCUMENTATION.md",
+              "type": "file",
+              "path": "docs/reference/LARGE_DOCUMENTATION.md",
+              "size": 10174,
+              "language": "md"
+            },
+            {
+              "name": "LLMS_TXT_SUPPORT.md",
+              "type": "file",
+              "path": "docs/reference/LLMS_TXT_SUPPORT.md",
+              "size": 1451,
+              "language": "md"
+            },
+            {
+              "name": "SKILL_ARCHITECTURE.md",
+              "type": "file",
+              "path": "docs/reference/SKILL_ARCHITECTURE.md",
+              "size": 24669,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "roadmap",
+          "type": "folder",
+          "path": "docs/roadmap",
+          "children": [
+            {
+              "name": "INTELLIGENCE_SYSTEM_ARCHITECTURE.md",
+              "type": "file",
+              "path": "docs/roadmap/INTELLIGENCE_SYSTEM_ARCHITECTURE.md",
+              "size": 42076,
+              "language": "md"
+            },
+            {
+              "name": "INTELLIGENCE_SYSTEM_RESEARCH.md",
+              "type": "file",
+              "path": "docs/roadmap/INTELLIGENCE_SYSTEM_RESEARCH.md",
+              "size": 20356,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "docs/roadmap/README.md",
+              "size": 9597,
+              "language": "md"
+            },
+            {
+              "name": "SKILL_INTELLIGENCE_SYSTEM.md",
+              "type": "file",
+              "path": "docs/roadmap/SKILL_INTELLIGENCE_SYSTEM.md",
+              "size": 30204,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "strategy",
+          "type": "folder",
+          "path": "docs/strategy",
+          "children": [
+            {
+              "name": "ACTION_PLAN.md",
+              "type": "file",
+              "path": "docs/strategy/ACTION_PLAN.md",
+              "size": 25643,
+              "language": "md"
+            },
+            {
+              "name": "DEEPWIKI_ANALYSIS.md",
+              "type": "file",
+              "path": "docs/strategy/DEEPWIKI_ANALYSIS.md",
+              "size": 11013,
+              "language": "md"
+            },
+            {
+              "name": "INTEGRATION_STRATEGY.md",
+              "type": "file",
+              "path": "docs/strategy/INTEGRATION_STRATEGY.md",
+              "size": 14598,
+              "language": "md"
+            },
+            {
+              "name": "INTEGRATION_TEMPLATES.md",
+              "type": "file",
+              "path": "docs/strategy/INTEGRATION_TEMPLATES.md",
+              "size": 14612,
+              "language": "md"
+            },
+            {
+              "name": "KIMI_ANALYSIS_COMPARISON.md",
+              "type": "file",
+              "path": "docs/strategy/KIMI_ANALYSIS_COMPARISON.md",
+              "size": 16452,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "docs/strategy/README.md",
+              "size": 8740,
+              "language": "md"
+            },
+            {
+              "name": "TASK19_COMPLETE.md",
+              "type": "file",
+              "path": "docs/strategy/TASK19_COMPLETE.md",
+              "size": 11449,
+              "language": "md"
+            },
+            {
+              "name": "TASK20_COMPLETE.md",
+              "type": "file",
+              "path": "docs/strategy/TASK20_COMPLETE.md",
+              "size": 12129,
+              "language": "md"
+            },
+            {
+              "name": "TASK21_COMPLETE.md",
+              "type": "file",
+              "path": "docs/strategy/TASK21_COMPLETE.md",
+              "size": 11634,
+              "language": "md"
+            },
+            {
+              "name": "WEEK2_COMPLETE.md",
+              "type": "file",
+              "path": "docs/strategy/WEEK2_COMPLETE.md",
+              "size": 15878,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "COMPREHENSIVE_QA_REPORT.md",
+          "type": "file",
+          "path": "docs/COMPREHENSIVE_QA_REPORT.md",
+          "size": 7151,
+          "language": "md"
+        },
+        {
+          "name": "DOCKER_DEPLOYMENT.md",
+          "type": "file",
+          "path": "docs/DOCKER_DEPLOYMENT.md",
+          "size": 14975,
+          "language": "md"
+        },
+        {
+          "name": "DOCKER_GUIDE.md",
+          "type": "file",
+          "path": "docs/DOCKER_GUIDE.md",
+          "size": 12302,
+          "language": "md"
+        },
+        {
+          "name": "FAQ.md",
+          "type": "file",
+          "path": "docs/FAQ.md",
+          "size": 16580,
+          "language": "md"
+        },
+        {
+          "name": "FINAL_QA_VERIFICATION.md",
+          "type": "file",
+          "path": "docs/FINAL_QA_VERIFICATION.md",
+          "size": 4648,
+          "language": "md"
+        },
+        {
+          "name": "KUBERNETES_DEPLOYMENT.md",
+          "type": "file",
+          "path": "docs/KUBERNETES_DEPLOYMENT.md",
+          "size": 18826,
+          "language": "md"
+        },
+        {
+          "name": "KUBERNETES_GUIDE.md",
+          "type": "file",
+          "path": "docs/KUBERNETES_GUIDE.md",
+          "size": 20332,
+          "language": "md"
+        },
+        {
+          "name": "PRODUCTION_DEPLOYMENT.md",
+          "type": "file",
+          "path": "docs/PRODUCTION_DEPLOYMENT.md",
+          "size": 17176,
+          "language": "md"
+        },
+        {
+          "name": "QA_FIXES_FINAL_REPORT.md",
+          "type": "file",
+          "path": "docs/QA_FIXES_FINAL_REPORT.md",
+          "size": 10037,
+          "language": "md"
+        },
+        {
+          "name": "QA_FIXES_SUMMARY.md",
+          "type": "file",
+          "path": "docs/QA_FIXES_SUMMARY.md",
+          "size": 12190,
+          "language": "md"
+        },
+        {
+          "name": "QUICK_REFERENCE.md",
+          "type": "file",
+          "path": "docs/QUICK_REFERENCE.md",
+          "size": 9739,
+          "language": "md"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "docs/README.md",
+          "size": 7862,
+          "language": "md"
+        },
+        {
+          "name": "TROUBLESHOOTING.md",
+          "type": "file",
+          "path": "docs/TROUBLESHOOTING.md",
+          "size": 17392,
+          "language": "md"
+        },
+        {
+          "name": "WEEK2_TESTING_GUIDE.md",
+          "type": "file",
+          "path": "docs/WEEK2_TESTING_GUIDE.md",
+          "size": 24759,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "chroma-example",
+          "type": "folder",
+          "path": "examples/chroma-example",
+          "children": [
+            {
+              "name": "1_generate_skill.py",
+              "type": "file",
+              "path": "examples/chroma-example/1_generate_skill.py",
+              "size": 2436,
+              "language": "py"
+            },
+            {
+              "name": "2_upload_to_chroma.py",
+              "type": "file",
+              "path": "examples/chroma-example/2_upload_to_chroma.py",
+              "size": 5114,
+              "language": "py"
+            },
+            {
+              "name": "3_query_example.py",
+              "type": "file",
+              "path": "examples/chroma-example/3_query_example.py",
+              "size": 9634,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/chroma-example/README.md",
+              "size": 9782,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/chroma-example/requirements.txt",
+              "size": 158,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "cline-django-assistant",
+          "type": "folder",
+          "path": "examples/cline-django-assistant",
+          "children": [
+            {
+              "name": "generate_clinerules.py",
+              "type": "file",
+              "path": "examples/cline-django-assistant/generate_clinerules.py",
+              "size": 6954,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/cline-django-assistant/README.md",
+              "size": 8890,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/cline-django-assistant/requirements.txt",
+              "size": 108,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "continue-dev-universal",
+          "type": "folder",
+          "path": "examples/continue-dev-universal",
+          "children": [
+            {
+              "name": "context_server.py",
+              "type": "file",
+              "path": "examples/continue-dev-universal/context_server.py",
+              "size": 7826,
+              "language": "py"
+            },
+            {
+              "name": "quickstart.py",
+              "type": "file",
+              "path": "examples/continue-dev-universal/quickstart.py",
+              "size": 5533,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/continue-dev-universal/README.md",
+              "size": 12715,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/continue-dev-universal/requirements.txt",
+              "size": 62,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "cursor-react-skill",
+          "type": "folder",
+          "path": "examples/cursor-react-skill",
+          "children": [
+            {
+              "name": "example-project",
+              "type": "folder",
+              "path": "examples/cursor-react-skill/example-project",
+              "children": [
+                {
+                  "name": "src",
+                  "type": "folder",
+                  "path": "examples/cursor-react-skill/example-project/src",
+                  "children": [
+                    {
+                      "name": "App.tsx",
+                      "type": "file",
+                      "path": "examples/cursor-react-skill/example-project/src/App.tsx",
+                      "size": 513,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "index.tsx",
+                      "type": "file",
+                      "path": "examples/cursor-react-skill/example-project/src/index.tsx",
+                      "size": 265,
+                      "language": "tsx"
+                    }
+                  ]
+                },
+                {
+                  "name": "package.json",
+                  "type": "file",
+                  "path": "examples/cursor-react-skill/example-project/package.json",
+                  "size": 503,
+                  "language": "json"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "examples/cursor-react-skill/example-project/README.md",
+                  "size": 1093,
+                  "language": "md"
+                },
+                {
+                  "name": "tsconfig.json",
+                  "type": "file",
+                  "path": "examples/cursor-react-skill/example-project/tsconfig.json",
+                  "size": 630,
+                  "language": "json"
+                }
+              ]
+            },
+            {
+              "name": "generate_cursorrules.py",
+              "type": "file",
+              "path": "examples/cursor-react-skill/generate_cursorrules.py",
+              "size": 4209,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/cursor-react-skill/README.md",
+              "size": 9568,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/cursor-react-skill/requirements.txt",
+              "size": 220,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "faiss-example",
+          "type": "folder",
+          "path": "examples/faiss-example",
+          "children": [
+            {
+              "name": "1_generate_skill.py",
+              "type": "file",
+              "path": "examples/faiss-example/1_generate_skill.py",
+              "size": 667,
+              "language": "py"
+            },
+            {
+              "name": "2_build_faiss_index.py",
+              "type": "file",
+              "path": "examples/faiss-example/2_build_faiss_index.py",
+              "size": 2182,
+              "language": "py"
+            },
+            {
+              "name": "3_query_example.py",
+              "type": "file",
+              "path": "examples/faiss-example/3_query_example.py",
+              "size": 2071,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/faiss-example/README.md",
+              "size": 2299,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/faiss-example/requirements.txt",
+              "size": 147,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "haystack-pipeline",
+          "type": "folder",
+          "path": "examples/haystack-pipeline",
+          "children": [
+            {
+              "name": "quickstart.py",
+              "type": "file",
+              "path": "examples/haystack-pipeline/quickstart.py",
+              "size": 4089,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/haystack-pipeline/README.md",
+              "size": 6859,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/haystack-pipeline/requirements.txt",
+              "size": 236,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "langchain-rag-pipeline",
+          "type": "folder",
+          "path": "examples/langchain-rag-pipeline",
+          "children": [
+            {
+              "name": "quickstart.py",
+              "type": "file",
+              "path": "examples/langchain-rag-pipeline/quickstart.py",
+              "size": 5597,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/langchain-rag-pipeline/README.md",
+              "size": 3388,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/langchain-rag-pipeline/requirements.txt",
+              "size": 358,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "llama-index-query-engine",
+          "type": "folder",
+          "path": "examples/llama-index-query-engine",
+          "children": [
+            {
+              "name": "quickstart.py",
+              "type": "file",
+              "path": "examples/llama-index-query-engine/quickstart.py",
+              "size": 6063,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/llama-index-query-engine/README.md",
+              "size": 4536,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/llama-index-query-engine/requirements.txt",
+              "size": 413,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "pinecone-upsert",
+          "type": "folder",
+          "path": "examples/pinecone-upsert",
+          "children": [
+            {
+              "name": "quickstart.py",
+              "type": "file",
+              "path": "examples/pinecone-upsert/quickstart.py",
+              "size": 9865,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/pinecone-upsert/README.md",
+              "size": 6298,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/pinecone-upsert/requirements.txt",
+              "size": 288,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "qdrant-example",
+          "type": "folder",
+          "path": "examples/qdrant-example",
+          "children": [
+            {
+              "name": "1_generate_skill.py",
+              "type": "file",
+              "path": "examples/qdrant-example/1_generate_skill.py",
+              "size": 645,
+              "language": "py"
+            },
+            {
+              "name": "2_upload_to_qdrant.py",
+              "type": "file",
+              "path": "examples/qdrant-example/2_upload_to_qdrant.py",
+              "size": 1872,
+              "language": "py"
+            },
+            {
+              "name": "3_query_example.py",
+              "type": "file",
+              "path": "examples/qdrant-example/3_query_example.py",
+              "size": 2409,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/qdrant-example/README.md",
+              "size": 2094,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/qdrant-example/requirements.txt",
+              "size": 90,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "weaviate-example",
+          "type": "folder",
+          "path": "examples/weaviate-example",
+          "children": [
+            {
+              "name": "sample_output",
+              "type": "folder",
+              "path": "examples/weaviate-example/sample_output",
+              "children": [
+                {
+                  "name": "query_results.txt",
+                  "type": "file",
+                  "path": "examples/weaviate-example/sample_output/query_results.txt",
+                  "size": 6733,
+                  "language": "txt"
+                }
+              ]
+            },
+            {
+              "name": "1_generate_skill.py",
+              "type": "file",
+              "path": "examples/weaviate-example/1_generate_skill.py",
+              "size": 2458,
+              "language": "py"
+            },
+            {
+              "name": "2_upload_to_weaviate.py",
+              "type": "file",
+              "path": "examples/weaviate-example/2_upload_to_weaviate.py",
+              "size": 5597,
+              "language": "py"
+            },
+            {
+              "name": "3_query_example.py",
+              "type": "file",
+              "path": "examples/weaviate-example/3_query_example.py",
+              "size": 9347,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/weaviate-example/README.md",
+              "size": 8664,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/weaviate-example/requirements.txt",
+              "size": 179,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "windsurf-fastapi-context",
+          "type": "folder",
+          "path": "examples/windsurf-fastapi-context",
+          "children": [
+            {
+              "name": "generate_windsurfrules.py",
+              "type": "file",
+              "path": "examples/windsurf-fastapi-context/generate_windsurfrules.py",
+              "size": 4853,
+              "language": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/windsurf-fastapi-context/README.md",
+              "size": 7172,
+              "language": "md"
+            },
+            {
+              "name": "requirements.txt",
+              "type": "file",
+              "path": "examples/windsurf-fastapi-context/requirements.txt",
+              "size": 76,
+              "language": "txt"
+            }
+          ]
+        },
+        {
+          "name": "http_transport_examples.sh",
+          "type": "file",
+          "path": "examples/http_transport_examples.sh",
+          "size": 4065,
+          "language": "sh"
+        },
+        {
+          "name": "test_http_server.py",
+          "type": "file",
+          "path": "examples/test_http_server.py",
+          "size": 2964,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "helm",
+      "type": "folder",
+      "path": "helm",
+      "children": [
+        {
+          "name": "skill-seekers",
+          "type": "folder",
+          "path": "helm/skill-seekers",
+          "children": [
+            {
+              "name": "templates",
+              "type": "folder",
+              "path": "helm/skill-seekers/templates",
+              "children": [
+                {
+                  "name": "chroma-deployment.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/chroma-deployment.yaml",
+                  "size": 1653,
+                  "language": "yaml"
+                },
+                {
+                  "name": "configmap.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/configmap.yaml",
+                  "size": 329,
+                  "language": "yaml"
+                },
+                {
+                  "name": "hpa.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/hpa.yaml",
+                  "size": 1132,
+                  "language": "yaml"
+                },
+                {
+                  "name": "ingress.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/ingress.yaml",
+                  "size": 1148,
+                  "language": "yaml"
+                },
+                {
+                  "name": "mcp-deployment.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/mcp-deployment.yaml",
+                  "size": 3773,
+                  "language": "yaml"
+                },
+                {
+                  "name": "NOTES.txt",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/NOTES.txt",
+                  "size": 7111,
+                  "language": "txt"
+                },
+                {
+                  "name": "pvc.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/pvc.yaml",
+                  "size": 3630,
+                  "language": "yaml"
+                },
+                {
+                  "name": "qdrant-deployment.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/qdrant-deployment.yaml",
+                  "size": 1680,
+                  "language": "yaml"
+                },
+                {
+                  "name": "secret.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/secret.yaml",
+                  "size": 693,
+                  "language": "yaml"
+                },
+                {
+                  "name": "service.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/service.yaml",
+                  "size": 2530,
+                  "language": "yaml"
+                },
+                {
+                  "name": "serviceaccount.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/serviceaccount.yaml",
+                  "size": 344,
+                  "language": "yaml"
+                },
+                {
+                  "name": "weaviate-deployment.yaml",
+                  "type": "file",
+                  "path": "helm/skill-seekers/templates/weaviate-deployment.yaml",
+                  "size": 1893,
+                  "language": "yaml"
+                }
+              ]
+            },
+            {
+              "name": "Chart.yaml",
+              "type": "file",
+              "path": "helm/skill-seekers/Chart.yaml",
+              "size": 588,
+              "language": "yaml"
+            },
+            {
+              "name": "values.yaml",
+              "type": "file",
+              "path": "helm/skill-seekers/values.yaml",
+              "size": 5754,
+              "language": "yaml"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "bootstrap_skill.sh",
+          "type": "file",
+          "path": "scripts/bootstrap_skill.sh",
+          "size": 3445,
+          "language": "sh"
+        },
+        {
+          "name": "run_benchmarks.sh",
+          "type": "file",
+          "path": "scripts/run_benchmarks.sh",
+          "size": 3529,
+          "language": "sh"
+        },
+        {
+          "name": "run_integration_tests.sh",
+          "type": "file",
+          "path": "scripts/run_integration_tests.sh",
+          "size": 7501,
+          "language": "sh"
+        },
+        {
+          "name": "skill_header.md",
+          "type": "file",
+          "path": "scripts/skill_header.md",
+          "size": 1007,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "skill_seekers",
+          "type": "folder",
+          "path": "src/skill_seekers",
+          "children": [
+            {
+              "name": "benchmark",
+              "type": "folder",
+              "path": "src/skill_seekers/benchmark",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/benchmark/__init__.py",
+                  "size": 883,
+                  "language": "py"
+                },
+                {
+                  "name": "framework.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/benchmark/framework.py",
+                  "size": 10171,
+                  "language": "py"
+                },
+                {
+                  "name": "models.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/benchmark/models.py",
+                  "size": 3946,
+                  "language": "py"
+                },
+                {
+                  "name": "runner.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/benchmark/runner.py",
+                  "size": 9859,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "cli",
+              "type": "folder",
+              "path": "src/skill_seekers/cli",
+              "children": [
+                {
+                  "name": "adaptors",
+                  "type": "folder",
+                  "path": "src/skill_seekers/cli/adaptors",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/__init__.py",
+                      "size": 4174,
+                      "language": "py"
+                    },
+                    {
+                      "name": "base.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/base.py",
+                      "size": 15840,
+                      "language": "py"
+                    },
+                    {
+                      "name": "chroma.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/chroma.py",
+                      "size": 16252,
+                      "language": "py"
+                    },
+                    {
+                      "name": "claude.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/claude.py",
+                      "size": 16911,
+                      "language": "py"
+                    },
+                    {
+                      "name": "faiss_helpers.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/faiss_helpers.py",
+                      "size": 13816,
+                      "language": "py"
+                    },
+                    {
+                      "name": "gemini.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/gemini.py",
+                      "size": 15587,
+                      "language": "py"
+                    },
+                    {
+                      "name": "haystack.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/haystack.py",
+                      "size": 10091,
+                      "language": "py"
+                    },
+                    {
+                      "name": "langchain.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/langchain.py",
+                      "size": 9827,
+                      "language": "py"
+                    },
+                    {
+                      "name": "llama_index.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/llama_index.py",
+                      "size": 10548,
+                      "language": "py"
+                    },
+                    {
+                      "name": "markdown.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/markdown.py",
+                      "size": 8703,
+                      "language": "py"
+                    },
+                    {
+                      "name": "openai.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/openai.py",
+                      "size": 17977,
+                      "language": "py"
+                    },
+                    {
+                      "name": "qdrant.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/qdrant.py",
+                      "size": 16082,
+                      "language": "py"
+                    },
+                    {
+                      "name": "streaming_adaptor.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/streaming_adaptor.py",
+                      "size": 12019,
+                      "language": "py"
+                    },
+                    {
+                      "name": "weaviate.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/adaptors/weaviate.py",
+                      "size": 19885,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "parsers",
+                  "type": "folder",
+                  "path": "src/skill_seekers/cli/parsers",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/__init__.py",
+                      "size": 2116,
+                      "language": "py"
+                    },
+                    {
+                      "name": "analyze_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/analyze_parser.py",
+                      "size": 3484,
+                      "language": "py"
+                    },
+                    {
+                      "name": "base.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/base.py",
+                      "size": 1547,
+                      "language": "py"
+                    },
+                    {
+                      "name": "config_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/config_parser.py",
+                      "size": 977,
+                      "language": "py"
+                    },
+                    {
+                      "name": "enhance_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/enhance_parser.py",
+                      "size": 1398,
+                      "language": "py"
+                    },
+                    {
+                      "name": "enhance_status_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/enhance_status_parser.py",
+                      "size": 928,
+                      "language": "py"
+                    },
+                    {
+                      "name": "estimate_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/estimate_parser.py",
+                      "size": 795,
+                      "language": "py"
+                    },
+                    {
+                      "name": "github_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/github_parser.py",
+                      "size": 1335,
+                      "language": "py"
+                    },
+                    {
+                      "name": "install_agent_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/install_agent_parser.py",
+                      "size": 1125,
+                      "language": "py"
+                    },
+                    {
+                      "name": "install_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/install_parser.py",
+                      "size": 1282,
+                      "language": "py"
+                    },
+                    {
+                      "name": "multilang_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/multilang_parser.py",
+                      "size": 828,
+                      "language": "py"
+                    },
+                    {
+                      "name": "package_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/package_parser.py",
+                      "size": 3010,
+                      "language": "py"
+                    },
+                    {
+                      "name": "pdf_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/pdf_parser.py",
+                      "size": 829,
+                      "language": "py"
+                    },
+                    {
+                      "name": "quality_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/quality_parser.py",
+                      "size": 798,
+                      "language": "py"
+                    },
+                    {
+                      "name": "resume_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/resume_parser.py",
+                      "size": 842,
+                      "language": "py"
+                    },
+                    {
+                      "name": "scrape_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/scrape_parser.py",
+                      "size": 1619,
+                      "language": "py"
+                    },
+                    {
+                      "name": "stream_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/stream_parser.py",
+                      "size": 759,
+                      "language": "py"
+                    },
+                    {
+                      "name": "test_examples_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/test_examples_parser.py",
+                      "size": 1426,
+                      "language": "py"
+                    },
+                    {
+                      "name": "unified_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/unified_parser.py",
+                      "size": 929,
+                      "language": "py"
+                    },
+                    {
+                      "name": "update_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/update_parser.py",
+                      "size": 794,
+                      "language": "py"
+                    },
+                    {
+                      "name": "upload_parser.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/parsers/upload_parser.py",
+                      "size": 2363,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "storage",
+                  "type": "folder",
+                  "path": "src/skill_seekers/cli/storage",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/storage/__init__.py",
+                      "size": 2428,
+                      "language": "py"
+                    },
+                    {
+                      "name": "azure_storage.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/storage/azure_storage.py",
+                      "size": 9340,
+                      "language": "py"
+                    },
+                    {
+                      "name": "base_storage.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/storage/base_storage.py",
+                      "size": 7817,
+                      "language": "py"
+                    },
+                    {
+                      "name": "gcs_storage.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/storage/gcs_storage.py",
+                      "size": 6374,
+                      "language": "py"
+                    },
+                    {
+                      "name": "s3_storage.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/cli/storage/s3_storage.py",
+                      "size": 6990,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/__init__.py",
+                  "size": 1381,
+                  "language": "py"
+                },
+                {
+                  "name": "ai_enhancer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/ai_enhancer.py",
+                  "size": 20961,
+                  "language": "py"
+                },
+                {
+                  "name": "api_reference_builder.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/api_reference_builder.py",
+                  "size": 11345,
+                  "language": "py"
+                },
+                {
+                  "name": "architectural_pattern_detector.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/architectural_pattern_detector.py",
+                  "size": 23878,
+                  "language": "py"
+                },
+                {
+                  "name": "benchmark_cli.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/benchmark_cli.py",
+                  "size": 9593,
+                  "language": "py"
+                },
+                {
+                  "name": "cloud_storage_cli.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/cloud_storage_cli.py",
+                  "size": 10261,
+                  "language": "py"
+                },
+                {
+                  "name": "code_analyzer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/code_analyzer.py",
+                  "size": 71557,
+                  "language": "py"
+                },
+                {
+                  "name": "codebase_scraper.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/codebase_scraper.py",
+                  "size": 81227,
+                  "language": "py"
+                },
+                {
+                  "name": "config_command.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/config_command.py",
+                  "size": 20622,
+                  "language": "py"
+                },
+                {
+                  "name": "config_enhancer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/config_enhancer.py",
+                  "size": 19254,
+                  "language": "py"
+                },
+                {
+                  "name": "config_extractor.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/config_extractor.py",
+                  "size": 32622,
+                  "language": "py"
+                },
+                {
+                  "name": "config_fetcher.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/config_fetcher.py",
+                  "size": 7376,
+                  "language": "py"
+                },
+                {
+                  "name": "config_manager.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/config_manager.py",
+                  "size": 19503,
+                  "language": "py"
+                },
+                {
+                  "name": "config_validator.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/config_validator.py",
+                  "size": 12420,
+                  "language": "py"
+                },
+                {
+                  "name": "conflict_detector.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/conflict_detector.py",
+                  "size": 20015,
+                  "language": "py"
+                },
+                {
+                  "name": "constants.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/constants.py",
+                  "size": 2383,
+                  "language": "py"
+                },
+                {
+                  "name": "dependency_analyzer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/dependency_analyzer.py",
+                  "size": 33748,
+                  "language": "py"
+                },
+                {
+                  "name": "doc_scraper.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/doc_scraper.py",
+                  "size": 95322,
+                  "language": "py"
+                },
+                {
+                  "name": "embedding_pipeline.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/embedding_pipeline.py",
+                  "size": 14272,
+                  "language": "py"
+                },
+                {
+                  "name": "enhance_skill.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/enhance_skill.py",
+                  "size": 18247,
+                  "language": "py"
+                },
+                {
+                  "name": "enhance_skill_local.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/enhance_skill_local.py",
+                  "size": 50010,
+                  "language": "py"
+                },
+                {
+                  "name": "enhance_status.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/enhance_status.py",
+                  "size": 5145,
+                  "language": "py"
+                },
+                {
+                  "name": "estimate_pages.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/estimate_pages.py",
+                  "size": 13572,
+                  "language": "py"
+                },
+                {
+                  "name": "generate_router.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/generate_router.py",
+                  "size": 43995,
+                  "language": "py"
+                },
+                {
+                  "name": "github_fetcher.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/github_fetcher.py",
+                  "size": 17167,
+                  "language": "py"
+                },
+                {
+                  "name": "github_scraper.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/github_scraper.py",
+                  "size": 57674,
+                  "language": "py"
+                },
+                {
+                  "name": "guide_enhancer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/guide_enhancer.py",
+                  "size": 23955,
+                  "language": "py"
+                },
+                {
+                  "name": "how_to_guide_builder.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/how_to_guide_builder.py",
+                  "size": 46434,
+                  "language": "py"
+                },
+                {
+                  "name": "incremental_updater.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/incremental_updater.py",
+                  "size": 15959,
+                  "language": "py"
+                },
+                {
+                  "name": "install_agent.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/install_agent.py",
+                  "size": 15680,
+                  "language": "py"
+                },
+                {
+                  "name": "install_skill.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/install_skill.py",
+                  "size": 5514,
+                  "language": "py"
+                },
+                {
+                  "name": "language_detector.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/language_detector.py",
+                  "size": 21895,
+                  "language": "py"
+                },
+                {
+                  "name": "llms_txt_detector.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/llms_txt_detector.py",
+                  "size": 1936,
+                  "language": "py"
+                },
+                {
+                  "name": "llms_txt_downloader.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/llms_txt_downloader.py",
+                  "size": 3515,
+                  "language": "py"
+                },
+                {
+                  "name": "llms_txt_parser.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/llms_txt_parser.py",
+                  "size": 5380,
+                  "language": "py"
+                },
+                {
+                  "name": "main.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/main.py",
+                  "size": 11244,
+                  "language": "py"
+                },
+                {
+                  "name": "markdown_cleaner.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/markdown_cleaner.py",
+                  "size": 4388,
+                  "language": "py"
+                },
+                {
+                  "name": "merge_sources.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/merge_sources.py",
+                  "size": 28465,
+                  "language": "py"
+                },
+                {
+                  "name": "multilang_support.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/multilang_support.py",
+                  "size": 15209,
+                  "language": "py"
+                },
+                {
+                  "name": "package_multi.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/package_multi.py",
+                  "size": 2104,
+                  "language": "py"
+                },
+                {
+                  "name": "package_skill.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/package_skill.py",
+                  "size": 11900,
+                  "language": "py"
+                },
+                {
+                  "name": "pattern_recognizer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/pattern_recognizer.py",
+                  "size": 71346,
+                  "language": "py"
+                },
+                {
+                  "name": "pdf_extractor_poc.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/pdf_extractor_poc.py",
+                  "size": 44907,
+                  "language": "py"
+                },
+                {
+                  "name": "pdf_scraper.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/pdf_scraper.py",
+                  "size": 28935,
+                  "language": "py"
+                },
+                {
+                  "name": "presets.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/presets.py",
+                  "size": 5983,
+                  "language": "py"
+                },
+                {
+                  "name": "quality_checker.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/quality_checker.py",
+                  "size": 17944,
+                  "language": "py"
+                },
+                {
+                  "name": "quality_metrics.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/quality_metrics.py",
+                  "size": 17671,
+                  "language": "py"
+                },
+                {
+                  "name": "rag_chunker.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/rag_chunker.py",
+                  "size": 14061,
+                  "language": "py"
+                },
+                {
+                  "name": "rate_limit_handler.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/rate_limit_handler.py",
+                  "size": 14684,
+                  "language": "py"
+                },
+                {
+                  "name": "resume_command.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/resume_command.py",
+                  "size": 5132,
+                  "language": "py"
+                },
+                {
+                  "name": "run_tests.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/run_tests.py",
+                  "size": 7536,
+                  "language": "py"
+                },
+                {
+                  "name": "setup_wizard.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/setup_wizard.py",
+                  "size": 2767,
+                  "language": "py"
+                },
+                {
+                  "name": "signal_flow_analyzer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/signal_flow_analyzer.py",
+                  "size": 18470,
+                  "language": "py"
+                },
+                {
+                  "name": "split_config.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/split_config.py",
+                  "size": 14741,
+                  "language": "py"
+                },
+                {
+                  "name": "streaming_ingest.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/streaming_ingest.py",
+                  "size": 15251,
+                  "language": "py"
+                },
+                {
+                  "name": "swift_patterns.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/swift_patterns.py",
+                  "size": 30009,
+                  "language": "py"
+                },
+                {
+                  "name": "sync_cli.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/sync_cli.py",
+                  "size": 6847,
+                  "language": "py"
+                },
+                {
+                  "name": "test_example_extractor.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/test_example_extractor.py",
+                  "size": 45906,
+                  "language": "py"
+                },
+                {
+                  "name": "test_unified_simple.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/test_unified_simple.py",
+                  "size": 5873,
+                  "language": "py"
+                },
+                {
+                  "name": "unified_codebase_analyzer.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/unified_codebase_analyzer.py",
+                  "size": 19325,
+                  "language": "py"
+                },
+                {
+                  "name": "unified_scraper.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/unified_scraper.py",
+                  "size": 37313,
+                  "language": "py"
+                },
+                {
+                  "name": "unified_skill_builder.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/unified_skill_builder.py",
+                  "size": 68747,
+                  "language": "py"
+                },
+                {
+                  "name": "upload_skill.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/upload_skill.py",
+                  "size": 7987,
+                  "language": "py"
+                },
+                {
+                  "name": "utils.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/cli/utils.py",
+                  "size": 14538,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "embedding",
+              "type": "folder",
+              "path": "src/skill_seekers/embedding",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/embedding/__init__.py",
+                  "size": 878,
+                  "language": "py"
+                },
+                {
+                  "name": "cache.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/embedding/cache.py",
+                  "size": 9271,
+                  "language": "py"
+                },
+                {
+                  "name": "generator.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/embedding/generator.py",
+                  "size": 14434,
+                  "language": "py"
+                },
+                {
+                  "name": "models.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/embedding/models.py",
+                  "size": 5077,
+                  "language": "py"
+                },
+                {
+                  "name": "server.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/embedding/server.py",
+                  "size": 11029,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "mcp",
+              "type": "folder",
+              "path": "src/skill_seekers/mcp",
+              "children": [
+                {
+                  "name": "tools",
+                  "type": "folder",
+                  "path": "src/skill_seekers/mcp/tools",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/mcp/tools/__init__.py",
+                      "size": 3775,
+                      "language": "py"
+                    },
+                    {
+                      "name": "config_tools.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/mcp/tools/config_tools.py",
+                      "size": 9434,
+                      "language": "py"
+                    },
+                    {
+                      "name": "packaging_tools.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/mcp/tools/packaging_tools.py",
+                      "size": 34234,
+                      "language": "py"
+                    },
+                    {
+                      "name": "scraping_tools.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/mcp/tools/scraping_tools.py",
+                      "size": 33630,
+                      "language": "py"
+                    },
+                    {
+                      "name": "source_tools.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/mcp/tools/source_tools.py",
+                      "size": 30738,
+                      "language": "py"
+                    },
+                    {
+                      "name": "splitting_tools.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/mcp/tools/splitting_tools.py",
+                      "size": 7215,
+                      "language": "py"
+                    },
+                    {
+                      "name": "vector_db_tools.py",
+                      "type": "file",
+                      "path": "src/skill_seekers/mcp/tools/vector_db_tools.py",
+                      "size": 13749,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/__init__.py",
+                  "size": 1388,
+                  "language": "py"
+                },
+                {
+                  "name": "agent_detector.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/agent_detector.py",
+                  "size": 10037,
+                  "language": "py"
+                },
+                {
+                  "name": "git_repo.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/git_repo.py",
+                  "size": 9033,
+                  "language": "py"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/README.md",
+                  "size": 18305,
+                  "language": "md"
+                },
+                {
+                  "name": "requirements.txt",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/requirements.txt",
+                  "size": 179,
+                  "language": "txt"
+                },
+                {
+                  "name": "server.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/server.py",
+                  "size": 9078,
+                  "language": "py"
+                },
+                {
+                  "name": "server_fastmcp.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/server_fastmcp.py",
+                  "size": 50465,
+                  "language": "py"
+                },
+                {
+                  "name": "server_legacy.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/server_legacy.py",
+                  "size": 91278,
+                  "language": "py"
+                },
+                {
+                  "name": "source_manager.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/mcp/source_manager.py",
+                  "size": 8824,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "sync",
+              "type": "folder",
+              "path": "src/skill_seekers/sync",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/sync/__init__.py",
+                  "size": 999,
+                  "language": "py"
+                },
+                {
+                  "name": "detector.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/sync/detector.py",
+                  "size": 9273,
+                  "language": "py"
+                },
+                {
+                  "name": "models.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/sync/models.py",
+                  "size": 5607,
+                  "language": "py"
+                },
+                {
+                  "name": "monitor.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/sync/monitor.py",
+                  "size": 8483,
+                  "language": "py"
+                },
+                {
+                  "name": "notifier.py",
+                  "type": "file",
+                  "path": "src/skill_seekers/sync/notifier.py",
+                  "size": 4710,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/skill_seekers/__init__.py",
+              "size": 433,
+              "language": "py"
+            },
+            {
+              "name": "_version.py",
+              "type": "file",
+              "path": "src/skill_seekers/_version.py",
+              "size": 1388,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "fixtures",
+          "type": "folder",
+          "path": "tests/fixtures",
+          "children": [
+            {
+              "name": "example_conflicts.json",
+              "type": "file",
+              "path": "tests/fixtures/example_conflicts.json",
+              "size": 3984,
+              "language": "json"
+            }
+          ]
+        },
+        {
+          "name": "test_adaptors",
+          "type": "folder",
+          "path": "tests/test_adaptors",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/test_adaptors/__init__.py",
+              "size": 25,
+              "language": "py"
+            },
+            {
+              "name": "test_adaptors_e2e.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_adaptors_e2e.py",
+              "size": 32648,
+              "language": "py"
+            },
+            {
+              "name": "test_base.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_base.py",
+              "size": 3938,
+              "language": "py"
+            },
+            {
+              "name": "test_chroma_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_chroma_adaptor.py",
+              "size": 6987,
+              "language": "py"
+            },
+            {
+              "name": "test_claude_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_claude_adaptor.py",
+              "size": 12600,
+              "language": "py"
+            },
+            {
+              "name": "test_faiss_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_faiss_adaptor.py",
+              "size": 6846,
+              "language": "py"
+            },
+            {
+              "name": "test_gemini_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_gemini_adaptor.py",
+              "size": 5861,
+              "language": "py"
+            },
+            {
+              "name": "test_haystack_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_haystack_adaptor.py",
+              "size": 6659,
+              "language": "py"
+            },
+            {
+              "name": "test_langchain_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_langchain_adaptor.py",
+              "size": 6657,
+              "language": "py"
+            },
+            {
+              "name": "test_llama_index_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_llama_index_adaptor.py",
+              "size": 6671,
+              "language": "py"
+            },
+            {
+              "name": "test_markdown_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_markdown_adaptor.py",
+              "size": 8995,
+              "language": "py"
+            },
+            {
+              "name": "test_openai_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_openai_adaptor.py",
+              "size": 7725,
+              "language": "py"
+            },
+            {
+              "name": "test_qdrant_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_qdrant_adaptor.py",
+              "size": 6970,
+              "language": "py"
+            },
+            {
+              "name": "test_weaviate_adaptor.py",
+              "type": "file",
+              "path": "tests/test_adaptors/test_weaviate_adaptor.py",
+              "size": 7101,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 33,
+          "language": "py"
+        },
+        {
+          "name": "conftest.py",
+          "type": "file",
+          "path": "tests/conftest.py",
+          "size": 922,
+          "language": "py"
+        },
+        {
+          "name": "docker-compose.test.yml",
+          "type": "file",
+          "path": "tests/docker-compose.test.yml",
+          "size": 1790,
+          "language": "yml"
+        },
+        {
+          "name": "mcp_integration_test.md",
+          "type": "file",
+          "path": "tests/mcp_integration_test.md",
+          "size": 9996,
+          "language": "md"
+        },
+        {
+          "name": "test_adaptor_benchmarks.py",
+          "type": "file",
+          "path": "tests/test_adaptor_benchmarks.py",
+          "size": 13188,
+          "language": "py"
+        },
+        {
+          "name": "test_analyze_command.py",
+          "type": "file",
+          "path": "tests/test_analyze_command.py",
+          "size": 7439,
+          "language": "py"
+        },
+        {
+          "name": "test_analyze_e2e.py",
+          "type": "file",
+          "path": "tests/test_analyze_e2e.py",
+          "size": 12381,
+          "language": "py"
+        },
+        {
+          "name": "test_api_reference_builder.py",
+          "type": "file",
+          "path": "tests/test_api_reference_builder.py",
+          "size": 13519,
+          "language": "py"
+        },
+        {
+          "name": "test_architecture_scenarios.py",
+          "type": "file",
+          "path": "tests/test_architecture_scenarios.py",
+          "size": 35563,
+          "language": "py"
+        },
+        {
+          "name": "test_async_scraping.py",
+          "type": "file",
+          "path": "tests/test_async_scraping.py",
+          "size": 11780,
+          "language": "py"
+        },
+        {
+          "name": "test_benchmark.py",
+          "type": "file",
+          "path": "tests/test_benchmark.py",
+          "size": 19851,
+          "language": "py"
+        },
+        {
+          "name": "test_bootstrap_skill.py",
+          "type": "file",
+          "path": "tests/test_bootstrap_skill.py",
+          "size": 3523,
+          "language": "py"
+        },
+        {
+          "name": "test_bootstrap_skill_e2e.py",
+          "type": "file",
+          "path": "tests/test_bootstrap_skill_e2e.py",
+          "size": 5858,
+          "language": "py"
+        },
+        {
+          "name": "test_c3_integration.py",
+          "type": "file",
+          "path": "tests/test_c3_integration.py",
+          "size": 14629,
+          "language": "py"
+        },
+        {
+          "name": "test_chunking_integration.py",
+          "type": "file",
+          "path": "tests/test_chunking_integration.py",
+          "size": 12248,
+          "language": "py"
+        },
+        {
+          "name": "test_cli_parsers.py",
+          "type": "file",
+          "path": "tests/test_cli_parsers.py",
+          "size": 8873,
+          "language": "py"
+        },
+        {
+          "name": "test_cli_paths.py",
+          "type": "file",
+          "path": "tests/test_cli_paths.py",
+          "size": 7423,
+          "language": "py"
+        },
+        {
+          "name": "test_cloud_storage.py",
+          "type": "file",
+          "path": "tests/test_cloud_storage.py",
+          "size": 17473,
+          "language": "py"
+        },
+        {
+          "name": "test_code_analyzer.py",
+          "type": "file",
+          "path": "tests/test_code_analyzer.py",
+          "size": 36200,
+          "language": "py"
+        },
+        {
+          "name": "test_codebase_scraper.py",
+          "type": "file",
+          "path": "tests/test_codebase_scraper.py",
+          "size": 17100,
+          "language": "py"
+        },
+        {
+          "name": "test_config_extractor.py",
+          "type": "file",
+          "path": "tests/test_config_extractor.py",
+          "size": 21553,
+          "language": "py"
+        },
+        {
+          "name": "test_config_fetcher.py",
+          "type": "file",
+          "path": "tests/test_config_fetcher.py",
+          "size": 12601,
+          "language": "py"
+        },
+        {
+          "name": "test_config_validation.py",
+          "type": "file",
+          "path": "tests/test_config_validation.py",
+          "size": 11861,
+          "language": "py"
+        },
+        {
+          "name": "test_constants.py",
+          "type": "file",
+          "path": "tests/test_constants.py",
+          "size": 6636,
+          "language": "py"
+        },
+        {
+          "name": "test_dependency_analyzer.py",
+          "type": "file",
+          "path": "tests/test_dependency_analyzer.py",
+          "size": 21559,
+          "language": "py"
+        },
+        {
+          "name": "test_e2e_three_stream_pipeline.py",
+          "type": "file",
+          "path": "tests/test_e2e_three_stream_pipeline.py",
+          "size": 21647,
+          "language": "py"
+        },
+        {
+          "name": "test_embedding.py",
+          "type": "file",
+          "path": "tests/test_embedding.py",
+          "size": 10128,
+          "language": "py"
+        },
+        {
+          "name": "test_embedding_pipeline.py",
+          "type": "file",
+          "path": "tests/test_embedding_pipeline.py",
+          "size": 8098,
+          "language": "py"
+        },
+        {
+          "name": "test_enhance_skill_local.py",
+          "type": "file",
+          "path": "tests/test_enhance_skill_local.py",
+          "size": 6413,
+          "language": "py"
+        },
+        {
+          "name": "test_estimate_pages.py",
+          "type": "file",
+          "path": "tests/test_estimate_pages.py",
+          "size": 6826,
+          "language": "py"
+        },
+        {
+          "name": "test_excluded_dirs_config.py",
+          "type": "file",
+          "path": "tests/test_excluded_dirs_config.py",
+          "size": 14560,
+          "language": "py"
+        },
+        {
+          "name": "test_framework_detection.py",
+          "type": "file",
+          "path": "tests/test_framework_detection.py",
+          "size": 6620,
+          "language": "py"
+        },
+        {
+          "name": "test_generate_router_github.py",
+          "type": "file",
+          "path": "tests/test_generate_router_github.py",
+          "size": 19700,
+          "language": "py"
+        },
+        {
+          "name": "test_git_repo.py",
+          "type": "file",
+          "path": "tests/test_git_repo.py",
+          "size": 15514,
+          "language": "py"
+        },
+        {
+          "name": "test_git_sources_e2e.py",
+          "type": "file",
+          "path": "tests/test_git_sources_e2e.py",
+          "size": 31522,
+          "language": "py"
+        },
+        {
+          "name": "test_github_fetcher.py",
+          "type": "file",
+          "path": "tests/test_github_fetcher.py",
+          "size": 16414,
+          "language": "py"
+        },
+        {
+          "name": "test_github_scraper.py",
+          "type": "file",
+          "path": "tests/test_github_scraper.py",
+          "size": 40312,
+          "language": "py"
+        },
+        {
+          "name": "test_guide_enhancer.py",
+          "type": "file",
+          "path": "tests/test_guide_enhancer.py",
+          "size": 22888,
+          "language": "py"
+        },
+        {
+          "name": "test_how_to_guide_builder.py",
+          "type": "file",
+          "path": "tests/test_how_to_guide_builder.py",
+          "size": 41207,
+          "language": "py"
+        },
+        {
+          "name": "test_incremental_updates.py",
+          "type": "file",
+          "path": "tests/test_incremental_updates.py",
+          "size": 10139,
+          "language": "py"
+        },
+        {
+          "name": "test_install_agent.py",
+          "type": "file",
+          "path": "tests/test_install_agent.py",
+          "size": 21095,
+          "language": "py"
+        },
+        {
+          "name": "test_install_multiplatform.py",
+          "type": "file",
+          "path": "tests/test_install_multiplatform.py",
+          "size": 5529,
+          "language": "py"
+        },
+        {
+          "name": "test_install_skill.py",
+          "type": "file",
+          "path": "tests/test_install_skill.py",
+          "size": 13401,
+          "language": "py"
+        },
+        {
+          "name": "test_install_skill_e2e.py",
+          "type": "file",
+          "path": "tests/test_install_skill_e2e.py",
+          "size": 20703,
+          "language": "py"
+        },
+        {
+          "name": "test_integration.py",
+          "type": "file",
+          "path": "tests/test_integration.py",
+          "size": 23555,
+          "language": "py"
+        },
+        {
+          "name": "test_integration_adaptors.py",
+          "type": "file",
+          "path": "tests/test_integration_adaptors.py",
+          "size": 20399,
+          "language": "py"
+        },
+        {
+          "name": "test_issue_219_e2e.py",
+          "type": "file",
+          "path": "tests/test_issue_219_e2e.py",
+          "size": 14510,
+          "language": "py"
+        },
+        {
+          "name": "test_issue_277_real_world.py",
+          "type": "file",
+          "path": "tests/test_issue_277_real_world.py",
+          "size": 10872,
+          "language": "py"
+        },
+        {
+          "name": "test_language_detector.py",
+          "type": "file",
+          "path": "tests/test_language_detector.py",
+          "size": 20738,
+          "language": "py"
+        },
+        {
+          "name": "test_llms_txt_detector.py",
+          "type": "file",
+          "path": "tests/test_llms_txt_detector.py",
+          "size": 2859,
+          "language": "py"
+        },
+        {
+          "name": "test_llms_txt_downloader.py",
+          "type": "file",
+          "path": "tests/test_llms_txt_downloader.py",
+          "size": 10458,
+          "language": "py"
+        },
+        {
+          "name": "test_llms_txt_parser.py",
+          "type": "file",
+          "path": "tests/test_llms_txt_parser.py",
+          "size": 725,
+          "language": "py"
+        },
+        {
+          "name": "test_markdown_parsing.py",
+          "type": "file",
+          "path": "tests/test_markdown_parsing.py",
+          "size": 13167,
+          "language": "py"
+        },
+        {
+          "name": "test_mcp_fastmcp.py",
+          "type": "file",
+          "path": "tests/test_mcp_fastmcp.py",
+          "size": 32926,
+          "language": "py"
+        },
+        {
+          "name": "test_mcp_git_sources.py",
+          "type": "file",
+          "path": "tests/test_mcp_git_sources.py",
+          "size": 21876,
+          "language": "py"
+        },
+        {
+          "name": "test_mcp_server.py",
+          "type": "file",
+          "path": "tests/test_mcp_server.py",
+          "size": 28484,
+          "language": "py"
+        },
+        {
+          "name": "test_mcp_vector_dbs.py",
+          "type": "file",
+          "path": "tests/test_mcp_vector_dbs.py",
+          "size": 7541,
+          "language": "py"
+        },
+        {
+          "name": "test_merge_sources_github.py",
+          "type": "file",
+          "path": "tests/test_merge_sources_github.py",
+          "size": 17880,
+          "language": "py"
+        },
+        {
+          "name": "test_multi_source.py",
+          "type": "file",
+          "path": "tests/test_multi_source.py",
+          "size": 17563,
+          "language": "py"
+        },
+        {
+          "name": "test_multilang_support.py",
+          "type": "file",
+          "path": "tests/test_multilang_support.py",
+          "size": 8850,
+          "language": "py"
+        },
+        {
+          "name": "test_package_skill.py",
+          "type": "file",
+          "path": "tests/test_package_skill.py",
+          "size": 7148,
+          "language": "py"
+        },
+        {
+          "name": "test_package_structure.py",
+          "type": "file",
+          "path": "tests/test_package_structure.py",
+          "size": 9389,
+          "language": "py"
+        },
+        {
+          "name": "test_parallel_scraping.py",
+          "type": "file",
+          "path": "tests/test_parallel_scraping.py",
+          "size": 11885,
+          "language": "py"
+        },
+        {
+          "name": "test_pattern_recognizer.py",
+          "type": "file",
+          "path": "tests/test_pattern_recognizer.py",
+          "size": 16329,
+          "language": "py"
+        },
+        {
+          "name": "test_pdf_advanced_features.py",
+          "type": "file",
+          "path": "tests/test_pdf_advanced_features.py",
+          "size": 18422,
+          "language": "py"
+        },
+        {
+          "name": "test_pdf_extractor.py",
+          "type": "file",
+          "path": "tests/test_pdf_extractor.py",
+          "size": 27696,
+          "language": "py"
+        },
+        {
+          "name": "test_pdf_scraper.py",
+          "type": "file",
+          "path": "tests/test_pdf_scraper.py",
+          "size": 19375,
+          "language": "py"
+        },
+        {
+          "name": "test_pr144_concerns.py",
+          "type": "file",
+          "path": "tests/test_pr144_concerns.py",
+          "size": 5203,
+          "language": "py"
+        },
+        {
+          "name": "test_preset_system.py",
+          "type": "file",
+          "path": "tests/test_preset_system.py",
+          "size": 13327,
+          "language": "py"
+        },
+        {
+          "name": "test_quality_checker.py",
+          "type": "file",
+          "path": "tests/test_quality_checker.py",
+          "size": 14061,
+          "language": "py"
+        },
+        {
+          "name": "test_quality_metrics.py",
+          "type": "file",
+          "path": "tests/test_quality_metrics.py",
+          "size": 9770,
+          "language": "py"
+        },
+        {
+          "name": "test_rag_chunker.py",
+          "type": "file",
+          "path": "tests/test_rag_chunker.py",
+          "size": 13634,
+          "language": "py"
+        },
+        {
+          "name": "test_rate_limit_handler.py",
+          "type": "file",
+          "path": "tests/test_rate_limit_handler.py",
+          "size": 11195,
+          "language": "py"
+        },
+        {
+          "name": "test_real_world_fastmcp.py",
+          "type": "file",
+          "path": "tests/test_real_world_fastmcp.py",
+          "size": 22448,
+          "language": "py"
+        },
+        {
+          "name": "test_scraper_features.py",
+          "type": "file",
+          "path": "tests/test_scraper_features.py",
+          "size": 21976,
+          "language": "py"
+        },
+        {
+          "name": "test_server_fastmcp_http.py",
+          "type": "file",
+          "path": "tests/test_server_fastmcp_http.py",
+          "size": 5327,
+          "language": "py"
+        },
+        {
+          "name": "test_setup_scripts.py",
+          "type": "file",
+          "path": "tests/test_setup_scripts.py",
+          "size": 12347,
+          "language": "py"
+        },
+        {
+          "name": "test_skip_llms_txt.py",
+          "type": "file",
+          "path": "tests/test_skip_llms_txt.py",
+          "size": 12782,
+          "language": "py"
+        },
+        {
+          "name": "test_smart_summarization.py",
+          "type": "file",
+          "path": "tests/test_smart_summarization.py",
+          "size": 8061,
+          "language": "py"
+        },
+        {
+          "name": "test_source_manager.py",
+          "type": "file",
+          "path": "tests/test_source_manager.py",
+          "size": 21436,
+          "language": "py"
+        },
+        {
+          "name": "test_streaming_ingestion.py",
+          "type": "file",
+          "path": "tests/test_streaming_ingestion.py",
+          "size": 8158,
+          "language": "py"
+        },
+        {
+          "name": "test_swift_detection.py",
+          "type": "file",
+          "path": "tests/test_swift_detection.py",
+          "size": 46839,
+          "language": "py"
+        },
+        {
+          "name": "test_terminal_detection.py",
+          "type": "file",
+          "path": "tests/test_terminal_detection.py",
+          "size": 13048,
+          "language": "py"
+        },
+        {
+          "name": "test_test_example_extractor.py",
+          "type": "file",
+          "path": "tests/test_test_example_extractor.py",
+          "size": 23552,
+          "language": "py"
+        },
+        {
+          "name": "test_unified.py",
+          "type": "file",
+          "path": "tests/test_unified.py",
+          "size": 17217,
+          "language": "py"
+        },
+        {
+          "name": "test_unified_analyzer.py",
+          "type": "file",
+          "path": "tests/test_unified_analyzer.py",
+          "size": 17154,
+          "language": "py"
+        },
+        {
+          "name": "test_unified_mcp_integration.py",
+          "type": "file",
+          "path": "tests/test_unified_mcp_integration.py",
+          "size": 6493,
+          "language": "py"
+        },
+        {
+          "name": "test_upload_integration.py",
+          "type": "file",
+          "path": "tests/test_upload_integration.py",
+          "size": 10032,
+          "language": "py"
+        },
+        {
+          "name": "test_upload_skill.py",
+          "type": "file",
+          "path": "tests/test_upload_skill.py",
+          "size": 4908,
+          "language": "py"
+        },
+        {
+          "name": "test_url_conversion.py",
+          "type": "file",
+          "path": "tests/test_url_conversion.py",
+          "size": 9488,
+          "language": "py"
+        },
+        {
+          "name": "test_utilities.py",
+          "type": "file",
+          "path": "tests/test_utilities.py",
+          "size": 11983,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 1207,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 676,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 26230,
+      "language": "md"
+    },
+    {
+      "name": "ALL_PHASES_COMPLETION_SUMMARY.md",
+      "type": "file",
+      "path": "ALL_PHASES_COMPLETION_SUMMARY.md",
+      "size": 16820,
+      "language": "md"
+    },
+    {
+      "name": "BULLETPROOF_QUICKSTART.md",
+      "type": "file",
+      "path": "BULLETPROOF_QUICKSTART.md",
+      "size": 13791,
+      "language": "md"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 119353,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 52000,
+      "language": "md"
+    },
+    {
+      "name": "COMPREHENSIVE_QA_REPORT.md",
+      "type": "file",
+      "path": "COMPREHENSIVE_QA_REPORT.md",
+      "size": 18150,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 12277,
+      "language": "md"
+    },
+    {
+      "name": "demo_conflicts.py",
+      "type": "file",
+      "path": "demo_conflicts.py",
+      "size": 6237,
+      "language": "py"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 2748,
+      "language": "yml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 2239,
+      "language": "text"
+    },
+    {
+      "name": "example-mcp-config.json",
+      "type": "file",
+      "path": "example-mcp-config.json",
+      "size": 299,
+      "language": "json"
+    },
+    {
+      "name": "FINAL_STATUS.md",
+      "type": "file",
+      "path": "FINAL_STATUS.md",
+      "size": 8202,
+      "language": "md"
+    },
+    {
+      "name": "KIMI_QA_FIXES_SUMMARY.md",
+      "type": "file",
+      "path": "KIMI_QA_FIXES_SUMMARY.md",
+      "size": 8757,
+      "language": "md"
+    },
+    {
+      "name": "mypy.ini",
+      "type": "file",
+      "path": "mypy.ini",
+      "size": 334,
+      "language": "ini"
+    },
+    {
+      "name": "PHASE1_COMPLETION_SUMMARY.md",
+      "type": "file",
+      "path": "PHASE1_COMPLETION_SUMMARY.md",
+      "size": 11604,
+      "language": "md"
+    },
+    {
+      "name": "PHASE1B_COMPLETION_SUMMARY.md",
+      "type": "file",
+      "path": "PHASE1B_COMPLETION_SUMMARY.md",
+      "size": 9022,
+      "language": "md"
+    },
+    {
+      "name": "PHASE2_COMPLETION_SUMMARY.md",
+      "type": "file",
+      "path": "PHASE2_COMPLETION_SUMMARY.md",
+      "size": 16706,
+      "language": "md"
+    },
+    {
+      "name": "PHASE3_COMPLETION_SUMMARY.md",
+      "type": "file",
+      "path": "PHASE3_COMPLETION_SUMMARY.md",
+      "size": 17894,
+      "language": "md"
+    },
+    {
+      "name": "PHASE4_COMPLETION_SUMMARY.md",
+      "type": "file",
+      "path": "PHASE4_COMPLETION_SUMMARY.md",
+      "size": 13191,
+      "language": "md"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 9432,
+      "language": "toml"
+    },
+    {
+      "name": "QA_AUDIT_REPORT.md",
+      "type": "file",
+      "path": "QA_AUDIT_REPORT.md",
+      "size": 13281,
+      "language": "md"
+    },
+    {
+      "name": "QA_COMPLETE_REPORT.md",
+      "type": "file",
+      "path": "QA_COMPLETE_REPORT.md",
+      "size": 11591,
+      "language": "md"
+    },
+    {
+      "name": "QA_EXECUTIVE_SUMMARY.md",
+      "type": "file",
+      "path": "QA_EXECUTIVE_SUMMARY.md",
+      "size": 9196,
+      "language": "md"
+    },
+    {
+      "name": "QA_FINAL_UPDATE.md",
+      "type": "file",
+      "path": "QA_FINAL_UPDATE.md",
+      "size": 3908,
+      "language": "md"
+    },
+    {
+      "name": "QA_FIXES_SUMMARY.md",
+      "type": "file",
+      "path": "QA_FIXES_SUMMARY.md",
+      "size": 6198,
+      "language": "md"
+    },
+    {
+      "name": "QA_TEST_FIXES_SUMMARY.md",
+      "type": "file",
+      "path": "QA_TEST_FIXES_SUMMARY.md",
+      "size": 6499,
+      "language": "md"
+    },
+    {
+      "name": "QUICKSTART.md",
+      "type": "file",
+      "path": "QUICKSTART.md",
+      "size": 3942,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 74160,
+      "language": "md"
+    },
+    {
+      "name": "README.zh-CN.md",
+      "type": "file",
+      "path": "README.zh-CN.md",
+      "size": 61115,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE_CONTENT_CHECKLIST.md",
+      "type": "file",
+      "path": "RELEASE_CONTENT_CHECKLIST.md",
+      "size": 9092,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE_CONTENT_CHECKLIST_v3.0.0.md",
+      "type": "file",
+      "path": "RELEASE_CONTENT_CHECKLIST_v3.0.0.md",
+      "size": 27958,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE_EXECUTIVE_SUMMARY.md",
+      "type": "file",
+      "path": "RELEASE_EXECUTIVE_SUMMARY.md",
+      "size": 8423,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE_EXECUTIVE_SUMMARY_v3.0.0.md",
+      "type": "file",
+      "path": "RELEASE_EXECUTIVE_SUMMARY_v3.0.0.md",
+      "size": 13487,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE_PLAN.md",
+      "type": "file",
+      "path": "RELEASE_PLAN.md",
+      "size": 17534,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE_PLAN_v2.11.0.md",
+      "type": "file",
+      "path": "RELEASE_PLAN_v2.11.0.md",
+      "size": 20036,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE_PLAN_v3.0.0.md",
+      "type": "file",
+      "path": "RELEASE_PLAN_v3.0.0.md",
+      "size": 39938,
+      "language": "md"
+    },
+    {
+      "name": "render.yaml",
+      "type": "file",
+      "path": "render.yaml",
+      "size": 468,
+      "language": "yaml"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 850,
+      "language": "txt"
+    },
+    {
+      "name": "ROADMAP.md",
+      "type": "file",
+      "path": "ROADMAP.md",
+      "size": 14674,
+      "language": "md"
+    },
+    {
+      "name": "ruff_errors.txt",
+      "type": "file",
+      "path": "ruff_errors.txt",
+      "size": 19499,
+      "language": "txt"
+    },
+    {
+      "name": "setup.sh",
+      "type": "file",
+      "path": "setup.sh",
+      "size": 21699,
+      "language": "sh"
+    },
+    {
+      "name": "setup_mcp.sh",
+      "type": "file",
+      "path": "setup_mcp.sh",
+      "size": 26406,
+      "language": "sh"
+    },
+    {
+      "name": "test_api.py",
+      "type": "file",
+      "path": "test_api.py",
+      "size": 1187,
+      "language": "py"
+    },
+    {
+      "name": "test_httpx_quick.sh",
+      "type": "file",
+      "path": "test_httpx_quick.sh",
+      "size": 1689,
+      "language": "sh"
+    },
+    {
+      "name": "test_httpx_skill.sh",
+      "type": "file",
+      "path": "test_httpx_skill.sh",
+      "size": 7946,
+      "language": "sh"
+    },
+    {
+      "name": "test_week2_features.py",
+      "type": "file",
+      "path": "test_week2_features.py",
+      "size": 9128,
+      "language": "py"
+    },
+    {
+      "name": "TROUBLESHOOTING.md",
+      "type": "file",
+      "path": "TROUBLESHOOTING.md",
+      "size": 9218,
+      "language": "md"
+    },
+    {
+      "name": "V3_RELEASE_MASTER_PLAN.md",
+      "type": "file",
+      "path": "V3_RELEASE_MASTER_PLAN.md",
+      "size": 19955,
+      "language": "md"
+    },
+    {
+      "name": "V3_RELEASE_SUMMARY.md",
+      "type": "file",
+      "path": "V3_RELEASE_SUMMARY.md",
+      "size": 7307,
+      "language": "md"
+    },
+    {
+      "name": "WEBSITE_HANDOFF_V3.md",
+      "type": "file",
+      "path": "WEBSITE_HANDOFF_V3.md",
+      "size": 17524,
+      "language": "md"
+    }
+  ]
+}

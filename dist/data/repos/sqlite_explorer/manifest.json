@@ -1,0 +1,47 @@
+{
+  "name": "SQLite Explorer",
+  "tree": [
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 19,
+      "language": "text"
+    },
+    {
+      "name": "fastmcp-documentation.txt",
+      "type": "file",
+      "path": "fastmcp-documentation.txt",
+      "size": 122371,
+      "language": "txt"
+    },
+    {
+      "name": "mcp-documentation.txt",
+      "type": "file",
+      "path": "mcp-documentation.txt",
+      "size": 152808,
+      "language": "txt"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 4216,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 14,
+      "language": "txt"
+    },
+    {
+      "name": "sqlite_explorer.py",
+      "type": "file",
+      "path": "sqlite_explorer.py",
+      "size": 5554,
+      "language": "py"
+    }
+  ]
+}

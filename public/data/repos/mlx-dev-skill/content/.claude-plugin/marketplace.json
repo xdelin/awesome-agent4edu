@@ -1,0 +1,18 @@
+{
+  "name": "mlx-dev-skill",
+  "owner": {
+    "name": "tkwn2080",
+    "url": "https://github.com/tkwn2080"
+  },
+  "plugins": [
+    {
+      "name": "mlx-dev",
+      "source": "./",
+      "description": "Claude Code skill for writing idiomatic Apple MLX code on Apple Silicon",
+      "version": "1.0.0",
+      "author": {
+        "name": "tkwn2080"
+      }
+    }
+  ]
+}

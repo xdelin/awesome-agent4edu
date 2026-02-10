@@ -1,0 +1,185 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "resolved": "github:NixOS/nixpkgs/3a05eebede89661660945da1f151959900903b6a?lastModified=1740547748&narHash=sha256-Ly2fBL1LscV%2BKyCqPRufUBuiw%2BzmWrlJzpWOWbahplg%3D"
+    },
+    "nodejs@latest": {
+      "last_modified": "2024-11-22T01:27:12Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/8edf06bea5bcbee082df1b7369ff973b91618b8d#nodejs_23",
+      "source": "devbox-search",
+      "version": "23.2.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2ibv0dpai0wwhwlhcy04y0hllqilawhq-nodejs-23.2.0",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/kw4nx0f5gxp986769fwzvkxj9lh9crxv-nodejs-23.2.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/2ibv0dpai0wwhwlhcy04y0hllqilawhq-nodejs-23.2.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/p4845y5infyxnscwq5xwwisv684gy3rh-nodejs-23.2.0",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/rvw0r6fbk8jr1gja8245ip31vkbjzdn8-nodejs-23.2.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/p4845y5infyxnscwq5xwwisv684gy3rh-nodejs-23.2.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/arw5b6s4sl9af7zcvpjs41qnl24xi80x-nodejs-23.2.0",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/fbyf3510n96ph7liws525zx617jkcvf0-nodejs-23.2.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/arw5b6s4sl9af7zcvpjs41qnl24xi80x-nodejs-23.2.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nsc1zfr2q3z2dp0c3vlip7lhkjckafk8-nodejs-23.2.0",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/v1j4ab0j2c8w3pk67p6lv8y19ika7rig-nodejs-23.2.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/nsc1zfr2q3z2dp0c3vlip7lhkjckafk8-nodejs-23.2.0"
+        }
+      }
+    },
+    "taplo@latest": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#taplo",
+      "source": "devbox-search",
+      "version": "0.9.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nzb1qgckvmdq9algzjcagb4yvckhdzhn-taplo-0.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nzb1qgckvmdq9algzjcagb4yvckhdzhn-taplo-0.9.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zbmmhr4l3g6ha7wlybcf9i15y33ilfhy-taplo-0.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zbmmhr4l3g6ha7wlybcf9i15y33ilfhy-taplo-0.9.3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/bh5inhsv74cymlcyddb3a4ylk3g8vz26-taplo-0.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/bh5inhsv74cymlcyddb3a4ylk3g8vz26-taplo-0.9.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gc4rj634xf8bk5m2s44mf1qp3hiyj93k-taplo-0.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/gc4rj634xf8bk5m2s44mf1qp3hiyj93k-taplo-0.9.3"
+        }
+      }
+    },
+    "uv@latest": {
+      "last_modified": "2024-11-28T07:51:56Z",
+      "resolved": "github:NixOS/nixpkgs/226216574ada4c3ecefcbbec41f39ce4655f78ef#uv",
+      "source": "devbox-search",
+      "version": "0.4.30",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yvdr8x3lfq0m669l7vznyjg51259vzl4-uv-0.4.30",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/fkyqi24vxxcz8q1q312d0a4nv7ch391m-uv-0.4.30-dist"
+            }
+          ],
+          "store_path": "/nix/store/yvdr8x3lfq0m669l7vznyjg51259vzl4-uv-0.4.30"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/d21lwf3jwshn24krhsfmwxslxwikyw8k-uv-0.4.30",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/8azyzcr9la6w8598m1bn3rx5ql148iqq-uv-0.4.30-dist"
+            }
+          ],
+          "store_path": "/nix/store/d21lwf3jwshn24krhsfmwxslxwikyw8k-uv-0.4.30"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/534fmkacb1qxw4mv0zqjm7hh732ip4fi-uv-0.4.30",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/r5fk3v7s1fm82hsblajmh2j1cp317bz5-uv-0.4.30-dist"
+            }
+          ],
+          "store_path": "/nix/store/534fmkacb1qxw4mv0zqjm7hh732ip4fi-uv-0.4.30"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/plgmjfks0wb6v307dixvvcq5w4vldjzz-uv-0.4.30",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/ys3ydh0p7ir68m81v3yqyh4aqjpyk1rb-uv-0.4.30-dist"
+            }
+          ],
+          "store_path": "/nix/store/plgmjfks0wb6v307dixvvcq5w4vldjzz-uv-0.4.30"
+        }
+      }
+    }
+  }
+}

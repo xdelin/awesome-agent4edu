@@ -1,0 +1,355 @@
+{
+  "name": "LeetCode MCP",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "common",
+          "type": "folder",
+          "path": "src/common",
+          "children": [
+            {
+              "name": "constants.ts",
+              "type": "file",
+              "path": "src/common/constants.ts",
+              "size": 2591,
+              "language": "ts"
+            },
+            {
+              "name": "registry-base.ts",
+              "type": "file",
+              "path": "src/common/registry-base.ts",
+              "size": 3992,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "leetcode",
+          "type": "folder",
+          "path": "src/leetcode",
+          "children": [
+            {
+              "name": "graphql",
+              "type": "folder",
+              "path": "src/leetcode/graphql",
+              "children": [
+                {
+                  "name": "cn",
+                  "type": "folder",
+                  "path": "src/leetcode/graphql/cn",
+                  "children": [
+                    {
+                      "name": "note-queries.ts",
+                      "type": "file",
+                      "path": "src/leetcode/graphql/cn/note-queries.ts",
+                      "size": 2836,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "search-problems.ts",
+                      "type": "file",
+                      "path": "src/leetcode/graphql/cn/search-problems.ts",
+                      "size": 738,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "solution-article-detail.ts",
+                      "type": "file",
+                      "path": "src/leetcode/graphql/cn/solution-article-detail.ts",
+                      "size": 420,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "solution-articles.ts",
+                      "type": "file",
+                      "path": "src/leetcode/graphql/cn/solution-articles.ts",
+                      "size": 755,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "global",
+                  "type": "folder",
+                  "path": "src/leetcode/graphql/global",
+                  "children": [
+                    {
+                      "name": "search-problems.ts",
+                      "type": "file",
+                      "path": "src/leetcode/graphql/global/search-problems.ts",
+                      "size": 708,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "solution-article-detail.ts",
+                      "type": "file",
+                      "path": "src/leetcode/graphql/global/solution-article-detail.ts",
+                      "size": 488,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "solution-articles.ts",
+                      "type": "file",
+                      "path": "src/leetcode/graphql/global/solution-articles.ts",
+                      "size": 902,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "leetcode-base-service.ts",
+              "type": "file",
+              "path": "src/leetcode/leetcode-base-service.ts",
+              "size": 9949,
+              "language": "ts"
+            },
+            {
+              "name": "leetcode-cn-service.ts",
+              "type": "file",
+              "path": "src/leetcode/leetcode-cn-service.ts",
+              "size": 18585,
+              "language": "ts"
+            },
+            {
+              "name": "leetcode-global-service.ts",
+              "type": "file",
+              "path": "src/leetcode/leetcode-global-service.ts",
+              "size": 14134,
+              "language": "ts"
+            },
+            {
+              "name": "leetcode-service-factory.ts",
+              "type": "file",
+              "path": "src/leetcode/leetcode-service-factory.ts",
+              "size": 1792,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "mcp",
+          "type": "folder",
+          "path": "src/mcp",
+          "children": [
+            {
+              "name": "resources",
+              "type": "folder",
+              "path": "src/mcp/resources",
+              "children": [
+                {
+                  "name": "problem-resources.ts",
+                  "type": "file",
+                  "path": "src/mcp/resources/problem-resources.ts",
+                  "size": 5926,
+                  "language": "ts"
+                },
+                {
+                  "name": "resource-registry.ts",
+                  "type": "file",
+                  "path": "src/mcp/resources/resource-registry.ts",
+                  "size": 1171,
+                  "language": "ts"
+                },
+                {
+                  "name": "solution-resources.ts",
+                  "type": "file",
+                  "path": "src/mcp/resources/solution-resources.ts",
+                  "size": 5177,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "src/mcp/tools",
+              "children": [
+                {
+                  "name": "contest-tools.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/contest-tools.ts",
+                  "size": 3097,
+                  "language": "ts"
+                },
+                {
+                  "name": "note-tools.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/note-tools.ts",
+                  "size": 10866,
+                  "language": "ts"
+                },
+                {
+                  "name": "problem-tools.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/problem-tools.ts",
+                  "size": 5849,
+                  "language": "ts"
+                },
+                {
+                  "name": "solution-tools.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/solution-tools.ts",
+                  "size": 14109,
+                  "language": "ts"
+                },
+                {
+                  "name": "tool-registry.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/tool-registry.ts",
+                  "size": 1240,
+                  "language": "ts"
+                },
+                {
+                  "name": "user-tools.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/user-tools.ts",
+                  "size": 20536,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/utils/logger.ts",
+              "size": 323,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 3985,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "services",
+          "type": "folder",
+          "path": "tests/services",
+          "children": [
+            {
+              "name": "problem-services.test.ts",
+              "type": "file",
+              "path": "tests/services/problem-services.test.ts",
+              "size": 4508,
+              "language": "ts"
+            },
+            {
+              "name": "solution-services.test.ts",
+              "type": "file",
+              "path": "tests/services/solution-services.test.ts",
+              "size": 7155,
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 1260,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 848,
+      "language": "text"
+    },
+    {
+      "name": "eslint.config.js",
+      "type": "file",
+      "path": "eslint.config.js",
+      "size": 1010,
+      "language": "js"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1083,
+      "language": "text"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 223785,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2186,
+      "language": "json"
+    },
+    {
+      "name": "prettier.config.js",
+      "type": "file",
+      "path": "prettier.config.js",
+      "size": 364,
+      "language": "js"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 15787,
+      "language": "md"
+    },
+    {
+      "name": "README_zh-CN.md",
+      "type": "file",
+      "path": "README_zh-CN.md",
+      "size": 14416,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 1142,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 506,
+      "language": "json"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 200,
+      "language": "ts"
+    }
+  ]
+}

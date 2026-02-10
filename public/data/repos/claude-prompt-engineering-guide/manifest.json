@@ -1,0 +1,467 @@
+{
+  "name": "claude-prompt-engineering-guide",
+  "tree": [
+    {
+      "name": ".claude",
+      "type": "folder",
+      "path": ".claude",
+      "children": [
+        {
+          "name": "settings.local.json",
+          "type": "file",
+          "path": ".claude/settings.local.json",
+          "size": 317,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "examples",
+          "type": "folder",
+          "path": "docs/examples",
+          "children": [
+            {
+              "name": "business-analysis.md",
+              "type": "file",
+              "path": "docs/examples/business-analysis.md",
+              "size": 11238,
+              "language": "md"
+            },
+            {
+              "name": "coding-tasks.md",
+              "type": "file",
+              "path": "docs/examples/coding-tasks.md",
+              "size": 8510,
+              "language": "md"
+            },
+            {
+              "name": "document-creation.md",
+              "type": "file",
+              "path": "docs/examples/document-creation.md",
+              "size": 12618,
+              "language": "md"
+            },
+            {
+              "name": "research-tasks.md",
+              "type": "file",
+              "path": "docs/examples/research-tasks.md",
+              "size": 11615,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "api-guide.md",
+          "type": "file",
+          "path": "docs/api-guide.md",
+          "size": 12967,
+          "language": "md"
+        },
+        {
+          "name": "claude-code-guide.md",
+          "type": "file",
+          "path": "docs/claude-code-guide.md",
+          "size": 19797,
+          "language": "md"
+        },
+        {
+          "name": "cowork-guide.md",
+          "type": "file",
+          "path": "docs/cowork-guide.md",
+          "size": 9642,
+          "language": "md"
+        },
+        {
+          "name": "ecosystem-market-analysis.md",
+          "type": "file",
+          "path": "docs/ecosystem-market-analysis.md",
+          "size": 12669,
+          "language": "md"
+        },
+        {
+          "name": "healthcare-compliance.md",
+          "type": "file",
+          "path": "docs/healthcare-compliance.md",
+          "size": 10654,
+          "language": "md"
+        },
+        {
+          "name": "mcp-ecosystem-overview.md",
+          "type": "file",
+          "path": "docs/mcp-ecosystem-overview.md",
+          "size": 19625,
+          "language": "md"
+        },
+        {
+          "name": "mcp-integration.md",
+          "type": "file",
+          "path": "docs/mcp-integration.md",
+          "size": 17174,
+          "language": "md"
+        },
+        {
+          "name": "motion-graphics-claude-remotion-guide.md",
+          "type": "file",
+          "path": "docs/motion-graphics-claude-remotion-guide.md",
+          "size": 32717,
+          "language": "md"
+        },
+        {
+          "name": "pricing-comparison-jan-2026.md",
+          "type": "file",
+          "path": "docs/pricing-comparison-jan-2026.md",
+          "size": 14505,
+          "language": "md"
+        },
+        {
+          "name": "quick-start.md",
+          "type": "file",
+          "path": "docs/quick-start.md",
+          "size": 8664,
+          "language": "md"
+        },
+        {
+          "name": "research-opencode-clawbot-jan-2026.md",
+          "type": "file",
+          "path": "docs/research-opencode-clawbot-jan-2026.md",
+          "size": 19068,
+          "language": "md"
+        },
+        {
+          "name": "research-report-jan-2026.md",
+          "type": "file",
+          "path": "docs/research-report-jan-2026.md",
+          "size": 22926,
+          "language": "md"
+        },
+        {
+          "name": "skills-guide.md",
+          "type": "file",
+          "path": "docs/skills-guide.md",
+          "size": 19903,
+          "language": "md"
+        },
+        {
+          "name": "superpowers-guide.md",
+          "type": "file",
+          "path": "docs/superpowers-guide.md",
+          "size": 10413,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "planning",
+      "type": "folder",
+      "path": "planning",
+      "children": [
+        {
+          "name": "activity.md",
+          "type": "file",
+          "path": "planning/activity.md",
+          "size": 2438,
+          "language": "md"
+        },
+        {
+          "name": "progress.md",
+          "type": "file",
+          "path": "planning/progress.md",
+          "size": 1893,
+          "language": "md"
+        },
+        {
+          "name": "task.md",
+          "type": "file",
+          "path": "planning/task.md",
+          "size": 1818,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "examples",
+          "type": "folder",
+          "path": "skills/examples",
+          "children": [
+            {
+              "name": "accessibility-ux.md",
+              "type": "file",
+              "path": "skills/examples/accessibility-ux.md",
+              "size": 10611,
+              "language": "md"
+            },
+            {
+              "name": "api-development-skill.md",
+              "type": "file",
+              "path": "skills/examples/api-development-skill.md",
+              "size": 10734,
+              "language": "md"
+            },
+            {
+              "name": "aws-cloud-infrastructure-skill.md",
+              "type": "file",
+              "path": "skills/examples/aws-cloud-infrastructure-skill.md",
+              "size": 10552,
+              "language": "md"
+            },
+            {
+              "name": "code-review.md",
+              "type": "file",
+              "path": "skills/examples/code-review.md",
+              "size": 9940,
+              "language": "md"
+            },
+            {
+              "name": "database-migrations.md",
+              "type": "file",
+              "path": "skills/examples/database-migrations.md",
+              "size": 10798,
+              "language": "md"
+            },
+            {
+              "name": "example-feedback-analyzer.md",
+              "type": "file",
+              "path": "skills/examples/example-feedback-analyzer.md",
+              "size": 10789,
+              "language": "md"
+            },
+            {
+              "name": "git-workflow-skill.md",
+              "type": "file",
+              "path": "skills/examples/git-workflow-skill.md",
+              "size": 10316,
+              "language": "md"
+            },
+            {
+              "name": "google-cloud-platform-skill.md",
+              "type": "file",
+              "path": "skills/examples/google-cloud-platform-skill.md",
+              "size": 13138,
+              "language": "md"
+            },
+            {
+              "name": "monitoring-logging-skill.md",
+              "type": "file",
+              "path": "skills/examples/monitoring-logging-skill.md",
+              "size": 12424,
+              "language": "md"
+            },
+            {
+              "name": "neon-serverless-skill.md",
+              "type": "file",
+              "path": "skills/examples/neon-serverless-skill.md",
+              "size": 10522,
+              "language": "md"
+            },
+            {
+              "name": "nextauth-authentication-skill.md",
+              "type": "file",
+              "path": "skills/examples/nextauth-authentication-skill.md",
+              "size": 12462,
+              "language": "md"
+            },
+            {
+              "name": "nextjs-app-router-skill.md",
+              "type": "file",
+              "path": "skills/examples/nextjs-app-router-skill.md",
+              "size": 13164,
+              "language": "md"
+            },
+            {
+              "name": "performance-optimization-skill.md",
+              "type": "file",
+              "path": "skills/examples/performance-optimization-skill.md",
+              "size": 9942,
+              "language": "md"
+            },
+            {
+              "name": "playwright-e2e-testing-skill.md",
+              "type": "file",
+              "path": "skills/examples/playwright-e2e-testing-skill.md",
+              "size": 12637,
+              "language": "md"
+            },
+            {
+              "name": "prisma-orm-skill.md",
+              "type": "file",
+              "path": "skills/examples/prisma-orm-skill.md",
+              "size": 11161,
+              "language": "md"
+            },
+            {
+              "name": "security-compliance.md",
+              "type": "file",
+              "path": "skills/examples/security-compliance.md",
+              "size": 10096,
+              "language": "md"
+            },
+            {
+              "name": "seo-optimization-skill.md",
+              "type": "file",
+              "path": "skills/examples/seo-optimization-skill.md",
+              "size": 11783,
+              "language": "md"
+            },
+            {
+              "name": "tailwind-design-system-skill.md",
+              "type": "file",
+              "path": "skills/examples/tailwind-design-system-skill.md",
+              "size": 11744,
+              "language": "md"
+            },
+            {
+              "name": "testing-skill.md",
+              "type": "file",
+              "path": "skills/examples/testing-skill.md",
+              "size": 11433,
+              "language": "md"
+            },
+            {
+              "name": "typescript-standards.md",
+              "type": "file",
+              "path": "skills/examples/typescript-standards.md",
+              "size": 13016,
+              "language": "md"
+            },
+            {
+              "name": "vercel-deployment-skill.md",
+              "type": "file",
+              "path": "skills/examples/vercel-deployment-skill.md",
+              "size": 11299,
+              "language": "md"
+            },
+            {
+              "name": "vitest-unit-testing-skill.md",
+              "type": "file",
+              "path": "skills/examples/vitest-unit-testing-skill.md",
+              "size": 9568,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "README.ja.md",
+          "type": "file",
+          "path": "skills/README.ja.md",
+          "size": 18522,
+          "language": "md"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "skills/README.md",
+          "size": 15370,
+          "language": "md"
+        },
+        {
+          "name": "README.zh-CN.md",
+          "type": "file",
+          "path": "skills/README.zh-CN.md",
+          "size": 14020,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "type": "folder",
+      "path": "templates",
+      "children": [
+        {
+          "name": "comprehensive-prompt-template.md",
+          "type": "file",
+          "path": "templates/comprehensive-prompt-template.md",
+          "size": 10785,
+          "language": "md"
+        },
+        {
+          "name": "example-clauderules.md",
+          "type": "file",
+          "path": "templates/example-clauderules.md",
+          "size": 10222,
+          "language": "md"
+        },
+        {
+          "name": "minimal-prompt-template.md",
+          "type": "file",
+          "path": "templates/minimal-prompt-template.md",
+          "size": 2527,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 866,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 19141,
+      "language": "md"
+    },
+    {
+      "name": "Claude-Prompt-Guide.md",
+      "type": "file",
+      "path": "Claude-Prompt-Guide.md",
+      "size": 47572,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 10744,
+      "language": "md"
+    },
+    {
+      "name": "INDEX.md",
+      "type": "file",
+      "path": "INDEX.md",
+      "size": 7720,
+      "language": "md"
+    },
+    {
+      "name": "MIGRATION-NOV2025-JAN2026.md",
+      "type": "file",
+      "path": "MIGRATION-NOV2025-JAN2026.md",
+      "size": 11683,
+      "language": "md"
+    },
+    {
+      "name": "README.ja.md",
+      "type": "file",
+      "path": "README.ja.md",
+      "size": 22235,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 21744,
+      "language": "md"
+    },
+    {
+      "name": "README.zh-CN.md",
+      "type": "file",
+      "path": "README.zh-CN.md",
+      "size": 16716,
+      "language": "md"
+    }
+  ]
+}

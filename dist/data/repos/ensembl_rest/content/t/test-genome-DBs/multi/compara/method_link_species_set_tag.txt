@@ -1,0 +1,41 @@
+635	ensembl_release	71
+635	max_align	30210
+635	non_reference_species	taeniopygia_guttata
+635	non_ref_coding_exon_length	23643636
+635	non_ref_dna_collection	{"chunk_size" => 10100000,"group_set_size" => 10100000,"masking_options" => "{default_soft_masking => 1}","overlap" => 100000}
+635	non_ref_genome_coverage	733967197
+635	non_ref_genome_length	1233186341
+635	non_ref_insertions	80844
+635	non_ref_matches	18445003
+635	non_ref_mis_matches	2542393
+635	non_ref_uncovered	2575396
+635	num_blocks	815468
+635	param	T=1 K=3000 M=50 L=3000 H=2200 O=400 E=30 --ambiguous=iupac
+635	reference_species	gallus_gallus
+635	ref_coding_exon_length	25934237
+635	ref_dna_collection	{"chunk_size" => 10000000,"masking_options" => "{default_soft_masking => 1}","overlap" => 0}
+635	ref_genome_coverage	752010294
+635	ref_genome_length	1046932099
+635	ref_insertions	170175
+635	ref_matches	20810574
+635	ref_mis_matches	3245599
+635	ref_uncovered	1707889
+641	max_align	880893
+641	species_tree	((Meleagris_gallopavo:0.0414,Gallus_gallus:0.0414):0.1242,Taeniopygia_guttata:0.1715);
+641	taxon_tree	((99*,100*)98,102*)96;
+642	max_align	2001
+642	msa_mlss_id	641
+641	ensembl_release	71
+641	num_blocks	10952
+635	num_chains_blocks_100	1
+635	num_chains_blocks_1000	1
+635	totlength_chains_blocks_100	917
+635	totlength_chains_blocks_1000	1613
+635	num_nets_blocks_100	1
+635	num_nets_blocks_1000	1
+635	totlength_nets_blocks_100	917
+635	totlength_nets_blocks_1000	1613
+641	num_blocks_1000	2
+641	num_blocks_10000	2
+641	totlength_blocks_1000	12768
+641	totlength_blocks_10000	61102

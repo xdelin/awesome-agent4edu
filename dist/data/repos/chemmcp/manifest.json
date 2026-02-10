@@ -1,0 +1,1244 @@
+{
+  "name": "ChemMCP",
+  "tree": [
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "scripts/__init__.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "generate_tool_envs.py",
+          "type": "file",
+          "path": "scripts/generate_tool_envs.py",
+          "size": 1763,
+          "language": "py"
+        },
+        {
+          "name": "generate_tools_doc.py",
+          "type": "file",
+          "path": "scripts/generate_tools_doc.py",
+          "size": 14705,
+          "language": "py"
+        },
+        {
+          "name": "modules_utils.py",
+          "type": "file",
+          "path": "scripts/modules_utils.py",
+          "size": 1633,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "site",
+      "type": "folder",
+      "path": "site",
+      "children": [
+        {
+          "name": "archetypes",
+          "type": "folder",
+          "path": "site/archetypes",
+          "children": [
+            {
+              "name": "default.md",
+              "type": "file",
+              "path": "site/archetypes/default.md",
+              "size": 90,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "assets",
+          "type": "folder",
+          "path": "site/assets",
+          "children": [
+            {
+              "name": "img",
+              "type": "folder",
+              "path": "site/assets/img",
+              "children": [
+                {
+                  "name": "background.svg",
+                  "type": "file",
+                  "path": "site/assets/img/background.svg",
+                  "size": 128,
+                  "language": "svg"
+                },
+                {
+                  "name": "bubble_background.svg",
+                  "type": "file",
+                  "path": "site/assets/img/bubble_background.svg",
+                  "size": 205147,
+                  "language": "svg"
+                },
+                {
+                  "name": "icon_logo.svg",
+                  "type": "file",
+                  "path": "site/assets/img/icon_logo.svg",
+                  "size": 11949,
+                  "language": "svg"
+                },
+                {
+                  "name": "icon_logo_white.svg",
+                  "type": "file",
+                  "path": "site/assets/img/icon_logo_white.svg",
+                  "size": 11949,
+                  "language": "svg"
+                },
+                {
+                  "name": "icon_text_logo.png",
+                  "type": "file",
+                  "path": "site/assets/img/icon_text_logo.png",
+                  "size": 41117,
+                  "language": "png"
+                },
+                {
+                  "name": "icon_text_logo.svg",
+                  "type": "file",
+                  "path": "site/assets/img/icon_text_logo.svg",
+                  "size": 12437,
+                  "language": "svg"
+                },
+                {
+                  "name": "osunlp_logo.jpg",
+                  "type": "file",
+                  "path": "site/assets/img/osunlp_logo.jpg",
+                  "size": 12368,
+                  "language": "jpg"
+                },
+                {
+                  "name": "text_logo.svg",
+                  "type": "file",
+                  "path": "site/assets/img/text_logo.svg",
+                  "size": 403,
+                  "language": "svg"
+                }
+              ]
+            },
+            {
+              "name": "js",
+              "type": "folder",
+              "path": "site/assets/js",
+              "children": [
+                {
+                  "name": "home.js",
+                  "type": "file",
+                  "path": "site/assets/js/home.js",
+                  "size": 1932,
+                  "language": "js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "config",
+          "type": "folder",
+          "path": "site/config",
+          "children": [
+            {
+              "name": "_default",
+              "type": "folder",
+              "path": "site/config/_default",
+              "children": [
+                {
+                  "name": "hugo.toml",
+                  "type": "file",
+                  "path": "site/config/_default/hugo.toml",
+                  "size": 1574,
+                  "language": "toml"
+                },
+                {
+                  "name": "languages.en.toml",
+                  "type": "file",
+                  "path": "site/config/_default/languages.en.toml",
+                  "size": 670,
+                  "language": "toml"
+                },
+                {
+                  "name": "markup.toml",
+                  "type": "file",
+                  "path": "site/config/_default/markup.toml",
+                  "size": 217,
+                  "language": "toml"
+                },
+                {
+                  "name": "menus.en.toml",
+                  "type": "file",
+                  "path": "site/config/_default/menus.en.toml",
+                  "size": 1951,
+                  "language": "toml"
+                },
+                {
+                  "name": "module.toml",
+                  "type": "file",
+                  "path": "site/config/_default/module.toml",
+                  "size": 53,
+                  "language": "toml"
+                },
+                {
+                  "name": "params.toml",
+                  "type": "file",
+                  "path": "site/config/_default/params.toml",
+                  "size": 4381,
+                  "language": "toml"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "content",
+          "type": "folder",
+          "path": "site/content",
+          "children": [
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "site/content/tools",
+              "children": [
+                {
+                  "name": "_index.md",
+                  "type": "file",
+                  "path": "site/content/tools/_index.md",
+                  "size": 535,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "_index.md",
+              "type": "file",
+              "path": "site/content/_index.md",
+              "size": 868,
+              "language": "md"
+            },
+            {
+              "name": "dev-guide.md",
+              "type": "file",
+              "path": "site/content/dev-guide.md",
+              "size": 9648,
+              "language": "md"
+            },
+            {
+              "name": "get-started.md",
+              "type": "file",
+              "path": "site/content/get-started.md",
+              "size": 6950,
+              "language": "md"
+            },
+            {
+              "name": "quick-config.md",
+              "type": "file",
+              "path": "site/content/quick-config.md",
+              "size": 82,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "layouts",
+          "type": "folder",
+          "path": "site/layouts",
+          "children": [
+            {
+              "name": "partials",
+              "type": "folder",
+              "path": "site/layouts/partials",
+              "children": [
+                {
+                  "name": "header",
+                  "type": "folder",
+                  "path": "site/layouts/partials/header",
+                  "children": [
+                    {
+                      "name": "basic.html",
+                      "type": "file",
+                      "path": "site/layouts/partials/header/basic.html",
+                      "size": 7842,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "home",
+                  "type": "folder",
+                  "path": "site/layouts/partials/home",
+                  "children": [
+                    {
+                      "name": "custom.html",
+                      "type": "file",
+                      "path": "site/layouts/partials/home/custom.html",
+                      "size": 17312,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "quick-config",
+                  "type": "folder",
+                  "path": "site/layouts/partials/quick-config",
+                  "children": [
+                    {
+                      "name": "custom.html",
+                      "type": "file",
+                      "path": "site/layouts/partials/quick-config/custom.html",
+                      "size": 17655,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "extend-footer.html",
+                  "type": "file",
+                  "path": "site/layouts/partials/extend-footer.html",
+                  "size": 50,
+                  "language": "html"
+                },
+                {
+                  "name": "footer.html",
+                  "type": "file",
+                  "path": "site/layouts/partials/footer.html",
+                  "size": 5043,
+                  "language": "html"
+                },
+                {
+                  "name": "recent-articles-demo.html",
+                  "type": "file",
+                  "path": "site/layouts/partials/recent-articles-demo.html",
+                  "size": 1822,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "quick-config",
+              "type": "folder",
+              "path": "site/layouts/quick-config",
+              "children": [
+                {
+                  "name": "single.html",
+                  "type": "file",
+                  "path": "site/layouts/quick-config/single.html",
+                  "size": 77,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "shortcodes",
+              "type": "folder",
+              "path": "site/layouts/shortcodes",
+              "children": [
+                {
+                  "name": "tools-directory.html",
+                  "type": "file",
+                  "path": "site/layouts/shortcodes/tools-directory.html",
+                  "size": 19009,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "site/layouts/tools",
+              "children": [
+                {
+                  "name": "list.html",
+                  "type": "file",
+                  "path": "site/layouts/tools/list.html",
+                  "size": 961,
+                  "language": "html"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "static",
+          "type": "folder",
+          "path": "site/static",
+          "children": [
+            {
+              "name": "android-chrome-192x192.png",
+              "type": "file",
+              "path": "site/static/android-chrome-192x192.png",
+              "size": 11587,
+              "language": "png"
+            },
+            {
+              "name": "android-chrome-512x512.png",
+              "type": "file",
+              "path": "site/static/android-chrome-512x512.png",
+              "size": 32075,
+              "language": "png"
+            },
+            {
+              "name": "apple-touch-icon.png",
+              "type": "file",
+              "path": "site/static/apple-touch-icon.png",
+              "size": 10264,
+              "language": "png"
+            },
+            {
+              "name": "favicon-16x16.png",
+              "type": "file",
+              "path": "site/static/favicon-16x16.png",
+              "size": 471,
+              "language": "png"
+            },
+            {
+              "name": "favicon-32x32.png",
+              "type": "file",
+              "path": "site/static/favicon-32x32.png",
+              "size": 1163,
+              "language": "png"
+            },
+            {
+              "name": "favicon.ico",
+              "type": "file",
+              "path": "site/static/favicon.ico",
+              "size": 15406,
+              "language": "ico"
+            }
+          ]
+        },
+        {
+          "name": "hugo.toml",
+          "type": "file",
+          "path": "site/hugo.toml",
+          "size": 86,
+          "language": "toml"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "chemmcp",
+          "type": "folder",
+          "path": "src/chemmcp",
+          "children": [
+            {
+              "name": "tool_utils",
+              "type": "folder",
+              "path": "src/chemmcp/tool_utils",
+              "children": [
+                {
+                  "name": "property_prediction",
+                  "type": "folder",
+                  "path": "src/chemmcp/tool_utils/property_prediction",
+                  "children": [
+                    {
+                      "name": "data",
+                      "type": "folder",
+                      "path": "src/chemmcp/tool_utils/property_prediction/data",
+                      "children": [
+                        {
+                          "name": "dict.txt",
+                          "type": "file",
+                          "path": "src/chemmcp/tool_utils/property_prediction/data/dict.txt",
+                          "size": 120,
+                          "language": "txt"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "unimol",
+                      "type": "folder",
+                      "path": "src/chemmcp/tool_utils/property_prediction/unimol",
+                      "children": [
+                        {
+                          "name": "data",
+                          "type": "folder",
+                          "path": "src/chemmcp/tool_utils/property_prediction/unimol/data",
+                          "children": [
+                            {
+                              "name": "__init__.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/__init__.py",
+                              "size": 1318,
+                              "language": "py"
+                            },
+                            {
+                              "name": "add_2d_conformer_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/add_2d_conformer_dataset.py",
+                              "size": 1572,
+                              "language": "py"
+                            },
+                            {
+                              "name": "atom_type_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/atom_type_dataset.py",
+                              "size": 1128,
+                              "language": "py"
+                            },
+                            {
+                              "name": "conformer_sample_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/conformer_sample_dataset.py",
+                              "size": 10315,
+                              "language": "py"
+                            },
+                            {
+                              "name": "coord_pad_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/coord_pad_dataset.py",
+                              "size": 2701,
+                              "language": "py"
+                            },
+                            {
+                              "name": "cropping_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/cropping_dataset.py",
+                              "size": 8136,
+                              "language": "py"
+                            },
+                            {
+                              "name": "data_utils.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/data_utils.py",
+                              "size": 654,
+                              "language": "py"
+                            },
+                            {
+                              "name": "distance_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/distance_dataset.py",
+                              "size": 1632,
+                              "language": "py"
+                            },
+                            {
+                              "name": "from_str_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/from_str_dataset.py",
+                              "size": 478,
+                              "language": "py"
+                            },
+                            {
+                              "name": "key_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/key_dataset.py",
+                              "size": 543,
+                              "language": "py"
+                            },
+                            {
+                              "name": "lmdb_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/lmdb_dataset.py",
+                              "size": 1361,
+                              "language": "py"
+                            },
+                            {
+                              "name": "mask_points_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/mask_points_dataset.py",
+                              "size": 10208,
+                              "language": "py"
+                            },
+                            {
+                              "name": "normalize_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/normalize_dataset.py",
+                              "size": 2522,
+                              "language": "py"
+                            },
+                            {
+                              "name": "prepend_and_append_2d_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/prepend_and_append_2d_dataset.py",
+                              "size": 769,
+                              "language": "py"
+                            },
+                            {
+                              "name": "remove_hydrogen_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/remove_hydrogen_dataset.py",
+                              "size": 5105,
+                              "language": "py"
+                            },
+                            {
+                              "name": "tta_dataset.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/data/tta_dataset.py",
+                              "size": 3881,
+                              "language": "py"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "losses",
+                          "type": "folder",
+                          "path": "src/chemmcp/tool_utils/property_prediction/unimol/losses",
+                          "children": [
+                            {
+                              "name": "__init__.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/losses/__init__.py",
+                              "size": 280,
+                              "language": "py"
+                            },
+                            {
+                              "name": "conf_gen.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/losses/conf_gen.py",
+                              "size": 5919,
+                              "language": "py"
+                            },
+                            {
+                              "name": "cross_entropy.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/losses/cross_entropy.py",
+                              "size": 12612,
+                              "language": "py"
+                            },
+                            {
+                              "name": "docking_pose.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/losses/docking_pose.py",
+                              "size": 4728,
+                              "language": "py"
+                            },
+                            {
+                              "name": "reg_loss.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/losses/reg_loss.py",
+                              "size": 11611,
+                              "language": "py"
+                            },
+                            {
+                              "name": "unimol.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/losses/unimol.py",
+                              "size": 8801,
+                              "language": "py"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "models",
+                          "type": "folder",
+                          "path": "src/chemmcp/tool_utils/property_prediction/unimol/models",
+                          "children": [
+                            {
+                              "name": "__init__.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/models/__init__.py",
+                              "size": 186,
+                              "language": "py"
+                            },
+                            {
+                              "name": "conf_gen.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/models/conf_gen.py",
+                              "size": 6696,
+                              "language": "py"
+                            },
+                            {
+                              "name": "docking_pose.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/models/docking_pose.py",
+                              "size": 11624,
+                              "language": "py"
+                            },
+                            {
+                              "name": "transformer_encoder_with_pair.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/models/transformer_encoder_with_pair.py",
+                              "size": 5272,
+                              "language": "py"
+                            },
+                            {
+                              "name": "unimol.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/models/unimol.py",
+                              "size": 15950,
+                              "language": "py"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "tasks",
+                          "type": "folder",
+                          "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks",
+                          "children": [
+                            {
+                              "name": "__init__.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks/__init__.py",
+                              "size": 279,
+                              "language": "py"
+                            },
+                            {
+                              "name": "docking_pose.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks/docking_pose.py",
+                              "size": 11617,
+                              "language": "py"
+                            },
+                            {
+                              "name": "unimol.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks/unimol.py",
+                              "size": 8779,
+                              "language": "py"
+                            },
+                            {
+                              "name": "unimol_conf_gen.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks/unimol_conf_gen.py",
+                              "size": 6799,
+                              "language": "py"
+                            },
+                            {
+                              "name": "unimol_finetune.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks/unimol_finetune.py",
+                              "size": 9611,
+                              "language": "py"
+                            },
+                            {
+                              "name": "unimol_pocket.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks/unimol_pocket.py",
+                              "size": 7978,
+                              "language": "py"
+                            },
+                            {
+                              "name": "unimol_pocket_finetune.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/tasks/unimol_pocket_finetune.py",
+                              "size": 7206,
+                              "language": "py"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "utils",
+                          "type": "folder",
+                          "path": "src/chemmcp/tool_utils/property_prediction/unimol/utils",
+                          "children": [
+                            {
+                              "name": "__init__.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/utils/__init__.py",
+                              "size": 0,
+                              "language": "py"
+                            },
+                            {
+                              "name": "conf_gen_cal_metrics.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/utils/conf_gen_cal_metrics.py",
+                              "size": 16230,
+                              "language": "py"
+                            },
+                            {
+                              "name": "conformer_model.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/utils/conformer_model.py",
+                              "size": 19981,
+                              "language": "py"
+                            },
+                            {
+                              "name": "coordinate_model.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/utils/coordinate_model.py",
+                              "size": 6793,
+                              "language": "py"
+                            },
+                            {
+                              "name": "docking.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/utils/docking.py",
+                              "size": 4653,
+                              "language": "py"
+                            },
+                            {
+                              "name": "docking_utils.py",
+                              "type": "file",
+                              "path": "src/chemmcp/tool_utils/property_prediction/unimol/utils/docking_utils.py",
+                              "size": 10727,
+                              "language": "py"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "__init__.py",
+                          "type": "file",
+                          "path": "src/chemmcp/tool_utils/property_prediction/unimol/__init__.py",
+                          "size": 124,
+                          "language": "py"
+                        },
+                        {
+                          "name": "infer.py",
+                          "type": "file",
+                          "path": "src/chemmcp/tool_utils/property_prediction/unimol/infer.py",
+                          "size": 3977,
+                          "language": "py"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "src/chemmcp/tool_utils/property_prediction/__init__.py",
+                      "size": 50,
+                      "language": "py"
+                    },
+                    {
+                      "name": "property_prediction.py",
+                      "type": "file",
+                      "path": "src/chemmcp/tool_utils/property_prediction/property_prediction.py",
+                      "size": 3006,
+                      "language": "py"
+                    },
+                    {
+                      "name": "utils.py",
+                      "type": "file",
+                      "path": "src/chemmcp/tool_utils/property_prediction/utils.py",
+                      "size": 11643,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "canonicalization.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/canonicalization.py",
+                  "size": 5175,
+                  "language": "py"
+                },
+                {
+                  "name": "chemspace.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/chemspace.py",
+                  "size": 5549,
+                  "language": "py"
+                },
+                {
+                  "name": "download.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/download.py",
+                  "size": 1384,
+                  "language": "py"
+                },
+                {
+                  "name": "llm.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/llm.py",
+                  "size": 697,
+                  "language": "py"
+                },
+                {
+                  "name": "names.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/names.py",
+                  "size": 4000,
+                  "language": "py"
+                },
+                {
+                  "name": "pubchem.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/pubchem.py",
+                  "size": 3979,
+                  "language": "py"
+                },
+                {
+                  "name": "rxn4chem.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/rxn4chem.py",
+                  "size": 2686,
+                  "language": "py"
+                },
+                {
+                  "name": "smiles.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tool_utils/smiles.py",
+                  "size": 1108,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "src/chemmcp/tools",
+              "children": [
+                {
+                  "name": "python_executor",
+                  "type": "folder",
+                  "path": "src/chemmcp/tools/python_executor",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "src/chemmcp/tools/python_executor/__init__.py",
+                      "size": 77,
+                      "language": "py"
+                    },
+                    {
+                      "name": "jupyter_backbone.py",
+                      "type": "file",
+                      "path": "src/chemmcp/tools/python_executor/jupyter_backbone.py",
+                      "size": 9022,
+                      "language": "py"
+                    },
+                    {
+                      "name": "python_executor.py",
+                      "type": "file",
+                      "path": "src/chemmcp/tools/python_executor/python_executor.py",
+                      "size": 3124,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/__init__.py",
+                  "size": 2176,
+                  "language": "py"
+                },
+                {
+                  "name": "bbbp_predictor.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/bbbp_predictor.py",
+                  "size": 2480,
+                  "language": "py"
+                },
+                {
+                  "name": "forward_synthesis.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/forward_synthesis.py",
+                  "size": 4099,
+                  "language": "py"
+                },
+                {
+                  "name": "functional_groups.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/functional_groups.py",
+                  "size": 4285,
+                  "language": "py"
+                },
+                {
+                  "name": "hiv_inhibitor_predictor.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/hiv_inhibitor_predictor.py",
+                  "size": 2501,
+                  "language": "py"
+                },
+                {
+                  "name": "iupac2smiles.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/iupac2smiles.py",
+                  "size": 3325,
+                  "language": "py"
+                },
+                {
+                  "name": "logd_predictor.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/logd_predictor.py",
+                  "size": 2428,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_atom_count.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_atom_count.py",
+                  "size": 2121,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_captioner.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_captioner.py",
+                  "size": 3302,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_generator.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_generator.py",
+                  "size": 3080,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_modifier.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_modifier.py",
+                  "size": 2424,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_price.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_price.py",
+                  "size": 2271,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_similarity.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_similarity.py",
+                  "size": 3130,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_smiles_check.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_smiles_check.py",
+                  "size": 1828,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_visualizer.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_visualizer.py",
+                  "size": 1900,
+                  "language": "py"
+                },
+                {
+                  "name": "molecule_weight.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/molecule_weight.py",
+                  "size": 1513,
+                  "language": "py"
+                },
+                {
+                  "name": "name2smiles.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/name2smiles.py",
+                  "size": 1755,
+                  "language": "py"
+                },
+                {
+                  "name": "patent_check.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/patent_check.py",
+                  "size": 1735,
+                  "language": "py"
+                },
+                {
+                  "name": "pubchem_search.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/pubchem_search.py",
+                  "size": 14136,
+                  "language": "py"
+                },
+                {
+                  "name": "pubchem_search_qa.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/pubchem_search_qa.py",
+                  "size": 6380,
+                  "language": "py"
+                },
+                {
+                  "name": "reaction_smiles_check.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/reaction_smiles_check.py",
+                  "size": 2944,
+                  "language": "py"
+                },
+                {
+                  "name": "retrosynthesis.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/retrosynthesis.py",
+                  "size": 5647,
+                  "language": "py"
+                },
+                {
+                  "name": "safety_check.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/safety_check.py",
+                  "size": 10067,
+                  "language": "py"
+                },
+                {
+                  "name": "selfies2smiles.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/selfies2smiles.py",
+                  "size": 1563,
+                  "language": "py"
+                },
+                {
+                  "name": "side_effect_predictor.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/side_effect_predictor.py",
+                  "size": 5579,
+                  "language": "py"
+                },
+                {
+                  "name": "smiles2cas.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/smiles2cas.py",
+                  "size": 1821,
+                  "language": "py"
+                },
+                {
+                  "name": "smiles2formula.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/smiles2formula.py",
+                  "size": 1861,
+                  "language": "py"
+                },
+                {
+                  "name": "smiles2iupac.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/smiles2iupac.py",
+                  "size": 2123,
+                  "language": "py"
+                },
+                {
+                  "name": "smiles2selfies.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/smiles2selfies.py",
+                  "size": 1725,
+                  "language": "py"
+                },
+                {
+                  "name": "smiles_canonicalization.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/smiles_canonicalization.py",
+                  "size": 2144,
+                  "language": "py"
+                },
+                {
+                  "name": "solubility_predictor.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/solubility_predictor.py",
+                  "size": 2217,
+                  "language": "py"
+                },
+                {
+                  "name": "toxicity_predictor.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/toxicity_predictor.py",
+                  "size": 2433,
+                  "language": "py"
+                },
+                {
+                  "name": "web_search.py",
+                  "type": "file",
+                  "path": "src/chemmcp/tools/web_search.py",
+                  "size": 2460,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "folder",
+              "path": "src/chemmcp/utils",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/chemmcp/utils/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "base_tool.py",
+                  "type": "file",
+                  "path": "src/chemmcp/utils/base_tool.py",
+                  "size": 8715,
+                  "language": "py"
+                },
+                {
+                  "name": "errors.py",
+                  "type": "file",
+                  "path": "src/chemmcp/utils/errors.py",
+                  "size": 1640,
+                  "language": "py"
+                },
+                {
+                  "name": "mcp_app.py",
+                  "type": "file",
+                  "path": "src/chemmcp/utils/mcp_app.py",
+                  "size": 3142,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/chemmcp/__init__.py",
+              "size": 33,
+              "language": "py"
+            },
+            {
+              "name": "__main__.py",
+              "type": "file",
+              "path": "src/chemmcp/__main__.py",
+              "size": 242,
+              "language": "py"
+            },
+            {
+              "name": "_version.py",
+              "type": "file",
+              "path": "src/chemmcp/_version.py",
+              "size": 21,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 3887,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 11556,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 925,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13427,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 431,
+      "language": "txt"
+    }
+  ]
+}

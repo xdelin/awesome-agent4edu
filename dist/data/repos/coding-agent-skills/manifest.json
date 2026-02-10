@@ -1,0 +1,523 @@
+{
+  "name": "coding-agent-skills",
+  "tree": [
+    {
+      "name": "rules_cn",
+      "type": "folder",
+      "path": "rules_cn",
+      "children": [
+        {
+          "name": "cpp-style-guide.md",
+          "type": "file",
+          "path": "rules_cn/cpp-style-guide.md",
+          "size": 4153,
+          "language": "md"
+        },
+        {
+          "name": "python-style-guide.md",
+          "type": "file",
+          "path": "rules_cn/python-style-guide.md",
+          "size": 4721,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "competitive-programming-expert",
+          "type": "folder",
+          "path": "skills/competitive-programming-expert",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/competitive-programming-expert/SKILL.md",
+              "size": 4096,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "cpp-expert",
+          "type": "folder",
+          "path": "skills/cpp-expert",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/cpp-expert/SKILL.md",
+              "size": 2137,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "deep-learning-expert",
+          "type": "folder",
+          "path": "skills/deep-learning-expert",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/deep-learning-expert/SKILL.md",
+              "size": 15400,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "github-master",
+          "type": "folder",
+          "path": "skills/github-master",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/github-master/SKILL.md",
+              "size": 1899,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "llm-testing-expert",
+          "type": "folder",
+          "path": "skills/llm-testing-expert",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/llm-testing-expert/SKILL.md",
+              "size": 14422,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "python-expert",
+          "type": "folder",
+          "path": "skills/python-expert",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/python-expert/SKILL.md",
+              "size": 1664,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "software-architect",
+          "type": "folder",
+          "path": "skills/software-architect",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/software-architect/SKILL.md",
+              "size": 8754,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-animation",
+          "type": "folder",
+          "path": "skills/threejs-animation",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-animation/SKILL.md",
+              "size": 13109,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-fundamentals",
+          "type": "folder",
+          "path": "skills/threejs-fundamentals",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-fundamentals/SKILL.md",
+              "size": 12008,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-geometry",
+          "type": "folder",
+          "path": "skills/threejs-geometry",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-geometry/SKILL.md",
+              "size": 14377,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-interaction",
+          "type": "folder",
+          "path": "skills/threejs-interaction",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-interaction/SKILL.md",
+              "size": 16978,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-lighting",
+          "type": "folder",
+          "path": "skills/threejs-lighting",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-lighting/SKILL.md",
+              "size": 12508,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-loaders",
+          "type": "folder",
+          "path": "skills/threejs-loaders",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-loaders/SKILL.md",
+              "size": 14655,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-materials",
+          "type": "folder",
+          "path": "skills/threejs-materials",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-materials/SKILL.md",
+              "size": 13938,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-postprocessing",
+          "type": "folder",
+          "path": "skills/threejs-postprocessing",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-postprocessing/SKILL.md",
+              "size": 15029,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-shaders",
+          "type": "folder",
+          "path": "skills/threejs-shaders",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-shaders/SKILL.md",
+              "size": 14698,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "threejs-textures",
+          "type": "folder",
+          "path": "skills/threejs-textures",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/threejs-textures/SKILL.md",
+              "size": 14271,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "skills_cn",
+      "type": "folder",
+      "path": "skills_cn",
+      "children": [
+        {
+          "name": "C++\u7f16\u7a0b\u4e13\u5bb6",
+          "type": "folder",
+          "path": "skills_cn/C++\u7f16\u7a0b\u4e13\u5bb6",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/C++\u7f16\u7a0b\u4e13\u5bb6/SKILL.md",
+              "size": 1818,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "GitHub\u5927\u5e08",
+          "type": "folder",
+          "path": "skills_cn/GitHub\u5927\u5e08",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/GitHub\u5927\u5e08/SKILL.md",
+              "size": 1636,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Python\u7f16\u7a0b\u4e13\u5bb6",
+          "type": "folder",
+          "path": "skills_cn/Python\u7f16\u7a0b\u4e13\u5bb6",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Python\u7f16\u7a0b\u4e13\u5bb6/SKILL.md",
+              "size": 1992,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u4ea4\u4e92",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u4ea4\u4e92",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u4ea4\u4e92/SKILL.md",
+              "size": 2087,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u51e0\u4f55\u4f53",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u51e0\u4f55\u4f53",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u51e0\u4f55\u4f53/SKILL.md",
+              "size": 2360,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u52a0\u8f7d\u5668",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u52a0\u8f7d\u5668",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u52a0\u8f7d\u5668/SKILL.md",
+              "size": 1624,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u52a8\u753b",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u52a8\u753b",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u52a8\u753b/SKILL.md",
+              "size": 1649,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u540e\u5904\u7406",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u540e\u5904\u7406",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u540e\u5904\u7406/SKILL.md",
+              "size": 1522,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u57fa\u7840",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u57fa\u7840",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u57fa\u7840/SKILL.md",
+              "size": 3142,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u6750\u8d28",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u6750\u8d28",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u6750\u8d28/SKILL.md",
+              "size": 2057,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u706f\u5149",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u706f\u5149",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u706f\u5149/SKILL.md",
+              "size": 1883,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u7740\u8272\u5668",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u7740\u8272\u5668",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u7740\u8272\u5668/SKILL.md",
+              "size": 2198,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Three.js\u7eb9\u7406",
+          "type": "folder",
+          "path": "skills_cn/Three.js\u7eb9\u7406",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/Three.js\u7eb9\u7406/SKILL.md",
+              "size": 1769,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "\u5927\u8bed\u8a00\u6a21\u578b\u6d4b\u8bd5\u4e13\u5bb6",
+          "type": "folder",
+          "path": "skills_cn/\u5927\u8bed\u8a00\u6a21\u578b\u6d4b\u8bd5\u4e13\u5bb6",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/\u5927\u8bed\u8a00\u6a21\u578b\u6d4b\u8bd5\u4e13\u5bb6/SKILL.md",
+              "size": 12602,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "\u6df1\u5ea6\u5b66\u4e60\u4e13\u5bb6",
+          "type": "folder",
+          "path": "skills_cn/\u6df1\u5ea6\u5b66\u4e60\u4e13\u5bb6",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/\u6df1\u5ea6\u5b66\u4e60\u4e13\u5bb6/SKILL.md",
+              "size": 13042,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "\u7ade\u8d5b\u7f16\u7a0b\u4e13\u5bb6",
+          "type": "folder",
+          "path": "skills_cn/\u7ade\u8d5b\u7f16\u7a0b\u4e13\u5bb6",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/\u7ade\u8d5b\u7f16\u7a0b\u4e13\u5bb6/SKILL.md",
+              "size": 3670,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "\u8f6f\u4ef6\u67b6\u6784\u5e08",
+          "type": "folder",
+          "path": "skills_cn/\u8f6f\u4ef6\u67b6\u6784\u5e08",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills_cn/\u8f6f\u4ef6\u67b6\u6784\u5e08/SKILL.md",
+              "size": 7523,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 11005,
+      "language": "md"
+    }
+  ]
+}

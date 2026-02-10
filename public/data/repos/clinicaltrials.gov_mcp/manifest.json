@@ -1,0 +1,3778 @@
+{
+  "name": "ClinicalTrials.gov MCP",
+  "tree": [
+    {
+      "name": ".clinerules",
+      "type": "folder",
+      "path": ".clinerules",
+      "children": [
+        {
+          "name": "AGENTS.md",
+          "type": "file",
+          "path": ".clinerules/AGENTS.md",
+          "size": 30590,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "coverage",
+      "type": "folder",
+      "path": "coverage",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "coverage/src",
+          "children": [
+            {
+              "name": "config",
+              "type": "folder",
+              "path": "coverage/src/config",
+              "children": [
+                {
+                  "name": "index.html",
+                  "type": "file",
+                  "path": "coverage/src/config/index.html",
+                  "size": 4467,
+                  "language": "html"
+                },
+                {
+                  "name": "index.ts.html",
+                  "type": "file",
+                  "path": "coverage/src/config/index.ts.html",
+                  "size": 52204,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "container",
+              "type": "folder",
+              "path": "coverage/src/container",
+              "children": [
+                {
+                  "name": "registrations",
+                  "type": "folder",
+                  "path": "coverage/src/container/registrations",
+                  "children": [
+                    {
+                      "name": "core.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/container/registrations/core.ts.html",
+                      "size": 25197,
+                      "language": "html"
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/container/registrations/index.html",
+                      "size": 5185,
+                      "language": "html"
+                    },
+                    {
+                      "name": "mcp.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/container/registrations/mcp.ts.html",
+                      "size": 9177,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.html",
+                  "type": "file",
+                  "path": "coverage/src/container/index.html",
+                  "size": 4453,
+                  "language": "html"
+                },
+                {
+                  "name": "tokens.ts.html",
+                  "type": "file",
+                  "path": "coverage/src/container/tokens.ts.html",
+                  "size": 6048,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "mcp-server",
+              "type": "folder",
+              "path": "coverage/src/mcp-server",
+              "children": [
+                {
+                  "name": "resources",
+                  "type": "folder",
+                  "path": "coverage/src/mcp-server/resources",
+                  "children": [
+                    {
+                      "name": "definitions",
+                      "type": "folder",
+                      "path": "coverage/src/mcp-server/resources/definitions",
+                      "children": [
+                        {
+                          "name": "echo.resource.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/resources/definitions/echo.resource.ts.html",
+                          "size": 18945,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/resources/definitions/index.html",
+                          "size": 4532,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "utils",
+                      "type": "folder",
+                      "path": "coverage/src/mcp-server/resources/utils",
+                      "children": [
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/resources/utils/index.html",
+                          "size": 5250,
+                          "language": "html"
+                        },
+                        {
+                          "name": "resourceDefinition.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/resources/utils/resourceDefinition.ts.html",
+                          "size": 12642,
+                          "language": "html"
+                        },
+                        {
+                          "name": "resourceHandlerFactory.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/resources/utils/resourceHandlerFactory.ts.html",
+                          "size": 33878,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/mcp-server/resources/index.html",
+                      "size": 4548,
+                      "language": "html"
+                    },
+                    {
+                      "name": "resource-registration.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/mcp-server/resources/resource-registration.ts.html",
+                      "size": 10663,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "tools",
+                  "type": "folder",
+                  "path": "coverage/src/mcp-server/tools",
+                  "children": [
+                    {
+                      "name": "definitions",
+                      "type": "folder",
+                      "path": "coverage/src/mcp-server/tools/definitions",
+                      "children": [
+                        {
+                          "name": "clinicaltrials-analyze-trends.tool.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/definitions/clinicaltrials-analyze-trends.tool.ts.html",
+                          "size": 49675,
+                          "language": "html"
+                        },
+                        {
+                          "name": "clinicaltrials-compare-studies.tool.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/definitions/clinicaltrials-compare-studies.tool.ts.html",
+                          "size": 107939,
+                          "language": "html"
+                        },
+                        {
+                          "name": "clinicaltrials-find-eligible-studies.tool.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/definitions/clinicaltrials-find-eligible-studies.tool.ts.html",
+                          "size": 72128,
+                          "language": "html"
+                        },
+                        {
+                          "name": "clinicaltrials-get-study.tool.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/definitions/clinicaltrials-get-study.tool.ts.html",
+                          "size": 34851,
+                          "language": "html"
+                        },
+                        {
+                          "name": "clinicaltrials-search-studies.tool.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/definitions/clinicaltrials-search-studies.tool.ts.html",
+                          "size": 30122,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/definitions/index.html",
+                          "size": 7730,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "utils",
+                      "type": "folder",
+                      "path": "coverage/src/mcp-server/tools/utils",
+                      "children": [
+                        {
+                          "name": "ageParser.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/utils/ageParser.ts.html",
+                          "size": 15772,
+                          "language": "html"
+                        },
+                        {
+                          "name": "eligibilityCheckers.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/utils/eligibilityCheckers.ts.html",
+                          "size": 16581,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/utils/index.html",
+                          "size": 7949,
+                          "language": "html"
+                        },
+                        {
+                          "name": "studyExtractors.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/utils/studyExtractors.ts.html",
+                          "size": 27102,
+                          "language": "html"
+                        },
+                        {
+                          "name": "studyRanking.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/utils/studyRanking.ts.html",
+                          "size": 18978,
+                          "language": "html"
+                        },
+                        {
+                          "name": "toolDefinition.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/utils/toolDefinition.ts.html",
+                          "size": 17963,
+                          "language": "html"
+                        },
+                        {
+                          "name": "toolHandlerFactory.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/tools/utils/toolHandlerFactory.ts.html",
+                          "size": 17899,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/mcp-server/tools/index.html",
+                      "size": 4529,
+                      "language": "html"
+                    },
+                    {
+                      "name": "tool-registration.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/mcp-server/tools/tool-registration.ts.html",
+                      "size": 17091,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "transports",
+                  "type": "folder",
+                  "path": "coverage/src/mcp-server/transports",
+                  "children": [
+                    {
+                      "name": "auth",
+                      "type": "folder",
+                      "path": "coverage/src/mcp-server/transports/auth",
+                      "children": [
+                        {
+                          "name": "lib",
+                          "type": "folder",
+                          "path": "coverage/src/mcp-server/transports/auth/lib",
+                          "children": [
+                            {
+                              "name": "authContext.ts.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/lib/authContext.ts.html",
+                              "size": 7676,
+                              "language": "html"
+                            },
+                            {
+                              "name": "authTypes.ts.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/lib/authTypes.ts.html",
+                              "size": 5730,
+                              "language": "html"
+                            },
+                            {
+                              "name": "authUtils.ts.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/lib/authUtils.ts.html",
+                              "size": 11692,
+                              "language": "html"
+                            },
+                            {
+                              "name": "index.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/lib/index.html",
+                              "size": 6596,
+                              "language": "html"
+                            },
+                            {
+                              "name": "withAuth.ts.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/lib/withAuth.ts.html",
+                              "size": 11077,
+                              "language": "html"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "strategies",
+                          "type": "folder",
+                          "path": "coverage/src/mcp-server/transports/auth/strategies",
+                          "children": [
+                            {
+                              "name": "authStrategy.ts.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/strategies/authStrategy.ts.html",
+                              "size": 5725,
+                              "language": "html"
+                            },
+                            {
+                              "name": "index.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/strategies/index.html",
+                              "size": 5990,
+                              "language": "html"
+                            },
+                            {
+                              "name": "jwtStrategy.ts.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/strategies/jwtStrategy.ts.html",
+                              "size": 25956,
+                              "language": "html"
+                            },
+                            {
+                              "name": "oauthStrategy.ts.html",
+                              "type": "file",
+                              "path": "coverage/src/mcp-server/transports/auth/strategies/oauthStrategy.ts.html",
+                              "size": 30067,
+                              "language": "html"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "authFactory.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/auth/authFactory.ts.html",
+                          "size": 10504,
+                          "language": "html"
+                        },
+                        {
+                          "name": "authMiddleware.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/auth/authMiddleware.ts.html",
+                          "size": 18386,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/auth/index.html",
+                          "size": 5265,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "http",
+                      "type": "folder",
+                      "path": "coverage/src/mcp-server/transports/http",
+                      "children": [
+                        {
+                          "name": "httpErrorHandler.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/http/httpErrorHandler.ts.html",
+                          "size": 20627,
+                          "language": "html"
+                        },
+                        {
+                          "name": "httpTransport.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/http/httpTransport.ts.html",
+                          "size": 77353,
+                          "language": "html"
+                        },
+                        {
+                          "name": "httpTypes.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/http/httpTypes.ts.html",
+                          "size": 6291,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/http/index.html",
+                          "size": 7375,
+                          "language": "html"
+                        },
+                        {
+                          "name": "sessionIdUtils.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/http/sessionIdUtils.ts.html",
+                          "size": 10352,
+                          "language": "html"
+                        },
+                        {
+                          "name": "sessionStore.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/http/sessionStore.ts.html",
+                          "size": 36187,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "stdio",
+                      "type": "folder",
+                      "path": "coverage/src/mcp-server/transports/stdio",
+                      "children": [
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/stdio/index.html",
+                          "size": 4537,
+                          "language": "html"
+                        },
+                        {
+                          "name": "stdioTransport.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/mcp-server/transports/stdio/stdioTransport.ts.html",
+                          "size": 19556,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/mcp-server/transports/index.html",
+                      "size": 5169,
+                      "language": "html"
+                    },
+                    {
+                      "name": "ITransport.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/mcp-server/transports/ITransport.ts.html",
+                      "size": 4782,
+                      "language": "html"
+                    },
+                    {
+                      "name": "manager.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/mcp-server/transports/manager.ts.html",
+                      "size": 13534,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.html",
+                  "type": "file",
+                  "path": "coverage/src/mcp-server/index.html",
+                  "size": 4439,
+                  "language": "html"
+                },
+                {
+                  "name": "server.ts.html",
+                  "type": "file",
+                  "path": "coverage/src/mcp-server/server.ts.html",
+                  "size": 16709,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "services",
+              "type": "folder",
+              "path": "coverage/src/services",
+              "children": [
+                {
+                  "name": "clinical-trials-gov",
+                  "type": "folder",
+                  "path": "coverage/src/services/clinical-trials-gov",
+                  "children": [
+                    {
+                      "name": "core",
+                      "type": "folder",
+                      "path": "coverage/src/services/clinical-trials-gov/core",
+                      "children": [
+                        {
+                          "name": "IClinicalTrialsProvider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/clinical-trials-gov/core/IClinicalTrialsProvider.ts.html",
+                          "size": 16555,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/services/clinical-trials-gov/core/index.html",
+                          "size": 4562,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "providers",
+                      "type": "folder",
+                      "path": "coverage/src/services/clinical-trials-gov/providers",
+                      "children": [
+                        {
+                          "name": "clinicaltrials-gov.provider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/clinical-trials-gov/providers/clinicaltrials-gov.provider.ts.html",
+                          "size": 42772,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/services/clinical-trials-gov/providers/index.html",
+                          "size": 4616,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/services/clinical-trials-gov/index.html",
+                      "size": 4522,
+                      "language": "html"
+                    },
+                    {
+                      "name": "types.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/services/clinical-trials-gov/types.ts.html",
+                      "size": 54248,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "llm",
+                  "type": "folder",
+                  "path": "coverage/src/services/llm",
+                  "children": [
+                    {
+                      "name": "core",
+                      "type": "folder",
+                      "path": "coverage/src/services/llm/core",
+                      "children": [
+                        {
+                          "name": "ILlmProvider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/llm/core/ILlmProvider.ts.html",
+                          "size": 8680,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/services/llm/core/index.html",
+                          "size": 4497,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "providers",
+                      "type": "folder",
+                      "path": "coverage/src/services/llm/providers",
+                      "children": [
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/services/llm/providers/index.html",
+                          "size": 4586,
+                          "language": "html"
+                        },
+                        {
+                          "name": "openrouter.provider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/llm/providers/openrouter.provider.ts.html",
+                          "size": 30260,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/services/llm/index.html",
+                      "size": 4442,
+                      "language": "html"
+                    },
+                    {
+                      "name": "types.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/services/llm/types.ts.html",
+                      "size": 4519,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "speech",
+                  "type": "folder",
+                  "path": "coverage/src/services/speech",
+                  "children": [
+                    {
+                      "name": "core",
+                      "type": "folder",
+                      "path": "coverage/src/services/speech/core",
+                      "children": [
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/services/speech/core/index.html",
+                          "size": 5212,
+                          "language": "html"
+                        },
+                        {
+                          "name": "ISpeechProvider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/speech/core/ISpeechProvider.ts.html",
+                          "size": 12645,
+                          "language": "html"
+                        },
+                        {
+                          "name": "SpeechService.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/speech/core/SpeechService.ts.html",
+                          "size": 24001,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "providers",
+                      "type": "folder",
+                      "path": "coverage/src/services/speech/providers",
+                      "children": [
+                        {
+                          "name": "elevenlabs.provider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/speech/providers/elevenlabs.provider.ts.html",
+                          "size": 47230,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/services/speech/providers/index.html",
+                          "size": 5233,
+                          "language": "html"
+                        },
+                        {
+                          "name": "whisper.provider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/services/speech/providers/whisper.provider.ts.html",
+                          "size": 52097,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/services/speech/index.html",
+                      "size": 4448,
+                      "language": "html"
+                    },
+                    {
+                      "name": "types.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/services/speech/types.ts.html",
+                      "size": 23212,
+                      "language": "html"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "storage",
+              "type": "folder",
+              "path": "coverage/src/storage",
+              "children": [
+                {
+                  "name": "core",
+                  "type": "folder",
+                  "path": "coverage/src/storage/core",
+                  "children": [
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/storage/core/index.html",
+                      "size": 6674,
+                      "language": "html"
+                    },
+                    {
+                      "name": "IStorageProvider.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/storage/core/IStorageProvider.ts.html",
+                      "size": 29526,
+                      "language": "html"
+                    },
+                    {
+                      "name": "storageFactory.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/storage/core/storageFactory.ts.html",
+                      "size": 24831,
+                      "language": "html"
+                    },
+                    {
+                      "name": "StorageService.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/storage/core/StorageService.ts.html",
+                      "size": 30387,
+                      "language": "html"
+                    },
+                    {
+                      "name": "storageValidation.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/storage/core/storageValidation.ts.html",
+                      "size": 63752,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "providers",
+                  "type": "folder",
+                  "path": "coverage/src/storage/providers",
+                  "children": [
+                    {
+                      "name": "cloudflare",
+                      "type": "folder",
+                      "path": "coverage/src/storage/providers/cloudflare",
+                      "children": [
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/cloudflare/index.html",
+                          "size": 5280,
+                          "language": "html"
+                        },
+                        {
+                          "name": "kvProvider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/cloudflare/kvProvider.ts.html",
+                          "size": 39015,
+                          "language": "html"
+                        },
+                        {
+                          "name": "r2Provider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/cloudflare/r2Provider.ts.html",
+                          "size": 45124,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "fileSystem",
+                      "type": "folder",
+                      "path": "coverage/src/storage/providers/fileSystem",
+                      "children": [
+                        {
+                          "name": "fileSystemProvider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/fileSystem/fileSystemProvider.ts.html",
+                          "size": 54871,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/fileSystem/index.html",
+                          "size": 4603,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "inMemory",
+                      "type": "folder",
+                      "path": "coverage/src/storage/providers/inMemory",
+                      "children": [
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/inMemory/index.html",
+                          "size": 4593,
+                          "language": "html"
+                        },
+                        {
+                          "name": "inMemoryProvider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/inMemory/inMemoryProvider.ts.html",
+                          "size": 33382,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "supabase",
+                      "type": "folder",
+                      "path": "coverage/src/storage/providers/supabase",
+                      "children": [
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/supabase/index.html",
+                          "size": 5232,
+                          "language": "html"
+                        },
+                        {
+                          "name": "supabase.types.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/supabase/supabase.types.ts.html",
+                          "size": 9355,
+                          "language": "html"
+                        },
+                        {
+                          "name": "supabaseProvider.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/storage/providers/supabase/supabaseProvider.ts.html",
+                          "size": 56466,
+                          "language": "html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "types-global",
+              "type": "folder",
+              "path": "coverage/src/types-global",
+              "children": [
+                {
+                  "name": "errors.ts.html",
+                  "type": "file",
+                  "path": "coverage/src/types-global/errors.ts.html",
+                  "size": 20120,
+                  "language": "html"
+                },
+                {
+                  "name": "index.html",
+                  "type": "file",
+                  "path": "coverage/src/types-global/index.html",
+                  "size": 4459,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "folder",
+              "path": "coverage/src/utils",
+              "children": [
+                {
+                  "name": "formatting",
+                  "type": "folder",
+                  "path": "coverage/src/utils/formatting",
+                  "children": [
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/formatting/index.html",
+                      "size": 4546,
+                      "language": "html"
+                    },
+                    {
+                      "name": "markdownBuilder.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/formatting/markdownBuilder.ts.html",
+                      "size": 69597,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "internal",
+                  "type": "folder",
+                  "path": "coverage/src/utils/internal",
+                  "children": [
+                    {
+                      "name": "error-handler",
+                      "type": "folder",
+                      "path": "coverage/src/utils/internal/error-handler",
+                      "children": [
+                        {
+                          "name": "errorHandler.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/utils/internal/error-handler/errorHandler.ts.html",
+                          "size": 90301,
+                          "language": "html"
+                        },
+                        {
+                          "name": "helpers.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/utils/internal/error-handler/helpers.ts.html",
+                          "size": 34727,
+                          "language": "html"
+                        },
+                        {
+                          "name": "index.html",
+                          "type": "file",
+                          "path": "coverage/src/utils/internal/error-handler/index.html",
+                          "size": 6654,
+                          "language": "html"
+                        },
+                        {
+                          "name": "mappings.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/utils/internal/error-handler/mappings.ts.html",
+                          "size": 29967,
+                          "language": "html"
+                        },
+                        {
+                          "name": "types.ts.html",
+                          "type": "file",
+                          "path": "coverage/src/utils/internal/error-handler/types.ts.html",
+                          "size": 36552,
+                          "language": "html"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "encoding.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/encoding.ts.html",
+                      "size": 12533,
+                      "language": "html"
+                    },
+                    {
+                      "name": "health.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/health.ts.html",
+                      "size": 8534,
+                      "language": "html"
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/index.html",
+                      "size": 8677,
+                      "language": "html"
+                    },
+                    {
+                      "name": "logger.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/logger.ts.html",
+                      "size": 59844,
+                      "language": "html"
+                    },
+                    {
+                      "name": "performance.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/performance.ts.html",
+                      "size": 29480,
+                      "language": "html"
+                    },
+                    {
+                      "name": "requestContext.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/requestContext.ts.html",
+                      "size": 42435,
+                      "language": "html"
+                    },
+                    {
+                      "name": "runtime.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/runtime.ts.html",
+                      "size": 9939,
+                      "language": "html"
+                    },
+                    {
+                      "name": "startupBanner.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/internal/startupBanner.ts.html",
+                      "size": 5921,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "metrics",
+                  "type": "folder",
+                  "path": "coverage/src/utils/metrics",
+                  "children": [
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/metrics/index.html",
+                      "size": 5226,
+                      "language": "html"
+                    },
+                    {
+                      "name": "registry.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/metrics/registry.ts.html",
+                      "size": 16164,
+                      "language": "html"
+                    },
+                    {
+                      "name": "tokenCounter.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/metrics/tokenCounter.ts.html",
+                      "size": 24830,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "network",
+                  "type": "folder",
+                  "path": "coverage/src/utils/network",
+                  "children": [
+                    {
+                      "name": "fetchWithTimeout.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/network/fetchWithTimeout.ts.html",
+                      "size": 17699,
+                      "language": "html"
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/network/index.html",
+                      "size": 4520,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "parsing",
+                  "type": "folder",
+                  "path": "coverage/src/utils/parsing",
+                  "children": [
+                    {
+                      "name": "csvParser.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/parsing/csvParser.ts.html",
+                      "size": 18927,
+                      "language": "html"
+                    },
+                    {
+                      "name": "dateParser.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/parsing/dateParser.ts.html",
+                      "size": 20095,
+                      "language": "html"
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/parsing/index.html",
+                      "size": 7982,
+                      "language": "html"
+                    },
+                    {
+                      "name": "jsonParser.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/parsing/jsonParser.ts.html",
+                      "size": 23530,
+                      "language": "html"
+                    },
+                    {
+                      "name": "pdfParser.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/parsing/pdfParser.ts.html",
+                      "size": 133516,
+                      "language": "html"
+                    },
+                    {
+                      "name": "xmlParser.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/parsing/xmlParser.ts.html",
+                      "size": 19048,
+                      "language": "html"
+                    },
+                    {
+                      "name": "yamlParser.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/parsing/yamlParser.ts.html",
+                      "size": 18267,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "scheduling",
+                  "type": "folder",
+                  "path": "coverage/src/utils/scheduling",
+                  "children": [
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/scheduling/index.html",
+                      "size": 4523,
+                      "language": "html"
+                    },
+                    {
+                      "name": "scheduler.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/scheduling/scheduler.ts.html",
+                      "size": 26451,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "security",
+                  "type": "folder",
+                  "path": "coverage/src/utils/security",
+                  "children": [
+                    {
+                      "name": "idGenerator.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/security/idGenerator.ts.html",
+                      "size": 47751,
+                      "language": "html"
+                    },
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/security/index.html",
+                      "size": 5943,
+                      "language": "html"
+                    },
+                    {
+                      "name": "rateLimiter.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/security/rateLimiter.ts.html",
+                      "size": 36653,
+                      "language": "html"
+                    },
+                    {
+                      "name": "sanitization.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/security/sanitization.ts.html",
+                      "size": 98475,
+                      "language": "html"
+                    }
+                  ]
+                },
+                {
+                  "name": "telemetry",
+                  "type": "folder",
+                  "path": "coverage/src/utils/telemetry",
+                  "children": [
+                    {
+                      "name": "index.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/telemetry/index.html",
+                      "size": 6544,
+                      "language": "html"
+                    },
+                    {
+                      "name": "instrumentation.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/telemetry/instrumentation.ts.html",
+                      "size": 46137,
+                      "language": "html"
+                    },
+                    {
+                      "name": "metrics.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/telemetry/metrics.ts.html",
+                      "size": 31116,
+                      "language": "html"
+                    },
+                    {
+                      "name": "semconv.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/telemetry/semconv.ts.html",
+                      "size": 21516,
+                      "language": "html"
+                    },
+                    {
+                      "name": "trace.ts.html",
+                      "type": "file",
+                      "path": "coverage/src/utils/telemetry/trace.ts.html",
+                      "size": 32343,
+                      "language": "html"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "index.html",
+              "type": "file",
+              "path": "coverage/src/index.html",
+              "size": 5044,
+              "language": "html"
+            },
+            {
+              "name": "index.ts.html",
+              "type": "file",
+              "path": "coverage/src/index.ts.html",
+              "size": 39229,
+              "language": "html"
+            },
+            {
+              "name": "worker.ts.html",
+              "type": "file",
+              "path": "coverage/src/worker.ts.html",
+              "size": 62910,
+              "language": "html"
+            }
+          ]
+        },
+        {
+          "name": "base.css",
+          "type": "file",
+          "path": "coverage/base.css",
+          "size": 5394,
+          "language": "css"
+        },
+        {
+          "name": "block-navigation.js",
+          "type": "file",
+          "path": "coverage/block-navigation.js",
+          "size": 2655,
+          "language": "js"
+        },
+        {
+          "name": "favicon.png",
+          "type": "file",
+          "path": "coverage/favicon.png",
+          "size": 445,
+          "language": "png"
+        },
+        {
+          "name": "index.html",
+          "type": "file",
+          "path": "coverage/index.html",
+          "size": 33663,
+          "language": "html"
+        },
+        {
+          "name": "prettify.css",
+          "type": "file",
+          "path": "coverage/prettify.css",
+          "size": 676,
+          "language": "css"
+        },
+        {
+          "name": "prettify.js",
+          "type": "file",
+          "path": "coverage/prettify.js",
+          "size": 17590,
+          "language": "js"
+        },
+        {
+          "name": "sort-arrow-sprite.png",
+          "type": "file",
+          "path": "coverage/sort-arrow-sprite.png",
+          "size": 138,
+          "language": "png"
+        },
+        {
+          "name": "sorter.js",
+          "type": "file",
+          "path": "coverage/sorter.js",
+          "size": 6731,
+          "language": "js"
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "best-practices.md",
+          "type": "file",
+          "path": "docs/best-practices.md",
+          "size": 7252,
+          "language": "md"
+        },
+        {
+          "name": "tree.md",
+          "type": "file",
+          "path": "docs/tree.md",
+          "size": 15252,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "clinicaltrials-compare-studies.md",
+          "type": "file",
+          "path": "examples/clinicaltrials-compare-studies.md",
+          "size": 4089,
+          "language": "md"
+        },
+        {
+          "name": "clinicaltrials-find-eligible-studies.md",
+          "type": "file",
+          "path": "examples/clinicaltrials-find-eligible-studies.md",
+          "size": 7212,
+          "language": "md"
+        },
+        {
+          "name": "clinicaltrials_analyze_trends.md",
+          "type": "file",
+          "path": "examples/clinicaltrials_analyze_trends.md",
+          "size": 3921,
+          "language": "md"
+        },
+        {
+          "name": "clinicaltrials_get_study.md",
+          "type": "file",
+          "path": "examples/clinicaltrials_get_study.md",
+          "size": 5468,
+          "language": "md"
+        },
+        {
+          "name": "clinicaltrials_search_studies.md",
+          "type": "file",
+          "path": "examples/clinicaltrials_search_studies.md",
+          "size": 4666,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "clean.ts",
+          "type": "file",
+          "path": "scripts/clean.ts",
+          "size": 3241,
+          "language": "ts"
+        },
+        {
+          "name": "devcheck.ts",
+          "type": "file",
+          "path": "scripts/devcheck.ts",
+          "size": 24045,
+          "language": "ts"
+        },
+        {
+          "name": "devdocs.ts",
+          "type": "file",
+          "path": "scripts/devdocs.ts",
+          "size": 31488,
+          "language": "ts"
+        },
+        {
+          "name": "make-executable.ts",
+          "type": "file",
+          "path": "scripts/make-executable.ts",
+          "size": 4489,
+          "language": "ts"
+        },
+        {
+          "name": "tree.ts",
+          "type": "file",
+          "path": "scripts/tree.ts",
+          "size": 10879,
+          "language": "ts"
+        },
+        {
+          "name": "update-coverage.ts",
+          "type": "file",
+          "path": "scripts/update-coverage.ts",
+          "size": 5070,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "config",
+          "type": "folder",
+          "path": "src/config",
+          "children": [
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/config/index.ts",
+              "size": 13974,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "container",
+          "type": "folder",
+          "path": "src/container",
+          "children": [
+            {
+              "name": "registrations",
+              "type": "folder",
+              "path": "src/container/registrations",
+              "children": [
+                {
+                  "name": "core.ts",
+                  "type": "file",
+                  "path": "src/container/registrations/core.ts",
+                  "size": 5403,
+                  "language": "ts"
+                },
+                {
+                  "name": "mcp.ts",
+                  "type": "file",
+                  "path": "src/container/registrations/mcp.ts",
+                  "size": 1693,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/container/index.ts",
+              "size": 978,
+              "language": "ts"
+            },
+            {
+              "name": "tokens.ts",
+              "type": "file",
+              "path": "src/container/tokens.ts",
+              "size": 1098,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "mcp-server",
+          "type": "folder",
+          "path": "src/mcp-server",
+          "children": [
+            {
+              "name": "resources",
+              "type": "folder",
+              "path": "src/mcp-server/resources",
+              "children": [
+                {
+                  "name": "definitions",
+                  "type": "folder",
+                  "path": "src/mcp-server/resources/definitions",
+                  "children": [
+                    {
+                      "name": "echo.resource.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/resources/definitions/echo.resource.ts",
+                      "size": 2707,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/resources/definitions/index.ts",
+                      "size": 519,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "folder",
+                  "path": "src/mcp-server/resources/utils",
+                  "children": [
+                    {
+                      "name": "resourceDefinition.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/resources/utils/resourceDefinition.ts",
+                      "size": 2666,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "resourceHandlerFactory.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/resources/utils/resourceHandlerFactory.ts",
+                      "size": 5720,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "resource-registration.ts",
+                  "type": "file",
+                  "path": "src/mcp-server/resources/resource-registration.ts",
+                  "size": 2208,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "src/mcp-server/tools",
+              "children": [
+                {
+                  "name": "definitions",
+                  "type": "folder",
+                  "path": "src/mcp-server/tools/definitions",
+                  "children": [
+                    {
+                      "name": "clinicaltrials-analyze-trends.tool.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/definitions/clinicaltrials-analyze-trends.tool.ts",
+                      "size": 10961,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "clinicaltrials-compare-studies.tool.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/definitions/clinicaltrials-compare-studies.tool.ts",
+                      "size": 24520,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "clinicaltrials-find-eligible-studies.tool.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/definitions/clinicaltrials-find-eligible-studies.tool.ts",
+                      "size": 14798,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "clinicaltrials-get-study.tool.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/definitions/clinicaltrials-get-study.tool.ts",
+                      "size": 8182,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "clinicaltrials-search-studies.tool.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/definitions/clinicaltrials-search-studies.tool.ts",
+                      "size": 6687,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/definitions/index.ts",
+                      "size": 941,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "folder",
+                  "path": "src/mcp-server/tools/utils",
+                  "children": [
+                    {
+                      "name": "ageParser.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/utils/ageParser.ts",
+                      "size": 2811,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "eligibilityCheckers.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/utils/eligibilityCheckers.ts",
+                      "size": 2864,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/utils/index.ts",
+                      "size": 966,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "studyExtractors.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/utils/studyExtractors.ts",
+                      "size": 4712,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "studyRanking.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/utils/studyRanking.ts",
+                      "size": 3364,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "toolDefinition.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/utils/toolDefinition.ts",
+                      "size": 4346,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "toolHandlerFactory.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/tools/utils/toolHandlerFactory.ts",
+                      "size": 3677,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "tool-registration.ts",
+                  "type": "file",
+                  "path": "src/mcp-server/tools/tool-registration.ts",
+                  "size": 3884,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "transports",
+              "type": "folder",
+              "path": "src/mcp-server/transports",
+              "children": [
+                {
+                  "name": "auth",
+                  "type": "folder",
+                  "path": "src/mcp-server/transports/auth",
+                  "children": [
+                    {
+                      "name": "lib",
+                      "type": "folder",
+                      "path": "src/mcp-server/transports/auth/lib",
+                      "children": [
+                        {
+                          "name": "authContext.ts",
+                          "type": "file",
+                          "path": "src/mcp-server/transports/auth/lib/authContext.ts",
+                          "size": 1212,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "authTypes.ts",
+                          "type": "file",
+                          "path": "src/mcp-server/transports/auth/lib/authTypes.ts",
+                          "size": 743,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "authUtils.ts",
+                          "type": "file",
+                          "path": "src/mcp-server/transports/auth/lib/authUtils.ts",
+                          "size": 2458,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "withAuth.ts",
+                          "type": "file",
+                          "path": "src/mcp-server/transports/auth/lib/withAuth.ts",
+                          "size": 2173,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "strategies",
+                      "type": "folder",
+                      "path": "src/mcp-server/transports/auth/strategies",
+                      "children": [
+                        {
+                          "name": "authStrategy.ts",
+                          "type": "file",
+                          "path": "src/mcp-server/transports/auth/strategies/authStrategy.ts",
+                          "size": 814,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "jwtStrategy.ts",
+                          "type": "file",
+                          "path": "src/mcp-server/transports/auth/strategies/jwtStrategy.ts",
+                          "size": 5996,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "oauthStrategy.ts",
+                          "type": "file",
+                          "path": "src/mcp-server/transports/auth/strategies/oauthStrategy.ts",
+                          "size": 7179,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "authFactory.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/auth/authFactory.ts",
+                      "size": 2384,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "authMiddleware.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/auth/authMiddleware.ts",
+                      "size": 4093,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/auth/index.ts",
+                      "size": 644,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "http",
+                  "type": "folder",
+                  "path": "src/mcp-server/transports/http",
+                  "children": [
+                    {
+                      "name": "httpErrorHandler.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/http/httpErrorHandler.ts",
+                      "size": 4584,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "httpTransport.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/http/httpTransport.ts",
+                      "size": 15661,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "httpTypes.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/http/httpTypes.ts",
+                      "size": 788,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/http/index.ts",
+                      "size": 353,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "sessionIdUtils.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/http/sessionIdUtils.ts",
+                      "size": 1834,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "sessionStore.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/http/sessionStore.ts",
+                      "size": 8116,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "stdio",
+                  "type": "folder",
+                  "path": "src/mcp-server/transports/stdio",
+                  "children": [
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/stdio/index.ts",
+                      "size": 178,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "stdioTransport.ts",
+                      "type": "file",
+                      "path": "src/mcp-server/transports/stdio/stdioTransport.ts",
+                      "size": 3813,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "ITransport.ts",
+                  "type": "file",
+                  "path": "src/mcp-server/transports/ITransport.ts",
+                  "size": 403,
+                  "language": "ts"
+                },
+                {
+                  "name": "manager.ts",
+                  "type": "file",
+                  "path": "src/mcp-server/transports/manager.ts",
+                  "size": 2805,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "server.ts",
+              "type": "file",
+              "path": "src/mcp-server/server.ts",
+              "size": 3272,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "services",
+          "type": "folder",
+          "path": "src/services",
+          "children": [
+            {
+              "name": "clinical-trials-gov",
+              "type": "folder",
+              "path": "src/services/clinical-trials-gov",
+              "children": [
+                {
+                  "name": "core",
+                  "type": "folder",
+                  "path": "src/services/clinical-trials-gov/core",
+                  "children": [
+                    {
+                      "name": "IClinicalTrialsProvider.ts",
+                      "type": "file",
+                      "path": "src/services/clinical-trials-gov/core/IClinicalTrialsProvider.ts",
+                      "size": 2773,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "providers",
+                  "type": "folder",
+                  "path": "src/services/clinical-trials-gov/providers",
+                  "children": [
+                    {
+                      "name": "clinicaltrials-gov.provider.ts",
+                      "type": "file",
+                      "path": "src/services/clinical-trials-gov/providers/clinicaltrials-gov.provider.ts",
+                      "size": 7638,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/services/clinical-trials-gov/index.ts",
+                  "size": 245,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/services/clinical-trials-gov/types.ts",
+                  "size": 12888,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "llm",
+              "type": "folder",
+              "path": "src/services/llm",
+              "children": [
+                {
+                  "name": "core",
+                  "type": "folder",
+                  "path": "src/services/llm/core",
+                  "children": [
+                    {
+                      "name": "ILlmProvider.ts",
+                      "type": "file",
+                      "path": "src/services/llm/core/ILlmProvider.ts",
+                      "size": 1589,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "providers",
+                  "type": "folder",
+                  "path": "src/services/llm/providers",
+                  "children": [
+                    {
+                      "name": "openrouter.provider.ts",
+                      "type": "file",
+                      "path": "src/services/llm/providers/openrouter.provider.ts",
+                      "size": 6626,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/services/llm/index.ts",
+                  "size": 425,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/services/llm/types.ts",
+                  "size": 370,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "speech",
+              "type": "folder",
+              "path": "src/services/speech",
+              "children": [
+                {
+                  "name": "core",
+                  "type": "folder",
+                  "path": "src/services/speech/core",
+                  "children": [
+                    {
+                      "name": "ISpeechProvider.ts",
+                      "type": "file",
+                      "path": "src/services/speech/core/ISpeechProvider.ts",
+                      "size": 1820,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SpeechService.ts",
+                      "type": "file",
+                      "path": "src/services/speech/core/SpeechService.ts",
+                      "size": 3431,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "providers",
+                  "type": "folder",
+                  "path": "src/services/speech/providers",
+                  "children": [
+                    {
+                      "name": "elevenlabs.provider.ts",
+                      "type": "file",
+                      "path": "src/services/speech/providers/elevenlabs.provider.ts",
+                      "size": 7542,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "whisper.provider.ts",
+                      "type": "file",
+                      "path": "src/services/speech/providers/whisper.provider.ts",
+                      "size": 8246,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/services/speech/index.ts",
+                  "size": 796,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/services/speech/types.ts",
+                  "size": 4331,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "storage",
+          "type": "folder",
+          "path": "src/storage",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "src/storage/core",
+              "children": [
+                {
+                  "name": "IStorageProvider.ts",
+                  "type": "file",
+                  "path": "src/storage/core/IStorageProvider.ts",
+                  "size": 7434,
+                  "language": "ts"
+                },
+                {
+                  "name": "storageFactory.ts",
+                  "type": "file",
+                  "path": "src/storage/core/storageFactory.ts",
+                  "size": 6149,
+                  "language": "ts"
+                },
+                {
+                  "name": "StorageService.ts",
+                  "type": "file",
+                  "path": "src/storage/core/StorageService.ts",
+                  "size": 6177,
+                  "language": "ts"
+                },
+                {
+                  "name": "storageValidation.ts",
+                  "type": "file",
+                  "path": "src/storage/core/storageValidation.ts",
+                  "size": 13814,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "providers",
+              "type": "folder",
+              "path": "src/storage/providers",
+              "children": [
+                {
+                  "name": "cloudflare",
+                  "type": "folder",
+                  "path": "src/storage/providers/cloudflare",
+                  "children": [
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/storage/providers/cloudflare/index.ts",
+                      "size": 188,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "kvProvider.ts",
+                      "type": "file",
+                      "path": "src/storage/providers/cloudflare/kvProvider.ts",
+                      "size": 8007,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "r2Provider.ts",
+                      "type": "file",
+                      "path": "src/storage/providers/cloudflare/r2Provider.ts",
+                      "size": 9599,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "fileSystem",
+                  "type": "folder",
+                  "path": "src/storage/providers/fileSystem",
+                  "children": [
+                    {
+                      "name": "fileSystemProvider.ts",
+                      "type": "file",
+                      "path": "src/storage/providers/fileSystem/fileSystemProvider.ts",
+                      "size": 11914,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "inMemory",
+                  "type": "folder",
+                  "path": "src/storage/providers/inMemory",
+                  "children": [
+                    {
+                      "name": "inMemoryProvider.ts",
+                      "type": "file",
+                      "path": "src/storage/providers/inMemory/inMemoryProvider.ts",
+                      "size": 6887,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "supabase",
+                  "type": "folder",
+                  "path": "src/storage/providers/supabase",
+                  "children": [
+                    {
+                      "name": "supabase.types.ts",
+                      "type": "file",
+                      "path": "src/storage/providers/supabase/supabase.types.ts",
+                      "size": 1174,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "supabaseProvider.ts",
+                      "type": "file",
+                      "path": "src/storage/providers/supabase/supabaseProvider.ts",
+                      "size": 8433,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/storage/index.ts",
+              "size": 573,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types-global",
+          "type": "folder",
+          "path": "src/types-global",
+          "children": [
+            {
+              "name": "errors.ts",
+              "type": "file",
+              "path": "src/types-global/errors.ts",
+              "size": 4740,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "formatting",
+              "type": "folder",
+              "path": "src/utils/formatting",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/formatting/index.ts",
+                  "size": 238,
+                  "language": "ts"
+                },
+                {
+                  "name": "markdownBuilder.ts",
+                  "type": "file",
+                  "path": "src/utils/formatting/markdownBuilder.ts",
+                  "size": 14730,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "internal",
+              "type": "folder",
+              "path": "src/utils/internal",
+              "children": [
+                {
+                  "name": "error-handler",
+                  "type": "folder",
+                  "path": "src/utils/internal/error-handler",
+                  "children": [
+                    {
+                      "name": "errorHandler.ts",
+                      "type": "file",
+                      "path": "src/utils/internal/error-handler/errorHandler.ts",
+                      "size": 19097,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "helpers.ts",
+                      "type": "file",
+                      "path": "src/utils/internal/error-handler/helpers.ts",
+                      "size": 6867,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/utils/internal/error-handler/index.ts",
+                      "size": 815,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "mappings.ts",
+                      "type": "file",
+                      "path": "src/utils/internal/error-handler/mappings.ts",
+                      "size": 6888,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "types.ts",
+                      "type": "file",
+                      "path": "src/utils/internal/error-handler/types.ts",
+                      "size": 8791,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "encoding.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/encoding.ts",
+                  "size": 2357,
+                  "language": "ts"
+                },
+                {
+                  "name": "health.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/health.ts",
+                  "size": 1234,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/index.ts",
+                  "size": 454,
+                  "language": "ts"
+                },
+                {
+                  "name": "logger.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/logger.ts",
+                  "size": 12855,
+                  "language": "ts"
+                },
+                {
+                  "name": "performance.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/performance.ts",
+                  "size": 6697,
+                  "language": "ts"
+                },
+                {
+                  "name": "requestContext.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/requestContext.ts",
+                  "size": 10115,
+                  "language": "ts"
+                },
+                {
+                  "name": "runtime.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/runtime.ts",
+                  "size": 1552,
+                  "language": "ts"
+                },
+                {
+                  "name": "startupBanner.ts",
+                  "type": "file",
+                  "path": "src/utils/internal/startupBanner.ts",
+                  "size": 771,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "metrics",
+              "type": "folder",
+              "path": "src/utils/metrics",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/metrics/index.ts",
+                  "size": 270,
+                  "language": "ts"
+                },
+                {
+                  "name": "registry.ts",
+                  "type": "file",
+                  "path": "src/utils/metrics/registry.ts",
+                  "size": 2919,
+                  "language": "ts"
+                },
+                {
+                  "name": "tokenCounter.ts",
+                  "type": "file",
+                  "path": "src/utils/metrics/tokenCounter.ts",
+                  "size": 5269,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "network",
+              "type": "folder",
+              "path": "src/utils/network",
+              "children": [
+                {
+                  "name": "fetchWithTimeout.ts",
+                  "type": "file",
+                  "path": "src/utils/network/fetchWithTimeout.ts",
+                  "size": 3851,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/network/index.ts",
+                  "size": 237,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "pagination",
+              "type": "folder",
+              "path": "src/utils/pagination",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/pagination/index.ts",
+                  "size": 5803,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "parsing",
+              "type": "folder",
+              "path": "src/utils/parsing",
+              "children": [
+                {
+                  "name": "csvParser.ts",
+                  "type": "file",
+                  "path": "src/utils/parsing/csvParser.ts",
+                  "size": 4124,
+                  "language": "ts"
+                },
+                {
+                  "name": "dateParser.ts",
+                  "type": "file",
+                  "path": "src/utils/parsing/dateParser.ts",
+                  "size": 4871,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/parsing/index.ts",
+                  "size": 403,
+                  "language": "ts"
+                },
+                {
+                  "name": "jsonParser.ts",
+                  "type": "file",
+                  "path": "src/utils/parsing/jsonParser.ts",
+                  "size": 5739,
+                  "language": "ts"
+                },
+                {
+                  "name": "pdfParser.ts",
+                  "type": "file",
+                  "path": "src/utils/parsing/pdfParser.ts",
+                  "size": 27563,
+                  "language": "ts"
+                },
+                {
+                  "name": "xmlParser.ts",
+                  "type": "file",
+                  "path": "src/utils/parsing/xmlParser.ts",
+                  "size": 4153,
+                  "language": "ts"
+                },
+                {
+                  "name": "yamlParser.ts",
+                  "type": "file",
+                  "path": "src/utils/parsing/yamlParser.ts",
+                  "size": 3970,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "scheduling",
+              "type": "folder",
+              "path": "src/utils/scheduling",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/scheduling/index.ts",
+                  "size": 197,
+                  "language": "ts"
+                },
+                {
+                  "name": "scheduler.ts",
+                  "type": "file",
+                  "path": "src/utils/scheduling/scheduler.ts",
+                  "size": 5387,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "security",
+              "type": "folder",
+              "path": "src/utils/security",
+              "children": [
+                {
+                  "name": "idGenerator.ts",
+                  "type": "file",
+                  "path": "src/utils/security/idGenerator.ts",
+                  "size": 12275,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/security/index.ts",
+                  "size": 304,
+                  "language": "ts"
+                },
+                {
+                  "name": "rateLimiter.ts",
+                  "type": "file",
+                  "path": "src/utils/security/rateLimiter.ts",
+                  "size": 8042,
+                  "language": "ts"
+                },
+                {
+                  "name": "sanitization.ts",
+                  "type": "file",
+                  "path": "src/utils/security/sanitization.ts",
+                  "size": 24136,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "telemetry",
+              "type": "folder",
+              "path": "src/utils/telemetry",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/utils/telemetry/index.ts",
+                  "size": 365,
+                  "language": "ts"
+                },
+                {
+                  "name": "instrumentation.ts",
+                  "type": "file",
+                  "path": "src/utils/telemetry/instrumentation.ts",
+                  "size": 8389,
+                  "language": "ts"
+                },
+                {
+                  "name": "metrics.ts",
+                  "type": "file",
+                  "path": "src/utils/telemetry/metrics.ts",
+                  "size": 6518,
+                  "language": "ts"
+                },
+                {
+                  "name": "semconv.ts",
+                  "type": "file",
+                  "path": "src/utils/telemetry/semconv.ts",
+                  "size": 5599,
+                  "language": "ts"
+                },
+                {
+                  "name": "trace.ts",
+                  "type": "file",
+                  "path": "src/utils/telemetry/trace.ts",
+                  "size": 7160,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/utils/index.ts",
+              "size": 925,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 6736,
+          "language": "ts"
+        },
+        {
+          "name": "worker.ts",
+          "type": "file",
+          "path": "src/worker.ts",
+          "size": 11625,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "config",
+          "type": "folder",
+          "path": "tests/config",
+          "children": [
+            {
+              "name": "index.int.test.ts",
+              "type": "file",
+              "path": "tests/config/index.int.test.ts",
+              "size": 9390,
+              "language": "ts"
+            },
+            {
+              "name": "index.test.ts",
+              "type": "file",
+              "path": "tests/config/index.test.ts",
+              "size": 3160,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "container",
+          "type": "folder",
+          "path": "tests/container",
+          "children": [
+            {
+              "name": "registrations",
+              "type": "folder",
+              "path": "tests/container/registrations",
+              "children": [
+                {
+                  "name": "core.test.ts",
+                  "type": "file",
+                  "path": "tests/container/registrations/core.test.ts",
+                  "size": 6777,
+                  "language": "ts"
+                },
+                {
+                  "name": "mcp.test.ts",
+                  "type": "file",
+                  "path": "tests/container/registrations/mcp.test.ts",
+                  "size": 6554,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.test.ts",
+              "type": "file",
+              "path": "tests/container/index.test.ts",
+              "size": 3519,
+              "language": "ts"
+            },
+            {
+              "name": "tokens.test.ts",
+              "type": "file",
+              "path": "tests/container/tokens.test.ts",
+              "size": 6234,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "mcp-server",
+          "type": "folder",
+          "path": "tests/mcp-server",
+          "children": [
+            {
+              "name": "resources",
+              "type": "folder",
+              "path": "tests/mcp-server/resources",
+              "children": [
+                {
+                  "name": "utils",
+                  "type": "folder",
+                  "path": "tests/mcp-server/resources/utils",
+                  "children": [
+                    {
+                      "name": "resourceDefinition.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/resources/utils/resourceDefinition.test.ts",
+                      "size": 368,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "resourceHandlerFactory.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/resources/utils/resourceHandlerFactory.test.ts",
+                      "size": 378,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "resource-registration.test.ts",
+                  "type": "file",
+                  "path": "tests/mcp-server/resources/resource-registration.test.ts",
+                  "size": 4813,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "tests/mcp-server/tools",
+              "children": [
+                {
+                  "name": "definitions",
+                  "type": "folder",
+                  "path": "tests/mcp-server/tools/definitions",
+                  "children": [
+                    {
+                      "name": "clinicaltrials-analyze-trends.tool.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/tools/definitions/clinicaltrials-analyze-trends.tool.test.ts",
+                      "size": 12874,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "clinicaltrials-compare-studies.tool.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/tools/definitions/clinicaltrials-compare-studies.tool.test.ts",
+                      "size": 16675,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "clinicaltrials-get-study.tool.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/tools/definitions/clinicaltrials-get-study.tool.test.ts",
+                      "size": 8614,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "clinicaltrials-search-studies.tool.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/tools/definitions/clinicaltrials-search-studies.tool.test.ts",
+                      "size": 8907,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "folder",
+                  "path": "tests/mcp-server/tools/utils",
+                  "children": [
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/tools/utils/index.test.ts",
+                      "size": 337,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "toolDefinition.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/tools/utils/toolDefinition.test.ts",
+                      "size": 344,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "toolHandlerFactory.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/tools/utils/toolHandlerFactory.test.ts",
+                      "size": 11828,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "tool-registration.test.ts",
+                  "type": "file",
+                  "path": "tests/mcp-server/tools/tool-registration.test.ts",
+                  "size": 10580,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "transports",
+              "type": "folder",
+              "path": "tests/mcp-server/transports",
+              "children": [
+                {
+                  "name": "auth",
+                  "type": "folder",
+                  "path": "tests/mcp-server/transports/auth",
+                  "children": [
+                    {
+                      "name": "lib",
+                      "type": "folder",
+                      "path": "tests/mcp-server/transports/auth/lib",
+                      "children": [
+                        {
+                          "name": "authContext.test.ts",
+                          "type": "file",
+                          "path": "tests/mcp-server/transports/auth/lib/authContext.test.ts",
+                          "size": 11118,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "authTypes.test.ts",
+                          "type": "file",
+                          "path": "tests/mcp-server/transports/auth/lib/authTypes.test.ts",
+                          "size": 8678,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "authUtils.test.ts",
+                          "type": "file",
+                          "path": "tests/mcp-server/transports/auth/lib/authUtils.test.ts",
+                          "size": 1848,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "withAuth.test.ts",
+                          "type": "file",
+                          "path": "tests/mcp-server/transports/auth/lib/withAuth.test.ts",
+                          "size": 8091,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "strategies",
+                      "type": "folder",
+                      "path": "tests/mcp-server/transports/auth/strategies",
+                      "children": [
+                        {
+                          "name": "authStrategy.test.ts",
+                          "type": "file",
+                          "path": "tests/mcp-server/transports/auth/strategies/authStrategy.test.ts",
+                          "size": 9970,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "jwtStrategy.test.ts",
+                          "type": "file",
+                          "path": "tests/mcp-server/transports/auth/strategies/jwtStrategy.test.ts",
+                          "size": 9244,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "oauthStrategy.test.ts",
+                          "type": "file",
+                          "path": "tests/mcp-server/transports/auth/strategies/oauthStrategy.test.ts",
+                          "size": 17014,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "authFactory.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/auth/authFactory.test.ts",
+                      "size": 3147,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "authMiddleware.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/auth/authMiddleware.test.ts",
+                      "size": 11176,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/auth/index.test.ts",
+                      "size": 305,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "http",
+                  "type": "folder",
+                  "path": "tests/mcp-server/transports/http",
+                  "children": [
+                    {
+                      "name": "httpErrorHandler.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/http/httpErrorHandler.test.ts",
+                      "size": 10980,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "httpTransport.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/http/httpTransport.test.ts",
+                      "size": 10543,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "httpTypes.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/http/httpTypes.test.ts",
+                      "size": 3379,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/http/index.test.ts",
+                      "size": 3904,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "sessionIdUtils.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/http/sessionIdUtils.test.ts",
+                      "size": 346,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "sessionStore.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/http/sessionStore.test.ts",
+                      "size": 11601,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "stdio",
+                  "type": "folder",
+                  "path": "tests/mcp-server/transports/stdio",
+                  "children": [
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/stdio/index.test.ts",
+                      "size": 350,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "stdioTransport.test.ts",
+                      "type": "file",
+                      "path": "tests/mcp-server/transports/stdio/stdioTransport.test.ts",
+                      "size": 784,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "ITransport.test.ts",
+                  "type": "file",
+                  "path": "tests/mcp-server/transports/ITransport.test.ts",
+                  "size": 4686,
+                  "language": "ts"
+                },
+                {
+                  "name": "manager.test.ts",
+                  "type": "file",
+                  "path": "tests/mcp-server/transports/manager.test.ts",
+                  "size": 6958,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mocks",
+          "type": "folder",
+          "path": "tests/mocks",
+          "children": [
+            {
+              "name": "handlers.ts",
+              "type": "file",
+              "path": "tests/mocks/handlers.ts",
+              "size": 3563,
+              "language": "ts"
+            },
+            {
+              "name": "server.ts",
+              "type": "file",
+              "path": "tests/mocks/server.ts",
+              "size": 209,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "scripts",
+          "type": "folder",
+          "path": "tests/scripts",
+          "children": [
+            {
+              "name": "devdocs.test.ts",
+              "type": "file",
+              "path": "tests/scripts/devdocs.test.ts",
+              "size": 11412,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "services",
+          "type": "folder",
+          "path": "tests/services",
+          "children": [
+            {
+              "name": "llm",
+              "type": "folder",
+              "path": "tests/services/llm",
+              "children": [
+                {
+                  "name": "core",
+                  "type": "folder",
+                  "path": "tests/services/llm/core",
+                  "children": [
+                    {
+                      "name": "ILlmProvider.test.ts",
+                      "type": "file",
+                      "path": "tests/services/llm/core/ILlmProvider.test.ts",
+                      "size": 328,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "providers",
+                  "type": "folder",
+                  "path": "tests/services/llm/providers",
+                  "children": [
+                    {
+                      "name": "openrouter.provider.test.ts",
+                      "type": "file",
+                      "path": "tests/services/llm/providers/openrouter.provider.test.ts",
+                      "size": 9086,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/services/llm/index.test.ts",
+                  "size": 2556,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.test.ts",
+                  "type": "file",
+                  "path": "tests/services/llm/types.test.ts",
+                  "size": 1713,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "speech",
+              "type": "folder",
+              "path": "tests/services/speech",
+              "children": [
+                {
+                  "name": "core",
+                  "type": "folder",
+                  "path": "tests/services/speech/core",
+                  "children": [
+                    {
+                      "name": "ISpeechProvider.test.ts",
+                      "type": "file",
+                      "path": "tests/services/speech/core/ISpeechProvider.test.ts",
+                      "size": 346,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SpeechService.test.ts",
+                      "type": "file",
+                      "path": "tests/services/speech/core/SpeechService.test.ts",
+                      "size": 352,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "providers",
+                  "type": "folder",
+                  "path": "tests/services/speech/providers",
+                  "children": [
+                    {
+                      "name": "elevenlabs.provider.test.ts",
+                      "type": "file",
+                      "path": "tests/services/speech/providers/elevenlabs.provider.test.ts",
+                      "size": 367,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "whisper.provider.test.ts",
+                      "type": "file",
+                      "path": "tests/services/speech/providers/whisper.provider.test.ts",
+                      "size": 352,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/services/speech/index.test.ts",
+                  "size": 334,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.test.ts",
+                  "type": "file",
+                  "path": "tests/services/speech/types.test.ts",
+                  "size": 313,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "storage",
+          "type": "folder",
+          "path": "tests/storage",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "tests/storage/core",
+              "children": [
+                {
+                  "name": "IStorageProvider.test.ts",
+                  "type": "file",
+                  "path": "tests/storage/core/IStorageProvider.test.ts",
+                  "size": 8717,
+                  "language": "ts"
+                },
+                {
+                  "name": "storageFactory.test.ts",
+                  "type": "file",
+                  "path": "tests/storage/core/storageFactory.test.ts",
+                  "size": 6415,
+                  "language": "ts"
+                },
+                {
+                  "name": "storageValidation.test.ts",
+                  "type": "file",
+                  "path": "tests/storage/core/storageValidation.test.ts",
+                  "size": 10286,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "providers",
+              "type": "folder",
+              "path": "tests/storage/providers",
+              "children": [
+                {
+                  "name": "cloudflare",
+                  "type": "folder",
+                  "path": "tests/storage/providers/cloudflare",
+                  "children": [
+                    {
+                      "name": "kvProvider.test.ts",
+                      "type": "file",
+                      "path": "tests/storage/providers/cloudflare/kvProvider.test.ts",
+                      "size": 7262,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "r2Provider.test.ts",
+                      "type": "file",
+                      "path": "tests/storage/providers/cloudflare/r2Provider.test.ts",
+                      "size": 9041,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "fileSystem",
+                  "type": "folder",
+                  "path": "tests/storage/providers/fileSystem",
+                  "children": [
+                    {
+                      "name": "fileSystemProvider.test.ts",
+                      "type": "file",
+                      "path": "tests/storage/providers/fileSystem/fileSystemProvider.test.ts",
+                      "size": 18326,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "inMemory",
+                  "type": "folder",
+                  "path": "tests/storage/providers/inMemory",
+                  "children": [
+                    {
+                      "name": "inMemoryProvider.test.ts",
+                      "type": "file",
+                      "path": "tests/storage/providers/inMemory/inMemoryProvider.test.ts",
+                      "size": 2637,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "supabase",
+                  "type": "folder",
+                  "path": "tests/storage/providers/supabase",
+                  "children": [
+                    {
+                      "name": "supabase.types.test.ts",
+                      "type": "file",
+                      "path": "tests/storage/providers/supabase/supabase.types.test.ts",
+                      "size": 341,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "supabaseProvider.test.ts",
+                      "type": "file",
+                      "path": "tests/storage/providers/supabase/supabaseProvider.test.ts",
+                      "size": 358,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "index.test.ts",
+              "type": "file",
+              "path": "tests/storage/index.test.ts",
+              "size": 6854,
+              "language": "ts"
+            },
+            {
+              "name": "storageProviderCompliance.test.ts",
+              "type": "file",
+              "path": "tests/storage/storageProviderCompliance.test.ts",
+              "size": 9887,
+              "language": "ts"
+            },
+            {
+              "name": "StorageService.test.ts",
+              "type": "file",
+              "path": "tests/storage/StorageService.test.ts",
+              "size": 12822,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types-global",
+          "type": "folder",
+          "path": "tests/types-global",
+          "children": [
+            {
+              "name": "errors.test.ts",
+              "type": "file",
+              "path": "tests/types-global/errors.test.ts",
+              "size": 8784,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "tests/utils",
+          "children": [
+            {
+              "name": "formatting",
+              "type": "folder",
+              "path": "tests/utils/formatting",
+              "children": [
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/formatting/index.test.ts",
+                  "size": 3967,
+                  "language": "ts"
+                },
+                {
+                  "name": "markdownBuilder.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/formatting/markdownBuilder.test.ts",
+                  "size": 21206,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "internal",
+              "type": "folder",
+              "path": "tests/utils/internal",
+              "children": [
+                {
+                  "name": "error-handler",
+                  "type": "folder",
+                  "path": "tests/utils/internal/error-handler",
+                  "children": [
+                    {
+                      "name": "errorHandler.test.ts",
+                      "type": "file",
+                      "path": "tests/utils/internal/error-handler/errorHandler.test.ts",
+                      "size": 348,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "helpers.test.ts",
+                      "type": "file",
+                      "path": "tests/utils/internal/error-handler/helpers.test.ts",
+                      "size": 376,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/utils/internal/error-handler/index.test.ts",
+                      "size": 343,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "mappings.test.ts",
+                      "type": "file",
+                      "path": "tests/utils/internal/error-handler/mappings.test.ts",
+                      "size": 351,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "types.test.ts",
+                      "type": "file",
+                      "path": "tests/utils/internal/error-handler/types.test.ts",
+                      "size": 330,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "encoding.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/encoding.test.ts",
+                  "size": 1568,
+                  "language": "ts"
+                },
+                {
+                  "name": "errorHandler.int.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/errorHandler.int.test.ts",
+                  "size": 7861,
+                  "language": "ts"
+                },
+                {
+                  "name": "errorHandler.unit.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/errorHandler.unit.test.ts",
+                  "size": 12348,
+                  "language": "ts"
+                },
+                {
+                  "name": "health.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/health.test.ts",
+                  "size": 2245,
+                  "language": "ts"
+                },
+                {
+                  "name": "logger.int.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/logger.int.test.ts",
+                  "size": 14829,
+                  "language": "ts"
+                },
+                {
+                  "name": "performance.init.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/performance.init.test.ts",
+                  "size": 3383,
+                  "language": "ts"
+                },
+                {
+                  "name": "performance.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/performance.test.ts",
+                  "size": 7729,
+                  "language": "ts"
+                },
+                {
+                  "name": "requestContext.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/requestContext.test.ts",
+                  "size": 4234,
+                  "language": "ts"
+                },
+                {
+                  "name": "runtime.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/runtime.test.ts",
+                  "size": 1394,
+                  "language": "ts"
+                },
+                {
+                  "name": "startupBanner.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/internal/startupBanner.test.ts",
+                  "size": 1408,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "metrics",
+              "type": "folder",
+              "path": "tests/utils/metrics",
+              "children": [
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/metrics/index.test.ts",
+                  "size": 5358,
+                  "language": "ts"
+                },
+                {
+                  "name": "registry.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/metrics/registry.test.ts",
+                  "size": 4890,
+                  "language": "ts"
+                },
+                {
+                  "name": "tokenCounter.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/metrics/tokenCounter.test.ts",
+                  "size": 2879,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "network",
+              "type": "folder",
+              "path": "tests/utils/network",
+              "children": [
+                {
+                  "name": "fetchWithTimeout.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/network/fetchWithTimeout.test.ts",
+                  "size": 6275,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/network/index.test.ts",
+                  "size": 3491,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "pagination",
+              "type": "folder",
+              "path": "tests/utils/pagination",
+              "children": [
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/pagination/index.test.ts",
+                  "size": 21976,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "parsing",
+              "type": "folder",
+              "path": "tests/utils/parsing",
+              "children": [
+                {
+                  "name": "csvParser.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/parsing/csvParser.test.ts",
+                  "size": 4640,
+                  "language": "ts"
+                },
+                {
+                  "name": "dateParser.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/parsing/dateParser.test.ts",
+                  "size": 2662,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/parsing/index.test.ts",
+                  "size": 7455,
+                  "language": "ts"
+                },
+                {
+                  "name": "jsonParser.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/parsing/jsonParser.test.ts",
+                  "size": 6141,
+                  "language": "ts"
+                },
+                {
+                  "name": "pdfParser.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/parsing/pdfParser.test.ts",
+                  "size": 35560,
+                  "language": "ts"
+                },
+                {
+                  "name": "xmlParser.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/parsing/xmlParser.test.ts",
+                  "size": 2867,
+                  "language": "ts"
+                },
+                {
+                  "name": "yamlParser.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/parsing/yamlParser.test.ts",
+                  "size": 2699,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "scheduling",
+              "type": "folder",
+              "path": "tests/utils/scheduling",
+              "children": [
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/scheduling/index.test.ts",
+                  "size": 5103,
+                  "language": "ts"
+                },
+                {
+                  "name": "scheduler.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/scheduling/scheduler.test.ts",
+                  "size": 5988,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "security",
+              "type": "folder",
+              "path": "tests/utils/security",
+              "children": [
+                {
+                  "name": "idGenerator.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/security/idGenerator.test.ts",
+                  "size": 3984,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/security/index.test.ts",
+                  "size": 5958,
+                  "language": "ts"
+                },
+                {
+                  "name": "rateLimiter.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/security/rateLimiter.test.ts",
+                  "size": 7639,
+                  "language": "ts"
+                },
+                {
+                  "name": "sanitization.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/security/sanitization.test.ts",
+                  "size": 10584,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "telemetry",
+              "type": "folder",
+              "path": "tests/utils/telemetry",
+              "children": [
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/telemetry/index.test.ts",
+                  "size": 8539,
+                  "language": "ts"
+                },
+                {
+                  "name": "instrumentation.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/telemetry/instrumentation.test.ts",
+                  "size": 7640,
+                  "language": "ts"
+                },
+                {
+                  "name": "metrics.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/telemetry/metrics.test.ts",
+                  "size": 13010,
+                  "language": "ts"
+                },
+                {
+                  "name": "semconv.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/telemetry/semconv.test.ts",
+                  "size": 10112,
+                  "language": "ts"
+                },
+                {
+                  "name": "trace.test.ts",
+                  "type": "file",
+                  "path": "tests/utils/telemetry/trace.test.ts",
+                  "size": 15062,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.test.ts",
+              "type": "file",
+              "path": "tests/utils/index.test.ts",
+              "size": 4222,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "index.test.ts",
+          "type": "file",
+          "path": "tests/index.test.ts",
+          "size": 6219,
+          "language": "ts"
+        },
+        {
+          "name": "setup.ts",
+          "type": "file",
+          "path": "tests/setup.ts",
+          "size": 3187,
+          "language": "ts"
+        },
+        {
+          "name": "worker.test.ts",
+          "type": "file",
+          "path": "tests/worker.test.ts",
+          "size": 6463,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 1837,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 4511,
+      "language": "text"
+    },
+    {
+      "name": ".prettierrc.json",
+      "type": "file",
+      "path": ".prettierrc.json",
+      "size": 178,
+      "language": "json"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 33516,
+      "language": "md"
+    },
+    {
+      "name": "bunfig.toml",
+      "type": "file",
+      "path": "bunfig.toml",
+      "size": 789,
+      "language": "toml"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 33821,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 30590,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 2821,
+      "language": "text"
+    },
+    {
+      "name": "eslint.config.js",
+      "type": "file",
+      "path": "eslint.config.js",
+      "size": 2675,
+      "language": "js"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 11317,
+      "language": "text"
+    },
+    {
+      "name": "mcp.json",
+      "type": "file",
+      "path": "mcp.json",
+      "size": 269,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 6018,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13351,
+      "language": "md"
+    },
+    {
+      "name": "repomix.config.json",
+      "type": "file",
+      "path": "repomix.config.json",
+      "size": 599,
+      "language": "json"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 3483,
+      "language": "json"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 797,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 1676,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.typedoc.json",
+      "type": "file",
+      "path": "tsconfig.typedoc.json",
+      "size": 128,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.vitest.json",
+      "type": "file",
+      "path": "tsconfig.vitest.json",
+      "size": 315,
+      "language": "json"
+    },
+    {
+      "name": "tsdoc.json",
+      "type": "file",
+      "path": "tsdoc.json",
+      "size": 907,
+      "language": "json"
+    },
+    {
+      "name": "typedoc.json",
+      "type": "file",
+      "path": "typedoc.json",
+      "size": 344,
+      "language": "json"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 721,
+      "language": "ts"
+    },
+    {
+      "name": "wrangler.toml",
+      "type": "file",
+      "path": "wrangler.toml",
+      "size": 2742,
+      "language": "toml"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "name": "octocode-mcp-vscode",
+  "version": "1.0.5",
+  "description": "Management extension for Octocode MCP Server. Enables AI assistants to search, analyze, and understand codebases across GitHub. Supports Cursor, Windsurf, Antigravity, Cline, Roo Code, Trae, and more.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "github",
+    "code-search",
+    "code-analysis",
+    "repository-explorer",
+    "ai",
+    "ai-assistant",
+    "claude",
+    "copilot",
+    "cursor",
+    "windsurf",
+    "antigravity",
+    "cline",
+    "roo-code",
+    "trae",
+    "gemini",
+    "octocode",
+    "pull-request",
+    "code-research",
+    "agentic"
+  ],
+  "homepage": "https://octocode.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgauryy/octocode-mcp.git",
+    "directory": "packages/octocode-vscode"
+  },
+  "bugs": "https://github.com/bgauryy/octocode-mcp/issues",
+  "license": "MIT",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "categories": [
+    "Other",
+    "Machine Learning",
+    "Programming Languages"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "octocode.loginGitHub",
+        "title": "Octocode MCP: Sign in to GitHub",
+        "icon": "$(github)"
+      },
+      {
+        "command": "octocode.logoutGitHub",
+        "title": "Octocode MCP: Sign out of GitHub"
+      },
+      {
+        "command": "octocode.showAuthStatus",
+        "title": "Octocode MCP: Show GitHub Auth Status"
+      },
+      {
+        "command": "octocode.startServer",
+        "title": "Octocode MCP: Start Server"
+      },
+      {
+        "command": "octocode.stopServer",
+        "title": "Octocode MCP: Stop Server"
+      },
+      {
+        "command": "octocode.showStatus",
+        "title": "Octocode MCP: Show Status"
+      },
+      {
+        "command": "octocode.installMcp",
+        "title": "Octocode MCP: Install MCP Server"
+      },
+      {
+        "command": "octocode.installForCline",
+        "title": "Octocode MCP: Install for Cline"
+      },
+      {
+        "command": "octocode.installForRooCode",
+        "title": "Octocode MCP: Install for Roo Code"
+      },
+      {
+        "command": "octocode.installForTrae",
+        "title": "Octocode MCP: Install for Trae"
+      },
+      {
+        "command": "octocode.installForAll",
+        "title": "Octocode MCP: Install for All Clients"
+      }
+    ],
+    "configuration": {
+      "title": "Octocode MCP",
+      "properties": {
+        "octocode.autoInstallMcp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically configure Octocode MCP server in supported editors (Cursor, Windsurf, Trae, Antigravity)."
+        },
+        "octocode.githubToken": {
+          "type": "string",
+          "default": "",
+          "description": "GitHub personal access token (optional). Prefer using 'Sign in to GitHub' command for OAuth authentication."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@types/vscode": "^1.107.0",
+    "@vscode/vsce": "^3.7.1",
+    "esbuild": "^0.27.2",
+    "eslint": "^9.18.0",
+    "typescript": "^5.9.3"
+  },
+  "displayName": "Octocode MCP",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "icon": "images/icon.png",
+  "main": "./out/extension.js",
+  "publisher": "bgauryy",
+  "scripts": {
+    "build": "yarn esbuild src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "compile": "npm run build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "package": "npx @vscode/vsce package --allow-missing-repository --no-dependencies",
+    "publish": "npx @vscode/vsce publish",
+    "vscode:prepublish": "npm run build",
+    "watch": "esbuild src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --watch"
+  }
+}

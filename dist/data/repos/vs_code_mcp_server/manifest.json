@@ -1,0 +1,173 @@
+{
+  "name": "VS Code MCP Server",
+  "tree": [
+    {
+      "name": "media",
+      "type": "folder",
+      "path": "media",
+      "children": [
+        {
+          "name": "logo.png",
+          "type": "file",
+          "path": "media/logo.png",
+          "size": 7145,
+          "language": "png"
+        },
+        {
+          "name": "logo.svg",
+          "type": "file",
+          "path": "media/logo.svg",
+          "size": 3580,
+          "language": "svg"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "test",
+          "type": "folder",
+          "path": "src/test",
+          "children": [
+            {
+              "name": "extension.test.ts",
+              "type": "file",
+              "path": "src/test/extension.test.ts",
+              "size": 5377,
+              "language": "ts"
+            },
+            {
+              "name": "testUtils.ts",
+              "type": "file",
+              "path": "src/test/testUtils.ts",
+              "size": 2651,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "diagnostics-tools.ts",
+              "type": "file",
+              "path": "src/tools/diagnostics-tools.ts",
+              "size": 8042,
+              "language": "ts"
+            },
+            {
+              "name": "edit-tools.ts",
+              "type": "file",
+              "path": "src/tools/edit-tools.ts",
+              "size": 10647,
+              "language": "ts"
+            },
+            {
+              "name": "file-tools.ts",
+              "type": "file",
+              "path": "src/tools/file-tools.ts",
+              "size": 20596,
+              "language": "ts"
+            },
+            {
+              "name": "shell-tools.ts",
+              "type": "file",
+              "path": "src/tools/shell-tools.ts",
+              "size": 5592,
+              "language": "ts"
+            },
+            {
+              "name": "symbol-tools.ts",
+              "type": "file",
+              "path": "src/tools/symbol-tools.ts",
+              "size": 26975,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/utils/logger.ts",
+              "size": 2265,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "extension.ts",
+          "type": "file",
+          "path": "src/extension.ts",
+          "size": 12386,
+          "language": "ts"
+        },
+        {
+          "name": "server.ts",
+          "type": "file",
+          "path": "src/server.ts",
+          "size": 12586,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 83,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 252,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1075,
+      "language": "text"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 363459,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 3707,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 12716,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 589,
+      "language": "json"
+    }
+  ]
+}

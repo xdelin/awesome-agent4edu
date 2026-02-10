@@ -1,0 +1,82 @@
+url: https://phisanti.github.io/MCPR/
+
+favicon:
+  apple_touch_icon_120x120: pkgdown/favicon/apple-touch-icon.png
+  apple_touch_icon_152x152: pkgdown/favicon/apple-touch-icon.png  
+  apple_touch_icon_180x180: pkgdown/favicon/apple-touch-icon.png
+  favicon_16x16: pkgdown/favicon/favicon-96x96.png
+  favicon_32x32: pkgdown/favicon/favicon-96x96.png
+  favicon_96x96: pkgdown/favicon/favicon-96x96.png
+  favicon_ico: pkgdown/favicon/favicon.ico
+
+home:
+  title: "MCPR: Stateful Human-AI Collaboration in R"
+  description: >
+    Transform AI-assisted R programming from stateless script execution 
+    to collaborative session participation through the Model Context Protocol.
+    
+    Experience the future of interactive data analysis with persistent AI sessions,
+    real-time workspace introspection, and seamless visual integration.
+  sidebar:
+    structure: [links, license, citation, authors, dev]
+    components:
+      citation:
+        title: "Citation"
+        text: >
+          If you use MCPR in your research, please cite:
+          
+          **Santiago Cano-Muniz** (2025). *MCPR: Model Context Protocol Implementation for R Session Integration.*
+      links:
+        title: "Essential Links"
+        text: |
+          - [GitHub Repository](https://github.com/phisanti/MCPR)
+          - [Report Issues](https://github.com/phisanti/MCPR/issues)
+          - [Model Context Protocol](https://modelcontextprotocol.io/)
+          - [Documentation](https://pkgdown.r-lib.org/)
+  strip_header: true
+template:
+  bootstrap: 5
+  light-switch: true
+  theme: github-light
+  theme-dark: github-dark
+  bslib:
+    primary: "#0066cc"
+
+navbar:
+  type: light
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github, lightswitch]
+  components:
+    intro:
+      text: "Quick Start"
+      href: articles/getting-started.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/phisanti/MCPR
+      aria-label: "View source code on GitHub"
+
+# Auto-generate reference to avoid missing topics
+
+articles:
+- title: "Articles"
+  contents:
+  - getting-started
+  - mcp-setup
+  - architecture
+  - read-instructions
+
+footer:
+  structure:
+    left: [developed_by, built_with]
+    right: [github, license]
+  components:
+    developed_by: |
+      Developed by [Santiago Cano-Muniz](https://github.com/phisanti) for the R community
+    built_with: |
+      Built with [pkgdown](https://pkgdown.r-lib.org/) and [Bootstrap 5](https://getbootstrap.com/)
+    github: |
+      [Source Code](https://github.com/phisanti/MCPR)
+    license: |
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+

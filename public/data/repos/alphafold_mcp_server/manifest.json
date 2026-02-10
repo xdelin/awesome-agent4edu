@@ -1,0 +1,61 @@
+{
+  "name": "AlphaFold MCP Server",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 53762,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "alphafold-mcp-server-logo.png",
+      "type": "file",
+      "path": "alphafold-mcp-server-logo.png",
+      "size": 337867,
+      "language": "png"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 393,
+      "language": "text"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 17173,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1325,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 11181,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 466,
+      "language": "json"
+    }
+  ]
+}

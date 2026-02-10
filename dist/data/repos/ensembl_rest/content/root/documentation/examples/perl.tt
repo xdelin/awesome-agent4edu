@@ -1,0 +1,61 @@
+[%#
+Copyright [1999-2015] Wellcome Trust Sanger Institute and the EMBL-European Bioinformatics Institute 
+Copyright [2016-2025] EMBL-European Bioinformatics Institute
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+%]
+
+<div class='tab-pane' id='perl[% p.value.id %]'>
+<pre class="pre-scrollable prettyprint linenums">[% FILTER html %]
+use strict;
+use warnings;
+
+use HTTP::Tiny;
+
+my $http = HTTP::Tiny->new();
+
+my $server = '[% p.value.example.host %]';
+[% IF p.value.body -%]
+my $ext = '[% p.value.uri | url %]';
+my $response = $http->request('POST', $server.$ext, {
+  headers => { 
+  	'Content-type' => '[% p.value.content %]',
+  	'Accept' => '[% p.value.accept %]'
+  },
+  content => '[% p.value.body %]'
+});
+[% ELSE -%]
+my $ext = '[% p.value.uri | url %]';
+my $response = $http->get($server.$ext, {
+  headers => { 'Content-type' => '[% p.value.content %]' }
+});
+[% END -%]
+
+die "Failed!\n" unless $response->{success};
+
+[% IF (p.value.body && p.value.accept == 'application/json') || p.value.content == 'application/json' %]
+use JSON;
+use Data::Dumper;
+if(length $response->{content}) {
+  my $hash = decode_json($response->{content});
+  local $Data::Dumper::Terse = 1;
+  local $Data::Dumper::Indent = 1;
+  print Dumper $hash;
+  print "\n";
+}
+[% ELSE %]
+print "$response->{content}\n";
+[% END -%]
+[% END %]
+</pre>
+</div>

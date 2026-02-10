@@ -1,0 +1,313 @@
+{
+  "name": "linkedin-mcp",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "config.test.ts",
+          "type": "file",
+          "path": "src/config.test.ts",
+          "size": 2578,
+          "language": "ts"
+        },
+        {
+          "name": "config.ts",
+          "type": "file",
+          "path": "src/config.ts",
+          "size": 1825,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 1616,
+          "language": "ts"
+        },
+        {
+          "name": "linkedin-client.test.ts",
+          "type": "file",
+          "path": "src/linkedin-client.test.ts",
+          "size": 9677,
+          "language": "ts"
+        },
+        {
+          "name": "linkedin-client.ts",
+          "type": "file",
+          "path": "src/linkedin-client.ts",
+          "size": 21618,
+          "language": "ts"
+        },
+        {
+          "name": "logger.test.ts",
+          "type": "file",
+          "path": "src/logger.test.ts",
+          "size": 3597,
+          "language": "ts"
+        },
+        {
+          "name": "logger.ts",
+          "type": "file",
+          "path": "src/logger.ts",
+          "size": 1129,
+          "language": "ts"
+        },
+        {
+          "name": "oauth-manager.ts",
+          "type": "file",
+          "path": "src/oauth-manager.ts",
+          "size": 14970,
+          "language": "ts"
+        },
+        {
+          "name": "oauth-service.ts",
+          "type": "file",
+          "path": "src/oauth-service.ts",
+          "size": 14272,
+          "language": "ts"
+        },
+        {
+          "name": "server.test.ts",
+          "type": "file",
+          "path": "src/server.test.ts",
+          "size": 32635,
+          "language": "ts"
+        },
+        {
+          "name": "server.ts",
+          "type": "file",
+          "path": "src/server.ts",
+          "size": 21927,
+          "language": "ts"
+        },
+        {
+          "name": "types.ts",
+          "type": "file",
+          "path": "src/types.ts",
+          "size": 3887,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "web",
+      "type": "folder",
+      "path": "web",
+      "children": [
+        {
+          "name": "ai.txt",
+          "type": "file",
+          "path": "web/ai.txt",
+          "size": 4064,
+          "language": "txt"
+        },
+        {
+          "name": "changelog.html",
+          "type": "file",
+          "path": "web/changelog.html",
+          "size": 28266,
+          "language": "html"
+        },
+        {
+          "name": "favicon.svg",
+          "type": "file",
+          "path": "web/favicon.svg",
+          "size": 625,
+          "language": "svg"
+        },
+        {
+          "name": "icon-16.png",
+          "type": "file",
+          "path": "web/icon-16.png",
+          "size": 318,
+          "language": "png"
+        },
+        {
+          "name": "icon-180.png",
+          "type": "file",
+          "path": "web/icon-180.png",
+          "size": 6028,
+          "language": "png"
+        },
+        {
+          "name": "icon-32.png",
+          "type": "file",
+          "path": "web/icon-32.png",
+          "size": 496,
+          "language": "png"
+        },
+        {
+          "name": "icon-512.png",
+          "type": "file",
+          "path": "web/icon-512.png",
+          "size": 23398,
+          "language": "png"
+        },
+        {
+          "name": "icon.svg",
+          "type": "file",
+          "path": "web/icon.svg",
+          "size": 1190,
+          "language": "svg"
+        },
+        {
+          "name": "IconOnly_Transparent_NoBuffer.png",
+          "type": "file",
+          "path": "web/IconOnly_Transparent_NoBuffer.png",
+          "size": 340023,
+          "language": "png"
+        },
+        {
+          "name": "index.html",
+          "type": "file",
+          "path": "web/index.html",
+          "size": 31952,
+          "language": "html"
+        },
+        {
+          "name": "llms.txt",
+          "type": "file",
+          "path": "web/llms.txt",
+          "size": 2153,
+          "language": "txt"
+        },
+        {
+          "name": "logo.svg",
+          "type": "file",
+          "path": "web/logo.svg",
+          "size": 949,
+          "language": "svg"
+        },
+        {
+          "name": "manifest.json",
+          "type": "file",
+          "path": "web/manifest.json",
+          "size": 1046,
+          "language": "json"
+        },
+        {
+          "name": "profile.png",
+          "type": "file",
+          "path": "web/profile.png",
+          "size": 55955,
+          "language": "png"
+        },
+        {
+          "name": "robots.txt",
+          "type": "file",
+          "path": "web/robots.txt",
+          "size": 796,
+          "language": "txt"
+        },
+        {
+          "name": "sitemap.xml",
+          "type": "file",
+          "path": "web/sitemap.xml",
+          "size": 1226,
+          "language": "xml"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 380,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 12156,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 13426,
+      "language": "md"
+    },
+    {
+      "name": "eslint.config.js",
+      "type": "file",
+      "path": "eslint.config.js",
+      "size": 1511,
+      "language": "js"
+    },
+    {
+      "name": "logo-128.png",
+      "type": "file",
+      "path": "logo-128.png",
+      "size": 7351,
+      "language": "png"
+    },
+    {
+      "name": "logo-256.png",
+      "type": "file",
+      "path": "logo-256.png",
+      "size": 16227,
+      "language": "png"
+    },
+    {
+      "name": "logo-512.png",
+      "type": "file",
+      "path": "logo-512.png",
+      "size": 38906,
+      "language": "png"
+    },
+    {
+      "name": "logo.png",
+      "type": "file",
+      "path": "logo.png",
+      "size": 50230,
+      "language": "png"
+    },
+    {
+      "name": "logo.svg",
+      "type": "file",
+      "path": "logo.svg",
+      "size": 2195,
+      "language": "svg"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2048,
+      "language": "json"
+    },
+    {
+      "name": "pnpm-lock.yaml",
+      "type": "file",
+      "path": "pnpm-lock.yaml",
+      "size": 92254,
+      "language": "yaml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 20732,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 681,
+      "language": "json"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 672,
+      "language": "ts"
+    }
+  ]
+}

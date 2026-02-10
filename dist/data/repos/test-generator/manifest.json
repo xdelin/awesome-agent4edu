@@ -1,0 +1,117 @@
+{
+  "name": "test-generator",
+  "tree": [
+    {
+      "name": "test-generator",
+      "type": "folder",
+      "path": "test-generator",
+      "children": [
+        {
+          "name": "ecosystems",
+          "type": "folder",
+          "path": "test-generator/ecosystems",
+          "children": [
+            {
+              "name": "csharp.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/csharp.md",
+              "size": 18943,
+              "language": "md"
+            },
+            {
+              "name": "go.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/go.md",
+              "size": 13063,
+              "language": "md"
+            },
+            {
+              "name": "java.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/java.md",
+              "size": 15671,
+              "language": "md"
+            },
+            {
+              "name": "javascript.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/javascript.md",
+              "size": 10198,
+              "language": "md"
+            },
+            {
+              "name": "php.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/php.md",
+              "size": 15421,
+              "language": "md"
+            },
+            {
+              "name": "python.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/python.md",
+              "size": 13047,
+              "language": "md"
+            },
+            {
+              "name": "ruby.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/ruby.md",
+              "size": 16318,
+              "language": "md"
+            },
+            {
+              "name": "rust.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/rust.md",
+              "size": 13535,
+              "language": "md"
+            },
+            {
+              "name": "typescript.md",
+              "type": "file",
+              "path": "test-generator/ecosystems/typescript.md",
+              "size": 10459,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "references",
+          "type": "folder",
+          "path": "test-generator/references",
+          "children": [
+            {
+              "name": "test-types.md",
+              "type": "file",
+              "path": "test-generator/references/test-types.md",
+              "size": 9208,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "SKILL.md",
+          "type": "file",
+          "path": "test-generator/SKILL.md",
+          "size": 11725,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1089,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1046,
+      "language": "md"
+    }
+  ]
+}

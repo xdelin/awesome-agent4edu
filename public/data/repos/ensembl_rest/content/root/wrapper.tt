@@ -1,0 +1,92 @@
+[%#
+Copyright [1999-2015] Wellcome Trust Sanger Institute and the EMBL-European Bioinformatics Institute 
+Copyright [2016-2025] EMBL-European Bioinformatics Institute
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+%]
+
+<!DOCTYPE html>
+[% USE date %]
+[% SET psg = 'psgix.assets' %]
+
+<html lang="en">
+<head>
+        <script src="/static/js/20-prettify.js"></script>
+        <script src="/static/js/30-jquery-1.11.1.min.js"></script>
+	<script src="/static/js/highlight/highlight.pack.js"></script>
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>[% site_name %] - [% template_title %]</title>
+	[% IF c.request.env.$psg %]
+	<link href='[% c.request.env.$psg.0 %]' rel='stylesheet'/>
+	[% ELSE %]
+	<link href="[% bootstrap_css or '/static/css/10-bootstrap.css' %]" rel="stylesheet"/>
+	<link href="/static/css/20-prettify.css" rel="stylesheet"/>
+       	<link href="/static/css/25-default.css" rel="stylesheet"/>
+	<link href="/static/css/50-additional.css" rel="stylesheet"/>
+	<link href="/static/css/51-docs.css" rel="stylesheet"/>
+	[% END %]
+	<style>
+    body {
+      padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+  </style>
+	<link href="/static/css/premin/bootstrap-responsive.min.css" rel="stylesheet">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar" onload="prettyPrint()">
+<div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="[% service_parent_url %]"><img class="brand" src="[% service_logo %]" alt="Service logo"/></a>
+                    <ul class="nav">
+                        <li class="active"><a href="/">Endpoints</a></li>
+                        <li><a href="[% wiki_url %]">User Guide</a></li>
+                        <li><a href="http://github.com/Ensembl/ensembl-rest/wiki/Change-log">Change Log</a></li>
+                        <li><a href="[% service_parent_url %]/info/about/index.html">About the Ensembl Project</a></li>
+                        <li><a href="[% service_parent_url %]/info/about/contact/">Contact Ensembl</a></li>
+                        <li><a target="_blank" href="https://www.ebi.ac.uk/data-protection/ensembl/privacy-notice">Privacy Notice</a></li>
+                    </ul>
+            </div><!-- container-->
+        </div><!-- navbar-inner-->
+    </div><!-- navbar-->
+    <br>
+
+    <span class="message">[% status_msg %]</span>
+    <span class="error">[% error_msg %]</span>
+    [% content %]
+</div><!-- container-->
+
+<footer class="footer">
+	<div class="container">
+		<p class="pull-right"><a href="#">Back to top</a></p>
+		<p>[% service_name %] (Version [% service_version %]) &copy; [% date.format(date.now, ' %b %Y', 'en_GB') %] [% copyright_footer %]</p>
+	</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+[% IF c.request.env.$psg %]
+<script src='[% c.request.env.$psg.1 %]'></script>
+[% ELSE %]
+<script src="/static/js/10-bootstrap.js"></script>
+
+[% END %]
+
+
+</body>
+</html>

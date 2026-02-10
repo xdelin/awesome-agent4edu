@@ -1,0 +1,89 @@
+{
+  "name": "Calculator",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "mcp_server_calculator",
+          "type": "folder",
+          "path": "src/mcp_server_calculator",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/mcp_server_calculator/__init__.py",
+              "size": 72,
+              "language": "py"
+            },
+            {
+              "name": "__main__.py",
+              "type": "file",
+              "path": "src/mcp_server_calculator/__main__.py",
+              "size": 50,
+              "language": "py"
+            },
+            {
+              "name": "calculator.py",
+              "type": "file",
+              "path": "src/mcp_server_calculator/calculator.py",
+              "size": 1964,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "test_calculator.py",
+          "type": "file",
+          "path": "tests/test_calculator.py",
+          "size": 3883,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 119,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 701,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1083,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 822,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1537,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text {
+      font-size: 48px;
+      font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
+  </style>
+  <text x="50%" y="50%" class="text">
+    <tspan fill="#000000">Chem</tspan><tspan fill="#000000">MCP</tspan>
+  </text>
+</svg>

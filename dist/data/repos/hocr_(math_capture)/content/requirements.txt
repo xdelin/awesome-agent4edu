@@ -1,0 +1,7 @@
+mcp==1.6.0
+openai==1.76.2
+pillow==11.2.1
+python-multipart==0.0.20
+requests==2.32.3
+uvicorn==0.34.2
+fastapi==0.115.12

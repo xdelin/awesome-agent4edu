@@ -1,0 +1,22 @@
+[project]
+name = "materials-mcp"
+version = "0.1.0"
+description = "Materials MCP Project"
+authors = [
+    {name = "Your Name",email = "your.email@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "optimade>=1.2.4",
+    "requests>=2.31.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.1",
+    "pydantic>=2.6.3"
+]
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

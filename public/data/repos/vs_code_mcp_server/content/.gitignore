@@ -1,0 +1,9 @@
+out
+dist
+node_modules
+.vscode/
+.vscode-test/
+*.vsix
+.serena
+plans
+CLAUDE.md

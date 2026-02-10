@@ -1,0 +1,488 @@
+{
+  "name": "Fermat Math Engine",
+  "tree": [
+    {
+      "name": "fmcp",
+      "type": "folder",
+      "path": "fmcp",
+      "children": [
+        {
+          "name": "mpl_mcp",
+          "type": "folder",
+          "path": "fmcp/mpl_mcp",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "fmcp/mpl_mcp/core",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "fmcp/mpl_mcp/core/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "bar_chart.py",
+                  "type": "file",
+                  "path": "fmcp/mpl_mcp/core/bar_chart.py",
+                  "size": 1667,
+                  "language": "py"
+                },
+                {
+                  "name": "eqn_chart.py",
+                  "type": "file",
+                  "path": "fmcp/mpl_mcp/core/eqn_chart.py",
+                  "size": 3873,
+                  "language": "py"
+                },
+                {
+                  "name": "plot_chart.py",
+                  "type": "file",
+                  "path": "fmcp/mpl_mcp/core/plot_chart.py",
+                  "size": 3741,
+                  "language": "py"
+                },
+                {
+                  "name": "scatter_chart.py",
+                  "type": "file",
+                  "path": "fmcp/mpl_mcp/core/scatter_chart.py",
+                  "size": 4310,
+                  "language": "py"
+                },
+                {
+                  "name": "stack_chart.py",
+                  "type": "file",
+                  "path": "fmcp/mpl_mcp/core/stack_chart.py",
+                  "size": 5561,
+                  "language": "py"
+                },
+                {
+                  "name": "stem_chart.py",
+                  "type": "file",
+                  "path": "fmcp/mpl_mcp/core/stem_chart.py",
+                  "size": 4824,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "fmcp/mpl_mcp/__init__.py",
+              "size": 91,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "fmcp/mpl_mcp/server.py",
+              "size": 977,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "numpy_mcp",
+          "type": "folder",
+          "path": "fmcp/numpy_mcp",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "fmcp/numpy_mcp/core",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "fmcp/numpy_mcp/core/__init__.py",
+                  "size": 111,
+                  "language": "py"
+                },
+                {
+                  "name": "matlib.py",
+                  "type": "file",
+                  "path": "fmcp/numpy_mcp/core/matlib.py",
+                  "size": 4045,
+                  "language": "py"
+                },
+                {
+                  "name": "numerical_operation.py",
+                  "type": "file",
+                  "path": "fmcp/numpy_mcp/core/numerical_operation.py",
+                  "size": 7106,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "fmcp/numpy_mcp/__init__.py",
+              "size": 184,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "fmcp/numpy_mcp/server.py",
+              "size": 895,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "sympy_mcp",
+          "type": "folder",
+          "path": "fmcp/sympy_mcp",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "fmcp/sympy_mcp/core",
+              "children": [
+                {
+                  "name": "algebra.py",
+                  "type": "file",
+                  "path": "fmcp/sympy_mcp/core/algebra.py",
+                  "size": 3489,
+                  "language": "py"
+                },
+                {
+                  "name": "calculus.py",
+                  "type": "file",
+                  "path": "fmcp/sympy_mcp/core/calculus.py",
+                  "size": 4117,
+                  "language": "py"
+                },
+                {
+                  "name": "equations.py",
+                  "type": "file",
+                  "path": "fmcp/sympy_mcp/core/equations.py",
+                  "size": 7264,
+                  "language": "py"
+                },
+                {
+                  "name": "evaluation.py",
+                  "type": "file",
+                  "path": "fmcp/sympy_mcp/core/evaluation.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "logic.py",
+                  "type": "file",
+                  "path": "fmcp/sympy_mcp/core/logic.py",
+                  "size": 0,
+                  "language": "py"
+                },
+                {
+                  "name": "matrices.py",
+                  "type": "file",
+                  "path": "fmcp/sympy_mcp/core/matrices.py",
+                  "size": 7133,
+                  "language": "py"
+                },
+                {
+                  "name": "sets.py",
+                  "type": "file",
+                  "path": "fmcp/sympy_mcp/core/sets.py",
+                  "size": 7099,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "fmcp/sympy_mcp/__init__.py",
+              "size": 58,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "fmcp/sympy_mcp/server.py",
+              "size": 1358,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "fmcp/__init__.py",
+          "size": 0,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "public",
+      "type": "folder",
+      "path": "public",
+      "children": [
+        {
+          "name": "images",
+          "type": "folder",
+          "path": "public/images",
+          "children": [
+            {
+              "name": "gui-demo-1.png",
+              "type": "file",
+              "path": "public/images/gui-demo-1.png",
+              "size": 159302,
+              "language": "png"
+            },
+            {
+              "name": "gui-demo-2.png",
+              "type": "file",
+              "path": "public/images/gui-demo-2.png",
+              "size": 186529,
+              "language": "png"
+            },
+            {
+              "name": "vs-code-1.png",
+              "type": "file",
+              "path": "public/images/vs-code-1.png",
+              "size": 110902,
+              "language": "png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "type": "folder",
+      "path": "test",
+      "children": [
+        {
+          "name": "test_mpl",
+          "type": "folder",
+          "path": "test/test_mpl",
+          "children": [
+            {
+              "name": "test_bar_chart.py",
+              "type": "file",
+              "path": "test/test_mpl/test_bar_chart.py",
+              "size": 748,
+              "language": "py"
+            },
+            {
+              "name": "test_eqn_chart.py",
+              "type": "file",
+              "path": "test/test_mpl/test_eqn_chart.py",
+              "size": 716,
+              "language": "py"
+            },
+            {
+              "name": "test_plot_chart.py",
+              "type": "file",
+              "path": "test/test_mpl/test_plot_chart.py",
+              "size": 1212,
+              "language": "py"
+            },
+            {
+              "name": "test_scatter_chart.py",
+              "type": "file",
+              "path": "test/test_mpl/test_scatter_chart.py",
+              "size": 423,
+              "language": "py"
+            },
+            {
+              "name": "test_stack_chart.py",
+              "type": "file",
+              "path": "test/test_mpl/test_stack_chart.py",
+              "size": 715,
+              "language": "py"
+            },
+            {
+              "name": "test_stem_chart.py",
+              "type": "file",
+              "path": "test/test_mpl/test_stem_chart.py",
+              "size": 690,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "test_numpy",
+          "type": "folder",
+          "path": "test/test_numpy",
+          "children": [
+            {
+              "name": "test_matlib.py",
+              "type": "file",
+              "path": "test/test_numpy/test_matlib.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "test_numerical_operation.py",
+              "type": "file",
+              "path": "test/test_numpy/test_numerical_operation.py",
+              "size": 6685,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "test_sympy",
+          "type": "folder",
+          "path": "test/test_sympy",
+          "children": [
+            {
+              "name": "test_algebra.py",
+              "type": "file",
+              "path": "test/test_sympy/test_algebra.py",
+              "size": 268,
+              "language": "py"
+            },
+            {
+              "name": "test_calculus.py",
+              "type": "file",
+              "path": "test/test_sympy/test_calculus.py",
+              "size": 276,
+              "language": "py"
+            },
+            {
+              "name": "test_equations.py",
+              "type": "file",
+              "path": "test/test_sympy/test_equations.py",
+              "size": 303,
+              "language": "py"
+            },
+            {
+              "name": "test_matrices.py",
+              "type": "file",
+              "path": "test/test_sympy/test_matrices.py",
+              "size": 620,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "conftest.py",
+          "type": "file",
+          "path": "test/conftest.py",
+          "size": 1272,
+          "language": "py"
+        },
+        {
+          "name": "test_server.py",
+          "type": "file",
+          "path": "test/test_server.py",
+          "size": 770,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 128,
+      "language": "text"
+    },
+    {
+      "name": "__init__.py",
+      "type": "file",
+      "path": "__init__.py",
+      "size": 0,
+      "language": "py"
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 5357,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 4564,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 667,
+      "language": "text"
+    },
+    {
+      "name": "glama.json",
+      "type": "file",
+      "path": "glama.json",
+      "size": 106,
+      "language": "json"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1092,
+      "language": "text"
+    },
+    {
+      "name": "mcp_config.json",
+      "type": "file",
+      "path": "mcp_config.json",
+      "size": 45,
+      "language": "json"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 518,
+      "language": "toml"
+    },
+    {
+      "name": "pytest.sh",
+      "type": "file",
+      "path": "pytest.sh",
+      "size": 8,
+      "language": "sh"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 10337,
+      "language": "md"
+    },
+    {
+      "name": "SECURITY.md",
+      "type": "file",
+      "path": "SECURITY.md",
+      "size": 1422,
+      "language": "md"
+    },
+    {
+      "name": "server.py",
+      "type": "file",
+      "path": "server.py",
+      "size": 1744,
+      "language": "py"
+    },
+    {
+      "name": "setup.sh",
+      "type": "file",
+      "path": "setup.sh",
+      "size": 694,
+      "language": "sh"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 334,
+      "language": "yaml"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "name": "BioThings MCP",
+  "tree": [
+    {
+      "name": "images",
+      "type": "folder",
+      "path": "images",
+      "children": [
+        {
+          "name": "cursor_usage_example.jpg",
+          "type": "file",
+          "path": "images/cursor_usage_example.jpg",
+          "size": 672576,
+          "language": "jpg"
+        },
+        {
+          "name": "heales.jpg",
+          "type": "file",
+          "path": "images/heales.jpg",
+          "size": 10409,
+          "language": "jpg"
+        },
+        {
+          "name": "IBIMA.jpg",
+          "type": "file",
+          "path": "images/IBIMA.jpg",
+          "size": 32632,
+          "language": "jpg"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "biothings_mcp",
+          "type": "folder",
+          "path": "src/biothings_mcp",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/biothings_mcp/__init__.py",
+              "size": 61,
+              "language": "py"
+            },
+            {
+              "name": "biothings_api.py",
+              "type": "file",
+              "path": "src/biothings_mcp/biothings_api.py",
+              "size": 41070,
+              "language": "py"
+            },
+            {
+              "name": "download_api.py",
+              "type": "file",
+              "path": "src/biothings_mcp/download_api.py",
+              "size": 12599,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "src/biothings_mcp/server.py",
+              "size": 5943,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 55,
+          "language": "py"
+        },
+        {
+          "name": "test_chem_endpoint.py",
+          "type": "file",
+          "path": "tests/test_chem_endpoint.py",
+          "size": 4167,
+          "language": "py"
+        },
+        {
+          "name": "test_download_endpoint.py",
+          "type": "file",
+          "path": "tests/test_download_endpoint.py",
+          "size": 9327,
+          "language": "py"
+        },
+        {
+          "name": "test_gene_endpoint.py",
+          "type": "file",
+          "path": "tests/test_gene_endpoint.py",
+          "size": 6052,
+          "language": "py"
+        },
+        {
+          "name": "test_taxons.py",
+          "type": "file",
+          "path": "tests/test_taxons.py",
+          "size": 3999,
+          "language": "py"
+        },
+        {
+          "name": "test_variants_endpoint.py",
+          "type": "file",
+          "path": "tests/test_variants_endpoint.py",
+          "size": 4088,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 3644,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 328,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1093,
+      "language": "text"
+    },
+    {
+      "name": "mcp-config-remote.json",
+      "type": "file",
+      "path": "mcp-config-remote.json",
+      "size": 222,
+      "language": "json"
+    },
+    {
+      "name": "mcp-config-stdio.json",
+      "type": "file",
+      "path": "mcp-config-stdio.json",
+      "size": 154,
+      "language": "json"
+    },
+    {
+      "name": "mcp-config.json",
+      "type": "file",
+      "path": "mcp-config.json",
+      "size": 205,
+      "language": "json"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 946,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 10192,
+      "language": "md"
+    }
+  ]
+}

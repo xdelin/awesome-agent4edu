@@ -1,0 +1,13 @@
+{
+  "name": "mlx-dev",
+  "version": "1.0.0",
+  "description": "Claude Code skill for writing idiomatic Apple MLX code on Apple Silicon. Covers lazy evaluation, array indexing, neural networks, compilation, memory management, and PyTorch migration.",
+  "author": {
+    "name": "tkwn2080",
+    "url": "https://github.com/tkwn2080"
+  },
+  "homepage": "https://github.com/tkwn2080/mlx-dev-skill",
+  "repository": "https://github.com/tkwn2080/mlx-dev-skill",
+  "license": "MIT",
+  "keywords": ["mlx", "apple-silicon", "machine-learning", "pytorch", "neural-networks"]
+}

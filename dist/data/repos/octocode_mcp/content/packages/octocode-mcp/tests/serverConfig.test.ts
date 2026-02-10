@@ -1,0 +1,1165 @@
+import { describe, it, expect, vi, beforeEach, afterEach, Mock } from 'vitest';
+import {
+  initialize,
+  cleanup,
+  getGitHubToken,
+  getToken,
+  getServerConfig,
+  isLoggingEnabled,
+  arePromptsEnabled,
+  _setTokenResolvers,
+  _resetTokenResolvers,
+} from '../src/serverConfig.js';
+import type { FullTokenResolution } from 'octocode-shared';
+
+// Type for resolveTokenFull mock
+type ResolveTokenFullMock = Mock<
+  (options?: {
+    hostname?: string;
+    clientId?: string;
+    getGhCliToken?: (
+      hostname?: string
+    ) => string | null | Promise<string | null>;
+  }) => Promise<FullTokenResolution | null>
+>;
+
+let mockResolveTokenFull: ResolveTokenFullMock;
+
+// Helper to create token resolution result
+function mockTokenResult(
+  token: string | null,
+  source:
+    | 'env:OCTOCODE_TOKEN'
+    | 'env:GH_TOKEN'
+    | 'env:GITHUB_TOKEN'
+    | 'file'
+    | 'file'
+    | 'gh-cli'
+    | null
+): FullTokenResolution | null {
+  if (!token) return null;
+  return {
+    token,
+    source,
+    wasRefreshed: false,
+  };
+}
+
+// Helper to setup resolveTokenFull mock
+function setupTokenMocks() {
+  mockResolveTokenFull = vi.fn(async () => null);
+
+  _setTokenResolvers({
+    resolveTokenFull: mockResolveTokenFull,
+  });
+}
+
+// Helper function to mock CLI token success (gh-cli source)
+function mockSpawnSuccess(token: string) {
+  mockResolveTokenFull.mockResolvedValue(mockTokenResult(token, 'gh-cli'));
+}
+
+// Helper function to mock CLI token failure (no token found)
+function mockSpawnFailure() {
+  mockResolveTokenFull.mockResolvedValue(null);
+}
+
+// Helper function to mock token resolution via env/stored credentials
+function mockTokenResolution(
+  token: string | null,
+  source:
+    | 'env:GITHUB_TOKEN'
+    | 'env:GH_TOKEN'
+    | 'env:OCTOCODE_TOKEN'
+    | 'file'
+    | 'file'
+    | 'gh-cli'
+    | null = 'env:GITHUB_TOKEN'
+) {
+  if (token) {
+    mockResolveTokenFull.mockResolvedValue(mockTokenResult(token, source));
+  } else {
+    mockResolveTokenFull.mockResolvedValue(null);
+  }
+}
+
+describe('ServerConfig - Simplified Version', () => {
+  const originalEnv = process.env;
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    cleanup();
+
+    // Reset environment variables
+    process.env = { ...originalEnv };
+    delete process.env.GITHUB_TOKEN;
+    delete process.env.GH_TOKEN;
+    delete process.env.Authorization;
+    delete process.env.TOOLS_TO_RUN;
+    delete process.env.ENABLE_TOOLS;
+    delete process.env.DISABLE_TOOLS;
+    delete process.env.LOG;
+    delete process.env.TEST_GITHUB_TOKEN;
+    delete process.env.ENABLE_LOCAL;
+    delete process.env.GITHUB_API_URL;
+    delete process.env.REQUEST_TIMEOUT;
+    delete process.env.MAX_RETRIES;
+    delete process.env.OCTOCODE_TOKEN;
+    delete process.env.DISABLE_PROMPTS;
+
+    // Set up injectable mock for token resolution
+    setupTokenMocks();
+  });
+
+  afterEach(() => {
+    process.env = originalEnv;
+    cleanup();
+    _resetTokenResolvers();
+  });
+
+  describe('Configuration Initialization', () => {
+    it('should initialize with default config', async () => {
+      await initialize();
+      const config = getServerConfig();
+
+      expect(typeof config.version).toEqual('string');
+      expect(config.timeout).toEqual(30000);
+      expect(config.maxRetries).toEqual(3);
+      expect(config.enableLogging).toEqual(true);
+    });
+
+    it('should initialize with environment variables', async () => {
+      process.env.REQUEST_TIMEOUT = '60000';
+      process.env.MAX_RETRIES = '5';
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.enableLogging).toBe(true);
+      expect(config.timeout).toBe(60000);
+      expect(config.maxRetries).toBe(5);
+    });
+
+    it('should disable enableLogging when LOG is false', async () => {
+      process.env.LOG = 'false';
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.enableLogging).toBe(false);
+    });
+
+    it('should throw when accessing config before initialization', () => {
+      expect(() => getServerConfig()).toThrow(
+        'Configuration not initialized. Call initialize() and await its completion before calling getServerConfig().'
+      );
+    });
+
+    it('should not re-initialize when already initialized', async () => {
+      await initialize();
+      const config1 = getServerConfig();
+
+      await initialize(); // Second call
+      const config2 = getServerConfig();
+
+      expect(config1).toBe(config2); // Same reference
+    });
+
+    it('should use default GitHub API URL', async () => {
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.githubApiUrl).toBe('https://api.github.com');
+    });
+
+    it('should use custom GitHub API URL from environment', async () => {
+      process.env.GITHUB_API_URL = 'https://github.company.com/api/v3';
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.githubApiUrl).toBe('https://github.company.com/api/v3');
+    });
+  });
+
+  describe('Token Resolution', () => {
+    it('should prioritize GITHUB_TOKEN env var over CLI token', async () => {
+      process.env.GITHUB_TOKEN = 'env-github-token';
+      cleanup();
+
+      // Mock resolveTokenFull to return env token (simulating env var priority)
+      mockTokenResolution('env-github-token', 'env:GITHUB_TOKEN');
+      const token = await getGitHubToken();
+
+      // GITHUB_TOKEN takes priority even when CLI token is available
+      expect(token).toBe('env-github-token');
+    });
+
+    it('should fall back to CLI token when GITHUB_TOKEN is not set', async () => {
+      delete process.env.GITHUB_TOKEN;
+      cleanup();
+
+      mockSpawnSuccess('cli-token');
+      const token = await getGitHubToken();
+
+      expect(token).toBe('cli-token');
+    });
+
+    it('should return null when no token found', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      mockSpawnFailure();
+      const token = await getGitHubToken();
+      expect(token).toBeNull();
+    });
+
+    it('should resolve token fresh each time (no caching)', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      // First call returns 'token-1'
+      mockResolveTokenFull.mockResolvedValueOnce(
+        mockTokenResult('token-1', 'gh-cli')
+      );
+      const token1 = await getGitHubToken();
+      expect(token1).toBe('token-1');
+
+      // Second call with different mock returns 'token-2' (no caching)
+      mockResolveTokenFull.mockResolvedValueOnce(
+        mockTokenResult('token-2', 'gh-cli')
+      );
+      const token2 = await getGitHubToken();
+      expect(token2).toBe('token-2');
+    });
+
+    it('should pick up token changes dynamically', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      mockResolveTokenFull.mockResolvedValueOnce(
+        mockTokenResult('initial-token', 'gh-cli')
+      );
+      const token1 = await getGitHubToken();
+      expect(token1).toBe('initial-token');
+
+      // Token changes at runtime
+      mockResolveTokenFull.mockResolvedValueOnce(
+        mockTokenResult('new-token', 'gh-cli')
+      );
+      const token2 = await getGitHubToken();
+      expect(token2).toBe('new-token');
+    });
+  });
+
+  describe('octocode-cli Credential Fallback', () => {
+    it('should use octocode-cli token when GITHUB_TOKEN and gh CLI are unavailable', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      // resolveTokenFull returns stored token
+      mockTokenResolution('octocode-stored-token', 'file');
+
+      const token = await getGitHubToken();
+
+      expect(token).toBe('octocode-stored-token');
+    });
+
+    it('should prioritize GITHUB_TOKEN over octocode-cli token', async () => {
+      process.env.GITHUB_TOKEN = 'env-token';
+
+      // Mock resolveTokenFull to return env token (simulating priority)
+      mockTokenResolution('env-token', 'env:GITHUB_TOKEN');
+
+      const token = await getGitHubToken();
+
+      expect(token).toBe('env-token');
+    });
+
+    it('should prioritize gh CLI token over octocode-cli token', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      // resolveTokenFull handles priority internally, returns gh-cli token
+      mockSpawnSuccess('gh-cli-token');
+
+      const token = await getGitHubToken();
+
+      expect(token).toBe('gh-cli-token');
+    });
+
+    it('should return null when all token sources fail', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      mockSpawnFailure();
+
+      const token = await getGitHubToken();
+
+      expect(token).toBeNull();
+    });
+
+    it('should handle octocode-cli token with whitespace', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      // Token is returned trimmed by resolveTokenFull
+      mockTokenResolution('octocode-token-with-spaces', 'file');
+
+      const token = await getGitHubToken();
+
+      expect(token).toBe('octocode-token-with-spaces');
+    });
+
+    it('should skip empty octocode-cli token', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      // Empty/whitespace tokens resolve to null
+      mockTokenResolution(null);
+
+      const token = await getGitHubToken();
+
+      expect(token).toBeNull();
+    });
+
+    it('should handle octocode-cli errors gracefully', async () => {
+      mockResolveTokenFull.mockRejectedValue(new Error('Read error'));
+
+      const token = await getGitHubToken();
+
+      expect(token).toBeNull();
+    });
+  });
+
+  describe('getToken', () => {
+    it('should return token when available', async () => {
+      // Mock resolveTokenFull to return the env token
+      mockTokenResolution('available-token', 'env:GITHUB_TOKEN');
+
+      const token = await getToken();
+
+      expect(token).toBe('available-token');
+    });
+
+    it('should return null when no token available', async () => {
+      mockSpawnFailure();
+
+      const token = await getToken();
+
+      expect(token).toBeNull();
+    });
+  });
+
+  describe('Logging Configuration', () => {
+    it('should enable logging by default when LOG is not set', async () => {
+      delete process.env.LOG;
+      mockSpawnFailure();
+
+      await initialize();
+
+      expect(isLoggingEnabled()).toBe(true);
+      expect(getServerConfig().loggingEnabled).toBe(true);
+    });
+
+    it('should enable logging when LOG is set to true', async () => {
+      process.env.LOG = 'true';
+      mockSpawnFailure();
+
+      await initialize();
+
+      expect(isLoggingEnabled()).toBe(true);
+      expect(getServerConfig().loggingEnabled).toBe(true);
+    });
+
+    it('should disable logging when LOG is set to false', async () => {
+      process.env.LOG = 'false';
+      mockSpawnFailure();
+
+      await initialize();
+
+      expect(isLoggingEnabled()).toBe(false);
+      expect(getServerConfig().loggingEnabled).toBe(false);
+    });
+
+    it('should handle various LOG flag formats', async () => {
+      const testCases = [
+        {
+          value: undefined,
+          expected: true,
+          description: 'undefined (default)',
+        },
+        { value: 'true', expected: true, description: 'true' },
+        { value: 'TRUE', expected: true, description: 'TRUE' },
+        { value: 'false', expected: false, description: 'false' },
+        { value: 'FALSE', expected: false, description: 'FALSE' },
+        { value: 'False', expected: false, description: 'False' },
+        { value: '1', expected: true, description: '1 (truthy)' },
+        { value: '0', expected: false, description: '0 (falsy)' },
+        { value: '', expected: true, description: 'empty string' },
+        { value: 'anything', expected: true, description: 'any other value' },
+      ];
+
+      for (const testCase of testCases) {
+        cleanup();
+        if (testCase.value === undefined) {
+          delete process.env.LOG;
+        } else {
+          process.env.LOG = testCase.value;
+        }
+        mockSpawnFailure();
+
+        await initialize();
+
+        expect(isLoggingEnabled()).toBe(testCase.expected);
+        expect(getServerConfig().loggingEnabled).toBe(testCase.expected);
+      }
+    });
+  });
+
+  describe('Error Handling', () => {
+    it('should handle GitHub CLI errors gracefully', async () => {
+      process.env.GITHUB_TOKEN = 'fallback-token';
+      // Mock resolveTokenFull to return env token
+      mockTokenResolution('fallback-token', 'env:GITHUB_TOKEN');
+
+      const token = await getGitHubToken();
+
+      expect(token).toBe('fallback-token');
+    });
+
+    it('should handle empty string tokens correctly', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      // resolveTokenFull returns null for whitespace-only
+      mockSpawnFailure();
+      const token = await getGitHubToken();
+      expect(token).toBeNull();
+    });
+
+    it('should handle whitespace-only tokens', async () => {
+      delete process.env.GITHUB_TOKEN;
+
+      // resolveTokenFull returns null for whitespace-only
+      mockSpawnFailure();
+      const token = await getGitHubToken();
+      expect(token).toBeNull(); // Trimmed to empty
+    });
+  });
+
+  describe('Cleanup and State Management', () => {
+    it('should reset state properly', async () => {
+      process.env.GITHUB_TOKEN = 'test-token';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+      expect(typeof config).toEqual('object');
+
+      cleanup();
+      let didThrow = false;
+      try {
+        getServerConfig();
+      } catch {
+        didThrow = true;
+      }
+      expect(didThrow).toEqual(true);
+    });
+
+    it('should handle multiple cleanup calls', () => {
+      expect(() => {
+        cleanup();
+        cleanup();
+        cleanup();
+      }).not.toThrow();
+    });
+  });
+
+  describe('Environment Variable Parsing', () => {
+    it('should parse tool arrays correctly', async () => {
+      process.env.ENABLE_TOOLS = 'tool1,tool2,tool3';
+      process.env.DISABLE_TOOLS = 'tool4, tool5 , tool6';
+      process.env.TOOLS_TO_RUN = 'onlyTool1, onlyTool2';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.enableTools).toEqual(['tool1', 'tool2', 'tool3']);
+      expect(config.disableTools).toEqual(['tool4', 'tool5', 'tool6']);
+      expect(config.toolsToRun).toEqual(['onlyTool1', 'onlyTool2']);
+    });
+
+    it('should handle empty tool arrays', async () => {
+      process.env.ENABLE_TOOLS = '';
+      process.env.DISABLE_TOOLS = '   ';
+      process.env.TOOLS_TO_RUN = '';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.enableTools).toEqual(undefined);
+      expect(config.disableTools).toEqual(undefined);
+      expect(config.toolsToRun).toEqual(undefined);
+    });
+
+    it('should parse toolsToRun correctly', async () => {
+      process.env.TOOLS_TO_RUN =
+        'github_search_code,github_search_pull_requests , github_fetch_content';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.toolsToRun).toEqual([
+        'github_search_code',
+        'github_search_pull_requests',
+        'github_fetch_content',
+      ]);
+    });
+
+    it('should handle toolsToRun with single tool', async () => {
+      process.env.TOOLS_TO_RUN = 'github_search_code';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.toolsToRun).toEqual(['github_search_code']);
+    });
+
+    it('should filter out empty strings from toolsToRun', async () => {
+      process.env.TOOLS_TO_RUN = 'tool1,,tool2, ,tool3';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.toolsToRun).toEqual(['tool1', 'tool2', 'tool3']);
+    });
+
+    it('should handle malformed numbers gracefully', async () => {
+      process.env.REQUEST_TIMEOUT = 'not-a-number';
+      process.env.MAX_RETRIES = '-5';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.timeout).toBe(30000); // Falls back to default 30000
+      expect(config.maxRetries).toBe(0); // Math.max(0, -5) = 0
+    });
+  });
+
+  describe('ENABLE_LOCAL Configuration', () => {
+    beforeEach(() => {
+      delete process.env.ENABLE_LOCAL;
+    });
+
+    it('should default to true when ENABLE_LOCAL is not set', async () => {
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should enable local when ENABLE_LOCAL is "true"', async () => {
+      process.env.ENABLE_LOCAL = 'true';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should enable local when ENABLE_LOCAL is "1"', async () => {
+      process.env.ENABLE_LOCAL = '1';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should handle ENABLE_LOCAL with leading/trailing whitespace', async () => {
+      process.env.ENABLE_LOCAL = '  true  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should handle ENABLE_LOCAL with tabs and newlines', async () => {
+      process.env.ENABLE_LOCAL = '\t true \n';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should handle ENABLE_LOCAL with uppercase', async () => {
+      process.env.ENABLE_LOCAL = 'TRUE';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should handle ENABLE_LOCAL with mixed case', async () => {
+      process.env.ENABLE_LOCAL = 'TrUe';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should handle ENABLE_LOCAL with whitespace and uppercase', async () => {
+      process.env.ENABLE_LOCAL = '  TRUE  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should handle ENABLE_LOCAL = "1" with whitespace', async () => {
+      process.env.ENABLE_LOCAL = ' 1 ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+
+    it('should return false for explicit false ENABLE_LOCAL values', async () => {
+      const explicitFalseValues = ['false', 'FALSE', '0'];
+
+      for (const value of explicitFalseValues) {
+        cleanup();
+        delete process.env.ENABLE_LOCAL;
+        process.env.ENABLE_LOCAL = value;
+        mockSpawnFailure();
+        await initialize();
+        expect(getServerConfig().enableLocal).toBe(false);
+      }
+    });
+
+    it('should return true (default) for invalid/unrecognized ENABLE_LOCAL values', async () => {
+      const invalidValues = ['no', 'yes', 'enabled', '', '   '];
+
+      for (const value of invalidValues) {
+        cleanup();
+        delete process.env.ENABLE_LOCAL;
+        process.env.ENABLE_LOCAL = value;
+        mockSpawnFailure();
+        await initialize();
+        expect(getServerConfig().enableLocal).toBe(true);
+      }
+    });
+  });
+
+  describe('DISABLE_PROMPTS Configuration', () => {
+    beforeEach(() => {
+      delete process.env.DISABLE_PROMPTS;
+    });
+
+    it('should default to false when DISABLE_PROMPTS is not set', async () => {
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().disablePrompts).toBe(false);
+      expect(arePromptsEnabled()).toBe(true);
+    });
+
+    it('should disable prompts when DISABLE_PROMPTS is "true"', async () => {
+      process.env.DISABLE_PROMPTS = 'true';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().disablePrompts).toBe(true);
+      expect(arePromptsEnabled()).toBe(false);
+    });
+
+    it('should disable prompts when DISABLE_PROMPTS is "1"', async () => {
+      process.env.DISABLE_PROMPTS = '1';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().disablePrompts).toBe(true);
+      expect(arePromptsEnabled()).toBe(false);
+    });
+
+    it('should handle DISABLE_PROMPTS with leading/trailing whitespace', async () => {
+      process.env.DISABLE_PROMPTS = '  true  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().disablePrompts).toBe(true);
+      expect(arePromptsEnabled()).toBe(false);
+    });
+
+    it('should handle DISABLE_PROMPTS with uppercase', async () => {
+      process.env.DISABLE_PROMPTS = 'TRUE';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().disablePrompts).toBe(true);
+      expect(arePromptsEnabled()).toBe(false);
+    });
+
+    it('should handle DISABLE_PROMPTS with mixed case', async () => {
+      process.env.DISABLE_PROMPTS = 'TrUe';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().disablePrompts).toBe(true);
+      expect(arePromptsEnabled()).toBe(false);
+    });
+
+    it('should handle DISABLE_PROMPTS = "1" with whitespace', async () => {
+      process.env.DISABLE_PROMPTS = ' 1 ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().disablePrompts).toBe(true);
+      expect(arePromptsEnabled()).toBe(false);
+    });
+
+    it('should return false (prompts enabled) for explicit false values', async () => {
+      const explicitFalseValues = ['false', 'FALSE', '0'];
+
+      for (const value of explicitFalseValues) {
+        cleanup();
+        delete process.env.DISABLE_PROMPTS;
+        process.env.DISABLE_PROMPTS = value;
+        mockSpawnFailure();
+        await initialize();
+        expect(getServerConfig().disablePrompts).toBe(false);
+        expect(arePromptsEnabled()).toBe(true);
+      }
+    });
+
+    it('should return false (prompts enabled) for invalid/unrecognized values', async () => {
+      const invalidValues = ['no', 'yes', 'disabled', '', '   '];
+
+      for (const value of invalidValues) {
+        cleanup();
+        delete process.env.DISABLE_PROMPTS;
+        process.env.DISABLE_PROMPTS = value;
+        mockSpawnFailure();
+        await initialize();
+        expect(getServerConfig().disablePrompts).toBe(false);
+        expect(arePromptsEnabled()).toBe(true);
+      }
+    });
+
+    it('should return false for arePromptsEnabled when config is not initialized', () => {
+      // cleanup() is called in beforeEach, so config is null
+      expect(arePromptsEnabled()).toBe(true); // Returns true when config is null (default)
+    });
+  });
+
+  describe('LOG Configuration with Whitespace', () => {
+    beforeEach(() => {
+      delete process.env.LOG;
+    });
+
+    it('should handle LOG with leading/trailing whitespace for false', async () => {
+      process.env.LOG = '  false  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().loggingEnabled).toBe(false);
+    });
+
+    it('should handle LOG with tabs for false', async () => {
+      process.env.LOG = '\tfalse\t';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().loggingEnabled).toBe(false);
+    });
+
+    it('should handle LOG = "0" as false', async () => {
+      process.env.LOG = '0';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().loggingEnabled).toBe(false);
+    });
+
+    it('should handle LOG = " 0 " with whitespace as false', async () => {
+      process.env.LOG = ' 0 ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().loggingEnabled).toBe(false);
+    });
+
+    it('should handle LOG = "FALSE" uppercase as false', async () => {
+      process.env.LOG = 'FALSE';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().loggingEnabled).toBe(false);
+    });
+
+    it('should handle LOG = "  FALSE  " with whitespace and uppercase', async () => {
+      process.env.LOG = '  FALSE  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().loggingEnabled).toBe(false);
+    });
+
+    it('should default to true for non-false values', async () => {
+      const trueValues = ['true', 'TRUE', '1', 'yes', 'enabled', 'anything'];
+
+      for (const value of trueValues) {
+        cleanup();
+        delete process.env.LOG;
+        process.env.LOG = value;
+        mockSpawnFailure();
+        await initialize();
+        expect(getServerConfig().loggingEnabled).toBe(true);
+      }
+    });
+  });
+
+  describe('Numeric Configuration with Whitespace', () => {
+    it('should handle REQUEST_TIMEOUT with whitespace', async () => {
+      process.env.REQUEST_TIMEOUT = '  60000  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(60000);
+    });
+
+    it('should handle MAX_RETRIES with whitespace', async () => {
+      process.env.MAX_RETRIES = '  5  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().maxRetries).toBe(5);
+    });
+
+    it('should handle REQUEST_TIMEOUT with tabs', async () => {
+      process.env.REQUEST_TIMEOUT = '\t45000\t';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(45000);
+    });
+  });
+
+  describe('Timeout Configuration Floor (MIN_TIMEOUT = 5000)', () => {
+    it('should allow timeout values above minimum (5000ms)', async () => {
+      process.env.REQUEST_TIMEOUT = '10000';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(10000);
+    });
+
+    it('should enforce minimum timeout of 5000ms', async () => {
+      process.env.REQUEST_TIMEOUT = '1000'; // Below 5s minimum
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(5000); // Clamped to MIN_TIMEOUT
+    });
+
+    it('should enforce minimum timeout for very low values', async () => {
+      process.env.REQUEST_TIMEOUT = '100';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(5000);
+    });
+
+    it('should use default timeout when REQUEST_TIMEOUT is zero (0 is falsy)', async () => {
+      // Note: 0 triggers || fallback to DEFAULT_TIMEOUT, then MIN_TIMEOUT check
+      process.env.REQUEST_TIMEOUT = '0';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(30000); // Falls back to default
+    });
+
+    it('should enforce minimum timeout for negative values', async () => {
+      process.env.REQUEST_TIMEOUT = '-5000';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(5000);
+    });
+
+    it('should use default timeout (30000) when REQUEST_TIMEOUT is not set', async () => {
+      delete process.env.REQUEST_TIMEOUT;
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(30000);
+    });
+
+    it('should use default timeout when REQUEST_TIMEOUT is invalid', async () => {
+      process.env.REQUEST_TIMEOUT = 'invalid';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().timeout).toBe(30000);
+    });
+  });
+
+  describe('MaxRetries Configuration Limits', () => {
+    it('should allow retry values within limits (0-10)', async () => {
+      process.env.MAX_RETRIES = '5';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().maxRetries).toBe(5);
+    });
+
+    it('should clamp retries to maximum of 10', async () => {
+      process.env.MAX_RETRIES = '15';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().maxRetries).toBe(10); // Clamped to MAX_RETRIES_LIMIT
+    });
+
+    it('should clamp retries to minimum of 0', async () => {
+      process.env.MAX_RETRIES = '-5';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().maxRetries).toBe(0); // Clamped to MIN_RETRIES
+    });
+
+    it('should use default retries when MAX_RETRIES is zero (0 is falsy)', async () => {
+      // Note: 0 triggers || fallback to DEFAULT_RETRIES
+      process.env.MAX_RETRIES = '0';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().maxRetries).toBe(3); // Falls back to default
+    });
+
+    it('should use default retries (3) when MAX_RETRIES is not set', async () => {
+      delete process.env.MAX_RETRIES;
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().maxRetries).toBe(3);
+    });
+
+    it('should use default retries when MAX_RETRIES is invalid', async () => {
+      process.env.MAX_RETRIES = 'invalid';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().maxRetries).toBe(3);
+    });
+  });
+
+  describe('GITHUB_API_URL Configuration', () => {
+    beforeEach(() => {
+      delete process.env.GITHUB_API_URL;
+    });
+
+    it('should handle GITHUB_API_URL with trailing whitespace', async () => {
+      process.env.GITHUB_API_URL = 'https://github.company.com/api/v3  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().githubApiUrl).toBe(
+        'https://github.company.com/api/v3'
+      );
+    });
+
+    it('should handle GITHUB_API_URL with leading whitespace', async () => {
+      process.env.GITHUB_API_URL = '  https://github.company.com/api/v3';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().githubApiUrl).toBe(
+        'https://github.company.com/api/v3'
+      );
+    });
+
+    it('should handle GITHUB_API_URL with both leading and trailing whitespace', async () => {
+      process.env.GITHUB_API_URL = '  https://github.company.com/api/v3  ';
+      mockSpawnFailure();
+      await initialize();
+      expect(getServerConfig().githubApiUrl).toBe(
+        'https://github.company.com/api/v3'
+      );
+    });
+  });
+
+  describe('Configuration Edge Cases', () => {
+    it('should handle all configs with various whitespace simultaneously', async () => {
+      process.env.ENABLE_LOCAL = '  true  ';
+      process.env.LOG = '  false  ';
+      process.env.GITHUB_API_URL = '  https://custom.api.com  ';
+      process.env.REQUEST_TIMEOUT = '  45000  ';
+      process.env.MAX_RETRIES = '  7  ';
+      process.env.TOOLS_TO_RUN = '  tool1  ,  tool2  ';
+      mockSpawnFailure();
+
+      await initialize();
+      const config = getServerConfig();
+
+      expect(config.enableLocal).toBe(true);
+      expect(config.loggingEnabled).toBe(false);
+      expect(config.githubApiUrl).toBe('https://custom.api.com');
+      expect(config.timeout).toBe(45000);
+      expect(config.maxRetries).toBe(7);
+      expect(config.toolsToRun).toEqual(['tool1', 'tool2']);
+    });
+
+    it('should handle unicode whitespace characters', async () => {
+      // Non-breaking space and other unicode whitespace
+      process.env.ENABLE_LOCAL = '\u00A0true\u00A0';
+      mockSpawnFailure();
+      await initialize();
+      // Note: trim() handles regular whitespace, unicode may vary
+      expect(getServerConfig().enableLocal).toBe(true);
+    });
+  });
+
+  describe('GitLab Configuration Fresh Resolution (Issue #1 & #2)', () => {
+    let getGitLabConfig: typeof import('../src/serverConfig.js').getGitLabConfig;
+
+    beforeEach(async () => {
+      const serverConfig = await import('../src/serverConfig.js');
+      getGitLabConfig = serverConfig.getGitLabConfig;
+      // Clear any cached state
+      delete process.env.GITLAB_TOKEN;
+      delete process.env.GL_TOKEN;
+      delete process.env.GITLAB_HOST;
+    });
+
+    it('should resolve GitLab config fresh each time (no caching)', () => {
+      // First call - no token
+      const config1 = getGitLabConfig();
+      expect(config1.token).toBeNull();
+      expect(config1.isConfigured).toBe(false);
+
+      // Set token at runtime
+      process.env.GITLAB_TOKEN = 'fresh-token-1';
+
+      // Second call - should see the new token (fresh resolution)
+      const config2 = getGitLabConfig();
+      expect(config2.token).toBe('fresh-token-1');
+      expect(config2.isConfigured).toBe(true);
+
+      // Change token again
+      process.env.GITLAB_TOKEN = 'fresh-token-2';
+
+      // Third call - should see updated token
+      const config3 = getGitLabConfig();
+      expect(config3.token).toBe('fresh-token-2');
+    });
+
+    it('should pick up GitLab token deletion dynamically', () => {
+      process.env.GITLAB_TOKEN = 'initial-token';
+
+      const config1 = getGitLabConfig();
+      expect(config1.token).toBe('initial-token');
+
+      // Delete token at runtime
+      delete process.env.GITLAB_TOKEN;
+
+      const config2 = getGitLabConfig();
+      expect(config2.token).toBeNull();
+      expect(config2.isConfigured).toBe(false);
+    });
+
+    it('should pick up GL_TOKEN changes dynamically', () => {
+      process.env.GL_TOKEN = 'gl-token-1';
+
+      const config1 = getGitLabConfig();
+      expect(config1.token).toBe('gl-token-1');
+
+      process.env.GL_TOKEN = 'gl-token-2';
+
+      const config2 = getGitLabConfig();
+      expect(config2.token).toBe('gl-token-2');
+    });
+
+    it('should pick up GITLAB_HOST changes dynamically', () => {
+      process.env.GITLAB_TOKEN = 'test-token';
+
+      const config1 = getGitLabConfig();
+      expect(config1.host).toBe('https://gitlab.com'); // Default
+
+      process.env.GITLAB_HOST = 'https://gitlab.mycompany.com';
+
+      const config2 = getGitLabConfig();
+      expect(config2.host).toBe('https://gitlab.mycompany.com');
+    });
+
+    it('should always return GitLabConfig (not null)', () => {
+      // Even without token, should return config object (not null)
+      const config = getGitLabConfig();
+      expect(config).not.toBeNull();
+      expect(config.host).toBe('https://gitlab.com');
+      expect(config.isConfigured).toBe(false);
+    });
+  });
+
+  describe('Active Provider Configuration', () => {
+    // Import the functions we need to test
+    let getActiveProvider: typeof import('../src/serverConfig.js').getActiveProvider;
+    let getActiveProviderConfig: typeof import('../src/serverConfig.js').getActiveProviderConfig;
+    let isGitLabActive: typeof import('../src/serverConfig.js').isGitLabActive;
+
+    beforeEach(async () => {
+      // Dynamic import to get fresh module state
+      const serverConfig = await import('../src/serverConfig.js');
+      getActiveProvider = serverConfig.getActiveProvider;
+      getActiveProviderConfig = serverConfig.getActiveProviderConfig;
+      isGitLabActive = serverConfig.isGitLabActive;
+    });
+
+    it('should return github as default provider when no GitLab token', () => {
+      delete process.env.GITLAB_TOKEN;
+      delete process.env.GL_TOKEN;
+
+      expect(getActiveProvider()).toBe('github');
+    });
+
+    it('should return gitlab as provider when GITLAB_TOKEN is set', () => {
+      process.env.GITLAB_TOKEN = 'glpat-test-token';
+
+      expect(getActiveProvider()).toBe('gitlab');
+
+      delete process.env.GITLAB_TOKEN;
+    });
+
+    it('should return gitlab as provider when GL_TOKEN is set', () => {
+      process.env.GL_TOKEN = 'glpat-test-token';
+
+      expect(getActiveProvider()).toBe('gitlab');
+
+      delete process.env.GL_TOKEN;
+    });
+
+    it('should return github provider config when no GitLab token', () => {
+      delete process.env.GITLAB_TOKEN;
+      delete process.env.GL_TOKEN;
+      delete process.env.GITHUB_API_URL;
+
+      const config = getActiveProviderConfig();
+
+      expect(config.provider).toBe('github');
+      expect(config.baseUrl).toBeUndefined();
+      expect(config.token).toBeUndefined();
+    });
+
+    it('should return github provider config with custom API URL', () => {
+      delete process.env.GITLAB_TOKEN;
+      delete process.env.GL_TOKEN;
+      process.env.GITHUB_API_URL = 'https://github.mycompany.com/api/v3';
+
+      const config = getActiveProviderConfig();
+
+      expect(config.provider).toBe('github');
+      expect(config.baseUrl).toBe('https://github.mycompany.com/api/v3');
+
+      delete process.env.GITHUB_API_URL;
+    });
+
+    it('should return gitlab provider config when GITLAB_TOKEN is set', () => {
+      process.env.GITLAB_TOKEN = 'glpat-test-token';
+      delete process.env.GITLAB_HOST;
+
+      const config = getActiveProviderConfig();
+
+      expect(config.provider).toBe('gitlab');
+      expect(config.baseUrl).toBe('https://gitlab.com');
+      expect(config.token).toBe('glpat-test-token');
+
+      delete process.env.GITLAB_TOKEN;
+    });
+
+    it('should return gitlab provider config with custom host', () => {
+      process.env.GITLAB_TOKEN = 'glpat-test-token';
+      process.env.GITLAB_HOST = 'https://gitlab.mycompany.com';
+
+      const config = getActiveProviderConfig();
+
+      expect(config.provider).toBe('gitlab');
+      expect(config.baseUrl).toBe('https://gitlab.mycompany.com');
+      expect(config.token).toBe('glpat-test-token');
+
+      delete process.env.GITLAB_TOKEN;
+      delete process.env.GITLAB_HOST;
+    });
+
+    it('should return false for isGitLabActive when no GitLab token', () => {
+      delete process.env.GITLAB_TOKEN;
+      delete process.env.GL_TOKEN;
+
+      expect(isGitLabActive()).toBe(false);
+    });
+
+    it('should return true for isGitLabActive when GitLab token is set', () => {
+      process.env.GITLAB_TOKEN = 'glpat-test-token';
+
+      expect(isGitLabActive()).toBe(true);
+
+      delete process.env.GITLAB_TOKEN;
+    });
+  });
+});

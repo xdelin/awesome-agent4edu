@@ -1,0 +1,81 @@
+{
+  "name": "mcp-openapi-schema-explorer",
+  "version": "1.3.3",
+  "description": "MCP OpenAPI schema explorer",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "bin": {
+    "mcp-openapi-schema-explorer": "dist/src/index.js"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && npx tsc && chmod +x dist/src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadykov/mcp-openapi-schema-explorer.git"
+  },
+  "keywords": [
+    "mcp",
+    "openapi"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kadykov/mcp-openapi-schema-explorer/issues"
+  },
+  "homepage": "https://github.com/kadykov/mcp-openapi-schema-explorer#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.0",
+    "js-yaml": "^4.1.0",
+    "openapi-types": "^12.1.3",
+    "swagger2openapi": "7.0.8",
+    "zod": "^4.0.5"
+  },
+  "devDependencies": {
+    "@codedependant/semantic-release-docker": "^5.1.0",
+    "@eslint/js": "^9.24.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/exec": "^7.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.0",
+    "@semantic-release/npm": "^13.1.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.0.2",
+    "@types/node-fetch": "^2.6.12",
+    "@types/swagger2openapi": "^7.0.4",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "axios": "^1.8.4",
+    "eslint": "^9.24.0",
+    "eslint-plugin-security": "^3.0.1",
+    "globals": "^17.0.0",
+    "husky": "^9.1.7",
+    "jest": "^30.0.2",
+    "jest-silent-reporter": "^0.6.0",
+    "license-checker": "^25.0.1",
+    "msw": "^2.7.4",
+    "openapi-typescript": "^7.6.1",
+    "prettier": "^3.5.3",
+    "semantic-release": "^25.0.1",
+    "ts-jest": "^29.3.1",
+    "typescript": "^5.8.3"
+  }
+}

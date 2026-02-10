@@ -1,0 +1,27 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "ChemMCP"
+
+[params]
+displayName = "English"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "img/icon_logo.svg"
+secondaryLogo = "img/icon_logo_white.svg"
+description = "Turn your AI assistant into a Chemistry coscientist."
+disableTextInHeader = true
+
+  [params.author]
+  name = "The OSU NLP Group"
+  email = "nuno@n9o.xyz"
+  image = "img/osunlp_logo.jpg"
+  headline = "The OSU NLP Group."
+  bio = "The OSU NLP Group."
+
+    [[params.author.links]]
+    x-twitter = "https://x.com/osunlp"
+
+    [[params.author.links]]
+    github = "https://github.com/OSU-NLP-Group"

@@ -1,0 +1,117 @@
+{
+  "name": "paper2code-skill",
+  "tree": [
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "paper2code",
+          "type": "folder",
+          "path": "skills/paper2code",
+          "children": [
+            {
+              "name": "01_algorithm_extraction.md",
+              "type": "file",
+              "path": "skills/paper2code/01_algorithm_extraction.md",
+              "size": 7481,
+              "language": "md"
+            },
+            {
+              "name": "02_concept_analysis.md",
+              "type": "file",
+              "path": "skills/paper2code/02_concept_analysis.md",
+              "size": 8127,
+              "language": "md"
+            },
+            {
+              "name": "03_code_planning.md",
+              "type": "file",
+              "path": "skills/paper2code/03_code_planning.md",
+              "size": 13464,
+              "language": "md"
+            },
+            {
+              "name": "04_implementation_guide.md",
+              "type": "file",
+              "path": "skills/paper2code/04_implementation_guide.md",
+              "size": 8052,
+              "language": "md"
+            },
+            {
+              "name": "05_reference_search.md",
+              "type": "file",
+              "path": "skills/paper2code/05_reference_search.md",
+              "size": 7363,
+              "language": "md"
+            },
+            {
+              "name": "06_memory_management.md",
+              "type": "file",
+              "path": "skills/paper2code/06_memory_management.md",
+              "size": 7268,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "skills/paper2code/README.md",
+              "size": 1331,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/paper2code/SKILL.md",
+              "size": 12522,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 340,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 4119,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 1106,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1085,
+      "language": "text"
+    },
+    {
+      "name": "README.ko.md",
+      "type": "file",
+      "path": "README.ko.md",
+      "size": 11799,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13059,
+      "language": "md"
+    }
+  ]
+}

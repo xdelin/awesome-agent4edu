@@ -1,0 +1,406 @@
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import {
+  createMockMcpServer,
+  MockMcpServer,
+} from '../fixtures/mcp-fixtures.js';
+import { getTextContent } from '../utils/testHelpers.js';
+
+const mockGetProvider = vi.hoisted(() => vi.fn());
+
+vi.mock('../../src/providers/factory.js', () => ({
+  getProvider: mockGetProvider,
+}));
+
+vi.mock('../../src/serverConfig.js', () => ({
+  isLoggingEnabled: vi.fn(() => false),
+  getActiveProviderConfig: vi.fn(() => ({
+    provider: 'github',
+    baseUrl: undefined,
+    token: 'mock-token',
+  })),
+  getGitHubToken: vi.fn(async () => 'test-token'),
+  getServerConfig: vi.fn(() => ({
+    timeout: 30000,
+    version: '1.0.0',
+  })),
+}));
+
+import { registerViewGitHubRepoStructureTool } from '../../src/tools/github_view_repo_structure/github_view_repo_structure.js';
+import { TOOL_NAMES } from '../../src/tools/toolMetadata.js';
+
+describe('GitHub View Repository Structure Tool', () => {
+  let mockServer: MockMcpServer;
+  let mockProvider: {
+    searchCode: ReturnType<typeof vi.fn>;
+    getFileContent: ReturnType<typeof vi.fn>;
+    searchRepos: ReturnType<typeof vi.fn>;
+    searchPullRequests: ReturnType<typeof vi.fn>;
+    getRepoStructure: ReturnType<typeof vi.fn>;
+  };
+
+  beforeEach(() => {
+    mockServer = createMockMcpServer();
+
+    mockProvider = {
+      searchCode: vi.fn(),
+      getFileContent: vi.fn(),
+      searchRepos: vi.fn(),
+      searchPullRequests: vi.fn(),
+      getRepoStructure: vi.fn(),
+    };
+    mockGetProvider.mockReturnValue(mockProvider);
+
+    vi.clearAllMocks();
+    mockGetProvider.mockReturnValue(mockProvider);
+    registerViewGitHubRepoStructureTool(mockServer.server);
+
+    // Default mock response - uses structure format
+    mockProvider.getRepoStructure.mockResolvedValue({
+      data: {
+        projectPath: 'test/repo',
+        branch: 'main',
+        path: '',
+        structure: {
+          '.': {
+            files: ['README.md', 'package.json'],
+            folders: ['src', 'tests'],
+          },
+        },
+        summary: {
+          totalFiles: 2,
+          totalFolders: 2,
+          truncated: false,
+        },
+      },
+      status: 200,
+      provider: 'github',
+    });
+  });
+
+  afterEach(() => {
+    mockServer.cleanup();
+    vi.resetAllMocks();
+  });
+
+  it('should handle valid requests', async () => {
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            branch: 'main',
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+    const responseText = getTextContent(result.content);
+    expect(responseText).toContain('README.md');
+    expect(responseText).toContain('package.json');
+  });
+
+  it('should handle custom path', async () => {
+    mockProvider.getRepoStructure.mockResolvedValue({
+      data: {
+        projectPath: 'test/repo',
+        branch: 'main',
+        path: 'src',
+        structure: {
+          src: {
+            files: ['index.ts'],
+            folders: ['utils'],
+          },
+        },
+        summary: {
+          totalFiles: 1,
+          totalFolders: 1,
+          truncated: false,
+        },
+      },
+      status: 200,
+      provider: 'github',
+    });
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            branch: 'main',
+            path: 'src',
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+    const responseText = getTextContent(result.content);
+    expect(responseText).toContain('index.ts');
+  });
+
+  it('should handle depth parameter', async () => {
+    mockProvider.getRepoStructure.mockResolvedValue({
+      data: {
+        projectPath: 'test/repo',
+        branch: 'main',
+        path: '',
+        structure: {
+          '.': {
+            files: ['README.md'],
+            folders: ['src'],
+          },
+          src: {
+            files: ['index.ts'],
+            folders: [],
+          },
+        },
+        summary: {
+          totalFiles: 2,
+          totalFolders: 1,
+          truncated: false,
+        },
+      },
+      status: 200,
+      provider: 'github',
+    });
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            branch: 'main',
+            depth: 2,
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+  });
+
+  it('should handle not found error', async () => {
+    mockProvider.getRepoStructure.mockResolvedValue({
+      error: 'Repository not found',
+      status: 404,
+      provider: 'github',
+    });
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'nonexistent',
+            repo: 'repo',
+            branch: 'main',
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+    const responseText = getTextContent(result.content);
+    expect(responseText).toContain('error');
+  });
+
+  it('should handle empty directory', async () => {
+    mockProvider.getRepoStructure.mockResolvedValue({
+      data: {
+        projectPath: 'test/repo',
+        branch: 'main',
+        path: 'empty-dir',
+        structure: {},
+        summary: {
+          totalFiles: 0,
+          totalFolders: 0,
+          truncated: false,
+        },
+      },
+      status: 200,
+      provider: 'github',
+    });
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            branch: 'main',
+            path: 'empty-dir',
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+  });
+
+  it('should handle bulk queries', async () => {
+    mockProvider.getRepoStructure
+      .mockResolvedValueOnce({
+        data: {
+          projectPath: 'test/repo1',
+          branch: 'main',
+          path: '',
+          structure: {
+            '.': {
+              files: ['README.md'],
+              folders: [],
+            },
+          },
+          summary: {
+            totalFiles: 1,
+            totalFolders: 0,
+            truncated: false,
+          },
+        },
+        status: 200,
+        provider: 'github',
+      })
+      .mockResolvedValueOnce({
+        data: {
+          projectPath: 'test/repo2',
+          branch: 'main',
+          path: '',
+          structure: {
+            '.': {
+              files: ['index.js'],
+              folders: [],
+            },
+          },
+          summary: {
+            totalFiles: 1,
+            totalFolders: 0,
+            truncated: false,
+          },
+        },
+        status: 200,
+        provider: 'github',
+      });
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          { owner: 'test', repo: 'repo1', branch: 'main' },
+          { owner: 'test', repo: 'repo2', branch: 'main' },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+    const responseText = getTextContent(result.content);
+    expect(responseText).toContain('README.md');
+    expect(responseText).toContain('index.js');
+  });
+
+  it('should handle truncated results', async () => {
+    mockProvider.getRepoStructure.mockResolvedValue({
+      data: {
+        projectPath: 'test/repo',
+        branch: 'main',
+        path: '',
+        structure: {
+          '.': {
+            files: ['file1.ts'],
+            folders: [],
+          },
+        },
+        summary: {
+          totalFiles: 1,
+          totalFolders: 0,
+          truncated: true,
+        },
+      },
+      status: 200,
+      provider: 'github',
+    });
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            branch: 'main',
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+  });
+
+  it('should handle provider exception', async () => {
+    mockProvider.getRepoStructure.mockRejectedValue(new Error('Network error'));
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            branch: 'main',
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+    const responseText = getTextContent(result.content);
+    expect(responseText).toContain('error');
+  });
+
+  it('should handle pagination', async () => {
+    mockProvider.getRepoStructure.mockResolvedValue({
+      data: {
+        projectPath: 'test/repo',
+        branch: 'main',
+        path: '',
+        structure: {
+          '.': {
+            files: ['file1.ts'],
+            folders: [],
+          },
+        },
+        summary: {
+          totalFiles: 1,
+          totalFolders: 0,
+          truncated: false,
+        },
+        pagination: { currentPage: 1, totalPages: 5, hasMore: true },
+      },
+      status: 200,
+      provider: 'github',
+    });
+
+    const result = await mockServer.callTool(
+      TOOL_NAMES.GITHUB_VIEW_REPO_STRUCTURE,
+      {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            branch: 'main',
+            entriesPerPage: 10,
+            entryPageNumber: 1,
+          },
+        ],
+      }
+    );
+
+    expect(result.isError).toBe(false);
+  });
+});

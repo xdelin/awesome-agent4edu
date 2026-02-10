@@ -1,0 +1,28 @@
+[project]
+name = "mcp.science"
+version = "0.1.7"
+description = "Open Source MCP Servers for Scientific Research"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.2.1",
+]
+
+[tool.hatch.build.targets.wheel]
+include = ["src/mcp_science", "servers"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+
+[tool.hatch.build]
+editable-packages = ["src"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"servers" = "mcp_science/servers"
+
+[project.scripts]
+mcp-science = "mcp_science:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

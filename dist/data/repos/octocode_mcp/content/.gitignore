@@ -1,0 +1,22 @@
+node_modules
+build
+dist
+.yarn/install-state.gz
+_docs
+_scripts
+
+# DXT files (distribute via GitHub releases)
+*.dxt
+out
+coverage
+.octocode
+.env
+.cursor
+.context
+# Exception for committed skill bundle
+!/skills/octocode-research/output/
+# sqlite DB
+mcp.sqlite
+
+context
+.claude

@@ -1,0 +1,194 @@
+{
+  "name": "XTB MCP Server",
+  "tree": [
+    {
+      "name": "resources",
+      "type": "folder",
+      "path": "resources",
+      "children": [
+        {
+          "name": "formats",
+          "type": "folder",
+          "path": "resources/formats",
+          "children": [
+            {
+              "name": "input_spec.md",
+              "type": "file",
+              "path": "resources/formats/input_spec.md",
+              "size": 4170,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "help",
+          "type": "folder",
+          "path": "resources/help",
+          "children": [
+            {
+              "name": "faq.md",
+              "type": "file",
+              "path": "resources/help/faq.md",
+              "size": 4018,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "parameters",
+          "type": "folder",
+          "path": "resources/parameters",
+          "children": [
+            {
+              "name": "gfn0.md",
+              "type": "file",
+              "path": "resources/parameters/gfn0.md",
+              "size": 2654,
+              "language": "md"
+            },
+            {
+              "name": "gfn1.md",
+              "type": "file",
+              "path": "resources/parameters/gfn1.md",
+              "size": 2622,
+              "language": "md"
+            },
+            {
+              "name": "gfn2.md",
+              "type": "file",
+              "path": "resources/parameters/gfn2.md",
+              "size": 2636,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 33,
+          "language": "py"
+        },
+        {
+          "name": "test_generator.py",
+          "type": "file",
+          "path": "tests/test_generator.py",
+          "size": 14621,
+          "language": "py"
+        },
+        {
+          "name": "test_mcp_server.py",
+          "type": "file",
+          "path": "tests/test_mcp_server.py",
+          "size": 14643,
+          "language": "py"
+        },
+        {
+          "name": "test_structure_utils.py",
+          "type": "file",
+          "path": "tests/test_structure_utils.py",
+          "size": 6332,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "xtb_input_generator",
+      "type": "folder",
+      "path": "xtb_input_generator",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "xtb_input_generator/__init__.py",
+          "size": 146,
+          "language": "py"
+        },
+        {
+          "name": "generator.py",
+          "type": "file",
+          "path": "xtb_input_generator/generator.py",
+          "size": 81197,
+          "language": "py"
+        },
+        {
+          "name": "structure_utils.py",
+          "type": "file",
+          "path": "xtb_input_generator/structure_utils.py",
+          "size": 13059,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "DEPLOYMENT_GUIDE.md",
+      "type": "file",
+      "path": "DEPLOYMENT_GUIDE.md",
+      "size": 6661,
+      "language": "md"
+    },
+    {
+      "name": "final_validation.py",
+      "type": "file",
+      "path": "final_validation.py",
+      "size": 7940,
+      "language": "py"
+    },
+    {
+      "name": "main.py",
+      "type": "file",
+      "path": "main.py",
+      "size": 21212,
+      "language": "py"
+    },
+    {
+      "name": "PROJECT_SUMMARY.md",
+      "type": "file",
+      "path": "PROJECT_SUMMARY.md",
+      "size": 7108,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 14497,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 327,
+      "language": "txt"
+    },
+    {
+      "name": "run_tests.py",
+      "type": "file",
+      "path": "run_tests.py",
+      "size": 1580,
+      "language": "py"
+    },
+    {
+      "name": "test_mcp_functionality.py",
+      "type": "file",
+      "path": "test_mcp_functionality.py",
+      "size": 8668,
+      "language": "py"
+    },
+    {
+      "name": "xtb_mcp_development_plan.md",
+      "type": "file",
+      "path": "xtb_mcp_development_plan.md",
+      "size": 12186,
+      "language": "md"
+    }
+  ]
+}

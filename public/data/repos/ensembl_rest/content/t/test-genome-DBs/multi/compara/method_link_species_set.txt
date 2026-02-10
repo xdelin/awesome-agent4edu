@@ -1,0 +1,5 @@
+635	16	35144	G.gal-T.gut lastz-net (on G.gal)	ensembl		80	\N
+641	13	35263	3 neognath birds EPO	ensembl		80	\N
+642	11	35263	Gerp Constrained Elements (3 neognath birds)	ensembl		80	\N
+21247	205	34871	M.mus patch projections	ensembl		80	\N
+28937	205	32416	H.sap patch projections	ensembl		80	\N

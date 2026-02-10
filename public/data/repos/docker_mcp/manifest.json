@@ -1,0 +1,103 @@
+{
+  "name": "Docker MCP",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "mcp_server_docker",
+          "type": "folder",
+          "path": "src/mcp_server_docker",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/mcp_server_docker/__init__.py",
+              "size": 380,
+              "language": "py"
+            },
+            {
+              "name": "input_schemas.py",
+              "type": "file",
+              "path": "src/mcp_server_docker/input_schemas.py",
+              "size": 7382,
+              "language": "py"
+            },
+            {
+              "name": "output_schemas.py",
+              "type": "file",
+              "path": "src/mcp_server_docker/output_schemas.py",
+              "size": 2724,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "src/mcp_server_docker/server.py",
+              "size": 18603,
+              "language": "py"
+            },
+            {
+              "name": "settings.py",
+              "type": "file",
+              "path": "src/mcp_server_docker/settings.py",
+              "size": 170,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 119,
+      "language": "text"
+    },
+    {
+      "name": "devbox.json",
+      "type": "file",
+      "path": "devbox.json",
+      "size": 870,
+      "language": "json"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 853,
+      "language": "text"
+    },
+    {
+      "name": "glama.json",
+      "type": "file",
+      "path": "glama.json",
+      "size": 106,
+      "language": "json"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 35825,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 854,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5706,
+      "language": "md"
+    }
+  ]
+}

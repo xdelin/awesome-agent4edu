@@ -1,0 +1,579 @@
+{
+  "name": "awesome-claude-skills (mejba13)",
+  "tree": [
+    {
+      "name": ".claude",
+      "type": "folder",
+      "path": ".claude",
+      "children": [
+        {
+          "name": "agents",
+          "type": "folder",
+          "path": ".claude/agents",
+          "children": [
+            {
+              "name": "kfc",
+              "type": "folder",
+              "path": ".claude/agents/kfc",
+              "children": [
+                {
+                  "name": "spec-design.md",
+                  "type": "file",
+                  "path": ".claude/agents/kfc/spec-design.md",
+                  "size": 6054,
+                  "language": "md"
+                },
+                {
+                  "name": "spec-impl.md",
+                  "type": "file",
+                  "path": ".claude/agents/kfc/spec-impl.md",
+                  "size": 1680,
+                  "language": "md"
+                },
+                {
+                  "name": "spec-judge.md",
+                  "type": "file",
+                  "path": ".claude/agents/kfc/spec-judge.md",
+                  "size": 4520,
+                  "language": "md"
+                },
+                {
+                  "name": "spec-requirements.md",
+                  "type": "file",
+                  "path": ".claude/agents/kfc/spec-requirements.md",
+                  "size": 5463,
+                  "language": "md"
+                },
+                {
+                  "name": "spec-system-prompt-loader.md",
+                  "type": "file",
+                  "path": ".claude/agents/kfc/spec-system-prompt-loader.md",
+                  "size": 1657,
+                  "language": "md"
+                },
+                {
+                  "name": "spec-tasks.md",
+                  "type": "file",
+                  "path": ".claude/agents/kfc/spec-tasks.md",
+                  "size": 9397,
+                  "language": "md"
+                },
+                {
+                  "name": "spec-test.md",
+                  "type": "file",
+                  "path": ".claude/agents/kfc/spec-test.md",
+                  "size": 3700,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "settings",
+          "type": "folder",
+          "path": ".claude/settings",
+          "children": [
+            {
+              "name": "kfc-settings.json",
+              "type": "file",
+              "path": ".claude/settings/kfc-settings.json",
+              "size": 386,
+              "language": "json"
+            }
+          ]
+        },
+        {
+          "name": "skills",
+          "type": "folder",
+          "path": ".claude/skills",
+          "children": [
+            {
+              "name": "blog-post-writer",
+              "type": "folder",
+              "path": ".claude/skills/blog-post-writer",
+              "children": [
+                {
+                  "name": "references",
+                  "type": "folder",
+                  "path": ".claude/skills/blog-post-writer/references",
+                  "children": [
+                    {
+                      "name": "draft-claude-code-agentic-workflows.md",
+                      "type": "file",
+                      "path": ".claude/skills/blog-post-writer/references/draft-claude-code-agentic-workflows.md",
+                      "size": 8630,
+                      "language": "md"
+                    },
+                    {
+                      "name": "story-circle.md",
+                      "type": "file",
+                      "path": ".claude/skills/blog-post-writer/references/story-circle.md",
+                      "size": 2969,
+                      "language": "md"
+                    },
+                    {
+                      "name": "voice-tone.md",
+                      "type": "file",
+                      "path": ".claude/skills/blog-post-writer/references/voice-tone.md",
+                      "size": 5313,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "SKILL.md",
+                  "type": "file",
+                  "path": ".claude/skills/blog-post-writer/SKILL.md",
+                  "size": 5502,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "content-trend-researcher",
+              "type": "folder",
+              "path": ".claude/skills/content-trend-researcher",
+              "children": [
+                {
+                  "name": "expected_output.json",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/expected_output.json",
+                  "size": 16024,
+                  "language": "json"
+                },
+                {
+                  "name": "HOW_TO_USE.md",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/HOW_TO_USE.md",
+                  "size": 9571,
+                  "language": "md"
+                },
+                {
+                  "name": "intent_analyzer.py",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/intent_analyzer.py",
+                  "size": 16588,
+                  "language": "py"
+                },
+                {
+                  "name": "outline_generator.py",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/outline_generator.py",
+                  "size": 31709,
+                  "language": "py"
+                },
+                {
+                  "name": "platform_insights.py",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/platform_insights.py",
+                  "size": 31635,
+                  "language": "py"
+                },
+                {
+                  "name": "sample_input.json",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/sample_input.json",
+                  "size": 628,
+                  "language": "json"
+                },
+                {
+                  "name": "SKILL.md",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/SKILL.md",
+                  "size": 8484,
+                  "language": "md"
+                },
+                {
+                  "name": "trend_analyzer.py",
+                  "type": "file",
+                  "path": ".claude/skills/content-trend-researcher/trend_analyzer.py",
+                  "size": 18784,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "frontend-dev-guidelines",
+              "type": "folder",
+              "path": ".claude/skills/frontend-dev-guidelines",
+              "children": [
+                {
+                  "name": "resources",
+                  "type": "folder",
+                  "path": ".claude/skills/frontend-dev-guidelines/resources",
+                  "children": [
+                    {
+                      "name": "common-patterns.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/common-patterns.md",
+                      "size": 8699,
+                      "language": "md"
+                    },
+                    {
+                      "name": "complete-examples.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/complete-examples.md",
+                      "size": 25395,
+                      "language": "md"
+                    },
+                    {
+                      "name": "component-patterns.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/component-patterns.md",
+                      "size": 11305,
+                      "language": "md"
+                    },
+                    {
+                      "name": "data-fetching.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/data-fetching.md",
+                      "size": 20583,
+                      "language": "md"
+                    },
+                    {
+                      "name": "file-organization.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/file-organization.md",
+                      "size": 12372,
+                      "language": "md"
+                    },
+                    {
+                      "name": "loading-and-error-states.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/loading-and-error-states.md",
+                      "size": 12536,
+                      "language": "md"
+                    },
+                    {
+                      "name": "performance.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/performance.md",
+                      "size": 10044,
+                      "language": "md"
+                    },
+                    {
+                      "name": "routing-guide.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/routing-guide.md",
+                      "size": 7556,
+                      "language": "md"
+                    },
+                    {
+                      "name": "styling-guide.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/styling-guide.md",
+                      "size": 8332,
+                      "language": "md"
+                    },
+                    {
+                      "name": "typescript-standards.md",
+                      "type": "file",
+                      "path": ".claude/skills/frontend-dev-guidelines/resources/typescript-standards.md",
+                      "size": 8856,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "SKILL.md",
+                  "type": "file",
+                  "path": ".claude/skills/frontend-dev-guidelines/SKILL.md",
+                  "size": 11726,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "writing-effective-prompts",
+              "type": "folder",
+              "path": ".claude/skills/writing-effective-prompts",
+              "children": [
+                {
+                  "name": "SKILL.md",
+                  "type": "file",
+                  "path": ".claude/skills/writing-effective-prompts/SKILL.md",
+                  "size": 5985,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "system-prompts",
+          "type": "folder",
+          "path": ".claude/system-prompts",
+          "children": [
+            {
+              "name": "spec-workflow-starter.md",
+              "type": "file",
+              "path": ".claude/system-prompts/spec-workflow-starter.md",
+              "size": 16383,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mejba.me",
+      "type": "folder",
+      "path": "mejba.me",
+      "children": [
+        {
+          "name": "10-ai-tools-ui-ux-designers-2025-vibe-design-workflow.md",
+          "type": "file",
+          "path": "mejba.me/10-ai-tools-ui-ux-designers-2025-vibe-design-workflow.md",
+          "size": 15210,
+          "language": "md"
+        },
+        {
+          "name": "30-chatgpt-hacks-2025-complete-guide.md",
+          "type": "file",
+          "path": "mejba.me/30-chatgpt-hacks-2025-complete-guide.md",
+          "size": 94175,
+          "language": "md"
+        },
+        {
+          "name": "ace-framework-build-ai-automation-systems-no-code-guide-2025.md",
+          "type": "file",
+          "path": "mejba.me/ace-framework-build-ai-automation-systems-no-code-guide-2025.md",
+          "size": 18222,
+          "language": "md"
+        },
+        {
+          "name": "best-mcp-servers-2025-ai-coding-workflow-guide.md",
+          "type": "file",
+          "path": "mejba.me/best-mcp-servers-2025-ai-coding-workflow-guide.md",
+          "size": 17263,
+          "language": "md"
+        },
+        {
+          "name": "blog-post-prompt.md",
+          "type": "file",
+          "path": "mejba.me/blog-post-prompt.md",
+          "size": 10191,
+          "language": "md"
+        },
+        {
+          "name": "chatgpt-5-1-complete-guide.md",
+          "type": "file",
+          "path": "mejba.me/chatgpt-5-1-complete-guide.md",
+          "size": 13497,
+          "language": "md"
+        },
+        {
+          "name": "claude-ai-video-generator-free-motion-graphics-tutorial-2025.md",
+          "type": "file",
+          "path": "mejba.me/claude-ai-video-generator-free-motion-graphics-tutorial-2025.md",
+          "size": 17492,
+          "language": "md"
+        },
+        {
+          "name": "claude-code-ai-agent-team-mcp-skills-guide-2025.md",
+          "type": "file",
+          "path": "mejba.me/claude-code-ai-agent-team-mcp-skills-guide-2025.md",
+          "size": 15927,
+          "language": "md"
+        },
+        {
+          "name": "claude-code-beautiful-websites-ai-design-tools-workflow-2025.md",
+          "type": "file",
+          "path": "mejba.me/claude-code-beautiful-websites-ai-design-tools-workflow-2025.md",
+          "size": 17260,
+          "language": "md"
+        },
+        {
+          "name": "claude-code-cursor-mcp-vibe-coding-workflow-guide-2025.md",
+          "type": "file",
+          "path": "mejba.me/claude-code-cursor-mcp-vibe-coding-workflow-guide-2025.md",
+          "size": 11409,
+          "language": "md"
+        },
+        {
+          "name": "claude-opus-4-5-review-best-ai-coding-model-2025.md",
+          "type": "file",
+          "path": "mejba.me/claude-opus-4-5-review-best-ai-coding-model-2025.md",
+          "size": 9577,
+          "language": "md"
+        },
+        {
+          "name": "claude-skills-guide.md",
+          "type": "file",
+          "path": "mejba.me/claude-skills-guide.md",
+          "size": 14862,
+          "language": "md"
+        },
+        {
+          "name": "deploy-code-from-mobile-github-vercel-auto-deployment-guide.md",
+          "type": "file",
+          "path": "mejba.me/deploy-code-from-mobile-github-vercel-auto-deployment-guide.md",
+          "size": 18447,
+          "language": "md"
+        },
+        {
+          "name": "featured-image-prompt-10x-vibe-coder.md",
+          "type": "file",
+          "path": "mejba.me/featured-image-prompt-10x-vibe-coder.md",
+          "size": 10574,
+          "language": "md"
+        },
+        {
+          "name": "figma-mcp-cursor-ai-design-to-code-workflow-guide.md",
+          "type": "file",
+          "path": "mejba.me/figma-mcp-cursor-ai-design-to-code-workflow-guide.md",
+          "size": 8441,
+          "language": "md"
+        },
+        {
+          "name": "gemini-3-pro-blog-prompt.md",
+          "type": "file",
+          "path": "mejba.me/gemini-3-pro-blog-prompt.md",
+          "size": 17944,
+          "language": "md"
+        },
+        {
+          "name": "genspark-ai-browser-comprehensive-review-2025.md",
+          "type": "file",
+          "path": "mejba.me/genspark-ai-browser-comprehensive-review-2025.md",
+          "size": 11707,
+          "language": "md"
+        },
+        {
+          "name": "google-ai-tools-animated-parallax-website-no-code-guide-2025.md",
+          "type": "file",
+          "path": "mejba.me/google-ai-tools-animated-parallax-website-no-code-guide-2025.md",
+          "size": 11951,
+          "language": "md"
+        },
+        {
+          "name": "google-antigravity-claude-code-ai-coding-workflow-guide.md",
+          "type": "file",
+          "path": "mejba.me/google-antigravity-claude-code-ai-coding-workflow-guide.md",
+          "size": 27653,
+          "language": "md"
+        },
+        {
+          "name": "google-antigravity-ide-beginners-guide.md",
+          "type": "file",
+          "path": "mejba.me/google-antigravity-ide-beginners-guide.md",
+          "size": 14812,
+          "language": "md"
+        },
+        {
+          "name": "google-antigravity-magicpath-ai-design-code-workflow-guide.md",
+          "type": "file",
+          "path": "mejba.me/google-antigravity-magicpath-ai-design-code-workflow-guide.md",
+          "size": 9235,
+          "language": "md"
+        },
+        {
+          "name": "google-code-wiki-free-ai-documentation-tool-guide.md",
+          "type": "file",
+          "path": "mejba.me/google-code-wiki-free-ai-documentation-tool-guide.md",
+          "size": 8363,
+          "language": "md"
+        },
+        {
+          "name": "google-gemini-3-pro-anti-gravity-text-to-app-builder.md",
+          "type": "file",
+          "path": "mejba.me/google-gemini-3-pro-anti-gravity-text-to-app-builder.md",
+          "size": 27053,
+          "language": "md"
+        },
+        {
+          "name": "gpt-5-2-vs-opus-4-5-ai-coding-benchmark-real-world-test-2025.md",
+          "type": "file",
+          "path": "mejba.me/gpt-5-2-vs-opus-4-5-ai-coding-benchmark-real-world-test-2025.md",
+          "size": 15577,
+          "language": "md"
+        },
+        {
+          "name": "how-to-build-professional-website-google-ai-studio-free-hosting.md",
+          "type": "file",
+          "path": "mejba.me/how-to-build-professional-website-google-ai-studio-free-hosting.md",
+          "size": 21097,
+          "language": "md"
+        },
+        {
+          "name": "local-ai-coding-claude-code-no-rate-limits.md",
+          "type": "file",
+          "path": "mejba.me/local-ai-coding-claude-code-no-rate-limits.md",
+          "size": 21827,
+          "language": "md"
+        },
+        {
+          "name": "notebooklm-gemini-3-pro-interactive-visualization-workflow.md",
+          "type": "file",
+          "path": "mejba.me/notebooklm-gemini-3-pro-interactive-visualization-workflow.md",
+          "size": 29923,
+          "language": "md"
+        },
+        {
+          "name": "polymet-ai-design-tool-professional-ui-workflow-guide-2025.md",
+          "type": "file",
+          "path": "mejba.me/polymet-ai-design-tool-professional-ui-workflow-guide-2025.md",
+          "size": 16377,
+          "language": "md"
+        },
+        {
+          "name": "stop-wasting-dev-time-figma-to-code-ai.md",
+          "type": "file",
+          "path": "mejba.me/stop-wasting-dev-time-figma-to-code-ai.md",
+          "size": 24457,
+          "language": "md"
+        },
+        {
+          "name": "superdesign-ai-gemini-3-ui-design-tool-figma-alternative-2025.md",
+          "type": "file",
+          "path": "mejba.me/superdesign-ai-gemini-3-ui-design-tool-figma-alternative-2025.md",
+          "size": 6229,
+          "language": "md"
+        },
+        {
+          "name": "webflow-mcp-claude-opus-ai-web-design-automation-guide.md",
+          "type": "file",
+          "path": "mejba.me/webflow-mcp-claude-opus-ai-web-design-automation-guide.md",
+          "size": 7341,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 281,
+      "language": "text"
+    },
+    {
+      "name": "blog-post-writer-prompt.md",
+      "type": "file",
+      "path": "blog-post-writer-prompt.md",
+      "size": 9535,
+      "language": "md"
+    },
+    {
+      "name": "QUICK_START.md",
+      "type": "file",
+      "path": "QUICK_START.md",
+      "size": 15206,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 27863,
+      "language": "md"
+    },
+    {
+      "name": "rendrix-saas-project-plan.md",
+      "type": "file",
+      "path": "rendrix-saas-project-plan.md",
+      "size": 45026,
+      "language": "md"
+    }
+  ]
+}

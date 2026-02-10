@@ -1,0 +1,33 @@
+# Dependencies
+/node_modules
+/npm-debug.log
+/yarn-error.log
+/yarn-debug.log
+
+# Build
+/dist
+/build
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+/.idea
+/.vscode
+/*.sublime-*
+
+# System Files
+.DS_Store
+Thumbs.db 
+# Shell scripts with sensitive data
+*.sh
+start-sse-server.sh
+
+# Secrets
+*_key*
+*apikey*
+*secret*

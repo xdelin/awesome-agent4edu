@@ -1,0 +1,12 @@
+[build]
+command = "yarn --cwd packages/ui build"
+publish = "packages/ui/public"
+
+edge_functions = "packages/ui/api"
+
+[functions]
+  deno_import_map = "packages/ui/import_map.json"
+
+[[edge_functions]]
+  path = "/ai"
+  function = "ai"

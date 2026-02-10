@@ -1,0 +1,68 @@
+{
+  "name": "quiz-master",
+  "tree": [
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 2277,
+      "language": "text"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 3189,
+      "language": "md"
+    },
+    {
+      "name": "config.json",
+      "type": "file",
+      "path": "config.json",
+      "size": 198,
+      "language": "json"
+    },
+    {
+      "name": "index.html",
+      "type": "file",
+      "path": "index.html",
+      "size": 5115,
+      "language": "html"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1090,
+      "language": "text"
+    },
+    {
+      "name": "quiz.json",
+      "type": "file",
+      "path": "quiz.json",
+      "size": 1521,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 641,
+      "language": "md"
+    },
+    {
+      "name": "script.js",
+      "type": "file",
+      "path": "script.js",
+      "size": 18629,
+      "language": "js"
+    },
+    {
+      "name": "styles.css",
+      "type": "file",
+      "path": "styles.css",
+      "size": 10911,
+      "language": "css"
+    }
+  ]
+}

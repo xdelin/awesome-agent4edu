@@ -1,0 +1,229 @@
+{
+  "name": "Google Maps MCP",
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "core",
+          "type": "folder",
+          "path": "src/core",
+          "children": [
+            {
+              "name": "BaseMcpServer.ts",
+              "type": "file",
+              "path": "src/core/BaseMcpServer.ts",
+              "size": 7751,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "services",
+          "type": "folder",
+          "path": "src/services",
+          "children": [
+            {
+              "name": "NewPlacesService.ts",
+              "type": "file",
+              "path": "src/services/NewPlacesService.ts",
+              "size": 7122,
+              "language": "ts"
+            },
+            {
+              "name": "PlacesSearcher.ts",
+              "type": "file",
+              "path": "src/services/PlacesSearcher.ts",
+              "size": 6417,
+              "language": "ts"
+            },
+            {
+              "name": "toolclass.ts",
+              "type": "file",
+              "path": "src/services/toolclass.ts",
+              "size": 12507,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "maps",
+              "type": "folder",
+              "path": "src/tools/maps",
+              "children": [
+                {
+                  "name": "directions.ts",
+                  "type": "file",
+                  "path": "src/tools/maps/directions.ts",
+                  "size": 2004,
+                  "language": "ts"
+                },
+                {
+                  "name": "distanceMatrix.ts",
+                  "type": "file",
+                  "path": "src/tools/maps/distanceMatrix.ts",
+                  "size": 1839,
+                  "language": "ts"
+                },
+                {
+                  "name": "elevation.ts",
+                  "type": "file",
+                  "path": "src/tools/maps/elevation.ts",
+                  "size": 1649,
+                  "language": "ts"
+                },
+                {
+                  "name": "geocode.ts",
+                  "type": "file",
+                  "path": "src/tools/maps/geocode.ts",
+                  "size": 1501,
+                  "language": "ts"
+                },
+                {
+                  "name": "placeDetails.ts",
+                  "type": "file",
+                  "path": "src/tools/maps/placeDetails.ts",
+                  "size": 1532,
+                  "language": "ts"
+                },
+                {
+                  "name": "reverseGeocode.ts",
+                  "type": "file",
+                  "path": "src/tools/maps/reverseGeocode.ts",
+                  "size": 1593,
+                  "language": "ts"
+                },
+                {
+                  "name": "searchNearby.ts",
+                  "type": "file",
+                  "path": "src/tools/maps/searchNearby.ts",
+                  "size": 2202,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "apiKeyManager.ts",
+              "type": "file",
+              "path": "src/utils/apiKeyManager.ts",
+              "size": 2125,
+              "language": "ts"
+            },
+            {
+              "name": "requestContext.ts",
+              "type": "file",
+              "path": "src/utils/requestContext.ts",
+              "size": 719,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "cli.ts",
+          "type": "file",
+          "path": "src/cli.ts",
+          "size": 5749,
+          "language": "ts"
+        },
+        {
+          "name": "config.ts",
+          "type": "file",
+          "path": "src/config.ts",
+          "size": 2458,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 314,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 257,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 55,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 225,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1083,
+      "language": "text"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "path": "package-lock.json",
+      "size": 313551,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1899,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9197,
+      "language": "md"
+    },
+    {
+      "name": "test-new-api.js",
+      "type": "file",
+      "path": "test-new-api.js",
+      "size": 2119,
+      "language": "js"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 594,
+      "language": "json"
+    },
+    {
+      "name": "tsup.config.ts",
+      "type": "file",
+      "path": "tsup.config.ts",
+      "size": 386,
+      "language": "ts"
+    }
+  ]
+}

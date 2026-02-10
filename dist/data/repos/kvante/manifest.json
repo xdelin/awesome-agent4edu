@@ -1,0 +1,894 @@
+{
+  "name": "Kvante",
+  "tree": [
+    {
+      "name": "backend",
+      "type": "folder",
+      "path": "backend",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "backend/src",
+          "children": [
+            {
+              "name": "controllers",
+              "type": "folder",
+              "path": "backend/src/controllers",
+              "children": [
+                {
+                  "name": "FeedbackController.ts",
+                  "type": "file",
+                  "path": "backend/src/controllers/FeedbackController.ts",
+                  "size": 1612,
+                  "language": "ts"
+                },
+                {
+                  "name": "MathController.ts",
+                  "type": "file",
+                  "path": "backend/src/controllers/MathController.ts",
+                  "size": 2216,
+                  "language": "ts"
+                },
+                {
+                  "name": "OCRController.ts",
+                  "type": "file",
+                  "path": "backend/src/controllers/OCRController.ts",
+                  "size": 792,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "middleware",
+              "type": "folder",
+              "path": "backend/src/middleware",
+              "children": [
+                {
+                  "name": "errorHandler.ts",
+                  "type": "file",
+                  "path": "backend/src/middleware/errorHandler.ts",
+                  "size": 631,
+                  "language": "ts"
+                },
+                {
+                  "name": "requestLogger.ts",
+                  "type": "file",
+                  "path": "backend/src/middleware/requestLogger.ts",
+                  "size": 831,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "routes",
+              "type": "folder",
+              "path": "backend/src/routes",
+              "children": [
+                {
+                  "name": "feedbackRoutes.ts",
+                  "type": "file",
+                  "path": "backend/src/routes/feedbackRoutes.ts",
+                  "size": 387,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "backend/src/routes/index.ts",
+                  "size": 378,
+                  "language": "ts"
+                },
+                {
+                  "name": "mathRoutes.ts",
+                  "type": "file",
+                  "path": "backend/src/routes/mathRoutes.ts",
+                  "size": 427,
+                  "language": "ts"
+                },
+                {
+                  "name": "ocrRoutes.ts",
+                  "type": "file",
+                  "path": "backend/src/routes/ocrRoutes.ts",
+                  "size": 677,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "services",
+              "type": "folder",
+              "path": "backend/src/services",
+              "children": [
+                {
+                  "name": "AIService.ts",
+                  "type": "file",
+                  "path": "backend/src/services/AIService.ts",
+                  "size": 3610,
+                  "language": "ts"
+                },
+                {
+                  "name": "FeedbackService.ts",
+                  "type": "file",
+                  "path": "backend/src/services/FeedbackService.ts",
+                  "size": 1735,
+                  "language": "ts"
+                },
+                {
+                  "name": "OCRService.ts",
+                  "type": "file",
+                  "path": "backend/src/services/OCRService.ts",
+                  "size": 842,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "types",
+              "type": "folder",
+              "path": "backend/src/types",
+              "children": [
+                {
+                  "name": "feedback.ts",
+                  "type": "file",
+                  "path": "backend/src/types/feedback.ts",
+                  "size": 206,
+                  "language": "ts"
+                },
+                {
+                  "name": "math.ts",
+                  "type": "file",
+                  "path": "backend/src/types/math.ts",
+                  "size": 456,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "folder",
+              "path": "backend/src/utils",
+              "children": [
+                {
+                  "name": "PromptManager.ts",
+                  "type": "file",
+                  "path": "backend/src/utils/PromptManager.ts",
+                  "size": 1699,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "server.ts",
+              "type": "file",
+              "path": "backend/src/server.ts",
+              "size": 837,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": ".env.example",
+          "type": "file",
+          "path": "backend/.env.example",
+          "size": 252,
+          "language": "example"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "backend/package.json",
+          "size": 1065,
+          "language": "json"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "backend/tsconfig.json",
+          "size": 1359,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "type": "folder",
+      "path": "dashboard",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "dashboard/src",
+          "children": [
+            {
+              "name": "components",
+              "type": "folder",
+              "path": "dashboard/src/components",
+              "children": [
+                {
+                  "name": "Layout.tsx",
+                  "type": "file",
+                  "path": "dashboard/src/components/Layout.tsx",
+                  "size": 2028,
+                  "language": "tsx"
+                }
+              ]
+            },
+            {
+              "name": "pages",
+              "type": "folder",
+              "path": "dashboard/src/pages",
+              "children": [
+                {
+                  "name": "FeedbackAnalysisPage.tsx",
+                  "type": "file",
+                  "path": "dashboard/src/pages/FeedbackAnalysisPage.tsx",
+                  "size": 9617,
+                  "language": "tsx"
+                },
+                {
+                  "name": "OverviewPage.tsx",
+                  "type": "file",
+                  "path": "dashboard/src/pages/OverviewPage.tsx",
+                  "size": 7173,
+                  "language": "tsx"
+                },
+                {
+                  "name": "PerformanceMetricsPage.tsx",
+                  "type": "file",
+                  "path": "dashboard/src/pages/PerformanceMetricsPage.tsx",
+                  "size": 9974,
+                  "language": "tsx"
+                },
+                {
+                  "name": "PromptTestingPage.tsx",
+                  "type": "file",
+                  "path": "dashboard/src/pages/PromptTestingPage.tsx",
+                  "size": 9638,
+                  "language": "tsx"
+                }
+              ]
+            },
+            {
+              "name": "App.tsx",
+              "type": "file",
+              "path": "dashboard/src/App.tsx",
+              "size": 794,
+              "language": "tsx"
+            },
+            {
+              "name": "index.css",
+              "type": "file",
+              "path": "dashboard/src/index.css",
+              "size": 340,
+              "language": "css"
+            },
+            {
+              "name": "main.tsx",
+              "type": "file",
+              "path": "dashboard/src/main.tsx",
+              "size": 694,
+              "language": "tsx"
+            }
+          ]
+        },
+        {
+          "name": "index.html",
+          "type": "file",
+          "path": "dashboard/index.html",
+          "size": 405,
+          "language": "html"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "dashboard/package.json",
+          "size": 1145,
+          "language": "json"
+        },
+        {
+          "name": "postcss.config.js",
+          "type": "file",
+          "path": "dashboard/postcss.config.js",
+          "size": 84,
+          "language": "js"
+        },
+        {
+          "name": "tailwind.config.js",
+          "type": "file",
+          "path": "dashboard/tailwind.config.js",
+          "size": 696,
+          "language": "js"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "dashboard/tsconfig.json",
+          "size": 723,
+          "language": "json"
+        },
+        {
+          "name": "tsconfig.node.json",
+          "type": "file",
+          "path": "dashboard/tsconfig.node.json",
+          "size": 221,
+          "language": "json"
+        },
+        {
+          "name": "vite.config.ts",
+          "type": "file",
+          "path": "dashboard/vite.config.ts",
+          "size": 514,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "data",
+      "type": "folder",
+      "path": "data",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "data/README.md",
+          "size": 1189,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "type": "folder",
+      "path": "frontend",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "frontend/src",
+          "children": [
+            {
+              "name": "components",
+              "type": "folder",
+              "path": "frontend/src/components",
+              "children": [
+                {
+                  "name": "FeedbackForm.tsx",
+                  "type": "file",
+                  "path": "frontend/src/components/FeedbackForm.tsx",
+                  "size": 3183,
+                  "language": "tsx"
+                },
+                {
+                  "name": "ImageUpload.tsx",
+                  "type": "file",
+                  "path": "frontend/src/components/ImageUpload.tsx",
+                  "size": 2754,
+                  "language": "tsx"
+                },
+                {
+                  "name": "Layout.tsx",
+                  "type": "file",
+                  "path": "frontend/src/components/Layout.tsx",
+                  "size": 1281,
+                  "language": "tsx"
+                },
+                {
+                  "name": "ProblemInput.tsx",
+                  "type": "file",
+                  "path": "frontend/src/components/ProblemInput.tsx",
+                  "size": 1108,
+                  "language": "tsx"
+                },
+                {
+                  "name": "SolutionSteps.tsx",
+                  "type": "file",
+                  "path": "frontend/src/components/SolutionSteps.tsx",
+                  "size": 2984,
+                  "language": "tsx"
+                }
+              ]
+            },
+            {
+              "name": "hooks",
+              "type": "folder",
+              "path": "frontend/src/hooks",
+              "children": [
+                {
+                  "name": "useFeedback.ts",
+                  "type": "file",
+                  "path": "frontend/src/hooks/useFeedback.ts",
+                  "size": 767,
+                  "language": "ts"
+                },
+                {
+                  "name": "useHint.ts",
+                  "type": "file",
+                  "path": "frontend/src/hooks/useHint.ts",
+                  "size": 802,
+                  "language": "ts"
+                },
+                {
+                  "name": "useMathSolver.ts",
+                  "type": "file",
+                  "path": "frontend/src/hooks/useMathSolver.ts",
+                  "size": 985,
+                  "language": "ts"
+                },
+                {
+                  "name": "useOCR.ts",
+                  "type": "file",
+                  "path": "frontend/src/hooks/useOCR.ts",
+                  "size": 724,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "pages",
+              "type": "folder",
+              "path": "frontend/src/pages",
+              "children": [
+                {
+                  "name": "HomePage.tsx",
+                  "type": "file",
+                  "path": "frontend/src/pages/HomePage.tsx",
+                  "size": 2560,
+                  "language": "tsx"
+                },
+                {
+                  "name": "ProblemSolverPage.tsx",
+                  "type": "file",
+                  "path": "frontend/src/pages/ProblemSolverPage.tsx",
+                  "size": 2743,
+                  "language": "tsx"
+                }
+              ]
+            },
+            {
+              "name": "services",
+              "type": "folder",
+              "path": "frontend/src/services",
+              "children": [
+                {
+                  "name": "feedbackService.ts",
+                  "type": "file",
+                  "path": "frontend/src/services/feedbackService.ts",
+                  "size": 682,
+                  "language": "ts"
+                },
+                {
+                  "name": "mathService.ts",
+                  "type": "file",
+                  "path": "frontend/src/services/mathService.ts",
+                  "size": 756,
+                  "language": "ts"
+                },
+                {
+                  "name": "ocrService.ts",
+                  "type": "file",
+                  "path": "frontend/src/services/ocrService.ts",
+                  "size": 500,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "types",
+              "type": "folder",
+              "path": "frontend/src/types",
+              "children": [
+                {
+                  "name": "feedback.ts",
+                  "type": "file",
+                  "path": "frontend/src/types/feedback.ts",
+                  "size": 170,
+                  "language": "ts"
+                },
+                {
+                  "name": "math.ts",
+                  "type": "file",
+                  "path": "frontend/src/types/math.ts",
+                  "size": 147,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "App.tsx",
+              "type": "file",
+              "path": "frontend/src/App.tsx",
+              "size": 492,
+              "language": "tsx"
+            },
+            {
+              "name": "index.css",
+              "type": "file",
+              "path": "frontend/src/index.css",
+              "size": 698,
+              "language": "css"
+            },
+            {
+              "name": "main.tsx",
+              "type": "file",
+              "path": "frontend/src/main.tsx",
+              "size": 697,
+              "language": "tsx"
+            }
+          ]
+        },
+        {
+          "name": "index.html",
+          "type": "file",
+          "path": "frontend/index.html",
+          "size": 386,
+          "language": "html"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "frontend/package.json",
+          "size": 1165,
+          "language": "json"
+        },
+        {
+          "name": "postcss.config.js",
+          "type": "file",
+          "path": "frontend/postcss.config.js",
+          "size": 84,
+          "language": "js"
+        },
+        {
+          "name": "tailwind.config.js",
+          "type": "file",
+          "path": "frontend/tailwind.config.js",
+          "size": 363,
+          "language": "js"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "frontend/tsconfig.json",
+          "size": 723,
+          "language": "json"
+        },
+        {
+          "name": "tsconfig.node.json",
+          "type": "file",
+          "path": "frontend/tsconfig.node.json",
+          "size": 221,
+          "language": "json"
+        },
+        {
+          "name": "vite.config.ts",
+          "type": "file",
+          "path": "frontend/vite.config.ts",
+          "size": 525,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "ocr",
+      "type": "folder",
+      "path": "ocr",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "ocr/src",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "ocr/src/core",
+              "children": [
+                {
+                  "name": "ImagePreprocessor.ts",
+                  "type": "file",
+                  "path": "ocr/src/core/ImagePreprocessor.ts",
+                  "size": 1351,
+                  "language": "ts"
+                },
+                {
+                  "name": "OCRProcessor.ts",
+                  "type": "file",
+                  "path": "ocr/src/core/OCRProcessor.ts",
+                  "size": 2170,
+                  "language": "ts"
+                },
+                {
+                  "name": "TextPostProcessor.ts",
+                  "type": "file",
+                  "path": "ocr/src/core/TextPostProcessor.ts",
+                  "size": 1911,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "types",
+              "type": "folder",
+              "path": "ocr/src/types",
+              "children": [
+                {
+                  "name": "ocr.ts",
+                  "type": "file",
+                  "path": "ocr/src/types/ocr.ts",
+                  "size": 726,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "folder",
+              "path": "ocr/src/utils",
+              "children": [
+                {
+                  "name": "validation.ts",
+                  "type": "file",
+                  "path": "ocr/src/utils/validation.ts",
+                  "size": 1397,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "ocr/src/index.ts",
+              "size": 291,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "ocr/package.json",
+          "size": 633,
+          "language": "json"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "ocr/tsconfig.json",
+          "size": 804,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "prompts",
+      "type": "folder",
+      "path": "prompts",
+      "children": [
+        {
+          "name": "evaluation",
+          "type": "folder",
+          "path": "prompts/evaluation",
+          "children": [
+            {
+              "name": "prompt-testing-framework.md",
+              "type": "file",
+              "path": "prompts/evaluation/prompt-testing-framework.md",
+              "size": 4771,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "math",
+          "type": "folder",
+          "path": "prompts/math",
+          "children": [
+            {
+              "name": "hint-generator.md",
+              "type": "file",
+              "path": "prompts/math/hint-generator.md",
+              "size": 2025,
+              "language": "md"
+            },
+            {
+              "name": "step-by-step-solver.md",
+              "type": "file",
+              "path": "prompts/math/step-by-step-solver.md",
+              "size": 1960,
+              "language": "md"
+            },
+            {
+              "name": "step-checker.md",
+              "type": "file",
+              "path": "prompts/math/step-checker.md",
+              "size": 2554,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "system",
+          "type": "folder",
+          "path": "prompts/system",
+          "children": [
+            {
+              "name": "anti-hallucination.md",
+              "type": "file",
+              "path": "prompts/system/anti-hallucination.md",
+              "size": 2593,
+              "language": "md"
+            },
+            {
+              "name": "educational-principles.md",
+              "type": "file",
+              "path": "prompts/system/educational-principles.md",
+              "size": 3266,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "e2e",
+          "type": "folder",
+          "path": "tests/e2e",
+          "children": [
+            {
+              "name": "specs",
+              "type": "folder",
+              "path": "tests/e2e/specs",
+              "children": [
+                {
+                  "name": "problem-solving.spec.ts",
+                  "type": "file",
+                  "path": "tests/e2e/specs/problem-solving.spec.ts",
+                  "size": 6135,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "playwright.config.ts",
+              "type": "file",
+              "path": "tests/e2e/playwright.config.ts",
+              "size": 939,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "fixtures",
+          "type": "folder",
+          "path": "tests/fixtures",
+          "children": [
+            {
+              "name": "math-problems.json",
+              "type": "file",
+              "path": "tests/fixtures/math-problems.json",
+              "size": 2921,
+              "language": "json"
+            },
+            {
+              "name": "sample-feedback.json",
+              "type": "file",
+              "path": "tests/fixtures/sample-feedback.json",
+              "size": 2217,
+              "language": "json"
+            }
+          ]
+        },
+        {
+          "name": "integration",
+          "type": "folder",
+          "path": "tests/integration",
+          "children": [
+            {
+              "name": "api.test.ts",
+              "type": "file",
+              "path": "tests/integration/api.test.ts",
+              "size": 3971,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "unit",
+          "type": "folder",
+          "path": "tests/unit",
+          "children": [
+            {
+              "name": "backend",
+              "type": "folder",
+              "path": "tests/unit/backend",
+              "children": [
+                {
+                  "name": "services",
+                  "type": "folder",
+                  "path": "tests/unit/backend/services",
+                  "children": [
+                    {
+                      "name": "AIService.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/backend/services/AIService.test.ts",
+                      "size": 4458,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ocr",
+              "type": "folder",
+              "path": "tests/unit/ocr",
+              "children": [
+                {
+                  "name": "OCRProcessor.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/ocr/OCRProcessor.test.ts",
+                  "size": 3431,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "jest.config.js",
+          "type": "file",
+          "path": "tests/jest.config.js",
+          "size": 409,
+          "language": "js"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "tests/package.json",
+          "size": 1044,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 2341,
+      "language": "text"
+    },
+    {
+      "name": "Claude.md",
+      "type": "file",
+      "path": "Claude.md",
+      "size": 1663,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1084,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1098,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1409,
+      "language": "md"
+    }
+  ]
+}

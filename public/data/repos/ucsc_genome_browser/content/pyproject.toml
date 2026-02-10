@@ -1,0 +1,20 @@
+[tool.hatch.build.targets.wheel]
+only-include = ["ucsc_genome_mcp.py"]
+
+[project]
+name = "ucsc-genome-mcp"
+version = "0.1.0"
+description = "MCP server for interacting with the UCSC Genome Browser API"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=0.9.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+ucsc-genome-mcp = "ucsc_genome_mcp:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

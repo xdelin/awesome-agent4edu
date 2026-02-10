@@ -1,0 +1,124 @@
+{
+  "name": "Canvas LMS",
+  "tree": [
+    {
+      "name": ".cursor",
+      "type": "folder",
+      "path": ".cursor",
+      "children": [
+        {
+          "name": "mcp.json",
+          "type": "file",
+          "path": ".cursor/mcp.json",
+          "size": 608,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "canvas_lms_mcp",
+          "type": "folder",
+          "path": "src/canvas_lms_mcp",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/canvas_lms_mcp/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "client.py",
+              "type": "file",
+              "path": "src/canvas_lms_mcp/client.py",
+              "size": 2326,
+              "language": "py"
+            },
+            {
+              "name": "main.py",
+              "type": "file",
+              "path": "src/canvas_lms_mcp/main.py",
+              "size": 8997,
+              "language": "py"
+            },
+            {
+              "name": "schema.py",
+              "type": "file",
+              "path": "src/canvas_lms_mcp/schema.py",
+              "size": 3289,
+              "language": "py"
+            },
+            {
+              "name": "tools.py",
+              "type": "file",
+              "path": "src/canvas_lms_mcp/tools.py",
+              "size": 5058,
+              "language": "py"
+            },
+            {
+              "name": "utils.py",
+              "type": "file",
+              "path": "src/canvas_lms_mcp/utils.py",
+              "size": 2316,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 3662,
+      "language": "text"
+    },
+    {
+      "name": "DEVELOPMENT.md",
+      "type": "file",
+      "path": "DEVELOPMENT.md",
+      "size": 3555,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 949,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1111,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 1604,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 7369,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 903,
+      "language": "yaml"
+    }
+  ]
+}

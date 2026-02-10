@@ -1,0 +1,11 @@
+{
+  "name": "claudebrief",
+  "description": "Surface knowledge gaps from your Claude Code sessions. Detects dangerous verbs that hide required decisions, tracks patterns, compounds into CLAUDE.md.",
+  "version": "1.0.0",
+  "author": {
+    "name": "apprenticemode"
+  },
+  "repository": "https://github.com/yavzius/apprenticemode",
+  "license": "MIT",
+  "keywords": ["learning", "reflection", "gaps", "dangerous-verbs"]
+}
