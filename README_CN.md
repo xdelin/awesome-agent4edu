@@ -6,26 +6,25 @@
 
 ## 目录
 
-- [📂 智能导学](#intelligent-tutoring)
-- [📂 数理科学](#math-science)
-- [📂 生物与医学](#biology-medicine)
-- [📂 化学与材料](#chemistry-materials)
-- [📂 艺术、人文与社会科学](#arts-humanities-social-sciences)
-- [📂 计算机科学与工程](#computer-science-engineering)
-- [📂 数据与分析](#data-analysis)
-- [🎨 视觉与演示 (PPT)](#visual-presentation)
-- [📚 学术与写作](#academic-writing)
-- [📂 笔记与知识库](#notes-knowledge-base)
-- [📂 职业规划与生产力](#career-productivity)
-- [📂 元技能](#meta-skills)
-- [🏭 商业化教育 AI](#commercial-education-ai)
-- [🤖 教育大模型](#education-llms)
-- [🥽 具身智能与 VR 教育](#embodied-intelligence-vr-education)
-- [🤖 Agent 框架与教育应用](#agent-frameworks-educational-applications)
+- [智能导学](#intelligent-tutoring)
+- [数理科学](#math-science)
+- [生物与医学](#biology-medicine)
+- [化学与材料](#chemistry-materials)
+- [艺术、人文与社会科学](#arts-humanities-social-sciences)
+- [计算机科学与工程](#computer-science-engineering)
+- [数据与分析](#data-analysis)
+- [视觉与演示 (PPT)](#visual-presentation)
+- [学术与写作](#academic-writing)
+- [笔记与知识库](#notes-knowledge-base)
+- [职业规划与生产力](#career-productivity)
+- [元技能](#meta-skills)
+- [商业化教育 AI](#commercial-education-ai)
+- [教育大模型](#education-llms)
+- [Agent 框架与教育应用](#agent-frameworks-educational-applications)
 
 ---
 
-## <a id='intelligent-tutoring'></a>📂 Intelligent Tutoring (智能导学)
+## <a id='intelligent-tutoring'></a>Intelligent Tutoring (智能导学)
 
 > AI 导师、教育评估及个性化学习助手。
 
@@ -61,7 +60,7 @@
   - **描述**: 基于模型上下文协议 (MCP) 构建的 AI 教育工具包。
   - **适用场景**: 个性化辅导，教育辅助。
 
-## <a id='math-science'></a>📂 Math & Science (数理科学)
+## <a id='math-science'></a>Math & Science (数理科学)
 
 > 数学、物理、STEM 研究及科学工具。
 
@@ -133,7 +132,7 @@
   - **描述**: 天气数据 API 集成。
   - **适用场景**: 地球科学数据收集、气候研究。
 
-## <a id='biology-medicine'></a>📂 Biology & Medicine (生物与医学)
+## <a id='biology-medicine'></a>Biology & Medicine (生物与医学)
 
 > 基因组学、蛋白质分析、医学研究及生物信息学工具。
 
@@ -177,7 +176,7 @@
   - **描述**: 通过 REST API 访问 Ensembl 基因组数据。
   - **适用场景**: 基因组数据检索和分析。
 
-## <a id='chemistry-materials'></a>📂 Chemistry & Materials (化学与材料)
+## <a id='chemistry-materials'></a>Chemistry & Materials (化学与材料)
 
 > 分子建模、化学数据、材料科学及晶体结构。
 
@@ -205,7 +204,7 @@
   - **描述**: 从 Catalysis Hub 数据库搜索和检索科学数据。
   - **适用场景**: 化学研究、催化实验。
 
-## <a id='arts-humanities-social-sciences'></a>📂 Arts, Humanities & Social Sciences (艺术、人文与社会科学)
+## <a id='arts-humanities-social-sciences'></a>Arts, Humanities & Social Sciences (艺术、人文与社会科学)
 
 > 历史、地理、社会学及艺术。
 
@@ -229,9 +228,9 @@
   - **描述**: 访问地理数据和定位服务。
   - **适用场景**: 地理教育、文化研究。
 
-## <a id='computer-science-engineering'></a>📂 Computer Science & Engineering (计算机科学与工程)
+## <a id='computer-science-engineering'></a>Computer Science & Engineering (计算机科学与工程)
 
-> 开发工具、编程助手、数据库管理及 DevOps。
+> 开发工具、编程助手、数据库管理及 DevOps。 包含具身智能与 VR 环境。
 
 - **[Anthropic Web App Testing](https://github.com/anthropics/anthropic-skills/tree/main/skills/webapp-testing)**
   - **描述**: 使用 Playwright/Puppeteer 概念的自动化 Web 应用程序测试技能。
@@ -377,7 +376,19 @@
   - **描述**: 用于读取、搜索和操作本地 Git 仓库的工具。可视化历史记录和差异。
   - **适用场景**: 理解本地 Git 历史，调试复杂的合并问题。
 
-## <a id='data-analysis'></a>📂 Data & Analysis (数据与分析)
+- **[AI2-THOR](https://github.com/allenai/ai2thor)**
+  - **描述**: 用于视觉 AI 的交互式 3D 环境，允许智能体导航并与物体交互。
+  - **适用场景**: 机器人训练、视觉推理教育。
+
+- **[ThreeDWorld (TDW)](https://github.com/threedworld-mit/tdw)**
+  - **描述**: 一个用于高保真感官数据交互式物理模拟的平台。
+  - **适用场景**: 物理模拟、空间智能研究。
+
+- **[UnrealZoo](https://github.com/UnrealZoo/UnrealZoo)**
+  - **描述**: 基于虚幻引擎 5 开发和评估具身智能体的平台 (ICCV 2025)。
+  - **适用场景**: 照片级仿真、具身智能体训练。
+
+## <a id='data-analysis'></a>Data & Analysis (数据与分析)
 
 > 数据科学、网络抓取、分析及大数据工具。
 
@@ -425,7 +436,7 @@
   - **描述**: 直接浏览 Kaggle 竞赛、排行榜、数据集和 Kernels。
   - **适用场景**: 数据科学练习、查找数据集。
 
-## <a id='visual-presentation'></a>🎨 Visual & Presentation (视觉与演示 (PPT))
+## <a id='visual-presentation'></a>Visual & Presentation (视觉与演示 (PPT))
 
 > PowerPoint 生成、数据可视化、UI 设计及视觉工具。
 
@@ -505,7 +516,7 @@
   - **描述**: FFmpeg 的 MCP 服务器。通过聊天即可处理视频和音频。
   - **适用场景**: 编辑讲座录音/录像、转换视频格式。
 
-## <a id='academic-writing'></a>📚 Academic & Writing (学术与写作)
+## <a id='academic-writing'></a>Academic & Writing (学术与写作)
 
 > 学术研究、论文写作、文献综述及创意写作。
 
@@ -617,7 +628,7 @@
   - **描述**: 在保留排版和公式的同时翻译科学论文。
   - **适用场景**: 阅读外文文献、学术翻译。
 
-## <a id='notes-knowledge-base'></a>📂 Notes & Knowledge Base (笔记与知识库)
+## <a id='notes-knowledge-base'></a>Notes & Knowledge Base (笔记与知识库)
 
 > 笔记整理、个人知识库管理 (PKM) 及文档处理。
 
@@ -677,7 +688,7 @@
   - **描述**: 直接读取和写入 Apple Notes。在 macOS 上整理课堂笔记。
   - **适用场景**: 整理课堂笔记、同步摘要。
 
-## <a id='career-productivity'></a>📂 Career & Productivity (职业规划与生产力)
+## <a id='career-productivity'></a>Career & Productivity (职业规划与生产力)
 
 > 职业发展、项目管理、沟通协作及任务追踪。
 
@@ -725,7 +736,7 @@
   - **描述**: Model Context Protocol (MCP) 服务器，用于管理 LinkedIn 个人资料、技能和教育背景。
   - **适用场景**: 个人品牌建设、自动更新职业履历。
 
-## <a id='meta-skills'></a>📂 Meta Skills (元技能)
+## <a id='meta-skills'></a>Meta Skills (元技能)
 
 > 提示词工程、MCP 元列表及技能开发工具。
 
@@ -757,7 +768,7 @@
   - **描述**: 一个用于帮助你构建、测试和调试新 MCP 服务器的元技能。
   - **适用场景**: 为 Claude 开发自定义工具，学习 MCP 架构。
 
-## <a id='commercial-education-ai'></a>🏭 Commercial Education AI (商业化教育 AI)
+## <a id='commercial-education-ai'></a>Commercial Education AI (商业化教育 AI)
 
 > 正在变革教育行业的领先商业 AI 产品。
 
@@ -781,7 +792,7 @@
   - **描述**: Quizlet 内置的 AI 导师，用于交互式学习。
   - **适用场景**: 备考、主动回忆练习。
 
-## <a id='education-llms'></a>🤖 Education LLMs (教育大模型)
+## <a id='education-llms'></a>Education LLMs (教育大模型)
 
 > 专门针对教育任务、推理和辅导优化的大语言模型。
 
@@ -809,23 +820,7 @@
   - **描述**: 一个用于为大语言模型自动生成（Bootstrap）数学问题的项目。
   - **适用场景**: 生成数学训练数据、微调教育模型。
 
-## <a id='embodied-intelligence-vr-education'></a>🥽 Embodied Intelligence & VR Education (具身智能与 VR 教育)
-
-> 3D 环境中的 AI、机器人仿真以及用于沉浸式学习的虚拟现实技术。
-
-- **[AI2-THOR](https://github.com/allenai/ai2thor)**
-  - **描述**: 用于视觉 AI 的交互式 3D 环境，允许智能体导航并与物体交互。
-  - **适用场景**: 机器人训练、视觉推理教育。
-
-- **[ThreeDWorld (TDW)](https://github.com/threedworld-mit/tdw)**
-  - **描述**: 一个用于高保真感官数据交互式物理模拟的平台。
-  - **适用场景**: 物理模拟、空间智能研究。
-
-- **[UnrealZoo](https://github.com/UnrealZoo/UnrealZoo)**
-  - **描述**: 基于虚幻引擎 5 开发和评估具身智能体的平台 (ICCV 2025)。
-  - **适用场景**: 照片级仿真、具身智能体训练。
-
-## <a id='agent-frameworks-educational-applications'></a>🤖 Agent Frameworks & Educational Applications (Agent 框架与教育应用)
+## <a id='agent-frameworks-educational-applications'></a>Agent Frameworks & Educational Applications (Agent 框架与教育应用)
 
 > 用于构建自主智能体的框架，以及基于 LangChain、CrewAI 等的特定教育实现。
 

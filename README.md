@@ -6,26 +6,25 @@ A comprehensive curated list of AI resources for education, including **Model Co
 
 ## Table of Contents
 
-- [📂 Intelligent Tutoring](#intelligent-tutoring)
-- [📂 Math & Science](#math-science)
-- [📂 Biology & Medicine](#biology-medicine)
-- [📂 Chemistry & Materials](#chemistry-materials)
-- [📂 Arts, Humanities & Social Sciences](#arts-humanities-social-sciences)
-- [📂 Computer Science & Engineering](#computer-science-engineering)
-- [📂 Data & Analysis](#data-analysis)
-- [🎨 Visual & Presentation](#visual-presentation)
-- [📚 Academic & Writing](#academic-writing)
-- [📂 Notes & Knowledge Base](#notes-knowledge-base)
-- [📂 Career & Productivity](#career-productivity)
-- [📂 Meta Skills](#meta-skills)
-- [🏭 Commercial Education AI](#commercial-education-ai)
-- [🤖 Education LLMs](#education-llms)
-- [🥽 Embodied Intelligence & VR Education](#embodied-intelligence-vr-education)
-- [🤖 Agent Frameworks & Educational Applications](#agent-frameworks-educational-applications)
+- [Intelligent Tutoring](#intelligent-tutoring)
+- [Math & Science](#math-science)
+- [Biology & Medicine](#biology-medicine)
+- [Chemistry & Materials](#chemistry-materials)
+- [Arts, Humanities & Social Sciences](#arts-humanities-social-sciences)
+- [Computer Science & Engineering](#computer-science-engineering)
+- [Data & Analysis](#data-analysis)
+- [Visual & Presentation](#visual-presentation)
+- [Academic & Writing](#academic-writing)
+- [Notes & Knowledge Base](#notes-knowledge-base)
+- [Career & Productivity](#career-productivity)
+- [Meta Skills](#meta-skills)
+- [Commercial Education AI](#commercial-education-ai)
+- [Education LLMs](#education-llms)
+- [Agent Frameworks & Educational Applications](#agent-frameworks-educational-applications)
 
 ---
 
-## <a id='intelligent-tutoring'></a>📂 Intelligent Tutoring
+## <a id='intelligent-tutoring'></a>Intelligent Tutoring
 
 > AI tutors, educational assessment, and personalized learning assistants.
 
@@ -61,7 +60,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: AI-powered educational toolkit built on the Model Context Protocol (MCP).
   - **Use Case**: Personalized tutoring, educational assistance.
 
-## <a id='math-science'></a>📂 Math & Science
+## <a id='math-science'></a>Math & Science
 
 > Mathematics, physics, STEM research, and scientific tools.
 
@@ -133,7 +132,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Weather data API integration.
   - **Use Case**: Earth science data collection, climate study.
 
-## <a id='biology-medicine'></a>📂 Biology & Medicine
+## <a id='biology-medicine'></a>Biology & Medicine
 
 > Genomics, protein analysis, medical research, and bioinformatics tools.
 
@@ -177,7 +176,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Access to Ensembl genome data via REST API.
   - **Use Case**: Genomic data retrieval and analysis.
 
-## <a id='chemistry-materials'></a>📂 Chemistry & Materials
+## <a id='chemistry-materials'></a>Chemistry & Materials
 
 > Molecular modeling, chemical data, materials science, and crystal structures.
 
@@ -205,7 +204,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Search and retrieve scientific data from the Catalysis Hub database.
   - **Use Case**: Chemistry research, catalysis experiments.
 
-## <a id='arts-humanities-social-sciences'></a>📂 Arts, Humanities & Social Sciences
+## <a id='arts-humanities-social-sciences'></a>Arts, Humanities & Social Sciences
 
 > History, Geography, Sociology, and Arts.
 
@@ -229,9 +228,9 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Access to geographical data and location services.
   - **Use Case**: Geography education, cultural studies.
 
-## <a id='computer-science-engineering'></a>📂 Computer Science & Engineering
+## <a id='computer-science-engineering'></a>Computer Science & Engineering
 
-> Development tools, coding assistants, database management, and DevOps.
+> Development tools, coding assistants, database management, and DevOps. Includes embodied intelligence and VR environments.
 
 - **[Anthropic Web App Testing](https://github.com/anthropics/anthropic-skills/tree/main/skills/webapp-testing)**
   - **Description**: Automated web application testing skill using Playwright/Puppeteer concepts.
@@ -377,7 +376,19 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Tools to read, search, and manipulate local Git repositories. Visualize history and diffs.
   - **Use Case**: Understanding local git history, debugging complex merges.
 
-## <a id='data-analysis'></a>📂 Data & Analysis
+- **[AI2-THOR](https://github.com/allenai/ai2thor)**
+  - **Description**: An interactive 3D environment for visual AI, enabling agents to navigate and interact with objects.
+  - **Use Case**: Robotics training, visual reasoning education.
+
+- **[ThreeDWorld (TDW)](https://github.com/threedworld-mit/tdw)**
+  - **Description**: A platform for interactive physical simulation of high-fidelity sensory data.
+  - **Use Case**: Physics simulation, spatial intelligence research.
+
+- **[UnrealZoo](https://github.com/UnrealZoo/UnrealZoo)**
+  - **Description**: A platform for developing and evaluating embodied AI agents in Unreal Engine 5 (ICCV 2025).
+  - **Use Case**: Photorealistic simulation, embodied agent training.
+
+## <a id='data-analysis'></a>Data & Analysis
 
 > Data science, web scraping, analytics, and big data tools.
 
@@ -425,7 +436,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Browse Kaggle competitions, leaderboards, datasets, and kernels directly.
   - **Use Case**: Data science practice, finding datasets.
 
-## <a id='visual-presentation'></a>🎨 Visual & Presentation
+## <a id='visual-presentation'></a>Visual & Presentation
 
 > PowerPoint generation, data visualization, UI design, and visual tools.
 
@@ -505,7 +516,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: An MCP server for FFmpeg. Process video and audio simply by chatting.
   - **Use Case**: Editing lecture recordings, converting video formats.
 
-## <a id='academic-writing'></a>📚 Academic & Writing
+## <a id='academic-writing'></a>Academic & Writing
 
 > Academic research, paper writing, literature reviews, and creative writing.
 
@@ -617,7 +628,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Translate scientific papers while preserving layout and formulas.
   - **Use Case**: Reading foreign literature, academic translation.
 
-## <a id='notes-knowledge-base'></a>📂 Notes & Knowledge Base
+## <a id='notes-knowledge-base'></a>Notes & Knowledge Base
 
 > Note-taking, personal knowledge management (PKM), and document processing.
 
@@ -677,7 +688,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Read and write Apple Notes directly. Organize lecture notes on macOS.
   - **Use Case**: Organizing class notes, syncing summaries.
 
-## <a id='career-productivity'></a>📂 Career & Productivity
+## <a id='career-productivity'></a>Career & Productivity
 
 > Career development, project management, communication, and task tracking.
 
@@ -725,7 +736,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Model Context Protocol (MCP) server for managing LinkedIn profile, skills, and education background.
   - **Use Case**: Personal branding, auto-updating career history.
 
-## <a id='meta-skills'></a>📂 Meta Skills
+## <a id='meta-skills'></a>Meta Skills
 
 > Prompt engineering, MCP meta-lists, and skill development tools.
 
@@ -757,7 +768,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: A meta-skill that helps you build, test, and debug new MCP servers.
   - **Use Case**: Developing custom tools for Claude, learning MCP architecture.
 
-## <a id='commercial-education-ai'></a>🏭 Commercial Education AI
+## <a id='commercial-education-ai'></a>Commercial Education AI
 
 > Leading commercial AI products transforming education.
 
@@ -781,7 +792,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: AI-powered tutor built into Quizlet for interactive study sessions.
   - **Use Case**: Test prep, active recall practice.
 
-## <a id='education-llms'></a>🤖 Education LLMs
+## <a id='education-llms'></a>Education LLMs
 
 > Large Language Models specialized for educational tasks, reasoning, and tutoring.
 
@@ -809,23 +820,7 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: A project to bootstrap your own mathematical questions for Large Language Models.
   - **Use Case**: Generating math training data, fine-tuning educational models.
 
-## <a id='embodied-intelligence-vr-education'></a>🥽 Embodied Intelligence & VR Education
-
-> AI in 3D environments, robotics simulation, and virtual reality for immersive learning.
-
-- **[AI2-THOR](https://github.com/allenai/ai2thor)**
-  - **Description**: An interactive 3D environment for visual AI, enabling agents to navigate and interact with objects.
-  - **Use Case**: Robotics training, visual reasoning education.
-
-- **[ThreeDWorld (TDW)](https://github.com/threedworld-mit/tdw)**
-  - **Description**: A platform for interactive physical simulation of high-fidelity sensory data.
-  - **Use Case**: Physics simulation, spatial intelligence research.
-
-- **[UnrealZoo](https://github.com/UnrealZoo/UnrealZoo)**
-  - **Description**: A platform for developing and evaluating embodied AI agents in Unreal Engine 5 (ICCV 2025).
-  - **Use Case**: Photorealistic simulation, embodied agent training.
-
-## <a id='agent-frameworks-educational-applications'></a>🤖 Agent Frameworks & Educational Applications
+## <a id='agent-frameworks-educational-applications'></a>Agent Frameworks & Educational Applications
 
 > Frameworks for building autonomous agents and specific educational implementations using LangChain, CrewAI, etc.
 
