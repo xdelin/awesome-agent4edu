@@ -663,8 +663,8 @@
       "zh": "计算机科学与工程"
     },
     "description": {
-      "en": "Development tools, coding assistants, database management, and DevOps.",
-      "zh": "开发工具、编程助手、数据库管理及 DevOps。"
+      "en": "Development tools, coding assistants, database management, and DevOps. Includes embodied intelligence and VR environments.",
+      "zh": "开发工具、编程助手、数据库管理及 DevOps。 包含具身智能与 VR 环境。"
     },
     "skills": [
       {
@@ -1134,6 +1134,45 @@
           "zh": "理解本地 Git 历史，调试复杂的合并问题。"
         },
         "type": "MCP"
+      },
+      {
+        "name": "AI2-THOR",
+        "url": "https://github.com/allenai/ai2thor",
+        "description": {
+          "en": "An interactive 3D environment for visual AI, enabling agents to navigate and interact with objects.",
+          "zh": "用于视觉 AI 的交互式 3D 环境，允许智能体导航并与物体交互。"
+        },
+        "useCase": {
+          "en": "Robotics training, visual reasoning education.",
+          "zh": "机器人训练、视觉推理教育。"
+        },
+        "type": "Environment"
+      },
+      {
+        "name": "ThreeDWorld (TDW)",
+        "url": "https://github.com/threedworld-mit/tdw",
+        "description": {
+          "en": "A platform for interactive physical simulation of high-fidelity sensory data.",
+          "zh": "一个用于高保真感官数据交互式物理模拟的平台。"
+        },
+        "useCase": {
+          "en": "Physics simulation, spatial intelligence research.",
+          "zh": "物理模拟、空间智能研究。"
+        },
+        "type": "Environment"
+      },
+      {
+        "name": "UnrealZoo",
+        "url": "https://github.com/UnrealZoo/UnrealZoo",
+        "description": {
+          "en": "A platform for developing and evaluating embodied AI agents in Unreal Engine 5 (ICCV 2025).",
+          "zh": "基于虚幻引擎 5 开发和评估具身智能体的平台 (ICCV 2025)。"
+        },
+        "useCase": {
+          "en": "Photorealistic simulation, embodied agent training.",
+          "zh": "照片级仿真、具身智能体训练。"
+        },
+        "type": "Environment"
       }
     ]
   },
@@ -2530,57 +2569,6 @@
           "zh": "生成数学训练数据、微调教育模型。"
         },
         "type": "LLM"
-      }
-    ]
-  },
-  {
-    "category": {
-      "en": "Embodied Intelligence & VR Education",
-      "zh": "具身智能与 VR 教育"
-    },
-    "description": {
-      "en": "AI in 3D environments, robotics simulation, and virtual reality for immersive learning.",
-      "zh": "3D 环境中的 AI、机器人仿真以及用于沉浸式学习的虚拟现实技术。"
-    },
-    "skills": [
-      {
-        "name": "AI2-THOR",
-        "url": "https://github.com/allenai/ai2thor",
-        "description": {
-          "en": "An interactive 3D environment for visual AI, enabling agents to navigate and interact with objects.",
-          "zh": "用于视觉 AI 的交互式 3D 环境，允许智能体导航并与物体交互。"
-        },
-        "useCase": {
-          "en": "Robotics training, visual reasoning education.",
-          "zh": "机器人训练、视觉推理教育。"
-        },
-        "type": "Environment"
-      },
-      {
-        "name": "ThreeDWorld (TDW)",
-        "url": "https://github.com/threedworld-mit/tdw",
-        "description": {
-          "en": "A platform for interactive physical simulation of high-fidelity sensory data.",
-          "zh": "一个用于高保真感官数据交互式物理模拟的平台。"
-        },
-        "useCase": {
-          "en": "Physics simulation, spatial intelligence research.",
-          "zh": "物理模拟、空间智能研究。"
-        },
-        "type": "Environment"
-      },
-      {
-        "name": "UnrealZoo",
-        "url": "https://github.com/UnrealZoo/UnrealZoo",
-        "description": {
-          "en": "A platform for developing and evaluating embodied AI agents in Unreal Engine 5 (ICCV 2025).",
-          "zh": "基于虚幻引擎 5 开发和评估具身智能体的平台 (ICCV 2025)。"
-        },
-        "useCase": {
-          "en": "Photorealistic simulation, embodied agent training.",
-          "zh": "照片级仿真、具身智能体训练。"
-        },
-        "type": "Environment"
       }
     ]
   },

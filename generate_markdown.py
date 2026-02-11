@@ -55,9 +55,9 @@ def generate_readme_cn(data):
         if not items: continue
         cat_zh = category['category']['zh']
         cat_en = category['category']['en']
-        emoji = emoji_map.get(cat_en, "📂")
+        # removed emoji
         anchor = clean_anchor(cat_en)
-        content += f"- [{emoji} {cat_zh}](#{anchor})\n"
+        content += f"- [{cat_zh}](#{anchor})\n"
     
     content += "\n---\n\n"
 
@@ -67,10 +67,10 @@ def generate_readme_cn(data):
 
         cat_en = category['category']['en']
         cat_zh = category['category']['zh']
-        emoji = emoji_map.get(cat_en, "📂")
+        # removed emoji
         anchor = clean_anchor(cat_en)
         
-        content += f"## <a id='{anchor}'></a>{emoji} {cat_en} ({cat_zh})\n\n"
+        content += f"## <a id='{anchor}'></a>{cat_en} ({cat_zh})\n\n"
         
         desc_zh = category['description']['zh']
         if desc_zh:
@@ -103,9 +103,9 @@ def generate_readme_en(data):
         items = category['skills']
         if not items: continue
         cat_en = category['category']['en']
-        emoji = emoji_map.get(cat_en, "📂")
+        # removed emoji
         anchor = clean_anchor(cat_en)
-        content += f"- [{emoji} {cat_en}](#{anchor})\n"
+        content += f"- [{cat_en}](#{anchor})\n"
     
     content += "\n---\n\n"
 
@@ -114,10 +114,10 @@ def generate_readme_en(data):
         if not items: continue
 
         cat_en = category['category']['en']
-        emoji = emoji_map.get(cat_en, "📂")
+        # removed emoji
         anchor = clean_anchor(cat_en)
         
-        content += f"## <a id='{anchor}'></a>{emoji} {cat_en}\n\n"
+        content += f"## <a id='{anchor}'></a>{cat_en}\n\n"
         
         desc_en = category['description']['en']
         if desc_en:
