@@ -99,6 +99,19 @@
           "zh": "检查成绩、管理作业。"
         },
         "type": "MCP"
+      },
+      {
+        "name": "Educational Tutor MCP",
+        "url": "https://github.com/iamisaackn/AI-TutorMCP",
+        "description": {
+          "en": "AI-powered educational toolkit built on the Model Context Protocol (MCP).",
+          "zh": "基于模型上下文协议 (MCP) 构建的 AI 教育工具包。"
+        },
+        "useCase": {
+          "en": "Personalized tutoring, educational assistance.",
+          "zh": "个性化辅导，教育辅助。"
+        },
+        "type": "MCP"
       }
     ]
   },
@@ -2350,6 +2363,314 @@
           "zh": "为 Claude 开发自定义工具，学习 MCP 架构。"
         },
         "type": "Skill"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Commercial Education AI",
+      "zh": "商业化教育 AI"
+    },
+    "description": {
+      "en": "Leading commercial AI products transforming education.",
+      "zh": "正在变革教育行业的领先商业 AI 产品。"
+    },
+    "skills": [
+      {
+        "name": "Khanmigo",
+        "url": "https://khanmigo.ai/",
+        "description": {
+          "en": "Khan Academy's AI-powered guide that helps students learn by asking questions rather than giving answers.",
+          "zh": "可汗学院推出的 AI 导学工具，通过提问而非直接给出答案的方式引导学生学习。"
+        },
+        "useCase": {
+          "en": "Personalized tutoring, Socratic method learning.",
+          "zh": "个性化辅导、苏格拉底式教学。"
+        },
+        "type": "Product"
+      },
+      {
+        "name": "Claude for Education",
+        "url": "https://www.anthropic.com",
+        "description": {
+          "en": "Anthropic's responsibly designed AI assistant for educational institutions.",
+          "zh": "Anthropic 为教育机构设计的负责任的 AI 助手。"
+        },
+        "useCase": {
+          "en": "Administrative tasks, writing assistance, coding tutor.",
+          "zh": "行政任务、写作辅助、编程辅导。"
+        },
+        "type": "LLM"
+      },
+      {
+        "name": "Duolingo Max",
+        "url": "https://www.duolingo.com",
+        "description": {
+          "en": "Duolingo's subscription tier powered by GPT-4, featuring Explain My Answer and Roleplay.",
+          "zh": "多邻国基于 GPT-4 推出的订阅服务，提供\"解释我的答案\"和\"角色扮演\"功能。"
+        },
+        "useCase": {
+          "en": "Language learning, conversation practice.",
+          "zh": "语言学习、对话练习。"
+        },
+        "type": "Product"
+      },
+      {
+        "name": "Speak",
+        "url": "https://www.speak.com",
+        "description": {
+          "en": "AI language tutor focusing on spoken conversation practice.",
+          "zh": "专注于口语对话练习的 AI 语言导师。"
+        },
+        "useCase": {
+          "en": "ESL speaking practice, fluency training.",
+          "zh": "英语口语练习、流利度训练。"
+        },
+        "type": "Product"
+      },
+      {
+        "name": "Quizlet Q-Chat",
+        "url": "https://quizlet.com",
+        "description": {
+          "en": "AI-powered tutor built into Quizlet for interactive study sessions.",
+          "zh": "Quizlet 内置的 AI 导师，用于交互式学习。"
+        },
+        "useCase": {
+          "en": "Test prep, active recall practice.",
+          "zh": "备考、主动回忆练习。"
+        },
+        "type": "Product"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Education LLMs",
+      "zh": "教育大模型"
+    },
+    "description": {
+      "en": "Large Language Models specialized for educational tasks, reasoning, and tutoring.",
+      "zh": "专门针对教育任务、推理和辅导优化的大语言模型。"
+    },
+    "skills": [
+      {
+        "name": "EduChat",
+        "url": "https://github.com/ECNU-ICALK/EduChat",
+        "description": {
+          "en": "An LLM developed by ECNU for education, identifying psychological and learning needs.",
+          "zh": "华东师范大学开发的教育专用大模型，能识别心理和学习需求。"
+        },
+        "useCase": {
+          "en": "Educational psychology, student counseling, pedagogical support.",
+          "zh": "教育心理学、学生咨询、教学支持。"
+        },
+        "type": "LLM"
+      },
+      {
+        "name": "ChatGLM-Edu (Zhipu)",
+        "url": "https://chatglm.cn",
+        "description": {
+          "en": "Zhipu AI's educational model leveraging the powerful ChatGLM base.",
+          "zh": "智谱 AI 基于强大的 ChatGLM 基座推出的教育模型。"
+        },
+        "useCase": {
+          "en": "General tutoring, Chinese language arts, STEM helping.",
+          "zh": "通用辅导、语文、数理化问答。"
+        },
+        "type": "LLM"
+      },
+      {
+        "name": "MathGPT (TAL)",
+        "url": "https://www.tal.com",
+        "description": {
+          "en": "TAL Education Group's large model specialized in mathematical problem solving.",
+          "zh": "好未来（学而思）推出的专精于数学解题的大模型。"
+        },
+        "useCase": {
+          "en": "Math problem solving, logical reasoning.",
+          "zh": "数学解题、逻辑推理。"
+        },
+        "type": "LLM"
+      },
+      {
+        "name": "DeepSeek-Math",
+        "url": "https://github.com/deepseek-ai/DeepSeek-Math",
+        "description": {
+          "en": "A specialized math model that pushes the limits of mathematical reasoning in open language models.",
+          "zh": "一个专门的数学模型，推动了开源语言模型在数学推理方面的极限。"
+        },
+        "useCase": {
+          "en": "Complex math problems, competition math, automated reasoning.",
+          "zh": "复杂数学问题、竞赛数学、自动推理。"
+        },
+        "type": "LLM"
+      },
+      {
+        "name": "InternLM-Math",
+        "url": "https://github.com/InternLM/InternLM-Math",
+        "description": {
+          "en": "State-of-the-art bilingual (English/Chinese) open-sourced Math reasoning LLMs.",
+          "zh": "最先进的双语（中英）开源数学推理大模型。"
+        },
+        "useCase": {
+          "en": "Bilingual math tutoring, chain-of-thought reasoners.",
+          "zh": "双语数学辅导、思维链推理。"
+        },
+        "type": "LLM"
+      },
+      {
+        "name": "MetaMath",
+        "url": "https://github.com/meta-math/MetaMath",
+        "description": {
+          "en": "A project to bootstrap your own mathematical questions for Large Language Models.",
+          "zh": "一个用于为大语言模型自动生成（Bootstrap）数学问题的项目。"
+        },
+        "useCase": {
+          "en": "Generating math training data, fine-tuning educational models.",
+          "zh": "生成数学训练数据、微调教育模型。"
+        },
+        "type": "LLM"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Embodied Intelligence & VR Education",
+      "zh": "具身智能与 VR 教育"
+    },
+    "description": {
+      "en": "AI in 3D environments, robotics simulation, and virtual reality for immersive learning.",
+      "zh": "3D 环境中的 AI、机器人仿真以及用于沉浸式学习的虚拟现实技术。"
+    },
+    "skills": [
+      {
+        "name": "AI2-THOR",
+        "url": "https://github.com/allenai/ai2thor",
+        "description": {
+          "en": "An interactive 3D environment for visual AI, enabling agents to navigate and interact with objects.",
+          "zh": "用于视觉 AI 的交互式 3D 环境，允许智能体导航并与物体交互。"
+        },
+        "useCase": {
+          "en": "Robotics training, visual reasoning education.",
+          "zh": "机器人训练、视觉推理教育。"
+        },
+        "type": "Environment"
+      },
+      {
+        "name": "ThreeDWorld (TDW)",
+        "url": "https://github.com/threedworld-mit/tdw",
+        "description": {
+          "en": "A platform for interactive physical simulation of high-fidelity sensory data.",
+          "zh": "一个用于高保真感官数据交互式物理模拟的平台。"
+        },
+        "useCase": {
+          "en": "Physics simulation, spatial intelligence research.",
+          "zh": "物理模拟、空间智能研究。"
+        },
+        "type": "Environment"
+      },
+      {
+        "name": "UnrealZoo",
+        "url": "https://github.com/UnrealZoo/UnrealZoo",
+        "description": {
+          "en": "A platform for developing and evaluating embodied AI agents in Unreal Engine 5 (ICCV 2025).",
+          "zh": "基于虚幻引擎 5 开发和评估具身智能体的平台 (ICCV 2025)。"
+        },
+        "useCase": {
+          "en": "Photorealistic simulation, embodied agent training.",
+          "zh": "照片级仿真、具身智能体训练。"
+        },
+        "type": "Environment"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Agent Frameworks & Educational Applications",
+      "zh": "Agent 框架与教育应用"
+    },
+    "description": {
+      "en": "Frameworks for building autonomous agents and specific educational implementations using LangChain, CrewAI, etc.",
+      "zh": "用于构建自主智能体的框架，以及基于 LangChain、CrewAI 等的特定教育实现。"
+    },
+    "skills": [
+      {
+        "name": "LangChain",
+        "url": "https://github.com/langchain-ai/langchain",
+        "description": {
+          "en": "The industry standard framework for building context-aware reasoning applications and agents.",
+          "zh": "构建上下文感知推理应用程序和智能体的行业标准框架。"
+        },
+        "useCase": {
+          "en": "Building custom RAG tutors, textbook analysis pipelines.",
+          "zh": "构建自定义 RAG 导师、教科书分析流程。"
+        },
+        "type": "Framework"
+      },
+      {
+        "name": "CrewAI",
+        "url": "https://github.com/crewAIInc/crewAI",
+        "description": {
+          "en": "Framework for orchestrating role-playing, autonomous AI agents working together.",
+          "zh": "用于编排角色扮演、协同工作的自主 AI 智能体的框架。"
+        },
+        "useCase": {
+          "en": "Classroom simulation, multi-perspective debate, lesson planning teams.",
+          "zh": "课堂模拟、多角度辩论、教案设计团队。"
+        },
+        "type": "Framework"
+      },
+      {
+        "name": "AI-Tutor",
+        "url": "https://github.com/Hawary00/AI-Tutor",
+        "description": {
+          "en": "Modular educational assistant leveraging LangChain, LangGraph, and RAG for science learning.",
+          "zh": "利用 LangChain、LangGraph 和 RAG 进行科学学习的模块化教育助手。"
+        },
+        "useCase": {
+          "en": "Science tutoring, personalized learning paths.",
+          "zh": "科学辅导、个性化学习路径。"
+        },
+        "type": "Agent"
+      },
+      {
+        "name": "Multi-Agent Study Assistant",
+        "url": "https://github.com/A-R007/Multi-Agent-Study-Assistant",
+        "description": {
+          "en": "Platform with 6 specialized agents (quizzes, roadmaps, Q&A) built with Phidata and LangChain.",
+          "zh": "基于 Phidata 和 LangChain 构建的包含 6 个专业智能体（测验、路线图、问答）的平台。"
+        },
+        "useCase": {
+          "en": "Comprehensive study aid, exam preparation.",
+          "zh": "综合学习辅助、备考。"
+        },
+        "type": "Agent"
+      },
+      {
+        "name": "Evaluate Crew",
+        "url": "https://github.com/poojithM/Multi-Agent-System-for-Educational-Assessment-and-Improvement",
+        "description": {
+          "en": "A CrewAI-based system for quiz generation, performance analysis, and quality assurance.",
+          "zh": "基于 CrewAI 的系统，用于测验生成、表现分析和质量保证。"
+        },
+        "useCase": {
+          "en": "Automated grading, student assessment.",
+          "zh": "自动评分、学生评估。"
+        },
+        "type": "Agent"
+      },
+      {
+        "name": "Multi-Agent RAG (Medical)",
+        "url": "https://github.com/SJ9VRF/Multi-Agent-RAG",
+        "description": {
+          "en": "AutoGen-based multi-agent RAG system specialized for medical education documents.",
+          "zh": "基于 AutoGen 的多智能体 RAG 系统，专门用于医学教育文档。"
+        },
+        "useCase": {
+          "en": "Medical student training, complex document retrieval.",
+          "zh": "医学生培训、复杂文档检索。"
+        },
+        "type": "Agent"
       }
     ]
   }

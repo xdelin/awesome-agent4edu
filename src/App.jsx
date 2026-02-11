@@ -494,7 +494,7 @@ function App() {
             </h2>
             <p className="text-stone-600 text-base max-w-2xl leading-relaxed">
               {selectedCategory === 'All' 
-                ? t({ en: 'Discover a curated collection of AI skills for educators, students, and researchers.', zh: '探索为教育工作者、学生和研究人员精选的 AI 技能集合。' })
+                ? t({ en: 'Discover a comprehensive curated list of AI resources for education, including MCP servers, specialized LLMs, and Agent frameworks.', zh: '探索全面的教育 AI 资源列表，包含 MCP 服务器、专用大模型和智能体框架。' })
                 : t(skillsData.find(c => t(c.category) === selectedCategory)?.description)}
             </p>
           </div>
