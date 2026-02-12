@@ -1,0 +1,19 @@
+{
+  "name": "humanizer",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8433,
+      "language": "md"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 22077,
+      "language": "md"
+    }
+  ]
+}

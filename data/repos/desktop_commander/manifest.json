@@ -1,0 +1,12 @@
+{
+  "name": "Desktop Commander",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 44901,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "writing-agent",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 32605,
+      "language": "md"
+    }
+  ]
+}

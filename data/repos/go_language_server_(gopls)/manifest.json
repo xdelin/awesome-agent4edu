@@ -1,0 +1,12 @@
+{
+  "name": "Go Language Server (gopls)",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 19854,
+      "language": "md"
+    }
+  ]
+}

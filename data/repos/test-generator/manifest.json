@@ -1,0 +1,12 @@
+{
+  "name": "test-generator",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1046,
+      "language": "md"
+    }
+  ]
+}

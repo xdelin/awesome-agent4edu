@@ -1,0 +1,12 @@
+{
+  "name": "VS Code MCP Server",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 12716,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ux-writing-skill",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13323,
+      "language": "md"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 15827,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "FFmpeg MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 654,
+      "language": "md"
+    }
+  ]
+}

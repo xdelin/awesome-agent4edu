@@ -1,0 +1,40 @@
+{
+  "name": "Figma Context MCP",
+  "tree": [
+    {
+      "name": "README.ja.md",
+      "type": "file",
+      "path": "README.ja.md",
+      "size": 5302,
+      "language": "md"
+    },
+    {
+      "name": "README.ko.md",
+      "type": "file",
+      "path": "README.ko.md",
+      "size": 5051,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 4569,
+      "language": "md"
+    },
+    {
+      "name": "README.zh-cn.md",
+      "type": "file",
+      "path": "README.zh-cn.md",
+      "size": 4438,
+      "language": "md"
+    },
+    {
+      "name": "README.zh-tw.md",
+      "type": "file",
+      "path": "README.zh-tw.md",
+      "size": 4528,
+      "language": "md"
+    }
+  ]
+}

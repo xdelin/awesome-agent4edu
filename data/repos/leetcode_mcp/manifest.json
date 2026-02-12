@@ -1,0 +1,19 @@
+{
+  "name": "LeetCode MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 15787,
+      "language": "md"
+    },
+    {
+      "name": "README_zh-CN.md",
+      "type": "file",
+      "path": "README_zh-CN.md",
+      "size": 14416,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "MarkItDown",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 10429,
+      "language": "md"
+    }
+  ]
+}

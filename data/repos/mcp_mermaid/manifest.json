@@ -1,0 +1,12 @@
+{
+  "name": "MCP Mermaid",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5007,
+      "language": "md"
+    }
+  ]
+}

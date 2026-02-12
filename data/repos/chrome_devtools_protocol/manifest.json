@@ -1,0 +1,12 @@
+{
+  "name": "Chrome DevTools Protocol",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1337,
+      "language": "md"
+    }
+  ]
+}

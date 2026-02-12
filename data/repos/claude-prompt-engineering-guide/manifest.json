@@ -1,0 +1,26 @@
+{
+  "name": "claude-prompt-engineering-guide",
+  "tree": [
+    {
+      "name": "README.ja.md",
+      "type": "file",
+      "path": "README.ja.md",
+      "size": 22235,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 21744,
+      "language": "md"
+    },
+    {
+      "name": "README.zh-CN.md",
+      "type": "file",
+      "path": "README.zh-CN.md",
+      "size": 16716,
+      "language": "md"
+    }
+  ]
+}

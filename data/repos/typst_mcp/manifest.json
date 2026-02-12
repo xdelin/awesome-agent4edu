@@ -1,0 +1,12 @@
+{
+  "name": "Typst MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 7146,
+      "language": "md"
+    }
+  ]
+}

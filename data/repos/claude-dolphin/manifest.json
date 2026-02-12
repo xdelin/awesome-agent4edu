@@ -1,0 +1,12 @@
+{
+  "name": "claude-dolphin",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8620,
+      "language": "md"
+    }
+  ]
+}

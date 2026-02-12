@@ -1,0 +1,12 @@
+{
+  "name": "Git MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 16297,
+      "language": "md"
+    }
+  ]
+}

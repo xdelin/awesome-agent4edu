@@ -1,0 +1,19 @@
+{
+  "name": "mcp-server-okppt",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 10532,
+      "language": "md"
+    },
+    {
+      "name": "README_EN.md",
+      "type": "file",
+      "path": "README_EN.md",
+      "size": 11705,
+      "language": "md"
+    }
+  ]
+}

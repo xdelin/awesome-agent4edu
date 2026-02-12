@@ -1,0 +1,12 @@
+{
+  "name": "claude-code-obsidian-starter",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1005,
+      "language": "md"
+    }
+  ]
+}

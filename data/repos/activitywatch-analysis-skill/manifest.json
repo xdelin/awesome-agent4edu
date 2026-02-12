@@ -1,0 +1,19 @@
+{
+  "name": "activitywatch-analysis-skill",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5998,
+      "language": "md"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 11602,
+      "language": "md"
+    }
+  ]
+}

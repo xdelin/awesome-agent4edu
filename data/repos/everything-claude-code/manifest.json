@@ -1,0 +1,19 @@
+{
+  "name": "everything-claude-code",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 27528,
+      "language": "md"
+    },
+    {
+      "name": "README.zh-CN.md",
+      "type": "file",
+      "path": "README.zh-CN.md",
+      "size": 17030,
+      "language": "md"
+    }
+  ]
+}

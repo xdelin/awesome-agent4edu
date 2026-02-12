@@ -1,0 +1,19 @@
+{
+  "name": "paper2code-skill",
+  "tree": [
+    {
+      "name": "README.ko.md",
+      "type": "file",
+      "path": "README.ko.md",
+      "size": 11799,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13059,
+      "language": "md"
+    }
+  ]
+}

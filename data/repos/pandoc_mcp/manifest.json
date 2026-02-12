@@ -1,0 +1,12 @@
+{
+  "name": "Pandoc MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 14797,
+      "language": "md"
+    }
+  ]
+}

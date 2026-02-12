@@ -1,0 +1,12 @@
+{
+  "name": "UCSC Genome Browser",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 7228,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Docker MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5706,
+      "language": "md"
+    }
+  ]
+}

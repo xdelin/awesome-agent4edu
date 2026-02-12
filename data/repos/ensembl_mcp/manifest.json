@@ -1,0 +1,12 @@
+{
+  "name": "Ensembl MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8403,
+      "language": "md"
+    }
+  ]
+}

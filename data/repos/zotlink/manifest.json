@@ -1,0 +1,19 @@
+{
+  "name": "ZotLink",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8702,
+      "language": "md"
+    },
+    {
+      "name": "README_zh.md",
+      "type": "file",
+      "path": "README_zh.md",
+      "size": 8589,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "skill-description-optimizer",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 22812,
+      "language": "md"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 16756,
+      "language": "md"
+    }
+  ]
+}

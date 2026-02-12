@@ -1,0 +1,19 @@
+{
+  "name": "Skill Seekers",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 74160,
+      "language": "md"
+    },
+    {
+      "name": "README.zh-CN.md",
+      "type": "file",
+      "path": "README.zh-CN.md",
+      "size": 61115,
+      "language": "md"
+    }
+  ]
+}

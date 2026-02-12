@@ -1,0 +1,12 @@
+{
+  "name": "Neovim MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3373,
+      "language": "md"
+    }
+  ]
+}

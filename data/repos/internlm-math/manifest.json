@@ -1,0 +1,12 @@
+{
+  "name": "InternLM-Math",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 26901,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "academic-paper-skills",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5679,
+      "language": "md"
+    },
+    {
+      "name": "README_CN.md",
+      "type": "file",
+      "path": "README_CN.md",
+      "size": 5380,
+      "language": "md"
+    }
+  ]
+}

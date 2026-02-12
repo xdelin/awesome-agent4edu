@@ -1,0 +1,12 @@
+{
+  "name": "Wolfram Alpha MCP",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1881,
+      "language": "md"
+    }
+  ]
+}

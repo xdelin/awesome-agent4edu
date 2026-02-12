@@ -1,0 +1,12 @@
+{
+  "name": "Filesystem (Go)",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 6003,
+      "language": "md"
+    }
+  ]
+}

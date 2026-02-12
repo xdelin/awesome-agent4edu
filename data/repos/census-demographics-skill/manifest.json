@@ -1,0 +1,19 @@
+{
+  "name": "census-demographics-skill",
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8837,
+      "language": "md"
+    },
+    {
+      "name": "skill.md",
+      "type": "file",
+      "path": "skill.md",
+      "size": 5425,
+      "language": "md"
+    }
+  ]
+}
