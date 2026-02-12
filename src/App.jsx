@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useMemo } from 'react';
 import skillsData from './data/skills.json';
 import repoMap from './data/repo_map.json';
@@ -10,7 +9,7 @@ import {
   Search, ExternalLink, BookOpen, Code, PenTool, Database, Layout, 
   Brain, Calculator, Briefcase, Box, Menu, X, Filter, Globe, Loader2, 
   Info, Folder, File as FileIcon, ChevronRight, ChevronDown, FileCode, 
-  FileJson, FileText, Image as ImageIcon
+  FileJson, FileText, Image as ImageIcon, Star, User, ArrowLeft, GitFork
 } from 'lucide-react';
 
 const CATEGORY_ICONS = {
@@ -118,7 +117,7 @@ const FileTreeNode = ({ node, level, onSelect, selectedPath }) => {
   );
 };
 
-function RepoBrowser({ skill, repoId, onClose }) {
+function RepoDetailView({ skill, repoId, onBack, t }) {
   const [manifest, setManifest] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -126,8 +125,18 @@ function RepoBrowser({ skill, repoId, onClose }) {
   const [fileContent, setFileContent] = useState(null);
   const [contentLoading, setContentLoading] = useState(false);
 
+  // Stats from skill object
+  const stars = skill.stars || (skill.github && skill.github.stars) || 0;
+  const author = skill.author || (skill.github && skill.github.author) || skill.url.split('/')[3]; // fallback to url part
+  const lastUpdated = skill.github && skill.github.updatedAt;
+
   // Initial load: Fetch manifest
   useEffect(() => {
+    if (!repoId) {
+        setLoading(false);
+        return;
+    }
+
     const fetchManifest = async () => {
       try {
         setLoading(true);
@@ -188,110 +197,131 @@ function RepoBrowser({ skill, repoId, onClose }) {
   const isImage = selectedFile && /\.(png|jpg|jpeg|gif|svg|ico)$/i.test(selectedFile.name);
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4" role="dialog">
-       <div className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm" onClick={onClose} />
-       
-       <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-[95vw] h-[90vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
+    <div className="flex flex-col h-full bg-white rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+       {/* Header */}
+       <div className="bg-stone-50 border-b border-stone-200 px-6 py-4">
+          <button 
+             onClick={onBack}
+             className="mb-4 flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors text-sm font-medium"
+          >
+             <ArrowLeft size={16} />
+             {t({ en: 'Back to Skills', zh: '返回技能列表' })}
+          </button>
           
-          {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-stone-200 bg-stone-50">
-             <div className="flex items-center gap-3 overflow-hidden">
-                <div className="p-1.5 bg-orange-100 rounded-lg text-orange-600 shrink-0">
-                   <Code size={20} />
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+             <div>
+                <h2 className="text-2xl font-bold text-stone-900 mb-2">{skill.name}</h2>
+                <div className="flex flex-wrap items-center gap-4 text-sm text-stone-600">
+                    {author && (
+                        <div className="flex items-center gap-1.5 bg-white border border-stone-200 px-2 py-1 rounded-md">
+                            <User size={14} className="text-stone-400" />
+                            <span className="font-medium">{author}</span>
+                        </div>
+                    )}
+                    {stars > 0 && (
+                        <div className="flex items-center gap-1.5 bg-white border border-stone-200 px-2 py-1 rounded-md">
+                            <Star size={14} className="text-amber-400 fill-amber-400" />
+                            <span className="font-medium">{stars}</span>
+                        </div>
+                    )}
+                    <a href={skill.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-stone-500 hover:text-orange-600 hover:underline">
+                       <ExternalLink size={14} />
+                       GitHub
+                    </a>
                 </div>
-                <div className="min-w-0">
-                   <h3 className="text-base font-bold text-stone-900 truncate">{skill.name}</h3>
-                   <p className="text-xs text-stone-500 truncate font-mono">/{repoId}</p>
-                </div>
+                <p className="mt-3 text-stone-600 max-w-3xl leading-relaxed">{skill.description}</p>
              </div>
-             <div className="flex gap-2 shrink-0">
-                <a href={skill.url} target="_blank" rel="noopener noreferrer" className="p-2 text-stone-500 hover:text-stone-900 hover:bg-stone-200 rounded-lg transition-colors">
-                   <ExternalLink size={18} />
-                </a>
-                <button onClick={onClose} className="p-2 text-stone-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
-                   <X size={18} />
-                </button>
+             <div>
+                 {/* Right side actions if needed */}
+             </div>
+          </div>
+       </div>
+
+       {/* Branch Content */}
+       <div className="flex-1 flex min-h-0">
+          
+          {/* Sidebar: File Tree */}
+          <div className="w-64 md:w-80 border-r border-stone-200 bg-stone-50 flex flex-col min-h-0">
+             <div className="p-3 border-b border-stone-100 flex items-center justify-between">
+                <h4 className="text-xs font-bold text-stone-400 uppercase tracking-wider">{t({ en: 'Explorer', zh: '文件浏览器' })}</h4>
+             </div>
+             <div className="flex-1 overflow-y-auto custom-scrollbar p-2">
+                {!repoId && (
+                    <div className="p-4 text-center">
+                        <p className="text-sm text-stone-500 mb-2">{t({en: 'Repository not cached locally.', zh: '仓库未在本地缓存'})}</p>
+                        <a href={skill.url} target="_blank" rel="noopener noreferrer" className="text-xs text-orange-600 hover:underline">
+                            {t({en: 'View on GitHub', zh: '前往 GitHub 查看'})}
+                        </a>
+                    </div>
+                )}
+                {loading && (
+                   <div className="flex flex-col items-center justify-center py-10 text-stone-400 gap-2">
+                      <Loader2 size={20} className="animate-spin" />
+                      <span className="text-xs">Loading tree...</span>
+                   </div>
+                )}
+                {error && <div className="text-xs text-red-500 p-4 text-center">{error}</div>}
+                
+                {manifest && manifest.tree.map((node, idx) => (
+                   <FileTreeNode 
+                      key={idx} 
+                      node={node} 
+                      level={0} 
+                      onSelect={handleFileSelect} 
+                      selectedPath={selectedFile?.path}
+                   />
+                ))}
              </div>
           </div>
 
-          {/* Main Body */}
-          <div className="flex-1 flex min-h-0">
-             
-             {/* Sidebar: File Tree */}
-             <div className="w-64 md:w-80 border-r border-stone-200 bg-stone-50 flex flex-col min-h-0">
-                <div className="p-3 border-b border-stone-100">
-                   <h4 className="text-xs font-bold text-stone-400 uppercase tracking-wider">Explorer</h4>
-                </div>
-                <div className="flex-1 overflow-y-auto custom-scrollbar p-2">
-                   {loading && (
-                      <div className="flex flex-col items-center justify-center py-10 text-stone-400 gap-2">
-                         <Loader2 size={20} className="animate-spin" />
-                         <span className="text-xs">Loading tree...</span>
-                      </div>
-                   )}
-                   {error && <div className="text-xs text-red-500 p-4 text-center">{error}</div>}
-                   
-                   {manifest && manifest.tree.map((node, idx) => (
-                      <FileTreeNode 
-                         key={idx} 
-                         node={node} 
-                         level={0} 
-                         onSelect={handleFileSelect} 
-                         selectedPath={selectedFile?.path}
-                      />
-                   ))}
-                </div>
-             </div>
-
-             {/* Content Area */}
-             <div className="flex-1 flex flex-col min-w-0 bg-white">
-                {selectedFile ? (
-                   <>
-                      {/* File Tab Header */}
-                      <div className="flex items-center gap-2 px-4 py-2 border-b border-stone-100 bg-white sticky top-0">
-                         {getFileIcon(selectedFile.name)}
-                         <span className="text-sm font-medium text-stone-700">{selectedFile.name}</span>
-                         <span className="text-xs text-stone-400 ml-auto font-mono">{selectedFile.path}</span>
-                      </div>
-                      
-                      {/* Code/Preview */}
-                      <div className="flex-1 overflow-auto custom-scrollbar relative p-0 bg-white">
-                         {contentLoading ? (
-                            <div className="absolute inset-0 flex items-center justify-center bg-white/80 z-10">
-                               <Loader2 size={32} className="animate-spin text-orange-400" />
-                            </div>
-                         ) : isImage ? (
-                            <div className="flex items-center justify-center h-full p-10 bg-stone-50">
-                               <img src={fileContent} alt={selectedFile.name} className="max-w-full max-h-full object-contain shadow-lg rounded-lg border border-stone-200" />
-                            </div>
-                         ) : (
-                           selectedFile.name.toLowerCase().endsWith('.md') ? (
-                              <div className="prose prose-stone prose-sm max-w-4xl mx-auto p-8">
-                                 <ReactMarkdown remarkPlugins={[remarkGfm]}>{fileContent}</ReactMarkdown>
-                              </div>
-                           ) : (
-                             <SyntaxHighlighter 
-                                language={selectedFile.language || 'text'} 
-                                style={oneLight}
-                                customStyle={{ margin: 0, height: '100%', fontSize: '13px', lineHeight: '1.5' }}
-                                showLineNumbers={true}
-                                lineNumberStyle={{ minWidth: '3em', paddingRight: '1em', color: '#ccc', textAlign: 'right' }}
-                             >
-                                {fileContent || ''}
-                             </SyntaxHighlighter>
-                           )
-                         )}
-                      </div>
-                   </>
-                ) : (
-                   <div className="flex-1 flex flex-col items-center justify-center text-stone-300 gap-4">
-                      <div className="p-6 bg-stone-50 rounded-full">
-                         <Code size={48} strokeWidth={1} />
-                      </div>
-                      <p className="font-medium">Select a file to view content</p>
+          {/* Content Area */}
+          <div className="flex-1 flex flex-col min-w-0 bg-white">
+             {selectedFile ? (
+                <>
+                   {/* File Tab Header */}
+                   <div className="flex items-center gap-2 px-4 py-2 border-b border-stone-100 bg-white sticky top-0">
+                      {getFileIcon(selectedFile.name)}
+                      <span className="text-sm font-medium text-stone-700">{selectedFile.name}</span>
+                      <span className="text-xs text-stone-400 ml-auto font-mono">{selectedFile.path}</span>
                    </div>
-                )}
-             </div>
+                   
+                   {/* Code/Preview */}
+                   <div className="flex-1 overflow-auto custom-scrollbar relative p-0 bg-white">
+                      {contentLoading ? (
+                         <div className="absolute inset-0 flex items-center justify-center bg-white/80 z-10">
+                            <Loader2 size={32} className="animate-spin text-orange-400" />
+                         </div>
+                      ) : isImage ? (
+                         <div className="flex items-center justify-center h-full p-10 bg-stone-50">
+                            <img src={fileContent} alt={selectedFile.name} className="max-w-full max-h-full object-contain shadow-lg rounded-lg border border-stone-200" />
+                         </div>
+                      ) : (
+                        selectedFile.name.toLowerCase().endsWith('.md') ? (
+                           <div className="prose prose-stone prose-sm max-w-4xl mx-auto p-8">
+                              <ReactMarkdown remarkPlugins={[remarkGfm]}>{fileContent}</ReactMarkdown>
+                           </div>
+                        ) : (
+                          <SyntaxHighlighter 
+                             language={selectedFile.language || 'text'} 
+                             style={oneLight}
+                             customStyle={{ margin: 0, height: '100%', fontSize: '13px', lineHeight: '1.5' }}
+                             showLineNumbers={true}
+                             lineNumberStyle={{ minWidth: '3em', paddingRight: '1em', color: '#ccc', textAlign: 'right' }}
+                          >
+                             {fileContent || ''}
+                          </SyntaxHighlighter>
+                        )
+                      )}
+                   </div>
+                </>
+             ) : (
+                <div className="flex-1 flex flex-col items-center justify-center text-stone-300 gap-4">
+                   <div className="p-6 bg-stone-50 rounded-full">
+                      <Code size={48} strokeWidth={1} />
+                   </div>
+                   <p className="font-medium">{t({ en: 'Select a file to view content', zh: '选择文件以查看内容' })}</p>
+                </div>
+             )}
           </div>
        </div>
     </div>
@@ -311,8 +341,16 @@ function App() {
     if (typeof content === 'string') {
         const simpleDict = {
             'Description': { en: 'Description', zh: '简介' },
-            'Use Case': { en: 'Best For', zh: '适用场景' }
+            'Use Case': { en: 'Best For', zh: '适用场景' },
+            'All Skills': { en: 'All Skills', zh: '所有技能' },
+            'Find educational resources...': { en: 'Find educational resources...', zh: '查找教育资源...' },
+            'Focus Areas': { en: 'Focus Areas', zh: '关注领域' },
+            'Edu Skills': { en: 'Edu Skills', zh: '教育技能' }
         };
+        // Explicit checks
+        if (content === 'All Skills') return simpleDict['All Skills'][language];
+        if (content === 'Find educational resources...') return simpleDict['Find educational resources...'][language];
+        
         if (simpleDict[content]) return simpleDict[content][language];
         return content;
     }
@@ -322,7 +360,6 @@ function App() {
   const toggleLanguage = () => {
     setLanguage(prev => {
       const newLang = prev === 'en' ? 'zh' : 'en';
-      setSelectedCategory('All');
       return newLang;
     });
   };
@@ -357,48 +394,9 @@ function App() {
     return filtered;
   }, [searchQuery, selectedCategory, language]);
 
-  // Handle viewing repo
-  // If we have local repo map data, show RepoBrowser. Else fallback to Modal (which tries readme fetching) 
-  // - Actually, user wants "whole repo". If we don't have it, we should probably tell them or fallback.
-  // We can unify this: "View Source" button -> Opens RepoBrowser.
-  
-  // NOTE: In this version, repoMap determines if we can show the fancy browser.
-  
   return (
     <div className="min-h-screen bg-[#FFFBF7] text-stone-900 font-sans selection:bg-orange-100 selection:text-orange-900">
       
-      {/* Modals */}
-      {selectedSkill && (
-         repoMap[selectedSkill.name] ? (
-            <RepoBrowser 
-               skill={selectedSkill}
-               repoId={repoMap[selectedSkill.name]}
-               onClose={() => setSelectedSkill(null)}
-            />
-         ) : (
-            // Fallback for missing repos (or just show simple modal with Warning)
-            // For now, let's keep simple modal logic or just a "Not cached" message?
-            // Better: Just use the previous logic but inside a modal wrapper, OR
-            // Since I replaced the file, I need to restore the Simple Modal as fallback?
-            // I'll implement a simple callback here.
-            <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-stone-900/50 backdrop-blur-sm" onClick={() => setSelectedSkill(null)}>
-               <div className="bg-white p-8 rounded-xl max-w-md w-full text-center" onClick={e => e.stopPropagation()}>
-                  <div className="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                     <Database size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Repository Not Cached</h3>
-                  <p className="text-stone-600 mb-6">The full repository content hasn't been cached locally yet. You can view it on GitHub.</p>
-                  <div className="flex gap-3 justify-center">
-                     <button onClick={() => setSelectedSkill(null)} className="px-4 py-2 text-stone-600 font-medium hover:bg-stone-100 rounded-lg">Close</button>
-                     <a href={selectedSkill.url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-stone-900 text-white font-medium rounded-lg hover:bg-orange-600 flex items-center gap-2">
-                        <ExternalLink size={16} /> Open GitHub
-                     </a>
-                  </div>
-               </div>
-            </div>
-         )
-      )}
-
       {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
         <div 
@@ -416,18 +414,19 @@ function App() {
                 <Brain size={26} />
               </div>
               <span className="text-xl font-bold text-stone-800">
-                {t({ en: 'Edu Skills', zh: '教育技能' })}
+                {t('Edu Skills')}
               </span>
             </div>
           </div>
           
           <div className="flex-1 overflow-y-auto py-6 px-4 space-y-1 custom-scrollbar">
-            <h3 className="px-4 text-xs font-bold text-stone-400 uppercase tracking-widest mb-4">{t({ en: 'Focus Areas', zh: '关注领域' })}</h3>
+            <h3 className="px-4 text-xs font-bold text-stone-400 uppercase tracking-widest mb-4">{t('Focus Areas')}</h3>
             {categories.map(category => (
               <button
                 key={category}
                 onClick={() => {
                   setSelectedCategory(category);
+                  setSelectedSkill(null); // Reset detail view when changing category
                   setIsSidebarOpen(false);
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3.5 text-sm font-medium rounded-xl transition-all duration-200 group
@@ -469,7 +468,7 @@ function App() {
               </div>
               <input
                 type="text"
-                placeholder={t({ en: 'Find educational resources...', zh: '查找教育资源...' })}
+                placeholder={t('Find educational resources...')}
                 className="block w-full pl-12 pr-4 py-3.5 bg-white border-0 rounded-2xl text-stone-900 shadow-sm ring-1 ring-stone-200 placeholder:text-stone-400 focus:ring-2 focus:ring-orange-500 focus:shadow-lg focus:shadow-orange-100 transition-all duration-200 ease-out"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -487,84 +486,114 @@ function App() {
         </header>
 
         {/* Content Area */}
-        <main className="flex-1 p-4 sm:p-8 max-w-6xl mx-auto w-full">
-           <div className="mb-10">
-            <h2 className="text-3xl font-bold text-stone-900 mb-3 tracking-tight">
-              {selectedCategory === 'All' ? t({ en: 'All Skills', zh: '所有技能' }) : selectedCategory}
-            </h2>
-            <p className="text-stone-600 text-base max-w-2xl leading-relaxed">
-              {selectedCategory === 'All' 
-                ? t({ en: 'Discover a comprehensive curated list of AI resources for education, including MCP servers, specialized LLMs, and Agent frameworks.', zh: '探索全面的教育 AI 资源列表，包含 MCP 服务器、专用大模型和智能体框架。' })
-                : t(skillsData.find(c => t(c.category) === selectedCategory)?.description)}
-            </p>
-          </div>
+        <main className="flex-1 p-4 sm:p-8 max-w-6xl mx-auto w-full h-[calc(100vh-6rem)]">
+           {selectedSkill ? (
+               <RepoDetailView 
+                  skill={selectedSkill}
+                  repoId={repoMap[selectedSkill.name]} // May be undefined, dealt with in component
+                  onBack={() => setSelectedSkill(null)}
+                  t={t}
+               />
+           ) : (
+             <>
+               <div className="mb-10">
+                <h2 className="text-3xl font-bold text-stone-900 mb-3 tracking-tight">
+                  {selectedCategory === 'All' ? t('All Skills') : selectedCategory}
+                </h2>
+                <p className="text-stone-600 text-base max-w-2xl leading-relaxed">
+                  {selectedCategory === 'All' 
+                    ? t({ en: 'Discover a comprehensive curated list of AI resources for education, including MCP servers, specialized LLMs, and Agent frameworks.', zh: '探索全面的教育 AI 资源列表，包含 MCP 服务器、专用大模型和智能体框架。' })
+                    : t(skillsData.find(c => t(c.category) === selectedCategory)?.description)}
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {filteredSkills.map((skill, index) => {
-              const Icon = CATEGORY_ICONS[skill.category] || Box;
-              const hasRepo = !!repoMap[skill.name];
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 pb-10">
+                {filteredSkills.map((skill, index) => {
+                  const Icon = CATEGORY_ICONS[skill.category] || Box;
+                  const hasRepo = !!repoMap[skill.name];
+                  
+                  // Star count handling
+                  const starCount = skill.stars || (skill.github && skill.github.stars) || 0;
+                  const authorName = skill.author || (skill.github && skill.github.author);
 
-              return (
-                <div key={index} className="group relative bg-white rounded-2xl p-7 shadow-[0_2px_8px_rgba(0,0,0,0.04)] ring-1 ring-stone-100 hover:shadow-[0_20px_40px_-12px_rgba(249,115,22,0.15)] hover:ring-orange-500/30 hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col h-full overflow-hidden cursor-pointer"
-                  onClick={() => setSelectedSkill(skill)}
-                >
-                   {/* Card Top Border Accent */}
-                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="p-3.5 bg-stone-50 text-stone-600 rounded-2xl group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 shadow-sm group-hover:shadow-orange-200">
-                      <Icon size={26} strokeWidth={1.5} />
-                    </div>
-                    {hasRepo && (
-                        <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wider border border-green-100">
-                            <Database size={10} /> Local
-                        </span>
-                    )}
-                  </div>
-
-                  <div className="flex-1 mb-6">
-                    <h3 className="text-xl font-bold text-stone-900 mb-3 leading-snug group-hover:text-orange-700 transition-colors">
-                      {skill.name}
-                    </h3>
-                    <p className="text-stone-600 text-[15px] leading-relaxed mb-5 line-clamp-3">
-                      {skill.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-stone-100 text-stone-600 border border-stone-200 group-hover:bg-orange-50 group-hover:border-orange-100 group-hover:text-orange-600 transition-colors">
-                          {skill.category.split(' & ')[0]}
-                       </span>
-                    </div>
-                  </div>
-
-                  <div className="pt-6 border-t border-stone-50 mt-auto">
-                    {skill.useCase && (
-                      <div className="mb-5">
-                        <span className="text-xs font-bold text-stone-400 uppercase tracking-wider block mb-1.5">{t({ en: 'Best For', zh: '适用场景' })}</span>
-                        <p className="text-sm text-stone-700 font-medium leading-normal bg-stone-50/50 -mx-2 px-2 py-1 rounded-lg">
-                          {skill.useCase}
-                        </p>
-                      </div>
-                    )}
-                    
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedSkill(skill);
-                        }}
-                        className={`flex items-center justify-center w-full py-2.5 px-3 border border-stone-200 text-sm font-semibold rounded-xl transition-all duration-200 gap-2
-                             ${hasRepo 
-                                ? 'bg-orange-50/50 text-orange-700 border-orange-200 hover:bg-orange-100' 
-                                : 'bg-stone-50 text-stone-700 hover:bg-stone-100'}`}
+                  return (
+                    <div key={index} className="group relative bg-white rounded-2xl p-7 shadow-[0_2px_8px_rgba(0,0,0,0.04)] ring-1 ring-stone-100 hover:shadow-[0_20px_40px_-12px_rgba(249,115,22,0.15)] hover:ring-orange-500/30 hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col h-full overflow-hidden cursor-pointer"
+                      onClick={() => setSelectedSkill(skill)}
                     >
-                        {hasRepo ? <Code size={16} /> : <ExternalLink size={16} />}
-                        {hasRepo ? t({ en: 'Browse Code', zh: '浏览代码' }) : t({ en: 'View Details', zh: '查看详情' })}
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                       {/* Card Top Border Accent */}
+                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                      <div className="flex items-start justify-between mb-5">
+                        <div className="p-3.5 bg-stone-50 text-stone-600 rounded-2xl group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 shadow-sm group-hover:shadow-orange-200">
+                          <Icon size={26} strokeWidth={1.5} />
+                        </div>
+                        <div className="flex items-center gap-2">
+                             {starCount > 0 && (
+                                <div className="flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium text-amber-500 bg-amber-50 border border-amber-100">
+                                    <Star size={10} className="fill-amber-500" />
+                                    {starCount}
+                                </div>
+                             )}
+                            {hasRepo && (
+                                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wider border border-green-100">
+                                    <Database size={10} /> Local
+                                </span>
+                            )}
+                        </div>
+                      </div>
+
+                      <div className="flex-1 mb-6">
+                        <h3 className="text-xl font-bold text-stone-900 mb-1 leading-snug group-hover:text-orange-700 transition-colors">
+                          {skill.name}
+                        </h3>
+                        {authorName && (
+                            <div className="flex items-center gap-1 text-xs text-stone-400 mb-3 ml-0.5">
+                                <User size={10} />
+                                <span>{authorName}</span>
+                            </div>
+                        )}
+                        
+                        <p className="text-stone-600 text-[15px] leading-relaxed mb-5 line-clamp-3">
+                          {skill.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-2">
+                           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-stone-100 text-stone-600 border border-stone-200 group-hover:bg-orange-50 group-hover:border-orange-100 group-hover:text-orange-600 transition-colors">
+                              {skill.category.split(' & ')[0]}
+                           </span>
+                        </div>
+                      </div>
+
+                      <div className="pt-6 border-t border-stone-50 mt-auto">
+                        {skill.useCase && (
+                          <div className="mb-5">
+                            <span className="text-xs font-bold text-stone-400 uppercase tracking-wider block mb-1.5">{t('Best For')}</span>
+                            <p className="text-sm text-stone-700 font-medium leading-normal bg-stone-50/50 -mx-2 px-2 py-1 rounded-lg">
+                              {skill.useCase}
+                            </p>
+                          </div>
+                        )}
+                        
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedSkill(skill);
+                            }}
+                            className={`flex items-center justify-center w-full py-2.5 px-3 border border-stone-200 text-sm font-semibold rounded-xl transition-all duration-200 gap-2
+                                 ${hasRepo 
+                                    ? 'bg-orange-50/50 text-orange-700 border-orange-200 hover:bg-orange-100' 
+                                    : 'bg-stone-50 text-stone-700 hover:bg-stone-100'}`}
+                        >
+                            {hasRepo ? <Code size={16} /> : <ExternalLink size={16} />}
+                            {hasRepo ? t({ en: 'Browse Code', zh: '浏览代码' }) : t({ en: 'View Details', zh: '查看详情' })}
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+             </>
+           )}
         </main>
       </div>
     </div>

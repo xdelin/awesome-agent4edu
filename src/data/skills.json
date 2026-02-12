@@ -20,7 +20,17 @@
           "en": "Lesson planning, pedagogical research, automated question generation.",
           "zh": "备课、教学法研究、自动化出题。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 16,
+        "author": "ChatGPT3a01",
+        "github": {
+          "stars": 16,
+          "forks": 7,
+          "author": "ChatGPT3a01",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/152696807?v=4",
+          "description": "數位學習與教育科技 AI 技能集 - 專為教育研究者、教師、數位學習平台開發者設計",
+          "updatedAt": "2026-01-13T18:19:00Z"
+        }
       },
       {
         "name": "EdTech-AI-Coach",
@@ -33,7 +43,17 @@
           "en": "Teachers needing specific improvement suggestions for each student beyond just scores.",
           "zh": "教师不仅需要分数，还需要为每个学生提供具体的改进建议。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "VaibhavKanojia3773",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "VaibhavKanojia3773",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/175716526?v=4",
+          "description": "A project that processes student test data (JSON), leverages modern LLM APIs (OpenAI, Claude, Gemini) to generate personalized, insightful, and motivating feedback, and produces a styled PDF report. Demonstrates prompt engineering, data interpretation, and automated report generation using  Python.",
+          "updatedAt": "2025-06-06T14:57:44Z"
+        }
       },
       {
         "name": "ELA-Tutor-Agent",
@@ -46,7 +66,17 @@
           "en": "Reading comprehension, writing guidance, and literary analysis dialogue for students in grades 6-8.",
           "zh": "针对 6-8 年级学生的阅读理解、写作指导和文学分析对话。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "cozette-brown",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "cozette-brown",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/33329472?v=4",
+          "description": "This repository contains the files associated with experiment to use system prompting to transform an AI assistant (Claude, ChatGPT, or Gemini) into a specialized English Language Arts (ELA) tutor that can conduct a conversation about a given text with middle school students (U.S. Grades 6-8).",
+          "updatedAt": "2025-12-07T17:21:52Z"
+        }
       },
       {
         "name": "quiz-master",
@@ -59,7 +89,17 @@
           "en": "Quick classroom quizzes, self-testing, flashcard creation.",
           "zh": "课堂快速测验、自我检测、Flashcard 制作。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 2,
+        "author": "tanmaypatil",
+        "github": {
+          "stars": 2,
+          "forks": 0,
+          "author": "tanmaypatil",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5380383?v=4",
+          "description": "Application created to administer General knowledge quiz to students . Large part of application generated using gen.ai using prompt enginnering and claude code. ",
+          "updatedAt": "2025-08-23T13:47:35Z"
+        }
       },
       {
         "name": "apprenticemode",
@@ -72,7 +112,17 @@
           "en": "Metacognitive learning, checking for missing knowledge, self-assessing coding level.",
           "zh": "元认知学习、查漏补缺、自我评估编程水平。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "yavzius",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "yavzius",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/105330774?v=4",
+          "description": "Knowledge gap detection for Claude Code. Your prompts reveal what you don't know.",
+          "updatedAt": "2026-01-06T19:50:55Z"
+        }
       },
       {
         "name": "EduBase",
@@ -85,7 +135,17 @@
           "en": "Taking quizzes, managing courses.",
           "zh": "参加测验、管理课程。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 24,
+        "author": "EduBase",
+        "github": {
+          "stars": 24,
+          "forks": 12,
+          "author": "EduBase",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/33938028?v=4",
+          "description": "The EduBase MCP server enables Claude and other LLMs to interact with EduBase's comprehensive e-learning platform through the Model Context Protocol (MCP).",
+          "updatedAt": "2025-12-11T16:19:33Z"
+        }
       },
       {
         "name": "Canvas LMS",
@@ -98,7 +158,17 @@
           "en": "Checking grades, managing assignments.",
           "zh": "检查成绩、管理作业。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 7,
+        "author": "ahnopologetic",
+        "github": {
+          "stars": 7,
+          "forks": 3,
+          "author": "ahnopologetic",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/53694801?v=4",
+          "description": null,
+          "updatedAt": "2025-09-26T21:36:28Z"
+        }
       },
       {
         "name": "Educational Tutor MCP",
@@ -111,7 +181,17 @@
           "en": "Personalized tutoring, educational assistance.",
           "zh": "个性化辅导，教育辅助。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 0,
+        "author": "iamisaackn",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "iamisaackn",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/117882836?v=4",
+          "description": "It is an AI-powered educational toolkit built on the Model Context Protocol (MCP).",
+          "updatedAt": "2025-10-27T19:24:36Z"
+        }
       }
     ]
   },
@@ -136,7 +216,17 @@
           "en": "Math tutoring, homework assistance, understanding problem-solving logic.",
           "zh": "数学辅导、家庭作业辅助、理解解题逻辑。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "MaxPowerBoy1980",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "MaxPowerBoy1980",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/124570842?v=4",
+          "description": "vante is an AI-powered math assistant that helps students solve handwritten math problems step-by-step — without giving away the final answer. Built with React, Node.js, and Claude/GPT integration. Designed for experimentation with OCR, LLM prompts, and feedback collection.",
+          "updatedAt": "2025-08-08T08:23:31Z"
+        }
       },
       {
         "name": "MCPR (R Language)",
@@ -149,7 +239,17 @@
           "en": "Statistics courses, data analysis.",
           "zh": "统计学课程、数据分析。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 23,
+        "author": "phisanti",
+        "github": {
+          "stars": 23,
+          "forks": 5,
+          "author": "phisanti",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/33370667?v=4",
+          "description": " MCPR enables AI agents to participate in interactive R sessions for professional analysis workflows.",
+          "updatedAt": "2025-12-10T07:36:37Z"
+        }
       },
       {
         "name": "HOCR (Math Capture)",
@@ -162,7 +262,17 @@
           "en": "Digitizing math notes, homework help.",
           "zh": "数字化数学笔记、家庭作业帮助。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 2,
+        "author": "Wooonster",
+        "github": {
+          "stars": 2,
+          "forks": 2,
+          "author": "Wooonster",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/109267172?v=4",
+          "description": null,
+          "updatedAt": "2025-08-17T09:08:50Z"
+        }
       },
       {
         "name": "Stella MCP",
@@ -175,7 +285,17 @@
           "en": "Systems thinking, scientific modeling courses.",
           "zh": "系统思维、科学建模课程。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 0,
+        "author": "bradleylab",
+        "github": {
+          "stars": 0,
+          "forks": 1,
+          "author": "bradleylab",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5043509?v=4",
+          "description": "MCP server for Stella",
+          "updatedAt": "2026-02-09T22:54:41Z"
+        }
       },
       {
         "name": "Calculator",
@@ -188,7 +308,17 @@
           "en": "Math homework checking, basic calculations.",
           "zh": "数学作业检查、基础计算。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 141,
+        "author": "githejie",
+        "github": {
+          "stars": 141,
+          "forks": 22,
+          "author": "githejie",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/27050116?v=4",
+          "description": "A Model Context Protocol server for calculating.",
+          "updatedAt": "2025-05-10T02:23:00Z"
+        }
       },
       {
         "name": "Manim Composer",
@@ -227,7 +357,17 @@
           "en": "Quantum physics research, many-body problem simulations.",
           "zh": "量子物理研究、多体问题模拟。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 110,
+        "author": "pathintegral-institute",
+        "github": {
+          "stars": 110,
+          "forks": 23,
+          "author": "pathintegral-institute",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/205121201?v=4",
+          "description": "Open Source MCP Servers for Scientific Research",
+          "updatedAt": "2025-09-02T08:16:13Z"
+        }
       },
       {
         "name": "Fermat Math Engine",
@@ -240,7 +380,17 @@
           "en": "Complex math problems, physics simulations.",
           "zh": "复杂数学问题、物理模拟。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 11,
+        "author": "abhiphile",
+        "github": {
+          "stars": 11,
+          "forks": 5,
+          "author": "abhiphile",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/140839576?v=4",
+          "description": "🚀 Fermat MCP: The Ultimate Math Engine - Unifying SymPy, NumPy & Matplotlib in one powerful server! Perfect for devs & researchers. ",
+          "updatedAt": "2025-10-08T19:36:24Z"
+        }
       },
       {
         "name": "Phys-MCP",
