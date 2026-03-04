@@ -1,0 +1,11 @@
+.git
+.gitignore
+.DS_Store
+.history
+.idea
+src/
+tsconfig.json
+*.log
+work/
+config.json
+setup-claude-server.js

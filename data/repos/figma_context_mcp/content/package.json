@@ -1,0 +1,82 @@
+{
+  "name": "figma-developer-mcp",
+  "version": "0.6.4",
+  "mcpName": "io.github.GLips/Figma-Context-MCP",
+  "description": "Give your coding agent access to your Figma data. Implement designs in any framework in one-shot.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "figma-developer-mcp": "dist/bin.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup --dts",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "start": "node dist/bin.js",
+    "start:cli": "cross-env NODE_ENV=cli node dist/bin.js",
+    "start:http": "node dist/bin.js",
+    "dev": "cross-env NODE_ENV=development tsup --watch",
+    "dev:cli": "cross-env NODE_ENV=development tsup --watch -- --stdio",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "inspect": "pnpx @modelcontextprotocol/inspector",
+    "prepack": "pnpm build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lefthook",
+      "sharp"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GLips/Figma-Context-MCP.git"
+  },
+  "homepage": "https://www.framelink.ai",
+  "keywords": [
+    "figma",
+    "mcp",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@figma/rest-api-spec": "^0.33.0",
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "@types/yargs": "^17.0.33",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "js-yaml": "^4.1.0",
+    "remeda": "^2.20.1",
+    "sharp": "^0.34.3",
+    "yargs": "^17.7.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/express": "^5.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.17.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^17.3.0",
+    "lefthook": "^2.0.15",
+    "prettier": "^3.5.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^4.0.18"
+  }
+}

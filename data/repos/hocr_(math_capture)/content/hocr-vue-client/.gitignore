@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python 缓存 & 日志
+__pycache__/
+*.py[cod]
+mcp_server.log
+
+/node_modules/
+/package-lock.json
+# /package.json
+
+# 前端依赖 node_modules
+/hocr-vue-client/node_modules/
+/hocr-vue-client/package-lock.json
+
+# IDE & 系统文件
+.vscode/
+.DS_Store

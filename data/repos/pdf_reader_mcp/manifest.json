@@ -1,0 +1,461 @@
+{
+  "name": "PDF Reader MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "comparison",
+          "type": "folder",
+          "path": "docs/comparison",
+          "children": [
+            {
+              "name": "index.md",
+              "type": "file",
+              "path": "docs/comparison/index.md",
+              "size": 1819,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "design",
+          "type": "folder",
+          "path": "docs/design",
+          "children": [
+            {
+              "name": "index.md",
+              "type": "file",
+              "path": "docs/design/index.md",
+              "size": 1600,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "guide",
+          "type": "folder",
+          "path": "docs/guide",
+          "children": [
+            {
+              "name": "getting-started.md",
+              "type": "file",
+              "path": "docs/guide/getting-started.md",
+              "size": 2644,
+              "language": "md"
+            },
+            {
+              "name": "index.md",
+              "type": "file",
+              "path": "docs/guide/index.md",
+              "size": 1380,
+              "language": "md"
+            },
+            {
+              "name": "installation.md",
+              "type": "file",
+              "path": "docs/guide/installation.md",
+              "size": 1268,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "performance",
+          "type": "folder",
+          "path": "docs/performance",
+          "children": [
+            {
+              "name": "index.md",
+              "type": "file",
+              "path": "docs/performance/index.md",
+              "size": 1935,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "public",
+          "type": "folder",
+          "path": "docs/public",
+          "children": [
+            {
+              "name": "logo.svg",
+              "type": "file",
+              "path": "docs/public/logo.svg",
+              "size": 1088,
+              "language": "svg"
+            }
+          ]
+        },
+        {
+          "name": "index.md",
+          "type": "file",
+          "path": "docs/index.md",
+          "size": 1082,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "public",
+      "type": "folder",
+      "path": "public",
+      "children": [
+        {
+          "name": "search-index.json",
+          "type": "file",
+          "path": "public/search-index.json",
+          "size": 39463,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "handlers",
+          "type": "folder",
+          "path": "src/handlers",
+          "children": [
+            {
+              "name": "readPdf.ts",
+              "type": "file",
+              "path": "src/handlers/readPdf.ts",
+              "size": 10592,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "pdf",
+          "type": "folder",
+          "path": "src/pdf",
+          "children": [
+            {
+              "name": "extractor.ts",
+              "type": "file",
+              "path": "src/pdf/extractor.ts",
+              "size": 14011,
+              "language": "ts"
+            },
+            {
+              "name": "loader.ts",
+              "type": "file",
+              "path": "src/pdf/loader.ts",
+              "size": 3414,
+              "language": "ts"
+            },
+            {
+              "name": "parser.ts",
+              "type": "file",
+              "path": "src/pdf/parser.ts",
+              "size": 3902,
+              "language": "ts"
+            },
+            {
+              "name": "tableExtractor.ts",
+              "type": "file",
+              "path": "src/pdf/tableExtractor.ts",
+              "size": 12290,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "schemas",
+          "type": "folder",
+          "path": "src/schemas",
+          "children": [
+            {
+              "name": "readPdf.ts",
+              "type": "file",
+              "path": "src/schemas/readPdf.ts",
+              "size": 1722,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types",
+          "type": "folder",
+          "path": "src/types",
+          "children": [
+            {
+              "name": "pdf.ts",
+              "type": "file",
+              "path": "src/types/pdf.ts",
+              "size": 1732,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "errors.ts",
+              "type": "file",
+              "path": "src/utils/errors.ts",
+              "size": 410,
+              "language": "ts"
+            },
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/utils/logger.ts",
+              "size": 2970,
+              "language": "ts"
+            },
+            {
+              "name": "pathUtils.ts",
+              "type": "file",
+              "path": "src/utils/pathUtils.ts",
+              "size": 1051,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 2146,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "type": "folder",
+      "path": "test",
+      "children": [
+        {
+          "name": "benchmark",
+          "type": "folder",
+          "path": "test/benchmark",
+          "children": [
+            {
+              "name": "readPdf.bench.ts",
+              "type": "file",
+              "path": "test/benchmark/readPdf.bench.ts",
+              "size": 4377,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "handlers",
+          "type": "folder",
+          "path": "test/handlers",
+          "children": [
+            {
+              "name": "readPdf.test.ts",
+              "type": "file",
+              "path": "test/handlers/readPdf.test.ts",
+              "size": 50229,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "integration",
+          "type": "folder",
+          "path": "test/integration",
+          "children": [
+            {
+              "name": "http-transport.test.ts",
+              "type": "file",
+              "path": "test/integration/http-transport.test.ts",
+              "size": 5427,
+              "language": "ts"
+            },
+            {
+              "name": "mcp-server.test.ts",
+              "type": "file",
+              "path": "test/integration/mcp-server.test.ts",
+              "size": 5154,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "pdf",
+          "type": "folder",
+          "path": "test/pdf",
+          "children": [
+            {
+              "name": "extractor.test.ts",
+              "type": "file",
+              "path": "test/pdf/extractor.test.ts",
+              "size": 15016,
+              "language": "ts"
+            },
+            {
+              "name": "loader.test.ts",
+              "type": "file",
+              "path": "test/pdf/loader.test.ts",
+              "size": 6709,
+              "language": "ts"
+            },
+            {
+              "name": "parser.test.ts",
+              "type": "file",
+              "path": "test/pdf/parser.test.ts",
+              "size": 5916,
+              "language": "ts"
+            },
+            {
+              "name": "tableExtractor.test.ts",
+              "type": "file",
+              "path": "test/pdf/tableExtractor.test.ts",
+              "size": 13169,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "pathUtils.test.ts",
+          "type": "file",
+          "path": "test/pathUtils.test.ts",
+          "size": 2250,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 228,
+      "language": "text"
+    },
+    {
+      "name": ".gitattributes",
+      "type": "file",
+      "path": ".gitattributes",
+      "size": 444,
+      "language": "text"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 145,
+      "language": "text"
+    },
+    {
+      "name": ".mcp.json",
+      "type": "file",
+      "path": ".mcp.json",
+      "size": 310,
+      "language": "json"
+    },
+    {
+      "name": "biome.json",
+      "type": "file",
+      "path": "biome.json",
+      "size": 2284,
+      "language": "json"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 31992,
+      "language": "md"
+    },
+    {
+      "name": "commitlint.config.cjs",
+      "type": "file",
+      "path": "commitlint.config.cjs",
+      "size": 67,
+      "language": "cjs"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 2175,
+      "language": "md"
+    },
+    {
+      "name": "lefthook.yml",
+      "type": "file",
+      "path": "lefthook.yml",
+      "size": 508,
+      "language": "yml"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1064,
+      "language": "text"
+    },
+    {
+      "name": "opencode.jsonc",
+      "type": "file",
+      "path": "opencode.jsonc",
+      "size": 336,
+      "language": "jsonc"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2745,
+      "language": "json"
+    },
+    {
+      "name": "progress.md",
+      "type": "file",
+      "path": "progress.md",
+      "size": 157,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 20189,
+      "language": "md"
+    },
+    {
+      "name": "sylphx.json",
+      "type": "file",
+      "path": "sylphx.json",
+      "size": 50,
+      "language": "json"
+    },
+    {
+      "name": "test-client.ts",
+      "type": "file",
+      "path": "test-client.ts",
+      "size": 3024,
+      "language": "ts"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 171,
+      "language": "json"
+    },
+    {
+      "name": "vercel.json",
+      "type": "file",
+      "path": "vercel.json",
+      "size": 183,
+      "language": "json"
+    }
+  ]
+}

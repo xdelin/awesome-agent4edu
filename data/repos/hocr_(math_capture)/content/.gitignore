@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+mcp_server.log
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Virtual environments
+.venv
+
+# 锁文件（如果不需要纳入版本控制）
+package-lock.json
+uv.lock
+
+# VSCode 等 IDE
+.vscode/
+

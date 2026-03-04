@@ -1,0 +1,65 @@
+[
+  {
+    "id": "feedback-1",
+    "rating": 5,
+    "comment": "The step-by-step guidance was excellent! Really helped me understand the process instead of just getting the answer.",
+    "sessionId": "session-123",
+    "problemId": "algebra-basic-1",
+    "timestamp": "2024-01-07T14:30:00Z",
+    "category": "Algebra"
+  },
+  {
+    "id": "feedback-2", 
+    "rating": 4,
+    "comment": "Good hints, but I wish there were more detailed explanations for the more complex steps.",
+    "sessionId": "session-124",
+    "problemId": "calculus-basic-1", 
+    "timestamp": "2024-01-07T13:15:00Z",
+    "category": "Calculus"
+  },
+  {
+    "id": "feedback-3",
+    "rating": 5,
+    "comment": "Perfect balance of guidance without giving away the answer! This is exactly what I needed to learn.",
+    "sessionId": "session-125",
+    "problemId": "geometry-basic-1",
+    "timestamp": "2024-01-07T12:45:00Z", 
+    "category": "Geometry"
+  },
+  {
+    "id": "feedback-4",
+    "rating": 3,
+    "comment": "The solution was correct but I got confused by some of the mathematical notation. Could use simpler explanations.",
+    "sessionId": "session-126", 
+    "problemId": "algebra-intermediate-1",
+    "timestamp": "2024-01-07T11:20:00Z",
+    "category": "Algebra"
+  },
+  {
+    "id": "feedback-5",
+    "rating": 4,
+    "comment": "Helpful overall, but the hints could be more specific to where I was struggling.",
+    "sessionId": "session-127",
+    "problemId": "word-problem-1",
+    "timestamp": "2024-01-07T10:30:00Z",
+    "category": "Word Problems"
+  },
+  {
+    "id": "feedback-6",
+    "rating": 5,
+    "comment": "Amazing! This helped me understand concepts I've been struggling with for weeks. The AI really knows how to teach.",
+    "sessionId": "session-128",
+    "problemId": "algebra-basic-1", 
+    "timestamp": "2024-01-06T16:45:00Z",
+    "category": "Algebra"
+  },
+  {
+    "id": "feedback-7",
+    "rating": 2,
+    "comment": "The explanation was too fast-paced for me. I needed more basic steps broken down further.",
+    "sessionId": "session-129",
+    "problemId": "calculus-basic-1",
+    "timestamp": "2024-01-06T15:10:00Z", 
+    "category": "Calculus"
+  }
+]

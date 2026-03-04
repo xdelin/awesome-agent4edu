@@ -1,0 +1,1784 @@
+{
+  "name": "DBHub",
+  "full": true,
+  "tree": [
+    {
+      "name": "demo",
+      "type": "folder",
+      "path": "demo",
+      "children": [
+        {
+          "name": "employee-sqlite",
+          "type": "folder",
+          "path": "demo/employee-sqlite",
+          "children": [
+            {
+              "name": "employee.sql",
+              "type": "file",
+              "path": "demo/employee-sqlite/employee.sql",
+              "size": 3938,
+              "language": "sql"
+            },
+            {
+              "name": "load_department.sql",
+              "type": "file",
+              "path": "demo/employee-sqlite/load_department.sql",
+              "size": 246,
+              "language": "sql"
+            },
+            {
+              "name": "load_dept_emp.sql",
+              "type": "file",
+              "path": "demo/employee-sqlite/load_dept_emp.sql",
+              "size": 46353,
+              "language": "sql"
+            },
+            {
+              "name": "load_dept_manager.sql",
+              "type": "file",
+              "path": "demo/employee-sqlite/load_dept_manager.sql",
+              "size": 704,
+              "language": "sql"
+            },
+            {
+              "name": "load_employee.sql",
+              "type": "file",
+              "path": "demo/employee-sqlite/load_employee.sql",
+              "size": 58533,
+              "language": "sql"
+            },
+            {
+              "name": "load_title.sql",
+              "type": "file",
+              "path": "demo/employee-sqlite/load_title.sql",
+              "size": 71018,
+              "language": "sql"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "blog",
+          "type": "folder",
+          "path": "docs/blog",
+          "children": [
+            {
+              "name": "postgres-mcp-server-review-dbhub.mdx",
+              "type": "file",
+              "path": "docs/blog/postgres-mcp-server-review-dbhub.mdx",
+              "size": 10994,
+              "language": "mdx"
+            },
+            {
+              "name": "postgres-mcp-server-review-mcp-toolbox.mdx",
+              "type": "file",
+              "path": "docs/blog/postgres-mcp-server-review-mcp-toolbox.mdx",
+              "size": 12906,
+              "language": "mdx"
+            },
+            {
+              "name": "postgres-mcp-server-review-supabase-mcp.mdx",
+              "type": "file",
+              "path": "docs/blog/postgres-mcp-server-review-supabase-mcp.mdx",
+              "size": 11799,
+              "language": "mdx"
+            },
+            {
+              "name": "state-of-postgres-mcp-servers-2025.mdx",
+              "type": "file",
+              "path": "docs/blog/state-of-postgres-mcp-servers-2025.mdx",
+              "size": 9003,
+              "language": "mdx"
+            }
+          ]
+        },
+        {
+          "name": "config",
+          "type": "folder",
+          "path": "docs/config",
+          "children": [
+            {
+              "name": "command-line.mdx",
+              "type": "file",
+              "path": "docs/config/command-line.mdx",
+              "size": 11148,
+              "language": "mdx"
+            },
+            {
+              "name": "debug.mdx",
+              "type": "file",
+              "path": "docs/config/debug.mdx",
+              "size": 1651,
+              "language": "mdx"
+            },
+            {
+              "name": "toml.mdx",
+              "type": "file",
+              "path": "docs/config/toml.mdx",
+              "size": 18024,
+              "language": "mdx"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "docs/tools",
+          "children": [
+            {
+              "name": "custom-tools.mdx",
+              "type": "file",
+              "path": "docs/tools/custom-tools.mdx",
+              "size": 9021,
+              "language": "mdx"
+            },
+            {
+              "name": "execute-sql.mdx",
+              "type": "file",
+              "path": "docs/tools/execute-sql.mdx",
+              "size": 4876,
+              "language": "mdx"
+            },
+            {
+              "name": "overview.mdx",
+              "type": "file",
+              "path": "docs/tools/overview.mdx",
+              "size": 4435,
+              "language": "mdx"
+            },
+            {
+              "name": "search-objects.mdx",
+              "type": "file",
+              "path": "docs/tools/search-objects.mdx",
+              "size": 6102,
+              "language": "mdx"
+            }
+          ]
+        },
+        {
+          "name": "workbench",
+          "type": "folder",
+          "path": "docs/workbench",
+          "children": [
+            {
+              "name": "overview.mdx",
+              "type": "file",
+              "path": "docs/workbench/overview.mdx",
+              "size": 807,
+              "language": "mdx"
+            },
+            {
+              "name": "request-trace.mdx",
+              "type": "file",
+              "path": "docs/workbench/request-trace.mdx",
+              "size": 430,
+              "language": "mdx"
+            },
+            {
+              "name": "tool-execution.mdx",
+              "type": "file",
+              "path": "docs/workbench/tool-execution.mdx",
+              "size": 1689,
+              "language": "mdx"
+            }
+          ]
+        },
+        {
+          "name": "docs.json",
+          "type": "file",
+          "path": "docs/docs.json",
+          "size": 1957,
+          "language": "json"
+        },
+        {
+          "name": "index.mdx",
+          "type": "file",
+          "path": "docs/index.mdx",
+          "size": 3908,
+          "language": "mdx"
+        },
+        {
+          "name": "installation.mdx",
+          "type": "file",
+          "path": "docs/installation.mdx",
+          "size": 17898,
+          "language": "mdx"
+        },
+        {
+          "name": "quickstart.mdx",
+          "type": "file",
+          "path": "docs/quickstart.mdx",
+          "size": 4342,
+          "language": "mdx"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "docs/README.md",
+          "size": 270,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "type": "folder",
+      "path": "frontend",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "frontend/src",
+          "children": [
+            {
+              "name": "api",
+              "type": "folder",
+              "path": "frontend/src/api",
+              "children": [
+                {
+                  "name": "errors.ts",
+                  "type": "file",
+                  "path": "frontend/src/api/errors.ts",
+                  "size": 286,
+                  "language": "ts"
+                },
+                {
+                  "name": "requests.ts",
+                  "type": "file",
+                  "path": "frontend/src/api/requests.ts",
+                  "size": 853,
+                  "language": "ts"
+                },
+                {
+                  "name": "sources.ts",
+                  "type": "file",
+                  "path": "frontend/src/api/sources.ts",
+                  "size": 2351,
+                  "language": "ts"
+                },
+                {
+                  "name": "tools.ts",
+                  "type": "file",
+                  "path": "frontend/src/api/tools.ts",
+                  "size": 2093,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "components",
+              "type": "folder",
+              "path": "frontend/src/components",
+              "children": [
+                {
+                  "name": "Gutter",
+                  "type": "folder",
+                  "path": "frontend/src/components/Gutter",
+                  "children": [
+                    {
+                      "name": "Gutter.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/Gutter/Gutter.tsx",
+                      "size": 1104,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "GutterIcon.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/Gutter/GutterIcon.tsx",
+                      "size": 1122,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "GutterSourceItem.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/Gutter/GutterSourceItem.tsx",
+                      "size": 1432,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "frontend/src/components/Gutter/index.ts",
+                      "size": 36,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "icons",
+                  "type": "folder",
+                  "path": "frontend/src/components/icons",
+                  "children": [
+                    {
+                      "name": "ActivityIcon.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/icons/ActivityIcon.tsx",
+                      "size": 376,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "CheckIcon.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/icons/CheckIcon.tsx",
+                      "size": 341,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "CopyIcon.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/icons/CopyIcon.tsx",
+                      "size": 441,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "HelpIcon.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/icons/HelpIcon.tsx",
+                      "size": 477,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "LockIcon.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/icons/LockIcon.tsx",
+                      "size": 424,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "XIcon.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/icons/XIcon.tsx",
+                      "size": 335,
+                      "language": "tsx"
+                    }
+                  ]
+                },
+                {
+                  "name": "Sidebar",
+                  "type": "folder",
+                  "path": "frontend/src/components/Sidebar",
+                  "children": [
+                    {
+                      "name": "Logo.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/Sidebar/Logo.tsx",
+                      "size": 346,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "Sidebar.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/Sidebar/Sidebar.tsx",
+                      "size": 2711,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "SourceList.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/Sidebar/SourceList.tsx",
+                      "size": 1933,
+                      "language": "tsx"
+                    }
+                  ]
+                },
+                {
+                  "name": "tool",
+                  "type": "folder",
+                  "path": "frontend/src/components/tool",
+                  "children": [
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "frontend/src/components/tool/index.ts",
+                      "size": 317,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "ParameterForm.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/tool/ParameterForm.tsx",
+                      "size": 3530,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "ResultsTable.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/tool/ResultsTable.tsx",
+                      "size": 6707,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "ResultsTabs.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/tool/ResultsTabs.tsx",
+                      "size": 5546,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "RunButton.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/tool/RunButton.tsx",
+                      "size": 2094,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "SqlEditor.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/tool/SqlEditor.tsx",
+                      "size": 3892,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "types.ts",
+                      "type": "file",
+                      "path": "frontend/src/components/tool/types.ts",
+                      "size": 221,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "ui",
+                  "type": "folder",
+                  "path": "frontend/src/components/ui",
+                  "children": [
+                    {
+                      "name": "accordion.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/accordion.tsx",
+                      "size": 2004,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "alert-dialog.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/alert-dialog.tsx",
+                      "size": 4573,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "alert.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/alert.tsx",
+                      "size": 2398,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "autocomplete.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/autocomplete.tsx",
+                      "size": 9251,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "avatar.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/avatar.tsx",
+                      "size": 1090,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "badge.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/badge.tsx",
+                      "size": 2735,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "breadcrumb.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/breadcrumb.tsx",
+                      "size": 2504,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "button.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/button.tsx",
+                      "size": 4929,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "card.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/card.tsx",
+                      "size": 2290,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "checkbox-group.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/checkbox-group.tsx",
+                      "size": 384,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "checkbox.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/checkbox.tsx",
+                      "size": 1900,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "collapsible.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/collapsible.tsx",
+                      "size": 1040,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "combobox.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/combobox.tsx",
+                      "size": 14030,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "command.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/command.tsx",
+                      "size": 7294,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "dialog.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/dialog.tsx",
+                      "size": 5731,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "empty.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/empty.tsx",
+                      "size": 3406,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "field.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/field.tsx",
+                      "size": 1354,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "fieldset.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/fieldset.tsx",
+                      "size": 647,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "form.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/form.tsx",
+                      "size": 338,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "frame.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/frame.tsx",
+                      "size": 2391,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "group.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/group.tsx",
+                      "size": 4363,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "input-group.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/input-group.tsx",
+                      "size": 6043,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "input.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/input.tsx",
+                      "size": 2479,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "kbd.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/kbd.tsx",
+                      "size": 723,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "label.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/label.tsx",
+                      "size": 560,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "menu.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/menu.tsx",
+                      "size": 9026,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "meter.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/meter.tsx",
+                      "size": 1528,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "number-field.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/number-field.tsx",
+                      "size": 5521,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "pagination.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/pagination.tsx",
+                      "size": 3046,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "popover.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/popover.tsx",
+                      "size": 4019,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "preview-card.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/preview-card.tsx",
+                      "size": 1874,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "progress.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/progress.tsx",
+                      "size": 1705,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "radio-group.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/radio-group.tsx",
+                      "size": 1916,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "scroll-area.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/scroll-area.tsx",
+                      "size": 2359,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "select.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/select.tsx",
+                      "size": 7185,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "separator.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/separator.tsx",
+                      "size": 633,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "sheet.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/sheet.tsx",
+                      "size": 5993,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "sidebar.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/sidebar.tsx",
+                      "size": 22297,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "skeleton.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/skeleton.tsx",
+                      "size": 545,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "slider.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/slider.tsx",
+                      "size": 3131,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "spinner.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/spinner.tsx",
+                      "size": 344,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "switch.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/switch.tsx",
+                      "size": 1247,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "table.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/table.tsx",
+                      "size": 4058,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "tabs.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/tabs.tsx",
+                      "size": 2965,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "textarea.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/textarea.tsx",
+                      "size": 2202,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "toast.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/toast.tsx",
+                      "size": 13071,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "toggle-group.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/toggle-group.tsx",
+                      "size": 2903,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "toggle.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/toggle.tsx",
+                      "size": 2309,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "toolbar.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/toolbar.tsx",
+                      "size": 1967,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "tooltip.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/ui/tooltip.tsx",
+                      "size": 2953,
+                      "language": "tsx"
+                    }
+                  ]
+                },
+                {
+                  "name": "views",
+                  "type": "folder",
+                  "path": "frontend/src/components/views",
+                  "children": [
+                    {
+                      "name": "HomeRedirect.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/views/HomeRedirect.tsx",
+                      "size": 680,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "NotFoundView.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/views/NotFoundView.tsx",
+                      "size": 1216,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "RequestView.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/views/RequestView.tsx",
+                      "size": 11715,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "SourceDetailView.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/views/SourceDetailView.tsx",
+                      "size": 10046,
+                      "language": "tsx"
+                    },
+                    {
+                      "name": "ToolDetailView.tsx",
+                      "type": "file",
+                      "path": "frontend/src/components/views/ToolDetailView.tsx",
+                      "size": 14348,
+                      "language": "tsx"
+                    }
+                  ]
+                },
+                {
+                  "name": "ErrorBoundary.tsx",
+                  "type": "file",
+                  "path": "frontend/src/components/ErrorBoundary.tsx",
+                  "size": 1786,
+                  "language": "tsx"
+                },
+                {
+                  "name": "Layout.tsx",
+                  "type": "file",
+                  "path": "frontend/src/components/Layout.tsx",
+                  "size": 721,
+                  "language": "tsx"
+                }
+              ]
+            },
+            {
+              "name": "hooks",
+              "type": "folder",
+              "path": "frontend/src/hooks",
+              "children": [
+                {
+                  "name": "use-mobile.ts",
+                  "type": "file",
+                  "path": "frontend/src/hooks/use-mobile.ts",
+                  "size": 585,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "lib",
+              "type": "folder",
+              "path": "frontend/src/lib",
+              "children": [
+                {
+                  "name": "db-logos.ts",
+                  "type": "file",
+                  "path": "frontend/src/lib/db-logos.ts",
+                  "size": 512,
+                  "language": "ts"
+                },
+                {
+                  "name": "utils.ts",
+                  "type": "file",
+                  "path": "frontend/src/lib/utils.ts",
+                  "size": 166,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "types",
+              "type": "folder",
+              "path": "frontend/src/types",
+              "children": [
+                {
+                  "name": "datasource.ts",
+                  "type": "file",
+                  "path": "frontend/src/types/datasource.ts",
+                  "size": 682,
+                  "language": "ts"
+                },
+                {
+                  "name": "request.ts",
+                  "type": "file",
+                  "path": "frontend/src/types/request.ts",
+                  "size": 276,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "App.tsx",
+              "type": "file",
+              "path": "frontend/src/App.tsx",
+              "size": 1949,
+              "language": "tsx"
+            },
+            {
+              "name": "index.css",
+              "type": "file",
+              "path": "frontend/src/index.css",
+              "size": 6076,
+              "language": "css"
+            },
+            {
+              "name": "main.tsx",
+              "type": "file",
+              "path": "frontend/src/main.tsx",
+              "size": 230,
+              "language": "tsx"
+            },
+            {
+              "name": "vite-env.d.ts",
+              "type": "file",
+              "path": "frontend/src/vite-env.d.ts",
+              "size": 38,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "components.json",
+          "type": "file",
+          "path": "frontend/components.json",
+          "size": 450,
+          "language": "json"
+        },
+        {
+          "name": "index.html",
+          "type": "file",
+          "path": "frontend/index.html",
+          "size": 387,
+          "language": "html"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "frontend/package.json",
+          "size": 969,
+          "language": "json"
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "frontend/tsconfig.json",
+          "size": 685,
+          "language": "json"
+        },
+        {
+          "name": "vite.config.ts",
+          "type": "file",
+          "path": "frontend/vite.config.ts",
+          "size": 760,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "__fixtures__",
+          "type": "folder",
+          "path": "src/__fixtures__",
+          "children": [
+            {
+              "name": "toml",
+              "type": "folder",
+              "path": "src/__fixtures__/toml",
+              "children": [
+                {
+                  "name": "multi-sqlite.toml",
+                  "type": "file",
+                  "path": "src/__fixtures__/toml/multi-sqlite.toml",
+                  "size": 308,
+                  "language": "toml"
+                },
+                {
+                  "name": "readonly-maxrows.toml",
+                  "type": "file",
+                  "path": "src/__fixtures__/toml/readonly-maxrows.toml",
+                  "size": 583,
+                  "language": "toml"
+                }
+              ]
+            },
+            {
+              "name": "helpers.ts",
+              "type": "file",
+              "path": "src/__fixtures__/helpers.ts",
+              "size": 3348,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "__tests__",
+          "type": "folder",
+          "path": "src/__tests__",
+          "children": [
+            {
+              "name": "json-rpc-integration.test.ts",
+              "type": "file",
+              "path": "src/__tests__/json-rpc-integration.test.ts",
+              "size": 11372,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "api",
+          "type": "folder",
+          "path": "src/api",
+          "children": [
+            {
+              "name": "__tests__",
+              "type": "folder",
+              "path": "src/api/__tests__",
+              "children": [
+                {
+                  "name": "requests.integration.test.ts",
+                  "type": "file",
+                  "path": "src/api/__tests__/requests.integration.test.ts",
+                  "size": 15827,
+                  "language": "ts"
+                },
+                {
+                  "name": "sources.integration.test.ts",
+                  "type": "file",
+                  "path": "src/api/__tests__/sources.integration.test.ts",
+                  "size": 13908,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "openapi.d.ts",
+              "type": "file",
+              "path": "src/api/openapi.d.ts",
+              "size": 8049,
+              "language": "ts"
+            },
+            {
+              "name": "openapi.yaml",
+              "type": "file",
+              "path": "src/api/openapi.yaml",
+              "size": 6693,
+              "language": "yaml"
+            },
+            {
+              "name": "requests.ts",
+              "type": "file",
+              "path": "src/api/requests.ts",
+              "size": 701,
+              "language": "ts"
+            },
+            {
+              "name": "sources.ts",
+              "type": "file",
+              "path": "src/api/sources.ts",
+              "size": 3587,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "config",
+          "type": "folder",
+          "path": "src/config",
+          "children": [
+            {
+              "name": "__tests__",
+              "type": "folder",
+              "path": "src/config/__tests__",
+              "children": [
+                {
+                  "name": "env.test.ts",
+                  "type": "file",
+                  "path": "src/config/__tests__/env.test.ts",
+                  "size": 12560,
+                  "language": "ts"
+                },
+                {
+                  "name": "ssh-config-integration.test.ts",
+                  "type": "file",
+                  "path": "src/config/__tests__/ssh-config-integration.test.ts",
+                  "size": 4531,
+                  "language": "ts"
+                },
+                {
+                  "name": "toml-loader.test.ts",
+                  "type": "file",
+                  "path": "src/config/__tests__/toml-loader.test.ts",
+                  "size": 39096,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "demo-loader.ts",
+              "type": "file",
+              "path": "src/config/demo-loader.ts",
+              "size": 2352,
+              "language": "ts"
+            },
+            {
+              "name": "env.ts",
+              "type": "file",
+              "path": "src/config/env.ts",
+              "size": 22306,
+              "language": "ts"
+            },
+            {
+              "name": "toml-loader.ts",
+              "type": "file",
+              "path": "src/config/toml-loader.ts",
+              "size": 17744,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "connectors",
+          "type": "folder",
+          "path": "src/connectors",
+          "children": [
+            {
+              "name": "__tests__",
+              "type": "folder",
+              "path": "src/connectors/__tests__",
+              "children": [
+                {
+                  "name": "shared",
+                  "type": "folder",
+                  "path": "src/connectors/__tests__/shared",
+                  "children": [
+                    {
+                      "name": "integration-test-base.ts",
+                      "type": "file",
+                      "path": "src/connectors/__tests__/shared/integration-test-base.ts",
+                      "size": 11165,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "dsn-parser.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/dsn-parser.test.ts",
+                  "size": 5326,
+                  "language": "ts"
+                },
+                {
+                  "name": "mariadb.integration.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/mariadb.integration.test.ts",
+                  "size": 17168,
+                  "language": "ts"
+                },
+                {
+                  "name": "multi-sqlite-sources.integration.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/multi-sqlite-sources.integration.test.ts",
+                  "size": 6258,
+                  "language": "ts"
+                },
+                {
+                  "name": "mysql.integration.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/mysql.integration.test.ts",
+                  "size": 14978,
+                  "language": "ts"
+                },
+                {
+                  "name": "postgres-ssh.integration.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/postgres-ssh.integration.test.ts",
+                  "size": 7554,
+                  "language": "ts"
+                },
+                {
+                  "name": "postgres.integration.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/postgres.integration.test.ts",
+                  "size": 23327,
+                  "language": "ts"
+                },
+                {
+                  "name": "sqlite.integration.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/sqlite.integration.test.ts",
+                  "size": 21176,
+                  "language": "ts"
+                },
+                {
+                  "name": "sqlserver.integration.test.ts",
+                  "type": "file",
+                  "path": "src/connectors/__tests__/sqlserver.integration.test.ts",
+                  "size": 21079,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "mariadb",
+              "type": "folder",
+              "path": "src/connectors/mariadb",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/connectors/mariadb/index.ts",
+                  "size": 19286,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "mysql",
+              "type": "folder",
+              "path": "src/connectors/mysql",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/connectors/mysql/index.ts",
+                  "size": 19732,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "postgres",
+              "type": "folder",
+              "path": "src/connectors/postgres",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/connectors/postgres/index.ts",
+                  "size": 18983,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "sqlite",
+              "type": "folder",
+              "path": "src/connectors/sqlite",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/connectors/sqlite/index.ts",
+                  "size": 17627,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "sqlserver",
+              "type": "folder",
+              "path": "src/connectors/sqlserver",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/connectors/sqlserver/index.ts",
+                  "size": 20677,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "interface.ts",
+              "type": "file",
+              "path": "src/connectors/interface.ts",
+              "size": 9076,
+              "language": "ts"
+            },
+            {
+              "name": "manager.ts",
+              "type": "file",
+              "path": "src/connectors/manager.ts",
+              "size": 12246,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "requests",
+          "type": "folder",
+          "path": "src/requests",
+          "children": [
+            {
+              "name": "__tests__",
+              "type": "folder",
+              "path": "src/requests/__tests__",
+              "children": [
+                {
+                  "name": "store.test.ts",
+                  "type": "file",
+                  "path": "src/requests/__tests__/store.test.ts",
+                  "size": 3782,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/requests/index.ts",
+              "size": 222,
+              "language": "ts"
+            },
+            {
+              "name": "store.ts",
+              "type": "file",
+              "path": "src/requests/store.ts",
+              "size": 1508,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "__tests__",
+              "type": "folder",
+              "path": "src/tools/__tests__",
+              "children": [
+                {
+                  "name": "custom-tool-handler.test.ts",
+                  "type": "file",
+                  "path": "src/tools/__tests__/custom-tool-handler.test.ts",
+                  "size": 10845,
+                  "language": "ts"
+                },
+                {
+                  "name": "execute-sql.test.ts",
+                  "type": "file",
+                  "path": "src/tools/__tests__/execute-sql.test.ts",
+                  "size": 9238,
+                  "language": "ts"
+                },
+                {
+                  "name": "search-objects.test.ts",
+                  "type": "file",
+                  "path": "src/tools/__tests__/search-objects.test.ts",
+                  "size": 35576,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "builtin-tools.ts",
+              "type": "file",
+              "path": "src/tools/builtin-tools.ts",
+              "size": 328,
+              "language": "ts"
+            },
+            {
+              "name": "custom-tool-handler.ts",
+              "type": "file",
+              "path": "src/tools/custom-tool-handler.ts",
+              "size": 7336,
+              "language": "ts"
+            },
+            {
+              "name": "execute-sql.ts",
+              "type": "file",
+              "path": "src/tools/execute-sql.ts",
+              "size": 3849,
+              "language": "ts"
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/tools/index.ts",
+              "size": 3575,
+              "language": "ts"
+            },
+            {
+              "name": "registry.ts",
+              "type": "file",
+              "path": "src/tools/registry.ts",
+              "size": 8793,
+              "language": "ts"
+            },
+            {
+              "name": "search-objects.ts",
+              "type": "file",
+              "path": "src/tools/search-objects.ts",
+              "size": 18260,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types",
+          "type": "folder",
+          "path": "src/types",
+          "children": [
+            {
+              "name": "config.ts",
+              "type": "file",
+              "path": "src/types/config.ts",
+              "size": 3332,
+              "language": "ts"
+            },
+            {
+              "name": "sql.ts",
+              "type": "file",
+              "path": "src/types/sql.ts",
+              "size": 147,
+              "language": "ts"
+            },
+            {
+              "name": "ssh.ts",
+              "type": "file",
+              "path": "src/types/ssh.ts",
+              "size": 1741,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "__tests__",
+              "type": "folder",
+              "path": "src/utils/__tests__",
+              "children": [
+                {
+                  "name": "allowed-keywords.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/allowed-keywords.test.ts",
+                  "size": 2997,
+                  "language": "ts"
+                },
+                {
+                  "name": "dsn-obfuscate.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/dsn-obfuscate.test.ts",
+                  "size": 6696,
+                  "language": "ts"
+                },
+                {
+                  "name": "identifier-quoter.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/identifier-quoter.test.ts",
+                  "size": 7130,
+                  "language": "ts"
+                },
+                {
+                  "name": "normalize-id.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/normalize-id.test.ts",
+                  "size": 2177,
+                  "language": "ts"
+                },
+                {
+                  "name": "parameter-mapper.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/parameter-mapper.test.ts",
+                  "size": 12895,
+                  "language": "ts"
+                },
+                {
+                  "name": "safe-url.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/safe-url.test.ts",
+                  "size": 3920,
+                  "language": "ts"
+                },
+                {
+                  "name": "sql-parser.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/sql-parser.test.ts",
+                  "size": 22790,
+                  "language": "ts"
+                },
+                {
+                  "name": "sql-row-limiter.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/sql-row-limiter.test.ts",
+                  "size": 8070,
+                  "language": "ts"
+                },
+                {
+                  "name": "ssh-config-parser.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/ssh-config-parser.test.ts",
+                  "size": 17173,
+                  "language": "ts"
+                },
+                {
+                  "name": "ssh-tunnel.test.ts",
+                  "type": "file",
+                  "path": "src/utils/__tests__/ssh-tunnel.test.ts",
+                  "size": 4057,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "allowed-keywords.ts",
+              "type": "file",
+              "path": "src/utils/allowed-keywords.ts",
+              "size": 1603,
+              "language": "ts"
+            },
+            {
+              "name": "client-identifier.ts",
+              "type": "file",
+              "path": "src/utils/client-identifier.ts",
+              "size": 652,
+              "language": "ts"
+            },
+            {
+              "name": "dsn-obfuscate.ts",
+              "type": "file",
+              "path": "src/utils/dsn-obfuscate.ts",
+              "size": 5625,
+              "language": "ts"
+            },
+            {
+              "name": "identifier-quoter.ts",
+              "type": "file",
+              "path": "src/utils/identifier-quoter.ts",
+              "size": 2708,
+              "language": "ts"
+            },
+            {
+              "name": "multi-statement-result-parser.ts",
+              "type": "file",
+              "path": "src/utils/multi-statement-result-parser.ts",
+              "size": 3937,
+              "language": "ts"
+            },
+            {
+              "name": "normalize-id.ts",
+              "type": "file",
+              "path": "src/utils/normalize-id.ts",
+              "size": 466,
+              "language": "ts"
+            },
+            {
+              "name": "parameter-mapper.ts",
+              "type": "file",
+              "path": "src/utils/parameter-mapper.ts",
+              "size": 6650,
+              "language": "ts"
+            },
+            {
+              "name": "response-formatter.ts",
+              "type": "file",
+              "path": "src/utils/response-formatter.ts",
+              "size": 3646,
+              "language": "ts"
+            },
+            {
+              "name": "safe-url.ts",
+              "type": "file",
+              "path": "src/utils/safe-url.ts",
+              "size": 4722,
+              "language": "ts"
+            },
+            {
+              "name": "sql-parser.ts",
+              "type": "file",
+              "path": "src/utils/sql-parser.ts",
+              "size": 6872,
+              "language": "ts"
+            },
+            {
+              "name": "sql-row-limiter.ts",
+              "type": "file",
+              "path": "src/utils/sql-row-limiter.ts",
+              "size": 5933,
+              "language": "ts"
+            },
+            {
+              "name": "ssh-config-parser.ts",
+              "type": "file",
+              "path": "src/utils/ssh-config-parser.ts",
+              "size": 9465,
+              "language": "ts"
+            },
+            {
+              "name": "ssh-tunnel.ts",
+              "type": "file",
+              "path": "src/utils/ssh-tunnel.ts",
+              "size": 10513,
+              "language": "ts"
+            },
+            {
+              "name": "startup-table.ts",
+              "type": "file",
+              "path": "src/utils/startup-table.ts",
+              "size": 5357,
+              "language": "ts"
+            },
+            {
+              "name": "tool-handler-helpers.ts",
+              "type": "file",
+              "path": "src/utils/tool-handler-helpers.ts",
+              "size": 3331,
+              "language": "ts"
+            },
+            {
+              "name": "tool-metadata.ts",
+              "type": "file",
+              "path": "src/utils/tool-metadata.ts",
+              "size": 9459,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 660,
+          "language": "ts"
+        },
+        {
+          "name": "server.ts",
+          "type": "file",
+          "path": "src/server.ts",
+          "size": 9529,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 471,
+      "language": "text"
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 1606,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 960,
+      "language": "text"
+    },
+    {
+      "name": ".npmrc",
+      "type": "file",
+      "path": ".npmrc",
+      "size": 103,
+      "language": "text"
+    },
+    {
+      "name": ".prettierrc.json",
+      "type": "file",
+      "path": ".prettierrc.json",
+      "size": 180,
+      "language": "json"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 9672,
+      "language": "md"
+    },
+    {
+      "name": "dbhub.toml.example",
+      "type": "file",
+      "path": "dbhub.toml.example",
+      "size": 11185,
+      "language": "example"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 2456,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1065,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2589,
+      "language": "json"
+    },
+    {
+      "name": "pnpm-workspace.yaml",
+      "type": "file",
+      "path": "pnpm-workspace.yaml",
+      "size": 190,
+      "language": "yaml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5088,
+      "language": "md"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 3732,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 273,
+      "language": "json"
+    },
+    {
+      "name": "tsup.config.ts",
+      "type": "file",
+      "path": "tsup.config.ts",
+      "size": 924,
+      "language": "ts"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 636,
+      "language": "ts"
+    }
+  ]
+}

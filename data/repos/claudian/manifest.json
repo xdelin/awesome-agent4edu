@@ -1,0 +1,3107 @@
+{
+  "name": "claudian",
+  "full": true,
+  "tree": [
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "build-css.mjs",
+          "type": "file",
+          "path": "scripts/build-css.mjs",
+          "size": 3542,
+          "language": "mjs"
+        },
+        {
+          "name": "build.mjs",
+          "type": "file",
+          "path": "scripts/build.mjs",
+          "size": 593,
+          "language": "mjs"
+        },
+        {
+          "name": "postinstall.mjs",
+          "type": "file",
+          "path": "scripts/postinstall.mjs",
+          "size": 734,
+          "language": "mjs"
+        },
+        {
+          "name": "run-jest.js",
+          "type": "file",
+          "path": "scripts/run-jest.js",
+          "size": 494,
+          "language": "js"
+        },
+        {
+          "name": "sync-version.js",
+          "type": "file",
+          "path": "scripts/sync-version.js",
+          "size": 533,
+          "language": "js"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "core",
+          "type": "folder",
+          "path": "src/core",
+          "children": [
+            {
+              "name": "agent",
+              "type": "folder",
+              "path": "src/core/agent",
+              "children": [
+                {
+                  "name": "ClaudianService.ts",
+                  "type": "file",
+                  "path": "src/core/agent/ClaudianService.ts",
+                  "size": 61382,
+                  "language": "ts"
+                },
+                {
+                  "name": "customSpawn.ts",
+                  "type": "file",
+                  "path": "src/core/agent/customSpawn.ts",
+                  "size": 1481,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/agent/index.ts",
+                  "size": 523,
+                  "language": "ts"
+                },
+                {
+                  "name": "MessageChannel.ts",
+                  "type": "file",
+                  "path": "src/core/agent/MessageChannel.ts",
+                  "size": 6834,
+                  "language": "ts"
+                },
+                {
+                  "name": "QueryOptionsBuilder.ts",
+                  "type": "file",
+                  "path": "src/core/agent/QueryOptionsBuilder.ts",
+                  "size": 12708,
+                  "language": "ts"
+                },
+                {
+                  "name": "SessionManager.ts",
+                  "type": "file",
+                  "path": "src/core/agent/SessionManager.ts",
+                  "size": 3324,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/core/agent/types.ts",
+                  "size": 5083,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "agents",
+              "type": "folder",
+              "path": "src/core/agents",
+              "children": [
+                {
+                  "name": "AgentManager.ts",
+                  "type": "file",
+                  "path": "src/core/agents/AgentManager.ts",
+                  "size": 6269,
+                  "language": "ts"
+                },
+                {
+                  "name": "AgentStorage.ts",
+                  "type": "file",
+                  "path": "src/core/agents/AgentStorage.ts",
+                  "size": 3400,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/agents/index.ts",
+                  "size": 123,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "commands",
+              "type": "folder",
+              "path": "src/core/commands",
+              "children": [
+                {
+                  "name": "builtInCommands.ts",
+                  "type": "file",
+                  "path": "src/core/commands/builtInCommands.ts",
+                  "size": 2699,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/commands/index.ts",
+                  "size": 196,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "hooks",
+              "type": "folder",
+              "path": "src/core/hooks",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/hooks/index.ts",
+                  "size": 145,
+                  "language": "ts"
+                },
+                {
+                  "name": "SecurityHooks.ts",
+                  "type": "file",
+                  "path": "src/core/hooks/SecurityHooks.ts",
+                  "size": 4981,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "mcp",
+              "type": "folder",
+              "path": "src/core/mcp",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/mcp/index.ts",
+                  "size": 158,
+                  "language": "ts"
+                },
+                {
+                  "name": "McpServerManager.ts",
+                  "type": "file",
+                  "path": "src/core/mcp/McpServerManager.ts",
+                  "size": 3710,
+                  "language": "ts"
+                },
+                {
+                  "name": "McpTester.ts",
+                  "type": "file",
+                  "path": "src/core/mcp/McpTester.ts",
+                  "size": 8614,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "plugins",
+              "type": "folder",
+              "path": "src/core/plugins",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/plugins/index.ts",
+                  "size": 49,
+                  "language": "ts"
+                },
+                {
+                  "name": "PluginManager.ts",
+                  "type": "file",
+                  "path": "src/core/plugins/PluginManager.ts",
+                  "size": 5464,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "prompts",
+              "type": "folder",
+              "path": "src/core/prompts",
+              "children": [
+                {
+                  "name": "inlineEdit.ts",
+                  "type": "file",
+                  "path": "src/core/prompts/inlineEdit.ts",
+                  "size": 5079,
+                  "language": "ts"
+                },
+                {
+                  "name": "instructionRefine.ts",
+                  "type": "file",
+                  "path": "src/core/prompts/instructionRefine.ts",
+                  "size": 2711,
+                  "language": "ts"
+                },
+                {
+                  "name": "mainAgent.ts",
+                  "type": "file",
+                  "path": "src/core/prompts/mainAgent.ts",
+                  "size": 12239,
+                  "language": "ts"
+                },
+                {
+                  "name": "titleGeneration.ts",
+                  "type": "file",
+                  "path": "src/core/prompts/titleGeneration.ts",
+                  "size": 750,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "sdk",
+              "type": "folder",
+              "path": "src/core/sdk",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/sdk/index.ts",
+                  "size": 255,
+                  "language": "ts"
+                },
+                {
+                  "name": "transformSDKMessage.ts",
+                  "type": "file",
+                  "path": "src/core/sdk/transformSDKMessage.ts",
+                  "size": 7313,
+                  "language": "ts"
+                },
+                {
+                  "name": "typeGuards.ts",
+                  "type": "file",
+                  "path": "src/core/sdk/typeGuards.ts",
+                  "size": 360,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/core/sdk/types.ts",
+                  "size": 239,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "security",
+              "type": "folder",
+              "path": "src/core/security",
+              "children": [
+                {
+                  "name": "ApprovalManager.ts",
+                  "type": "file",
+                  "path": "src/core/security/ApprovalManager.ts",
+                  "size": 6139,
+                  "language": "ts"
+                },
+                {
+                  "name": "BashPathValidator.ts",
+                  "type": "file",
+                  "path": "src/core/security/BashPathValidator.ts",
+                  "size": 12008,
+                  "language": "ts"
+                },
+                {
+                  "name": "BlocklistChecker.ts",
+                  "type": "file",
+                  "path": "src/core/security/BlocklistChecker.ts",
+                  "size": 751,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/security/index.ts",
+                  "size": 581,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "storage",
+              "type": "folder",
+              "path": "src/core/storage",
+              "children": [
+                {
+                  "name": "AgentVaultStorage.ts",
+                  "type": "file",
+                  "path": "src/core/storage/AgentVaultStorage.ts",
+                  "size": 3009,
+                  "language": "ts"
+                },
+                {
+                  "name": "CCSettingsStorage.ts",
+                  "type": "file",
+                  "path": "src/core/storage/CCSettingsStorage.ts",
+                  "size": 8941,
+                  "language": "ts"
+                },
+                {
+                  "name": "ClaudianSettingsStorage.ts",
+                  "type": "file",
+                  "path": "src/core/storage/ClaudianSettingsStorage.ts",
+                  "size": 5748,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/storage/index.ts",
+                  "size": 729,
+                  "language": "ts"
+                },
+                {
+                  "name": "McpStorage.ts",
+                  "type": "file",
+                  "path": "src/core/storage/McpStorage.ts",
+                  "size": 7805,
+                  "language": "ts"
+                },
+                {
+                  "name": "migrationConstants.ts",
+                  "type": "file",
+                  "path": "src/core/storage/migrationConstants.ts",
+                  "size": 3704,
+                  "language": "ts"
+                },
+                {
+                  "name": "SessionStorage.ts",
+                  "type": "file",
+                  "path": "src/core/storage/SessionStorage.ts",
+                  "size": 13036,
+                  "language": "ts"
+                },
+                {
+                  "name": "SkillStorage.ts",
+                  "type": "file",
+                  "path": "src/core/storage/SkillStorage.ts",
+                  "size": 1749,
+                  "language": "ts"
+                },
+                {
+                  "name": "SlashCommandStorage.ts",
+                  "type": "file",
+                  "path": "src/core/storage/SlashCommandStorage.ts",
+                  "size": 2807,
+                  "language": "ts"
+                },
+                {
+                  "name": "StorageService.ts",
+                  "type": "file",
+                  "path": "src/core/storage/StorageService.ts",
+                  "size": 18170,
+                  "language": "ts"
+                },
+                {
+                  "name": "VaultFileAdapter.ts",
+                  "type": "file",
+                  "path": "src/core/storage/VaultFileAdapter.ts",
+                  "size": 3885,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "src/core/tools",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/tools/index.ts",
+                  "size": 1075,
+                  "language": "ts"
+                },
+                {
+                  "name": "todo.ts",
+                  "type": "file",
+                  "path": "src/core/tools/todo.ts",
+                  "size": 1907,
+                  "language": "ts"
+                },
+                {
+                  "name": "toolIcons.ts",
+                  "type": "file",
+                  "path": "src/core/tools/toolIcons.ts",
+                  "size": 1442,
+                  "language": "ts"
+                },
+                {
+                  "name": "toolInput.ts",
+                  "type": "file",
+                  "path": "src/core/tools/toolInput.ts",
+                  "size": 3288,
+                  "language": "ts"
+                },
+                {
+                  "name": "toolNames.ts",
+                  "type": "file",
+                  "path": "src/core/tools/toolNames.ts",
+                  "size": 3380,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "types",
+              "type": "folder",
+              "path": "src/core/types",
+              "children": [
+                {
+                  "name": "agent.ts",
+                  "type": "file",
+                  "path": "src/core/types/agent.ts",
+                  "size": 2075,
+                  "language": "ts"
+                },
+                {
+                  "name": "chat.ts",
+                  "type": "file",
+                  "path": "src/core/types/chat.ts",
+                  "size": 7411,
+                  "language": "ts"
+                },
+                {
+                  "name": "diff.ts",
+                  "type": "file",
+                  "path": "src/core/types/diff.ts",
+                  "size": 641,
+                  "language": "ts"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/core/types/index.ts",
+                  "size": 2765,
+                  "language": "ts"
+                },
+                {
+                  "name": "mcp.ts",
+                  "type": "file",
+                  "path": "src/core/types/mcp.ts",
+                  "size": 2850,
+                  "language": "ts"
+                },
+                {
+                  "name": "models.ts",
+                  "type": "file",
+                  "path": "src/core/types/models.ts",
+                  "size": 2700,
+                  "language": "ts"
+                },
+                {
+                  "name": "plugins.ts",
+                  "type": "file",
+                  "path": "src/core/types/plugins.ts",
+                  "size": 536,
+                  "language": "ts"
+                },
+                {
+                  "name": "sdk.ts",
+                  "type": "file",
+                  "path": "src/core/types/sdk.ts",
+                  "size": 2503,
+                  "language": "ts"
+                },
+                {
+                  "name": "settings.ts",
+                  "type": "file",
+                  "path": "src/core/types/settings.ts",
+                  "size": 14027,
+                  "language": "ts"
+                },
+                {
+                  "name": "tools.ts",
+                  "type": "file",
+                  "path": "src/core/types/tools.ts",
+                  "size": 2034,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "CLAUDE.md",
+              "type": "file",
+              "path": "src/core/CLAUDE.md",
+              "size": 3378,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "features",
+          "type": "folder",
+          "path": "src/features",
+          "children": [
+            {
+              "name": "chat",
+              "type": "folder",
+              "path": "src/features/chat",
+              "children": [
+                {
+                  "name": "controllers",
+                  "type": "folder",
+                  "path": "src/features/chat/controllers",
+                  "children": [
+                    {
+                      "name": "CanvasSelectionController.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/CanvasSelectionController.ts",
+                      "size": 3734,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "contextRowVisibility.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/contextRowVisibility.ts",
+                      "size": 908,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "ConversationController.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/ConversationController.ts",
+                      "size": 33386,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/index.ts",
+                      "size": 517,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "InputController.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/InputController.ts",
+                      "size": 37676,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "NavigationController.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/NavigationController.ts",
+                      "size": 6088,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SelectionController.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/SelectionController.ts",
+                      "size": 5402,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "StreamController.ts",
+                      "type": "file",
+                      "path": "src/features/chat/controllers/StreamController.ts",
+                      "size": 32985,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "rendering",
+                  "type": "folder",
+                  "path": "src/features/chat/rendering",
+                  "children": [
+                    {
+                      "name": "collapsible.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/collapsible.ts",
+                      "size": 2992,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "DiffRenderer.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/DiffRenderer.ts",
+                      "size": 3906,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/index.ts",
+                      "size": 1084,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "InlineAskUserQuestion.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/InlineAskUserQuestion.ts",
+                      "size": 21807,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "InlineExitPlanMode.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/InlineExitPlanMode.ts",
+                      "size": 9313,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "MessageRenderer.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/MessageRenderer.ts",
+                      "size": 24592,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SubagentRenderer.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/SubagentRenderer.ts",
+                      "size": 22108,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "ThinkingBlockRenderer.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/ThinkingBlockRenderer.ts",
+                      "size": 3924,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "TodoListRenderer.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/TodoListRenderer.ts",
+                      "size": 111,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "todoUtils.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/todoUtils.ts",
+                      "size": 879,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "ToolCallRenderer.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/ToolCallRenderer.ts",
+                      "size": 19865,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "WriteEditRenderer.ts",
+                      "type": "file",
+                      "path": "src/features/chat/rendering/WriteEditRenderer.ts",
+                      "size": 7923,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "services",
+                  "type": "folder",
+                  "path": "src/features/chat/services",
+                  "children": [
+                    {
+                      "name": "BangBashService.ts",
+                      "type": "file",
+                      "path": "src/features/chat/services/BangBashService.ts",
+                      "size": 1629,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "InstructionRefineService.ts",
+                      "type": "file",
+                      "path": "src/features/chat/services/InstructionRefineService.ts",
+                      "size": 5946,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SubagentManager.ts",
+                      "type": "file",
+                      "path": "src/features/chat/services/SubagentManager.ts",
+                      "size": 35234,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "TitleGenerationService.ts",
+                      "type": "file",
+                      "path": "src/features/chat/services/TitleGenerationService.ts",
+                      "size": 6743,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "state",
+                  "type": "folder",
+                  "path": "src/features/chat/state",
+                  "children": [
+                    {
+                      "name": "ChatState.ts",
+                      "type": "file",
+                      "path": "src/features/chat/state/ChatState.ts",
+                      "size": 10518,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/features/chat/state/index.ts",
+                      "size": 316,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "types.ts",
+                      "type": "file",
+                      "path": "src/features/chat/state/types.ts",
+                      "size": 4215,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "tabs",
+                  "type": "folder",
+                  "path": "src/features/chat/tabs",
+                  "children": [
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/features/chat/tabs/index.ts",
+                      "size": 104,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "Tab.ts",
+                      "type": "file",
+                      "path": "src/features/chat/tabs/Tab.ts",
+                      "size": 40618,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "TabBar.ts",
+                      "type": "file",
+                      "path": "src/features/chat/tabs/TabBar.ts",
+                      "size": 2337,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "TabManager.ts",
+                      "type": "file",
+                      "path": "src/features/chat/tabs/TabManager.ts",
+                      "size": 19510,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "types.ts",
+                      "type": "file",
+                      "path": "src/features/chat/tabs/types.ts",
+                      "size": 7453,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "ui",
+                  "type": "folder",
+                  "path": "src/features/chat/ui",
+                  "children": [
+                    {
+                      "name": "file-context",
+                      "type": "folder",
+                      "path": "src/features/chat/ui/file-context",
+                      "children": [
+                        {
+                          "name": "state",
+                          "type": "folder",
+                          "path": "src/features/chat/ui/file-context/state",
+                          "children": [
+                            {
+                              "name": "FileContextState.ts",
+                              "type": "file",
+                              "path": "src/features/chat/ui/file-context/state/FileContextState.ts",
+                              "size": 2885,
+                              "language": "ts"
+                            },
+                            {
+                              "name": "MarkdownFileCache.ts",
+                              "type": "file",
+                              "path": "src/features/chat/ui/file-context/state/MarkdownFileCache.ts",
+                              "size": 970,
+                              "language": "ts"
+                            },
+                            {
+                              "name": "VaultFolderCache.ts",
+                              "type": "file",
+                              "path": "src/features/chat/ui/file-context/state/VaultFolderCache.ts",
+                              "size": 1540,
+                              "language": "ts"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "view",
+                          "type": "folder",
+                          "path": "src/features/chat/ui/file-context/view",
+                          "children": [
+                            {
+                              "name": "FileChipsView.ts",
+                              "type": "file",
+                              "path": "src/features/chat/ui/file-context/view/FileChipsView.ts",
+                              "size": 2070,
+                              "language": "ts"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "BangBashModeManager.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/BangBashModeManager.ts",
+                      "size": 2889,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "FileContext.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/FileContext.ts",
+                      "size": 11493,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "ImageContext.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/ImageContext.ts",
+                      "size": 10841,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/index.ts",
+                      "size": 766,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "InputToolbar.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/InputToolbar.ts",
+                      "size": 30809,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "InstructionModeManager.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/InstructionModeManager.ts",
+                      "size": 4453,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "NavigationSidebar.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/NavigationSidebar.ts",
+                      "size": 3805,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "StatusPanel.ts",
+                      "type": "file",
+                      "path": "src/features/chat/ui/StatusPanel.ts",
+                      "size": 26537,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "CLAUDE.md",
+                  "type": "file",
+                  "path": "src/features/chat/CLAUDE.md",
+                  "size": 6742,
+                  "language": "md"
+                },
+                {
+                  "name": "ClaudianView.ts",
+                  "type": "file",
+                  "path": "src/features/chat/ClaudianView.ts",
+                  "size": 21930,
+                  "language": "ts"
+                },
+                {
+                  "name": "constants.ts",
+                  "type": "file",
+                  "path": "src/features/chat/constants.ts",
+                  "size": 3804,
+                  "language": "ts"
+                },
+                {
+                  "name": "rewind.ts",
+                  "type": "file",
+                  "path": "src/features/chat/rewind.ts",
+                  "size": 970,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "inline-edit",
+              "type": "folder",
+              "path": "src/features/inline-edit",
+              "children": [
+                {
+                  "name": "ui",
+                  "type": "folder",
+                  "path": "src/features/inline-edit/ui",
+                  "children": [
+                    {
+                      "name": "InlineEditModal.ts",
+                      "type": "file",
+                      "path": "src/features/inline-edit/ui/InlineEditModal.ts",
+                      "size": 21862,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "InlineEditService.ts",
+                  "type": "file",
+                  "path": "src/features/inline-edit/InlineEditService.ts",
+                  "size": 11046,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "settings",
+              "type": "folder",
+              "path": "src/features/settings",
+              "children": [
+                {
+                  "name": "ui",
+                  "type": "folder",
+                  "path": "src/features/settings/ui",
+                  "children": [
+                    {
+                      "name": "AgentSettings.ts",
+                      "type": "file",
+                      "path": "src/features/settings/ui/AgentSettings.ts",
+                      "size": 12148,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "EnvSnippetManager.ts",
+                      "type": "file",
+                      "path": "src/features/settings/ui/EnvSnippetManager.ts",
+                      "size": 11251,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "McpServerModal.ts",
+                      "type": "file",
+                      "path": "src/features/settings/ui/McpServerModal.ts",
+                      "size": 10365,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "McpSettingsManager.ts",
+                      "type": "file",
+                      "path": "src/features/settings/ui/McpSettingsManager.ts",
+                      "size": 12901,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "McpTestModal.ts",
+                      "type": "file",
+                      "path": "src/features/settings/ui/McpTestModal.ts",
+                      "size": 10874,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "PluginSettingsManager.ts",
+                      "type": "file",
+                      "path": "src/features/settings/ui/PluginSettingsManager.ts",
+                      "size": 4591,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SlashCommandSettings.ts",
+                      "type": "file",
+                      "path": "src/features/settings/ui/SlashCommandSettings.ts",
+                      "size": 15118,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "ClaudianSettings.ts",
+                  "type": "file",
+                  "path": "src/features/settings/ClaudianSettings.ts",
+                  "size": 29395,
+                  "language": "ts"
+                },
+                {
+                  "name": "keyboardNavigation.ts",
+                  "type": "file",
+                  "path": "src/features/settings/keyboardNavigation.ts",
+                  "size": 1785,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "i18n",
+          "type": "folder",
+          "path": "src/i18n",
+          "children": [
+            {
+              "name": "locales",
+              "type": "folder",
+              "path": "src/i18n/locales",
+              "children": [
+                {
+                  "name": "de.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/de.json",
+                  "size": 13070,
+                  "language": "json"
+                },
+                {
+                  "name": "en.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/en.json",
+                  "size": 11877,
+                  "language": "json"
+                },
+                {
+                  "name": "es.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/es.json",
+                  "size": 13022,
+                  "language": "json"
+                },
+                {
+                  "name": "fr.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/fr.json",
+                  "size": 13284,
+                  "language": "json"
+                },
+                {
+                  "name": "ja.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/ja.json",
+                  "size": 14258,
+                  "language": "json"
+                },
+                {
+                  "name": "ko.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/ko.json",
+                  "size": 13138,
+                  "language": "json"
+                },
+                {
+                  "name": "pt.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/pt.json",
+                  "size": 12755,
+                  "language": "json"
+                },
+                {
+                  "name": "ru.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/ru.json",
+                  "size": 17340,
+                  "language": "json"
+                },
+                {
+                  "name": "zh-CN.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/zh-CN.json",
+                  "size": 11752,
+                  "language": "json"
+                },
+                {
+                  "name": "zh-TW.json",
+                  "type": "file",
+                  "path": "src/i18n/locales/zh-TW.json",
+                  "size": 11797,
+                  "language": "json"
+                }
+              ]
+            },
+            {
+              "name": "constants.ts",
+              "type": "file",
+              "path": "src/i18n/constants.ts",
+              "size": 1899,
+              "language": "ts"
+            },
+            {
+              "name": "i18n.ts",
+              "type": "file",
+              "path": "src/i18n/i18n.ts",
+              "size": 3080,
+              "language": "ts"
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/i18n/index.ts",
+              "size": 380,
+              "language": "ts"
+            },
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "src/i18n/types.ts",
+              "size": 7530,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "shared",
+          "type": "folder",
+          "path": "src/shared",
+          "children": [
+            {
+              "name": "components",
+              "type": "folder",
+              "path": "src/shared/components",
+              "children": [
+                {
+                  "name": "ResumeSessionDropdown.ts",
+                  "type": "file",
+                  "path": "src/shared/components/ResumeSessionDropdown.ts",
+                  "size": 5626,
+                  "language": "ts"
+                },
+                {
+                  "name": "SelectableDropdown.ts",
+                  "type": "file",
+                  "path": "src/shared/components/SelectableDropdown.ts",
+                  "size": 3757,
+                  "language": "ts"
+                },
+                {
+                  "name": "SelectionHighlight.ts",
+                  "type": "file",
+                  "path": "src/shared/components/SelectionHighlight.ts",
+                  "size": 2437,
+                  "language": "ts"
+                },
+                {
+                  "name": "SlashCommandDropdown.ts",
+                  "type": "file",
+                  "path": "src/shared/components/SlashCommandDropdown.ts",
+                  "size": 11349,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "mention",
+              "type": "folder",
+              "path": "src/shared/mention",
+              "children": [
+                {
+                  "name": "MentionDropdownController.ts",
+                  "type": "file",
+                  "path": "src/shared/mention/MentionDropdownController.ts",
+                  "size": 22657,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/shared/mention/types.ts",
+                  "size": 1767,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "modals",
+              "type": "folder",
+              "path": "src/shared/modals",
+              "children": [
+                {
+                  "name": "ConfirmModal.ts",
+                  "type": "file",
+                  "path": "src/shared/modals/ConfirmModal.ts",
+                  "size": 1550,
+                  "language": "ts"
+                },
+                {
+                  "name": "ForkTargetModal.ts",
+                  "type": "file",
+                  "path": "src/shared/modals/ForkTargetModal.ts",
+                  "size": 1308,
+                  "language": "ts"
+                },
+                {
+                  "name": "InstructionConfirmModal.ts",
+                  "type": "file",
+                  "path": "src/shared/modals/InstructionConfirmModal.ts",
+                  "size": 9670,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "icons.ts",
+              "type": "file",
+              "path": "src/shared/icons.ts",
+              "size": 1228,
+              "language": "ts"
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/shared/index.ts",
+              "size": 795,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "style",
+          "type": "folder",
+          "path": "src/style",
+          "children": [
+            {
+              "name": "base",
+              "type": "folder",
+              "path": "src/style/base",
+              "children": [
+                {
+                  "name": "animations.css",
+                  "type": "file",
+                  "path": "src/style/base/animations.css",
+                  "size": 616,
+                  "language": "css"
+                },
+                {
+                  "name": "container.css",
+                  "type": "file",
+                  "path": "src/style/base/container.css",
+                  "size": 117,
+                  "language": "css"
+                },
+                {
+                  "name": "variables.css",
+                  "type": "file",
+                  "path": "src/style/base/variables.css",
+                  "size": 224,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "components",
+              "type": "folder",
+              "path": "src/style/components",
+              "children": [
+                {
+                  "name": "code.css",
+                  "type": "file",
+                  "path": "src/style/components/code.css",
+                  "size": 2406,
+                  "language": "css"
+                },
+                {
+                  "name": "context-footer.css",
+                  "type": "file",
+                  "path": "src/style/components/context-footer.css",
+                  "size": 1563,
+                  "language": "css"
+                },
+                {
+                  "name": "header.css",
+                  "type": "file",
+                  "path": "src/style/components/header.css",
+                  "size": 1414,
+                  "language": "css"
+                },
+                {
+                  "name": "history.css",
+                  "type": "file",
+                  "path": "src/style/components/history.css",
+                  "size": 3806,
+                  "language": "css"
+                },
+                {
+                  "name": "input.css",
+                  "type": "file",
+                  "path": "src/style/components/input.css",
+                  "size": 4732,
+                  "language": "css"
+                },
+                {
+                  "name": "messages.css",
+                  "type": "file",
+                  "path": "src/style/components/messages.css",
+                  "size": 5001,
+                  "language": "css"
+                },
+                {
+                  "name": "nav-sidebar.css",
+                  "type": "file",
+                  "path": "src/style/components/nav-sidebar.css",
+                  "size": 1161,
+                  "language": "css"
+                },
+                {
+                  "name": "status-panel.css",
+                  "type": "file",
+                  "path": "src/style/components/status-panel.css",
+                  "size": 5088,
+                  "language": "css"
+                },
+                {
+                  "name": "subagent.css",
+                  "type": "file",
+                  "path": "src/style/components/subagent.css",
+                  "size": 4717,
+                  "language": "css"
+                },
+                {
+                  "name": "tabs.css",
+                  "type": "file",
+                  "path": "src/style/components/tabs.css",
+                  "size": 1329,
+                  "language": "css"
+                },
+                {
+                  "name": "thinking.css",
+                  "type": "file",
+                  "path": "src/style/components/thinking.css",
+                  "size": 1671,
+                  "language": "css"
+                },
+                {
+                  "name": "toolcalls.css",
+                  "type": "file",
+                  "path": "src/style/components/toolcalls.css",
+                  "size": 4346,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "features",
+              "type": "folder",
+              "path": "src/style/features",
+              "children": [
+                {
+                  "name": "ask-user-question.css",
+                  "type": "file",
+                  "path": "src/style/features/ask-user-question.css",
+                  "size": 6340,
+                  "language": "css"
+                },
+                {
+                  "name": "diff.css",
+                  "type": "file",
+                  "path": "src/style/features/diff.css",
+                  "size": 3696,
+                  "language": "css"
+                },
+                {
+                  "name": "file-context.css",
+                  "type": "file",
+                  "path": "src/style/features/file-context.css",
+                  "size": 3820,
+                  "language": "css"
+                },
+                {
+                  "name": "file-link.css",
+                  "type": "file",
+                  "path": "src/style/features/file-link.css",
+                  "size": 467,
+                  "language": "css"
+                },
+                {
+                  "name": "image-context.css",
+                  "type": "file",
+                  "path": "src/style/features/image-context.css",
+                  "size": 3470,
+                  "language": "css"
+                },
+                {
+                  "name": "image-embed.css",
+                  "type": "file",
+                  "path": "src/style/features/image-embed.css",
+                  "size": 911,
+                  "language": "css"
+                },
+                {
+                  "name": "image-modal.css",
+                  "type": "file",
+                  "path": "src/style/features/image-modal.css",
+                  "size": 1065,
+                  "language": "css"
+                },
+                {
+                  "name": "inline-edit.css",
+                  "type": "file",
+                  "path": "src/style/features/inline-edit.css",
+                  "size": 3443,
+                  "language": "css"
+                },
+                {
+                  "name": "plan-mode.css",
+                  "type": "file",
+                  "path": "src/style/features/plan-mode.css",
+                  "size": 2270,
+                  "language": "css"
+                },
+                {
+                  "name": "resume-session.css",
+                  "type": "file",
+                  "path": "src/style/features/resume-session.css",
+                  "size": 2378,
+                  "language": "css"
+                },
+                {
+                  "name": "slash-commands.css",
+                  "type": "file",
+                  "path": "src/style/features/slash-commands.css",
+                  "size": 1745,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "modals",
+              "type": "folder",
+              "path": "src/style/modals",
+              "children": [
+                {
+                  "name": "fork-target.css",
+                  "type": "file",
+                  "path": "src/style/modals/fork-target.css",
+                  "size": 384,
+                  "language": "css"
+                },
+                {
+                  "name": "instruction.css",
+                  "type": "file",
+                  "path": "src/style/modals/instruction.css",
+                  "size": 3438,
+                  "language": "css"
+                },
+                {
+                  "name": "mcp-modal.css",
+                  "type": "file",
+                  "path": "src/style/modals/mcp-modal.css",
+                  "size": 4422,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "settings",
+              "type": "folder",
+              "path": "src/style/settings",
+              "children": [
+                {
+                  "name": "agent-settings.css",
+                  "type": "file",
+                  "path": "src/style/settings/agent-settings.css",
+                  "size": 156,
+                  "language": "css"
+                },
+                {
+                  "name": "base.css",
+                  "type": "file",
+                  "path": "src/style/settings/base.css",
+                  "size": 4578,
+                  "language": "css"
+                },
+                {
+                  "name": "env-snippets.css",
+                  "type": "file",
+                  "path": "src/style/settings/env-snippets.css",
+                  "size": 6596,
+                  "language": "css"
+                },
+                {
+                  "name": "mcp-settings.css",
+                  "type": "file",
+                  "path": "src/style/settings/mcp-settings.css",
+                  "size": 3789,
+                  "language": "css"
+                },
+                {
+                  "name": "plugin-settings.css",
+                  "type": "file",
+                  "path": "src/style/settings/plugin-settings.css",
+                  "size": 2908,
+                  "language": "css"
+                },
+                {
+                  "name": "slash-settings.css",
+                  "type": "file",
+                  "path": "src/style/settings/slash-settings.css",
+                  "size": 393,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "toolbar",
+              "type": "folder",
+              "path": "src/style/toolbar",
+              "children": [
+                {
+                  "name": "external-context.css",
+                  "type": "file",
+                  "path": "src/style/toolbar/external-context.css",
+                  "size": 3613,
+                  "language": "css"
+                },
+                {
+                  "name": "mcp-selector.css",
+                  "type": "file",
+                  "path": "src/style/toolbar/mcp-selector.css",
+                  "size": 3620,
+                  "language": "css"
+                },
+                {
+                  "name": "model-selector.css",
+                  "type": "file",
+                  "path": "src/style/toolbar/model-selector.css",
+                  "size": 1562,
+                  "language": "css"
+                },
+                {
+                  "name": "permission-toggle.css",
+                  "type": "file",
+                  "path": "src/style/toolbar/permission-toggle.css",
+                  "size": 1117,
+                  "language": "css"
+                },
+                {
+                  "name": "thinking-selector.css",
+                  "type": "file",
+                  "path": "src/style/toolbar/thinking-selector.css",
+                  "size": 1622,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "accessibility.css",
+              "type": "file",
+              "path": "src/style/accessibility.css",
+              "size": 1300,
+              "language": "css"
+            },
+            {
+              "name": "CLAUDE.md",
+              "type": "file",
+              "path": "src/style/CLAUDE.md",
+              "size": 2423,
+              "language": "md"
+            },
+            {
+              "name": "index.css",
+              "type": "file",
+              "path": "src/style/index.css",
+              "size": 1781,
+              "language": "css"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "agent.ts",
+              "type": "file",
+              "path": "src/utils/agent.ts",
+              "size": 1384,
+              "language": "ts"
+            },
+            {
+              "name": "canvas.ts",
+              "type": "file",
+              "path": "src/utils/canvas.ts",
+              "size": 535,
+              "language": "ts"
+            },
+            {
+              "name": "claudeCli.ts",
+              "type": "file",
+              "path": "src/utils/claudeCli.ts",
+              "size": 3131,
+              "language": "ts"
+            },
+            {
+              "name": "context.ts",
+              "type": "file",
+              "path": "src/utils/context.ts",
+              "size": 3469,
+              "language": "ts"
+            },
+            {
+              "name": "date.ts",
+              "type": "file",
+              "path": "src/utils/date.ts",
+              "size": 797,
+              "language": "ts"
+            },
+            {
+              "name": "diff.ts",
+              "type": "file",
+              "path": "src/utils/diff.ts",
+              "size": 3729,
+              "language": "ts"
+            },
+            {
+              "name": "editor.ts",
+              "type": "file",
+              "path": "src/utils/editor.ts",
+              "size": 3417,
+              "language": "ts"
+            },
+            {
+              "name": "env.ts",
+              "type": "file",
+              "path": "src/utils/env.ts",
+              "size": 14421,
+              "language": "ts"
+            },
+            {
+              "name": "externalContext.ts",
+              "type": "file",
+              "path": "src/utils/externalContext.ts",
+              "size": 2687,
+              "language": "ts"
+            },
+            {
+              "name": "externalContextScanner.ts",
+              "type": "file",
+              "path": "src/utils/externalContextScanner.ts",
+              "size": 3275,
+              "language": "ts"
+            },
+            {
+              "name": "fileLink.ts",
+              "type": "file",
+              "path": "src/utils/fileLink.ts",
+              "size": 6424,
+              "language": "ts"
+            },
+            {
+              "name": "frontmatter.ts",
+              "type": "file",
+              "path": "src/utils/frontmatter.ts",
+              "size": 4042,
+              "language": "ts"
+            },
+            {
+              "name": "imageEmbed.ts",
+              "type": "file",
+              "path": "src/utils/imageEmbed.ts",
+              "size": 2962,
+              "language": "ts"
+            },
+            {
+              "name": "inlineEdit.ts",
+              "type": "file",
+              "path": "src/utils/inlineEdit.ts",
+              "size": 611,
+              "language": "ts"
+            },
+            {
+              "name": "interrupt.ts",
+              "type": "file",
+              "path": "src/utils/interrupt.ts",
+              "size": 722,
+              "language": "ts"
+            },
+            {
+              "name": "markdown.ts",
+              "type": "file",
+              "path": "src/utils/markdown.ts",
+              "size": 592,
+              "language": "ts"
+            },
+            {
+              "name": "mcp.ts",
+              "type": "file",
+              "path": "src/utils/mcp.ts",
+              "size": 2629,
+              "language": "ts"
+            },
+            {
+              "name": "path.ts",
+              "type": "file",
+              "path": "src/utils/path.ts",
+              "size": 20129,
+              "language": "ts"
+            },
+            {
+              "name": "sdkSession.ts",
+              "type": "file",
+              "path": "src/utils/sdkSession.ts",
+              "size": 36717,
+              "language": "ts"
+            },
+            {
+              "name": "session.ts",
+              "type": "file",
+              "path": "src/utils/session.ts",
+              "size": 7045,
+              "language": "ts"
+            },
+            {
+              "name": "slashCommand.ts",
+              "type": "file",
+              "path": "src/utils/slashCommand.ts",
+              "size": 4865,
+              "language": "ts"
+            },
+            {
+              "name": "subagentJsonl.ts",
+              "type": "file",
+              "path": "src/utils/subagentJsonl.ts",
+              "size": 1441,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "main.ts",
+          "type": "file",
+          "path": "src/main.ts",
+          "size": 38378,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__mocks__",
+          "type": "folder",
+          "path": "tests/__mocks__",
+          "children": [
+            {
+              "name": "claude-agent-sdk.ts",
+              "type": "file",
+              "path": "tests/__mocks__/claude-agent-sdk.ts",
+              "size": 9624,
+              "language": "ts"
+            },
+            {
+              "name": "obsidian.ts",
+              "type": "file",
+              "path": "tests/__mocks__/obsidian.ts",
+              "size": 8419,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "helpers",
+          "type": "folder",
+          "path": "tests/helpers",
+          "children": [
+            {
+              "name": "mockElement.ts",
+              "type": "file",
+              "path": "tests/helpers/mockElement.ts",
+              "size": 7842,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "integration",
+          "type": "folder",
+          "path": "tests/integration",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "tests/integration/core",
+              "children": [
+                {
+                  "name": "agent",
+                  "type": "folder",
+                  "path": "tests/integration/core/agent",
+                  "children": [
+                    {
+                      "name": "ClaudianService.test.ts",
+                      "type": "file",
+                      "path": "tests/integration/core/agent/ClaudianService.test.ts",
+                      "size": 89716,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "mcp",
+                  "type": "folder",
+                  "path": "tests/integration/core/mcp",
+                  "children": [
+                    {
+                      "name": "mcp.test.ts",
+                      "type": "file",
+                      "path": "tests/integration/core/mcp/mcp.test.ts",
+                      "size": 30356,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "features",
+              "type": "folder",
+              "path": "tests/integration/features",
+              "children": [
+                {
+                  "name": "chat",
+                  "type": "folder",
+                  "path": "tests/integration/features/chat",
+                  "children": [
+                    {
+                      "name": "imagePersistence.test.ts",
+                      "type": "file",
+                      "path": "tests/integration/features/chat/imagePersistence.test.ts",
+                      "size": 987,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "main.test.ts",
+              "type": "file",
+              "path": "tests/integration/main.test.ts",
+              "size": 41557,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "unit",
+          "type": "folder",
+          "path": "tests/unit",
+          "children": [
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "tests/unit/core",
+              "children": [
+                {
+                  "name": "agent",
+                  "type": "folder",
+                  "path": "tests/unit/core/agent",
+                  "children": [
+                    {
+                      "name": "ClaudianService.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agent/ClaudianService.test.ts",
+                      "size": 116419,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "customSpawn.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agent/customSpawn.test.ts",
+                      "size": 4946,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agent/index.test.ts",
+                      "size": 367,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "MessageChannel.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agent/MessageChannel.test.ts",
+                      "size": 13876,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "QueryOptionsBuilder.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agent/QueryOptionsBuilder.test.ts",
+                      "size": 23972,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SessionManager.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agent/SessionManager.test.ts",
+                      "size": 6072,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "types.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agent/types.test.ts",
+                      "size": 6431,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "agents",
+                  "type": "folder",
+                  "path": "tests/unit/core/agents",
+                  "children": [
+                    {
+                      "name": "AgentManager.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agents/AgentManager.test.ts",
+                      "size": 21070,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "AgentStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agents/AgentStorage.test.ts",
+                      "size": 11724,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/agents/index.test.ts",
+                      "size": 349,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "commands",
+                  "type": "folder",
+                  "path": "tests/unit/core/commands",
+                  "children": [
+                    {
+                      "name": "builtInCommands.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/commands/builtInCommands.test.ts",
+                      "size": 5564,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "hooks",
+                  "type": "folder",
+                  "path": "tests/unit/core/hooks",
+                  "children": [
+                    {
+                      "name": "SecurityHooks.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/hooks/SecurityHooks.test.ts",
+                      "size": 15504,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "mcp",
+                  "type": "folder",
+                  "path": "tests/unit/core/mcp",
+                  "children": [
+                    {
+                      "name": "McpServerManager.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/mcp/McpServerManager.test.ts",
+                      "size": 12567,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "McpTester.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/mcp/McpTester.test.ts",
+                      "size": 9177,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "plugins",
+                  "type": "folder",
+                  "path": "tests/unit/core/plugins",
+                  "children": [
+                    {
+                      "name": "index.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/plugins/index.test.ts",
+                      "size": 183,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "PluginManager.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/plugins/PluginManager.test.ts",
+                      "size": 26279,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "prompts",
+                  "type": "folder",
+                  "path": "tests/unit/core/prompts",
+                  "children": [
+                    {
+                      "name": "instructionRefine.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/prompts/instructionRefine.test.ts",
+                      "size": 6539,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "systemPrompt.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/prompts/systemPrompt.test.ts",
+                      "size": 5822,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "titleGeneration.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/prompts/titleGeneration.test.ts",
+                      "size": 730,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "sdk",
+                  "type": "folder",
+                  "path": "tests/unit/core/sdk",
+                  "children": [
+                    {
+                      "name": "transformSDKMessage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/sdk/transformSDKMessage.test.ts",
+                      "size": 25003,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "typeGuards.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/sdk/typeGuards.test.ts",
+                      "size": 2152,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "security",
+                  "type": "folder",
+                  "path": "tests/unit/core/security",
+                  "children": [
+                    {
+                      "name": "ApprovalManager.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/security/ApprovalManager.test.ts",
+                      "size": 13265,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "BashPathValidator.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/security/BashPathValidator.test.ts",
+                      "size": 28914,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "BlocklistChecker.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/security/BlocklistChecker.test.ts",
+                      "size": 6184,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "storage",
+                  "type": "folder",
+                  "path": "tests/unit/core/storage",
+                  "children": [
+                    {
+                      "name": "AgentVaultStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/AgentVaultStorage.test.ts",
+                      "size": 12123,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "CCSettingsStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/CCSettingsStorage.test.ts",
+                      "size": 17363,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "ClaudianSettingsStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/ClaudianSettingsStorage.test.ts",
+                      "size": 12488,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "McpStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/McpStorage.test.ts",
+                      "size": 18886,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "migrationConstants.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/migrationConstants.test.ts",
+                      "size": 15524,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SessionStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/SessionStorage.test.ts",
+                      "size": 38910,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SkillStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/SkillStorage.test.ts",
+                      "size": 8869,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SlashCommandStorage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/SlashCommandStorage.test.ts",
+                      "size": 19858,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "storage.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/storage.test.ts",
+                      "size": 11398,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "storageService.convenience.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/storageService.convenience.test.ts",
+                      "size": 17359,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "storageService.migration.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/storageService.migration.test.ts",
+                      "size": 16761,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "VaultFileAdapter.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/storage/VaultFileAdapter.test.ts",
+                      "size": 17858,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "tools",
+                  "type": "folder",
+                  "path": "tests/unit/core/tools",
+                  "children": [
+                    {
+                      "name": "todo.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/tools/todo.test.ts",
+                      "size": 6064,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "toolIcons.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/tools/toolIcons.test.ts",
+                      "size": 2122,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "toolInput.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/tools/toolInput.test.ts",
+                      "size": 9566,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "toolNames.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/tools/toolNames.test.ts",
+                      "size": 11430,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "types",
+                  "type": "folder",
+                  "path": "tests/unit/core/types",
+                  "children": [
+                    {
+                      "name": "mcp.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/types/mcp.test.ts",
+                      "size": 3735,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "types.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/core/types/types.test.ts",
+                      "size": 30560,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "features",
+              "type": "folder",
+              "path": "tests/unit/features",
+              "children": [
+                {
+                  "name": "chat",
+                  "type": "folder",
+                  "path": "tests/unit/features/chat",
+                  "children": [
+                    {
+                      "name": "controllers",
+                      "type": "folder",
+                      "path": "tests/unit/features/chat/controllers",
+                      "children": [
+                        {
+                          "name": "CanvasSelectionController.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/controllers/CanvasSelectionController.test.ts",
+                          "size": 6096,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "ConversationController.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/controllers/ConversationController.test.ts",
+                          "size": 80087,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "index.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/controllers/index.test.ts",
+                          "size": 498,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "InputController.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/controllers/InputController.test.ts",
+                          "size": 77581,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "NavigationController.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/controllers/NavigationController.test.ts",
+                          "size": 20059,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "SelectionController.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/controllers/SelectionController.test.ts",
+                          "size": 3784,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "StreamController.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/controllers/StreamController.test.ts",
+                          "size": 70425,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "rendering",
+                      "type": "folder",
+                      "path": "tests/unit/features/chat/rendering",
+                      "children": [
+                        {
+                          "name": "collapsible.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/collapsible.test.ts",
+                          "size": 5356,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "DiffRenderer.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/DiffRenderer.test.ts",
+                          "size": 14363,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "InlineAskUserQuestion.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/InlineAskUserQuestion.test.ts",
+                          "size": 24360,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "InlineExitPlanMode.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/InlineExitPlanMode.test.ts",
+                          "size": 5265,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "MessageRenderer.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/MessageRenderer.test.ts",
+                          "size": 54089,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "SubagentRenderer.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/SubagentRenderer.test.ts",
+                          "size": 30634,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "ThinkingBlockRenderer.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/ThinkingBlockRenderer.test.ts",
+                          "size": 3818,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "TodoListRenderer.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/TodoListRenderer.test.ts",
+                          "size": 5148,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "todoUtils.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/todoUtils.test.ts",
+                          "size": 3590,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "ToolCallRenderer.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/ToolCallRenderer.test.ts",
+                          "size": 15384,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "WriteEditRenderer.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/rendering/WriteEditRenderer.test.ts",
+                          "size": 13191,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "services",
+                      "type": "folder",
+                      "path": "tests/unit/features/chat/services",
+                      "children": [
+                        {
+                          "name": "BangBashService.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/services/BangBashService.test.ts",
+                          "size": 4624,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "InstructionRefineService.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/services/InstructionRefineService.test.ts",
+                          "size": 11208,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "SubagentManager.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/services/SubagentManager.test.ts",
+                          "size": 51192,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "TitleGenerationService.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/services/TitleGenerationService.test.ts",
+                          "size": 14261,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "state",
+                      "type": "folder",
+                      "path": "tests/unit/features/chat/state",
+                      "children": [
+                        {
+                          "name": "ChatState.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/state/ChatState.test.ts",
+                          "size": 19715,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "tabs",
+                      "type": "folder",
+                      "path": "tests/unit/features/chat/tabs",
+                      "children": [
+                        {
+                          "name": "index.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/tabs/index.test.ts",
+                          "size": 277,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "Tab.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/tabs/Tab.test.ts",
+                          "size": 93139,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "TabBar.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/tabs/TabBar.test.ts",
+                          "size": 8674,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "TabManager.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/tabs/TabManager.test.ts",
+                          "size": 54288,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ui",
+                      "type": "folder",
+                      "path": "tests/unit/features/chat/ui",
+                      "children": [
+                        {
+                          "name": "file-context",
+                          "type": "folder",
+                          "path": "tests/unit/features/chat/ui/file-context",
+                          "children": [
+                            {
+                              "name": "state",
+                              "type": "folder",
+                              "path": "tests/unit/features/chat/ui/file-context/state",
+                              "children": [
+                                {
+                                  "name": "FileContextState.test.ts",
+                                  "type": "file",
+                                  "path": "tests/unit/features/chat/ui/file-context/state/FileContextState.test.ts",
+                                  "size": 6940,
+                                  "language": "ts"
+                                },
+                                {
+                                  "name": "MarkdownFileCache.test.ts",
+                                  "type": "file",
+                                  "path": "tests/unit/features/chat/ui/file-context/state/MarkdownFileCache.test.ts",
+                                  "size": 4967,
+                                  "language": "ts"
+                                },
+                                {
+                                  "name": "VaultFolderCache.test.ts",
+                                  "type": "file",
+                                  "path": "tests/unit/features/chat/ui/file-context/state/VaultFolderCache.test.ts",
+                                  "size": 4259,
+                                  "language": "ts"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "BangBashModeManager.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/BangBashModeManager.test.ts",
+                          "size": 10598,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "ExternalContextSelector.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/ExternalContextSelector.test.ts",
+                          "size": 18234,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "FileContextManager.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/FileContextManager.test.ts",
+                          "size": 24719,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "ImageContext.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/ImageContext.test.ts",
+                          "size": 26348,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "InputToolbar.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/InputToolbar.test.ts",
+                          "size": 24316,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "InstructionModeManager.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/InstructionModeManager.test.ts",
+                          "size": 8110,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "NavigationSidebar.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/NavigationSidebar.test.ts",
+                          "size": 15662,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "StatusPanel.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/chat/ui/StatusPanel.test.ts",
+                          "size": 40622,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "rewind.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/features/chat/rewind.test.ts",
+                      "size": 2607,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "inline-edit",
+                  "type": "folder",
+                  "path": "tests/unit/features/inline-edit",
+                  "children": [
+                    {
+                      "name": "ui",
+                      "type": "folder",
+                      "path": "tests/unit/features/inline-edit/ui",
+                      "children": [
+                        {
+                          "name": "InlineEditModal.openAndWait.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/inline-edit/ui/InlineEditModal.openAndWait.test.ts",
+                          "size": 5319,
+                          "language": "ts"
+                        },
+                        {
+                          "name": "InlineEditModal.test.ts",
+                          "type": "file",
+                          "path": "tests/unit/features/inline-edit/ui/InlineEditModal.test.ts",
+                          "size": 15348,
+                          "language": "ts"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "InlineEditService.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/features/inline-edit/InlineEditService.test.ts",
+                      "size": 44562,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "settings",
+                  "type": "folder",
+                  "path": "tests/unit/features/settings",
+                  "children": [
+                    {
+                      "name": "AgentSettings.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/features/settings/AgentSettings.test.ts",
+                      "size": 2688,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "keyboardNavigation.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/features/settings/keyboardNavigation.test.ts",
+                      "size": 2368,
+                      "language": "ts"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "i18n",
+              "type": "folder",
+              "path": "tests/unit/i18n",
+              "children": [
+                {
+                  "name": "constants.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/i18n/constants.test.ts",
+                  "size": 1449,
+                  "language": "ts"
+                },
+                {
+                  "name": "i18n.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/i18n/i18n.test.ts",
+                  "size": 7615,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "shared",
+              "type": "folder",
+              "path": "tests/unit/shared",
+              "children": [
+                {
+                  "name": "components",
+                  "type": "folder",
+                  "path": "tests/unit/shared/components",
+                  "children": [
+                    {
+                      "name": "ResumeSessionDropdown.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/components/ResumeSessionDropdown.test.ts",
+                      "size": 10845,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SelectableDropdown.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/components/SelectableDropdown.test.ts",
+                      "size": 11572,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "SlashCommandDropdown.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/components/SlashCommandDropdown.test.ts",
+                      "size": 20155,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "mention",
+                  "type": "folder",
+                  "path": "tests/unit/shared/mention",
+                  "children": [
+                    {
+                      "name": "MentionDropdownController.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/mention/MentionDropdownController.test.ts",
+                      "size": 24193,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "types.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/mention/types.test.ts",
+                      "size": 1346,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "modals",
+                  "type": "folder",
+                  "path": "tests/unit/shared/modals",
+                  "children": [
+                    {
+                      "name": "ConfirmModal.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/modals/ConfirmModal.test.ts",
+                      "size": 2568,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "ForkTargetModal.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/modals/ForkTargetModal.test.ts",
+                      "size": 2584,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "InstructionConfirmModal.test.ts",
+                      "type": "file",
+                      "path": "tests/unit/shared/modals/InstructionConfirmModal.test.ts",
+                      "size": 10334,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/shared/index.test.ts",
+                  "size": 1427,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "folder",
+              "path": "tests/unit/utils",
+              "children": [
+                {
+                  "name": "agent.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/agent.test.ts",
+                  "size": 11953,
+                  "language": "ts"
+                },
+                {
+                  "name": "canvas.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/canvas.test.ts",
+                  "size": 1874,
+                  "language": "ts"
+                },
+                {
+                  "name": "claudeCli.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/claudeCli.test.ts",
+                  "size": 8960,
+                  "language": "ts"
+                },
+                {
+                  "name": "context.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/context.test.ts",
+                  "size": 9872,
+                  "language": "ts"
+                },
+                {
+                  "name": "date.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/date.test.ts",
+                  "size": 2637,
+                  "language": "ts"
+                },
+                {
+                  "name": "diff.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/diff.test.ts",
+                  "size": 5595,
+                  "language": "ts"
+                },
+                {
+                  "name": "editor.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/editor.test.ts",
+                  "size": 8116,
+                  "language": "ts"
+                },
+                {
+                  "name": "env.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/env.test.ts",
+                  "size": 41932,
+                  "language": "ts"
+                },
+                {
+                  "name": "externalContext.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/externalContext.test.ts",
+                  "size": 12591,
+                  "language": "ts"
+                },
+                {
+                  "name": "externalContextScanner.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/externalContextScanner.test.ts",
+                  "size": 6567,
+                  "language": "ts"
+                },
+                {
+                  "name": "fileLink.dom.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/fileLink.dom.test.ts",
+                  "size": 8824,
+                  "language": "ts"
+                },
+                {
+                  "name": "fileLink.handler.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/fileLink.handler.test.ts",
+                  "size": 1656,
+                  "language": "ts"
+                },
+                {
+                  "name": "fileLink.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/fileLink.test.ts",
+                  "size": 7928,
+                  "language": "ts"
+                },
+                {
+                  "name": "frontmatter.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/frontmatter.test.ts",
+                  "size": 11606,
+                  "language": "ts"
+                },
+                {
+                  "name": "imageEmbed.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/imageEmbed.test.ts",
+                  "size": 13128,
+                  "language": "ts"
+                },
+                {
+                  "name": "inlineEdit.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/inlineEdit.test.ts",
+                  "size": 1823,
+                  "language": "ts"
+                },
+                {
+                  "name": "interrupt.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/interrupt.test.ts",
+                  "size": 2752,
+                  "language": "ts"
+                },
+                {
+                  "name": "markdown.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/markdown.test.ts",
+                  "size": 1308,
+                  "language": "ts"
+                },
+                {
+                  "name": "mcp.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/mcp.test.ts",
+                  "size": 8743,
+                  "language": "ts"
+                },
+                {
+                  "name": "path.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/path.test.ts",
+                  "size": 22000,
+                  "language": "ts"
+                },
+                {
+                  "name": "sdkSession.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/sdkSession.test.ts",
+                  "size": 81414,
+                  "language": "ts"
+                },
+                {
+                  "name": "session.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/session.test.ts",
+                  "size": 31696,
+                  "language": "ts"
+                },
+                {
+                  "name": "slashCommand.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/slashCommand.test.ts",
+                  "size": 22442,
+                  "language": "ts"
+                },
+                {
+                  "name": "utils.test.ts",
+                  "type": "file",
+                  "path": "tests/unit/utils/utils.test.ts",
+                  "size": 37349,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "tests/tsconfig.json",
+          "size": 114,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": ".env.local.example",
+      "type": "file",
+      "path": ".env.local.example",
+      "size": 100,
+      "language": "example"
+    },
+    {
+      "name": ".eslintrc.cjs",
+      "type": "file",
+      "path": ".eslintrc.cjs",
+      "size": 1904,
+      "language": "cjs"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 1019,
+      "language": "text"
+    },
+    {
+      "name": ".npmrc",
+      "type": "file",
+      "path": ".npmrc",
+      "size": 38,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 66,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 4370,
+      "language": "md"
+    },
+    {
+      "name": "esbuild.config.mjs",
+      "type": "file",
+      "path": "esbuild.config.mjs",
+      "size": 2232,
+      "language": "mjs"
+    },
+    {
+      "name": "jest.config.js",
+      "type": "file",
+      "path": "jest.config.js",
+      "size": 1125,
+      "language": "js"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1055,
+      "language": "text"
+    },
+    {
+      "name": "manifest.json",
+      "type": "file",
+      "path": "manifest.json",
+      "size": 418,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1505,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 14061,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.jest.json",
+      "type": "file",
+      "path": "tsconfig.jest.json",
+      "size": 119,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 666,
+      "language": "json"
+    },
+    {
+      "name": "versions.json",
+      "type": "file",
+      "path": "versions.json",
+      "size": 43,
+      "language": "json"
+    }
+  ]
+}

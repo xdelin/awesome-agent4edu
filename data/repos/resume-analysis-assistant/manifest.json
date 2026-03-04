@@ -1,0 +1,20 @@
+{
+  "name": "Resume-Analysis-Assistant",
+  "full": true,
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 2809,
+      "language": "md"
+    },
+    {
+      "name": "resume_parser.py",
+      "type": "file",
+      "path": "resume_parser.py",
+      "size": 5764,
+      "language": "py"
+    }
+  ]
+}

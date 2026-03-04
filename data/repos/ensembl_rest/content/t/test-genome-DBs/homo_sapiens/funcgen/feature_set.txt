@@ -1,0 +1,1 @@
+620	179033	83	Segmentation:K562	segmentation	K562 Segway_18 segmentation	K562 segmentation

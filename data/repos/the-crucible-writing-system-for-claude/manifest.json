@@ -1,0 +1,1707 @@
+{
+  "name": "The-Crucible-Writing-System-For-Claude",
+  "full": true,
+  "tree": [
+    {
+      "name": ".claude-plugin",
+      "type": "folder",
+      "path": ".claude-plugin",
+      "children": [
+        {
+          "name": "marketplace.json",
+          "type": "file",
+          "path": ".claude-plugin/marketplace.json",
+          "size": 1948,
+          "language": "json"
+        },
+        {
+          "name": "plugin.json",
+          "type": "file",
+          "path": ".claude-plugin/plugin.json",
+          "size": 930,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "agents",
+      "type": "folder",
+      "path": "agents",
+      "children": [
+        {
+          "name": "continuity-checker.md",
+          "type": "file",
+          "path": "agents/continuity-checker.md",
+          "size": 5593,
+          "language": "md"
+        },
+        {
+          "name": "outline-checker.md",
+          "type": "file",
+          "path": "agents/outline-checker.md",
+          "size": 5854,
+          "language": "md"
+        },
+        {
+          "name": "prose-checker.md",
+          "type": "file",
+          "path": "agents/prose-checker.md",
+          "size": 6253,
+          "language": "md"
+        },
+        {
+          "name": "timeline-checker.md",
+          "type": "file",
+          "path": "agents/timeline-checker.md",
+          "size": 5767,
+          "language": "md"
+        },
+        {
+          "name": "voice-checker.md",
+          "type": "file",
+          "path": "agents/voice-checker.md",
+          "size": 4715,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "archive",
+      "type": "folder",
+      "path": "archive",
+      "children": [
+        {
+          "name": "crucible-writing-system (OLD)",
+          "type": "folder",
+          "path": "archive/crucible-writing-system (OLD)",
+          "children": [
+            {
+              "name": "Claude Skills",
+              "type": "folder",
+              "path": "archive/crucible-writing-system (OLD)/Claude Skills",
+              "children": [
+                {
+                  "name": "crucible-outliner.skill",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Claude Skills/crucible-outliner.skill",
+                  "size": 18028,
+                  "language": "skill"
+                },
+                {
+                  "name": "crucible-planner.skill",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Claude Skills/crucible-planner.skill",
+                  "size": 36447,
+                  "language": "skill"
+                },
+                {
+                  "name": "crucible-writer.skill",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Claude Skills/crucible-writer.skill",
+                  "size": 31831,
+                  "language": "skill"
+                }
+              ]
+            },
+            {
+              "name": "docs",
+              "type": "folder",
+              "path": "archive/crucible-writing-system (OLD)/docs",
+              "children": [
+                {
+                  "name": "framework",
+                  "type": "folder",
+                  "path": "archive/crucible-writing-system (OLD)/docs/framework",
+                  "children": [
+                    {
+                      "name": "crucible-structure.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/framework/crucible-structure.md",
+                      "size": 12504,
+                      "language": "md"
+                    },
+                    {
+                      "name": "dark-mirror.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/framework/dark-mirror.md",
+                      "size": 9472,
+                      "language": "md"
+                    },
+                    {
+                      "name": "forge-points.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/framework/forge-points.md",
+                      "size": 9742,
+                      "language": "md"
+                    },
+                    {
+                      "name": "mercy-engine.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/framework/mercy-engine.md",
+                      "size": 9621,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "guides",
+                  "type": "folder",
+                  "path": "archive/crucible-writing-system (OLD)/docs/guides",
+                  "children": [
+                    {
+                      "name": "getting-started.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/guides/getting-started.md",
+                      "size": 8237,
+                      "language": "md"
+                    },
+                    {
+                      "name": "series-planning.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/guides/series-planning.md",
+                      "size": 8591,
+                      "language": "md"
+                    },
+                    {
+                      "name": "troubleshooting.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/guides/troubleshooting.md",
+                      "size": 9009,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "skills",
+                  "type": "folder",
+                  "path": "archive/crucible-writing-system (OLD)/docs/skills",
+                  "children": [
+                    {
+                      "name": "crucible-outliner.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/skills/crucible-outliner.md",
+                      "size": 12200,
+                      "language": "md"
+                    },
+                    {
+                      "name": "crucible-planner.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/skills/crucible-planner.md",
+                      "size": 11120,
+                      "language": "md"
+                    },
+                    {
+                      "name": "crucible-writer.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/skills/crucible-writer.md",
+                      "size": 12565,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "templates",
+                  "type": "folder",
+                  "path": "archive/crucible-writing-system (OLD)/docs/templates",
+                  "children": [
+                    {
+                      "name": "outline-templates.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/templates/outline-templates.md",
+                      "size": 11006,
+                      "language": "md"
+                    },
+                    {
+                      "name": "planning-templates.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/templates/planning-templates.md",
+                      "size": 17671,
+                      "language": "md"
+                    },
+                    {
+                      "name": "story-bible-templates.md",
+                      "type": "file",
+                      "path": "archive/crucible-writing-system (OLD)/docs/templates/story-bible-templates.md",
+                      "size": 13058,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/docs/index.md",
+                  "size": 5321,
+                  "language": "md"
+                },
+                {
+                  "name": "quick-reference.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/docs/quick-reference.md",
+                  "size": 5772,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "Example Chapters",
+              "type": "folder",
+              "path": "archive/crucible-writing-system (OLD)/Example Chapters",
+              "children": [
+                {
+                  "name": "chapter-00-prelude.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Example Chapters/chapter-00-prelude.md",
+                  "size": 13521,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-00-prologue.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Example Chapters/chapter-00-prologue.md",
+                  "size": 7958,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-01.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Example Chapters/chapter-01.md",
+                  "size": 16766,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-02.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Example Chapters/chapter-02.md",
+                  "size": 25304,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-03.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Example Chapters/chapter-03.md",
+                  "size": 18494,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-04.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Example Chapters/chapter-04.md",
+                  "size": 28766,
+                  "language": "md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "archive/crucible-writing-system (OLD)/Example Chapters/README.md",
+                  "size": 1318,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "LICENSE.md",
+              "type": "file",
+              "path": "archive/crucible-writing-system (OLD)/LICENSE.md",
+              "size": 3226,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "archive/crucible-writing-system (OLD)/README.md",
+              "size": 10400,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "archive/README.md",
+          "size": 12,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "commands",
+      "type": "folder",
+      "path": "commands",
+      "children": [
+        {
+          "name": "crucible-continue.md",
+          "type": "file",
+          "path": "commands/crucible-continue.md",
+          "size": 5344,
+          "language": "md"
+        },
+        {
+          "name": "crucible-edit.md",
+          "type": "file",
+          "path": "commands/crucible-edit.md",
+          "size": 2560,
+          "language": "md"
+        },
+        {
+          "name": "crucible-outline.md",
+          "type": "file",
+          "path": "commands/crucible-outline.md",
+          "size": 2302,
+          "language": "md"
+        },
+        {
+          "name": "crucible-plan.md",
+          "type": "file",
+          "path": "commands/crucible-plan.md",
+          "size": 2080,
+          "language": "md"
+        },
+        {
+          "name": "crucible-restore.md",
+          "type": "file",
+          "path": "commands/crucible-restore.md",
+          "size": 4669,
+          "language": "md"
+        },
+        {
+          "name": "crucible-review.md",
+          "type": "file",
+          "path": "commands/crucible-review.md",
+          "size": 8401,
+          "language": "md"
+        },
+        {
+          "name": "crucible-status.md",
+          "type": "file",
+          "path": "commands/crucible-status.md",
+          "size": 3056,
+          "language": "md"
+        },
+        {
+          "name": "crucible-write.md",
+          "type": "file",
+          "path": "commands/crucible-write.md",
+          "size": 2763,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "Example Project",
+      "type": "folder",
+      "path": "Example Project",
+      "children": [
+        {
+          "name": "draft",
+          "type": "folder",
+          "path": "Example Project/draft",
+          "children": [
+            {
+              "name": "chapters",
+              "type": "folder",
+              "path": "Example Project/draft/chapters",
+              "children": [
+                {
+                  "name": "chapter-01.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-01.md",
+                  "size": 23655,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-02.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-02.md",
+                  "size": 21629,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-03.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-03.md",
+                  "size": 32842,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-04.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-04.md",
+                  "size": 26322,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-05.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-05.md",
+                  "size": 24192,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-06.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-06.md",
+                  "size": 21455,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-07.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-07.md",
+                  "size": 34399,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-08.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-08.md",
+                  "size": 28776,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-09.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-09.md",
+                  "size": 30270,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-10.md",
+                  "type": "file",
+                  "path": "Example Project/draft/chapters/chapter-10.md",
+                  "size": 33139,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "edit-report-ch1-3.md",
+              "type": "file",
+              "path": "Example Project/draft/edit-report-ch1-3.md",
+              "size": 5529,
+              "language": "md"
+            },
+            {
+              "name": "edit-report-complete.md",
+              "type": "file",
+              "path": "Example Project/draft/edit-report-complete.md",
+              "size": 6772,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "outline",
+          "type": "folder",
+          "path": "Example Project/outline",
+          "children": [
+            {
+              "name": "chapters",
+              "type": "folder",
+              "path": "Example Project/outline/chapters",
+              "children": [
+                {
+                  "name": "chapter-01.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-01.md",
+                  "size": 5827,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-02.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-02.md",
+                  "size": 6770,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-03.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-03.md",
+                  "size": 8212,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-04.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-04.md",
+                  "size": 6986,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-05.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-05.md",
+                  "size": 7537,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-06.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-06.md",
+                  "size": 7084,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-07.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-07.md",
+                  "size": 8027,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-08.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-08.md",
+                  "size": 7945,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-09.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-09.md",
+                  "size": 8597,
+                  "language": "md"
+                },
+                {
+                  "name": "chapter-10.md",
+                  "type": "file",
+                  "path": "Example Project/outline/chapters/chapter-10.md",
+                  "size": 10158,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "foreshadowing-tracker.md",
+              "type": "file",
+              "path": "Example Project/outline/foreshadowing-tracker.md",
+              "size": 6507,
+              "language": "md"
+            },
+            {
+              "name": "master-outline.md",
+              "type": "file",
+              "path": "Example Project/outline/master-outline.md",
+              "size": 5927,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "planning",
+          "type": "folder",
+          "path": "Example Project/planning",
+          "children": [
+            {
+              "name": "forge-points",
+              "type": "folder",
+              "path": "Example Project/planning/forge-points",
+              "children": [
+                {
+                  "name": "apex.md",
+                  "type": "file",
+                  "path": "Example Project/planning/forge-points/apex.md",
+                  "size": 6626,
+                  "language": "md"
+                },
+                {
+                  "name": "fp0-ignition.md",
+                  "type": "file",
+                  "path": "Example Project/planning/forge-points/fp0-ignition.md",
+                  "size": 3494,
+                  "language": "md"
+                },
+                {
+                  "name": "fp1-first-forge-point.md",
+                  "type": "file",
+                  "path": "Example Project/planning/forge-points/fp1-first-forge-point.md",
+                  "size": 4124,
+                  "language": "md"
+                },
+                {
+                  "name": "fp2-second-forge-point.md",
+                  "type": "file",
+                  "path": "Example Project/planning/forge-points/fp2-second-forge-point.md",
+                  "size": 4617,
+                  "language": "md"
+                },
+                {
+                  "name": "fp3-third-forge-point.md",
+                  "type": "file",
+                  "path": "Example Project/planning/forge-points/fp3-third-forge-point.md",
+                  "size": 4993,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "strand-maps",
+              "type": "folder",
+              "path": "Example Project/planning/strand-maps",
+              "children": [
+                {
+                  "name": "constellation-strand-map.md",
+                  "type": "file",
+                  "path": "Example Project/planning/strand-maps/constellation-strand-map.md",
+                  "size": 5489,
+                  "language": "md"
+                },
+                {
+                  "name": "fire-strand-map.md",
+                  "type": "file",
+                  "path": "Example Project/planning/strand-maps/fire-strand-map.md",
+                  "size": 4710,
+                  "language": "md"
+                },
+                {
+                  "name": "quest-strand-map.md",
+                  "type": "file",
+                  "path": "Example Project/planning/strand-maps/quest-strand-map.md",
+                  "size": 4115,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "CLAUDE.md",
+              "type": "file",
+              "path": "Example Project/planning/CLAUDE.md",
+              "size": 1334,
+              "language": "md"
+            },
+            {
+              "name": "constellation-bible.md",
+              "type": "file",
+              "path": "Example Project/planning/constellation-bible.md",
+              "size": 9437,
+              "language": "md"
+            },
+            {
+              "name": "crucible-thesis.md",
+              "type": "file",
+              "path": "Example Project/planning/crucible-thesis.md",
+              "size": 3085,
+              "language": "md"
+            },
+            {
+              "name": "dark-mirror-profile.md",
+              "type": "file",
+              "path": "Example Project/planning/dark-mirror-profile.md",
+              "size": 6105,
+              "language": "md"
+            },
+            {
+              "name": "mercy-ledger.md",
+              "type": "file",
+              "path": "Example Project/planning/mercy-ledger.md",
+              "size": 6428,
+              "language": "md"
+            },
+            {
+              "name": "world-forge.md",
+              "type": "file",
+              "path": "Example Project/planning/world-forge.md",
+              "size": 6649,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "CLAUDE.md",
+          "type": "file",
+          "path": "Example Project/CLAUDE.md",
+          "size": 2125,
+          "language": "md"
+        },
+        {
+          "name": "readme.md",
+          "type": "file",
+          "path": "Example Project/readme.md",
+          "size": 5504,
+          "language": "md"
+        },
+        {
+          "name": "style-profile.md",
+          "type": "file",
+          "path": "Example Project/style-profile.md",
+          "size": 3420,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "hooks",
+      "type": "folder",
+      "path": "hooks",
+      "children": [
+        {
+          "name": "hooks.json",
+          "type": "file",
+          "path": "hooks/hooks.json",
+          "size": 422,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "rules",
+      "type": "folder",
+      "path": "rules",
+      "children": [
+        {
+          "name": "anti-hallucination.md",
+          "type": "file",
+          "path": "rules/anti-hallucination.md",
+          "size": 3760,
+          "language": "md"
+        },
+        {
+          "name": "crucible-structure.md",
+          "type": "file",
+          "path": "rules/crucible-structure.md",
+          "size": 3175,
+          "language": "md"
+        },
+        {
+          "name": "fantasy-writing.md",
+          "type": "file",
+          "path": "rules/fantasy-writing.md",
+          "size": 1888,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "backup_on_change.py",
+          "type": "file",
+          "path": "scripts/backup_on_change.py",
+          "size": 11030,
+          "language": "py"
+        },
+        {
+          "name": "backup_project.py",
+          "type": "file",
+          "path": "scripts/backup_project.py",
+          "size": 9392,
+          "language": "py"
+        },
+        {
+          "name": "bump_version.py",
+          "type": "file",
+          "path": "scripts/bump_version.py",
+          "size": 2678,
+          "language": "py"
+        },
+        {
+          "name": "check_stop_conditions.py",
+          "type": "file",
+          "path": "scripts/check_stop_conditions.py",
+          "size": 6354,
+          "language": "py"
+        },
+        {
+          "name": "cross_platform.py",
+          "type": "file",
+          "path": "scripts/cross_platform.py",
+          "size": 17597,
+          "language": "py"
+        },
+        {
+          "name": "detect_project.py",
+          "type": "file",
+          "path": "scripts/detect_project.py",
+          "size": 14283,
+          "language": "py"
+        },
+        {
+          "name": "draft_utils.py",
+          "type": "file",
+          "path": "scripts/draft_utils.py",
+          "size": 4427,
+          "language": "py"
+        },
+        {
+          "name": "extract_invented_markers.py",
+          "type": "file",
+          "path": "scripts/extract_invented_markers.py",
+          "size": 9739,
+          "language": "py"
+        },
+        {
+          "name": "load_project_context.py",
+          "type": "file",
+          "path": "scripts/load_project_context.py",
+          "size": 9418,
+          "language": "py"
+        },
+        {
+          "name": "migrate_project.py",
+          "type": "file",
+          "path": "scripts/migrate_project.py",
+          "size": 16223,
+          "language": "py"
+        },
+        {
+          "name": "restore_backup.py",
+          "type": "file",
+          "path": "scripts/restore_backup.py",
+          "size": 25671,
+          "language": "py"
+        },
+        {
+          "name": "restore_project.py",
+          "type": "file",
+          "path": "scripts/restore_project.py",
+          "size": 22895,
+          "language": "py"
+        },
+        {
+          "name": "run_python.sh",
+          "type": "file",
+          "path": "scripts/run_python.sh",
+          "size": 1596,
+          "language": "sh"
+        },
+        {
+          "name": "status_reporter.py",
+          "type": "file",
+          "path": "scripts/status_reporter.py",
+          "size": 17913,
+          "language": "py"
+        },
+        {
+          "name": "update_draft_state.py",
+          "type": "file",
+          "path": "scripts/update_draft_state.py",
+          "size": 10092,
+          "language": "py"
+        },
+        {
+          "name": "validate_before_write.py",
+          "type": "file",
+          "path": "scripts/validate_before_write.py",
+          "size": 6489,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "crucible-editor",
+          "type": "folder",
+          "path": "skills/crucible-editor",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/crucible-editor/references",
+              "children": [
+                {
+                  "name": "copy-editing-standards.md",
+                  "type": "file",
+                  "path": "skills/crucible-editor/references/copy-editing-standards.md",
+                  "size": 3523,
+                  "language": "md"
+                },
+                {
+                  "name": "developmental-checklist.md",
+                  "type": "file",
+                  "path": "skills/crucible-editor/references/developmental-checklist.md",
+                  "size": 2475,
+                  "language": "md"
+                },
+                {
+                  "name": "line-editing-guide.md",
+                  "type": "file",
+                  "path": "skills/crucible-editor/references/line-editing-guide.md",
+                  "size": 3445,
+                  "language": "md"
+                },
+                {
+                  "name": "polish-techniques.md",
+                  "type": "file",
+                  "path": "skills/crucible-editor/references/polish-techniques.md",
+                  "size": 3822,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "skills/crucible-editor/scripts",
+              "children": [
+                {
+                  "name": "compile_edited.py",
+                  "type": "file",
+                  "path": "skills/crucible-editor/scripts/compile_edited.py",
+                  "size": 4032,
+                  "language": "py"
+                },
+                {
+                  "name": "diff_report.py",
+                  "type": "file",
+                  "path": "skills/crucible-editor/scripts/diff_report.py",
+                  "size": 5792,
+                  "language": "py"
+                },
+                {
+                  "name": "init_edit.py",
+                  "type": "file",
+                  "path": "skills/crucible-editor/scripts/init_edit.py",
+                  "size": 3109,
+                  "language": "py"
+                },
+                {
+                  "name": "save_edit.py",
+                  "type": "file",
+                  "path": "skills/crucible-editor/scripts/save_edit.py",
+                  "size": 3886,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/crucible-editor/SKILL.md",
+              "size": 13454,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "crucible-outliner",
+          "type": "folder",
+          "path": "skills/crucible-outliner",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/crucible-outliner/references",
+              "children": [
+                {
+                  "name": "beat-to-chapter-mapping.md",
+                  "type": "file",
+                  "path": "skills/crucible-outliner/references/beat-to-chapter-mapping.md",
+                  "size": 7398,
+                  "language": "md"
+                },
+                {
+                  "name": "narrative-craft.md",
+                  "type": "file",
+                  "path": "skills/crucible-outliner/references/narrative-craft.md",
+                  "size": 7608,
+                  "language": "md"
+                },
+                {
+                  "name": "outline-templates.md",
+                  "type": "file",
+                  "path": "skills/crucible-outliner/references/outline-templates.md",
+                  "size": 7463,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "skills/crucible-outliner/scripts",
+              "children": [
+                {
+                  "name": "compile_outline.py",
+                  "type": "file",
+                  "path": "skills/crucible-outliner/scripts/compile_outline.py",
+                  "size": 11509,
+                  "language": "py"
+                },
+                {
+                  "name": "init_outline.py",
+                  "type": "file",
+                  "path": "skills/crucible-outliner/scripts/init_outline.py",
+                  "size": 4393,
+                  "language": "py"
+                },
+                {
+                  "name": "save_outline.py",
+                  "type": "file",
+                  "path": "skills/crucible-outliner/scripts/save_outline.py",
+                  "size": 5494,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/crucible-outliner/SKILL.md",
+              "size": 10815,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "crucible-planner",
+          "type": "folder",
+          "path": "skills/crucible-planner",
+          "children": [
+            {
+              "name": "assets",
+              "type": "folder",
+              "path": "skills/crucible-planner/assets",
+              "children": [
+                {
+                  "name": "templates",
+                  "type": "folder",
+                  "path": "skills/crucible-planner/assets/templates",
+                  "children": [
+                    {
+                      "name": "document-templates.md",
+                      "type": "file",
+                      "path": "skills/crucible-planner/assets/templates/document-templates.md",
+                      "size": 14499,
+                      "language": "md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/crucible-planner/references",
+              "children": [
+                {
+                  "name": "crucible-structure.md",
+                  "type": "file",
+                  "path": "skills/crucible-planner/references/crucible-structure.md",
+                  "size": 9547,
+                  "language": "md"
+                },
+                {
+                  "name": "dark-mirror-guide.md",
+                  "type": "file",
+                  "path": "skills/crucible-planner/references/dark-mirror-guide.md",
+                  "size": 7200,
+                  "language": "md"
+                },
+                {
+                  "name": "forge-point-rules.md",
+                  "type": "file",
+                  "path": "skills/crucible-planner/references/forge-point-rules.md",
+                  "size": 7134,
+                  "language": "md"
+                },
+                {
+                  "name": "mercy-engine-guide.md",
+                  "type": "file",
+                  "path": "skills/crucible-planner/references/mercy-engine-guide.md",
+                  "size": 8148,
+                  "language": "md"
+                },
+                {
+                  "name": "question-key-mapping.md",
+                  "type": "file",
+                  "path": "skills/crucible-planner/references/question-key-mapping.md",
+                  "size": 13374,
+                  "language": "md"
+                },
+                {
+                  "name": "question-sequences.md",
+                  "type": "file",
+                  "path": "skills/crucible-planner/references/question-sequences.md",
+                  "size": 21076,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "skills/crucible-planner/scripts",
+              "children": [
+                {
+                  "name": "compile_documents.py",
+                  "type": "file",
+                  "path": "skills/crucible-planner/scripts/compile_documents.py",
+                  "size": 17868,
+                  "language": "py"
+                },
+                {
+                  "name": "init_project.py",
+                  "type": "file",
+                  "path": "skills/crucible-planner/scripts/init_project.py",
+                  "size": 6347,
+                  "language": "py"
+                },
+                {
+                  "name": "load_state.py",
+                  "type": "file",
+                  "path": "skills/crucible-planner/scripts/load_state.py",
+                  "size": 5203,
+                  "language": "py"
+                },
+                {
+                  "name": "save_state.py",
+                  "type": "file",
+                  "path": "skills/crucible-planner/scripts/save_state.py",
+                  "size": 14086,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/crucible-planner/SKILL.md",
+              "size": 13071,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "crucible-writer",
+          "type": "folder",
+          "path": "skills/crucible-writer",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/crucible-writer/references",
+              "children": [
+                {
+                  "name": "anti-hallucination.md",
+                  "type": "file",
+                  "path": "skills/crucible-writer/references/anti-hallucination.md",
+                  "size": 9563,
+                  "language": "md"
+                },
+                {
+                  "name": "bi-chapter-review.md",
+                  "type": "file",
+                  "path": "skills/crucible-writer/references/bi-chapter-review.md",
+                  "size": 5021,
+                  "language": "md"
+                },
+                {
+                  "name": "context-management.md",
+                  "type": "file",
+                  "path": "skills/crucible-writer/references/context-management.md",
+                  "size": 10137,
+                  "language": "md"
+                },
+                {
+                  "name": "prose-craft.md",
+                  "type": "file",
+                  "path": "skills/crucible-writer/references/prose-craft.md",
+                  "size": 8869,
+                  "language": "md"
+                },
+                {
+                  "name": "story-bible-commands.md",
+                  "type": "file",
+                  "path": "skills/crucible-writer/references/story-bible-commands.md",
+                  "size": 4382,
+                  "language": "md"
+                },
+                {
+                  "name": "style-capture.md",
+                  "type": "file",
+                  "path": "skills/crucible-writer/references/style-capture.md",
+                  "size": 7697,
+                  "language": "md"
+                },
+                {
+                  "name": "writing-process.md",
+                  "type": "file",
+                  "path": "skills/crucible-writer/references/writing-process.md",
+                  "size": 8252,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "skills/crucible-writer/scripts",
+              "children": [
+                {
+                  "name": "compile_manuscript.py",
+                  "type": "file",
+                  "path": "skills/crucible-writer/scripts/compile_manuscript.py",
+                  "size": 10193,
+                  "language": "py"
+                },
+                {
+                  "name": "init_draft.py",
+                  "type": "file",
+                  "path": "skills/crucible-writer/scripts/init_draft.py",
+                  "size": 14112,
+                  "language": "py"
+                },
+                {
+                  "name": "load_draft.py",
+                  "type": "file",
+                  "path": "skills/crucible-writer/scripts/load_draft.py",
+                  "size": 10372,
+                  "language": "py"
+                },
+                {
+                  "name": "save_draft.py",
+                  "type": "file",
+                  "path": "skills/crucible-writer/scripts/save_draft.py",
+                  "size": 12369,
+                  "language": "py"
+                },
+                {
+                  "name": "update_story_bible.py",
+                  "type": "file",
+                  "path": "skills/crucible-writer/scripts/update_story_bible.py",
+                  "size": 51276,
+                  "language": "py"
+                },
+                {
+                  "name": "update_story_bible.py.bak",
+                  "type": "file",
+                  "path": "skills/crucible-writer/scripts/update_story_bible.py.bak",
+                  "size": 41451,
+                  "language": "bak"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/crucible-writer/SKILL.md",
+              "size": 14289,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "type": "folder",
+      "path": "templates",
+      "children": [
+        {
+          "name": "project-structure",
+          "type": "folder",
+          "path": "templates/project-structure",
+          "children": [
+            {
+              "name": ".crucible",
+              "type": "folder",
+              "path": "templates/project-structure/.crucible",
+              "children": [
+                {
+                  "name": ".gitkeep",
+                  "type": "file",
+                  "path": "templates/project-structure/.crucible/.gitkeep",
+                  "size": 96,
+                  "language": "text"
+                }
+              ]
+            },
+            {
+              "name": "draft",
+              "type": "folder",
+              "path": "templates/project-structure/draft",
+              "children": [
+                {
+                  "name": ".gitkeep",
+                  "type": "file",
+                  "path": "templates/project-structure/draft/.gitkeep",
+                  "size": 136,
+                  "language": "text"
+                },
+                {
+                  "name": "CLAUDE.md",
+                  "type": "file",
+                  "path": "templates/project-structure/draft/CLAUDE.md",
+                  "size": 1824,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "outline",
+              "type": "folder",
+              "path": "templates/project-structure/outline",
+              "children": [
+                {
+                  "name": ".gitkeep",
+                  "type": "file",
+                  "path": "templates/project-structure/outline/.gitkeep",
+                  "size": 151,
+                  "language": "text"
+                },
+                {
+                  "name": "CLAUDE.md",
+                  "type": "file",
+                  "path": "templates/project-structure/outline/CLAUDE.md",
+                  "size": 1191,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "planning",
+              "type": "folder",
+              "path": "templates/project-structure/planning",
+              "children": [
+                {
+                  "name": ".gitkeep",
+                  "type": "file",
+                  "path": "templates/project-structure/planning/.gitkeep",
+                  "size": 150,
+                  "language": "text"
+                },
+                {
+                  "name": "CLAUDE.md",
+                  "type": "file",
+                  "path": "templates/project-structure/planning/CLAUDE.md",
+                  "size": 1334,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CLAUDE.md",
+          "type": "file",
+          "path": "templates/CLAUDE.md",
+          "size": 1554,
+          "language": "md"
+        },
+        {
+          "name": "story-bible.json",
+          "type": "file",
+          "path": "templates/story-bible.json",
+          "size": 3844,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "The-Crucible-Structure",
+      "type": "folder",
+      "path": "The-Crucible-Structure",
+      "children": [
+        {
+          "name": "worksheets",
+          "type": "folder",
+          "path": "The-Crucible-Structure/worksheets",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "The-Crucible-Structure/worksheets/examples",
+              "children": [
+                {
+                  "name": "01-story-foundation-example.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/01-story-foundation-example.md",
+                  "size": 2237,
+                  "language": "md"
+                },
+                {
+                  "name": "02-three-strands-example.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/02-three-strands-example.md",
+                  "size": 6733,
+                  "language": "md"
+                },
+                {
+                  "name": "03-forge-points-example.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/03-forge-points-example.md",
+                  "size": 7542,
+                  "language": "md"
+                },
+                {
+                  "name": "04-mercy-ledger-example.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/04-mercy-ledger-example.md",
+                  "size": 7307,
+                  "language": "md"
+                },
+                {
+                  "name": "05-dark-mirror-example.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/05-dark-mirror-example.md",
+                  "size": 6586,
+                  "language": "md"
+                },
+                {
+                  "name": "06-beat-planning-example.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/06-beat-planning-example.md",
+                  "size": 6644,
+                  "language": "md"
+                },
+                {
+                  "name": "07-character-constellation-example.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/07-character-constellation-example.md",
+                  "size": 9204,
+                  "language": "md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "The-Crucible-Structure/worksheets/examples/README.md",
+                  "size": 1528,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "01-story-foundation-worksheet.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/01-story-foundation-worksheet.md",
+              "size": 2391,
+              "language": "md"
+            },
+            {
+              "name": "02-three-strands-worksheet.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/02-three-strands-worksheet.md",
+              "size": 5277,
+              "language": "md"
+            },
+            {
+              "name": "03-forge-points-worksheet.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/03-forge-points-worksheet.md",
+              "size": 5664,
+              "language": "md"
+            },
+            {
+              "name": "04-mercy-ledger-worksheet.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/04-mercy-ledger-worksheet.md",
+              "size": 5397,
+              "language": "md"
+            },
+            {
+              "name": "05-dark-mirror-worksheet.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/05-dark-mirror-worksheet.md",
+              "size": 4585,
+              "language": "md"
+            },
+            {
+              "name": "06-beat-planning-worksheet.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/06-beat-planning-worksheet.md",
+              "size": 4097,
+              "language": "md"
+            },
+            {
+              "name": "07-character-constellation-worksheet.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/07-character-constellation-worksheet.md",
+              "size": 5484,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "The-Crucible-Structure/worksheets/README.md",
+              "size": 1878,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "00-introduction.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/00-introduction.md",
+          "size": 4635,
+          "language": "md"
+        },
+        {
+          "name": "01-quick-start.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/01-quick-start.md",
+          "size": 2237,
+          "language": "md"
+        },
+        {
+          "name": "02-the-three-strands.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/02-the-three-strands.md",
+          "size": 8842,
+          "language": "md"
+        },
+        {
+          "name": "03-the-36-beats.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/03-the-36-beats.md",
+          "size": 5805,
+          "language": "md"
+        },
+        {
+          "name": "04-the-five-movements.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/04-the-five-movements.md",
+          "size": 8855,
+          "language": "md"
+        },
+        {
+          "name": "05-forge-points.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/05-forge-points.md",
+          "size": 10847,
+          "language": "md"
+        },
+        {
+          "name": "06-the-mercy-engine.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/06-the-mercy-engine.md",
+          "size": 9445,
+          "language": "md"
+        },
+        {
+          "name": "07-the-dark-mirror.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/07-the-dark-mirror.md",
+          "size": 8334,
+          "language": "md"
+        },
+        {
+          "name": "08-the-three-currencies.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/08-the-three-currencies.md",
+          "size": 6630,
+          "language": "md"
+        },
+        {
+          "name": "09-strand-weave-pattern.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/09-strand-weave-pattern.md",
+          "size": 4882,
+          "language": "md"
+        },
+        {
+          "name": "10-beat-to-chapter-mapping.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/10-beat-to-chapter-mapping.md",
+          "size": 6643,
+          "language": "md"
+        },
+        {
+          "name": "11-quick-reference.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/11-quick-reference.md",
+          "size": 3972,
+          "language": "md"
+        },
+        {
+          "name": "12-glossary.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/12-glossary.md",
+          "size": 4136,
+          "language": "md"
+        },
+        {
+          "name": "13-tutorial-walkthrough.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/13-tutorial-walkthrough.md",
+          "size": 15448,
+          "language": "md"
+        },
+        {
+          "name": "14-faq-and-troubleshooting.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/14-faq-and-troubleshooting.md",
+          "size": 24862,
+          "language": "md"
+        },
+        {
+          "name": "15-visual-diagrams.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/15-visual-diagrams.md",
+          "size": 34470,
+          "language": "md"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "The-Crucible-Structure/README.md",
+          "size": 5539,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 336,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 23063,
+      "language": "md"
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 2344,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 7026,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1101,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 11486,
+      "language": "md"
+    },
+    {
+      "name": "SECURITY.md",
+      "type": "file",
+      "path": "SECURITY.md",
+      "size": 1898,
+      "language": "md"
+    },
+    {
+      "name": "VERSION",
+      "type": "file",
+      "path": "VERSION",
+      "size": 8,
+      "language": "text"
+    }
+  ]
+}

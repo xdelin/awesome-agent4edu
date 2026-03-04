@@ -1,0 +1,19 @@
+services:
+  kroki:
+    image: yuzutech/kroki
+    container_name: kroki-server
+    ports:
+      - "8000:8000"
+
+  kroki-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kroki-mcp
+    environment:
+      - KROKI_HOST=http://kroki:8000
+    ports:
+      - "5090:5090"
+    depends_on:
+      - kroki
+    command: [ "-m", "sse","--kroki-host", "http://kroki:8000", "--port", "5090", "--host", "0.0.0.0" ]

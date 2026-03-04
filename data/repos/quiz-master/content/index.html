@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General knowledge Quiz Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Move script to end of body for proper loading order -->
+</head>
+
+<body>
+    <div class="login-page" id="loginPage">
+        <div class="login-container">
+            <form class="login-form" id="loginForm">
+                <h2>🧠 Quiz Login</h2>
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" id="loginBtn" class="login-btn">Login</button>
+
+                <div id="loginError" class="error-message" style="display: none;"></div>
+
+                <div class="demo-credentials">
+                    <strong>Demo Credentials:</strong><br>
+                    Username: admin<br>
+                    Password: password123
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="quiz-app" id="quizApp" style="display: none;">
+        <!-- Add Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+
+        <!-- Add Logout Button -->
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+
+        <!-- Add Overlay -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Add Side Menu -->
+        <nav class="side-menu" id="sideMenu">
+            <ul>
+                <li><a href="#" id="createQuizLink">Create a Quiz</a></li>
+                <li><a href="#" id="homeLink">Home</a></li>
+                <li><a href="#">My Quizzes</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <!-- Add Quiz Creation Form (initially hidden) -->
+            <form class="quiz-form" id="quizForm" style="display: none;">
+                <h2>Create a New Quiz</h2>
+
+                <div class="form-group">
+                    <label for="prompt">Quiz Prompt:</label>
+                    <textarea id="prompt" name="prompt" placeholder="Enter your quiz topic or prompt here..."
+                        required>Give 3 questions on india river</textarea>
+                </div>
+
+                <button type="submit" class="generate-btn">Generate Quiz</button>
+            </form>
+
+            <div id="quizQuestions" class="container">
+                <div class="header">
+                    <h1>🧠 Quiz Interface</h1>
+                    <div class="score">Score: <span id="score">0</span> / <span id="total">0</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress"></div>
+                    </div>
+                </div>
+
+                <div class="json-input" id="jsonInput">
+                    <h3>Load Quiz Data (JSON Format):</h3>
+                    <textarea id="jsonData" placeholder='[
+  {
+    "question": "What is the capital of France?",
+    "options": ["London", "Berlin", "Paris", "Madrid"],
+    "correct": 2
+  },
+  {
+    "question": "Which planet is closest to the Sun?",
+    "options": ["Venus", "Mercury", "Earth", "Mars"],
+    "correct": 1
+  }
+]'></textarea>
+                    <button onclick="loadQuiz()">Load Quiz</button>
+                </div>
+
+                <div id="quizContainer" style="display: none;">
+                    <div class="question-card">
+                        <div class="question" id="questionText"></div>
+                        <div class="options" id="optionsContainer"></div>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="submitBtn" onclick="submitAnswer()" disabled>Submit Answer</button>
+                        <button id="nextBtn" onclick="nextQuestion()" style="display: none;">Next Question</button>
+                        <button id="restartBtn" onclick="restartQuizInternal()" style="display: none;">Restart Quiz</button>
+                        <button id="saveBtn" onclick="saveQuiz()" style="display: none;">Save Quiz</button>
+                    </div>
+
+                    <div id="results" class="results" style="display: none;"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Spinner Overlay -->
+    <div class="spinner-overlay" id="spinnerOverlay">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+            <div class="spinner-text">Generating quiz questions...</div>
+        </div>
+    </div>
+
+    <!-- Load script at the end of body -->
+    <script src="script.js"></script>
+</body>
+
+</html>

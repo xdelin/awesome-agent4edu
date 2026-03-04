@@ -1,0 +1,36 @@
+# Docker Compose file for running the Open-Meteo API on Docker
+# Start with: docker compose up
+#
+# http://0.0.0.0:8080/v1/forecast?latitude=47.1&longitude=8.6&hourly=temperature_2m&models=icon_global
+#
+
+volumes:
+  open_meteo_database:
+
+x-shared_environment: &shared_environment
+  LOG_LEVEL: info
+
+services:
+  open-meteo-sync:
+      image: ghcr.io/open-meteo/open-meteo
+      container_name: open-meteo-sync
+      environment:
+        <<: *shared_environment
+      command: sync dwd_icon temperature_2m --past-days 2 --repeat-interval 1 --concurrent 1
+      volumes:
+       - open_meteo_database:/app/data
+      restart: always
+
+  open-meteo:
+    image: ghcr.io/open-meteo/open-meteo
+    container_name: open-meteo-api
+    volumes:
+      - open_meteo_database:/app/data
+    build:
+      context: .
+    environment:
+      <<: *shared_environment
+    ports:
+      - '8080:8080'
+    user: '0'
+    command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8080"]

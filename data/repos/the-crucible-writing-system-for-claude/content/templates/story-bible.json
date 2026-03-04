@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "[BOOK TITLE]",
+    "series": null,
+    "book_number": 1,
+    "target_words": 100000,
+    "target_chapters": 25,
+    "words_per_chapter": 4000,
+    "created": "[TIMESTAMP]",
+    "updated": "[TIMESTAMP]"
+  },
+  "progress": {
+    "current_chapter": 1,
+    "current_scene": 1,
+    "total_words": 0,
+    "chapters_complete": 0,
+    "status": "initialized"
+  },
+  "chapters": {
+    "_example": {
+      "title": "Chapter Title",
+      "word_count": 0,
+      "scenes": {
+        "1": {
+          "word_count": 0,
+          "summary": "Brief scene summary",
+          "saved": "[TIMESTAMP]"
+        }
+      },
+      "summary": "100-200 word chapter summary for context loading",
+      "final_state": {
+        "character_name": {
+          "location": "Where they are at chapter end",
+          "emotional_state": "How they feel",
+          "what_they_know": ["Key knowledge gained"]
+        }
+      },
+      "completed": false,
+      "completed_at": null
+    }
+  },
+  "character_states": {
+    "_example_character": {
+      "location": "Current location",
+      "emotional_state": "Current emotional state",
+      "knows": [
+        {
+          "fact": "Example knowledge item",
+          "learned_in": "ch1"
+        }
+      ],
+      "inventory": [
+        {
+          "item": "Example item",
+          "acquired_in": "ch1",
+          "status": "possessed"
+        }
+      ],
+      "relationships": {
+        "other_character": "Description of relationship"
+      },
+      "history": [
+        {
+          "chapter": 1,
+          "state": {
+            "location": "Previous location",
+            "emotional_state": "Previous state"
+          }
+        }
+      ]
+    }
+  },
+  "established_facts": [
+    {
+      "_comment": "Example - remove in actual use",
+      "fact": "The city of X has three gates",
+      "established_in": "ch1.2",
+      "added": "[TIMESTAMP]"
+    }
+  ],
+  "foreshadowing": {
+    "planted": [
+      {
+        "_comment": "Example - remove in actual use",
+        "thread": "The mysterious symbol on the door",
+        "planted_in": "ch3.2",
+        "expected_payoff": "ch12",
+        "paid_off": false,
+        "added": "[TIMESTAMP]"
+      }
+    ],
+    "paid_off": [
+      {
+        "_comment": "Example - remove in actual use",
+        "thread": "The mysterious symbol on the door",
+        "planted_in": "ch3.2",
+        "paid_in": "ch12.3",
+        "recorded": "[TIMESTAMP]"
+      }
+    ]
+  },
+  "timeline": {
+    "_comment": "Maps chapter numbers to in-story time",
+    "1": "Year 1, Spring",
+    "2": "Year 1, Spring (same day)"
+  },
+  "invented_details": [
+    {
+      "_comment": "Example - remove in actual use",
+      "detail": "The innkeeper's name is Marta",
+      "category": "character",
+      "chapter": 2,
+      "scene": 1,
+      "reviewed": false,
+      "approved": null,
+      "added": "[TIMESTAMP]"
+    }
+  ],
+  "locations": {
+    "_example_location": {
+      "description": "Brief description of the location",
+      "first_seen": "ch1",
+      "added": "[TIMESTAMP]"
+    }
+  },
+  "relationships": {
+    "_comment": "Track relationship dynamics between characters",
+    "character_a:character_b": {
+      "status": "Description of current relationship",
+      "history": []
+    }
+  },
+  "mercy_engine": {
+    "_comment": "Track mercy given and refused - core Crucible mechanic",
+    "mercy_acts": [
+      {
+        "_comment": "Example - remove in actual use",
+        "character": "protagonist",
+        "recipient": "Enemy scout",
+        "description": "Spared their life despite danger",
+        "chapter": 6,
+        "scene": 2,
+        "added": "[TIMESTAMP]"
+      }
+    ],
+    "mercy_refused": [],
+    "mercy_balance": 0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.henilcalagiya/mcp-apple-notes",
+  "description": "MCP server for Apple Notes integration using AppleScript with full CRUD operations",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/henilcalagiya/mcp-apple-notes",
+    "source": "github"
+  },
+  "version": "0.1.2",
+  "packages": [
+    {
+      "registry_type": "pypi",
+      "registry_base_url": "https://pypi.org",
+      "identifier": "mcp-apple-notes",
+      "version": "0.1.2",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

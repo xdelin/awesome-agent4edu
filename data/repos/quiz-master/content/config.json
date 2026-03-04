@@ -1,0 +1,4 @@
+{
+    "QUIZ_CREATE_URL": "https://uetnytfkkniuczch33h5wwnjcq0pvivs.lambda-url.ap-south-1.on.aws/",
+    "QUIZ_FETCH_URL": "https://33l7bkaqwhqcmzosxn6r67wali0acecs.lambda-url.ap-south-1.on.aws/"
+}

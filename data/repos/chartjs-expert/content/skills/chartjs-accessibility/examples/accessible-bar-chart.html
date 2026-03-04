@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js - Accessible Bar Chart Example</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .description {
+      color: #666;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #e8f4f8;
+      border-left: 4px solid #2196F3;
+      border-radius: 4px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .data-table th,
+    .data-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .data-table th {
+      background: #f5f5f5;
+    }
+    .data-table caption {
+      font-weight: bold;
+      padding: 10px;
+      text-align: left;
+    }
+    details {
+      margin-top: 15px;
+    }
+    summary {
+      cursor: pointer;
+      color: #0072B2;
+      font-weight: bold;
+    }
+    .keyboard-help {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 4px;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+    }
+    .keyboard-help kbd {
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-family: monospace;
+    }
+    #chartLiveRegion {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    canvas:focus {
+      outline: 3px solid #0072B2;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chart.js Accessible Bar Chart</h1>
+
+  <div class="description">
+    <strong>About this example:</strong> This demonstrates a fully accessible Chart.js bar chart
+    with WCAG 2.1 AA compliance. Features include: ARIA labels, keyboard navigation,
+    colorblind-safe palette with patterns, reduced motion support, and data table alternative.
+  </div>
+
+  <!-- Example: Fully Accessible Bar Chart -->
+  <div class="chart-container">
+    <h2>Quarterly Sales Performance 2024</h2>
+
+    <div class="keyboard-help">
+      <strong>Keyboard Navigation:</strong>
+      Use <kbd>Tab</kbd> to focus the chart,
+      <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to navigate data points,
+      <kbd>Esc</kbd> to clear selection.
+    </div>
+
+    <figure>
+      <div style="width: 100%; max-width: 800px;">
+        <!-- Accessible canvas with ARIA attributes -->
+        <canvas
+          id="accessibleChart"
+          role="img"
+          tabindex="0"
+          aria-label="Bar chart showing quarterly sales for 2024. Q1: $12,000, Q2: $19,000, Q3: $15,000, Q4: $25,000. Use arrow keys to navigate data points."
+          aria-describedby="chartDescription"
+        >
+          <!-- Fallback content for screen readers and no-JS -->
+          <p>Quarterly sales data for 2024:</p>
+          <ul>
+            <li>Q1: $12,000</li>
+            <li>Q2: $19,000</li>
+            <li>Q3: $15,000</li>
+            <li>Q4: $25,000</li>
+          </ul>
+          <p>Q4 showed the highest performance with 67% growth over Q3.</p>
+        </canvas>
+      </div>
+
+      <!-- Hidden description for screen readers -->
+      <div id="chartDescription" class="visually-hidden">
+        Sales performance showed overall growth through 2024.
+        Q1 started at $12,000, Q2 increased to $19,000 (58% growth),
+        Q3 dipped to $15,000, and Q4 peaked at $25,000.
+        Total annual sales: $71,000. Average: $17,750.
+      </div>
+
+      <!-- Live region for keyboard navigation announcements -->
+      <div id="chartLiveRegion" aria-live="polite" aria-atomic="true"></div>
+
+      <figcaption>
+        <!-- Expandable data table alternative -->
+        <details>
+          <summary>View data as table</summary>
+          <table class="data-table">
+            <caption>Quarterly Sales Data 2024</caption>
+            <thead>
+              <tr>
+                <th scope="col">Quarter</th>
+                <th scope="col">Sales ($)</th>
+                <th scope="col">Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Q1</td>
+                <td>$12,000</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Q2</td>
+                <td>$19,000</td>
+                <td>+58%</td>
+              </tr>
+              <tr>
+                <td>Q3</td>
+                <td>$15,000</td>
+                <td>-21%</td>
+              </tr>
+              <tr>
+                <td>Q4</td>
+                <td>$25,000</td>
+                <td>+67%</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Total</th>
+                <td>$71,000</td>
+                <td>-</td>
+              </tr>
+            </tfoot>
+          </table>
+        </details>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- Load Chart.js and Patternomaly from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.min.js"></script>
+
+  <script>
+    // Check user's motion preference
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    // Colorblind-safe Okabe-Ito palette
+    const accessibleColors = {
+      blue: '#0072B2',
+      orange: '#E69F00',
+      green: '#009E73',
+      vermilion: '#D55E00'
+    };
+
+    // Chart data
+    const chartData = {
+      labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+      values: [12000, 19000, 15000, 25000]
+    };
+
+    // Create pattern backgrounds for colorblind accessibility
+    const patternBackgrounds = [
+      pattern.draw('diagonal', accessibleColors.blue),
+      pattern.draw('dot', accessibleColors.orange),
+      pattern.draw('zigzag', accessibleColors.green),
+      pattern.draw('cross', accessibleColors.vermilion)
+    ];
+
+    // Border colors (solid) for pattern visibility
+    const borderColors = [
+      accessibleColors.blue,
+      accessibleColors.orange,
+      accessibleColors.green,
+      accessibleColors.vermilion
+    ];
+
+    // Create the accessible chart
+    const ctx = document.getElementById('accessibleChart');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: chartData.labels,
+        datasets: [{
+          label: 'Sales ($)',
+          data: chartData.values,
+          backgroundColor: patternBackgrounds,
+          borderColor: borderColors,
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        // Respect reduced motion preference
+        animation: prefersReducedMotion ? false : {
+          duration: 1000,
+          easing: 'easeOutQuart'
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Quarterly Sales Performance 2024',
+            color: '#1a1a1a',
+            font: {
+              size: 16,
+              weight: 'bold'
+            }
+          },
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+              color: '#1a1a1a',
+              font: { size: 14 }
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            titleColor: '#ffffff',
+            bodyColor: '#ffffff',
+            borderColor: '#ffffff',
+            borderWidth: 1,
+            padding: 12,
+            displayColors: true,
+            callbacks: {
+              label: function(context) {
+                return 'Sales: $' + context.parsed.y.toLocaleString();
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: '#1a1a1a',
+              font: { size: 14 }
+            },
+            grid: {
+              color: '#666666'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: '#1a1a1a',
+              font: { size: 14 },
+              callback: function(value) {
+                return '$' + value.toLocaleString();
+              }
+            },
+            grid: {
+              color: '#666666'
+            }
+          }
+        }
+      }
+    });
+
+    // Keyboard navigation implementation
+    let currentIndex = -1;
+    const dataLength = chart.data.datasets[0].data.length;
+    const liveRegion = document.getElementById('chartLiveRegion');
+
+    function announceDataPoint(index) {
+      const label = chart.data.labels[index];
+      const value = chart.data.datasets[0].data[index];
+      const formattedValue = '$' + value.toLocaleString();
+      liveRegion.textContent = `${label}: ${formattedValue}`;
+    }
+
+    function showTooltipAtIndex(index) {
+      // Set active elements for visual feedback
+      chart.setActiveElements([{
+        datasetIndex: 0,
+        index: index
+      }]);
+
+      // Show tooltip
+      chart.tooltip.setActiveElements(
+        [{ datasetIndex: 0, index: index }],
+        { x: 0, y: 0 }
+      );
+
+      chart.update('none');
+
+      // Announce to screen readers
+      announceDataPoint(index);
+    }
+
+    function clearSelection() {
+      currentIndex = -1;
+      chart.setActiveElements([]);
+      chart.tooltip.setActiveElements([], { x: 0, y: 0 });
+      chart.update('none');
+      liveRegion.textContent = 'Selection cleared';
+    }
+
+    // Add keyboard event listener to canvas
+    ctx.addEventListener('keydown', function(e) {
+      switch (e.key) {
+        case 'ArrowRight':
+          e.preventDefault();
+          currentIndex = (currentIndex + 1) % dataLength;
+          showTooltipAtIndex(currentIndex);
+          break;
+
+        case 'ArrowLeft':
+          e.preventDefault();
+          currentIndex = (currentIndex - 1 + dataLength) % dataLength;
+          showTooltipAtIndex(currentIndex);
+          break;
+
+        case 'Home':
+          e.preventDefault();
+          currentIndex = 0;
+          showTooltipAtIndex(currentIndex);
+          break;
+
+        case 'End':
+          e.preventDefault();
+          currentIndex = dataLength - 1;
+          showTooltipAtIndex(currentIndex);
+          break;
+
+        case 'Escape':
+          e.preventDefault();
+          clearSelection();
+          break;
+      }
+    });
+
+    // Announce when chart receives focus
+    ctx.addEventListener('focus', function() {
+      liveRegion.textContent = 'Chart focused. Use arrow keys to navigate data points.';
+    });
+
+    // Listen for motion preference changes
+    window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
+      chart.options.animation = e.matches ? false : { duration: 1000 };
+      chart.update();
+    });
+  </script>
+</body>
+</html>

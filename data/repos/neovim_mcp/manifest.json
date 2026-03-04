@@ -1,0 +1,594 @@
+{
+  "name": "Neovim MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "docs/tools",
+          "children": [
+            {
+              "name": ".markdownlint-cli2.jsonc",
+              "type": "file",
+              "path": "docs/tools/.markdownlint-cli2.jsonc",
+              "size": 41,
+              "language": "jsonc"
+            },
+            {
+              "name": "buffer_diagnostics.md",
+              "type": "file",
+              "path": "docs/tools/buffer_diagnostics.md",
+              "size": 144,
+              "language": "md"
+            },
+            {
+              "name": "connect.md",
+              "type": "file",
+              "path": "docs/tools/connect.md",
+              "size": 128,
+              "language": "md"
+            },
+            {
+              "name": "get_targets.md",
+              "type": "file",
+              "path": "docs/tools/get_targets.md",
+              "size": 194,
+              "language": "md"
+            },
+            {
+              "name": "read.md",
+              "type": "file",
+              "path": "docs/tools/read.md",
+              "size": 846,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "development.md",
+          "type": "file",
+          "path": "docs/development.md",
+          "size": 4782,
+          "language": "md"
+        },
+        {
+          "name": "resources.md",
+          "type": "file",
+          "path": "docs/resources.md",
+          "size": 2088,
+          "language": "md"
+        },
+        {
+          "name": "tools.md",
+          "type": "file",
+          "path": "docs/tools.md",
+          "size": 10928,
+          "language": "md"
+        },
+        {
+          "name": "usage.md",
+          "type": "file",
+          "path": "docs/usage.md",
+          "size": 4766,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "lua",
+      "type": "folder",
+      "path": "lua",
+      "children": [
+        {
+          "name": "nvim-mcp",
+          "type": "folder",
+          "path": "lua/nvim-mcp",
+          "children": [
+            {
+              "name": "init.lua",
+              "type": "file",
+              "path": "lua/nvim-mcp/init.lua",
+              "size": 5043,
+              "language": "lua"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "run-cov.sh",
+          "type": "file",
+          "path": "scripts/run-cov.sh",
+          "size": 1123,
+          "language": "sh"
+        },
+        {
+          "name": "run-test.sh",
+          "type": "file",
+          "path": "scripts/run-test.sh",
+          "size": 118,
+          "language": "sh"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "neovim",
+          "type": "folder",
+          "path": "src/neovim",
+          "children": [
+            {
+              "name": "lua",
+              "type": "folder",
+              "path": "src/neovim/lua",
+              "children": [
+                {
+                  "name": "lsp_apply_text_edits.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_apply_text_edits.lua",
+                  "size": 773,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_apply_workspace_edit.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_apply_workspace_edit.lua",
+                  "size": 595,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_call_hierarchy_incoming_calls.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_call_hierarchy_incoming_calls.lua",
+                  "size": 749,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_call_hierarchy_outgoing_calls.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_call_hierarchy_outgoing_calls.lua",
+                  "size": 749,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_call_hierarchy_prepare.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_call_hierarchy_prepare.lua",
+                  "size": 755,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_client_get_code_actions.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_client_get_code_actions.lua",
+                  "size": 759,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_declaration.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_declaration.lua",
+                  "size": 746,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_definition.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_definition.lua",
+                  "size": 745,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_document_symbols.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_document_symbols.lua",
+                  "size": 763,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_formatting.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_formatting.lua",
+                  "size": 745,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_get_buffers.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_get_buffers.lua",
+                  "size": 328,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_get_clients.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_get_clients.lua",
+                  "size": 177,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_hover.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_hover.lua",
+                  "size": 754,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_implementation.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_implementation.lua",
+                  "size": 749,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_make_text_document_params.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_make_text_document_params.lua",
+                  "size": 68,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_prepare_rename.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_prepare_rename.lua",
+                  "size": 762,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_range_formatting.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_range_formatting.lua",
+                  "size": 750,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_references.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_references.lua",
+                  "size": 759,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_rename.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_rename.lua",
+                  "size": 755,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_resolve_code_action.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_resolve_code_action.lua",
+                  "size": 774,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_type_definition.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_type_definition.lua",
+                  "size": 749,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_type_hierarchy_prepare.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_type_hierarchy_prepare.lua",
+                  "size": 755,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_type_hierarchy_subtypes.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_type_hierarchy_subtypes.lua",
+                  "size": 744,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_type_hierarchy_supertypes.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_type_hierarchy_supertypes.lua",
+                  "size": 746,
+                  "language": "lua"
+                },
+                {
+                  "name": "lsp_workspace_symbols.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/lsp_workspace_symbols.lua",
+                  "size": 738,
+                  "language": "lua"
+                },
+                {
+                  "name": "navigate.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/navigate.lua",
+                  "size": 1751,
+                  "language": "lua"
+                },
+                {
+                  "name": "read_document.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/read_document.lua",
+                  "size": 658,
+                  "language": "lua"
+                },
+                {
+                  "name": "setup_autocmd.lua",
+                  "type": "file",
+                  "path": "src/neovim/lua/setup_autocmd.lua",
+                  "size": 1489,
+                  "language": "lua"
+                }
+              ]
+            },
+            {
+              "name": "client.rs",
+              "type": "file",
+              "path": "src/neovim/client.rs",
+              "size": 143226,
+              "language": "rs"
+            },
+            {
+              "name": "connection.rs",
+              "type": "file",
+              "path": "src/neovim/connection.rs",
+              "size": 794,
+              "language": "rs"
+            },
+            {
+              "name": "error.rs",
+              "type": "file",
+              "path": "src/neovim/error.rs",
+              "size": 559,
+              "language": "rs"
+            },
+            {
+              "name": "integration_tests.rs",
+              "type": "file",
+              "path": "src/neovim/integration_tests.rs",
+              "size": 47399,
+              "language": "rs"
+            },
+            {
+              "name": "mod.rs",
+              "type": "file",
+              "path": "src/neovim/mod.rs",
+              "size": 317,
+              "language": "rs"
+            }
+          ]
+        },
+        {
+          "name": "server",
+          "type": "folder",
+          "path": "src/server",
+          "children": [
+            {
+              "name": "lua",
+              "type": "folder",
+              "path": "src/server/lua",
+              "children": [
+                {
+                  "name": "cursor_position.lua",
+                  "type": "file",
+                  "path": "src/server/lua/cursor_position.lua",
+                  "size": 373,
+                  "language": "lua"
+                }
+              ]
+            },
+            {
+              "name": "core.rs",
+              "type": "file",
+              "path": "src/server/core.rs",
+              "size": 12576,
+              "language": "rs"
+            },
+            {
+              "name": "hybrid_router.rs",
+              "type": "file",
+              "path": "src/server/hybrid_router.rs",
+              "size": 21177,
+              "language": "rs"
+            },
+            {
+              "name": "integration_tests.rs",
+              "type": "file",
+              "path": "src/server/integration_tests.rs",
+              "size": 65458,
+              "language": "rs"
+            },
+            {
+              "name": "lua_tools.rs",
+              "type": "file",
+              "path": "src/server/lua_tools.rs",
+              "size": 18952,
+              "language": "rs"
+            },
+            {
+              "name": "mod.rs",
+              "type": "file",
+              "path": "src/server/mod.rs",
+              "size": 165,
+              "language": "rs"
+            },
+            {
+              "name": "resources.rs",
+              "type": "file",
+              "path": "src/server/resources.rs",
+              "size": 14490,
+              "language": "rs"
+            },
+            {
+              "name": "tools.rs",
+              "type": "file",
+              "path": "src/server/tools.rs",
+              "size": 44017,
+              "language": "rs"
+            }
+          ]
+        },
+        {
+          "name": "testdata",
+          "type": "folder",
+          "path": "src/testdata",
+          "children": [
+            {
+              "name": ".root",
+              "type": "file",
+              "path": "src/testdata/.root",
+              "size": 0,
+              "language": "text"
+            },
+            {
+              "name": "call_hierarchy.go",
+              "type": "file",
+              "path": "src/testdata/call_hierarchy.go",
+              "size": 493,
+              "language": "go"
+            },
+            {
+              "name": "cfg_lsp.lua",
+              "type": "file",
+              "path": "src/testdata/cfg_lsp.lua",
+              "size": 2887,
+              "language": "lua"
+            },
+            {
+              "name": "diagnostic_problems.lua",
+              "type": "file",
+              "path": "src/testdata/diagnostic_problems.lua",
+              "size": 81,
+              "language": "lua"
+            },
+            {
+              "name": "main.go",
+              "type": "file",
+              "path": "src/testdata/main.go",
+              "size": 106,
+              "language": "go"
+            },
+            {
+              "name": "organize_imports.go",
+              "type": "file",
+              "path": "src/testdata/organize_imports.go",
+              "size": 56,
+              "language": "go"
+            },
+            {
+              "name": "type_hierarchy.go",
+              "type": "file",
+              "path": "src/testdata/type_hierarchy.go",
+              "size": 1419,
+              "language": "go"
+            }
+          ]
+        },
+        {
+          "name": "lib.rs",
+          "type": "file",
+          "path": "src/lib.rs",
+          "size": 489,
+          "language": "rs"
+        },
+        {
+          "name": "main.rs",
+          "type": "file",
+          "path": "src/main.rs",
+          "size": 8307,
+          "language": "rs"
+        },
+        {
+          "name": "test_utils.rs",
+          "type": "file",
+          "path": "src/test_utils.rs",
+          "size": 15829,
+          "language": "rs"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 114,
+      "language": "text"
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "type": "file",
+      "path": ".pre-commit-config.yaml",
+      "size": 1211,
+      "language": "yaml"
+    },
+    {
+      "name": "build.rs",
+      "type": "file",
+      "path": "build.rs",
+      "size": 2948,
+      "language": "rs"
+    },
+    {
+      "name": "Cargo.toml",
+      "type": "file",
+      "path": "Cargo.toml",
+      "size": 1828,
+      "language": "toml"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 16264,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 3318,
+      "language": "md"
+    },
+    {
+      "name": "flake.nix",
+      "type": "file",
+      "path": "flake.nix",
+      "size": 4191,
+      "language": "nix"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 11357,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3259,
+      "language": "md"
+    },
+    {
+      "name": "stylua.toml",
+      "type": "file",
+      "path": "stylua.toml",
+      "size": 263,
+      "language": "toml"
+    }
+  ]
+}

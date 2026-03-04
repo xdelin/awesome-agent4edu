@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT 融入教學 - 提示詞生成器</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .tool-header { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; margin-bottom: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #667eea; text-decoration: none; font-weight: 600; margin-bottom: 20px; padding: 8px 16px; background: #f0f0ff; border-radius: 8px; }
+        .tool-title-row { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; flex-wrap: wrap; }
+        .tool-icon { font-size: 2.5em; }
+        .tool-title { font-size: 1.8em; color: #333; }
+        .tool-category { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; }
+        .tool-desc { color: #666; margin-top: 10px; }
+        .tool-content { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 35px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .section-title { font-size: 1.3em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #eee; }
+        .template-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .template-card { padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; cursor: pointer; transition: all 0.3s; background: #fafafa; }
+        .template-card:hover { border-color: #667eea; background: #f0f0ff; }
+        .template-card.active { border-color: #667eea; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); }
+        .template-card-title { font-weight: 600; margin-bottom: 8px; }
+        .template-card-desc { font-size: 0.85em; color: #666; }
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+        .form-grid { display: grid; gap: 18px; }
+        .form-field label { display: block; margin-bottom: 6px; font-weight: 600; }
+        .form-field input, .form-field textarea { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 0.95em; font-family: inherit; }
+        .form-field input:focus, .form-field textarea:focus { outline: none; border-color: #667eea; }
+        .form-field textarea { min-height: 80px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
+        .btn-row { display: flex; gap: 12px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 12px; font-weight: 600; border: none; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .btn-secondary { background: #f0f0f0; color: #333; }
+        .output-section { display: none; margin-top: 30px; }
+        .output-section.active { display: block; }
+        .output-box { background: #1e1e1e; border-radius: 15px; padding: 25px; }
+        .output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .output-title { color: #fff; font-weight: 600; }
+        .copy-btn { background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; }
+        .copy-btn.copied { background: #38ef7d; }
+        .output-content { color: #e0e0e0; font-family: monospace; font-size: 0.9em; white-space: pre-wrap; line-height: 1.7; max-height: 500px; overflow-y: auto; }
+        .ai-links { display: flex; gap: 12px; margin-top: 20px; justify-content: center; flex-wrap: wrap; }
+        .ai-link { padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+
+        .ai-link.gpt { background: #10a37f; color: white; }
+        .ai-link.gemini { background: #4285f4; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tool-header">
+            <a href="../index.html" class="back-link">← 返回工具箱</a>
+            <div class="tool-title-row">
+                <span class="tool-icon">🖥️</span>
+                <h1 class="tool-title">ICT 融入教學</h1>
+                <span class="tool-category">ICT科技融入</span>
+            </div>
+            <p class="tool-desc">運用 SAMR/TPACK 模型設計科技融入課程</p>
+        </div>
+
+        <div class="tool-content">
+            <h2 class="section-title">選擇提示詞範本</h2>
+            <div class="template-cards">
+                <div class="template-card active" onclick="selectTemplate(0)">
+                    <div class="template-card-title">💻 ICT 融入教學設計</div>
+                    <p class="template-card-desc">設計融入 ICT 工具的課程</p>
+                </div>
+                <div class="template-card" onclick="selectTemplate(1)">
+                    <div class="template-card-title">🔀 混成教學設計</div>
+                    <p class="template-card-desc">設計線上與實體混合的教學課程</p>
+                </div>
+            </div>
+
+            <div class="form-section active" id="form-0">
+                <div class="form-grid">
+                    <div class="form-row">
+                        <div class="form-field"><label>科目</label><input type="text" id="f0-subject" placeholder="例：數學"></div>
+                        <div class="form-field"><label>單元</label><input type="text" id="f0-unit" placeholder="例：二次函數圖形"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>年級</label><input type="text" id="f0-grade" placeholder="例：高中一年級"></div>
+                        <div class="form-field"><label>節數</label><input type="text" id="f0-periods" placeholder="例：2節"></div>
+                    </div>
+                    <div class="form-field"><label>學習目標</label><textarea id="f0-objective" placeholder="例：能理解二次函數圖形的特性"></textarea></div>
+                    <div class="form-row">
+                        <div class="form-field"><label>教師端設備</label><input type="text" id="f0-teacher" placeholder="例：電腦、投影機、電子白板"></div>
+                        <div class="form-field"><label>學生端設備</label><input type="text" id="f0-student" placeholder="例：每人一台平板"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>網路環境</label><input type="text" id="f0-network" placeholder="例：WiFi穩定"></div>
+                        <div class="form-field"><label>SAMR 目標</label><input type="text" id="f0-samr" placeholder="例：修正"></div>
+                    </div>
+                    <div class="form-field"><label>特殊需求</label><textarea id="f0-special" placeholder="例：需要離線可用、免費工具優先"></textarea></div>
+                </div>
+            </div>
+
+            <div class="form-section" id="form-1">
+                <div class="form-grid">
+                    <div class="form-row">
+                        <div class="form-field"><label>科目</label><input type="text" id="f1-subject" placeholder="例：英文"></div>
+                        <div class="form-field"><label>主題</label><input type="text" id="f1-topic" placeholder="例：過去式句型"></div>
+                        <div class="form-field"><label>總學習時間</label><input type="text" id="f1-time" placeholder="例：4小時"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>線上非同步比例</label><input type="text" id="f1-async" placeholder="例：40%"></div>
+                        <div class="form-field"><label>線上同步比例</label><input type="text" id="f1-sync" placeholder="例：20%"></div>
+                        <div class="form-field"><label>實體課堂比例</label><input type="text" id="f1-physical" placeholder="例：40%"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>設備擁有率</label><input type="text" id="f1-device" placeholder="例：90%"></div>
+                        <div class="form-field"><label>網路條件</label><input type="text" id="f1-network" placeholder="例：大部分有WiFi"></div>
+                        <div class="form-field"><label>自學能力</label><input type="text" id="f1-self" placeholder="例：中"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="generatePrompt()">⚡ 生成提示詞</button>
+                <button class="btn btn-secondary" onclick="resetForm()">🔄 重置</button>
+            </div>
+
+            <div class="output-section" id="output-section">
+                <div class="output-box">
+                    <div class="output-header">
+                        <span class="output-title">生成的提示詞</span>
+                        <button class="copy-btn" onclick="copyPrompt()">複製</button>
+                    </div>
+                    <div class="output-content" id="output-content"></div>
+                </div>
+                <div class="ai-links">
+
+                    <a href="https://chat.openai.com" target="_blank" class="ai-link gpt">前往 ChatGPT</a>
+                    <a href="https://gemini.google.com" target="_blank" class="ai-link gemini">前往 Gemini</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const templates = [
+            { generate: () => `請幫我設計一堂融入 ICT 的課程：
+
+【課程資訊】
+科目：${document.getElementById('f0-subject').value || '[科目]'}
+單元：${document.getElementById('f0-unit').value || '[單元名稱]'}
+年級：${document.getElementById('f0-grade').value || '[年級]'}
+節數：${document.getElementById('f0-periods').value || '[節數]'}
+學習目標：${document.getElementById('f0-objective').value || '[列出]'}
+
+【現有設備】
+- 教師端：${document.getElementById('f0-teacher').value || '[教師設備]'}
+- 學生端：${document.getElementById('f0-student').value || '[學生設備]'}
+- 網路環境：${document.getElementById('f0-network').value || '[網路描述]'}
+
+【SAMR 目標層次】
+希望達到：${document.getElementById('f0-samr').value || '[替代/增益/修正/重新定義]'}
+
+【特殊需求】
+${document.getElementById('f0-special').value || '[特殊需求說明]'}
+
+請設計：
+1. 推薦的 ICT 工具組合
+2. 詳細的教學流程（含科技使用時機）
+3. 學生操作指引
+4. 備案（科技故障時）
+5. TPACK 分析說明` },
+            { generate: () => `請設計一堂混成教學課程：
+
+【課程資訊】
+科目：${document.getElementById('f1-subject').value || '[科目]'}
+主題：${document.getElementById('f1-topic').value || '[主題]'}
+總學習時間：${document.getElementById('f1-time').value || '[時數]'}
+
+【混成模式】
+- 線上非同步：${document.getElementById('f1-async').value || '[非同步%]'}
+- 線上同步：${document.getElementById('f1-sync').value || '[同步%]'}
+- 實體課堂：${document.getElementById('f1-physical').value || '[實體%]'}
+
+【學生條件】
+- 設備擁有率：${document.getElementById('f1-device').value || '[設備%]'}
+- 網路條件：${document.getElementById('f1-network').value || '[網路描述]'}
+- 自學能力：${document.getElementById('f1-self').value || '[高/中/低]'}
+
+請設計：
+1. 各模式的學習內容分配
+2. 線上非同步學習任務
+3. 同步課堂活動設計
+4. 實體課堂活動設計
+5. 學習進度追蹤機制
+6. 師生互動設計
+7. 成效評量方式` }
+        ];
+        let currentTemplate = 0;
+        function selectTemplate(i) { currentTemplate = i; document.querySelectorAll('.template-card').forEach((c,idx) => c.classList.toggle('active', idx===i)); document.querySelectorAll('.form-section').forEach((f,idx) => f.classList.toggle('active', idx===i)); document.getElementById('output-section').classList.remove('active'); }
+        function generatePrompt() { document.getElementById('output-content').textContent = templates[currentTemplate].generate(); document.getElementById('output-section').classList.add('active'); document.getElementById('output-section').scrollIntoView({behavior:'smooth'}); }
+        function copyPrompt() { navigator.clipboard.writeText(document.getElementById('output-content').textContent).then(() => { const b = document.querySelector('.copy-btn'); b.textContent = '已複製!'; b.classList.add('copied'); setTimeout(() => { b.textContent = '複製'; b.classList.remove('copied'); }, 2000); }); }
+        function resetForm() { document.querySelectorAll('input,textarea').forEach(e => e.value = ''); document.getElementById('output-section').classList.remove('active'); }
+    </script>
+</body>
+</html>

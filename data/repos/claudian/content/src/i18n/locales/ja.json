@@ -1,0 +1,287 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "add": "追加",
+    "remove": "削除",
+    "clear": "クリア",
+    "clearAll": "すべてクリア",
+    "loading": "読み込み中",
+    "error": "エラー",
+    "success": "成功",
+    "warning": "警告",
+    "confirm": "確認",
+    "settings": "設定",
+    "advanced": "詳細",
+    "enabled": "有効",
+    "disabled": "無効",
+    "platform": "プラットフォーム",
+    "refresh": "更新",
+    "rewind": "巻き戻し"
+  },
+  "chat": {
+    "rewind": {
+      "confirmMessage": "この時点に巻き戻しますか？このメッセージ以降のファイル変更が元に戻されます。手動またはbashで編集されたファイルには影響しません。",
+      "confirmButton": "巻き戻す",
+      "ariaLabel": "ここに巻き戻す",
+      "notice": "巻き戻し完了：{count} 個のファイルを復元",
+      "noticeSaveFailed": "巻き戻し完了：{count} 個のファイルを復元しましたが、状態を保存できませんでした：{error}",
+      "failed": "巻き戻しに失敗：{error}",
+      "cannot": "巻き戻しできません：{error}",
+      "unavailableStreaming": "ストリーミング中は巻き戻しできません",
+      "unavailableNoUuid": "巻き戻しできません：メッセージ識別子がありません"
+    },
+    "fork": {
+      "ariaLabel": "会話を分岐",
+      "chooseTarget": "会話を分岐",
+      "targetNewTab": "新しいタブ",
+      "targetCurrentTab": "現在のタブ",
+      "maxTabsReached": "分岐できません：最大 {count} タブに達しました",
+      "notice": "新しいタブに分岐しました",
+      "noticeCurrentTab": "現在のタブで分岐しました",
+      "failed": "分岐に失敗：{error}",
+      "unavailableStreaming": "ストリーミング中は分岐できません",
+      "unavailableNoUuid": "分岐できません：メッセージ識別子がありません",
+      "unavailableNoResponse": "分岐できません：分岐元の応答がありません",
+      "errorMessageNotFound": "Message not found",
+      "errorNoSession": "No session ID available",
+      "errorNoActiveTab": "No active tab",
+      "commandNoMessages": "フォークできません: 会話にメッセージがありません",
+      "commandNoAssistantUuid": "フォークできません: 識別子付きのアシスタント応答がありません"
+    },
+    "bangBash": {
+      "placeholder": "> Run a bash command...",
+      "commandPanel": "Command panel",
+      "copyAriaLabel": "Copy latest command output",
+      "clearAriaLabel": "Clear bash output",
+      "commandLabel": "{command}",
+      "statusLabel": "Status: {status}",
+      "collapseOutput": "Collapse command output",
+      "expandOutput": "Expand command output",
+      "running": "Running...",
+      "copyFailed": "Failed to copy to clipboard"
+    }
+  },
+  "settings": {
+    "title": "Claudian 設定",
+    "customization": "カスタマイズ",
+    "userName": {
+      "name": "Claudian はどのように呼びますか？",
+      "desc": "パーソナライズされた挨拶に使用する名前（空欄で一般の挨拶）"
+    },
+    "excludedTags": {
+      "name": "除外タグ",
+      "desc": "これらのタグを含むノートは自動的にコンテキストとして読み込まれません（1行に1つ、#なし）"
+    },
+    "mediaFolder": {
+      "name": "メディアフォルダ",
+      "desc": "添付ファイル/画像を格納するフォルダ。ノートが ![[image.jpg]] を使用する場合、Claude はここで探します。空欄でリポジトリのルートを使用。"
+    },
+    "systemPrompt": {
+      "name": "カスタムシステムプロンプト",
+      "desc": "デフォルトのシステムプロンプトに追加される追加指示"
+    },
+    "autoTitle": {
+      "name": "会話タイトルを自動生成",
+      "desc": "最初のユーザーメッセージ送信後に会話タイトルを自動的に生成します。"
+    },
+    "titleModel": {
+      "name": "タイトル生成モデル",
+      "desc": "会話タイトルを自動生成するために使用されるモデル。",
+      "auto": "自動 (Haiku)"
+    },
+    "navMappings": {
+      "name": "Vimスタイルナビゲーションマッピング",
+      "desc": "1行に1つのマッピング。形式：\"map <キー> <アクション>\"（アクション：scrollUp, scrollDown, focusInput）。"
+    },
+    "hotkeys": "ホットキー",
+    "inlineEditHotkey": {
+      "name": "インライン編集",
+      "descWithKey": "現在のホットキー: {hotkey}",
+      "descNoKey": "ホットキー未設定",
+      "btnChange": "変更",
+      "btnSet": "設定"
+    },
+    "openChatHotkey": {
+      "name": "チャットを開く",
+      "descWithKey": "現在のホットキー: {hotkey}",
+      "descNoKey": "ホットキー未設定",
+      "btnChange": "変更",
+      "btnSet": "設定"
+    },
+    "newSessionHotkey": {
+      "name": "新規セッション",
+      "descWithKey": "現在のホットキー: {hotkey}",
+      "descNoKey": "ホットキー未設定",
+      "btnChange": "変更",
+      "btnSet": "設定"
+    },
+    "newTabHotkey": {
+      "name": "新規タブ",
+      "descWithKey": "現在のホットキー: {hotkey}",
+      "descNoKey": "ホットキー未設定",
+      "btnChange": "変更",
+      "btnSet": "設定"
+    },
+    "closeTabHotkey": {
+      "name": "タブを閉じる",
+      "descWithKey": "現在のホットキー: {hotkey}",
+      "descNoKey": "ホットキー未設定",
+      "btnChange": "変更",
+      "btnSet": "設定"
+    },
+    "slashCommands": {
+      "name": "コマンドとスキル",
+      "desc": "/名前 でトリガーされるカスタムコマンドとスキルを定義します。"
+    },
+    "hiddenSlashCommands": {
+      "name": "非表示コマンド",
+      "desc": "ドロップダウンから特定のスラッシュコマンドを非表示にします。Claudian に関係のない Claude Code コマンドを非表示にするのに便利です。先頭のスラッシュなしでコマンド名を1行に1つ入力してください。",
+      "placeholder": "commit\nbuild\ntest"
+    },
+    "mcpServers": {
+      "name": "MCP サーバー",
+      "desc": "モデルコンテキストプロトコルサーバーを設定し、外部ツールやデータソースで Claude の機能を拡張します。コンテキスト保存モードのサーバーは @mention でアクティブにする必要があります。"
+    },
+    "plugins": {
+      "name": "Claude Code プラグイン",
+      "desc": "~/.claude/plugins から検出された Claude Code プラグインを有効化または無効化します。有効化されたプラグインは保管庫ごとに保存されます。"
+    },
+    "subagents": {
+      "name": "Subagents",
+      "desc": "Configure custom subagents that Claude can delegate to.",
+      "noAgents": "No subagents configured. Click + to create one.",
+      "deleteConfirm": "Delete subagent \"{name}\"?",
+      "saveFailed": "Failed to save subagent: {message}",
+      "refreshFailed": "サブエージェントを更新できませんでした: {message}",
+      "deleteFailed": "Failed to delete subagent: {message}",
+      "renameCleanupFailed": "Warning: could not remove old file for \"{name}\"",
+      "saved": "Subagent \"{name}\" {action}",
+      "deleted": "Subagent \"{name}\" deleted",
+      "duplicateName": "An agent named \"{name}\" already exists",
+      "descriptionRequired": "Description is required",
+      "promptRequired": "System prompt is required",
+      "modal": {
+        "titleEdit": "Edit Subagent",
+        "titleAdd": "Add Subagent",
+        "name": "Name",
+        "nameDesc": "Lowercase letters, numbers, and hyphens only",
+        "namePlaceholder": "code-reviewer",
+        "description": "Description",
+        "descriptionDesc": "Brief description of this agent",
+        "descriptionPlaceholder": "Reviews code for bugs and style",
+        "advancedOptions": "Advanced options",
+        "model": "Model",
+        "modelDesc": "Model override for this agent",
+        "tools": "Tools",
+        "toolsDesc": "Comma-separated list of allowed tools (empty = all)",
+        "disallowedTools": "Disallowed tools",
+        "disallowedToolsDesc": "Comma-separated list of tools to disallow",
+        "skills": "Skills",
+        "skillsDesc": "Comma-separated list of skills",
+        "prompt": "System prompt",
+        "promptDesc": "Instructions for the agent",
+        "promptPlaceholder": "You are a code reviewer. Analyze the given code for..."
+      }
+    },
+    "safety": "セキュリティ",
+    "loadUserSettings": {
+      "name": "ユーザーClaude設定を読み込む",
+      "desc": "~/.claude/settings.json を読み込みます。有効にすると、ユーザーの Claude Code 許可ルールがセキュリティモードをバイパスする可能性があります。"
+    },
+    "enableBlocklist": {
+      "name": "コマンドブラックリストを有効化",
+      "desc": "潜在的に危険なbashコマンドをブロック"
+    },
+    "blockedCommands": {
+      "name": "ブロックされたコマンド ({platform})",
+      "desc": "{platform} でブロックするパターン（1行に1つ）。正規表現をサポート。",
+      "unixName": "ブロックされたコマンド (Unix/Git Bash)",
+      "unixDesc": "Git Bashが呼び出せるため、UnixパターンもWindows上でブロックされます。"
+    },
+    "exportPaths": {
+      "name": "許可されたエクスポートパス",
+      "desc": "ファイルをエクスポートできるリポジトリ外のパス（1行に1つ）。~ でホームディレクトリをサポート。"
+    },
+    "environment": "環境",
+    "customVariables": {
+      "name": "カスタム変数",
+      "desc": "Claude SDKの環境変数（KEY=VALUE形式、1行に1つ）。exportプレフィックス対応。"
+    },
+    "envSnippets": {
+      "name": "スニペット",
+      "addBtn": "スニペットを追加",
+      "noSnippets": "保存された環境変数スニペットはありません。+をクリックして現在の設定を保存してください。",
+      "nameRequired": "スニペットの名前を入力してください",
+      "modal": {
+        "titleEdit": "スニペットを編集",
+        "titleSave": "スニペットを保存",
+        "name": "名前",
+        "namePlaceholder": "この設定のわかりやすい名前",
+        "description": "説明",
+        "descPlaceholder": "任意の説明",
+        "envVars": "環境変数",
+        "envVarsPlaceholder": "KEY=VALUE形式、1行に1つ（exportプレフィックス対応）",
+        "save": "保存",
+        "update": "更新",
+        "cancel": "キャンセル"
+      }
+    },
+    "customContextLimits": {
+      "name": "カスタムコンテキスト制限",
+      "desc": "カスタムモデルのコンテキストウィンドウサイズを設定します。デフォルト（200kトークン）を使用する場合は空欄のままにしてください。",
+      "invalid": "無効な形式です。使用：256k、1m、または正確な数値（1000-10000000）。"
+    },
+    "advanced": "詳細設定",
+    "show1MModel": {
+      "name": "1Mコンテキストウィンドウを持つSonnetを有効化",
+      "desc": "モデルセレクターで標準Sonnetを Sonnet (1M) に置き換えます。200kトークン未満では同じ価格。Maxサブスクリプションが必要です。"
+    },
+    "enableChrome": {
+      "name": "Chrome拡張機能を有効化",
+      "desc": "claude-in-chrome拡張機能を通じてClaudeがChromeと連携できるようにします。拡張機能のインストールが必要です。セッションの再起動が必要です。"
+    },
+    "enableBangBash": {
+      "name": "Enable bash mode (!)",
+      "desc": "Type ! on empty input to enter bash mode. Runs commands directly via Node.js child_process.",
+      "validation": {
+        "noNode": "Node.js not found on PATH. Install Node.js or check your PATH configuration."
+      }
+    },
+    "maxTabs": {
+      "name": "最大チャットタブ数",
+      "desc": "同時に開ける最大チャットタブ数（3-10）。各タブは個別の Claude セッションを使用します。",
+      "warning": "5 タブを超えるとパフォーマンスやメモリ使用量に影響する可能性があります。"
+    },
+    "tabBarPosition": {
+      "name": "タブバーの位置",
+      "desc": "タブバッジとアクションボタンの表示位置を選択",
+      "input": "入力欄の上（デフォルト）",
+      "header": "ヘッダー内"
+    },
+    "enableAutoScroll": {
+      "name": "ストリーミング中の自動スクロール",
+      "desc": "Claudeが応答をストリーミングしている間、自動的に下にスクロールします。無効にすると上部に留まり、最初から読むことができます。"
+    },
+    "openInMainTab": {
+      "name": "メインエディタ領域で開く",
+      "desc": "チャットパネルを右サイドバーではなく、中央エディタ領域のメインタブとして開きます"
+    },
+    "cliPath": {
+      "name": "Claude CLI パス",
+      "desc": "Claude Code CLI のカスタムパス。空欄で自動検出を使用。",
+      "descWindows": "ネイティブインストーラーの場合は claude.exe を使用。npm/pnpm/yarn やその他のパッケージマネージャーでのインストールの場合は cli.js パスを使用（claude.cmd ではない）。",
+      "descUnix": "\"which claude\" の出力を貼り付けてください - ネイティブと npm/pnpm/yarn インストールの両方で動作します。",
+      "validation": {
+        "notExist": "パスが存在しません",
+        "isDirectory": "パスはディレクトリでファイルではありません"
+      }
+    },
+    "language": {
+      "name": "言語",
+      "desc": "プラグインインターフェースの表示言語を変更"
+    }
+  }
+}

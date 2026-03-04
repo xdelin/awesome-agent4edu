@@ -1,0 +1,97 @@
+{
+  "name": "Calculator",
+  "full": true,
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "mcp_server_calculator",
+          "type": "folder",
+          "path": "src/mcp_server_calculator",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/mcp_server_calculator/__init__.py",
+              "size": 68,
+              "language": "py"
+            },
+            {
+              "name": "__main__.py",
+              "type": "file",
+              "path": "src/mcp_server_calculator/__main__.py",
+              "size": 47,
+              "language": "py"
+            },
+            {
+              "name": "calculator.py",
+              "type": "file",
+              "path": "src/mcp_server_calculator/calculator.py",
+              "size": 1904,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "test_calculator.py",
+          "type": "file",
+          "path": "tests/test_calculator.py",
+          "size": 3784,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 109,
+      "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 5,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 674,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1062,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 795,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 1472,
+      "language": "md"
+    }
+  ]
+}

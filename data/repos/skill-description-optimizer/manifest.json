@@ -1,0 +1,62 @@
+{
+  "name": "skill-description-optimizer",
+  "full": true,
+  "tree": [
+    {
+      "name": "references",
+      "type": "folder",
+      "path": "references",
+      "children": [
+        {
+          "name": "best_practices.md",
+          "type": "file",
+          "path": "references/best_practices.md",
+          "size": 8081,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 175,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 1391,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 3480,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1097,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 22325,
+      "language": "md"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 16365,
+      "language": "md"
+    }
+  ]
+}

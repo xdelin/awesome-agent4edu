@@ -1,0 +1,287 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "刪除",
+    "edit": "編輯",
+    "add": "添加",
+    "remove": "移除",
+    "clear": "清除",
+    "clearAll": "清除全部",
+    "loading": "加載中",
+    "error": "錯誤",
+    "success": "成功",
+    "warning": "警告",
+    "confirm": "確認",
+    "settings": "設置",
+    "advanced": "高級",
+    "enabled": "已啟用",
+    "disabled": "已禁用",
+    "platform": "平台",
+    "refresh": "重新整理",
+    "rewind": "回退"
+  },
+  "chat": {
+    "rewind": {
+      "confirmMessage": "回退到此處？此訊息之後的檔案變更將被還原。回退不會影響手動或透過 bash 編輯的檔案。",
+      "confirmButton": "回退",
+      "ariaLabel": "回退到此處",
+      "notice": "已回退：還原了 {count} 個檔案",
+      "noticeSaveFailed": "已回退：還原了 {count} 個檔案，但無法儲存狀態：{error}",
+      "failed": "回退失敗：{error}",
+      "cannot": "無法回退：{error}",
+      "unavailableStreaming": "串流回應中無法回退",
+      "unavailableNoUuid": "無法回退：缺少訊息識別碼"
+    },
+    "fork": {
+      "ariaLabel": "分叉對話",
+      "chooseTarget": "分叉對話",
+      "targetNewTab": "新分頁",
+      "targetCurrentTab": "目前分頁",
+      "maxTabsReached": "無法分叉：已達到最大 {count} 個分頁",
+      "notice": "已分叉到新分頁",
+      "noticeCurrentTab": "已在目前分頁分叉",
+      "failed": "分叉失敗：{error}",
+      "unavailableStreaming": "串流回應中無法分叉",
+      "unavailableNoUuid": "無法分叉：缺少訊息識別碼",
+      "unavailableNoResponse": "無法分叉：沒有可分叉的回應",
+      "errorMessageNotFound": "Message not found",
+      "errorNoSession": "No session ID available",
+      "errorNoActiveTab": "No active tab",
+      "commandNoMessages": "無法分叉：對話中沒有訊息",
+      "commandNoAssistantUuid": "無法分叉：沒有帶識別碼的助手回覆"
+    },
+    "bangBash": {
+      "placeholder": "> Run a bash command...",
+      "commandPanel": "Command panel",
+      "copyAriaLabel": "Copy latest command output",
+      "clearAriaLabel": "Clear bash output",
+      "commandLabel": "{command}",
+      "statusLabel": "Status: {status}",
+      "collapseOutput": "Collapse command output",
+      "expandOutput": "Expand command output",
+      "running": "Running...",
+      "copyFailed": "Failed to copy to clipboard"
+    }
+  },
+  "settings": {
+    "title": "Claudian 設定",
+    "customization": "個人化設定",
+    "userName": {
+      "name": "Claudian 應該如何稱呼您？",
+      "desc": "用於個人化問候的使用者名稱（留空使用通用問候）"
+    },
+    "excludedTags": {
+      "name": "排除的標籤",
+      "desc": "包含這些標籤的筆記不會自動載入為上下文（每行一個，不帶 #）"
+    },
+    "mediaFolder": {
+      "name": "媒體資料夾",
+      "desc": "存放附件/圖片的資料夾。當筆記使用 ![[image.jpg]] 時，Claude 會在此查找。留空使用儲存庫根目錄。"
+    },
+    "systemPrompt": {
+      "name": "自訂系統提示詞",
+      "desc": "附加到預設系統提示詞的額外指令"
+    },
+    "autoTitle": {
+      "name": "自動生成對話標題",
+      "desc": "在使用者送出第一則訊息後自動生成對話標題。"
+    },
+    "titleModel": {
+      "name": "標題生成模型",
+      "desc": "用於自動生成對話標題的模型。",
+      "auto": "自動 (Haiku)"
+    },
+    "navMappings": {
+      "name": "Vim 風格導航映射",
+      "desc": "每行一個映射。格式：\"map <鍵> <動作>\"（動作：scrollUp, scrollDown, focusInput）。"
+    },
+    "hotkeys": "快捷鍵",
+    "inlineEditHotkey": {
+      "name": "內嵌編輯",
+      "descWithKey": "目前快捷鍵：{hotkey}",
+      "descNoKey": "未設定快捷鍵",
+      "btnChange": "變更",
+      "btnSet": "設定快捷鍵"
+    },
+    "openChatHotkey": {
+      "name": "開啟聊天",
+      "descWithKey": "目前快捷鍵：{hotkey}",
+      "descNoKey": "未設定快捷鍵",
+      "btnChange": "變更",
+      "btnSet": "設定快捷鍵"
+    },
+    "newSessionHotkey": {
+      "name": "新工作階段",
+      "descWithKey": "目前快捷鍵：{hotkey}",
+      "descNoKey": "未設定快捷鍵",
+      "btnChange": "變更",
+      "btnSet": "設定快捷鍵"
+    },
+    "newTabHotkey": {
+      "name": "新分頁",
+      "descWithKey": "目前快捷鍵：{hotkey}",
+      "descNoKey": "未設定快捷鍵",
+      "btnChange": "變更",
+      "btnSet": "設定快捷鍵"
+    },
+    "closeTabHotkey": {
+      "name": "關閉分頁",
+      "descWithKey": "目前快捷鍵：{hotkey}",
+      "descNoKey": "未設定快捷鍵",
+      "btnChange": "變更",
+      "btnSet": "設定快捷鍵"
+    },
+    "slashCommands": {
+      "name": "命令與技能",
+      "desc": "定義由 /名稱 觸發的自訂命令與技能。"
+    },
+    "hiddenSlashCommands": {
+      "name": "隱藏命令",
+      "desc": "從下拉選單中隱藏特定的斜線命令。適用於隱藏與 Claudian 無關的 Claude Code 命令。每行輸入一個命令名稱，無需前導斜線。",
+      "placeholder": "commit\nbuild\ntest"
+    },
+    "mcpServers": {
+      "name": "MCP 伺服器",
+      "desc": "設定模型上下文協定伺服器，透過外部工具和資料來源擴展 Claude 的能力。啟用上下文保存模式的伺服器需要 @ 提及才能啟用。"
+    },
+    "plugins": {
+      "name": "Claude Code 外掛程式",
+      "desc": "啟用或停用從 ~/.claude/plugins 發現的 Claude Code 外掛程式。已啟用的外掛程式按儲存庫儲存。"
+    },
+    "subagents": {
+      "name": "Subagents",
+      "desc": "Configure custom subagents that Claude can delegate to.",
+      "noAgents": "No subagents configured. Click + to create one.",
+      "deleteConfirm": "Delete subagent \"{name}\"?",
+      "saveFailed": "Failed to save subagent: {message}",
+      "refreshFailed": "重新整理子代理失敗：{message}",
+      "deleteFailed": "Failed to delete subagent: {message}",
+      "renameCleanupFailed": "Warning: could not remove old file for \"{name}\"",
+      "saved": "Subagent \"{name}\" {action}",
+      "deleted": "Subagent \"{name}\" deleted",
+      "duplicateName": "An agent named \"{name}\" already exists",
+      "descriptionRequired": "Description is required",
+      "promptRequired": "System prompt is required",
+      "modal": {
+        "titleEdit": "Edit Subagent",
+        "titleAdd": "Add Subagent",
+        "name": "Name",
+        "nameDesc": "Lowercase letters, numbers, and hyphens only",
+        "namePlaceholder": "code-reviewer",
+        "description": "Description",
+        "descriptionDesc": "Brief description of this agent",
+        "descriptionPlaceholder": "Reviews code for bugs and style",
+        "advancedOptions": "Advanced options",
+        "model": "Model",
+        "modelDesc": "Model override for this agent",
+        "tools": "Tools",
+        "toolsDesc": "Comma-separated list of allowed tools (empty = all)",
+        "disallowedTools": "Disallowed tools",
+        "disallowedToolsDesc": "Comma-separated list of tools to disallow",
+        "skills": "Skills",
+        "skillsDesc": "Comma-separated list of skills",
+        "prompt": "System prompt",
+        "promptDesc": "Instructions for the agent",
+        "promptPlaceholder": "You are a code reviewer. Analyze the given code for..."
+      }
+    },
+    "safety": "安全",
+    "loadUserSettings": {
+      "name": "載入使用者 Claude 設定",
+      "desc": "載入 ~/.claude/settings.json。啟用後，使用者的 Claude Code 權限規則可能繞過安全模式。"
+    },
+    "enableBlocklist": {
+      "name": "啟用命令黑名單",
+      "desc": "阻止潛在危險的 bash 命令"
+    },
+    "blockedCommands": {
+      "name": "阻止的命令 ({platform})",
+      "desc": "在 {platform} 上阻止的模式（每行一個）。支援正則表示式。",
+      "unixName": "阻止的命令 (Unix/Git Bash)",
+      "unixDesc": "Unix 模式在 Windows 上也會被阻止，因為 Git Bash 可以呼叫它們。"
+    },
+    "exportPaths": {
+      "name": "允許的匯出路徑",
+      "desc": "允許匯出檔案的儲存庫外部路徑（每行一個）。支援 ~ 表示主目錄。"
+    },
+    "environment": "環境",
+    "customVariables": {
+      "name": "自訂變數",
+      "desc": "Claude SDK 的環境變數（KEY=VALUE 格式，每行一個）。支援 export 前綴。"
+    },
+    "envSnippets": {
+      "name": "片段",
+      "addBtn": "新增片段",
+      "noSnippets": "尚無保存的環境變數片段。點擊 + 保存當前配置。",
+      "nameRequired": "請輸入片段名稱",
+      "modal": {
+        "titleEdit": "編輯片段",
+        "titleSave": "保存片段",
+        "name": "名稱",
+        "namePlaceholder": "此配置的描述性名稱",
+        "description": "描述",
+        "descPlaceholder": "可選描述",
+        "envVars": "環境變數",
+        "envVarsPlaceholder": "KEY=VALUE 格式，每行一個（支援 export 前綴）",
+        "save": "保存",
+        "update": "更新",
+        "cancel": "取消"
+      }
+    },
+    "customContextLimits": {
+      "name": "自訂上下文限制",
+      "desc": "為您的自訂模型設定上下文視窗大小。留空使用預設值（200k 權杖）。",
+      "invalid": "格式無效。使用：256k、1m 或精確數量（1000-10000000）。"
+    },
+    "advanced": "進階",
+    "show1MModel": {
+      "name": "啟用具有 1M 上下文視窗的 Sonnet",
+      "desc": "在模型選擇器中將標準 Sonnet 替換為 Sonnet (1M)。在 200k 權杖以下價格相同。需要 Max 訂閱。"
+    },
+    "enableChrome": {
+      "name": "啟用 Chrome 擴充功能",
+      "desc": "允許 Claude 透過 claude-in-chrome 擴充功能與 Chrome 互動。需要安裝該擴充功能。需要重新啟動工作階段。"
+    },
+    "enableBangBash": {
+      "name": "Enable bash mode (!)",
+      "desc": "Type ! on empty input to enter bash mode. Runs commands directly via Node.js child_process.",
+      "validation": {
+        "noNode": "Node.js not found on PATH. Install Node.js or check your PATH configuration."
+      }
+    },
+    "maxTabs": {
+      "name": "最大聊天標籤數",
+      "desc": "同時開啟的最大聊天標籤數（3-10）。每個標籤使用獨立的 Claude 對話。",
+      "warning": "超過 5 個標籤可能會影響效能和記憶體使用。"
+    },
+    "tabBarPosition": {
+      "name": "標籤列位置",
+      "desc": "選擇標籤徽章和操作按鈕的顯示位置",
+      "input": "輸入框上方（預設）",
+      "header": "在標題列"
+    },
+    "enableAutoScroll": {
+      "name": "串流傳輸時自動捲動",
+      "desc": "在 Claude 串流傳輸回應時自動捲動到底部。停用後將停留在頂部，從頭開始閱讀。"
+    },
+    "openInMainTab": {
+      "name": "在主編輯器區域開啟",
+      "desc": "在中央編輯器區域以主分頁形式開啟聊天面板，而不是在右側邊欄"
+    },
+    "cliPath": {
+      "name": "Claude CLI 路徑",
+      "desc": "Claude Code CLI 的自訂路徑。留空使用自動檢測。",
+      "descWindows": "對於原生安裝程式，使用 claude.exe。對於 npm/pnpm/yarn 或其他套件管理器安裝，使用 cli.js 路徑（不是 claude.cmd）。",
+      "descUnix": "貼上 \"which claude\" 的輸出 - 適用於原生安裝和 npm/pnpm/yarn 安裝。",
+      "validation": {
+        "notExist": "路徑不存在",
+        "isDirectory": "路徑是目錄，不是檔案"
+      }
+    },
+    "language": {
+      "name": "語言",
+      "desc": "更改插件介面的顯示語言"
+    }
+  }
+}

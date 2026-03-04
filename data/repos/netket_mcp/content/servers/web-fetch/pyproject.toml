@@ -1,0 +1,23 @@
+[project]
+name = "web-fetch"
+version = "0.1.0"
+description = "Fetch data from ANY website"
+readme = "README.md"
+requires-python = ">=3.12, <3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.8.0",
+    "pydantic>=2.10.6",
+    "requests>=2.32.4",
+]
+
+
+[project.scripts]
+mcp-web-fetch = "web_fetch:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = ["pyright>=1.1.389", "ruff>=0.7.3"]

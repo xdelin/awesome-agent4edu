@@ -1,0 +1,797 @@
+{
+  "name": "chartjs-expert",
+  "full": true,
+  "tree": [
+    {
+      "name": "agents",
+      "type": "folder",
+      "path": "agents",
+      "children": [
+        {
+          "name": "chartjs-expert.md",
+          "type": "file",
+          "path": "agents/chartjs-expert.md",
+          "size": 5451,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "commands",
+      "type": "folder",
+      "path": "commands",
+      "children": [
+        {
+          "name": "component.md",
+          "type": "file",
+          "path": "commands/component.md",
+          "size": 2944,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "chartjs-accessibility",
+          "type": "folder",
+          "path": "skills/chartjs-accessibility",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-accessibility/examples",
+              "children": [
+                {
+                  "name": "accessible-bar-chart.html",
+                  "type": "file",
+                  "path": "skills/chartjs-accessibility/examples/accessible-bar-chart.html",
+                  "size": 11473,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-accessibility/references",
+              "children": [
+                {
+                  "name": "colorblind-palettes.md",
+                  "type": "file",
+                  "path": "skills/chartjs-accessibility/references/colorblind-palettes.md",
+                  "size": 8392,
+                  "language": "md"
+                },
+                {
+                  "name": "wcag-compliance.md",
+                  "type": "file",
+                  "path": "skills/chartjs-accessibility/references/wcag-compliance.md",
+                  "size": 8193,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-accessibility/SKILL.md",
+              "size": 10430,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-advanced",
+          "type": "folder",
+          "path": "skills/chartjs-advanced",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-advanced/examples",
+              "children": [
+                {
+                  "name": "custom-chart-type.html",
+                  "type": "file",
+                  "path": "skills/chartjs-advanced/examples/custom-chart-type.html",
+                  "size": 4481,
+                  "language": "html"
+                },
+                {
+                  "name": "gradient-backgrounds.html",
+                  "type": "file",
+                  "path": "skills/chartjs-advanced/examples/gradient-backgrounds.html",
+                  "size": 8923,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-advanced/references",
+              "children": [
+                {
+                  "name": "controller-api.md",
+                  "type": "file",
+                  "path": "skills/chartjs-advanced/references/controller-api.md",
+                  "size": 6268,
+                  "language": "md"
+                },
+                {
+                  "name": "performance-optimization.md",
+                  "type": "file",
+                  "path": "skills/chartjs-advanced/references/performance-optimization.md",
+                  "size": 6649,
+                  "language": "md"
+                },
+                {
+                  "name": "scale-api.md",
+                  "type": "file",
+                  "path": "skills/chartjs-advanced/references/scale-api.md",
+                  "size": 5884,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-advanced/SKILL.md",
+              "size": 10311,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-animations",
+          "type": "folder",
+          "path": "skills/chartjs-animations",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-animations/examples",
+              "children": [
+                {
+                  "name": "progressive-animation.html",
+                  "type": "file",
+                  "path": "skills/chartjs-animations/examples/progressive-animation.html",
+                  "size": 10682,
+                  "language": "html"
+                },
+                {
+                  "name": "staggered-bars.html",
+                  "type": "file",
+                  "path": "skills/chartjs-animations/examples/staggered-bars.html",
+                  "size": 9807,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-animations/references",
+              "children": [
+                {
+                  "name": "animation-patterns.md",
+                  "type": "file",
+                  "path": "skills/chartjs-animations/references/animation-patterns.md",
+                  "size": 8844,
+                  "language": "md"
+                },
+                {
+                  "name": "easing-functions.md",
+                  "type": "file",
+                  "path": "skills/chartjs-animations/references/easing-functions.md",
+                  "size": 8364,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-animations/SKILL.md",
+              "size": 11098,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-axes",
+          "type": "folder",
+          "path": "skills/chartjs-axes",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-axes/examples",
+              "children": [
+                {
+                  "name": "dual-y-axis.html",
+                  "type": "file",
+                  "path": "skills/chartjs-axes/examples/dual-y-axis.html",
+                  "size": 3524,
+                  "language": "html"
+                },
+                {
+                  "name": "styled-axes.html",
+                  "type": "file",
+                  "path": "skills/chartjs-axes/examples/styled-axes.html",
+                  "size": 4453,
+                  "language": "html"
+                },
+                {
+                  "name": "time-scale.html",
+                  "type": "file",
+                  "path": "skills/chartjs-axes/examples/time-scale.html",
+                  "size": 4721,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-axes/references",
+              "children": [
+                {
+                  "name": "advanced-axis-customization.md",
+                  "type": "file",
+                  "path": "skills/chartjs-axes/references/advanced-axis-customization.md",
+                  "size": 4680,
+                  "language": "md"
+                },
+                {
+                  "name": "date-adapters.md",
+                  "type": "file",
+                  "path": "skills/chartjs-axes/references/date-adapters.md",
+                  "size": 3431,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-axes/SKILL.md",
+              "size": 10015,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-chart-types",
+          "type": "folder",
+          "path": "skills/chartjs-chart-types",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-chart-types/examples",
+              "children": [
+                {
+                  "name": "bar-charts.html",
+                  "type": "file",
+                  "path": "skills/chartjs-chart-types/examples/bar-charts.html",
+                  "size": 5377,
+                  "language": "html"
+                },
+                {
+                  "name": "circular-charts.html",
+                  "type": "file",
+                  "path": "skills/chartjs-chart-types/examples/circular-charts.html",
+                  "size": 6238,
+                  "language": "html"
+                },
+                {
+                  "name": "line-area-charts.html",
+                  "type": "file",
+                  "path": "skills/chartjs-chart-types/examples/line-area-charts.html",
+                  "size": 4488,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-chart-types/references",
+              "children": [
+                {
+                  "name": "dataset-properties.md",
+                  "type": "file",
+                  "path": "skills/chartjs-chart-types/references/dataset-properties.md",
+                  "size": 6715,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-chart-types/SKILL.md",
+              "size": 8446,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-configuration",
+          "type": "folder",
+          "path": "skills/chartjs-configuration",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-configuration/examples",
+              "children": [
+                {
+                  "name": "custom-tooltip.html",
+                  "type": "file",
+                  "path": "skills/chartjs-configuration/examples/custom-tooltip.html",
+                  "size": 11528,
+                  "language": "html"
+                },
+                {
+                  "name": "interactive-legend.html",
+                  "type": "file",
+                  "path": "skills/chartjs-configuration/examples/interactive-legend.html",
+                  "size": 12669,
+                  "language": "html"
+                },
+                {
+                  "name": "responsive-chart.html",
+                  "type": "file",
+                  "path": "skills/chartjs-configuration/examples/responsive-chart.html",
+                  "size": 8474,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-configuration/references",
+              "children": [
+                {
+                  "name": "advanced-animations.md",
+                  "type": "file",
+                  "path": "skills/chartjs-configuration/references/advanced-animations.md",
+                  "size": 5616,
+                  "language": "md"
+                },
+                {
+                  "name": "legend-customization.md",
+                  "type": "file",
+                  "path": "skills/chartjs-configuration/references/legend-customization.md",
+                  "size": 10030,
+                  "language": "md"
+                },
+                {
+                  "name": "tooltip-customization.md",
+                  "type": "file",
+                  "path": "skills/chartjs-configuration/references/tooltip-customization.md",
+                  "size": 9143,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-configuration/SKILL.md",
+              "size": 12079,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-developers",
+          "type": "folder",
+          "path": "skills/chartjs-developers",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-developers/examples",
+              "children": [
+                {
+                  "name": "custom-chart-type.html",
+                  "type": "file",
+                  "path": "skills/chartjs-developers/examples/custom-chart-type.html",
+                  "size": 5162,
+                  "language": "html"
+                },
+                {
+                  "name": "custom-plugin.html",
+                  "type": "file",
+                  "path": "skills/chartjs-developers/examples/custom-plugin.html",
+                  "size": 5122,
+                  "language": "html"
+                },
+                {
+                  "name": "dynamic-updates.html",
+                  "type": "file",
+                  "path": "skills/chartjs-developers/examples/dynamic-updates.html",
+                  "size": 6818,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-developers/references",
+              "children": [
+                {
+                  "name": "custom-chart-types.md",
+                  "type": "file",
+                  "path": "skills/chartjs-developers/references/custom-chart-types.md",
+                  "size": 2724,
+                  "language": "md"
+                },
+                {
+                  "name": "custom-scales.md",
+                  "type": "file",
+                  "path": "skills/chartjs-developers/references/custom-scales.md",
+                  "size": 2375,
+                  "language": "md"
+                },
+                {
+                  "name": "updating-charts.md",
+                  "type": "file",
+                  "path": "skills/chartjs-developers/references/updating-charts.md",
+                  "size": 2217,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-developers/SKILL.md",
+              "size": 10752,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-integrations",
+          "type": "folder",
+          "path": "skills/chartjs-integrations",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-integrations/examples",
+              "children": [
+                {
+                  "name": "angular-ng2-charts.md",
+                  "type": "file",
+                  "path": "skills/chartjs-integrations/examples/angular-ng2-charts.md",
+                  "size": 20620,
+                  "language": "md"
+                },
+                {
+                  "name": "rails-stimulus.md",
+                  "type": "file",
+                  "path": "skills/chartjs-integrations/examples/rails-stimulus.md",
+                  "size": 8113,
+                  "language": "md"
+                },
+                {
+                  "name": "react-chartjs-2.md",
+                  "type": "file",
+                  "path": "skills/chartjs-integrations/examples/react-chartjs-2.md",
+                  "size": 11637,
+                  "language": "md"
+                },
+                {
+                  "name": "vue3-chartjs.md",
+                  "type": "file",
+                  "path": "skills/chartjs-integrations/examples/vue3-chartjs.md",
+                  "size": 16354,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-integrations/SKILL.md",
+              "size": 12167,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-overview",
+          "type": "folder",
+          "path": "skills/chartjs-overview",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-overview/examples",
+              "children": [
+                {
+                  "name": "basic-bar-chart.html",
+                  "type": "file",
+                  "path": "skills/chartjs-overview/examples/basic-bar-chart.html",
+                  "size": 6038,
+                  "language": "html"
+                },
+                {
+                  "name": "multi-dataset-line.html",
+                  "type": "file",
+                  "path": "skills/chartjs-overview/examples/multi-dataset-line.html",
+                  "size": 10017,
+                  "language": "html"
+                },
+                {
+                  "name": "production-bundle.html",
+                  "type": "file",
+                  "path": "skills/chartjs-overview/examples/production-bundle.html",
+                  "size": 10279,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-overview/references",
+              "children": [
+                {
+                  "name": "configuration-patterns.md",
+                  "type": "file",
+                  "path": "skills/chartjs-overview/references/configuration-patterns.md",
+                  "size": 12761,
+                  "language": "md"
+                },
+                {
+                  "name": "instance-methods.md",
+                  "type": "file",
+                  "path": "skills/chartjs-overview/references/instance-methods.md",
+                  "size": 7788,
+                  "language": "md"
+                },
+                {
+                  "name": "tree-shaking.md",
+                  "type": "file",
+                  "path": "skills/chartjs-overview/references/tree-shaking.md",
+                  "size": 5371,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-overview/SKILL.md",
+              "size": 9332,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-plugins",
+          "type": "folder",
+          "path": "skills/chartjs-plugins",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-plugins/examples",
+              "children": [
+                {
+                  "name": "empty-state-plugin.md",
+                  "type": "file",
+                  "path": "skills/chartjs-plugins/examples/empty-state-plugin.md",
+                  "size": 7896,
+                  "language": "md"
+                },
+                {
+                  "name": "quadrants-plugin.md",
+                  "type": "file",
+                  "path": "skills/chartjs-plugins/examples/quadrants-plugin.md",
+                  "size": 6578,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-plugins/references",
+              "children": [
+                {
+                  "name": "plugin-api.md",
+                  "type": "file",
+                  "path": "skills/chartjs-plugins/references/plugin-api.md",
+                  "size": 8835,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-plugins/SKILL.md",
+              "size": 9619,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-quickref",
+          "type": "folder",
+          "path": "skills/chartjs-quickref",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-quickref/SKILL.md",
+              "size": 5012,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "chartjs-tooltips",
+          "type": "folder",
+          "path": "skills/chartjs-tooltips",
+          "children": [
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "skills/chartjs-tooltips/examples",
+              "children": [
+                {
+                  "name": "conditional-tooltips.html",
+                  "type": "file",
+                  "path": "skills/chartjs-tooltips/examples/conditional-tooltips.html",
+                  "size": 5497,
+                  "language": "html"
+                },
+                {
+                  "name": "html-tooltip.html",
+                  "type": "file",
+                  "path": "skills/chartjs-tooltips/examples/html-tooltip.html",
+                  "size": 4861,
+                  "language": "html"
+                }
+              ]
+            },
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/chartjs-tooltips/references",
+              "children": [
+                {
+                  "name": "callback-signatures.md",
+                  "type": "file",
+                  "path": "skills/chartjs-tooltips/references/callback-signatures.md",
+                  "size": 5399,
+                  "language": "md"
+                },
+                {
+                  "name": "tooltip-model.md",
+                  "type": "file",
+                  "path": "skills/chartjs-tooltips/references/tooltip-model.md",
+                  "size": 3735,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/chartjs-tooltips/SKILL.md",
+              "size": 12856,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 115,
+      "language": "text"
+    },
+    {
+      "name": ".htmlhintrc",
+      "type": "file",
+      "path": ".htmlhintrc",
+      "size": 337,
+      "language": "text"
+    },
+    {
+      "name": ".lycheeignore",
+      "type": "file",
+      "path": ".lycheeignore",
+      "size": 366,
+      "language": "text"
+    },
+    {
+      "name": ".markdownlint.json",
+      "type": "file",
+      "path": ".markdownlint.json",
+      "size": 695,
+      "language": "json"
+    },
+    {
+      "name": ".markdownlintignore",
+      "type": "file",
+      "path": ".markdownlintignore",
+      "size": 62,
+      "language": "text"
+    },
+    {
+      "name": ".yamllint.yml",
+      "type": "file",
+      "path": ".yamllint.yml",
+      "size": 309,
+      "language": "yml"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 1888,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 4187,
+      "language": "md"
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 8508,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 3041,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1067,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3433,
+      "language": "md"
+    },
+    {
+      "name": "SECURITY.md",
+      "type": "file",
+      "path": "SECURITY.md",
+      "size": 755,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "reactome-server",
+  "version": "1.0.0",
+  "description": "Production-ready MCP server for Reactome pathway and systems biology data - Developed by Augmented Nature",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "node build/index.js",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "reactome",
+    "pathways",
+    "systems-biology",
+    "bioinformatics",
+    "molecular-pathways",
+    "biological-networks",
+    "pathway-analysis",
+    "biochemical-reactions",
+    "cellular-processes",
+    "protein-interactions",
+    "gene-regulation",
+    "metabolic-pathways",
+    "signaling-pathways",
+    "disease-pathways",
+    "drug-pathways",
+    "biomedical"
+  ],
+  "author": "Augmented Nature <info@augmentednature.ai> (https://augmentednature.ai)",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "bin": {
+    "reactome-server": "./build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/augmented-nature/reactome-mcp-server"
+  },
+  "homepage": "https://augmentednature.ai",
+  "bugs": {
+    "url": "https://github.com/augmented-nature/reactome-mcp-server/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://augmentednature.ai"
+  }
+}

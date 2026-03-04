@@ -1,0 +1,90 @@
+{
+  "name": "Evaluate Crew",
+  "full": true,
+  "tree": [
+    {
+      "name": "config",
+      "type": "folder",
+      "path": "config",
+      "children": [
+        {
+          "name": "agents.yaml",
+          "type": "file",
+          "path": "config/agents.yaml",
+          "size": 2553,
+          "language": "yaml"
+        },
+        {
+          "name": "tasks.yaml",
+          "type": "file",
+          "path": "config/tasks.yaml",
+          "size": 4244,
+          "language": "yaml"
+        }
+      ]
+    },
+    {
+      "name": "tools",
+      "type": "folder",
+      "path": "tools",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tools/__init__.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "custom_tool.py",
+          "type": "file",
+          "path": "tools/custom_tool.py",
+          "size": 668,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "__init__.py",
+      "type": "file",
+      "path": "__init__.py",
+      "size": 0,
+      "language": "py"
+    },
+    {
+      "name": "agentops.log",
+      "type": "file",
+      "path": "agentops.log",
+      "size": 353,
+      "language": "log"
+    },
+    {
+      "name": "crew.py",
+      "type": "file",
+      "path": "crew.py",
+      "size": 2939,
+      "language": "py"
+    },
+    {
+      "name": "main.py",
+      "type": "file",
+      "path": "main.py",
+      "size": 555,
+      "language": "py"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 2341,
+      "language": "md"
+    },
+    {
+      "name": "report.md",
+      "type": "file",
+      "path": "report.md",
+      "size": 6877,
+      "language": "md"
+    }
+  ]
+}

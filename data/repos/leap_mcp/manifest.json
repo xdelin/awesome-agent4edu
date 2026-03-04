@@ -1,0 +1,55 @@
+{
+  "name": "Leap MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 67,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 917,
+      "language": "text"
+    },
+    {
+      "name": "leap_mcp.py",
+      "type": "file",
+      "path": "leap_mcp.py",
+      "size": 24348,
+      "language": "py"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1077,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 2484,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 346,
+      "language": "txt"
+    },
+    {
+      "name": "setup.py",
+      "type": "file",
+      "path": "setup.py",
+      "size": 5283,
+      "language": "py"
+    }
+  ]
+}

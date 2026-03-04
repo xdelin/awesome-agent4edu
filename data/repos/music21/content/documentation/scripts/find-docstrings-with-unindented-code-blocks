@@ -1,0 +1,50 @@
+#! /usr/bin/env python
+'''
+Not used: we do not indent code blocks.
+'''
+
+import inspect
+import pathlib
+import sys
+import types
+
+sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
+
+from docbuild.iterators import CodebaseIterator
+
+
+def hasUnindentedCodeBlocks(docstring):
+    lines = docstring.splitlines()
+    for line in lines:
+        if line.startswith('>>> '):
+            return True
+    return False
+
+
+def main():
+    print('Inspecting docstrings...\n')
+    count = 0
+    for x in CodebaseIterator():
+        address = '.'.join((x.__module__, x.__name__))
+        # inspect.getdoc() strips whitespace for us
+        docstring = inspect.getdoc(x)
+        if docstring is not None and hasUnindentedCodeBlocks(docstring):
+            print(address)
+            count += 1
+        if isinstance(x, type):
+            for attr in inspect.classify_class_attrs(x):
+                if attr.defining_class is not x or attr.name.startswith('_'):
+                    continue
+                attrAddress = ':'.join((address, attr.name)) 
+                docstring = inspect.getdoc(attr.object)
+                if docstring is not None and hasUnindentedCodeBlocks(docstring):
+                    print(attrAddress)
+                    count += 1
+    if count:
+        print(f'Found {count} docstring(s) with unindented code blocks.')
+    else:
+        print('Found no docstrings with unindented code blocks.')
+
+
+if __name__ == '__main__':
+    main()

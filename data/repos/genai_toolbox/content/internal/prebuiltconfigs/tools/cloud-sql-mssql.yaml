@@ -1,0 +1,39 @@
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+sources:
+    cloudsql-mssql-source:
+        kind: cloud-sql-mssql
+        project: ${CLOUD_SQL_MSSQL_PROJECT}
+        region: ${CLOUD_SQL_MSSQL_REGION}
+        instance: ${CLOUD_SQL_MSSQL_INSTANCE}
+        database: ${CLOUD_SQL_MSSQL_DATABASE}
+        user: ${CLOUD_SQL_MSSQL_USER}
+        password: ${CLOUD_SQL_MSSQL_PASSWORD}
+        ipType: ${CLOUD_SQL_MSSQL_IP_TYPE:public}
+tools:
+    execute_sql:
+        kind: mssql-execute-sql
+        source: cloudsql-mssql-source
+        description: Use this tool to execute SQL.
+
+    list_tables:
+        kind: mssql-list-tables
+        source: cloudsql-mssql-source
+        description: "Lists detailed schema information (object type, columns, constraints, indexes, triggers, comment) as JSON for user-created tables (ordinary or partitioned). Filters by a comma-separated list of names. If names are omitted, lists all tables in user schemas."
+
+toolsets:
+    cloud_sql_mssql_database_tools:
+        - execute_sql
+        - list_tables

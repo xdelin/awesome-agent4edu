@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>LinkedIn MCP Server - AI-Powered LinkedIn Integration | Pegasus Heavy Industries</title>
+    <meta name="title" content="LinkedIn MCP Server - AI-Powered LinkedIn Integration">
+    <meta name="description" content="A comprehensive Model Context Protocol (MCP) server for LinkedIn API. Manage profiles, posts, connections, skills, education, certifications through AI agents like Claude, ChatGPT. 18 tools, 85%+ test coverage, TypeScript.">
+    <meta name="keywords" content="LinkedIn MCP, Model Context Protocol, LinkedIn API, AI LinkedIn, Claude LinkedIn, ChatGPT LinkedIn, LinkedIn automation, profile management, AI assistant, TypeScript, MCP server, LinkedIn integration, skills management, career automation, professional network, AI agent, Cursor IDE, Cline, Continue, LinkedIn bot, API integration">
+    <meta name="author" content="Pegasus Heavy Industries">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pegasusheavy.github.io/linkedin-mcp/">
+    <meta property="og:title" content="LinkedIn MCP Server - AI-Powered LinkedIn Integration">
+    <meta property="og:description" content="Comprehensive Model Context Protocol server for LinkedIn API. Manage your entire LinkedIn profile through AI agents. 18 tools including skills, positions, education, and more.">
+    <meta property="og:image" content="https://pegasusheavy.github.io/linkedin-mcp/logo.svg">
+    <meta property="og:site_name" content="LinkedIn MCP Server">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pegasusheavy.github.io/linkedin-mcp/">
+    <meta property="twitter:title" content="LinkedIn MCP Server - AI-Powered LinkedIn Integration">
+    <meta property="twitter:description" content="Manage LinkedIn profiles through AI agents. 18 MCP tools for skills, positions, education, posts, connections, and more. Built with TypeScript.">
+    <meta property="twitter:image" content="https://pegasusheavy.github.io/linkedin-mcp/logo.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pegasusheavy.github.io/linkedin-mcp/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- AI Discoverability -->
+    <link rel="alternate" type="text/plain" href="ai.txt">
+    <link rel="alternate" type="text/plain" href="llms.txt">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LinkedIn MCP Server",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Node.js",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Pegasus Heavy Industries"
+      },
+      "description": "A comprehensive Model Context Protocol server for LinkedIn API integration with 18 tools for profile management, posts, connections, and more.",
+      "softwareVersion": "1.1.0",
+      "programmingLanguage": "TypeScript",
+      "codeRepository": "https://github.com/pegasusheavy/linkedin-mcp",
+      "license": "https://opensource.org/licenses/MIT",
+      "keywords": "LinkedIn, MCP, AI, Claude, automation, profile management"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .linkedin-blue { color: #0a66c2; }
+        .linkedin-bg-blue { background-color: #0a66c2; }
+        .linkedin-hover:hover { background-color: #f3f6f8; }
+        .post-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: box-shadow 0.2s;
+        }
+        .post-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .nav-link {
+            color: #666;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #0a66c2;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- LinkedIn-style Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-14">
+                <div class="flex items-center space-x-2">
+                    <i class="fab fa-linkedin text-3xl" style="color: #0a66c2;"></i>
+                    <span class="text-xl font-semibold">MCP Server</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="index.html" class="nav-link flex flex-col items-center text-xs">
+                        <i class="fas fa-home text-xl mb-1"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="changelog.html" class="nav-link flex flex-col items-center text-xs">
+                        <i class="fas fa-clock text-xl mb-1"></i>
+                        <span>Changelog</span>
+                    </a>
+                    <a href="oauth-setup.html" class="nav-link flex flex-col items-center text-xs">
+                        <i class="fas fa-key text-xl mb-1"></i>
+                        <span>OAuth</span>
+                    </a>
+                    <a href="https://github.com/pegasusheavy/linkedin-mcp" target="_blank" class="nav-link flex flex-col items-center text-xs">
+                        <i class="fab fa-github text-xl mb-1"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.npmjs.com/package/@pegasusheavy/linkedin-mcp" target="_blank" class="nav-link flex flex-col items-center text-xs">
+                        <i class="fab fa-npm text-xl mb-1"></i>
+                        <span>npm</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-6 max-w-5xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <!-- Left Sidebar - Profile Card -->
+            <aside class="lg:col-span-3">
+                <div class="post-card p-6 text-center mb-4">
+                    <img src="profile.png" alt="LinkedIn MCP Server" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                    <h2 class="font-semibold text-lg mb-1">LinkedIn MCP Server</h2>
+                    <p class="text-sm text-gray-600 mb-4">by Pegasus Heavy Industries</p>
+                    <div class="border-t pt-4 text-left text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-600">Version</span>
+                            <span class="font-semibold">v1.1.0</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-600">Tools</span>
+                            <span class="font-semibold">18</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Coverage</span>
+                            <span class="font-semibold">85%+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card p-4 mb-4">
+                    <h3 class="font-semibold mb-3 text-sm">Quick Links</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="#installation" class="block linkedin-blue hover:underline">
+                            <i class="fas fa-download mr-2"></i>Installation
+                        </a>
+                        <a href="#features" class="block linkedin-blue hover:underline">
+                            <i class="fas fa-star mr-2"></i>Features
+                        </a>
+                        <a href="#tools" class="block linkedin-blue hover:underline">
+                            <i class="fas fa-tools mr-2"></i>Available Tools
+                        </a>
+                        <a href="https://github.com/pegasusheavy/linkedin-mcp/blob/main/README.md" target="_blank" class="block linkedin-blue hover:underline">
+                            <i class="fas fa-book mr-2"></i>Documentation
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Feed -->
+            <main class="lg:col-span-9 space-y-4">
+                <!-- Hero Post -->
+                <article class="post-card p-6">
+                    <div class="flex items-start mb-4">
+                        <img src="profile.png" alt="Pegasus Heavy Industries" class="w-12 h-12 rounded-full mr-3 object-cover">
+                        <div class="flex-1">
+                            <h3 class="font-semibold">Pegasus Heavy Industries</h3>
+                            <p class="text-xs text-gray-600">Open Source Developer • Just now • <i class="fas fa-globe-americas"></i></p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h1 class="text-2xl font-bold mb-3">🚀 Introducing LinkedIn MCP Server</h1>
+                        <p class="text-gray-700 mb-3">
+                            Excited to share the LinkedIn MCP Server - a comprehensive Model Context Protocol integration that brings LinkedIn's power directly to AI assistants like Claude, Cursor, and more!
+                        </p>
+                        <p class="text-gray-700 mb-3">
+                            Built with <span class="font-semibold">TypeScript</span> and the modern <span class="font-semibold">McpServer API</span>, this project enables AI agents to manage your entire LinkedIn profile through natural language. No more context switching between your AI assistant and LinkedIn!
+                        </p>
+                        <p class="text-gray-700">
+                            💼 <span class="font-semibold">18 powerful tools</span> • ✅ <span class="font-semibold">85%+ test coverage</span> • ⚡ <span class="font-semibold">Production ready</span>
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-600 border-t pt-4">
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-thumbs-up"></i> Like
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-comment"></i> Comment
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Installation Post -->
+                <article id="installation" class="post-card p-6">
+                    <div class="flex items-start mb-4">
+                        <img src="profile.png" alt="Pegasus Heavy Industries" class="w-12 h-12 rounded-full mr-3 object-cover">
+                        <div class="flex-1">
+                            <h3 class="font-semibold">Pegasus Heavy Industries</h3>
+                            <p class="text-xs text-gray-600">1 hour ago • <i class="fas fa-globe-americas"></i></p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold mb-3">📦 Getting Started - Installation Guide</h2>
+                        <p class="text-gray-700 mb-3">
+                            Setting up the LinkedIn MCP Server is incredibly simple! Here's how to get it running in Claude Desktop in less than 2 minutes:
+                        </p>
+
+                        <div class="bg-gray-50 p-4 rounded-lg mb-3">
+                            <h4 class="font-semibold mb-2">Step 1: Configure Claude Desktop</h4>
+                            <p class="text-sm text-gray-600 mb-2">Open your config file:</p>
+                            <ul class="text-sm text-gray-700 mb-2 ml-4 list-disc">
+                                <li><strong>macOS:</strong> <code class="bg-gray-200 px-2 py-1 rounded text-xs">~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
+                                <li><strong>Windows:</strong> <code class="bg-gray-200 px-2 py-1 rounded text-xs">%APPDATA%\Claude\claude_desktop_config.json</code></li>
+                                <li><strong>Linux:</strong> <code class="bg-gray-200 px-2 py-1 rounded text-xs">~/.config/Claude/claude_desktop_config.json</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-3 overflow-x-auto">
+                            <pre class="text-xs">{
+  "mcpServers": {
+    "linkedin": {
+      "command": "npx",
+      "args": ["-y", "@pegasusheavy/linkedin-mcp"],
+      "env": {
+        "LINKEDIN_ACCESS_TOKEN": "your_token_here"
+      }
+    }
+  }
+}</pre>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg mb-3">
+                            <h4 class="font-semibold mb-2">Step 2: Restart & Verify</h4>
+                            <p class="text-sm text-gray-700">Restart Claude Desktop and try:</p>
+                            <ul class="text-sm text-gray-700 mt-2 ml-4 list-disc">
+                                <li>"Can you show me my LinkedIn profile?"</li>
+                                <li>"Add TypeScript to my LinkedIn skills"</li>
+                                <li>"What are my recent LinkedIn posts?"</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-gray-700 mb-2">
+                            🎯 <strong>Also works with:</strong> Cursor IDE, Cline, Continue, and any MCP-compatible client!
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            📚 Full docs: <a href="https://github.com/pegasusheavy/linkedin-mcp" target="_blank" class="linkedin-blue hover:underline">github.com/pegasusheavy/linkedin-mcp</a>
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-600 border-t pt-4">
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-thumbs-up"></i> Like
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-comment"></i> Comment
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Features Post -->
+                <article id="features" class="post-card p-6">
+                    <div class="flex items-start mb-4">
+                        <img src="profile.png" alt="Pegasus Heavy Industries" class="w-12 h-12 rounded-full mr-3 object-cover">
+                        <div class="flex-1">
+                            <h3 class="font-semibold">Pegasus Heavy Industries</h3>
+                            <p class="text-xs text-gray-600">2 hours ago • <i class="fas fa-globe-americas"></i></p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold mb-3">✨ Key Features & Capabilities</h2>
+                        <p class="text-gray-700 mb-3">
+                            Here's what makes the LinkedIn MCP Server a game-changer for AI-powered LinkedIn management:
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4 mb-3">
+                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                <h4 class="font-semibold mb-2 text-blue-900"><i class="fas fa-user-cog mr-2"></i>Profile Management</h4>
+                                <p class="text-sm text-gray-700">Add, update, and delete skills, positions, education, certifications, publications, and languages - all through natural language.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                                <h4 class="font-semibold mb-2 text-purple-900"><i class="fas fa-share-nodes mr-2"></i>Social Features</h4>
+                                <p class="text-sm text-gray-700">View profiles, posts, and connections. Share new content on LinkedIn directly from your AI assistant.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                                <h4 class="font-semibold mb-2 text-green-900"><i class="fas fa-bolt mr-2"></i>Modern Tech Stack</h4>
+                                <p class="text-sm text-gray-700">Built with TypeScript, McpServer API v1.24+, Zod validation, and comprehensive test suite (65 tests).</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                                <h4 class="font-semibold mb-2 text-orange-900"><i class="fas fa-shield-alt mr-2"></i>Production Ready</h4>
+                                <p class="text-sm text-gray-700">85%+ test coverage, type-safe with Zod schemas, CI/CD with GitHub Actions, and extensive error handling.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-4 rounded-lg">
+                            <div class="grid grid-cols-4 gap-4 text-center">
+                                <div>
+                                    <div class="text-3xl font-bold">18</div>
+                                    <div class="text-sm opacity-90">MCP Tools</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold">65</div>
+                                    <div class="text-sm opacity-90">Test Cases</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold">85%+</div>
+                                    <div class="text-sm opacity-90">Coverage</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold">100%</div>
+                                    <div class="text-sm opacity-90">TypeScript</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-600 border-t pt-4">
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-thumbs-up"></i> Like
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-comment"></i> Comment
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Tools Post -->
+                <article id="tools" class="post-card p-6">
+                    <div class="flex items-start mb-4">
+                        <img src="profile.png" alt="Pegasus Heavy Industries" class="w-12 h-12 rounded-full mr-3 object-cover">
+                        <div class="flex-1">
+                            <h3 class="font-semibold">Pegasus Heavy Industries</h3>
+                            <p class="text-xs text-gray-600">3 hours ago • <i class="fas fa-globe-americas"></i></p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold mb-3">🛠️ All 18 Available Tools</h2>
+                        <p class="text-gray-700 mb-4">
+                            The LinkedIn MCP Server provides 18 powerful tools organized into two categories:
+                        </p>
+
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-3 text-lg linkedin-blue">Social & Content Tools (5)</h4>
+                            <div class="space-y-2">
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <code class="text-sm font-mono text-blue-600">get_linkedin_profile</code>
+                                    <p class="text-sm text-gray-600 mt-1">View your LinkedIn profile information</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <code class="text-sm font-mono text-blue-600">get_linkedin_posts</code>
+                                    <p class="text-sm text-gray-600 mt-1">Retrieve your recent posts with engagement metrics</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <code class="text-sm font-mono text-blue-600">share_linkedin_post</code>
+                                    <p class="text-sm text-gray-600 mt-1">Share new content on LinkedIn</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <code class="text-sm font-mono text-blue-600">get_linkedin_connections</code>
+                                    <p class="text-sm text-gray-600 mt-1">View your professional connections</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <code class="text-sm font-mono text-blue-600">search_linkedin_people</code>
+                                    <p class="text-sm text-gray-600 mt-1">Search for professionals by keywords</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-3 text-lg linkedin-blue">Profile Management Tools (13)</h4>
+                            <div class="grid md:grid-cols-2 gap-3">
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <h5 class="font-semibold text-sm mb-1">Skills</h5>
+                                    <div class="text-xs space-y-1">
+                                        <div><code class="text-green-600">add_linkedin_skill</code></div>
+                                        <div><code class="text-red-600">delete_linkedin_skill</code></div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <h5 class="font-semibold text-sm mb-1">Work Experience</h5>
+                                    <div class="text-xs space-y-1">
+                                        <div><code class="text-green-600">add_linkedin_position</code></div>
+                                        <div><code class="text-yellow-600">update_linkedin_position</code></div>
+                                        <div><code class="text-red-600">delete_linkedin_position</code></div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <h5 class="font-semibold text-sm mb-1">Education</h5>
+                                    <div class="text-xs space-y-1">
+                                        <div><code class="text-green-600">add_linkedin_education</code></div>
+                                        <div><code class="text-red-600">delete_linkedin_education</code></div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <h5 class="font-semibold text-sm mb-1">Certifications</h5>
+                                    <div class="text-xs space-y-1">
+                                        <div><code class="text-green-600">add_linkedin_certification</code></div>
+                                        <div><code class="text-red-600">delete_linkedin_certification</code></div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <h5 class="font-semibold text-sm mb-1">Publications</h5>
+                                    <div class="text-xs space-y-1">
+                                        <div><code class="text-green-600">add_linkedin_publication</code></div>
+                                        <div><code class="text-red-600">delete_linkedin_publication</code></div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <h5 class="font-semibold text-sm mb-1">Languages</h5>
+                                    <div class="text-xs space-y-1">
+                                        <div><code class="text-green-600">add_linkedin_language</code></div>
+                                        <div><code class="text-red-600">delete_linkedin_language</code></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-600 border-t pt-4">
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-thumbs-up"></i> Like
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-comment"></i> Comment
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Contributing Post -->
+                <article class="post-card p-6">
+                    <div class="flex items-start mb-4">
+                        <img src="profile.png" alt="Pegasus Heavy Industries" class="w-12 h-12 rounded-full mr-3 object-cover">
+                        <div class="flex-1">
+                            <h3 class="font-semibold">Pegasus Heavy Industries</h3>
+                            <p class="text-xs text-gray-600">4 hours ago • <i class="fas fa-globe-americas"></i></p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold mb-3">🤝 Open Source & Contributing</h2>
+                        <p class="text-gray-700 mb-3">
+                            This project is open source and released under the MIT License. We welcome contributions from the community!
+                        </p>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-3">
+                            <p class="text-sm text-gray-700 mb-2"><strong>Ways to contribute:</strong></p>
+                            <ul class="text-sm text-gray-700 ml-4 list-disc space-y-1">
+                                <li>Report bugs or request features via GitHub Issues</li>
+                                <li>Submit pull requests for bug fixes or new features</li>
+                                <li>Improve documentation</li>
+                                <li>Share your use cases and feedback</li>
+                                <li>Star the repo if you find it useful! ⭐</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex gap-3 mb-3">
+                            <a href="https://github.com/pegasusheavy/linkedin-mcp" target="_blank" class="flex-1 linkedin-bg-blue text-white text-center py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                            <a href="https://www.npmjs.com/package/@pegasusheavy/linkedin-mcp" target="_blank" class="flex-1 bg-red-600 text-white text-center py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                                <i class="fab fa-npm mr-2"></i>View on npm
+                            </a>
+                        </div>
+
+                        <p class="text-sm text-gray-600 text-center">
+                            Copyright © 2025 Pegasus Heavy Industries • MIT License
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-600 border-t pt-4">
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-thumbs-up"></i> Like
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="far fa-comment"></i> Comment
+                        </button>
+                        <button class="linkedin-hover px-4 py-2 rounded flex items-center gap-2">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

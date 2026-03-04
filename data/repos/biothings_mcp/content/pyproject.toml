@@ -1,0 +1,44 @@
+[project]
+name = "biothings-mcp"
+version = "0.1.6"
+description = "MCP for Biothings"
+readme = "README.md"
+authors = [
+    { name = "antonkulaga", email = "antonkulaga@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "biopython>=1.85",
+    "biothings-typed-client>=0.0.7",
+    "eliot>=1.17.5",
+    "pycomfort>=0.0.18",
+    "fastmcp>=2.10.2",
+    "aiosqlite>=0.21.0",
+    "sqlite-utils>=3.38",
+    "huggingface-hub>=0.33.2",
+    "typer>=0.16.0",
+    "hishel<0.5",
+]
+
+[project.scripts]
+biothings-mcp = "biothings_mcp.server:cli_app_stdio"
+server = "biothings_mcp.server:app"
+stdio = "biothings_mcp.server:cli_app_stdio"
+sse = "biothings_mcp.server:cli_app_sse"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = [
+    "*.log",
+    "logs/",
+    "images/"
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.0.0",
+]

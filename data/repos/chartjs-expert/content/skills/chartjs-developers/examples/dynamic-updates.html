@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Dynamic Updates Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 { color: #333; }
+    p { color: #666; line-height: 1.6; }
+    .chart-container {
+      position: relative;
+      height: 350px;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary { background: #3b82f6; color: white; }
+    .btn-primary:hover { background: #2563eb; }
+    .btn-danger { background: #ef4444; color: white; }
+    .btn-danger:hover { background: #dc2626; }
+    .btn-secondary { background: #6b7280; color: white; }
+    .btn-secondary:hover { background: #4b5563; }
+    .btn-success { background: #10b981; color: white; }
+    .btn-success:hover { background: #059669; }
+    code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+    .status {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #f8f9fa;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Updates Example</h1>
+  <p>
+    This example demonstrates how to update charts after creation.
+    Use the buttons below to add/remove data, toggle animations, and modify options.
+  </p>
+
+  <div class="controls">
+    <button class="btn-primary" onclick="addData()">Add Data Point</button>
+    <button class="btn-danger" onclick="removeData()">Remove Data Point</button>
+    <button class="btn-secondary" onclick="toggleAnimation()">Toggle Animation</button>
+    <button class="btn-success" onclick="updateTitle()">Update Title</button>
+    <button class="btn-secondary" onclick="randomizeData()">Randomize All</button>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <div id="status" class="status">Ready</div>
+
+  <h2>Key Concepts</h2>
+  <ul>
+    <li><code>chart.data.datasets[0].data.push()</code> - Add data points</li>
+    <li><code>chart.data.labels.push()</code> - Add labels</li>
+    <li><code>chart.update()</code> - Animate to new values</li>
+    <li><code>chart.update('none')</code> - Update without animation</li>
+    <li><code>chart.options.plugins.title.text = 'New'</code> - Mutate options in place</li>
+  </ul>
+
+  <script>
+    // ============================================================
+    // Create the initial chart
+    // ============================================================
+    const ctx = document.getElementById('myChart');
+    let animationsEnabled = true;
+    let dataPointCount = 0;
+
+    const chart = new Chart(ctx, {
+      type: 'line',
+
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{
+          label: 'Dataset 1',
+          data: [12, 19, 3, 5, 2],
+          borderColor: 'rgb(75, 192, 192)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          tension: 0.3,
+          fill: true
+        }, {
+          label: 'Dataset 2',
+          data: [8, 12, 6, 9, 11],
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        plugins: {
+          title: {
+            display: true,
+            text: 'Dynamic Chart Updates Demo'
+          }
+        },
+
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // ============================================================
+    // Update Functions
+    // ============================================================
+
+    function updateStatus(message) {
+      document.getElementById('status').textContent = message;
+    }
+
+    // Add a new data point to all datasets
+    function addData() {
+      dataPointCount++;
+      const months = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const newLabel = months[dataPointCount % months.length] || `Point ${dataPointCount}`;
+
+      // Add the new label
+      chart.data.labels.push(newLabel);
+
+      // Add new data to each dataset
+      chart.data.datasets.forEach((dataset) => {
+        const newValue = Math.floor(Math.random() * 20) + 1;
+        dataset.data.push(newValue);
+      });
+
+      // Update with or without animation based on toggle
+      chart.update(animationsEnabled ? undefined : 'none');
+
+      updateStatus(`Added "${newLabel}" with random values. Animation: ${animationsEnabled ? 'ON' : 'OFF'}`);
+    }
+
+    // Remove the last data point from all datasets
+    function removeData() {
+      if (chart.data.labels.length <= 2) {
+        updateStatus('Cannot remove - minimum 2 data points required');
+        return;
+      }
+
+      const removedLabel = chart.data.labels.pop();
+
+      chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+      });
+
+      chart.update(animationsEnabled ? undefined : 'none');
+
+      updateStatus(`Removed "${removedLabel}". Animation: ${animationsEnabled ? 'ON' : 'OFF'}`);
+    }
+
+    // Toggle animations on/off
+    function toggleAnimation() {
+      animationsEnabled = !animationsEnabled;
+      updateStatus(`Animations ${animationsEnabled ? 'ENABLED' : 'DISABLED'}`);
+    }
+
+    // Update the chart title (demonstrates mutating options in place)
+    function updateTitle() {
+      const titles = [
+        'Dynamic Chart Updates Demo',
+        'Sales Performance 2024',
+        'Monthly Analytics',
+        'Real-time Data Visualization'
+      ];
+
+      // Mutate options in place - preserves other options
+      const currentTitle = chart.options.plugins.title.text;
+      const currentIndex = titles.indexOf(currentTitle);
+      const nextIndex = (currentIndex + 1) % titles.length;
+
+      chart.options.plugins.title.text = titles[nextIndex];
+
+      chart.update(animationsEnabled ? undefined : 'none');
+
+      updateStatus(`Title changed to: "${titles[nextIndex]}"`);
+    }
+
+    // Randomize all data values
+    function randomizeData() {
+      chart.data.datasets.forEach((dataset) => {
+        dataset.data = dataset.data.map(() => Math.floor(Math.random() * 25) + 1);
+      });
+
+      chart.update(animationsEnabled ? undefined : 'none');
+
+      updateStatus(`All data randomized. Animation: ${animationsEnabled ? 'ON' : 'OFF'}`);
+    }
+  </script>
+</body>
+</html>

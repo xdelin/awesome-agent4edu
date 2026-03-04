@@ -1,0 +1,49 @@
+{
+  "name": "alphafold-server",
+  "version": "1.0.0",
+  "description": "A comprehensive Model Context Protocol server for accessing AlphaFold Protein Structure Database with advanced protein structure prediction tools",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "node build/index.js",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "alphafold",
+    "protein",
+    "structure",
+    "prediction",
+    "bioinformatics",
+    "structural-biology",
+    "deepmind",
+    "protein-folding",
+    "pdb",
+    "mmcif",
+    "confidence-scores",
+    "structural-analysis"
+  ],
+  "author": "Augmented Nature <contact@augmentednature.ai>",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "bin": {
+    "alphafold-server": "./build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alphafold-mcp-server"
+  },
+  "homepage": "https://github.com/alphafold-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/alphafold-mcp-server/issues"
+  }
+}

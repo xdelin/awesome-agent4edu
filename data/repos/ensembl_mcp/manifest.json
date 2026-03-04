@@ -1,0 +1,272 @@
+{
+  "name": "Ensembl MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "handlers",
+          "type": "folder",
+          "path": "src/handlers",
+          "children": [
+            {
+              "name": "prompts.ts",
+              "type": "file",
+              "path": "src/handlers/prompts.ts",
+              "size": 8151,
+              "language": "ts"
+            },
+            {
+              "name": "resources.ts",
+              "type": "file",
+              "path": "src/handlers/resources.ts",
+              "size": 2938,
+              "language": "ts"
+            },
+            {
+              "name": "tools.ts",
+              "type": "file",
+              "path": "src/handlers/tools.ts",
+              "size": 28331,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types",
+          "type": "folder",
+          "path": "src/types",
+          "children": [
+            {
+              "name": "ensembl.ts",
+              "type": "file",
+              "path": "src/types/ensembl.ts",
+              "size": 1762,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "cache.ts",
+              "type": "file",
+              "path": "src/utils/cache.ts",
+              "size": 5181,
+              "language": "ts"
+            },
+            {
+              "name": "ensembl-api.ts",
+              "type": "file",
+              "path": "src/utils/ensembl-api.ts",
+              "size": 34981,
+              "language": "ts"
+            },
+            {
+              "name": "error-handler.ts",
+              "type": "file",
+              "path": "src/utils/error-handler.ts",
+              "size": 9070,
+              "language": "ts"
+            },
+            {
+              "name": "formatter.ts",
+              "type": "file",
+              "path": "src/utils/formatter.ts",
+              "size": 24370,
+              "language": "ts"
+            },
+            {
+              "name": "input-normalizer.ts",
+              "type": "file",
+              "path": "src/utils/input-normalizer.ts",
+              "size": 8231,
+              "language": "ts"
+            },
+            {
+              "name": "input-validator.ts",
+              "type": "file",
+              "path": "src/utils/input-validator.ts",
+              "size": 21180,
+              "language": "ts"
+            },
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/utils/logger.ts",
+              "size": 1411,
+              "language": "ts"
+            },
+            {
+              "name": "response-processor.ts",
+              "type": "file",
+              "path": "src/utils/response-processor.ts",
+              "size": 12359,
+              "language": "ts"
+            },
+            {
+              "name": "species-data.ts",
+              "type": "file",
+              "path": "src/utils/species-data.ts",
+              "size": 4210,
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "unit",
+          "type": "folder",
+          "path": "tests/unit",
+          "children": [
+            {
+              "name": "cache.test.ts",
+              "type": "file",
+              "path": "tests/unit/cache.test.ts",
+              "size": 5264,
+              "language": "ts"
+            },
+            {
+              "name": "error-handler.test.ts",
+              "type": "file",
+              "path": "tests/unit/error-handler.test.ts",
+              "size": 4306,
+              "language": "ts"
+            },
+            {
+              "name": "formatter.test.ts",
+              "type": "file",
+              "path": "tests/unit/formatter.test.ts",
+              "size": 5724,
+              "language": "ts"
+            },
+            {
+              "name": "input-normalizer.test.ts",
+              "type": "file",
+              "path": "tests/unit/input-normalizer.test.ts",
+              "size": 6655,
+              "language": "ts"
+            },
+            {
+              "name": "input-validator.test.ts",
+              "type": "file",
+              "path": "tests/unit/input-validator.test.ts",
+              "size": 20682,
+              "language": "ts"
+            },
+            {
+              "name": "response-processor.test.ts",
+              "type": "file",
+              "path": "tests/unit/response-processor.test.ts",
+              "size": 13186,
+              "language": "ts"
+            },
+            {
+              "name": "species-data.test.ts",
+              "type": "file",
+              "path": "tests/unit/species-data.test.ts",
+              "size": 3815,
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 420,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 606,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile.bun",
+      "type": "file",
+      "path": "Dockerfile.bun",
+      "size": 362,
+      "language": "bun"
+    },
+    {
+      "name": "index.ts",
+      "type": "file",
+      "path": "index.ts",
+      "size": 8811,
+      "language": "ts"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1061,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 851,
+      "language": "json"
+    },
+    {
+      "name": "PLANS.md",
+      "type": "file",
+      "path": "PLANS.md",
+      "size": 6313,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8077,
+      "language": "md"
+    },
+    {
+      "name": "render.yaml",
+      "type": "file",
+      "path": "render.yaml",
+      "size": 171,
+      "language": "yaml"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 456,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 743,
+      "language": "json"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 331,
+      "language": "ts"
+    }
+  ]
+}

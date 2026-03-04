@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Progressive Line Animation</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .chart-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .chart-container h2 {
+      margin-top: 0;
+      color: #555;
+      font-size: 1.1rem;
+    }
+    .chart-container p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    canvas { max-height: 300px; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 8px;
+      margin-bottom: 10px;
+    }
+    button:hover { background: #45a049; }
+    .progress-container {
+      width: 100%;
+      height: 24px;
+      background: #e0e0e0;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4CAF50, #45a049);
+      border-radius: 12px;
+      transition: width 0.1s ease;
+      width: 0%;
+    }
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      color: #333;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Progressive Line Animation</h1>
+
+  <!-- Basic Progressive Reveal -->
+  <div class="chart-container">
+    <h2>Basic Progressive Reveal</h2>
+    <p>Line draws progressively from left to right over 10 seconds.
+       Each point appears after the previous one.</p>
+    <button onclick="resetBasicProgressive()">Restart Animation</button>
+    <canvas id="basicProgressive"></canvas>
+  </div>
+
+  <!-- With Progress Bar -->
+  <div class="chart-container">
+    <h2>With Progress Indicator</h2>
+    <p>Uses onProgress callback to show animation progress.</p>
+    <button onclick="resetProgressBar()">Restart Animation</button>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+    <canvas id="progressChart"></canvas>
+  </div>
+
+  <!-- Staggered Points -->
+  <div class="chart-container">
+    <h2>Staggered Point Delay</h2>
+    <p>Each data point appears with a 100ms delay after the previous.
+       Uses the delay callback for staggered effect.</p>
+    <button onclick="resetStaggered()">Restart Animation</button>
+    <canvas id="staggeredPoints"></canvas>
+  </div>
+
+  <!-- Multiple Datasets -->
+  <div class="chart-container">
+    <h2>Multiple Dataset Progressive Reveal</h2>
+    <p>Each dataset starts animating 500ms after the previous one.</p>
+    <button onclick="resetMultiDataset()">Restart Animation</button>
+    <canvas id="multiDataset"></canvas>
+  </div>
+
+  <script>
+    // Generate sample data
+    function generateData(count, startValue = 100) {
+      const data = [];
+      let prev = startValue;
+      for (let i = 0; i < count; i++) {
+        prev += 5 - Math.random() * 10;
+        data.push({ x: i, y: prev });
+      }
+      return data;
+    }
+
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+
+    // ========================================
+    // Basic Progressive Reveal
+    // ========================================
+    const basicData = generateData(100);
+    const totalDuration = 10000;
+    const delayBetweenPoints = totalDuration / basicData.length;
+
+    function previousY(ctx) {
+      if (ctx.index === 0) {
+        return ctx.chart.scales.y.getPixelForValue(100);
+      }
+      return ctx.chart.getDatasetMeta(ctx.datasetIndex)
+        .data[ctx.index - 1].getProps(['y'], true).y;
+    }
+
+    const basicChart = new Chart(document.getElementById('basicProgressive'), {
+      type: 'line',
+      data: {
+        datasets: [{
+          borderColor: 'rgb(75, 192, 192)',
+          borderWidth: 2,
+          radius: 0,
+          data: basicData,
+          fill: false
+        }]
+      },
+      options: {
+        animation: {
+          x: {
+            type: 'number',
+            easing: 'linear',
+            duration: delayBetweenPoints,
+            from: NaN,  // Point initially skipped
+            delay(ctx) {
+              if (ctx.type !== 'data' || ctx.xStarted) return 0;
+              ctx.xStarted = true;
+              return ctx.index * delayBetweenPoints;
+            }
+          },
+          y: {
+            type: 'number',
+            easing: 'linear',
+            duration: delayBetweenPoints,
+            from: previousY,
+            delay(ctx) {
+              if (ctx.type !== 'data' || ctx.yStarted) return 0;
+              ctx.yStarted = true;
+              return ctx.index * delayBetweenPoints;
+            }
+          }
+        },
+        interaction: { intersect: false },
+        plugins: { legend: false },
+        scales: {
+          x: { type: 'linear' },
+          y: { min: 50, max: 150 }
+        }
+      }
+    });
+
+    function resetBasicProgressive() {
+      const meta = basicChart.getDatasetMeta(0);
+      for (let i = 0; i < basicData.length; i++) {
+        const ctx = meta.controller.getContext(i);
+        ctx.xStarted = false;
+        ctx.yStarted = false;
+      }
+      basicChart.data.datasets[0].data = generateData(100);
+      basicChart.update();
+    }
+
+    // ========================================
+    // With Progress Bar
+    // ========================================
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+
+    const progressChart = new Chart(document.getElementById('progressChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Revenue',
+          data: [12, 19, 3, 5, 2, 3, 15],
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        animation: {
+          duration: 3000,
+          easing: 'easeOutQuart',
+          onProgress: (animation) => {
+            const progress = (animation.currentStep / animation.numSteps) * 100;
+            progressBar.style.width = progress + '%';
+            progressText.textContent = Math.round(progress) + '%';
+          },
+          onComplete: () => {
+            progressBar.style.width = '100%';
+            progressText.textContent = '100%';
+          }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+
+    function resetProgressBar() {
+      progressBar.style.width = '0%';
+      progressText.textContent = '0%';
+      progressChart.data.datasets[0].data = [
+        Math.random() * 20,
+        Math.random() * 20,
+        Math.random() * 20,
+        Math.random() * 20,
+        Math.random() * 20,
+        Math.random() * 20,
+        Math.random() * 20
+      ];
+      progressChart.update();
+    }
+
+    // ========================================
+    // Staggered Points
+    // ========================================
+    const staggeredChart = new Chart(document.getElementById('staggeredPoints'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Sales',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          borderColor: 'rgb(54, 162, 235)',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        animation: {
+          duration: 1000,
+          delay: (context) => {
+            let delay = 0;
+            if (context.type === 'data' && context.mode === 'default') {
+              delay = context.dataIndex * 100;  // 100ms per point
+            }
+            return delay;
+          }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+
+    function resetStaggered() {
+      staggeredChart.data.datasets[0].data = [
+        Math.floor(Math.random() * 100),
+        Math.floor(Math.random() * 100),
+        Math.floor(Math.random() * 100),
+        Math.floor(Math.random() * 100),
+        Math.floor(Math.random() * 100),
+        Math.floor(Math.random() * 100),
+        Math.floor(Math.random() * 100)
+      ];
+      staggeredChart.update();
+    }
+
+    // ========================================
+    // Multiple Datasets Progressive Reveal
+    // ========================================
+    const multiChart = new Chart(document.getElementById('multiDataset'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Revenue',
+            data: [12, 19, 3, 5, 2, 3, 15],
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.3,
+            animation: { delay: 0 }
+          },
+          {
+            label: 'Expenses',
+            data: [8, 12, 7, 9, 4, 6, 10],
+            borderColor: 'rgb(255, 99, 132)',
+            tension: 0.3,
+            animation: { delay: 500 }
+          },
+          {
+            label: 'Profit',
+            data: [4, 7, -4, -4, -2, -3, 5],
+            borderColor: 'rgb(255, 205, 86)',
+            tension: 0.3,
+            animation: { delay: 1000 }
+          }
+        ]
+      },
+      options: {
+        animation: {
+          duration: 1500
+        },
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+
+    function resetMultiDataset() {
+      multiChart.data.datasets[0].data = [
+        Math.floor(Math.random() * 20),
+        Math.floor(Math.random() * 20),
+        Math.floor(Math.random() * 20),
+        Math.floor(Math.random() * 20),
+        Math.floor(Math.random() * 20),
+        Math.floor(Math.random() * 20),
+        Math.floor(Math.random() * 20)
+      ];
+      multiChart.data.datasets[1].data = [
+        Math.floor(Math.random() * 15),
+        Math.floor(Math.random() * 15),
+        Math.floor(Math.random() * 15),
+        Math.floor(Math.random() * 15),
+        Math.floor(Math.random() * 15),
+        Math.floor(Math.random() * 15),
+        Math.floor(Math.random() * 15)
+      ];
+      multiChart.data.datasets[2].data = multiChart.data.datasets[0].data.map(
+        (v, i) => v - multiChart.data.datasets[1].data[i]
+      );
+      multiChart.update();
+    }
+  </script>
+</body>
+</html>

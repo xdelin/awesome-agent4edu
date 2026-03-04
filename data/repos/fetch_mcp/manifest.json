@@ -1,0 +1,83 @@
+{
+  "name": "Fetch MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "Fetcher.test.ts",
+          "type": "file",
+          "path": "src/Fetcher.test.ts",
+          "size": 5549,
+          "language": "ts"
+        },
+        {
+          "name": "Fetcher.ts",
+          "type": "file",
+          "path": "src/Fetcher.ts",
+          "size": 4439,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 5035,
+          "language": "ts"
+        },
+        {
+          "name": "types.ts",
+          "type": "file",
+          "path": "src/types.ts",
+          "size": 574,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 18,
+      "language": "text"
+    },
+    {
+      "name": "jest.config.js",
+      "type": "file",
+      "path": "jest.config.js",
+      "size": 68,
+      "language": "js"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1122,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 960,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3809,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 370,
+      "language": "json"
+    }
+  ]
+}

@@ -1,0 +1,692 @@
+{
+  "name": "MCPR (R Language)",
+  "full": true,
+  "tree": [
+    {
+      "name": "inst",
+      "type": "folder",
+      "path": "inst",
+      "children": [
+        {
+          "name": "tool-execute_r_code.R",
+          "type": "file",
+          "path": "inst/tool-execute_r_code.R",
+          "size": 5987,
+          "language": "r"
+        },
+        {
+          "name": "tool-inspect_object.R",
+          "type": "file",
+          "path": "inst/tool-inspect_object.R",
+          "size": 3043,
+          "language": "r"
+        },
+        {
+          "name": "tool-manage_r_sessions.R",
+          "type": "file",
+          "path": "inst/tool-manage_r_sessions.R",
+          "size": 4882,
+          "language": "r"
+        },
+        {
+          "name": "tool-read_instructions.R",
+          "type": "file",
+          "path": "inst/tool-read_instructions.R",
+          "size": 6870,
+          "language": "r"
+        },
+        {
+          "name": "tool-show_plot.R",
+          "type": "file",
+          "path": "inst/tool-show_plot.R",
+          "size": 15402,
+          "language": "r"
+        },
+        {
+          "name": "tool-view.R",
+          "type": "file",
+          "path": "inst/tool-view.R",
+          "size": 3380,
+          "language": "r"
+        }
+      ]
+    },
+    {
+      "name": "man",
+      "type": "folder",
+      "path": "man",
+      "children": [
+        {
+          "name": "create_instruction.Rd",
+          "type": "file",
+          "path": "man/create_instruction.Rd",
+          "size": 1121,
+          "language": "rd"
+        },
+        {
+          "name": "dot-mcpr_custom_serializers.Rd",
+          "type": "file",
+          "path": "man/dot-mcpr_custom_serializers.Rd",
+          "size": 641,
+          "language": "rd"
+        },
+        {
+          "name": "install_mcpr.Rd",
+          "type": "file",
+          "path": "man/install_mcpr.Rd",
+          "size": 1900,
+          "language": "rd"
+        },
+        {
+          "name": "mcp_session.Rd",
+          "type": "file",
+          "path": "man/mcp_session.Rd",
+          "size": 1024,
+          "language": "rd"
+        },
+        {
+          "name": "MCPR-package.Rd",
+          "type": "file",
+          "path": "man/MCPR-package.Rd",
+          "size": 620,
+          "language": "rd"
+        },
+        {
+          "name": "mcpr_server.Rd",
+          "type": "file",
+          "path": "man/mcpr_server.Rd",
+          "size": 580,
+          "language": "rd"
+        },
+        {
+          "name": "mcpr_session_start.Rd",
+          "type": "file",
+          "path": "man/mcpr_session_start.Rd",
+          "size": 719,
+          "language": "rd"
+        },
+        {
+          "name": "mcpr_session_stop.Rd",
+          "type": "file",
+          "path": "man/mcpr_session_stop.Rd",
+          "size": 467,
+          "language": "rd"
+        },
+        {
+          "name": "mcpr_tools.Rd",
+          "type": "file",
+          "path": "man/mcpr_tools.Rd",
+          "size": 650,
+          "language": "rd"
+        },
+        {
+          "name": "mcprClient.Rd",
+          "type": "file",
+          "path": "man/mcprClient.Rd",
+          "size": 7690,
+          "language": "rd"
+        },
+        {
+          "name": "mcprServer.Rd",
+          "type": "file",
+          "path": "man/mcprServer.Rd",
+          "size": 8561,
+          "language": "rd"
+        },
+        {
+          "name": "mcprSession.Rd",
+          "type": "file",
+          "path": "man/mcprSession.Rd",
+          "size": 7017,
+          "language": "rd"
+        },
+        {
+          "name": "server_processes.Rd",
+          "type": "file",
+          "path": "man/server_processes.Rd",
+          "size": 244,
+          "language": "rd"
+        },
+        {
+          "name": "tool.Rd",
+          "type": "file",
+          "path": "man/tool.Rd",
+          "size": 1176,
+          "language": "rd"
+        },
+        {
+          "name": "ToolRegistry.Rd",
+          "type": "file",
+          "path": "man/ToolRegistry.Rd",
+          "size": 7944,
+          "language": "rd"
+        }
+      ]
+    },
+    {
+      "name": "pkgdown",
+      "type": "folder",
+      "path": "pkgdown",
+      "children": [
+        {
+          "name": "favicon",
+          "type": "folder",
+          "path": "pkgdown/favicon",
+          "children": [
+            {
+              "name": "site.webmanifest",
+              "type": "file",
+              "path": "pkgdown/favicon/site.webmanifest",
+              "size": 421,
+              "language": "webmanifest"
+            }
+          ]
+        },
+        {
+          "name": "extra.css",
+          "type": "file",
+          "path": "pkgdown/extra.css",
+          "size": 9243,
+          "language": "css"
+        }
+      ]
+    },
+    {
+      "name": "R",
+      "type": "folder",
+      "path": "R",
+      "children": [
+        {
+          "name": "aaa.R",
+          "type": "file",
+          "path": "R/aaa.R",
+          "size": 639,
+          "language": "r"
+        },
+        {
+          "name": "create_instruction.R",
+          "type": "file",
+          "path": "R/create_instruction.R",
+          "size": 4214,
+          "language": "r"
+        },
+        {
+          "name": "inspect-object.R",
+          "type": "file",
+          "path": "R/inspect-object.R",
+          "size": 29823,
+          "language": "r"
+        },
+        {
+          "name": "install-mcpr-toml.R",
+          "type": "file",
+          "path": "R/install-mcpr-toml.R",
+          "size": 6924,
+          "language": "r"
+        },
+        {
+          "name": "install-mcpr.R",
+          "type": "file",
+          "path": "R/install-mcpr.R",
+          "size": 21987,
+          "language": "r"
+        },
+        {
+          "name": "logger.R",
+          "type": "file",
+          "path": "R/logger.R",
+          "size": 3397,
+          "language": "r"
+        },
+        {
+          "name": "mcpr-base.R",
+          "type": "file",
+          "path": "R/mcpr-base.R",
+          "size": 9904,
+          "language": "r"
+        },
+        {
+          "name": "mcpr-client-tools.R",
+          "type": "file",
+          "path": "R/mcpr-client-tools.R",
+          "size": 7160,
+          "language": "r"
+        },
+        {
+          "name": "mcpr-client.R",
+          "type": "file",
+          "path": "R/mcpr-client.R",
+          "size": 11890,
+          "language": "r"
+        },
+        {
+          "name": "mcpr-package.R",
+          "type": "file",
+          "path": "R/mcpr-package.R",
+          "size": 938,
+          "language": "r"
+        },
+        {
+          "name": "mcpr-server-tools.R",
+          "type": "file",
+          "path": "R/mcpr-server-tools.R",
+          "size": 2734,
+          "language": "r"
+        },
+        {
+          "name": "mcpr-server.R",
+          "type": "file",
+          "path": "R/mcpr-server.R",
+          "size": 12536,
+          "language": "r"
+        },
+        {
+          "name": "mcpr-session.R",
+          "type": "file",
+          "path": "R/mcpr-session.R",
+          "size": 12119,
+          "language": "r"
+        },
+        {
+          "name": "protocol.R",
+          "type": "file",
+          "path": "R/protocol.R",
+          "size": 10701,
+          "language": "r"
+        },
+        {
+          "name": "tool-definition-validators.R",
+          "type": "file",
+          "path": "R/tool-definition-validators.R",
+          "size": 6598,
+          "language": "r"
+        },
+        {
+          "name": "tool-definition.R",
+          "type": "file",
+          "path": "R/tool-definition.R",
+          "size": 14197,
+          "language": "r"
+        },
+        {
+          "name": "tool-register.R",
+          "type": "file",
+          "path": "R/tool-register.R",
+          "size": 10288,
+          "language": "r"
+        },
+        {
+          "name": "tool-registry-helpers.R",
+          "type": "file",
+          "path": "R/tool-registry-helpers.R",
+          "size": 4693,
+          "language": "r"
+        },
+        {
+          "name": "type-conversion-from-json.R",
+          "type": "file",
+          "path": "R/type-conversion-from-json.R",
+          "size": 6916,
+          "language": "r"
+        },
+        {
+          "name": "type-conversion-serializers.R",
+          "type": "file",
+          "path": "R/type-conversion-serializers.R",
+          "size": 2168,
+          "language": "r"
+        },
+        {
+          "name": "type-conversion-to-json.R",
+          "type": "file",
+          "path": "R/type-conversion-to-json.R",
+          "size": 12948,
+          "language": "r"
+        },
+        {
+          "name": "type-conversion-utilities.R",
+          "type": "file",
+          "path": "R/type-conversion-utilities.R",
+          "size": 12652,
+          "language": "r"
+        },
+        {
+          "name": "utils.R",
+          "type": "file",
+          "path": "R/utils.R",
+          "size": 13103,
+          "language": "r"
+        },
+        {
+          "name": "view-session-state.R",
+          "type": "file",
+          "path": "R/view-session-state.R",
+          "size": 24768,
+          "language": "r"
+        },
+        {
+          "name": "view-system-info.R",
+          "type": "file",
+          "path": "R/view-system-info.R",
+          "size": 12877,
+          "language": "r"
+        },
+        {
+          "name": "view-utils.R",
+          "type": "file",
+          "path": "R/view-utils.R",
+          "size": 7268,
+          "language": "r"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "testthat",
+          "type": "folder",
+          "path": "tests/testthat",
+          "children": [
+            {
+              "name": "test-aaa.R",
+              "type": "file",
+              "path": "tests/testthat/test-aaa.R",
+              "size": 2761,
+              "language": "r"
+            },
+            {
+              "name": "test-client.R",
+              "type": "file",
+              "path": "tests/testthat/test-client.R",
+              "size": 2067,
+              "language": "r"
+            },
+            {
+              "name": "test-create-instruction.R",
+              "type": "file",
+              "path": "tests/testthat/test-create-instruction.R",
+              "size": 3123,
+              "language": "r"
+            },
+            {
+              "name": "test-inspect-object.R",
+              "type": "file",
+              "path": "tests/testthat/test-inspect-object.R",
+              "size": 15967,
+              "language": "r"
+            },
+            {
+              "name": "test-install-mcpr-toml.R",
+              "type": "file",
+              "path": "tests/testthat/test-install-mcpr-toml.R",
+              "size": 2153,
+              "language": "r"
+            },
+            {
+              "name": "test-install-mcpr.R",
+              "type": "file",
+              "path": "tests/testthat/test-install-mcpr.R",
+              "size": 7277,
+              "language": "r"
+            },
+            {
+              "name": "test-logger.R",
+              "type": "file",
+              "path": "tests/testthat/test-logger.R",
+              "size": 4752,
+              "language": "r"
+            },
+            {
+              "name": "test-mcpr-base.R",
+              "type": "file",
+              "path": "tests/testthat/test-mcpr-base.R",
+              "size": 9183,
+              "language": "r"
+            },
+            {
+              "name": "test-mcpr-client-tools.R",
+              "type": "file",
+              "path": "tests/testthat/test-mcpr-client-tools.R",
+              "size": 3324,
+              "language": "r"
+            },
+            {
+              "name": "test-mcpr-client.R",
+              "type": "file",
+              "path": "tests/testthat/test-mcpr-client.R",
+              "size": 18502,
+              "language": "r"
+            },
+            {
+              "name": "test-mcpr-server-tools.R",
+              "type": "file",
+              "path": "tests/testthat/test-mcpr-server-tools.R",
+              "size": 7703,
+              "language": "r"
+            },
+            {
+              "name": "test-mcpr-server.R",
+              "type": "file",
+              "path": "tests/testthat/test-mcpr-server.R",
+              "size": 17200,
+              "language": "r"
+            },
+            {
+              "name": "test-mcpr-session.R",
+              "type": "file",
+              "path": "tests/testthat/test-mcpr-session.R",
+              "size": 12509,
+              "language": "r"
+            },
+            {
+              "name": "test-protocol.R",
+              "type": "file",
+              "path": "tests/testthat/test-protocol.R",
+              "size": 9895,
+              "language": "r"
+            },
+            {
+              "name": "test-tool-definition-validators.R",
+              "type": "file",
+              "path": "tests/testthat/test-tool-definition-validators.R",
+              "size": 11778,
+              "language": "r"
+            },
+            {
+              "name": "test-tool-definition.R",
+              "type": "file",
+              "path": "tests/testthat/test-tool-definition.R",
+              "size": 4093,
+              "language": "r"
+            },
+            {
+              "name": "test-tool-manage_r_sessions.R",
+              "type": "file",
+              "path": "tests/testthat/test-tool-manage_r_sessions.R",
+              "size": 1668,
+              "language": "r"
+            },
+            {
+              "name": "test-tool-register.R",
+              "type": "file",
+              "path": "tests/testthat/test-tool-register.R",
+              "size": 9559,
+              "language": "r"
+            },
+            {
+              "name": "test-tool-show_plot.R",
+              "type": "file",
+              "path": "tests/testthat/test-tool-show_plot.R",
+              "size": 5069,
+              "language": "r"
+            },
+            {
+              "name": "test-tool-view.R",
+              "type": "file",
+              "path": "tests/testthat/test-tool-view.R",
+              "size": 2690,
+              "language": "r"
+            },
+            {
+              "name": "test-type-conversion-from-json.R",
+              "type": "file",
+              "path": "tests/testthat/test-type-conversion-from-json.R",
+              "size": 6541,
+              "language": "r"
+            },
+            {
+              "name": "test-type-conversion-integration.R",
+              "type": "file",
+              "path": "tests/testthat/test-type-conversion-integration.R",
+              "size": 5441,
+              "language": "r"
+            },
+            {
+              "name": "test-type-conversion-serializers.R",
+              "type": "file",
+              "path": "tests/testthat/test-type-conversion-serializers.R",
+              "size": 6091,
+              "language": "r"
+            },
+            {
+              "name": "test-type-conversion-to-json.R",
+              "type": "file",
+              "path": "tests/testthat/test-type-conversion-to-json.R",
+              "size": 15409,
+              "language": "r"
+            },
+            {
+              "name": "test-type-conversion-utilities.R",
+              "type": "file",
+              "path": "tests/testthat/test-type-conversion-utilities.R",
+              "size": 14705,
+              "language": "r"
+            },
+            {
+              "name": "test-utils.R",
+              "type": "file",
+              "path": "tests/testthat/test-utils.R",
+              "size": 11751,
+              "language": "r"
+            },
+            {
+              "name": "test-view-session-state.R",
+              "type": "file",
+              "path": "tests/testthat/test-view-session-state.R",
+              "size": 6279,
+              "language": "r"
+            },
+            {
+              "name": "test-view-system-info.R",
+              "type": "file",
+              "path": "tests/testthat/test-view-system-info.R",
+              "size": 3179,
+              "language": "r"
+            },
+            {
+              "name": "test-view-utils.R",
+              "type": "file",
+              "path": "tests/testthat/test-view-utils.R",
+              "size": 5697,
+              "language": "r"
+            }
+          ]
+        },
+        {
+          "name": "testthat.R",
+          "type": "file",
+          "path": "tests/testthat.R",
+          "size": 52,
+          "language": "r"
+        }
+      ]
+    },
+    {
+      "name": "vignettes",
+      "type": "folder",
+      "path": "vignettes",
+      "children": [
+        {
+          "name": "architecture.qmd",
+          "type": "file",
+          "path": "vignettes/architecture.qmd",
+          "size": 7313,
+          "language": "qmd"
+        },
+        {
+          "name": "getting-started.Rmd",
+          "type": "file",
+          "path": "vignettes/getting-started.Rmd",
+          "size": 5476,
+          "language": "rmd"
+        },
+        {
+          "name": "mcp-setup.Rmd",
+          "type": "file",
+          "path": "vignettes/mcp-setup.Rmd",
+          "size": 5825,
+          "language": "rmd"
+        },
+        {
+          "name": "read-instructions.qmd",
+          "type": "file",
+          "path": "vignettes/read-instructions.qmd",
+          "size": 8532,
+          "language": "qmd"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 581,
+      "language": "text"
+    },
+    {
+      "name": "_pkgdown.yml",
+      "type": "file",
+      "path": "_pkgdown.yml",
+      "size": 2623,
+      "language": "yml"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "file",
+      "path": "DESCRIPTION",
+      "size": 2570,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 20132,
+      "language": "text"
+    },
+    {
+      "name": "NAMESPACE",
+      "type": "file",
+      "path": "NAMESPACE",
+      "size": 421,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9480,
+      "language": "md"
+    },
+    {
+      "name": "README.Rmd",
+      "type": "file",
+      "path": "README.Rmd",
+      "size": 9720,
+      "language": "rmd"
+    }
+  ]
+}

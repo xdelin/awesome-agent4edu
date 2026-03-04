@@ -1,0 +1,34 @@
+{
+  "name": "Kaggle MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "kaggle-server.py",
+      "type": "file",
+      "path": "kaggle-server.py",
+      "size": 5350,
+      "language": "py"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1070,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 2301,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 15,
+      "language": "txt"
+    }
+  ]
+}

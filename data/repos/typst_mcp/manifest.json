@@ -1,0 +1,90 @@
+{
+  "name": "Typst MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 760,
+      "language": "text"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 33,
+      "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 5,
+      "language": "text"
+    },
+    {
+      "name": "build.sh",
+      "type": "file",
+      "path": "build.sh",
+      "size": 2451,
+      "language": "sh"
+    },
+    {
+      "name": "DOCKER.md",
+      "type": "file",
+      "path": "DOCKER.md",
+      "size": 1300,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile.base",
+      "type": "file",
+      "path": "Dockerfile.base",
+      "size": 1323,
+      "language": "base"
+    },
+    {
+      "name": "Dockerfile.runtime",
+      "type": "file",
+      "path": "Dockerfile.runtime",
+      "size": 2403,
+      "language": "runtime"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1068,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 221,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 6885,
+      "language": "md"
+    },
+    {
+      "name": "server.py",
+      "type": "file",
+      "path": "server.py",
+      "size": 15079,
+      "language": "py"
+    },
+    {
+      "name": "typst-docs-json-schema.json",
+      "type": "file",
+      "path": "typst-docs-json-schema.json",
+      "size": 1133,
+      "language": "json"
+    }
+  ]
+}

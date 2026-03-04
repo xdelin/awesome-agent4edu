@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "lib": [
+      "es2020",
+      "es2020.bigint"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
+  },
+  "ts-node": {
+    "transpileOnly": true
+  }
+}

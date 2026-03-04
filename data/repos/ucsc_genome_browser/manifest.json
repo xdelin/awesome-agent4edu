@@ -1,0 +1,62 @@
+{
+  "name": "UCSC Genome Browser",
+  "full": true,
+  "tree": [
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 4688,
+      "language": "text"
+    },
+    {
+      "name": "claude_desktop_config_example.py",
+      "type": "file",
+      "path": "claude_desktop_config_example.py",
+      "size": 176,
+      "language": "py"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1071,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 442,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 6902,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 25,
+      "language": "txt"
+    },
+    {
+      "name": "ucsc-genome-mcp.py",
+      "type": "file",
+      "path": "ucsc-genome-mcp.py",
+      "size": 18550,
+      "language": "py"
+    },
+    {
+      "name": "validate_api.py",
+      "type": "file",
+      "path": "validate_api.py",
+      "size": 2076,
+      "language": "py"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+[project]
+name = "bullet-mcp-server"
+version = "0.1.0"
+description = "PyBullet physics simulation MCP server"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+ "mcp>=1.12.2",
+ "pybullet>=3.2.7",
+]
+[[project.authors]]
+name = "Gabriel Borges"
+email = "dev.gabrielsborges@proton.me"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mcp>=1.12.2",
+]
+
+[project.scripts]
+bullet-mcp-server = "bullet_mcp_server:main"

@@ -1,0 +1,111 @@
+{
+  "name": "ux-writing-skill",
+  "full": true,
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "claude-figma-integration.md",
+          "type": "file",
+          "path": "docs/claude-figma-integration.md",
+          "size": 10206,
+          "language": "md"
+        },
+        {
+          "name": "codex-figma-integration.md",
+          "type": "file",
+          "path": "docs/codex-figma-integration.md",
+          "size": 10492,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "real-world-improvements.md",
+          "type": "file",
+          "path": "examples/real-world-improvements.md",
+          "size": 7455,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "folder",
+      "path": "references",
+      "children": [
+        {
+          "name": "accessibility-guidelines.md",
+          "type": "file",
+          "path": "references/accessibility-guidelines.md",
+          "size": 11570,
+          "language": "md"
+        },
+        {
+          "name": "content-usability-checklist.md",
+          "type": "file",
+          "path": "references/content-usability-checklist.md",
+          "size": 4888,
+          "language": "md"
+        },
+        {
+          "name": "patterns-detailed.md",
+          "type": "file",
+          "path": "references/patterns-detailed.md",
+          "size": 10190,
+          "language": "md"
+        },
+        {
+          "name": "voice-chart-template.md",
+          "type": "file",
+          "path": "references/voice-chart-template.md",
+          "size": 4029,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "type": "folder",
+      "path": "templates",
+      "children": [
+        {
+          "name": "empty-state-template.md",
+          "type": "file",
+          "path": "templates/empty-state-template.md",
+          "size": 5214,
+          "language": "md"
+        },
+        {
+          "name": "error-message-template.md",
+          "type": "file",
+          "path": "templates/error-message-template.md",
+          "size": 3219,
+          "language": "md"
+        },
+        {
+          "name": "onboarding-flow-template.md",
+          "type": "file",
+          "path": "templates/onboarding-flow-template.md",
+          "size": 7249,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 15409,
+      "language": "md"
+    }
+  ]
+}

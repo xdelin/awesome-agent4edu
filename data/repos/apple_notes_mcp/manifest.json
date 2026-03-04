@@ -1,0 +1,265 @@
+{
+  "name": "Apple Notes MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "mcp_apple_notes",
+      "type": "folder",
+      "path": "mcp_apple_notes",
+      "children": [
+        {
+          "name": "applescript",
+          "type": "folder",
+          "path": "mcp_apple_notes/applescript",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/__init__.py",
+              "size": 1360,
+              "language": "py"
+            },
+            {
+              "name": "base_operations.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/base_operations.py",
+              "size": 666,
+              "language": "py"
+            },
+            {
+              "name": "create_folder.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/create_folder.py",
+              "size": 10228,
+              "language": "py"
+            },
+            {
+              "name": "create_note.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/create_note.py",
+              "size": 7960,
+              "language": "py"
+            },
+            {
+              "name": "delete_folder.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/delete_folder.py",
+              "size": 5637,
+              "language": "py"
+            },
+            {
+              "name": "delete_note.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/delete_note.py",
+              "size": 5401,
+              "language": "py"
+            },
+            {
+              "name": "folder_structure.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/folder_structure.py",
+              "size": 10207,
+              "language": "py"
+            },
+            {
+              "name": "list_notes.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/list_notes.py",
+              "size": 2736,
+              "language": "py"
+            },
+            {
+              "name": "move_folder.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/move_folder.py",
+              "size": 21300,
+              "language": "py"
+            },
+            {
+              "name": "move_note.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/move_note.py",
+              "size": 17751,
+              "language": "py"
+            },
+            {
+              "name": "note_id_utils.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/note_id_utils.py",
+              "size": 10553,
+              "language": "py"
+            },
+            {
+              "name": "notes_structure.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/notes_structure.py",
+              "size": 10934,
+              "language": "py"
+            },
+            {
+              "name": "read_folder.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/read_folder.py",
+              "size": 9774,
+              "language": "py"
+            },
+            {
+              "name": "read_note.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/read_note.py",
+              "size": 5936,
+              "language": "py"
+            },
+            {
+              "name": "rename_folder.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/rename_folder.py",
+              "size": 11628,
+              "language": "py"
+            },
+            {
+              "name": "search_notes.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/search_notes.py",
+              "size": 5367,
+              "language": "py"
+            },
+            {
+              "name": "update_note.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/update_note.py",
+              "size": 7179,
+              "language": "py"
+            },
+            {
+              "name": "validation_utils.py",
+              "type": "file",
+              "path": "mcp_apple_notes/applescript/validation_utils.py",
+              "size": 14302,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "mcp_apple_notes/tools",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "mcp_apple_notes/tools/__init__.py",
+              "size": 116,
+              "language": "py"
+            },
+            {
+              "name": "notes_tools.py",
+              "type": "file",
+              "path": "mcp_apple_notes/tools/notes_tools.py",
+              "size": 4302,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "mcp_apple_notes/__init__.py",
+          "size": 1078,
+          "language": "py"
+        },
+        {
+          "name": "server.py",
+          "type": "file",
+          "path": "mcp_apple_notes/server.py",
+          "size": 25445,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 36,
+          "language": "py"
+        },
+        {
+          "name": "test_basic.py",
+          "type": "file",
+          "path": "tests/test_basic.py",
+          "size": 1020,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 4688,
+      "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 5,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1072,
+      "language": "text"
+    },
+    {
+      "name": "MANIFEST.in",
+      "type": "file",
+      "path": "MANIFEST.in",
+      "size": 173,
+      "language": "in"
+    },
+    {
+      "name": "PUBLISHING.md",
+      "type": "file",
+      "path": "PUBLISHING.md",
+      "size": 2754,
+      "language": "md"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 2376,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 4683,
+      "language": "md"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 633,
+      "language": "json"
+    },
+    {
+      "name": "TOOL_DATA_FLOWS.md",
+      "type": "file",
+      "path": "TOOL_DATA_FLOWS.md",
+      "size": 5014,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "name": "Markmap",
+  "full": true,
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "markmap.svg",
+          "type": "file",
+          "path": "docs/markmap.svg",
+          "size": 14854,
+          "language": "svg"
+        },
+        {
+          "name": "markmap_zh.svg",
+          "type": "file",
+          "path": "docs/markmap_zh.svg",
+          "size": 14489,
+          "language": "svg"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "common",
+          "type": "folder",
+          "path": "src/common",
+          "children": [
+            {
+              "name": "registry-base.ts",
+              "type": "file",
+              "path": "src/common/registry-base.ts",
+              "size": 754,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "markmap",
+          "type": "folder",
+          "path": "src/markmap",
+          "children": [
+            {
+              "name": "createMarkmap.ts",
+              "type": "file",
+              "path": "src/markmap/createMarkmap.ts",
+              "size": 9327,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "mcp",
+          "type": "folder",
+          "path": "src/mcp",
+          "children": [
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "src/mcp/tools",
+              "children": [
+                {
+                  "name": "context.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/context.ts",
+                  "size": 144,
+                  "language": "ts"
+                },
+                {
+                  "name": "markmap-tools.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/markmap-tools.ts",
+                  "size": 2648,
+                  "language": "ts"
+                },
+                {
+                  "name": "tool-registry.ts",
+                  "type": "file",
+                  "path": "src/mcp/tools/tool-registry.ts",
+                  "size": 653,
+                  "language": "ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/utils/logger.ts",
+              "size": 310,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 2178,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "services",
+          "type": "folder",
+          "path": "tests/services",
+          "children": [
+            {
+              "name": "markmap.test.ts",
+              "type": "file",
+              "path": "tests/services/markmap.test.ts",
+              "size": 910,
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 1176,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 878,
+      "language": "text"
+    },
+    {
+      "name": "eslint.config.js",
+      "type": "file",
+      "path": "eslint.config.js",
+      "size": 893,
+      "language": "js"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1076,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2166,
+      "language": "json"
+    },
+    {
+      "name": "prettier.config.js",
+      "type": "file",
+      "path": "prettier.config.js",
+      "size": 347,
+      "language": "js"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3874,
+      "language": "md"
+    },
+    {
+      "name": "README_zh-CN.md",
+      "type": "file",
+      "path": "README_zh-CN.md",
+      "size": 3344,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 829,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 488,
+      "language": "json"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 191,
+      "language": "ts"
+    }
+  ]
+}

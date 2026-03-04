@@ -1,0 +1,16 @@
+runtime: "container"
+build:
+  dockerfile: "Dockerfile"
+  dockerBuildPath: "."
+
+startCommand:
+  type: "http"
+  configSchema:
+    type: object
+    properties:
+      apiKey:
+        type: string
+        description: "API key for external service"
+    required: ["apiKey"]
+  exampleConfig:
+    apiKey: "your-api-key-here"

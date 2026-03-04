@@ -1,0 +1,48 @@
+{
+  "name": "Quantum Lab",
+  "full": true,
+  "tree": [
+    {
+      "name": "agents",
+      "type": "folder",
+      "path": "agents",
+      "children": [
+        {
+          "name": "openai.yaml",
+          "type": "file",
+          "path": "agents/openai.yaml",
+          "size": 232,
+          "language": "yaml"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "qexec.sh",
+          "type": "file",
+          "path": "scripts/qexec.sh",
+          "size": 559,
+          "language": "sh"
+        }
+      ]
+    },
+    {
+      "name": "_meta.json",
+      "type": "file",
+      "path": "_meta.json",
+      "size": 274,
+      "language": "json"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 2086,
+      "language": "md"
+    }
+  ]
+}

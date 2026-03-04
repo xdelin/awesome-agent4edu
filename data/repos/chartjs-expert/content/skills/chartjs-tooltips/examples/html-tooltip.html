@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js HTML Tooltip Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 400px;
+      margin: 2rem 0;
+    }
+
+    /* Custom tooltip styles */
+    .chartjs-tooltip {
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      color: white;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      transform: translate(-50%, -100%);
+      transition: all 0.2s ease;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      margin-top: -10px;
+      min-width: 120px;
+    }
+
+    .chartjs-tooltip .tooltip-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 6px;
+    }
+
+    .chartjs-tooltip .tooltip-body {
+      font-size: 13px;
+    }
+
+    .chartjs-tooltip .tooltip-item {
+      display: flex;
+      align-items: center;
+      margin: 4px 0;
+    }
+
+    .chartjs-tooltip .color-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+      border: 2px solid;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Tooltip Example</h1>
+  <p>Hover over the chart to see a custom HTML tooltip instead of the default canvas tooltip.</p>
+
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script>
+    // Get or create tooltip element
+    const getOrCreateTooltip = (chart) => {
+      let tooltipEl = chart.canvas.parentNode.querySelector('.chartjs-tooltip');
+
+      if (!tooltipEl) {
+        tooltipEl = document.createElement('div');
+        tooltipEl.classList.add('chartjs-tooltip');
+        chart.canvas.parentNode.appendChild(tooltipEl);
+      }
+
+      return tooltipEl;
+    };
+
+    // External tooltip handler
+    const externalTooltipHandler = (context) => {
+      const { chart, tooltip } = context;
+      const tooltipEl = getOrCreateTooltip(chart);
+
+      // Hide if no tooltip
+      if (tooltip.opacity === 0) {
+        tooltipEl.style.opacity = 0;
+        return;
+      }
+
+      // Build tooltip content
+      let innerHTML = '';
+
+      // Title
+      if (tooltip.title && tooltip.title.length) {
+        innerHTML += `<div class="tooltip-title">${tooltip.title[0]}</div>`;
+      }
+
+      // Body
+      if (tooltip.body) {
+        innerHTML += '<div class="tooltip-body">';
+        tooltip.body.forEach((bodyItem, i) => {
+          const colors = tooltip.labelColors[i];
+          innerHTML += `
+            <div class="tooltip-item">
+              <span class="color-indicator" style="
+                background: ${colors.backgroundColor};
+                border-color: ${colors.borderColor};
+              "></span>
+              <span>${bodyItem.lines[0]}</span>
+            </div>
+          `;
+        });
+        innerHTML += '</div>';
+      }
+
+      tooltipEl.innerHTML = innerHTML;
+
+      // Position tooltip
+      const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+      tooltipEl.style.opacity = 1;
+      tooltipEl.style.left = positionX + tooltip.caretX + 'px';
+      tooltipEl.style.top = positionY + tooltip.caretY + 'px';
+    };
+
+    // Chart data
+    const data = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+      datasets: [
+        {
+          label: 'Sales',
+          data: [65, 59, 80, 81, 56, 55],
+          borderColor: 'rgb(75, 192, 192)',
+          backgroundColor: 'rgba(75, 192, 192, 0.5)',
+          tension: 0.3
+        },
+        {
+          label: 'Expenses',
+          data: [28, 48, 40, 19, 86, 27],
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          tension: 0.3
+        }
+      ]
+    };
+
+    // Chart configuration
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          tooltip: {
+            enabled: false,  // Disable canvas tooltip
+            external: externalTooltipHandler
+          },
+          legend: {
+            position: 'top'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // Create chart
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, config);
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+runtime: container
+startCommand:
+  type: http
+  configSchema:
+    type: object
+    required:
+      - edubaseApiUrl
+      - edubaseApiApp
+      - edubaseApiKey
+    properties:
+      edubaseApiUrl:
+        type: string
+        title: URL
+        description: The API URL for EduBase
+      edubaseApiApp:
+        type: string
+        title: App ID
+        description: The integration app ID for EduBase
+      edubaseApiKey:
+        type: string
+        title: Secret Key
+        description: The secret key for the EduBase API
+  exampleConfig:
+    edubaseApiUrl: https://domain.edubase.net/api
+    edubaseApiApp: your_integration_app_id
+    edubaseApiKey: your_integration_secret_key
+build:
+  dockerfile: Dockerfile
+  dockerBuildPath: .
+env:
+  EDUBASE_STREAMABLE_HTTP_MODE: 'true'

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 教案產生器 - 提示詞生成器</title>
+    <meta name="description" content="運用 AI 快速生成符合教學目標的完整教案">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .tool-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; margin-bottom: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #667eea; text-decoration: none; font-weight: 600; margin-bottom: 20px; padding: 8px 16px; background: #f0f0ff; border-radius: 8px; transition: all 0.2s; }
+        .back-link:hover { background: #e0e0ff; }
+        .tool-title-row { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; flex-wrap: wrap; }
+        .tool-icon { font-size: 2.5em; }
+        .tool-title { font-size: 1.8em; color: #333; }
+        .tool-category { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; }
+        .tool-desc { color: #666; font-size: 1em; margin-top: 10px; }
+        .tool-content { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 35px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin-bottom: 25px; }
+        .section-title { font-size: 1.3em; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #eee; }
+        .template-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .template-card { padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; cursor: pointer; transition: all 0.3s; background: #fafafa; }
+        .template-card:hover { border-color: #667eea; background: #f0f0ff; }
+        .template-card.active { border-color: #667eea; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2); }
+        .template-card-title { font-weight: 600; color: #333; margin-bottom: 8px; }
+        .template-card-desc { font-size: 0.85em; color: #666; }
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+        .form-grid { display: grid; gap: 18px; }
+        .form-field label { display: block; margin-bottom: 6px; font-weight: 600; color: #333; font-size: 0.95em; }
+        .form-field input, .form-field textarea { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 0.95em; font-family: inherit; transition: border-color 0.2s; }
+        .form-field input:focus, .form-field textarea:focus { outline: none; border-color: #667eea; }
+        .form-field textarea { min-height: 80px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
+        .btn-row { display: flex; gap: 12px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1em; transition: all 0.3s; border: none; cursor: pointer; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .btn-secondary { background: #f0f0f0; color: #333; }
+        .output-section { display: none; margin-top: 30px; }
+        .output-section.active { display: block; }
+        .output-box { background: #1e1e1e; border-radius: 15px; padding: 25px; }
+        .output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .output-title { color: #fff; font-weight: 600; }
+        .copy-btn { background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+        .copy-btn.copied { background: #38ef7d; }
+        .output-content { color: #e0e0e0; font-family: 'Monaco', 'Menlo', monospace; font-size: 0.9em; white-space: pre-wrap; line-height: 1.7; max-height: 500px; overflow-y: auto; }
+        .ai-links { display: flex; gap: 12px; margin-top: 20px; justify-content: center; flex-wrap: wrap; }
+        .ai-link { padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: all 0.3s; }
+
+        .ai-link.gpt { background: #10a37f; color: white; }
+        .ai-link.gemini { background: #4285f4; color: white; }
+        .ai-link:hover { transform: translateY(-2px); }
+        @media (max-width: 768px) { .container { padding: 20px 15px; } .tool-header, .tool-content { padding: 25px 20px; } .tool-title { font-size: 1.5em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tool-header">
+            <a href="../index.html" class="back-link">← 返回工具箱</a>
+            <div class="tool-title-row">
+                <span class="tool-icon">📝</span>
+                <h1 class="tool-title">AI 教案產生器</h1>
+                <span class="tool-category">教學設計</span>
+            </div>
+            <p class="tool-desc">運用 AI 快速生成符合教學目標的完整教案</p>
+        </div>
+
+        <div class="tool-content">
+            <h2 class="section-title">選擇提示詞範本</h2>
+            <div class="template-cards">
+                <div class="template-card active" onclick="selectTemplate(0)">
+                    <div class="template-card-title">📋 完整教案生成</div>
+                    <p class="template-card-desc">生成含課綱對應、教學流程、評量的完整教案</p>
+                </div>
+                <div class="template-card" onclick="selectTemplate(1)">
+                    <div class="template-card-title">⚡ 快速備課版</div>
+                    <p class="template-card-desc">快速生成簡潔教學流程與活動</p>
+                </div>
+            </div>
+
+            <div class="form-section active" id="form-0">
+                <div class="form-grid">
+                    <div class="form-row">
+                        <div class="form-field"><label>科目</label><input type="text" id="f0-subject" placeholder="例：自然科學"></div>
+                        <div class="form-field"><label>單元名稱</label><input type="text" id="f0-unit" placeholder="例：光的折射"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>年級</label><input type="text" id="f0-grade" placeholder="例：國中八年級"></div>
+                        <div class="form-field"><label>教學節數</label><input type="text" id="f0-periods" placeholder="例：2節"></div>
+                        <div class="form-field"><label>學生人數</label><input type="text" id="f0-students" placeholder="例：28人"></div>
+                    </div>
+                    <div class="form-field"><label>核心素養</label><textarea id="f0-competency" placeholder="例：自-J-A2 能將所習得的科學知識..."></textarea></div>
+                    <div class="form-field"><label>學習表現</label><textarea id="f0-performance" placeholder="例：tr-IV-1 能將所習得的知識..."></textarea></div>
+                    <div class="form-field"><label>學習內容</label><textarea id="f0-content" placeholder="例：Ka-IV-1 光的折射現象"></textarea></div>
+                    <div class="form-row">
+                        <div class="form-field"><label>學生程度</label><input type="text" id="f0-level" placeholder="例：中等偏上"></div>
+                        <div class="form-field"><label>可用設備</label><input type="text" id="f0-equipment" placeholder="例：實驗器材、投影機"></div>
+                    </div>
+                    <div class="form-field"><label>特殊考量</label><textarea id="f0-special" placeholder="例：偏鄉、原住民文化融入"></textarea></div>
+                </div>
+            </div>
+
+            <div class="form-section" id="form-1">
+                <div class="form-grid">
+                    <div class="form-row">
+                        <div class="form-field"><label>科目</label><input type="text" id="f1-subject" placeholder="例：國語"></div>
+                        <div class="form-field"><label>主題</label><input type="text" id="f1-topic" placeholder="例：記敘文寫作"></div>
+                    </div>
+                    <div class="form-field"><label>時間（分鐘）</label><input type="text" id="f1-time" placeholder="例：45分鐘"></div>
+                    <div class="form-field"><label>核心概念</label><textarea id="f1-concept" placeholder="例：開頭、發展、結尾的結構"></textarea></div>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="generatePrompt()">⚡ 生成提示詞</button>
+                <button class="btn btn-secondary" onclick="resetForm()">🔄 重置</button>
+            </div>
+
+            <div class="output-section" id="output-section">
+                <div class="output-box">
+                    <div class="output-header">
+                        <span class="output-title">生成的提示詞</span>
+                        <button class="copy-btn" onclick="copyPrompt()">複製</button>
+                    </div>
+                    <div class="output-content" id="output-content"></div>
+                </div>
+                <div class="ai-links">
+
+                    <a href="https://chat.openai.com" target="_blank" class="ai-link gpt">前往 ChatGPT</a>
+                    <a href="https://gemini.google.com" target="_blank" class="ai-link gemini">前往 Gemini</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const templates = [
+            {
+                generate: function() {
+                    return `請生成一份完整的教案：
+
+【基本資訊】
+科目：${document.getElementById('f0-subject').value || '[科目名稱]'}
+單元名稱：${document.getElementById('f0-unit').value || '[單元名稱]'}
+適用年級：${document.getElementById('f0-grade').value || '[年級]'}
+教學節數：${document.getElementById('f0-periods').value || '[節數]'}
+學生人數：${document.getElementById('f0-students').value || '[人數]'}
+
+【課綱對應】
+核心素養：${document.getElementById('f0-competency').value || '[素養代碼與內容]'}
+學習表現：${document.getElementById('f0-performance').value || '[表現代碼與內容]'}
+學習內容：${document.getElementById('f0-content').value || '[內容代碼與內容]'}
+
+【特殊需求】
+- 學生程度：${document.getElementById('f0-level').value || '[程度描述]'}
+- 可用設備：${document.getElementById('f0-equipment').value || '[設備清單]'}
+- 特殊考量：${document.getElementById('f0-special').value || '[特殊考量]'}
+
+請包含：
+1. 具體可評量的學習目標
+2. 詳細的教學流程（含時間分配）
+3. 師生互動設計
+4. 差異化教學策略
+5. 多元評量方式
+6. 學習單/講義設計
+7. 板書/簡報重點規劃`;
+                }
+            },
+            {
+                generate: function() {
+                    return `我需要快速備課，請幫我：
+
+科目：${document.getElementById('f1-subject').value || '[科目]'}
+主題：${document.getElementById('f1-topic').value || '[主題]'}
+時間：${document.getElementById('f1-time').value || '[分鐘]'}
+重點：${document.getElementById('f1-concept').value || '[核心概念]'}
+
+請給我：
+1. 簡潔的教學流程
+2. 3個引起動機的開場方式
+3. 5個檢核學生理解的提問
+4. 1個簡單的課堂活動`;
+                }
+            }
+        ];
+
+        let currentTemplate = 0;
+        function selectTemplate(i) {
+            currentTemplate = i;
+            document.querySelectorAll('.template-card').forEach((c, idx) => c.classList.toggle('active', idx === i));
+            document.querySelectorAll('.form-section').forEach((f, idx) => f.classList.toggle('active', idx === i));
+            document.getElementById('output-section').classList.remove('active');
+        }
+        function generatePrompt() {
+            document.getElementById('output-content').textContent = templates[currentTemplate].generate();
+            document.getElementById('output-section').classList.add('active');
+            document.getElementById('output-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        function copyPrompt() {
+            navigator.clipboard.writeText(document.getElementById('output-content').textContent).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '已複製!'; btn.classList.add('copied');
+                setTimeout(() => { btn.textContent = '複製'; btn.classList.remove('copied'); }, 2000);
+            });
+        }
+        function resetForm() {
+            document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+            document.getElementById('output-section').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

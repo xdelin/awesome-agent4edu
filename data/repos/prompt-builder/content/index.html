@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Builder By Anwar Fauzi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --border-color: #dee2e6;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.12);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-green: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #1c2128;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .theme-toggle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header-custom {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card-header-custom h2 {
+            font-weight: 700;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .card-header-custom p {
+            margin: 1rem 0 0 0;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-label i {
+            color: #667eea;
+        }
+
+        .form-control,
+        .form-select {
+            background-color: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background-color: var(--bg-secondary);
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+            color: var(--text-primary);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        .form-check-input:checked {
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+
+        .form-check-label {
+            color: var(--text-primary);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .info-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid #667eea;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .info-box small {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            border: none;
+            border-radius: 0.75rem;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.5);
+        }
+
+        .result-section {
+            background: var(--bg-card);
+        }
+
+        .result-header {
+            background: var(--gradient-green);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .result-box {
+            white-space: pre-wrap;
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 2px solid var(--border-color);
+            padding: 1.5rem;
+            margin: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .result-box::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .result-box::-webkit-scrollbar-track {
+            background: var(--bg-card);
+            border-radius: 10px;
+        }
+
+        .result-box::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .app-type-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            margin: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .badge-pwa {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .badge-static {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-copy {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            margin: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .btn-copy:hover {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            color: #764ba2;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: var(--gradient);
+            border-radius: 2px;
+            margin: 2rem 0;
+            opacity: 0.3;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-lightning-charge-fill" style="font-size: 2rem; color: #667eea;"></i>
+                <h4 class="m-0 fw-bold">Prompt Builder</h4>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <!-- Main Card -->
+        <div class="card mb-4 fade-in">
+            <div class="card-header-custom">
+                <h2><i class="bi bi-magic"></i> Prompt Builder</h2>
+                <p>
+                    Buat prompt untuk Claude AI agar membangun aplikasi web sesuai kebutuhanmu.<br>
+                    Pilih jenis aplikasi dan isi form di bawah ini.
+                </p>
+            </div>
+
+            <div class="p-4">
+                <form id="promptForm">
+                    <!-- Pilihan Jenis Aplikasi -->
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-puzzle-fill"></i>
+                            Jenis Aplikasi
+                        </label>
+                        <select class="form-select" id="appType">
+                            <option value="pwa">🚀 PWA (Progressive Web App) - Bisa Offline & Install</option>
+                            <option value="static">🌐 Web Statis - HTML CSS JS Biasa</option>
+                        </select>
+                        <div class="info-box">
+                            <small>
+                                <strong>PWA:</strong> Aplikasi web modern dengan service worker, bisa offline dan
+                                diinstall.<br>
+                                <strong>Web Statis:</strong> Website biasa dengan HTML, CSS, JavaScript tanpa fitur PWA.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-tag-fill"></i>
+                            1. Nama Aplikasi/Website
+                        </label>
+                        <input type="text" class="form-control" id="appName" placeholder="Contoh: SmartBudget">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-bullseye"></i>
+                            2. Tujuan / Fungsi Utama
+                        </label>
+                        <textarea class="form-control" id="purpose" rows="2"
+                            placeholder="Contoh: Mencatat pengeluaran harian dan menampilkan total bulanan."></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-people-fill"></i>
+                            3. Target Pengguna
+                        </label>
+                        <input type="text" class="form-control" id="targetUser"
+                            placeholder="Contoh: Mahasiswa, karyawan, ibu rumah tangga">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-star-fill"></i>
+                            4. Fitur-Fitur yang Diinginkan
+                        </label>
+                        <textarea class="form-control" id="features" rows="3"
+                            placeholder="Contoh: Tambah data, hapus data, simpan di localStorage, mode gelap, tampilan responsive"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-palette-fill"></i>
+                            5. Desain dan Gaya Tampilan
+                        </label>
+                        <textarea class="form-control" id="design" rows="2"
+                            placeholder="Contoh: Warna biru-putih, gaya minimalis, font Poppins, navigasi di bawah"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-cursor-fill"></i>
+                            6. Interaksi dan Perilaku
+                        </label>
+                        <textarea class="form-control" id="interaction" rows="2"
+                            placeholder="Contoh: Klik tombol simpan → data muncul langsung dan tersimpan saat dibuka ulang."></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-code-slash"></i>
+                            7. Teknologi dan Struktur
+                        </label>
+                        <textarea class="form-control" id="tech" rows="2"
+                            placeholder="Contoh: HTML, CSS, JavaScript, localStorage"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-shield-lock-fill"></i>
+                            8. Sistem Autentikasi (Login/Register)
+                        </label>
+                        <select class="form-select mb-3" id="authSystem">
+                            <option value="none">❌ Tidak Perlu Login</option>
+                            <option value="simple">✅ Perlu Login & Register (Simpan di localStorage)</option>
+                        </select>
+                        <div id="authOptions" class="d-none">
+                            <div class="info-box mb-3">
+                                <small>
+                                    <strong>Sistem Login/Register:</strong> User bisa daftar akun baru dan login. Data
+                                    disimpan di localStorage browser.
+                                </small>
+                            </div>
+                            <label class="form-label mb-2" style="font-size: 0.9rem;">
+                                <i class="bi bi-list-check"></i>
+                                Fitur Autentikasi yang Diinginkan:
+                            </label>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="authRegister" checked>
+                                <label class="form-check-label" for="authRegister">
+                                    Form Register (Nama, Email, Password)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="authLogin" checked>
+                                <label class="form-check-label" for="authLogin">
+                                    Form Login (Email, Password)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="authRemember" checked>
+                                <label class="form-check-label" for="authRemember">
+                                    Remember Me / Tetap Login
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="authLogout" checked>
+                                <label class="form-check-label" for="authLogout">
+                                    Tombol Logout
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="authProfile">
+                                <label class="form-check-label" for="authProfile">
+                                    Halaman Profile User
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="authValidation" checked>
+                                <label class="form-check-label" for="authValidation">
+                                    Validasi Form (Email valid, Password min 6 karakter)
+                                </label>
+                            </div>
+                            <textarea class="form-control" id="authCustom" rows="2"
+                                placeholder="Fitur autentikasi tambahan (opsional): Contoh: Forgot password, Edit profile, dll."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-plus-circle-fill"></i>
+                            9. Tambahan Lainnya (Opsional)
+                        </label>
+                        <textarea class="form-control" id="extras" rows="2"
+                            placeholder="Contoh: Tambahkan ikon, animasi loading, atau fitur lain yang diinginkan."></textarea>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary" id="generateBtn">
+                            <i class="bi bi-magic"></i> Buat Prompt
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="resultSection" class="card d-none fade-in result-section">
+            <div class="result-header">
+                <h5 class="m-0 fw-bold"><i class="bi bi-check-circle-fill"></i> Prompt Berhasil Dibuat!</h5>
+            </div>
+            <div id="appTypeBadge"></div>
+            <div id="result" class="result-box"></div>
+            <button class="btn btn-copy" id="copyBtn">
+                <i class="bi bi-clipboard"></i> Salin Prompt
+            </button>
+            <div class="px-4 pb-4">
+                <small class="text-muted">
+                    💡 Tempelkan prompt ini ke <strong>Claude.ai</strong> agar sistem membangun aplikasi sesuai idemu.
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="text-muted m-0">
+                Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> oleh
+                <a href="https://anwarfauzi.my.id" target="_blank">Anwar Fauzi</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'bi bi-sun-fill';
+            } else {
+                themeIcon.className = 'bi bi-moon-stars-fill';
+            }
+        }
+
+        // Toggle Auth Options
+        document.getElementById("authSystem").addEventListener("change", function () {
+            const authOptions = document.getElementById("authOptions");
+            if (this.value === "simple") {
+                authOptions.classList.remove("d-none");
+            } else {
+                authOptions.classList.add("d-none");
+            }
+        });
+
+        // Generate Prompt
+        document.getElementById("generateBtn").addEventListener("click", function () {
+            const appType = document.getElementById("appType").value;
+            const data = {
+                appName: document.getElementById("appName").value.trim(),
+                purpose: document.getElementById("purpose").value.trim(),
+                targetUser: document.getElementById("targetUser").value.trim(),
+                features: document.getElementById("features").value.trim(),
+                design: document.getElementById("design").value.trim(),
+                interaction: document.getElementById("interaction").value.trim(),
+                tech: document.getElementById("tech").value.trim(),
+                extras: document.getElementById("extras").value.trim(),
+            };
+
+            // Auth System
+            const authSystem = document.getElementById("authSystem").value;
+            const authFeatures = {
+                register: document.getElementById("authRegister").checked,
+                login: document.getElementById("authLogin").checked,
+                remember: document.getElementById("authRemember").checked,
+                logout: document.getElementById("authLogout").checked,
+                profile: document.getElementById("authProfile").checked,
+                validation: document.getElementById("authValidation").checked,
+                custom: document.getElementById("authCustom").value.trim()
+            };
+
+            let prompt = `Kamu adalah AI pembuat aplikasi web yang ahli dalam HTML, CSS, dan JavaScript.\n\n`;
+
+            if (appType === 'pwa') {
+                prompt += `Buatkan sebuah aplikasi PWA (Progressive Web App) berdasarkan informasi berikut:\n\n`;
+            } else {
+                prompt += `Buatkan sebuah website statis berbasis HTML, CSS, dan JavaScript berdasarkan informasi berikut:\n\n`;
+            }
+
+            if (data.appName) prompt += `### Nama Aplikasi\n${data.appName}\n\n`;
+            if (data.purpose) prompt += `### Tujuan / Fungsi Utama\n${data.purpose}\n\n`;
+            if (data.targetUser) prompt += `### Target Pengguna\n${data.targetUser}\n\n`;
+            if (data.features) prompt += `### Fitur-Fitur yang Diinginkan\n${data.features}\n\n`;
+            if (data.design) prompt += `### Desain dan Gaya Tampilan\n${data.design}\n\n`;
+            if (data.interaction) prompt += `### Interaksi dan Perilaku\n${data.interaction}\n\n`;
+            if (data.tech) prompt += `### Teknologi dan Struktur\n${data.tech}\n\n`;
+
+            // Add auth system to prompt
+            if (authSystem === 'simple') {
+                prompt += `### Sistem Autentikasi\n`;
+                prompt += `Aplikasi memerlukan sistem login dan register dengan penyimpanan di localStorage.\n\n`;
+                prompt += `**Fitur yang diperlukan:**\n`;
+
+                if (authFeatures.register) {
+                    prompt += `- Form Register dengan field: Nama, Email, Password\n`;
+                }
+                if (authFeatures.login) {
+                    prompt += `- Form Login dengan field: Email, Password\n`;
+                }
+                if (authFeatures.remember) {
+                    prompt += `- Fitur "Remember Me" agar user tetap login\n`;
+                }
+                if (authFeatures.logout) {
+                    prompt += `- Tombol Logout untuk keluar dari akun\n`;
+                }
+                if (authFeatures.profile) {
+                    prompt += `- Halaman Profile untuk melihat dan edit data user\n`;
+                }
+                if (authFeatures.validation) {
+                    prompt += `- Validasi form: Email harus valid, Password minimal 6 karakter\n`;
+                }
+                if (authFeatures.custom) {
+                    prompt += `- ${authFeatures.custom}\n`;
+                }
+
+                prompt += `\n**Cara kerja sistem:**\n`;
+                prompt += `- Data user disimpan di localStorage dalam format array/object\n`;
+                prompt += `- Password sebaiknya di-hash (minimal) atau enkripsi sederhana\n`;
+                prompt += `- Setelah login berhasil, simpan session user di localStorage\n`;
+                prompt += `- Cek session saat halaman dimuat untuk auto-login\n`;
+                prompt += `- Redirect ke halaman login jika belum login\n`;
+                prompt += `- Hanya user yang sudah login yang bisa mengakses fitur utama aplikasi\n\n`;
+            }
+
+            if (data.extras) prompt += `### Tambahan\n${data.extras}\n\n`;
+
+            prompt += `### Instruksi Akhir\nBuat seluruh aplikasi dalam satu file HTML agar mudah dijalankan.\n`;
+            prompt += `Gunakan Bootstrap 5 untuk tampilan modern.\n`;
+
+            if (appType === 'pwa') {
+                prompt += `Sertakan service worker dan manifest.json agar bisa bekerja offline dan diinstall sebagai PWA.\n`;
+            }
+
+            prompt += `Pastikan tampilannya responsive di perangkat mobile.`;
+
+            document.getElementById("result").innerText = prompt;
+
+            // Update badge
+            const badge = document.getElementById("appTypeBadge");
+            if (appType === 'pwa') {
+                badge.innerHTML = '<span class="app-type-badge badge-pwa"><i class="bi bi-phone-fill"></i> PWA (Progressive Web App)</span>';
+            } else {
+                badge.innerHTML = '<span class="app-type-badge badge-static"><i class="bi bi-code-square"></i> Web Statis HTML CSS JS</span>';
+            }
+
+            const resultSection = document.getElementById("resultSection");
+            resultSection.classList.remove("d-none");
+            setTimeout(() => {
+                resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        });
+
+        // Copy to Clipboard
+        document.getElementById("copyBtn").addEventListener("click", function () {
+            const resultText = document.getElementById("result").innerText;
+            navigator.clipboard.writeText(resultText).then(() => {
+                const originalHTML = this.innerHTML;
+                this.innerHTML = '<i class="bi bi-check2-circle"></i> Berhasil Disalin!';
+                this.style.background = 'var(--gradient-green)';
+                this.style.color = 'white';
+                this.style.borderColor = 'transparent';
+
+                setTimeout(() => {
+                    this.innerHTML = originalHTML;
+                    this.style.background = '';
+                    this.style.color = '';
+                    this.style.borderColor = '';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>

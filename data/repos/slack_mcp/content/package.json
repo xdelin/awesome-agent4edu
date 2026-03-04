@@ -1,0 +1,96 @@
+{
+  "name": "@jtalk22/slack-mcp",
+  "mcpName": "io.github.jtalk22/slack-mcp-server",
+  "version": "3.0.0",
+  "description": "Session-based Slack MCP for Claude and MCP clients: local-first workflows, secure-default HTTP.",
+  "type": "module",
+  "main": "src/server.js",
+  "bin": {
+    "slack-mcp": "src/cli.js",
+    "slack-mcp-server": "src/server.js",
+    "slack-mcp-http": "src/server-http.js",
+    "slack-mcp-web": "src/web-server.js",
+    "slack-mcp-setup": "scripts/setup-wizard.js"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "http": "node src/server-http.js",
+    "web": "node src/web-server.js",
+    "setup": "node scripts/setup-wizard.js --setup",
+    "hooks:setup": "bash scripts/setup-git-hooks.sh",
+    "verify:owner-attribution": "bash scripts/check-owner-attribution.sh",
+    "tokens:status": "node scripts/token-cli.js status",
+    "tokens:refresh": "node scripts/token-cli.js refresh",
+    "tokens:auto": "node scripts/token-cli.js auto",
+    "tokens:clear": "node scripts/token-cli.js clear",
+    "screenshot": "node scripts/capture-screenshots.js",
+    "build:social-preview": "node scripts/build-social-preview.js",
+    "build:demo-mobile": "node scripts/build-mobile-demo.js",
+    "build:demo-mobile:gif": "node scripts/build-mobile-demo.js --gif",
+    "record-demo": "node scripts/record-demo.js",
+    "social-preview:update": "node scripts/update-github-social-preview.js --headed",
+    "cf:browser": "node scripts/cloudflare-browser-tool.js",
+    "metrics:release-health": "node scripts/collect-release-health.js",
+    "metrics:release-health:delta": "node scripts/build-release-health-delta.js",
+    "impact:push:v3": "node scripts/impact-push-v3.js --dry-run",
+    "impact:push:v3:apply": "node scripts/impact-push-v3.js --apply",
+    "verify:version-parity": "node scripts/check-version-parity.js",
+    "verify:release-dry-run": "node scripts/release-preflight.js"
+  },
+  "keywords": [
+    "claude",
+    "mcp",
+    "model-context-protocol",
+    "slack",
+    "slack-api",
+    "claude-desktop",
+    "cli",
+    "developer-tools",
+    "mcp-server",
+    "session-based",
+    "claude-code",
+    "local-first",
+    "session-mirroring",
+    "slack-mcp",
+    "secure-by-default",
+    "llm",
+    "slack-integration",
+    "ai-agents",
+    "automation",
+    "productivity"
+  ],
+  "author": "jtalk22",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtalk22/slack-mcp-server.git"
+  },
+  "homepage": "https://jtalk22.github.io/slack-mcp-server/",
+  "bugs": {
+    "url": "https://github.com/jtalk22/slack-mcp-server/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.0",
+    "express": "^4.18.2"
+  },
+  "files": [
+    "src/",
+    "lib/",
+    "public/",
+    "scripts/",
+    "docs/*.md",
+    "docs/assets/",
+    "docs/images/*.png",
+    "docs/images/*.svg",
+    "README.md",
+    "LICENSE",
+    "server.json",
+    "smithery.yaml"
+  ],
+  "devDependencies": {
+    "playwright": "^1.57.0"
+  }
+}

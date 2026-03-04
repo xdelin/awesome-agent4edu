@@ -1,0 +1,398 @@
+{
+  "name": "Brave Search",
+  "full": true,
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "BraveAPI",
+          "type": "folder",
+          "path": "src/BraveAPI",
+          "children": [
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/BraveAPI/index.ts",
+              "size": 3751,
+              "language": "ts"
+            },
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "src/BraveAPI/types.ts",
+              "size": 2201,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "protocols",
+          "type": "folder",
+          "path": "src/protocols",
+          "children": [
+            {
+              "name": "http.ts",
+              "type": "file",
+              "path": "src/protocols/http.ts",
+              "size": 2859,
+              "language": "ts"
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/protocols/index.ts",
+              "size": 104,
+              "language": "ts"
+            },
+            {
+              "name": "stdio.ts",
+              "type": "file",
+              "path": "src/protocols/stdio.ts",
+              "size": 422,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "images",
+              "type": "folder",
+              "path": "src/tools/images",
+              "children": [
+                {
+                  "name": "schemas",
+                  "type": "folder",
+                  "path": "src/tools/images/schemas",
+                  "children": [
+                    {
+                      "name": "input.ts",
+                      "type": "file",
+                      "path": "src/tools/images/schemas/input.ts",
+                      "size": 1452,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "output.ts",
+                      "type": "file",
+                      "path": "src/tools/images/schemas/output.ts",
+                      "size": 597,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "response.ts",
+                      "type": "file",
+                      "path": "src/tools/images/schemas/response.ts",
+                      "size": 2893,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/images/index.ts",
+                  "size": 2498,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/images/types.ts",
+                  "size": 2589,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "local",
+              "type": "folder",
+              "path": "src/tools/local",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/local/index.ts",
+                  "size": 6188,
+                  "language": "ts"
+                },
+                {
+                  "name": "params.ts",
+                  "type": "file",
+                  "path": "src/tools/local/params.ts",
+                  "size": 448,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/local/types.ts",
+                  "size": 8206,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "news",
+              "type": "folder",
+              "path": "src/tools/news",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/news/index.ts",
+                  "size": 2632,
+                  "language": "ts"
+                },
+                {
+                  "name": "params.ts",
+                  "type": "file",
+                  "path": "src/tools/news/params.ts",
+                  "size": 2980,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/news/types.ts",
+                  "size": 2430,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "summarizer",
+              "type": "folder",
+              "path": "src/tools/summarizer",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/summarizer/index.ts",
+                  "size": 3570,
+                  "language": "ts"
+                },
+                {
+                  "name": "params.ts",
+                  "type": "file",
+                  "path": "src/tools/summarizer/params.ts",
+                  "size": 2744,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/summarizer/types.ts",
+                  "size": 4790,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "videos",
+              "type": "folder",
+              "path": "src/tools/videos",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/videos/index.ts",
+                  "size": 1729,
+                  "language": "ts"
+                },
+                {
+                  "name": "params.ts",
+                  "type": "file",
+                  "path": "src/tools/videos/params.ts",
+                  "size": 2513,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/videos/types.ts",
+                  "size": 3286,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "web",
+              "type": "folder",
+              "path": "src/tools/web",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/tools/web/index.ts",
+                  "size": 4979,
+                  "language": "ts"
+                },
+                {
+                  "name": "params.ts",
+                  "type": "file",
+                  "path": "src/tools/web/params.ts",
+                  "size": 5615,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/tools/web/types.ts",
+                  "size": 31210,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/tools/index.ts",
+              "size": 419,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "config.ts",
+          "type": "file",
+          "path": "src/config.ts",
+          "size": 5406,
+          "language": "ts"
+        },
+        {
+          "name": "constants.ts",
+          "type": "file",
+          "path": "src/constants.ts",
+          "size": 75,
+          "language": "ts"
+        },
+        {
+          "name": "helpers.ts",
+          "type": "file",
+          "path": "src/helpers.ts",
+          "size": 552,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 521,
+          "language": "ts"
+        },
+        {
+          "name": "server.ts",
+          "type": "file",
+          "path": "src/server.ts",
+          "size": 1117,
+          "language": "ts"
+        },
+        {
+          "name": "utils.ts",
+          "type": "file",
+          "path": "src/utils.ts",
+          "size": 621,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 39,
+      "language": "text"
+    },
+    {
+      "name": ".prettierignore",
+      "type": "file",
+      "path": ".prettierignore",
+      "size": 253,
+      "language": "text"
+    },
+    {
+      "name": ".prettierrc",
+      "type": "file",
+      "path": ".prettierrc",
+      "size": 189,
+      "language": "text"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 488,
+      "language": "yml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 772,
+      "language": "text"
+    },
+    {
+      "name": "glama.json",
+      "type": "file",
+      "path": "glama.json",
+      "size": 122,
+      "language": "json"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1110,
+      "language": "text"
+    },
+    {
+      "name": "marketplace-revision-release.json",
+      "type": "file",
+      "path": "marketplace-revision-release.json",
+      "size": 9265,
+      "language": "json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1672,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 14234,
+      "language": "md"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 884,
+      "language": "json"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 23,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 371,
+      "language": "json"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "algebra-basic-1",
+    "category": "Algebra",
+    "difficulty": "Basic",
+    "problem": "Solve for x: 2x + 5 = 13",
+    "expectedSteps": [
+      "Subtract 5 from both sides: 2x = 8",
+      "Divide both sides by 2: x = 4",
+      "Check: 2(4) + 5 = 8 + 5 = 13 ✓"
+    ],
+    "hints": [
+      "What operation can you use to remove the +5 from the left side?",
+      "Now that you have 2x = 8, how can you isolate x?",
+      "Always verify your answer by substituting back into the original equation"
+    ]
+  },
+  {
+    "id": "algebra-intermediate-1",
+    "category": "Algebra", 
+    "difficulty": "Intermediate",
+    "problem": "Solve for x: 3(x - 2) = 15",
+    "expectedSteps": [
+      "Distribute the 3: 3x - 6 = 15",
+      "Add 6 to both sides: 3x = 21", 
+      "Divide both sides by 3: x = 7",
+      "Check: 3(7 - 2) = 3(5) = 15 ✓"
+    ],
+    "hints": [
+      "Use the distributive property to expand 3(x - 2)",
+      "Now you have a linear equation. What's the first step to isolate x?",
+      "Don't forget to check your answer!"
+    ]
+  },
+  {
+    "id": "geometry-basic-1",
+    "category": "Geometry",
+    "difficulty": "Basic", 
+    "problem": "Find the area of a circle with radius 5 units",
+    "expectedSteps": [
+      "Recall the formula for area of a circle: A = πr²",
+      "Substitute r = 5: A = π(5)²",
+      "Calculate: A = π(25) = 25π",
+      "Approximate: A ≈ 25 × 3.14159 ≈ 78.54 square units"
+    ],
+    "hints": [
+      "What formula do you use to find the area of a circle?",
+      "The radius is given as 5 units. What do you substitute into the formula?",
+      "Remember that π ≈ 3.14159 for numerical approximations"
+    ]
+  },
+  {
+    "id": "calculus-basic-1",
+    "category": "Calculus",
+    "difficulty": "Intermediate",
+    "problem": "Find the derivative of f(x) = x² + 3x - 2",
+    "expectedSteps": [
+      "Apply the power rule to each term",
+      "d/dx(x²) = 2x",
+      "d/dx(3x) = 3", 
+      "d/dx(-2) = 0",
+      "Combine: f'(x) = 2x + 3"
+    ],
+    "hints": [
+      "Use the power rule: d/dx(xⁿ) = nx^(n-1)",
+      "What's the derivative of a constant term?",
+      "Don't forget to include the coefficient when differentiating"
+    ]
+  },
+  {
+    "id": "word-problem-1",
+    "category": "Word Problems",
+    "difficulty": "Intermediate",
+    "problem": "A train travels 120 miles in 2 hours. At this rate, how far will it travel in 5 hours?",
+    "expectedSteps": [
+      "Find the rate: distance ÷ time = 120 ÷ 2 = 60 mph",
+      "Use the formula: distance = rate × time",
+      "Calculate: distance = 60 × 5 = 300 miles"
+    ],
+    "hints": [
+      "What is the train's speed (rate) in miles per hour?",
+      "Once you know the rate, use the formula: distance = rate × time",
+      "Make sure your units are consistent throughout the problem"
+    ]
+  }
+]

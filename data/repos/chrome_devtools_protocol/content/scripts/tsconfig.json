@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "target": "es2024",
+    "typeRoots": ["node_modules/@types"],
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["protocol-dts-generator.ts"]
+}

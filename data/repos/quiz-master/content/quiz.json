@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What does CAMT.035 message represent in ISO 20022?",
+        "options": [
+            "Payment Status Report",
+            "Payment Acknowledgement",
+            "Limit Utilisation Report",
+            "Account Statement"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "In which payment system is CAMT.035 commonly used?",
+        "options": [
+            "SWIFT",
+            "Real-Time Payments (RTP)",
+            "ACH",
+            "Wire Transfer"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the main difference between CAMT.035 and PACS.002?",
+        "options": [
+            "CAMT.035 is for acknowledgement, PACS.002 is for final status",
+            "They are the same message",
+            "PACS.002 is for acknowledgement, CAMT.035 is for final status",
+            "CAMT.035 is only for domestic payments"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the primary purpose of a pacs.008 message in ISO 20022 financial messaging?",
+        "options": [
+          " To request a reversal of a previously executed payment transaction",
+          " To initiate a credit transfer instruction from the debtor agent to the creditor agent",
+          " To provide confirmation that a payment transaction has been successfully completed",
+          " To report the status of a payment instruction, including any errors or rejections"
+        ],
+        "correct": 1
+    }
+]

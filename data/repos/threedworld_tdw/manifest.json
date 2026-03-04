@@ -1,0 +1,1000 @@
+{
+  "name": "ThreeDWorld (TDW)",
+  "full": true,
+  "tree": [
+    {
+      "name": "Docker",
+      "type": "folder",
+      "path": "Docker",
+      "children": [
+        {
+          "name": "internal",
+          "type": "folder",
+          "path": "Docker/internal",
+          "children": [
+            {
+              "name": "entrypoint.sh",
+              "type": "file",
+              "path": "Docker/internal/entrypoint.sh",
+              "size": 213,
+              "language": "sh"
+            }
+          ]
+        },
+        {
+          "name": "build.sh",
+          "type": "file",
+          "path": "Docker/build.sh",
+          "size": 133,
+          "language": "sh"
+        },
+        {
+          "name": "Dockerfile",
+          "type": "file",
+          "path": "Docker/Dockerfile",
+          "size": 729,
+          "language": "text"
+        },
+        {
+          "name": "install.sh",
+          "type": "file",
+          "path": "Docker/install.sh",
+          "size": 452,
+          "language": "sh"
+        },
+        {
+          "name": "pull.sh",
+          "type": "file",
+          "path": "Docker/pull.sh",
+          "size": 524,
+          "language": "sh"
+        },
+        {
+          "name": "run.sh",
+          "type": "file",
+          "path": "Docker/run.sh",
+          "size": 341,
+          "language": "sh"
+        },
+        {
+          "name": "stop.sh",
+          "type": "file",
+          "path": "Docker/stop.sh",
+          "size": 41,
+          "language": "sh"
+        },
+        {
+          "name": "tag.sh",
+          "type": "file",
+          "path": "Docker/tag.sh",
+          "size": 91,
+          "language": "sh"
+        },
+        {
+          "name": "test.py",
+          "type": "file",
+          "path": "Docker/test.py",
+          "size": 1940,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "type": "folder",
+      "path": "Documentation",
+      "children": [
+        {
+          "name": "api",
+          "type": "folder",
+          "path": "Documentation/api",
+          "children": [
+            {
+              "name": "images",
+              "type": "folder",
+              "path": "Documentation/api/images",
+              "children": [
+                {
+                  "name": "pass_masks",
+                  "type": "folder",
+                  "path": "Documentation/api/images/pass_masks",
+                  "children": [
+                    {
+                      "name": "albedo_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/albedo_0.png",
+                      "size": 3886,
+                      "language": "png"
+                    },
+                    {
+                      "name": "category_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/category_0.png",
+                      "size": 1321,
+                      "language": "png"
+                    },
+                    {
+                      "name": "depth_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/depth_0.png",
+                      "size": 12138,
+                      "language": "png"
+                    },
+                    {
+                      "name": "depth_simple_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/depth_simple_0.png",
+                      "size": 1437,
+                      "language": "png"
+                    },
+                    {
+                      "name": "flow_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/flow_0.png",
+                      "size": 10078,
+                      "language": "png"
+                    },
+                    {
+                      "name": "id_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/id_0.png",
+                      "size": 1327,
+                      "language": "png"
+                    },
+                    {
+                      "name": "img_0.jpg",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/img_0.jpg",
+                      "size": 2409,
+                      "language": "jpg"
+                    },
+                    {
+                      "name": "mask_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/mask_0.png",
+                      "size": 1204,
+                      "language": "png"
+                    },
+                    {
+                      "name": "normals_0.png",
+                      "type": "file",
+                      "path": "Documentation/api/images/pass_masks/normals_0.png",
+                      "size": 4002,
+                      "language": "png"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "output_data.md",
+              "type": "file",
+              "path": "Documentation/api/output_data.md",
+              "size": 57155,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "benchmark",
+          "type": "folder",
+          "path": "Documentation/benchmark",
+          "children": [
+            {
+              "name": "benchmark.md",
+              "type": "file",
+              "path": "Documentation/benchmark/benchmark.md",
+              "size": 3705,
+              "language": "md"
+            },
+            {
+              "name": "command_deserialization.md",
+              "type": "file",
+              "path": "Documentation/benchmark/command_deserialization.md",
+              "size": 1963,
+              "language": "md"
+            },
+            {
+              "name": "image_capture.md",
+              "type": "file",
+              "path": "Documentation/benchmark/image_capture.md",
+              "size": 3049,
+              "language": "md"
+            },
+            {
+              "name": "object_data.md",
+              "type": "file",
+              "path": "Documentation/benchmark/object_data.md",
+              "size": 1286,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "lessons",
+          "type": "folder",
+          "path": "Documentation/lessons",
+          "children": [
+            {
+              "name": "3d_models",
+              "type": "folder",
+              "path": "Documentation/lessons/3d_models",
+              "children": [
+                {
+                  "name": "images",
+                  "type": "folder",
+                  "path": "Documentation/lessons/3d_models/images",
+                  "children": [
+                    {
+                      "name": "non_free_models",
+                      "type": "folder",
+                      "path": "Documentation/lessons/3d_models/images/non_free_models",
+                      "children": [
+                        {
+                          "name": "screen1.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/3d_models/images/non_free_models/screen1.jpg",
+                          "size": 193206,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "screen2.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/3d_models/images/non_free_models/screen2.jpg",
+                          "size": 234339,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "screen3.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/3d_models/images/non_free_models/screen3.jpg",
+                          "size": 250795,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "screen3b.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/3d_models/images/non_free_models/screen3b.jpg",
+                          "size": 249816,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "screen4.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/3d_models/images/non_free_models/screen4.jpg",
+                          "size": 194360,
+                          "language": "jpg"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "free_models.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/3d_models/free_models.md",
+                  "size": 1622,
+                  "language": "md"
+                },
+                {
+                  "name": "non_free_models.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/3d_models/non_free_models.md",
+                  "size": 4758,
+                  "language": "md"
+                },
+                {
+                  "name": "overview.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/3d_models/overview.md",
+                  "size": 2191,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "agents",
+              "type": "folder",
+              "path": "Documentation/lessons/agents",
+              "children": [
+                {
+                  "name": "overview.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/agents/overview.md",
+                  "size": 5320,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "audio",
+              "type": "folder",
+              "path": "Documentation/lessons/audio",
+              "children": [
+                {
+                  "name": "audio_perception.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/audio/audio_perception.md",
+                  "size": 1305,
+                  "language": "md"
+                },
+                {
+                  "name": "initialize_audio.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/audio/initialize_audio.md",
+                  "size": 9765,
+                  "language": "md"
+                },
+                {
+                  "name": "overview.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/audio/overview.md",
+                  "size": 1276,
+                  "language": "md"
+                },
+                {
+                  "name": "record_audio.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/audio/record_audio.md",
+                  "size": 5583,
+                  "language": "md"
+                },
+                {
+                  "name": "resonance_audio.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/audio/resonance_audio.md",
+                  "size": 13494,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "camera",
+              "type": "folder",
+              "path": "Documentation/lessons/camera",
+              "children": [
+                {
+                  "name": "images",
+                  "type": "folder",
+                  "path": "Documentation/lessons/camera/images",
+                  "children": [
+                    {
+                      "name": "cinematic_camera",
+                      "type": "folder",
+                      "path": "Documentation/lessons/camera/images/cinematic_camera",
+                      "children": [
+                        {
+                          "name": "move_forward.gif",
+                          "type": "file",
+                          "path": "Documentation/lessons/camera/images/cinematic_camera/move_forward.gif",
+                          "size": 60955,
+                          "language": "gif"
+                        },
+                        {
+                          "name": "move_to_object.gif",
+                          "type": "file",
+                          "path": "Documentation/lessons/camera/images/cinematic_camera/move_to_object.gif",
+                          "size": 211016,
+                          "language": "gif"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "cinematic_camera.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/camera/cinematic_camera.md",
+                  "size": 10067,
+                  "language": "md"
+                },
+                {
+                  "name": "follow.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/camera/follow.md",
+                  "size": 3664,
+                  "language": "md"
+                },
+                {
+                  "name": "overview.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/camera/overview.md",
+                  "size": 517,
+                  "language": "md"
+                },
+                {
+                  "name": "position.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/camera/position.md",
+                  "size": 1501,
+                  "language": "md"
+                },
+                {
+                  "name": "rotation.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/camera/rotation.md",
+                  "size": 9826,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "clatter",
+              "type": "folder",
+              "path": "Documentation/lessons/clatter",
+              "children": [
+                {
+                  "name": "clatter_objects.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/clatter_objects.md",
+                  "size": 12674,
+                  "language": "md"
+                },
+                {
+                  "name": "cli.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/cli.md",
+                  "size": 10198,
+                  "language": "md"
+                },
+                {
+                  "name": "contribute.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/contribute.md",
+                  "size": 1100,
+                  "language": "md"
+                },
+                {
+                  "name": "overview.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/overview.md",
+                  "size": 6384,
+                  "language": "md"
+                },
+                {
+                  "name": "record_clatter.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/record_clatter.md",
+                  "size": 6901,
+                  "language": "md"
+                },
+                {
+                  "name": "reset.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/reset.md",
+                  "size": 4665,
+                  "language": "md"
+                },
+                {
+                  "name": "resonance_audio.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/resonance_audio.md",
+                  "size": 2452,
+                  "language": "md"
+                },
+                {
+                  "name": "troubleshooting.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/clatter/troubleshooting.md",
+                  "size": 1481,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "composite_objects",
+              "type": "folder",
+              "path": "Documentation/lessons/composite_objects",
+              "children": [
+                {
+                  "name": "images",
+                  "type": "folder",
+                  "path": "Documentation/lessons/composite_objects/images",
+                  "children": [
+                    {
+                      "name": "create_from_prefab",
+                      "type": "folder",
+                      "path": "Documentation/lessons/composite_objects/images/create_from_prefab",
+                      "children": [
+                        {
+                          "name": "break_force.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/break_force.png",
+                          "size": 4312,
+                          "language": "png"
+                        },
+                        {
+                          "name": "configureable_joint.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/configureable_joint.png",
+                          "size": 36886,
+                          "language": "png"
+                        },
+                        {
+                          "name": "connected_body.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/connected_body.png",
+                          "size": 12643,
+                          "language": "png"
+                        },
+                        {
+                          "name": "enable_collision.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/enable_collision.png",
+                          "size": 2226,
+                          "language": "png"
+                        },
+                        {
+                          "name": "limits.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/limits.png",
+                          "size": 9702,
+                          "language": "png"
+                        },
+                        {
+                          "name": "motor.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/motor.png",
+                          "size": 8430,
+                          "language": "png"
+                        },
+                        {
+                          "name": "off_light.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/off_light.png",
+                          "size": 34771,
+                          "language": "png"
+                        },
+                        {
+                          "name": "spring.png",
+                          "type": "file",
+                          "path": "Documentation/lessons/composite_objects/images/create_from_prefab/spring.png",
+                          "size": 7868,
+                          "language": "png"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "composite_objects.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/composite_objects/composite_objects.md",
+                  "size": 20447,
+                  "language": "md"
+                },
+                {
+                  "name": "create_from_prefab.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/composite_objects/create_from_prefab.md",
+                  "size": 9870,
+                  "language": "md"
+                },
+                {
+                  "name": "create_from_urdf.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/composite_objects/create_from_urdf.md",
+                  "size": 2761,
+                  "language": "md"
+                },
+                {
+                  "name": "overview.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/composite_objects/overview.md",
+                  "size": 1354,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "core_concepts",
+              "type": "folder",
+              "path": "Documentation/lessons/core_concepts",
+              "children": [
+                {
+                  "name": "images",
+                  "type": "folder",
+                  "path": "Documentation/lessons/core_concepts/images",
+                  "children": [
+                    {
+                      "name": "scenes",
+                      "type": "folder",
+                      "path": "Documentation/lessons/core_concepts/images/scenes",
+                      "children": [
+                        {
+                          "name": "box_room_2018.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/box_room_2018.jpg",
+                          "size": 300538,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "empty_scene.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/empty_scene.jpg",
+                          "size": 130204,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "floorplan_1a.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/floorplan_1a.jpg",
+                          "size": 247224,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "floorplan_1b.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/floorplan_1b.jpg",
+                          "size": 249011,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "floorplan_1c.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/floorplan_1c.jpg",
+                          "size": 250527,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "floorplan_2a.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/floorplan_2a.jpg",
+                          "size": 250740,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "floorplan_2b.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/floorplan_2b.jpg",
+                          "size": 252604,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "floorplan_2c.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/floorplan_2c.jpg",
+                          "size": 252596,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "floorplan_3a.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/floorplan_3a.jpg",
+                          "size": 242093,
+                          "language": "jpg"
+                        },
+                        {
+                          "name": "savanna_6km.jpg",
+                          "type": "file",
+                          "path": "Documentation/lessons/core_concepts/images/scenes/savanna_6km.jpg",
+                          "size": 136464,
+                          "language": "jpg"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "add_object.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/add_object.png",
+                      "size": 53505,
+                      "language": "png"
+                    },
+                    {
+                      "name": "avatar.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/avatar.png",
+                      "size": 20411,
+                      "language": "png"
+                    },
+                    {
+                      "name": "avatar_move.gif",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/avatar_move.gif",
+                      "size": 274530,
+                      "language": "gif"
+                    },
+                    {
+                      "name": "avatar_rot.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/avatar_rot.png",
+                      "size": 40957,
+                      "language": "png"
+                    },
+                    {
+                      "name": "avatar_tdwutils.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/avatar_tdwutils.png",
+                      "size": 48480,
+                      "language": "png"
+                    },
+                    {
+                      "name": "avatar_y.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/avatar_y.png",
+                      "size": 28273,
+                      "language": "png"
+                    },
+                    {
+                      "name": "empty_room.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/empty_room.png",
+                      "size": 54736,
+                      "language": "png"
+                    },
+                    {
+                      "name": "img_0000.jpg",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/img_0000.jpg",
+                      "size": 5245,
+                      "language": "jpg"
+                    },
+                    {
+                      "name": "img_0000.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/img_0000.png",
+                      "size": 74023,
+                      "language": "png"
+                    },
+                    {
+                      "name": "img_pass_box.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/img_pass_box.png",
+                      "size": 60682,
+                      "language": "png"
+                    },
+                    {
+                      "name": "network.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/network.png",
+                      "size": 17182,
+                      "language": "png"
+                    },
+                    {
+                      "name": "network.xml",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/network.xml",
+                      "size": 1189,
+                      "language": "xml"
+                    },
+                    {
+                      "name": "perlin_noise.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/perlin_noise.png",
+                      "size": 36930,
+                      "language": "png"
+                    },
+                    {
+                      "name": "red_box.png",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/red_box.png",
+                      "size": 52777,
+                      "language": "png"
+                    },
+                    {
+                      "name": "savanna_6km_no_clipping_planes.jpg",
+                      "type": "file",
+                      "path": "Documentation/lessons/core_concepts/images/savanna_6km_no_clipping_planes.jpg",
+                      "size": 33267,
+                      "language": "jpg"
+                    }
+                  ]
+                },
+                {
+                  "name": "add_ons.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/add_ons.md",
+                  "size": 7251,
+                  "language": "md"
+                },
+                {
+                  "name": "avatars.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/avatars.md",
+                  "size": 5488,
+                  "language": "md"
+                },
+                {
+                  "name": "commands.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/commands.md",
+                  "size": 2320,
+                  "language": "md"
+                },
+                {
+                  "name": "controller.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/controller.md",
+                  "size": 2445,
+                  "language": "md"
+                },
+                {
+                  "name": "design_philosophy.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/design_philosophy.md",
+                  "size": 2192,
+                  "language": "md"
+                },
+                {
+                  "name": "images.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/images.md",
+                  "size": 8506,
+                  "language": "md"
+                },
+                {
+                  "name": "launch_build.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/launch_build.md",
+                  "size": 1679,
+                  "language": "md"
+                },
+                {
+                  "name": "objects.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/objects.md",
+                  "size": 10268,
+                  "language": "md"
+                },
+                {
+                  "name": "outdoor_scenes.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/outdoor_scenes.md",
+                  "size": 3667,
+                  "language": "md"
+                },
+                {
+                  "name": "output_data.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/core_concepts/output_data.md",
+                  "size": 11912,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "custom_models",
+              "type": "folder",
+              "path": "Documentation/lessons/custom_models",
+              "children": [
+                {
+                  "name": "shapenet.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/custom_models/shapenet.md",
+                  "size": 4609,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "flex",
+              "type": "folder",
+              "path": "Documentation/lessons/flex",
+              "children": [
+                {
+                  "name": "transform.md",
+                  "type": "file",
+                  "path": "Documentation/lessons/flex/transform.md",
+                  "size": 2470,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "python",
+          "type": "folder",
+          "path": "Documentation/python",
+          "children": [
+            {
+              "name": "add_ons",
+              "type": "folder",
+              "path": "Documentation/python/add_ons",
+              "children": [
+                {
+                  "name": "avatar_body.md",
+                  "type": "file",
+                  "path": "Documentation/python/add_ons/avatar_body.md",
+                  "size": 225,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "audio_constants.md",
+              "type": "file",
+              "path": "Documentation/python/audio_constants.md",
+              "size": 0,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Changelog.md",
+          "type": "file",
+          "path": "Documentation/Changelog.md",
+          "size": 293415,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "Python",
+      "type": "folder",
+      "path": "Python",
+      "children": [
+        {
+          "name": "tdw",
+          "type": "folder",
+          "path": "Python/tdw",
+          "children": [
+            {
+              "name": "backend",
+              "type": "folder",
+              "path": "Python/tdw/backend",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "Python/tdw/backend/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "FBOutput",
+              "type": "folder",
+              "path": "Python/tdw/FBOutput",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "Python/tdw/FBOutput/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "flex_data",
+              "type": "folder",
+              "path": "Python/tdw/flex_data",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "Python/tdw/flex_data/__init__.py",
+                  "size": 0,
+                  "language": "py"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MANIFEST.in",
+          "type": "file",
+          "path": "Python/MANIFEST.in",
+          "size": 25,
+          "language": "in"
+        },
+        {
+          "name": "setup.cfg",
+          "type": "file",
+          "path": "Python/setup.cfg",
+          "size": 1,
+          "language": "cfg"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 289,
+      "language": "text"
+    }
+  ]
+}

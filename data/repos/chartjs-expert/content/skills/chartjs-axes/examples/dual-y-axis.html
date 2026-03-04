@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Dual Y-Axis Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+  <style>
+    .chart-container {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-container">
+    <canvas id="dualAxisChart"></canvas>
+  </div>
+
+  <script>
+    // Dual Y-Axis Chart: Revenue (left) vs Units Sold (right)
+    // Common pattern for comparing metrics with different scales
+
+    const ctx = document.getElementById('dualAxisChart');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [
+          {
+            label: 'Revenue ($)',
+            data: [12000, 19000, 15000, 25000, 22000, 30000],
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            borderColor: 'rgb(54, 162, 235)',
+            borderWidth: 1,
+            yAxisID: 'y',        // Maps to left axis
+            order: 2            // Render behind line
+          },
+          {
+            label: 'Units Sold',
+            data: [120, 190, 150, 250, 220, 300],
+            type: 'line',       // Mixed chart type
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.1)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.3,
+            yAxisID: 'y1',      // Maps to right axis
+            order: 1            // Render on top
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Monthly Sales Performance'
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (context.datasetIndex === 0) {
+                  return label + ': $' + context.parsed.y.toLocaleString();
+                }
+                return label + ': ' + context.parsed.y;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Month'
+            }
+          },
+          // Left Y-Axis (Revenue)
+          y: {
+            type: 'linear',
+            position: 'left',
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Revenue ($)',
+              color: 'rgb(54, 162, 235)'
+            },
+            ticks: {
+              color: 'rgb(54, 162, 235)',
+              callback: function(value) {
+                return '$' + value.toLocaleString();
+              }
+            },
+            grid: {
+              color: 'rgba(54, 162, 235, 0.1)'
+            }
+          },
+          // Right Y-Axis (Units)
+          y1: {
+            type: 'linear',
+            position: 'right',
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Units Sold',
+              color: 'rgb(255, 99, 132)'
+            },
+            ticks: {
+              color: 'rgb(255, 99, 132)'
+            },
+            // Important: Hide grid lines for right axis to avoid overlap
+            grid: {
+              drawOnChartArea: false
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

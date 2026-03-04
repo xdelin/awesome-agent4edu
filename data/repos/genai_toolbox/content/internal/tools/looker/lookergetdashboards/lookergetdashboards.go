@@ -1,0 +1,215 @@
+// Copyright 2025 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//	http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+package lookergetdashboards
+
+import (
+	"context"
+	"fmt"
+	"net/http"
+
+	yaml "github.com/goccy/go-yaml"
+	"github.com/googleapis/genai-toolbox/internal/embeddingmodels"
+	"github.com/googleapis/genai-toolbox/internal/sources"
+	"github.com/googleapis/genai-toolbox/internal/tools"
+	"github.com/googleapis/genai-toolbox/internal/util"
+	"github.com/googleapis/genai-toolbox/internal/util/parameters"
+
+	"github.com/looker-open-source/sdk-codegen/go/rtl"
+	v4 "github.com/looker-open-source/sdk-codegen/go/sdk/v4"
+)
+
+const resourceType string = "looker-get-dashboards"
+
+func init() {
+	if !tools.Register(resourceType, newConfig) {
+		panic(fmt.Sprintf("tool type %q already registered", resourceType))
+	}
+}
+
+func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.ToolConfig, error) {
+	actual := Config{Name: name}
+	if err := decoder.DecodeContext(ctx, &actual); err != nil {
+		return nil, err
+	}
+	return actual, nil
+}
+
+type compatibleSource interface {
+	UseClientAuthorization() bool
+	GetAuthTokenHeaderName() string
+	LookerApiSettings() *rtl.ApiSettings
+	GetLookerSDK(string) (*v4.LookerSDK, error)
+}
+
+type Config struct {
+	Name         string                 `yaml:"name" validate:"required"`
+	Type         string                 `yaml:"type" validate:"required"`
+	Source       string                 `yaml:"source" validate:"required"`
+	Description  string                 `yaml:"description" validate:"required"`
+	AuthRequired []string               `yaml:"authRequired"`
+	Annotations  *tools.ToolAnnotations `yaml:"annotations,omitempty"`
+}
+
+// validate interface
+var _ tools.ToolConfig = Config{}
+
+func (cfg Config) ToolConfigType() string {
+	return resourceType
+}
+
+func (cfg Config) Initialize(srcs map[string]sources.Source) (tools.Tool, error) {
+	titleParameter := parameters.NewStringParameterWithDefault("title", "", "The title of the dashboard.")
+	descParameter := parameters.NewStringParameterWithDefault("desc", "", "The description of the dashboard.")
+	limitParameter := parameters.NewIntParameterWithDefault("limit", 100, "The number of dashboards to fetch. Default 100")
+	offsetParameter := parameters.NewIntParameterWithDefault("offset", 0, "The number of dashboards to skip before fetching. Default 0")
+	params := parameters.Parameters{
+		titleParameter,
+		descParameter,
+		limitParameter,
+		offsetParameter,
+	}
+
+	annotations := cfg.Annotations
+	if annotations == nil {
+		readOnlyHint := true
+		annotations = &tools.ToolAnnotations{
+			ReadOnlyHint: &readOnlyHint,
+		}
+	}
+
+	mcpManifest := tools.GetMcpManifest(cfg.Name, cfg.Description, cfg.AuthRequired, params, annotations)
+
+	// finish tool setup
+	return Tool{
+		Config:     cfg,
+		Parameters: params,
+		manifest: tools.Manifest{
+			Description:  cfg.Description,
+			Parameters:   params.Manifest(),
+			AuthRequired: cfg.AuthRequired,
+		},
+		mcpManifest: mcpManifest,
+	}, nil
+}
+
+// validate interface
+var _ tools.Tool = Tool{}
+
+type Tool struct {
+	Config
+	Parameters  parameters.Parameters `yaml:"parameters"`
+	manifest    tools.Manifest
+	mcpManifest tools.McpManifest
+}
+
+func (t Tool) ToConfig() tools.ToolConfig {
+	return t.Config
+}
+
+func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, params parameters.ParamValues, accessToken tools.AccessToken) (any, util.ToolboxError) {
+	source, err := tools.GetCompatibleSource[compatibleSource](resourceMgr, t.Source, t.Name, t.Type)
+	if err != nil {
+		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
+	}
+
+	logger, err := util.LoggerFromContext(ctx)
+	if err != nil {
+		return nil, util.NewClientServerError("unable to get logger from ctx", http.StatusInternalServerError, err)
+	}
+	paramsMap := params.AsMap()
+	title := paramsMap["title"].(string)
+	title_ptr := &title
+	if *title_ptr == "" {
+		title_ptr = nil
+	}
+	desc := paramsMap["desc"].(string)
+	desc_ptr := &desc
+	if *desc_ptr == "" {
+		desc_ptr = nil
+	}
+	limit := int64(paramsMap["limit"].(int))
+	offset := int64(paramsMap["offset"].(int))
+
+	sdk, err := source.GetLookerSDK(string(accessToken))
+	if err != nil {
+		return nil, util.NewClientServerError("error getting sdk", http.StatusInternalServerError, err)
+	}
+	req := v4.RequestSearchDashboards{
+		Title:       title_ptr,
+		Description: desc_ptr,
+		Limit:       &limit,
+		Offset:      &offset,
+	}
+	logger.ErrorContext(ctx, "Making request %v", req)
+	resp, err := sdk.SearchDashboards(req, source.LookerApiSettings())
+	if err != nil {
+		return nil, util.ProcessGeneralError(err)
+	}
+	logger.ErrorContext(ctx, "Got response %v", resp)
+	var data []any
+	for _, v := range resp {
+		logger.DebugContext(ctx, "Got response element of %v\n", v)
+		vMap := make(map[string]any)
+		if v.Id != nil {
+			vMap["id"] = *v.Id
+		}
+		if v.Title != nil {
+			vMap["title"] = *v.Title
+		}
+		if v.Description != nil {
+			vMap["description"] = *v.Description
+		}
+		logger.DebugContext(ctx, "Converted to %v\n", vMap)
+		data = append(data, vMap)
+	}
+	logger.DebugContext(ctx, "data = ", data)
+
+	return data, nil
+}
+
+func (t Tool) EmbedParams(ctx context.Context, paramValues parameters.ParamValues, embeddingModelsMap map[string]embeddingmodels.EmbeddingModel) (parameters.ParamValues, error) {
+	return parameters.EmbedParams(ctx, t.Parameters, paramValues, embeddingModelsMap, nil)
+}
+
+func (t Tool) Manifest() tools.Manifest {
+	return t.manifest
+}
+
+func (t Tool) McpManifest() tools.McpManifest {
+	return t.mcpManifest
+}
+
+func (t Tool) RequiresClientAuthorization(resourceMgr tools.SourceProvider) (bool, error) {
+	source, err := tools.GetCompatibleSource[compatibleSource](resourceMgr, t.Source, t.Name, t.Type)
+	if err != nil {
+		return false, err
+	}
+	return source.UseClientAuthorization(), nil
+}
+
+func (t Tool) Authorized(verifiedAuthServices []string) bool {
+	return tools.IsAuthorized(t.AuthRequired, verifiedAuthServices)
+}
+
+func (t Tool) GetAuthTokenHeaderName(resourceMgr tools.SourceProvider) (string, error) {
+	source, err := tools.GetCompatibleSource[compatibleSource](resourceMgr, t.Source, t.Name, t.Type)
+	if err != nil {
+		return "", err
+	}
+	return source.GetAuthTokenHeaderName(), nil
+}
+
+func (t Tool) GetParameters() parameters.Parameters {
+	return t.Parameters
+}

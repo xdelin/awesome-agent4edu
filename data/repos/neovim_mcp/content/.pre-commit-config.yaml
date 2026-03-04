@@ -1,0 +1,45 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+
+  # Rust-specific hooks
+  - repo: https://github.com/doublify/pre-commit-rust
+    rev: v1.0
+    hooks:
+      # Format code
+      - id: fmt
+        args: ["--verbose", "--"]
+      # Lint with clippy
+      - id: clippy
+        args: ["--all-targets", "--all-features", "--", "-D", "warnings"]
+
+      # Check that code compiles
+      - id: cargo-check
+        args: ["--all-targets", "--all-features"]
+
+  # Lua-specific hooks
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v2.1.0
+    hooks:
+      - id: stylua # or stylua-system / stylua-github
+
+  # Markdown-specific hooks
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.18.1
+    hooks:
+      - id: markdownlint-cli2
+
+# Configuration for specific hooks
+default_stages: [pre-commit]
+fail_fast: false

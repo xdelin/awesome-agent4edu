@@ -1,0 +1,125 @@
+{
+  "name": "neurodivergent-visual-org",
+  "full": true,
+  "tree": [
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "neurodivergent-visual-org",
+          "type": "folder",
+          "path": "skills/neurodivergent-visual-org",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/neurodivergent-visual-org/references",
+              "children": [
+                {
+                  "name": "accountability-support.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/accountability-support.md",
+                  "size": 11435,
+                  "language": "md"
+                },
+                {
+                  "name": "current-state-boards.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/current-state-boards.md",
+                  "size": 8786,
+                  "language": "md"
+                },
+                {
+                  "name": "decision-tools.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/decision-tools.md",
+                  "size": 5670,
+                  "language": "md"
+                },
+                {
+                  "name": "focus-regulation.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/focus-regulation.md",
+                  "size": 13807,
+                  "language": "md"
+                },
+                {
+                  "name": "habit-building.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/habit-building.md",
+                  "size": 10724,
+                  "language": "md"
+                },
+                {
+                  "name": "project-maps.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/project-maps.md",
+                  "size": 7873,
+                  "language": "md"
+                },
+                {
+                  "name": "task-breakdowns.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/task-breakdowns.md",
+                  "size": 4558,
+                  "language": "md"
+                },
+                {
+                  "name": "time-boxing.md",
+                  "type": "file",
+                  "path": "skills/neurodivergent-visual-org/references/time-boxing.md",
+                  "size": 9441,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/neurodivergent-visual-org/SKILL.md",
+              "size": 29732,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 146,
+      "language": "text"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 987,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1066,
+      "language": "text"
+    },
+    {
+      "name": "MARKETPLACE_SUBMISSION.md",
+      "type": "file",
+      "path": "MARKETPLACE_SUBMISSION.md",
+      "size": 5003,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9156,
+      "language": "md"
+    }
+  ]
+}

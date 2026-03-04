@@ -1,0 +1,285 @@
+# Configuration
+
+## Overview
+
+The Jupyter MCP Server supports flexible configuration through environment variables and command-line options to accommodate different deployment scenarios from simple local setups to complex distributed environments.
+
+## Server Modes
+
+The server automatically detects the appropriate mode based on deployment context:
+
+| Mode | Description | When Used |
+|------|-------------|-----------|
+| **MCP_SERVER** | Standalone server connecting via HTTP | Docker, remote deployments |
+| **JUPYTER_SERVER** | Runs as Jupyter extension with direct API access | Local deployments, high-performance |
+
+### JupyterLab Mode
+**Environment Variable:** `JUPYTERLAB=true` (default)
+
+- **Enabled**: Automatic notebook opening, enhanced UI tools, `notebook_run-all-cells` tool
+- **Disabled**: Basic operations only, headless usage
+
+## Transport & Providers
+
+### Transport Options
+
+| Transport | Use Case | Configuration |
+|-----------|----------|---------------|
+| **STDIO** (default) | Desktop apps, Docker | `--transport stdio` |
+| **Streamable HTTP** | Web apps, multiple clients | `--transport streamable-http --port 4040` |
+
+### Providers
+
+| Provider | Description | Configuration |
+|----------|-------------|---------------|
+| **jupyter** (default) | Standard JupyterLab/Hub | `--provider jupyter` |
+| **datalayer** | Enterprise hosting | `--provider datalayer` |
+
+## Environment Variables
+
+The server supports both simplified and advanced configuration approaches:
+
+### Simplified Configuration (Recommended)
+
+For most users with standard JupyterLab setups:
+
+| Variable | Description | Example | Default | Required |
+|----------|-------------|---------|---------|----------|
+| `JUPYTER_URL` | URL of your Jupyter server | `http://localhost:8888` | `http://localhost:8888` | No |
+| `JUPYTER_TOKEN` | Authentication token for Jupyter server | `my-secret-token` | `None` | No* |
+| `DOCUMENT_ID` | Default notebook path (relative to Jupyter root) | `notebook.ipynb` | `None` | No |
+| `ALLOWED_JUPYTER_MCP_TOOLS` | Comma-separated list of jupyter-mcp-tools to enable | `notebook_run-all-cells,notebook_get-selected-cell` | `notebook_run-all-cells,notebook_get-selected-cell` | No |
+| `ALLOW_IMG_OUTPUT` | Enable multimodal image support | `true` / `false` | `true` | No |
+
+*Required for authentication when connecting to secured Jupyter servers
+
+### Advanced Configuration (Complex Deployments)
+
+For deployments requiring granular control over document storage and runtime execution:
+
+#### Document Storage Variables
+| Variable | Description | Example | Default |
+|----------|-------------|---------|---------|
+| `DOCUMENT_URL` | URL for notebook file operations | `http://notebook-storage:8888` | `http://localhost:8888` |
+| `DOCUMENT_TOKEN` | Authentication for document operations | `storage-access-token` | `None` |
+| `DOCUMENT_ID` | Notebook path/ID | `shared/analysis.ipynb` | `None` |
+
+#### Runtime Execution Variables  
+| Variable | Description | Example | Default |
+|----------|-------------|---------|---------|
+| `RUNTIME_URL` | URL for kernel/execution operations | `http://compute-cluster:8888` | `http://localhost:8888` |
+| `RUNTIME_TOKEN` | Authentication for runtime operations | `compute-access-token` | `None` |
+| `RUNTIME_ID` | Specific kernel ID to use | `kernel-abc123` | `None` |
+
+#### Additional Configuration Variables
+| Variable | Description | Example | Default |
+|----------|-------------|---------|---------|
+| `START_NEW_RUNTIME` | Create new runtime vs use existing | `true` / `false` | `false` |
+| `PROVIDER` | Provider type for document and runtime | `jupyter` / `datalayer` | `jupyter` |
+| `TRANSPORT` | Transport method for MCP | `stdio` / `streamable-http` | `stdio` |
+| `PORT` | Port for streamable HTTP transport | `4040` | `4040` |
+| `JUPYTERLAB` | Enable JupyterLab mode | `true` / `false` | `true` |
+
+### Configuration Priority
+
+Variables are resolved in this order:
+1. **Individual variables** (`DOCUMENT_*`, `RUNTIME_*`) - highest priority
+2. **Simplified variables** (`JUPYTER_*`) - fallback
+3. **Default values** - when no variables are set
+
+## Configuration Examples
+
+### Standard JupyterLab Setup
+```bash
+JUPYTER_URL=http://localhost:8888
+JUPYTER_TOKEN=my-token
+DOCUMENT_ID=my-notebook.ipynb
+ALLOWED_JUPYTER_MCP_TOOLS=notebook_run-all-cells,notebook_get-selected-cell
+ALLOW_IMG_OUTPUT=true
+```
+
+### JupyterHub with Separate Services
+```bash
+DOCUMENT_URL=http://hub.example.com:8000
+DOCUMENT_TOKEN=hub-api-token
+RUNTIME_URL=http://user-server:8888
+RUNTIME_TOKEN=user-server-token
+DOCUMENT_ID=shared/analysis.ipynb
+```
+
+### Distributed Computing Setup  
+```bash
+DOCUMENT_URL=http://file-server:8888
+DOCUMENT_TOKEN=file-access-token
+RUNTIME_URL=http://compute-node:8888
+RUNTIME_TOKEN=compute-access-token
+ALLOW_IMG_OUTPUT=false
+```
+
+### Development Setup
+```bash
+JUPYTER_URL=http://localhost:8888
+JUPYTER_TOKEN=dev-token
+# DOCUMENT_ID omitted
+```
+
+## Command Line Options
+
+For advanced use cases, you can configure the server using command-line flags:
+
+```bash
+jupyter-mcp-server start --help
+
+Usage: jupyter-mcp-server start [OPTIONS]
+
+Options:
+  --transport [stdio|streamable-http]  Transport type (default: stdio)
+  --provider [jupyter|datalayer]      Provider type (default: jupyter)  
+  --jupyterlab BOOLEAN               Enable JupyterLab mode (default: true)
+  --runtime-url TEXT                  Runtime URL for kernel operations (default: None)
+  --runtime-token TEXT                Runtime authentication token (default: None)
+  --runtime-id TEXT                   Specific kernel ID to use (default: None)
+  --start-new-runtime BOOLEAN         Create new runtime vs use existing (default: true)
+  --document-url TEXT                 Document URL for notebook operations (default: None)
+  --document-id TEXT                  Notebook path/ID (default: None)
+  --document-token TEXT               Document authentication token (default: None)
+  --jupyter-url TEXT                  Jupyter URL as default for both document and runtime URLs (default: None)
+  --jupyter-token TEXT                Jupyter token as default for both document and runtime tokens (default: None)
+  --allowed-jupyter-mcp-tools TEXT    Comma-separated list of jupyter-mcp-tools to enable (default: notebook_run-all-cells,notebook_get-selected-cell)
+  --port INTEGER                      Port for streamable-http transport (default: 4040)
+```
+
+### Additional Commands
+
+The server also supports additional commands for advanced workflows:
+
+#### Connect Command
+```bash
+jupyter-mcp-server connect --help
+
+Usage: jupyter-mcp-server connect [OPTIONS]
+
+Connect a Jupyter MCP Server to a document and a runtime.
+
+Options:
+  --provider [jupyter|datalayer]      Provider type (default: jupyter)
+  --jupyterlab BOOLEAN               Enable JupyterLab mode (default: true)
+  --runtime-url TEXT                  Runtime URL for kernel operations (default: None)
+  --runtime-token TEXT                Runtime authentication token (default: None)
+  --runtime-id TEXT                   Specific kernel ID to use (default: None)
+  --document-url TEXT                 Document URL for notebook operations (default: None)
+  --document-id TEXT                  Notebook path/ID (default: None)
+  --document-token TEXT               Document authentication token (default: None)
+  --jupyter-url TEXT                  Jupyter URL as default for both document and runtime URLs (default: None)
+  --jupyter-token TEXT                Jupyter token as default for both document and runtime tokens (default: None)
+  --jupyter-mcp-server-url TEXT       URL of the Jupyter MCP Server to connect to (default: http://localhost:4040)
+```
+
+#### Stop Command
+```bash
+jupyter-mcp-server stop --help
+
+Usage: jupyter-mcp-server stop [OPTIONS]
+
+Stop a running Jupyter MCP Server.
+
+Options:
+  --jupyter-mcp-server-url TEXT       URL of the Jupyter MCP Server to stop (default: http://localhost:4040)
+```
+
+### Usage Examples
+
+```bash
+jupyter-mcp-server start \
+  --transport streamable-http \
+  --jupyter-url http://localhost:8888 \
+  --jupyter-token MY_TOKEN \
+  --allowed-jupyter-mcp-tools "notebook_run-all-cells,notebook_get-selected-cell" \
+  --port 4040
+```
+
+## Advanced Usage
+
+### Connecting to Existing Runtime
+
+Start server without creating new runtime:
+```bash
+jupyter-mcp-server start \
+  --transport streamable-http \
+  --runtime-url http://localhost:8888 \
+  --runtime-token MY_TOKEN \
+  --start-new-runtime false
+```
+
+Then connect via endpoint:
+```bash
+jupyter-mcp-server connect \
+  --provider datalayer \
+  --document-url <url> \
+  --document-id <document> \
+  --document-token <token> \
+  --runtime-url <url> \
+  --runtime-id <runtime-id> \
+  --runtime-token <token> \
+  --jupyter-mcp-server-url http://localhost:4040
+```
+
+## Multimodal Output Support
+
+The server supports multimodal output, allowing AI agents to directly receive and analyze visual content such as images and charts generated by code execution.
+
+### Supported Output Types
+
+- **Text Output**: Standard text output from code execution
+- **Image Output**: PNG images generated by matplotlib, seaborn, plotly, and other visualization libraries
+- **Error Output**: Error messages and tracebacks
+
+### Environment Variable Configuration
+
+Control multimodal output behavior using environment variables:
+
+#### `ALLOW_IMG_OUTPUT`
+
+Controls whether to return actual image content or text placeholders.
+
+- **Default**: `true`
+- **Values**: `true`, `false`, `1`, `0`, `yes`, `no`, `on`, `off`, `enable`, `disable`, `enabled`, `disabled`
+
+
+### Output Behavior
+
+#### When `ALLOW_IMG_OUTPUT=true` (Default)
+- Images are returned as `ImageContent` objects with actual PNG data
+- AI agents can directly analyze visual content
+- Supports advanced multimodal reasoning
+
+#### When `ALLOW_IMG_OUTPUT=false`
+- Images are returned as text placeholders: `"[Image Output (PNG) - Image display disabled]"`
+- Maintains backward compatibility with text-only LLMs
+- Reduces bandwidth and token usage
+
+### Use Cases
+
+**Data Visualization Analysis:**
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_csv('sales_data.csv')
+df.plot(kind='bar', x='month', y='revenue')
+plt.title('Monthly Revenue')
+plt.show()
+# AI can now "see" and analyze the chart content
+```
+
+**Machine Learning Model Visualization:**
+```python
+import matplotlib.pyplot as plt
+
+# Plot training curves
+plt.plot(epochs, train_loss, label='Training Loss')
+plt.plot(epochs, val_loss, label='Validation Loss')
+plt.legend()
+plt.show()
+# AI can evaluate training effectiveness from the visual curves
+```

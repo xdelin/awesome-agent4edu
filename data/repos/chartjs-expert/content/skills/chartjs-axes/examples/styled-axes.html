@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Styled Axes Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+  <style>
+    .chart-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #1a1a2e;
+      padding: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-container">
+    <canvas id="styledChart"></canvas>
+  </div>
+
+  <script>
+    // Styled Axes Chart: Custom borders, grids, and ticks
+    // Demonstrates axis styling with dark theme
+
+    const ctx = document.getElementById('styledChart');
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [
+          {
+            label: 'Growth Rate',
+            data: [-5, 12, 28, 45],
+            borderColor: '#00d4ff',
+            backgroundColor: 'rgba(0, 212, 255, 0.1)',
+            fill: true,
+            tension: 0.4,
+            pointRadius: 6,
+            pointBackgroundColor: '#00d4ff',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Quarterly Growth Analysis',
+            color: '#fff',
+            font: { size: 18, weight: 'bold' }
+          },
+          legend: {
+            labels: { color: '#fff' }
+          }
+        },
+        scales: {
+          x: {
+            // Axis Title
+            title: {
+              display: true,
+              text: 'Quarter',
+              color: '#aaa',
+              font: { size: 14, weight: 'bold' }
+            },
+
+            // Border Configuration (axis line)
+            border: {
+              display: true,
+              color: '#444',           // Axis border color
+              width: 2,                // Border width
+              dash: [],                // Solid line (use [5, 5] for dashed)
+              dashOffset: 0,
+              z: 1                     // Draw above grid
+            },
+
+            // Grid Lines
+            grid: {
+              display: true,
+              color: 'rgba(255, 255, 255, 0.05)',
+              lineWidth: 1,
+              drawOnChartArea: true,
+              drawTicks: true,
+              tickLength: 10,
+              tickColor: '#444'
+            },
+
+            // Tick Labels
+            ticks: {
+              color: '#aaa',
+              font: { size: 12 },
+              padding: 8
+            }
+          },
+
+          y: {
+            // Axis Title
+            title: {
+              display: true,
+              text: 'Growth (%)',
+              color: '#aaa',
+              font: { size: 14, weight: 'bold' }
+            },
+
+            // Border Configuration
+            border: {
+              display: true,
+              color: '#444',
+              width: 2,
+              dash: [5, 5],            // Dashed axis border
+              z: 1
+            },
+
+            // Grid Lines with conditional styling
+            grid: {
+              display: true,
+              // Scriptable: different color for zero line
+              color: function(context) {
+                if (context.tick.value === 0) {
+                  return 'rgba(255, 255, 255, 0.3)';  // Bold zero line
+                }
+                return 'rgba(255, 255, 255, 0.05)';
+              },
+              lineWidth: function(context) {
+                return context.tick.value === 0 ? 2 : 1;
+              },
+              drawTicks: true,
+              tickLength: 10,
+              tickColor: '#444'
+            },
+
+            // Tick Configuration
+            ticks: {
+              color: '#aaa',
+              font: { size: 12 },
+              padding: 8,
+              stepSize: 10,
+
+              // Custom tick formatting
+              callback: function(value, index, ticks) {
+                // Add + sign for positive values
+                if (value > 0) {
+                  return '+' + value + '%';
+                } else if (value < 0) {
+                  return value + '%';
+                }
+                return '0%';
+              }
+            },
+
+            // Range settings
+            suggestedMin: -10,
+            suggestedMax: 50,
+            grace: '5%'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

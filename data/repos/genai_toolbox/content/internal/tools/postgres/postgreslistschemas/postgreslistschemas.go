@@ -1,0 +1,203 @@
+// Copyright 2025 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package postgreslistschemas
+
+import (
+	"context"
+	"fmt"
+	"net/http"
+
+	yaml "github.com/goccy/go-yaml"
+	"github.com/googleapis/genai-toolbox/internal/embeddingmodels"
+	"github.com/googleapis/genai-toolbox/internal/sources"
+	"github.com/googleapis/genai-toolbox/internal/tools"
+	"github.com/googleapis/genai-toolbox/internal/util"
+	"github.com/googleapis/genai-toolbox/internal/util/parameters"
+	"github.com/jackc/pgx/v5/pgxpool"
+)
+
+const resourceType string = "postgres-list-schemas"
+
+const listSchemasStatement = `
+    WITH
+    schema_grants AS (
+        SELECT schema_oid, jsonb_object_agg(grantee, privileges) AS grants
+        FROM
+        (
+            SELECT
+            n.oid AS schema_oid,
+            CASE
+                WHEN p.grantee = 0 THEN 'PUBLIC'
+                ELSE pg_catalog.pg_get_userbyid(p.grantee)
+                END
+                AS grantee,
+            jsonb_agg(p.privilege_type ORDER BY p.privilege_type) AS privileges
+            FROM pg_catalog.pg_namespace n, aclexplode(n.nspacl) p
+            WHERE n.nspacl IS NOT NULL
+            GROUP BY n.oid, grantee
+        ) permissions_by_grantee
+        GROUP BY schema_oid
+    ),
+    all_schemas AS (
+        SELECT
+        n.nspname AS schema_name,
+        pg_catalog.pg_get_userbyid(n.nspowner) AS owner,
+        COALESCE(sg.grants, '{}'::jsonb) AS grants,
+        (
+            SELECT COUNT(*)
+            FROM pg_catalog.pg_class c
+            WHERE c.relnamespace = n.oid AND c.relkind = 'r'
+        ) AS tables,
+        (
+            SELECT COUNT(*)
+            FROM pg_catalog.pg_class c
+            WHERE c.relnamespace = n.oid AND c.relkind = 'v'
+        ) AS views,
+        (SELECT COUNT(*) FROM pg_catalog.pg_proc p WHERE p.pronamespace = n.oid)
+            AS functions
+        FROM pg_catalog.pg_namespace n
+        LEFT JOIN schema_grants sg
+        ON n.oid = sg.schema_oid
+    )
+    SELECT *
+    FROM all_schemas
+    -- Exclude system and temporary schemas created per session.
+    WHERE
+        schema_name NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+        AND schema_name NOT LIKE 'pg_temp_%'
+        AND schema_name NOT LIKE 'pg_toast_temp_%'
+        AND ($1::text IS NULL OR schema_name ILIKE '%' || $1::text || '%')
+        AND ($2::text IS NULL OR owner ILIKE '%' || $2::text || '%')
+    ORDER BY schema_name
+    LIMIT COALESCE($3::int, NULL);
+`
+
+func init() {
+	if !tools.Register(resourceType, newConfig) {
+		panic(fmt.Sprintf("tool type %q already registered", resourceType))
+	}
+}
+
+func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.ToolConfig, error) {
+	actual := Config{Name: name}
+	if err := decoder.DecodeContext(ctx, &actual); err != nil {
+		return nil, err
+	}
+	return actual, nil
+}
+
+type compatibleSource interface {
+	PostgresPool() *pgxpool.Pool
+	RunSQL(context.Context, string, []any) (any, error)
+}
+
+type Config struct {
+	Name         string   `yaml:"name" validate:"required"`
+	Type         string   `yaml:"type" validate:"required"`
+	Source       string   `yaml:"source" validate:"required"`
+	Description  string   `yaml:"description"`
+	AuthRequired []string `yaml:"authRequired"`
+}
+
+var _ tools.ToolConfig = Config{}
+
+func (cfg Config) ToolConfigType() string {
+	return resourceType
+}
+
+func (cfg Config) Initialize(srcs map[string]sources.Source) (tools.Tool, error) {
+	allParameters := parameters.Parameters{
+		parameters.NewStringParameterWithDefault("schema_name", "", "Optional: A specific schema name pattern to search for."),
+		parameters.NewStringParameterWithDefault("owner", "", "Optional: A specific schema owner name pattern to search for."),
+		parameters.NewIntParameterWithDefault("limit", 10, "Optional: The maximum number of schemas to return."),
+	}
+
+	if cfg.Description == "" {
+		cfg.Description = "Lists all schemas in the database ordered by schema name and excluding system and temporary schemas. It returns the schema name, schema owner, grants, number of functions, number of tables and number of views within each schema."
+	}
+	mcpManifest := tools.GetMcpManifest(cfg.Name, cfg.Description, cfg.AuthRequired, allParameters, nil)
+
+	return Tool{
+		Config:    cfg,
+		allParams: allParameters,
+		manifest: tools.Manifest{
+			Description:  cfg.Description,
+			Parameters:   allParameters.Manifest(),
+			AuthRequired: cfg.AuthRequired,
+		},
+		mcpManifest: mcpManifest,
+	}, nil
+}
+
+var _ tools.Tool = Tool{}
+
+type Tool struct {
+	Config
+	allParams   parameters.Parameters `yaml:"allParams"`
+	manifest    tools.Manifest
+	mcpManifest tools.McpManifest
+}
+
+func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, params parameters.ParamValues, accessToken tools.AccessToken) (any, util.ToolboxError) {
+	source, err := tools.GetCompatibleSource[compatibleSource](resourceMgr, t.Source, t.Name, t.Type)
+	if err != nil {
+		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
+	}
+
+	paramsMap := params.AsMap()
+
+	newParams, err := parameters.GetParams(t.allParams, paramsMap)
+	if err != nil {
+		return nil, util.NewAgentError("unable to extract standard params", err)
+	}
+	sliceParams := newParams.AsSlice()
+	resp, err := source.RunSQL(ctx, listSchemasStatement, sliceParams)
+	if err != nil {
+		return nil, util.ProcessGeneralError(err)
+	}
+	return resp, nil
+}
+
+func (t Tool) EmbedParams(ctx context.Context, paramValues parameters.ParamValues, embeddingModelsMap map[string]embeddingmodels.EmbeddingModel) (parameters.ParamValues, error) {
+	return parameters.EmbedParams(ctx, t.allParams, paramValues, embeddingModelsMap, nil)
+}
+
+func (t Tool) Manifest() tools.Manifest {
+	return t.manifest
+}
+
+func (t Tool) McpManifest() tools.McpManifest {
+	return t.mcpManifest
+}
+
+func (t Tool) Authorized(verifiedAuthServices []string) bool {
+	return tools.IsAuthorized(t.AuthRequired, verifiedAuthServices)
+}
+
+func (t Tool) RequiresClientAuthorization(resourceMgr tools.SourceProvider) (bool, error) {
+	return false, nil
+}
+
+func (t Tool) ToConfig() tools.ToolConfig {
+	return t.Config
+}
+
+func (t Tool) GetAuthTokenHeaderName(resourceMgr tools.SourceProvider) (string, error) {
+	return "Authorization", nil
+}
+
+func (t Tool) GetParameters() parameters.Parameters {
+	return t.allParams
+}

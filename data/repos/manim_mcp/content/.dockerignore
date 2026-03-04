@@ -1,0 +1,18 @@
+# Git files
+.git
+.gitignore
+
+# Output directories
+media/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Docker files
+.dockerignore
+docker-compose.yml
+.env
+.env.local 
