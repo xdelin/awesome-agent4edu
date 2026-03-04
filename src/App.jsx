@@ -297,8 +297,126 @@ function RepoDetailView({ skill, repoId, onBack, t }) {
                          </div>
                       ) : (
                         selectedFile.name.toLowerCase().endsWith('.md') ? (
-                           <div className="prose prose-stone prose-sm max-w-4xl mx-auto p-8">
-                              <ReactMarkdown remarkPlugins={[remarkGfm]}>{fileContent}</ReactMarkdown>
+                           <div className="prose prose-stone prose-sm max-w-none mx-auto p-8 md-content">
+                              <ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                  code({ node, inline, className, children, ...props }) {
+                                    const match = /language-(\w+)/.exec(className || '');
+                                    const codeStr = String(children).replace(/\n$/, '');
+                                    if (!inline && match) {
+                                      return (
+                                        <SyntaxHighlighter
+                                          language={match[1]}
+                                          style={oneLight}
+                                          PreTag="div"
+                                          customStyle={{ borderRadius: '0.5rem', fontSize: '13px', margin: '1rem 0', border: '1px solid #e7e5e4' }}
+                                          showLineNumbers={codeStr.split('\n').length > 5}
+                                          lineNumberStyle={{ minWidth: '2.5em', paddingRight: '1em', color: '#d6d3d1', textAlign: 'right', userSelect: 'none' }}
+                                          {...props}
+                                        >
+                                          {codeStr}
+                                        </SyntaxHighlighter>
+                                      );
+                                    }
+                                    return (
+                                      <code
+                                        className="bg-stone-100 text-orange-700 px-1.5 py-0.5 rounded text-[0.85em] font-mono"
+                                        {...props}
+                                      >
+                                        {children}
+                                      </code>
+                                    );
+                                  },
+                                  img({ src, alt, ...props }) {
+                                    // Handle relative image paths: try to load from GitHub if relative
+                                    const isAbsolute = src && (src.startsWith('http') || src.startsWith('data:'));
+                                    return (
+                                      <img
+                                        src={src}
+                                        alt={alt || ''}
+                                        className="max-w-full rounded-lg border border-stone-200 shadow-sm my-4"
+                                        loading="lazy"
+                                        onError={(e) => { e.target.style.display = 'none'; }}
+                                        {...props}
+                                      />
+                                    );
+                                  },
+                                  a({ href, children, ...props }) {
+                                    return (
+                                      <a
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-orange-600 hover:text-orange-800 hover:underline"
+                                        {...props}
+                                      >
+                                        {children}
+                                      </a>
+                                    );
+                                  },
+                                  table({ children, ...props }) {
+                                    return (
+                                      <div className="overflow-x-auto my-6">
+                                        <table className="min-w-full border-collapse text-sm" {...props}>
+                                          {children}
+                                        </table>
+                                      </div>
+                                    );
+                                  },
+                                  th({ children, ...props }) {
+                                    return (
+                                      <th className="bg-stone-100 border border-stone-200 px-3 py-2 text-left font-semibold text-stone-700 text-xs uppercase tracking-wider" {...props}>
+                                        {children}
+                                      </th>
+                                    );
+                                  },
+                                  td({ children, ...props }) {
+                                    return (
+                                      <td className="border border-stone-200 px-3 py-2 text-stone-700" {...props}>
+                                        {children}
+                                      </td>
+                                    );
+                                  },
+                                  blockquote({ children, ...props }) {
+                                    return (
+                                      <blockquote className="border-l-4 border-orange-400 pl-4 my-4 text-stone-600 italic bg-orange-50/50 py-2 pr-4 rounded-r-lg" {...props}>
+                                        {children}
+                                      </blockquote>
+                                    );
+                                  },
+                                  h1({ children, ...props }) {
+                                    return <h1 className="text-2xl font-bold text-stone-900 mt-8 mb-4 pb-2 border-b border-stone-200" {...props}>{children}</h1>;
+                                  },
+                                  h2({ children, ...props }) {
+                                    return <h2 className="text-xl font-bold text-stone-800 mt-6 mb-3 pb-1 border-b border-stone-100" {...props}>{children}</h2>;
+                                  },
+                                  h3({ children, ...props }) {
+                                    return <h3 className="text-lg font-semibold text-stone-800 mt-5 mb-2" {...props}>{children}</h3>;
+                                  },
+                                  ul({ children, ...props }) {
+                                    return <ul className="list-disc list-inside space-y-1 my-3 text-stone-700" {...props}>{children}</ul>;
+                                  },
+                                  ol({ children, ...props }) {
+                                    return <ol className="list-decimal list-inside space-y-1 my-3 text-stone-700" {...props}>{children}</ol>;
+                                  },
+                                  li({ children, ...props }) {
+                                    return <li className="leading-relaxed" {...props}>{children}</li>;
+                                  },
+                                  p({ children, ...props }) {
+                                    return <p className="leading-7 text-stone-700 my-3" {...props}>{children}</p>;
+                                  },
+                                  hr({ ...props }) {
+                                    return <hr className="my-8 border-stone-200" {...props} />;
+                                  },
+                                  pre({ children, ...props }) {
+                                    // pre wrapping SyntaxHighlighter div — let it pass through
+                                    return <>{children}</>;
+                                  },
+                                }}
+                              >
+                                {fileContent}
+                              </ReactMarkdown>
                            </div>
                         ) : (
                           <SyntaxHighlighter 

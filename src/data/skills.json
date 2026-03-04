@@ -331,7 +331,8 @@
           "en": "Creating math tutorials, visualizing complex concepts.",
           "zh": "制作数学教程、可视化复杂概念。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "openclaw"
       },
       {
         "name": "Quantum Lab",
@@ -344,7 +345,17 @@
           "en": "Physics students, quantum computing research.",
           "zh": "物理学生、量子计算研究。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 907,
+        "author": "openclaw",
+        "github": {
+          "stars": 907,
+          "forks": 282,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T12:03:17Z"
+        }
       },
       {
         "name": "NetKet MCP",
@@ -403,7 +414,17 @@
           "en": "Physics homework, unit conversion, mechanics problems.",
           "zh": "物理作业、单位换算、力学问题。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 5,
+        "author": "BlinkZer0",
+        "github": {
+          "stars": 5,
+          "forks": 0,
+          "author": "BlinkZer0",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/224189328?v=4",
+          "description": "A physics focused calculator for LLM's using Model Context Protocol (MCP)",
+          "updatedAt": "2025-09-28T22:22:36Z"
+        }
       },
       {
         "name": "Bullet MCP Server",
@@ -416,7 +437,17 @@
           "en": "Robotics simulation, physics demonstrations, collision detection.",
           "zh": "机器人模拟、物理演示、碰撞检测。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 0,
+        "author": "devgabrielsborges",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "devgabrielsborges",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/161774213?v=4",
+          "description": "A Model Context Protocol (MCP) server that provides physics simulation capabilities using PyBullet. This server allows external applications to interact with PyBullet physics simulations through standardized MCP protocol endpoints.",
+          "updatedAt": "2025-08-27T02:21:58Z"
+        }
       },
       {
         "name": "NASA MCP Server",
@@ -429,7 +460,17 @@
           "en": "Astronomy education, space research, exploring the universe.",
           "zh": "天文学教育、太空研究、探索宇宙。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 80,
+        "author": "ProgramComputer",
+        "github": {
+          "stars": 80,
+          "forks": 15,
+          "author": "ProgramComputer",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/22284856?v=4",
+          "description": "A Model Context Protocol (MCP) server for NASA APIs, providing a standardized interface for AI models to interact with NASA's vast array of data sources.",
+          "updatedAt": "2025-08-27T17:18:40Z"
+        }
       },
       {
         "name": "Wolfram Alpha MCP",
@@ -442,7 +483,17 @@
           "en": "Checking complex calculations, scientific fact retrieval.",
           "zh": "检查复杂计算、科学事实检索。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 71,
+        "author": "SecretiveShell",
+        "github": {
+          "stars": 71,
+          "forks": 20,
+          "author": "SecretiveShell",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/84923604?v=4",
+          "description": "Connect your chat repl to wolfram alpha computational intelligence",
+          "updatedAt": "2025-08-18T14:01:31Z"
+        }
       },
       {
         "name": "WolframAlpha",
@@ -455,7 +506,8 @@
           "en": "Solving complex math problems, physics calculations, chemical equations.",
           "zh": "解决复杂的数学问题、物理计算、化学方程式。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "author": "mcp-servers"
       },
       {
         "name": "Manim",
@@ -468,7 +520,17 @@
           "en": "Visualizing mathematical concepts, creating educational videos.",
           "zh": "可视化数学概念，制作教育视频。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 84433,
+        "author": "3b1b",
+        "github": {
+          "stars": 84433,
+          "forks": 7123,
+          "author": "3b1b",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/11601040?v=4",
+          "description": "Animation engine for explanatory math videos",
+          "updatedAt": "2026-02-10T18:51:26Z"
+        }
       },
       {
         "name": "OpenFOAM",
@@ -481,7 +543,17 @@
           "en": "Engineering simulations, fluid dynamics study.",
           "zh": "工程仿真、流体动力学研究。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 1969,
+        "author": "OpenFOAM",
+        "github": {
+          "stars": 1969,
+          "forks": 677,
+          "author": "OpenFOAM",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/189613?v=4",
+          "description": "OpenFOAM Foundation development repository",
+          "updatedAt": "2026-02-12T10:28:48Z"
+        }
       },
       {
         "name": "Open-Meteo MCP",
@@ -494,7 +566,17 @@
           "en": "Earth science data collection, climate study.",
           "zh": "地球科学数据收集、气候研究。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 4744,
+        "author": "open-meteo",
+        "github": {
+          "stars": 4744,
+          "forks": 307,
+          "author": "open-meteo",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/86407831?v=4",
+          "description": "Free Weather Forecast API for non-commercial use",
+          "updatedAt": "2026-02-12T08:45:15Z"
+        }
       }
     ]
   },
@@ -519,7 +601,17 @@
           "en": "Drug discovery, protein visualization, bio-activity research.",
           "zh": "药物发现、蛋白质可视化、生物活性研究。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 8,
+        "author": "dogeplusplus",
+        "github": {
+          "stars": 8,
+          "forks": 4,
+          "author": "dogeplusplus",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/8246186?v=4",
+          "description": "MCP servers for Protein Data Bank, ChemBL, and other life science data (WIP), with Ollama client for local testing.",
+          "updatedAt": "2025-03-23T17:41:30Z"
+        }
       },
       {
         "name": "Ensembl MCP",
@@ -532,7 +624,17 @@
           "en": "Genomic research, gene sequence analysis.",
           "zh": "基因组研究、基因序列分析。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 6,
+        "author": "effieklimi",
+        "github": {
+          "stars": 6,
+          "forks": 6,
+          "author": "effieklimi",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/42475826?v=4",
+          "description": "A full-featured Model Context Protocol (MCP) server that exposes Ensembl’s REST API. Built using the TypeScript MCP SDK",
+          "updatedAt": "2026-02-11T03:45:35Z"
+        }
       },
       {
         "name": "PubMed Search",
@@ -545,7 +647,17 @@
           "en": "Medical research, biology studies.",
           "zh": "医学研究、生物学学习。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 156,
+        "author": "andybrandt",
+        "github": {
+          "stars": 156,
+          "forks": 35,
+          "author": "andybrandt",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5551980?v=4",
+          "description": "MCP server for searching and querying PubMed medical papers/research database",
+          "updatedAt": "2025-12-17T21:42:22Z"
+        }
       },
       {
         "name": "ClinicalTrials.gov MCP",
@@ -558,7 +670,17 @@
           "en": "Medical research, finding clinical trials, checking study details.",
           "zh": "医学研究、查找临床试验、检查研究详情。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 47,
+        "author": "cyanheads",
+        "github": {
+          "stars": 47,
+          "forks": 16,
+          "author": "cyanheads",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/10339515?v=4",
+          "description": "A Model Context Protocol (MCP) Server providing LLM tools for the official ClinicalTrials.gov REST API. Search and retrieve clinical trial data, including study details and more",
+          "updatedAt": "2025-10-21T00:05:18Z"
+        }
       },
       {
         "name": "AlphaFold MCP Server",
@@ -571,7 +693,17 @@
           "en": "Molecular biology, drug design, understanding protein function.",
           "zh": "分子生物学、药物设计、理解蛋白质功能。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 31,
+        "author": "Augmented-Nature",
+        "github": {
+          "stars": 31,
+          "forks": 7,
+          "author": "Augmented-Nature",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/213475561?v=4",
+          "description": "A comprehensive Model Context Protocol (MCP) server that provides access to the AlphaFold Protein Structure Database through a rich set of tools and resources for protein structure prediction analysis.",
+          "updatedAt": "2025-12-21T10:07:02Z"
+        }
       },
       {
         "name": "Reactome MCP Server",
@@ -584,7 +716,17 @@
           "en": "Studying biological pathways, metabolic research.",
           "zh": "研究生物通路、代谢研究。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 10,
+        "author": "Augmented-Nature",
+        "github": {
+          "stars": 10,
+          "forks": 4,
+          "author": "Augmented-Nature",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/213475561?v=4",
+          "description": "Model Context Protocol server for accessing Reactome pathway and systems biology data.",
+          "updatedAt": "2025-12-21T10:08:44Z"
+        }
       },
       {
         "name": "BioThings MCP",
@@ -597,7 +739,17 @@
           "en": "Bioinformatics research, genetics class.",
           "zh": "生物信息学研究、遗传学课程。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 29,
+        "author": "longevity-genie",
+        "github": {
+          "stars": 29,
+          "forks": 7,
+          "author": "longevity-genie",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/136511203?v=4",
+          "description": "MCP (Model Context Protocol) server for biothings",
+          "updatedAt": "2025-11-03T20:05:06Z"
+        }
       },
       {
         "name": "UCSC Genome Browser",
@@ -610,7 +762,17 @@
           "en": "Genomics education, chromosome visualization.",
           "zh": "基因组学教育、染色体可视化。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 0,
+        "author": "hlydecker",
+        "github": {
+          "stars": 0,
+          "forks": 1,
+          "author": "hlydecker",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/50643975?v=4",
+          "description": "An MCP server to interact with the UCSC Genome Browser API",
+          "updatedAt": "2025-11-13T04:06:30Z"
+        }
       },
       {
         "name": "BioContext",
@@ -623,7 +785,8 @@
           "en": "Biology research assistance.",
           "zh": "生物学研究辅助。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "biocontext"
       },
       {
         "name": "Ensembl REST",
@@ -636,7 +799,17 @@
           "en": "Genomic data retrieval and analysis.",
           "zh": "基因组数据检索和分析。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 150,
+        "author": "Ensembl",
+        "github": {
+          "stars": 150,
+          "forks": 60,
+          "author": "Ensembl",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5832463?v=4",
+          "description": "Language agnostic RESTful data access to Ensembl data over HTTP",
+          "updatedAt": "2026-02-09T12:31:54Z"
+        }
       }
     ]
   },
@@ -661,7 +834,17 @@
           "en": "Materials discovery, battery research, crystal structure analysis.",
           "zh": "材料发现、电池研究、晶体结构分析。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 110,
+        "author": "pathintegral-institute",
+        "github": {
+          "stars": 110,
+          "forks": 23,
+          "author": "pathintegral-institute",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/205121201?v=4",
+          "description": "Open Source MCP Servers for Scientific Research",
+          "updatedAt": "2025-09-02T08:16:13Z"
+        }
       },
       {
         "name": "MatMCP",
@@ -674,7 +857,17 @@
           "en": "General chemistry queries, materials property lookup.",
           "zh": "通用化学查询、材料性质查找。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 0,
+        "author": "ZuchGuillotine",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "ZuchGuillotine",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/31233203?v=4",
+          "description": "Materials Science MCP server ",
+          "updatedAt": "2025-05-11T06:55:04Z"
+        }
       },
       {
         "name": "RDKit MCP Server",
@@ -687,7 +880,17 @@
           "en": "Cheminformatics, molecule design, chemical property calculation.",
           "zh": "化学信息学、分子设计、化学性质计算。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 30,
+        "author": "tandemai-inc",
+        "github": {
+          "stars": 30,
+          "forks": 5,
+          "author": "tandemai-inc",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/92709448?v=4",
+          "description": "MCP server that enables language models to interact with RDKit through natural language",
+          "updatedAt": "2026-02-09T14:04:01Z"
+        }
       },
       {
         "name": "ChemMCP",
@@ -700,7 +903,17 @@
           "en": "Complex chemistry problems, molecular analysis.",
           "zh": "复杂化学问题、分子分析。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 49,
+        "author": "OSU-NLP-Group",
+        "github": {
+          "stars": 49,
+          "forks": 8,
+          "author": "OSU-NLP-Group",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/92067480?v=4",
+          "description": "A Chemistry Toolkit that turns your AI assistant into a Chemistry coscientist..",
+          "updatedAt": "2025-06-09T04:51:52Z"
+        }
       },
       {
         "name": "XTB MCP Server",
@@ -713,7 +926,17 @@
           "en": "Quantum chemistry, automated calculation workflows.",
           "zh": "量子化学、自动化计算工作流。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 14,
+        "author": "PhelanShao",
+        "github": {
+          "stars": 14,
+          "forks": 4,
+          "author": "PhelanShao",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/77712581?v=4",
+          "description": "The XTB MCP Server is a Model Context Protocol (MCP) server that provides comprehensive tools for generating Extended Tight-Binding (XTB) quantum chemistry calculation input files. This server integrates seamlessly with AI assistants like Claude, Cursor, and Windsurf to enable intelligent quantum chemistry workflow automation.",
+          "updatedAt": "2025-06-01T19:21:35Z"
+        }
       },
       {
         "name": "Catalysis Hub",
@@ -726,7 +949,17 @@
           "en": "Chemistry research, catalysis experiments.",
           "zh": "化学研究、催化实验。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 1,
+        "author": "QuentinCody",
+        "github": {
+          "stars": 1,
+          "forks": 3,
+          "author": "QuentinCody",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/33259999?v=4",
+          "description": null,
+          "updatedAt": "2025-05-20T14:47:42Z"
+        }
       }
     ]
   },
@@ -751,7 +984,17 @@
           "en": "Geography lessons, urban planning, travel planning.",
           "zh": "地理课程、城市规划、旅行计划。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 174,
+        "author": "cablate",
+        "github": {
+          "stars": 174,
+          "forks": 55,
+          "author": "cablate",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/85614048?v=4",
+          "description": "A powerful Model Context Protocol (MCP) server providing comprehensive Google Maps API integration with LLM processing capabilities.",
+          "updatedAt": "2025-12-11T23:45:10Z"
+        }
       },
       {
         "name": "DeepL API",
@@ -764,7 +1007,17 @@
           "en": "Language learning, translation studies.",
           "zh": "语言学习、翻译研究。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 1305,
+        "author": "DeepLcom",
+        "github": {
+          "stars": 1305,
+          "forks": 89,
+          "author": "DeepLcom",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/83310993?v=4",
+          "description": "Official Python library for the DeepL language translation API.",
+          "updatedAt": "2026-02-09T15:50:21Z"
+        }
       },
       {
         "name": "Music21",
@@ -777,7 +1030,17 @@
           "en": "Music theory analysis, composition.",
           "zh": "乐理分析、作曲。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 2416,
+        "author": "cuthbertLab",
+        "github": {
+          "stars": 2416,
+          "forks": 434,
+          "author": "cuthbertLab",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5853935?v=4",
+          "description": "music21: a Toolkit for Computer-Aided Musical Analysis and Computational Musicology",
+          "updatedAt": "2026-02-09T02:03:51Z"
+        }
       },
       {
         "name": "MuseScore",
@@ -790,7 +1053,17 @@
           "en": "Music education, score creation.",
           "zh": "音乐教育、乐谱创作。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 14243,
+        "author": "musescore",
+        "github": {
+          "stars": 14243,
+          "forks": 3068,
+          "author": "musescore",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/380563?v=4",
+          "description": "MuseScore is an open source and free music notation software. For support, contribution, bug reports, visit MuseScore.org. Fork and make pull requests!",
+          "updatedAt": "2026-02-12T08:58:21Z"
+        }
       },
       {
         "name": "Google Maps MCP",
@@ -803,7 +1076,17 @@
           "en": "Geography education, cultural studies.",
           "zh": "地理教育、文化研究。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 78530,
+        "author": "modelcontextprotocol",
+        "github": {
+          "stars": 78530,
+          "forks": 9525,
+          "author": "modelcontextprotocol",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/182288589?v=4",
+          "description": "Model Context Protocol Servers",
+          "updatedAt": "2026-02-11T14:57:56Z"
+        }
       }
     ]
   },
@@ -828,7 +1111,8 @@
           "en": "Learning QA automation, regression testing.",
           "zh": "学习 QA 自动化、回归测试。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "anthropics"
       },
       {
         "name": "paper2code-skill",
@@ -841,7 +1125,17 @@
           "en": "CS/AI graduate students reproducing paper algorithms.",
           "zh": "计算机科学/AI 研究生复现论文算法。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 2,
+        "author": "issol14",
+        "github": {
+          "stars": 2,
+          "forks": 0,
+          "author": "issol14",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/46449426?v=4",
+          "description": "A Claude Code Skill that converts research papers into executable code - no extra API costs",
+          "updatedAt": "2026-01-08T07:45:57Z"
+        }
       },
       {
         "name": "Git MCP Server",
@@ -854,7 +1148,17 @@
           "en": "Local version control management, committing changes, and viewing history.",
           "zh": "本地版本控制管理、提交更改和查看历史记录。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 78530,
+        "author": "modelcontextprotocol",
+        "github": {
+          "stars": 78530,
+          "forks": 9525,
+          "author": "modelcontextprotocol",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/182288589?v=4",
+          "description": "Model Context Protocol Servers",
+          "updatedAt": "2026-02-11T14:57:56Z"
+        }
       },
       {
         "name": "GitHub MCP Server",
@@ -867,7 +1171,17 @@
           "en": "Learning version control workflows, automated code review.",
           "zh": "学习版本控制工作流，自动化代码审查。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 78530,
+        "author": "modelcontextprotocol",
+        "github": {
+          "stars": 78530,
+          "forks": 9525,
+          "author": "modelcontextprotocol",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/182288589?v=4",
+          "description": "Model Context Protocol Servers",
+          "updatedAt": "2026-02-11T14:57:56Z"
+        }
       },
       {
         "name": "Playwright MCP",
@@ -880,7 +1194,17 @@
           "en": "Learning automated testing, scraping data for projects.",
           "zh": "学习自动化测试，为项目抓取数据。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 5226,
+        "author": "executeautomation",
+        "github": {
+          "stars": 5226,
+          "forks": 471,
+          "author": "executeautomation",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/10337030?v=4",
+          "description": "Playwright Model Context Protocol Server - Tool to automate Browsers and APIs in Claude Desktop, Cline, Cursor IDE and More 🔌",
+          "updatedAt": "2025-12-13T04:28:38Z"
+        }
       },
       {
         "name": "Desktop Commander",
@@ -893,7 +1217,17 @@
           "en": "Learning command line operations, automating local file tasks.",
           "zh": "学习命令行操作，自动化本地文件任务。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 5446,
+        "author": "wonderwhy-er",
+        "github": {
+          "stars": 5446,
+          "forks": 605,
+          "author": "wonderwhy-er",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/1150639?v=4",
+          "description": "This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
+          "updatedAt": "2026-02-09T20:45:21Z"
+        }
       },
       {
         "name": "Kubernetes MCP",
@@ -906,7 +1240,8 @@
           "en": "Advanced DevOps learning, cluster monitoring.",
           "zh": "高级 DevOps 学习，集群监控。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "author": "fluxninja"
       },
       {
         "name": "Sentry MCP",
@@ -919,7 +1254,8 @@
           "en": "Learning production debugging and error tracking.",
           "zh": "学习生产环境调试和错误追踪。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "author": "sentry-demos"
       },
       {
         "name": "awesome-vibe-coding",
@@ -932,7 +1268,17 @@
           "en": "Coding beginners, \"Vibe Coding\" (intuitive programming), rapid prototyping.",
           "zh": "编程初学者、\"Vibe Coding\" (直觉式编程)、快速原型开发。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 19,
+        "author": "adriannoes",
+        "github": {
+          "stars": 19,
+          "forks": 2,
+          "author": "adriannoes",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/10134911?v=4",
+          "description": "Your go-to resource for learning to code with AI: Cursor and Claude skills, rules and commands, AI prompts and learning resources for non-technical builders.",
+          "updatedAt": "2026-01-24T00:24:14Z"
+        }
       },
       {
         "name": "coding-agent-skills",
@@ -945,7 +1291,17 @@
           "en": "CS students for deep technical learning, code review.",
           "zh": "计算机专业学生进行深度技术学习、代码审查。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 3,
+        "author": "Miaoge-Ge",
+        "github": {
+          "stars": 3,
+          "forks": 1,
+          "author": "Miaoge-Ge",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/124609700?v=4",
+          "description": "A universal collection of expert system prompts and skills for AI coding assistants (Cursor, Trae, Claude Code, etc.), featuring dual-language (English/Chinese) roles for Architecture, Deep Learning, and more.",
+          "updatedAt": "2026-02-07T05:34:50Z"
+        }
       },
       {
         "name": "test-generator",
@@ -958,7 +1314,17 @@
           "en": "Learning unit test writing, improving code quality.",
           "zh": "学习单元测试编写、提高代码质量。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "mkdirrobert",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "mkdirrobert",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/97358726?v=4",
+          "description": "Universal test generation skill for Claude Code. Self-learning, supports 9 languages.",
+          "updatedAt": "2025-12-28T18:14:48Z"
+        }
       },
       {
         "name": "mlx-dev-skill",
@@ -971,7 +1337,17 @@
           "en": "Learning AI/ML development, Mac users.",
           "zh": "学习 AI/ML 开发、Mac 用户。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 6,
+        "author": "tkwn2080",
+        "github": {
+          "stars": 6,
+          "forks": 1,
+          "author": "tkwn2080",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/135119655?v=4",
+          "description": "Claude Code skill for writing idiomatic Apple MLX code on Apple Silicon",
+          "updatedAt": "2025-12-07T02:29:14Z"
+        }
       },
       {
         "name": "prompt-builder",
@@ -984,7 +1360,17 @@
           "en": "Intro coding courses, teaching software building via natural language.",
           "zh": "编程入门课程、通过自然语言构建软件的教学。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "Sorata-sensei",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "Sorata-sensei",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/52536164?v=4",
+          "description": "Interactive Prompt Builder for PWA Projects – A guided form that helps non-technical students generate high-quality prompts for Claude or ChatGPT to build Progressive Web Apps using HTML, CSS, and JavaScript. Built with Bootstrap 5, lightweight, and easy to use in class environments.",
+          "updatedAt": "2025-11-27T03:26:50Z"
+        }
       },
       {
         "name": "Octocode MCP",
@@ -997,7 +1383,17 @@
           "en": "CS students learning how specific algorithms are implemented in open-source projects.",
           "zh": "计算机学生学习特定算法如何在开源项目中实现。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 723,
+        "author": "bgauryy",
+        "github": {
+          "stars": 723,
+          "forks": 55,
+          "author": "bgauryy",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/4633839?v=4",
+          "description": "MCP server for semantic code research and context generation on real-time using LLM patterns | Search naturally across public & private repos based on your permissions | Transform any accessible codebase/s into AI-optimized knowledge on simple and complex flows | Find real implementations and live docs from anywhere",
+          "updatedAt": "2026-02-11T19:31:15Z"
+        }
       },
       {
         "name": "MCP JS",
@@ -1010,7 +1406,17 @@
           "en": "Learning JS, testing code snippets safely.",
           "zh": "学习 JS、安全测试代码片段。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 28,
+        "author": "r33drichards",
+        "github": {
+          "stars": 28,
+          "forks": 5,
+          "author": "r33drichards",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/57335981?v=4",
+          "description": "MCP server that exposes a V8 JavaScript runtime as a tool for AI agents like Claude and Cursor. Supports persistent heap snapshots via S3 or local filesystem, and is ready for integration with modern AI development environments.",
+          "updatedAt": "2025-12-09T15:12:42Z"
+        }
       },
       {
         "name": "Neovim MCP",
@@ -1023,7 +1429,17 @@
           "en": "Learning Vim commands, AI-assisted coding in terminal.",
           "zh": "学习 Vim 命令、终端 AI 辅助编程。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 35,
+        "author": "linw1995",
+        "github": {
+          "stars": 35,
+          "forks": 4,
+          "author": "linw1995",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/13523027?v=4",
+          "description": "A Model Context Protocol (MCP) server that provides seamless integration with Neovim instances, enabling AI assistants to interact with your editor through connections and access diagnostic information via structured resources.",
+          "updatedAt": "2026-02-02T15:39:40Z"
+        }
       },
       {
         "name": "VS Code MCP Server",
@@ -1036,7 +1452,17 @@
           "en": "AI pair programming, fixing linting errors.",
           "zh": "AI 结对编程、修复 Lint 错误。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 331,
+        "author": "juehang",
+        "github": {
+          "stars": 331,
+          "forks": 69,
+          "author": "juehang",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/39200111?v=4",
+          "description": "MCP server to expose VS Code editing features to an LLM for AI coding",
+          "updatedAt": "2026-01-07T15:40:49Z"
+        }
       },
       {
         "name": "Smart Contracts Wizard",
@@ -1049,7 +1475,17 @@
           "en": "Learning Solidity and Web3 development, contract auditing.",
           "zh": "学习 Solidity 和 Web3 开发、合约审计。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 294,
+        "author": "OpenZeppelin",
+        "github": {
+          "stars": 294,
+          "forks": 186,
+          "author": "OpenZeppelin",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/20820676?v=4",
+          "description": "Interactive smart contract generator based on OpenZeppelin Contracts.",
+          "updatedAt": "2026-02-12T09:59:32Z"
+        }
       },
       {
         "name": "Go Language Server (gopls)",
@@ -1062,7 +1498,17 @@
           "en": "Learning Go language, understanding codebase structure.",
           "zh": "学习 Go 语言、理解代码库结构。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 65,
+        "author": "hloiseau",
+        "github": {
+          "stars": 65,
+          "forks": 9,
+          "author": "hloiseau",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/32191873?v=4",
+          "description": "Model Context Protocol (MCP) server for Go using gopls – LSP-powered analysis, tests, coverage, and tooling.",
+          "updatedAt": "2026-02-02T15:34:27Z"
+        }
       },
       {
         "name": "MindsDB MCP",
@@ -1075,7 +1521,17 @@
           "en": "Learning Applied Machine Learning with standard SQL syntax.",
           "zh": "使用标准 SQL 语法学习应用机器学习。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 38443,
+        "author": "mindsdb",
+        "github": {
+          "stars": 38443,
+          "forks": 6103,
+          "author": "mindsdb",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/31035808?v=4",
+          "description": "Federated Query Engine for AI - The only MCP Server you'll ever need",
+          "updatedAt": "2026-02-12T12:26:24Z"
+        }
       },
       {
         "name": "SQLite Explorer",
@@ -1088,7 +1544,17 @@
           "en": "Beginners learning Database schemas and SQL queries.",
           "zh": "初学者学习数据库架构和 SQL 查询。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 100,
+        "author": "hannesrudolph",
+        "github": {
+          "stars": 100,
+          "forks": 26,
+          "author": "hannesrudolph",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/49103247?v=4",
+          "description": "An MCP server that provides safe, read-only access to SQLite databases through Model Context Protocol (MCP). This server is built with the FastMCP framework, which enables LLMs to explore and query SQLite databases with built-in safety features and query validation.",
+          "updatedAt": "2025-07-18T07:01:19Z"
+        }
       },
       {
         "name": "DBHub",
@@ -1101,7 +1567,17 @@
           "en": "Learning database migrations and schema lifecycle management.",
           "zh": "学习数据库迁移和架构生命周期管理。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 2102,
+        "author": "bytebase",
+        "github": {
+          "stars": 2102,
+          "forks": 175,
+          "author": "bytebase",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/74386897?v=4",
+          "description": "Zero-dependency, token-efficient database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.",
+          "updatedAt": "2026-02-03T06:04:38Z"
+        }
       },
       {
         "name": "Neon MCP",
@@ -1114,7 +1590,17 @@
           "en": "Modern cloud-native database development.",
           "zh": "现代云原生数据库开发。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 548,
+        "author": "neondatabase",
+        "github": {
+          "stars": 548,
+          "forks": 98,
+          "author": "neondatabase",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/77690634?v=4",
+          "description": "MCP server for interacting with Neon Management API and databases",
+          "updatedAt": "2026-02-11T19:50:08Z"
+        }
       },
       {
         "name": "a11y-specialist-skills",
@@ -1127,7 +1613,17 @@
           "en": "Learning WCAG standards, conducting website accessibility audits.",
           "zh": "学习 WCAG 标准、进行网站无障碍审计。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 30,
+        "author": "masuP9",
+        "github": {
+          "stars": 30,
+          "forks": 0,
+          "author": "masuP9",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/6724665?v=4",
+          "description": "Accessibility specialist skills plugin for Claude Code.",
+          "updatedAt": "2026-02-06T07:49:18Z"
+        }
       },
       {
         "name": "Docker MCP",
@@ -1140,7 +1636,17 @@
           "en": "Learning containerization concepts, debugging dev environments.",
           "zh": "学习容器化概念，调试开发环境。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 675,
+        "author": "ckreiling",
+        "github": {
+          "stars": 675,
+          "forks": 92,
+          "author": "ckreiling",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/26697347?v=4",
+          "description": "MCP server for Docker",
+          "updatedAt": "2025-06-05T02:52:13Z"
+        }
       },
       {
         "name": "LeetCode MCP",
@@ -1153,7 +1659,17 @@
           "en": "Algorithm study, interview preparation.",
           "zh": "算法学习、面试准备。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 89,
+        "author": "jinzcdev",
+        "github": {
+          "stars": 89,
+          "forks": 18,
+          "author": "jinzcdev",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/33695160?v=4",
+          "description": "An MCP server enabling automated access to LeetCode's problems, solutions, and public data with optional authentication for user-specific features, supporting leetcode.com & leetcode.cn sites.",
+          "updatedAt": "2025-05-31T15:27:08Z"
+        }
       },
       {
         "name": "OpenAPI Explorer",
@@ -1166,7 +1682,17 @@
           "en": "Learning API design, integration testing.",
           "zh": "学习 API 设计、集成测试。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 63,
+        "author": "kadykov",
+        "github": {
+          "stars": 63,
+          "forks": 12,
+          "author": "kadykov",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/62546709?v=4",
+          "description": "MCP server providing token-efficient access to OpenAPI/Swagger specs via MCP Resource Templates for client-side exploration.",
+          "updatedAt": "2026-02-09T14:51:20Z"
+        }
       },
       {
         "name": "Code Mentor",
@@ -1179,7 +1705,17 @@
           "en": "Learning programming concepts, code reviews, debugging assistance.",
           "zh": "学习编程概念、代码审查、调试辅助。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 907,
+        "author": "openclaw",
+        "github": {
+          "stars": 907,
+          "forks": 282,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T12:33:07Z"
+        }
       },
       {
         "name": "Backend Patterns",
@@ -1192,7 +1728,17 @@
           "en": "Learning system design, backend development best practices.",
           "zh": "学习系统设计、后端开发最佳实践。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 907,
+        "author": "openclaw",
+        "github": {
+          "stars": 907,
+          "forks": 282,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T12:33:07Z"
+        }
       },
       {
         "name": "Git Essentials",
@@ -1205,7 +1751,17 @@
           "en": "Learning Git version control, mastering branching and merging.",
           "zh": "学习 Git 版本控制、掌握分支和合并。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 907,
+        "author": "openclaw",
+        "github": {
+          "stars": 907,
+          "forks": 282,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T12:33:07Z"
+        }
       },
       {
         "name": "Docker Essentials",
@@ -1218,7 +1774,17 @@
           "en": "Learning Docker, container management, devops basics.",
           "zh": "学习 Docker、容器管理、DevOps 基础。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 907,
+        "author": "openclaw",
+        "github": {
+          "stars": 907,
+          "forks": 282,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T12:33:07Z"
+        }
       },
       {
         "name": "Postgres MCP",
@@ -1231,7 +1797,17 @@
           "en": "Database management education, SQL practice.",
           "zh": "数据库管理教育、SQL 练习。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 78534,
+        "author": "modelcontextprotocol",
+        "github": {
+          "stars": 78534,
+          "forks": 9526,
+          "author": "modelcontextprotocol",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/182288589?v=4",
+          "description": "Model Context Protocol Servers",
+          "updatedAt": "2026-02-11T14:57:56Z"
+        }
       },
       {
         "name": "LeetCode",
@@ -1257,7 +1833,17 @@
           "en": "DevOps education, cloud engineering.",
           "zh": "DevOps 教育、云工程。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 120446,
+        "author": "kubernetes",
+        "github": {
+          "stars": 120446,
+          "forks": 42445,
+          "author": "kubernetes",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/13629408?v=4",
+          "description": "Production-Grade Container Scheduling and Management",
+          "updatedAt": "2026-02-12T09:34:00Z"
+        }
       },
       {
         "name": "Chrome DevTools Protocol",
@@ -1270,7 +1856,17 @@
           "en": "Web development education, frontend debugging.",
           "zh": "Web 开发教育、前端调试。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 1411,
+        "author": "ChromeDevTools",
+        "github": {
+          "stars": 1411,
+          "forks": 268,
+          "author": "ChromeDevTools",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/11260967?v=4",
+          "description": "Chrome DevTools Protocol",
+          "updatedAt": "2026-02-11T05:04:05Z"
+        }
       },
       {
         "name": "Git MCP",
@@ -1283,7 +1879,17 @@
           "en": "Understanding local git history, debugging complex merges.",
           "zh": "理解本地 Git 历史，调试复杂的合并问题。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 7564,
+        "author": "idosal",
+        "github": {
+          "stars": 7564,
+          "forks": 656,
+          "author": "idosal",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/18148989?v=4",
+          "description": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
+          "updatedAt": "2025-08-22T00:18:22Z"
+        }
       },
       {
         "name": "AI2-THOR",
@@ -1296,7 +1902,17 @@
           "en": "Robotics training, visual reasoning education.",
           "zh": "机器人训练、视觉推理教育。"
         },
-        "type": "Environment"
+        "type": "Environment",
+        "stars": 1661,
+        "author": "allenai",
+        "github": {
+          "stars": 1661,
+          "forks": 269,
+          "author": "allenai",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5667695?v=4",
+          "description": "An open-source platform for Visual AI.",
+          "updatedAt": "2025-11-04T06:09:29Z"
+        }
       },
       {
         "name": "ThreeDWorld (TDW)",
@@ -1309,7 +1925,17 @@
           "en": "Physics simulation, spatial intelligence research.",
           "zh": "物理模拟、空间智能研究。"
         },
-        "type": "Environment"
+        "type": "Environment",
+        "stars": 576,
+        "author": "threedworld-mit",
+        "github": {
+          "stars": 576,
+          "forks": 84,
+          "author": "threedworld-mit",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/61848996?v=4",
+          "description": "ThreeDWorld simulation environment",
+          "updatedAt": "2024-06-03T12:57:30Z"
+        }
       },
       {
         "name": "UnrealZoo",
@@ -1322,7 +1948,8 @@
           "en": "Photorealistic simulation, embodied agent training.",
           "zh": "照片级仿真、具身智能体训练。"
         },
-        "type": "Environment"
+        "type": "Environment",
+        "author": "UnrealZoo"
       }
     ]
   },
@@ -1347,7 +1974,8 @@
           "en": "Data analysis, financial modeling, lab results processing.",
           "zh": "数据分析、财务建模、实验室结果处理。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "anthropics"
       },
       {
         "name": "Firecrawl MCP",
@@ -1360,7 +1988,17 @@
           "en": "Building custom datasets from the web for research or analysis.",
           "zh": "从网络构建自定义数据集用于研究或分析。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 5477,
+        "author": "firecrawl",
+        "github": {
+          "stars": 5477,
+          "forks": 600,
+          "author": "firecrawl",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/135057108?v=4",
+          "description": "🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
+          "updatedAt": "2026-02-05T21:27:48Z"
+        }
       },
       {
         "name": "BrowserBase MCP",
@@ -1373,7 +2011,17 @@
           "en": "Automating complex web tasks that require a full browser context.",
           "zh": "自动化需要完整浏览器上下文的复杂 Web 任务。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 3128,
+        "author": "browserbase",
+        "github": {
+          "stars": 3128,
+          "forks": 341,
+          "author": "browserbase",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/158221360?v=4",
+          "description": "Allow LLMs to control a browser with Browserbase and Stagehand",
+          "updatedAt": "2026-01-23T23:24:36Z"
+        }
       },
       {
         "name": "GenAI Toolbox",
@@ -1386,7 +2034,17 @@
           "en": "Learning cloud data warehousing and big data analysis.",
           "zh": "学习云数据仓库和大数据分析。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 12893,
+        "author": "googleapis",
+        "github": {
+          "stars": 12893,
+          "forks": 1184,
+          "author": "googleapis",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/16785467?v=4",
+          "description": "MCP Toolbox for Databases is an open source MCP server for databases.",
+          "updatedAt": "2026-02-12T06:20:27Z"
+        }
       },
       {
         "name": "claude-skill-data-cleaner",
@@ -1399,7 +2057,8 @@
           "en": "Introduction to data science, cleaning dirty data.",
           "zh": "数据科学入门、清洗脏数据。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "brook-miller"
       },
       {
         "name": "activitywatch-analysis-skill",
@@ -1412,7 +2071,17 @@
           "en": "Quantified Self, improving learning efficiency.",
           "zh": "自我量化 (Quantified Self)、提高学习效率。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 15,
+        "author": "BayramAnnakov",
+        "github": {
+          "stars": 15,
+          "forks": 2,
+          "author": "BayramAnnakov",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/774131?v=4",
+          "description": "Claude Code skill for weekly productivity analysis using ActivityWatch data. Calculates focus scores, detects death loops, generates actionable insights.",
+          "updatedAt": "2025-12-28T05:09:48Z"
+        }
       },
       {
         "name": "Jupyter Notebook MCP",
@@ -1425,7 +2094,17 @@
           "en": "Data science workflows, interactive coding.",
           "zh": "数据科学工作流、交互式编程。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 895,
+        "author": "datalayer",
+        "github": {
+          "stars": 895,
+          "forks": 140,
+          "author": "datalayer",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5007189?v=4",
+          "description": "🪐 🔧 Model Context Protocol (MCP) Server for Jupyter.",
+          "updatedAt": "2026-02-06T16:46:33Z"
+        }
       },
       {
         "name": "NetworkX Graph Analysis",
@@ -1438,7 +2117,17 @@
           "en": "Network science, social network analysis.",
           "zh": "网络科学、社交网络分析。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 13,
+        "author": "brightlikethelight",
+        "github": {
+          "stars": 13,
+          "forks": 4,
+          "author": "brightlikethelight",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/122313949?v=4",
+          "description": "🕸️ First NetworkX MCP server for graph analysis in AI conversations | Community & Enterprise editions | Graph algorithms • Network analysis • MCP integration",
+          "updatedAt": "2026-01-26T09:27:36Z"
+        }
       },
       {
         "name": "Fetch MCP",
@@ -1451,7 +2140,17 @@
           "en": "Web scraping, data collection.",
           "zh": "网络抓取、数据收集。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 691,
+        "author": "zcaceres",
+        "github": {
+          "stars": 691,
+          "forks": 114,
+          "author": "zcaceres",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/10032979?v=4",
+          "description": "A flexible HTTP fetching Model Context Protocol server.",
+          "updatedAt": "2025-09-02T16:29:10Z"
+        }
       },
       {
         "name": "Vizro (Data Viz)",
@@ -1464,7 +2163,17 @@
           "en": "Learning data visualization, creating dashboards.",
           "zh": "学习数据可视化、创建仪表板。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 3570,
+        "author": "mckinsey",
+        "github": {
+          "stars": 3570,
+          "forks": 242,
+          "author": "mckinsey",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/4265350?v=4",
+          "description": "Vizro is a low-code toolkit for building high-quality data visualization apps.",
+          "updatedAt": "2026-02-11T23:07:46Z"
+        }
       },
       {
         "name": "Kaggle MCP",
@@ -1477,7 +2186,17 @@
           "en": "Data science practice, finding datasets.",
           "zh": "数据科学练习、查找数据集。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 2,
+        "author": "KrishnaPramodParupudi",
+        "github": {
+          "stars": 2,
+          "forks": 1,
+          "author": "KrishnaPramodParupudi",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/35159930?v=4",
+          "description": "This project provides an MCP (Model Context Protocol) server for interacting with Kaggle competitions from Claude Desktop (or any MCP-compatible client)",
+          "updatedAt": "2025-09-05T16:35:24Z"
+        }
       }
     ]
   },
@@ -1502,7 +2221,8 @@
           "en": "Creating academic presentations, lecture slides from notes.",
           "zh": "创建学术演示、从笔记生成讲义幻灯片。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "anthropics"
       },
       {
         "name": "Anthropic Algorithmic Art",
@@ -1515,7 +2235,8 @@
           "en": "Creative coding education, generating abstract visuals.",
           "zh": "创意编程教育、生成抽象视觉效果。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "anthropics"
       },
       {
         "name": "chartjs-expert",
@@ -1528,7 +2249,17 @@
           "en": "Frontend developers learning chart library integration.",
           "zh": "前端开发者学习图表库集成。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "sjnims",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "sjnims",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/335659?v=4",
+          "description": "Claude Code plugin for Chart.js v4.5.1 with 12 expert skills, interactive code generation, and React/Vue/Angular/Rails integrations",
+          "updatedAt": "2026-02-10T00:15:45Z"
+        }
       },
       {
         "name": "census-demographics-skill",
@@ -1541,7 +2272,17 @@
           "en": "Sociology research, GIS courses, data journalism.",
           "zh": "社会学研究、地理信息系统 (GIS) 课程、数据新闻学。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "baofeng-dong",
+        "github": {
+          "stars": 0,
+          "forks": 1,
+          "author": "baofeng-dong",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/14082985?v=4",
+          "description": "US Census data visualization skill for Claude Code - create demographic maps showing education, income, and population statistics",
+          "updatedAt": "2025-10-24T02:11:13Z"
+        }
       },
       {
         "name": "Observable-Plot-Claude-Skill",
@@ -1554,7 +2295,17 @@
           "en": "Learning modern Web data visualization.",
           "zh": "学习现代 Web 数据可视化。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "jkoets",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "jkoets",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/18579693?v=4",
+          "description": "A Claude skill that provides guidance for creating data visualizations with Observable Plot, a JavaScript library for exploratory data analysis.",
+          "updatedAt": "2026-01-07T18:39:52Z"
+        }
       },
       {
         "name": "Figma Context MCP",
@@ -1567,7 +2318,17 @@
           "en": "Translating design mockups into code learning.",
           "zh": "将设计模型转化为代码的学习。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 13099,
+        "author": "GLips",
+        "github": {
+          "stars": 13099,
+          "forks": 1045,
+          "author": "GLips",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/842883?v=4",
+          "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
+          "updatedAt": "2026-01-20T16:58:17Z"
+        }
       },
       {
         "name": "neurodivergent-visual-org",
@@ -1580,7 +2341,17 @@
           "en": "ADHD students' time management, assisting executive dysfunction.",
           "zh": "ADHD 学生的时间管理、辅助执行功能障碍。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 16,
+        "author": "JackReis",
+        "github": {
+          "stars": 16,
+          "forks": 1,
+          "author": "JackReis",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/1537084?v=4",
+          "description": "Visual organization tools for neurodivergent thinking - Claude Code skill with compassionate task breakdowns, decision trees, and focus support",
+          "updatedAt": "2026-02-08T20:51:40Z"
+        }
       },
       {
         "name": "pptx-mcp",
@@ -1593,7 +2364,17 @@
           "en": "Quickly generating basic slide decks from text outlines.",
           "zh": "从文本大纲快速生成基本幻灯片。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 32,
+        "author": "samos123",
+        "github": {
+          "stars": 32,
+          "forks": 9,
+          "author": "samos123",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/388784?v=4",
+          "description": "Create Slides with a simple MCP server using Python PPTX library",
+          "updatedAt": "2025-05-20T03:36:37Z"
+        }
       },
       {
         "name": "mcp-server-okppt",
@@ -1606,7 +2387,17 @@
           "en": "Creating visually designing slides with complex diagrams directly from Claude.",
           "zh": "直接从 Claude 创建包含复杂图表的视觉设计幻灯片。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 62,
+        "author": "NeekChaw",
+        "github": {
+          "stars": 62,
+          "forks": 7,
+          "author": "NeekChaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/29478613?v=4",
+          "description": "这个项目是一个基于MCP (Model Context Protocol) 的服务器工具，名为 \"MCP OKPPT Server\"。它的核心功能是允许大型语言模型（如Claude、GPT等）通过生成SVG图像来间接设计和创建PowerPoint演示文稿。工具负责将这些SVG图像高质量地插入到PPTX幻灯片中，并保留其矢量特性，确保图像在PowerPoint中可缩放且清晰。",
+          "updatedAt": "2025-06-08T07:59:55Z"
+        }
       },
       {
         "name": "Office-PowerPoint-MCP-Server",
@@ -1619,7 +2410,17 @@
           "en": "Automating slide creation, updating charts, and bulk editing.",
           "zh": "自动化幻灯片创建、更新图表和批量编辑。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 1502,
+        "author": "GongRzhe",
+        "github": {
+          "stars": 1502,
+          "forks": 205,
+          "author": "GongRzhe",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/38748229?v=4",
+          "description": "A MCP (Model Context Protocol) server for PowerPoint manipulation using python-pptx. This server provides tools for creating, editing, and manipulating PowerPoint presentations through the MCP protocol.",
+          "updatedAt": "2025-12-31T13:23:39Z"
+        }
       },
       {
         "name": "claude-dolphin",
@@ -1632,7 +2433,17 @@
           "en": "UI/UX design students, full-stack developers improving design sense.",
           "zh": "UI/UX 设计学生、全栈开发者提升设计感。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 2,
+        "author": "nyldn",
+        "github": {
+          "stars": 2,
+          "forks": 0,
+          "author": "nyldn",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/4805949?v=4",
+          "description": "Comprehensive UX/UI design system skill for Claude Code - WCAG 2.2 AA accessibility auditing, design consistency checks, Refactoring UI principles, and shadcn/ui integration",
+          "updatedAt": "2026-01-15T08:49:45Z"
+        }
       },
       {
         "name": "Markmap",
@@ -1645,7 +2456,17 @@
           "en": "Creating study outlines, brainstorming sessions.",
           "zh": "创建学习大纲、头脑风暴会议。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 170,
+        "author": "jinzcdev",
+        "github": {
+          "stars": 170,
+          "forks": 29,
+          "author": "jinzcdev",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/33695160?v=4",
+          "description": "An MCP server for converting Markdown to interactive mind maps with export support (PNG/JPG/SVG).",
+          "updatedAt": "2025-06-12T10:53:56Z"
+        }
       },
       {
         "name": "Excalidraw MCP App",
@@ -1658,7 +2479,17 @@
           "en": "Creating explaining diagrams, system architecture whiteboarding.",
           "zh": "创建解释性图表、系统架构白板演示。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 1716,
+        "author": "excalidraw",
+        "github": {
+          "stars": 1716,
+          "forks": 123,
+          "author": "excalidraw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/59452120?v=4",
+          "description": "Fast and streamable Excalidraw MCP App",
+          "updatedAt": "2026-02-12T12:34:20Z"
+        }
       },
       {
         "name": "MCP Mermaid",
@@ -1671,7 +2502,17 @@
           "en": "Visualizing processes, creating code documentation diagrams.",
           "zh": "可视化流程、创建代码文档图表。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 422,
+        "author": "hustcc",
+        "github": {
+          "stars": 422,
+          "forks": 45,
+          "author": "hustcc",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/7856674?v=4",
+          "description": "❤️ Generate mermaid diagram and chart with AI MCP dynamically.",
+          "updatedAt": "2026-02-12T02:46:26Z"
+        }
       },
       {
         "name": "Leap MCP",
@@ -1684,7 +2525,17 @@
           "en": "Creating educational videos, visualizing math/physics concepts.",
           "zh": "制作教育视频、可视化数学/物理概念。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 15,
+        "author": "sid-thephysicskid",
+        "github": {
+          "stars": 15,
+          "forks": 3,
+          "author": "sid-thephysicskid",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/53623152?v=4",
+          "description": " Transform any topic into an explainer video with AI narration and 3Blue1Brown-style animations",
+          "updatedAt": "2025-08-29T17:06:47Z"
+        }
       },
       {
         "name": "Manim MCP",
@@ -1697,7 +2548,17 @@
           "en": "Math education, dynamic geometry demonstrations.",
           "zh": "数学教育、动态几何演示。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 16,
+        "author": "wstcpyt",
+        "github": {
+          "stars": 16,
+          "forks": 5,
+          "author": "wstcpyt",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/6978753?v=4",
+          "description": "manim mcp server for math animation",
+          "updatedAt": "2025-05-05T16:35:23Z"
+        }
       },
       {
         "name": "Kroki MCP",
@@ -1710,7 +2571,17 @@
           "en": "Teaching UML, visualizing software architecture.",
           "zh": "教学 UML、可视化软件架构。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 10,
+        "author": "utain",
+        "github": {
+          "stars": 10,
+          "forks": 3,
+          "author": "utain",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/9064830?v=4",
+          "description": "Kroki-MCP is a Go-based Model Context Protocol tool that converts textual diagram definitions (PlantUML, Mermaid, and more) into images via a Kroki backend. Designed for simplicity and flexibility, it supports both local and remote Kroki servers, offers configurable settings, and outputs multiple formats – making it ideal for developers building AI",
+          "updatedAt": "2025-05-05T12:22:01Z"
+        }
       },
       {
         "name": "Mindmap MCP Server",
@@ -1723,7 +2594,17 @@
           "en": "Brainstorming, organizing lecture notes.",
           "zh": "头脑风暴、整理课堂笔记。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 215,
+        "author": "YuChenSSR",
+        "github": {
+          "stars": 215,
+          "forks": 22,
+          "author": "YuChenSSR",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/55662670?v=4",
+          "description": "mindmap, mcp server, artifact",
+          "updatedAt": "2025-05-20T12:49:06Z"
+        }
       },
       {
         "name": "FFmpeg MCP",
@@ -1736,7 +2617,17 @@
           "en": "Editing lecture recordings, converting video formats.",
           "zh": "编辑讲座录音/录像、转换视频格式。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 120,
+        "author": "egoist",
+        "github": {
+          "stars": 120,
+          "forks": 8,
+          "author": "egoist",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/8784712?v=4",
+          "description": "An MCP server for FFmpeg",
+          "updatedAt": "2025-03-29T08:36:29Z"
+        }
       }
     ]
   },
@@ -1761,7 +2652,8 @@
           "en": "Creating new documents, modifying content, working with tracked changes.",
           "zh": "创建新文档、修改内容、处理修订记录。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "anthropics"
       },
       {
         "name": "Anthropic PDF Skill",
@@ -1774,7 +2666,8 @@
           "en": "Extracting data from papers, filling forms, merging documents.",
           "zh": "从论文提取数据、填写表单、合并文档。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "anthropics"
       },
       {
         "name": "writing-agent",
@@ -1787,7 +2680,17 @@
           "en": "Making AI-written articles sound natural like humans, suitable for self-media and blog writing.",
           "zh": "让 AI 写出的文章像人一样自然，适合自媒体和博客写作。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 60,
+        "author": "dongbeixiaohuo",
+        "github": {
+          "stars": 60,
+          "forks": 14,
+          "author": "dongbeixiaohuo",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/73542526?v=4",
+          "description": "🚀 一个基于 Claude Code Skills 的\"反AI味\"写作系统，让AI写出的文章像人写的一样自然。  支持 DeepSeek / 智谱GLM / MiniMax 等多种国产大模型，成本极低。  从选题生成、风格建模到发布评审，提供完整的 AI 写作工作流。",
+          "updatedAt": "2026-02-10T15:29:36Z"
+        }
       },
       {
         "name": "The-Crucible-Writing-System-For-Claude",
@@ -1800,7 +2703,17 @@
           "en": "Novel creation, screenwriting, creative writing courses.",
           "zh": "小说创作、剧本写作、创意写作课程。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 36,
+        "author": "forsonny",
+        "github": {
+          "stars": 36,
+          "forks": 6,
+          "author": "forsonny",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/187788042?v=4",
+          "description": "The Crucible Writing System is an integrated suite of three Claude skills designed to guide writers from initial story concept to completed first draft. Built around the Crucible Structure—a 36-beat narrative framework with three interwoven story strands.",
+          "updatedAt": "2025-12-21T08:05:46Z"
+        }
       },
       {
         "name": "humanizer",
@@ -1813,7 +2726,17 @@
           "en": "Polishing AI drafts to fit human expression habits better.",
           "zh": "润色 AI 起草的草稿，使其更符合人类表达习惯。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 4672,
+        "author": "blader",
+        "github": {
+          "stars": 4672,
+          "forks": 382,
+          "author": "blader",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/1672?v=4",
+          "description": "Claude Code skill that removes signs of AI-generated writing from text",
+          "updatedAt": "2026-01-23T02:46:43Z"
+        }
       },
       {
         "name": "ux-writing-skill",
@@ -1826,7 +2749,17 @@
           "en": "Interaction design students, learning product copy specifications.",
           "zh": "交互设计学生、产品文案规范学习。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 54,
+        "author": "content-designer",
+        "github": {
+          "stars": 54,
+          "forks": 12,
+          "author": "content-designer",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/212046200?v=4",
+          "description": "Agent Skill for systematic UX writing — scale content quality through AI-powered design system enforcement. Works with Claude and Codex.",
+          "updatedAt": "2026-01-18T00:24:45Z"
+        }
       },
       {
         "name": "vibe-writing",
@@ -1839,7 +2772,17 @@
           "en": "Exploring new modes of human-machine collaborative creation.",
           "zh": "探索人机协作创作的新模式。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 2,
+        "author": "pakholeung37",
+        "github": {
+          "stars": 2,
+          "forks": 0,
+          "author": "pakholeung37",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/16984253?v=4",
+          "description": "A wiki-style methodology for fiction writing with AI collaboration.",
+          "updatedAt": "2026-01-17T12:23:09Z"
+        }
       },
       {
         "name": "academic-paper-skills",
@@ -1852,7 +2795,17 @@
           "en": "Graduate thesis writing, academic publishing planning.",
           "zh": "硕博研究生论文写作、学术出版规划。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 16,
+        "author": "lishix520",
+        "github": {
+          "stars": 16,
+          "forks": 3,
+          "author": "lishix520",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/36358469?v=4",
+          "description": "Systematic framework for planning and writing academic papers using Claude Code. Includes strategist (planning) and composer (writing) skills with quality checkpoints.",
+          "updatedAt": "2026-01-04T02:42:38Z"
+        }
       },
       {
         "name": "research-units-pipeline-skills",
@@ -1865,7 +2818,17 @@
           "en": "Rigorous academic research projects, literature reviews.",
           "zh": "严谨的学术研究项目、文献综述。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 197,
+        "author": "WILLOSCAR",
+        "github": {
+          "stars": 197,
+          "forks": 19,
+          "author": "WILLOSCAR",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/63443351?v=4",
+          "description": "Research pipelines as semantic execution units: each skill declares inputs/outputs, acceptance criteria, and guardrails. Evidence-first methodology prevents hollow writing through structured intermediate artifacts.",
+          "updatedAt": "2026-02-12T05:32:24Z"
+        }
       },
       {
         "name": "academic-writing-skills",
@@ -1878,7 +2841,17 @@
           "en": "Improving standardization and logic of academic language.",
           "zh": "提升学术语言的规范性和逻辑性。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 29,
+        "author": "bahayonghang",
+        "github": {
+          "stars": 29,
+          "forks": 2,
+          "author": "bahayonghang",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/85470879?v=4",
+          "description": "学术写作skills，通过claude code，codex的能力辅助学术写作【支持 Gemini CLi和Antigravity】",
+          "updatedAt": "2026-02-05T09:37:16Z"
+        }
       },
       {
         "name": "GPT Researcher",
@@ -1891,7 +2864,17 @@
           "en": "Generating literature reviews, gathering unbiased information without hallucination.",
           "zh": "生成文献综述，收集公正信息，避免幻觉。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 25294,
+        "author": "assafelovic",
+        "github": {
+          "stars": 25294,
+          "forks": 3359,
+          "author": "assafelovic",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/13554167?v=4",
+          "description": "An autonomous agent that conducts deep research on any data using any LLM providers.",
+          "updatedAt": "2026-02-01T07:50:37Z"
+        }
       },
       {
         "name": "ZotLink",
@@ -1904,7 +2887,17 @@
           "en": "Academics managing large bibliographies wanting to automate \"paper-to-library\" workflow.",
           "zh": "管理大量参考书目的学者，希望自动化“从论文到资料库”的工作流程。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 126,
+        "author": "TonybotNi",
+        "github": {
+          "stars": 126,
+          "forks": 15,
+          "author": "TonybotNi",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/175462240?v=4",
+          "description": "Production‑ready MCP server for Zotero to save open preprints (arXiv, CVF, bio/med/chemRxiv) with rich metadata and smart PDF attachments — with upcoming support for publisher databases (Nature, Science, IEEE Xplore, Springer).",
+          "updatedAt": "2025-10-12T02:57:18Z"
+        }
       },
       {
         "name": "arXiv Search",
@@ -1917,7 +2910,17 @@
           "en": "Literature review, finding latest preprints.",
           "zh": "文献综述、查找最新预印本。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 179,
+        "author": "andybrandt",
+        "github": {
+          "stars": 179,
+          "forks": 26,
+          "author": "andybrandt",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/5551980?v=4",
+          "description": "Tool to  work with arXiv, provide LLM with ability to search and read papers from there",
+          "updatedAt": "2026-01-29T20:52:56Z"
+        }
       },
       {
         "name": "Open Library",
@@ -1930,7 +2933,17 @@
           "en": "Bibliographic data retrieval, finding book metadata.",
           "zh": "书目数据检索、查找书籍元数据。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 56,
+        "author": "8enSmith",
+        "github": {
+          "stars": 56,
+          "forks": 15,
+          "author": "8enSmith",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/798183?v=4",
+          "description": "A Model Context Protocol (MCP) server for the Internet Archive's Open Library API that enables AI assistants to search for book and author information.",
+          "updatedAt": "2026-02-04T11:15:51Z"
+        }
       },
       {
         "name": "Mendeley MCP",
@@ -1943,7 +2956,17 @@
           "en": "Reference management for thesis writing.",
           "zh": "为论文写作管理参考文献。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 4,
+        "author": "pallaprolus",
+        "github": {
+          "stars": 4,
+          "forks": 5,
+          "author": "pallaprolus",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/162944051?v=4",
+          "description": "MCP server for Mendeley reference manager - search, retrieve, and manage your academic library from Claude and other MCP clients",
+          "updatedAt": "2026-01-05T04:21:55Z"
+        }
       },
       {
         "name": "TexMCP",
@@ -1956,7 +2979,17 @@
           "en": "Compiling LaTeX papers, generating math formulas.",
           "zh": "编译 LaTeX 论文、生成数学公式。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 7,
+        "author": "devroopsaha744",
+        "github": {
+          "stars": 7,
+          "forks": 2,
+          "author": "devroopsaha744",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/130696540?v=4",
+          "description": "A small FastMCP-based Microservice that renders LaTeX to PDF. The server exposes MCP tools to render raw LaTeX or templates and produces artifacts",
+          "updatedAt": "2025-11-09T11:43:06Z"
+        }
       },
       {
         "name": "Doc Co-authoring",
@@ -1969,7 +3002,17 @@
           "en": "Collaborative writing, academic papers, reports.",
           "zh": "协作写作、学术论文、报告。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 911,
+        "author": "openclaw",
+        "github": {
+          "stars": 911,
+          "forks": 283,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T13:33:03Z"
+        }
       },
       {
         "name": "Nano PDF",
@@ -1982,7 +3025,17 @@
           "en": "Modifying PDF content, splitting/merging pages via chat.",
           "zh": "通过聊天修改 PDF 内容、拆分/合并页面。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 911,
+        "author": "openclaw",
+        "github": {
+          "stars": 911,
+          "forks": 283,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T13:33:03Z"
+        }
       },
       {
         "name": "Mineru PDF Parser",
@@ -1995,7 +3048,17 @@
           "en": "Extracting clean text from complex research papers for AI analysis.",
           "zh": "从复杂的学术论文中提取干净的文本以供 AI 分析。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 911,
+        "author": "openclaw",
+        "github": {
+          "stars": 911,
+          "forks": 283,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T13:33:03Z"
+        }
       },
       {
         "name": "Nutrient Doc Processing",
@@ -2008,7 +3071,17 @@
           "en": "Digitizing scanned textbooks, handling heavy document workflows.",
           "zh": "数字化扫描的教科书、处理繁重的文档工作流。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 911,
+        "author": "openclaw",
+        "github": {
+          "stars": 911,
+          "forks": 283,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T13:33:03Z"
+        }
       },
       {
         "name": "Markdown Converter",
@@ -2021,7 +3094,17 @@
           "en": "Standardizing study materials into a single readable format.",
           "zh": "将学习资料标准化为统一的可读格式。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 911,
+        "author": "openclaw",
+        "github": {
+          "stars": 911,
+          "forks": 283,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T13:33:03Z"
+        }
       },
       {
         "name": "Typst MCP",
@@ -2034,7 +3117,17 @@
           "en": "Writing academic papers, learning typesetting.",
           "zh": "撰写学术论文、学习排版。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 111,
+        "author": "johannesbrandenburger",
+        "github": {
+          "stars": 111,
+          "forks": 13,
+          "author": "johannesbrandenburger",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/79154528?v=4",
+          "description": "Typst MCP Server is an MCP (Model Context Protocol) implementation that helps AI models interact with Typst, a markup-based typesetting system. The server provides tools for converting between LaTeX and Typst, validating Typst syntax, and generating images from Typst code.",
+          "updatedAt": "2025-12-08T10:21:11Z"
+        }
       },
       {
         "name": "MarkItDown",
@@ -2047,7 +3140,17 @@
           "en": "Summarizing lectures, converting study materials.",
           "zh": "总结讲座、转换学习资料。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 86935,
+        "author": "microsoft",
+        "github": {
+          "stars": 86935,
+          "forks": 5055,
+          "author": "microsoft",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/6154722?v=4",
+          "description": "Python tool for converting files and office documents to Markdown.",
+          "updatedAt": "2026-01-08T23:21:33Z"
+        }
       },
       {
         "name": "Pandoc MCP",
@@ -2060,7 +3163,17 @@
           "en": "Converting assignments, formatting thesis.",
           "zh": "转换作业、格式化论文。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 496,
+        "author": "vivekVells",
+        "github": {
+          "stars": 496,
+          "forks": 59,
+          "author": "vivekVells",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/25471383?v=4",
+          "description": "MCP server for document format conversion using pandoc.",
+          "updatedAt": "2025-09-16T02:52:43Z"
+        }
       },
       {
         "name": "Microsoft 365 MCP",
@@ -2073,7 +3186,17 @@
           "en": "Processing assignment docs, managing academic email.",
           "zh": "处理作业文档、管理学术邮件。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 458,
+        "author": "Softeria",
+        "github": {
+          "stars": 458,
+          "forks": 154,
+          "author": "Softeria",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/33659169?v=4",
+          "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Office services through the Graph API",
+          "updatedAt": "2026-02-11T19:20:43Z"
+        }
       },
       {
         "name": "Wikipedia MCP",
@@ -2086,7 +3209,17 @@
           "en": "General knowledge, fact checking, history research.",
           "zh": "通用知识、事实核查、历史研究。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 184,
+        "author": "Rudra-ravi",
+        "github": {
+          "stars": 184,
+          "forks": 44,
+          "author": "Rudra-ravi",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/116959728?v=4",
+          "description": "A Model Context Protocol (MCP) server that retrieves information from Wikipedia to provide context to LLMs.",
+          "updatedAt": "2025-12-17T02:04:00Z"
+        }
       },
       {
         "name": "PDFMathTranslate",
@@ -2099,7 +3232,17 @@
           "en": "Reading foreign literature, academic translation.",
           "zh": "阅读外文文献、学术翻译。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 31774,
+        "author": "PDFMathTranslate",
+        "github": {
+          "stars": 31774,
+          "forks": 2873,
+          "author": "PDFMathTranslate",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/205132128?v=4",
+          "description": "[EMNLP 2025 Demo] PDF scientific paper translation with preserved formats - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero",
+          "updatedAt": "2025-11-25T11:49:48Z"
+        }
       }
     ]
   },
@@ -2124,7 +3267,17 @@
           "en": "Academic note organizing, Zettelkasten maintenance, connecting thesis ideas.",
           "zh": "学术笔记整理、Zettelkasten (卡片盒笔记法) 维护、论文灵感连接。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 2260,
+        "author": "YishenTu",
+        "github": {
+          "stars": 2260,
+          "forks": 147,
+          "author": "YishenTu",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/134207149?v=4",
+          "description": "An Obsidian plugin that embeds Claude Code as an AI collaborator in your vault",
+          "updatedAt": "2026-02-11T02:54:45Z"
+        }
       },
       {
         "name": "Logseq Skill",
@@ -2137,7 +3290,17 @@
           "en": "Knowledge management, daily journaling, connecting ideas.",
           "zh": "知识管理、每日日记、连接想法。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 911,
+        "author": "openclaw",
+        "github": {
+          "stars": 911,
+          "forks": 283,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T13:33:03Z"
+        }
       },
       {
         "name": "Rationality",
@@ -2150,7 +3313,17 @@
           "en": "Critical thinking, argument analysis, complex decision support.",
           "zh": "批判性思维、论证分析、复杂决策支持。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 911,
+        "author": "openclaw",
+        "github": {
+          "stars": 911,
+          "forks": 283,
+          "author": "openclaw",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+          "description": "All versions of all skills that are on clawdhub.com archived",
+          "updatedAt": "2026-02-12T13:33:03Z"
+        }
       },
       {
         "name": "claude-code-obsidian-starter",
@@ -2163,7 +3336,17 @@
           "en": "University students and researchers needing to build a Personal Knowledge Management (PKM) system.",
           "zh": "需要构建个人知识库 (PKM) 的大学生和研究员。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 92,
+        "author": "ArtemXTech",
+        "github": {
+          "stars": 92,
+          "forks": 18,
+          "author": "ArtemXTech",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/68073689?v=4",
+          "description": "Free starter kit: Claude Code + Obsidian. Pre-configured vault with skills for projects, tasks, clients, and daily routines. Just open and go.",
+          "updatedAt": "2026-01-23T02:42:56Z"
+        }
       },
       {
         "name": "productivity-skills",
@@ -2176,7 +3359,17 @@
           "en": "Quick recording of class points, meeting minutes organization.",
           "zh": "快速记录课堂重点、会议纪要整理。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 6,
+        "author": "mcdow-webworks",
+        "github": {
+          "stars": 6,
+          "forks": 1,
+          "author": "mcdow-webworks",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/45180560?v=4",
+          "description": "Transform Claude into your AI-powered productivity partner. Note-taking skill creates an AI-navigable second brain    with conversational capture, intelligent search, and pattern recognition across all your work. Plain markdown,   local-first, works in Claude Code and Claude Desktop.",
+          "updatedAt": "2026-01-09T21:51:52Z"
+        }
       },
       {
         "name": "NotebookLM MCP",
@@ -2189,7 +3382,17 @@
           "en": "\"Talking\" to your lecture notes or textbooks to prepare for exams using your specific source material.",
           "zh": "与你的课堂笔记或教科书“对话”，使用特定材料准备考试。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 872,
+        "author": "PleasePrompto",
+        "github": {
+          "stars": 872,
+          "forks": 118,
+          "author": "PleasePrompto",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/238042401?v=4",
+          "description": "MCP server for NotebookLM - Let your AI agents (Claude Code, Codex) research documentation directly with grounded, citation-backed answers from Gemini. Persistent auth, library management, cross-client sharing. Zero hallucinations, just your knowledge base.",
+          "updatedAt": "2025-12-27T03:50:20Z"
+        }
       },
       {
         "name": "Official Notion MCP Server",
@@ -2202,7 +3405,17 @@
           "en": "Organizing class schedules, updating research wikis, or tracking application progress.",
           "zh": "整理课程表、更新研究 Wiki 或追踪申请进度。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 3870,
+        "author": "makenotion",
+        "github": {
+          "stars": 3870,
+          "forks": 478,
+          "author": "makenotion",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/4792552?v=4",
+          "description": "Official Notion MCP Server",
+          "updatedAt": "2026-01-31T18:26:02Z"
+        }
       },
       {
         "name": "Anki MCP Server",
@@ -2215,7 +3428,17 @@
           "en": "Turning lecture notes or vocab lists instantly into reviewable flashcards.",
           "zh": "将课堂笔记或词汇表即时转换为可复习的抽认卡。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 218,
+        "author": "nailuoGG",
+        "github": {
+          "stars": 218,
+          "forks": 40,
+          "author": "nailuoGG",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/4554827?v=4",
+          "description": "MCP server for Anki via AnkiConnect",
+          "updatedAt": "2026-01-13T22:10:19Z"
+        }
       },
       {
         "name": "PDF Reader MCP",
@@ -2228,7 +3451,17 @@
           "en": "Quickly summarizing long textbooks, extracting data tables, or converting assignments.",
           "zh": "快速总结长篇教科书、提取数据表或转换作业。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 489,
+        "author": "SylphxAI",
+        "github": {
+          "stars": 489,
+          "forks": 56,
+          "author": "SylphxAI",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/206448049?v=4",
+          "description": "📄 Production-ready MCP server for PDF processing - 5-10x faster with parallel processing and 94%+ test coverage",
+          "updatedAt": "2026-02-09T07:20:25Z"
+        }
       },
       {
         "name": "Obsidian REST MCP",
@@ -2241,7 +3474,17 @@
           "en": "Managing personal knowledge base programmatically.",
           "zh": "以编程方式管理个人知识库。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 2844,
+        "author": "MarkusPfundstein",
+        "github": {
+          "stars": 2844,
+          "forks": 357,
+          "author": "MarkusPfundstein",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/1137867?v=4",
+          "description": "MCP server that interacts with Obsidian via the Obsidian rest API community plugin",
+          "updatedAt": "2025-06-28T09:04:04Z"
+        }
       },
       {
         "name": "Google Drive MCP",
@@ -2254,7 +3497,17 @@
           "en": "Accessing cloud documents, organizing coursework.",
           "zh": "访问云文档、整理课程作业。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 263,
+        "author": "isaacphi",
+        "github": {
+          "stars": 263,
+          "forks": 95,
+          "author": "isaacphi",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/3385849?v=4",
+          "description": "Model Context Protocol (MCP) Server for reading from Google Drive and editing Google Sheets",
+          "updatedAt": "2025-05-07T14:03:09Z"
+        }
       },
       {
         "name": "OpenZIM MCP",
@@ -2267,7 +3520,17 @@
           "en": "Offline research, encyclopedic knowledge lookup.",
           "zh": "离线研究、百科知识查询。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 36,
+        "author": "cameronrye",
+        "github": {
+          "stars": 36,
+          "forks": 3,
+          "author": "cameronrye",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/47811?v=4",
+          "description": "OpenZIM MCP is a modern, secure, and high-performance MCP (Model Context Protocol) server that enables AI models to access and search ZIM format knowledge bases offline.",
+          "updatedAt": "2026-02-11T13:20:31Z"
+        }
       },
       {
         "name": "Rember (Flashcards)",
@@ -2280,7 +3543,17 @@
           "en": "Exam preparation, vocabulary learning.",
           "zh": "备考、词汇学习。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 61,
+        "author": "rember",
+        "github": {
+          "stars": 61,
+          "forks": 9,
+          "author": "rember",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/124442748?v=4",
+          "description": "A Model Context Protocol (MCP) server for Rember.",
+          "updatedAt": "2025-03-28T09:29:27Z"
+        }
       },
       {
         "name": "Apple Notes MCP",
@@ -2293,7 +3566,17 @@
           "en": "Organizing class notes, syncing summaries.",
           "zh": "整理课堂笔记、同步摘要。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 35,
+        "author": "henilcalagiya",
+        "github": {
+          "stars": 35,
+          "forks": 5,
+          "author": "henilcalagiya",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/87717572?v=4",
+          "description": "An local mcp server for interacting with Apple Notes via LLM.",
+          "updatedAt": "2025-09-11T05:35:48Z"
+        }
       }
     ]
   },
@@ -2318,7 +3601,17 @@
           "en": "Deep research, finding verified sources.",
           "zh": "深度研究、查找经过验证的来源。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 3787,
+        "author": "exa-labs",
+        "github": {
+          "stars": 3787,
+          "forks": 290,
+          "author": "exa-labs",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/77906174?v=4",
+          "description": "Exa MCP for web search and web crawling!",
+          "updatedAt": "2026-02-11T23:47:15Z"
+        }
       },
       {
         "name": "Brave Search",
@@ -2331,7 +3624,17 @@
           "en": "General research, finding current events.",
           "zh": "一般研究、查找时事。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 625,
+        "author": "brave",
+        "github": {
+          "stars": 625,
+          "forks": 122,
+          "author": "brave",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/12301619?v=4",
+          "description": null,
+          "updatedAt": "2026-02-12T09:57:17Z"
+        }
       },
       {
         "name": "Slack MCP",
@@ -2344,7 +3647,17 @@
           "en": "Team collaboration, study group management.",
           "zh": "团队协作、学习小组管理。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 12,
+        "author": "jtalk22",
+        "github": {
+          "stars": 12,
+          "forks": 6,
+          "author": "jtalk22",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/141901428?v=4",
+          "description": "Full Slack access for Claude - DMs, channels, search. No OAuth. No admin approval. Just works.",
+          "updatedAt": "2026-02-09T15:13:44Z"
+        }
       },
       {
         "name": "Time Tracking (Toggl)",
@@ -2357,7 +3670,17 @@
           "en": "Productivity tracking, study hour logging.",
           "zh": "生产力追踪、学习时长记录。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 1,
+        "author": "louis030195",
+        "github": {
+          "stars": 1,
+          "forks": 1,
+          "author": "louis030195",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/25003283?v=4",
+          "description": "let AGI know how you spend your time through the best Toggl MCP",
+          "updatedAt": "2025-10-16T17:51:38Z"
+        }
       },
       {
         "name": "Filesystem (Go)",
@@ -2370,7 +3693,17 @@
           "en": "Managing local projects, organizing downloads.",
           "zh": "管理本地项目、整理下载内容。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 594,
+        "author": "mark3labs",
+        "github": {
+          "stars": 594,
+          "forks": 97,
+          "author": "mark3labs",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/17607124?v=4",
+          "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
+          "updatedAt": "2025-11-24T15:46:55Z"
+        }
       },
       {
         "name": "Discord MCP",
@@ -2383,7 +3716,8 @@
           "en": "Managing study groups or student communities.",
           "zh": "管理学习小组或学生社区。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "author": "v-v-vishnu"
       },
       {
         "name": "Linear MCP",
@@ -2396,7 +3730,17 @@
           "en": "Students learning Agile/Scrum project management.",
           "zh": "学生学习敏捷/Scrum 项目管理。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 343,
+        "author": "jerhadf",
+        "github": {
+          "stars": 343,
+          "forks": 60,
+          "author": "jerhadf",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/16784270?v=4",
+          "description": "A server that integrates Linear's project management system with the Model Context Protocol (MCP) to allow LLMs to interact with Linear.",
+          "updatedAt": "2025-05-01T19:45:31Z"
+        }
       },
       {
         "name": "Todoist MCP",
@@ -2409,7 +3753,8 @@
           "en": "Personal task tracking and deadline management.",
           "zh": "个人任务追踪和截止日期管理。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "author": "actionsOnGoogle"
       },
       {
         "name": "Resume-Analysis-Assistant",
@@ -2422,7 +3767,17 @@
           "en": "Graduate job hunting, resume optimization, mock interview prep.",
           "zh": "毕业生求职、简历优化、模拟面试准备。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 0,
+        "author": "amogh-vardhan",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "amogh-vardhan",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/176422077?v=4",
+          "description": "A Python tool for extracting and matching resumes with job descriptions using NLP. Supports PDF/DOCX, identifies names, education, skills, contacts, and calculates match percentages. Includes Anthropic's Claude AI integration for advanced queries and detailed analysis.",
+          "updatedAt": "2025-04-30T18:12:09Z"
+        }
       },
       {
         "name": "JobCoach",
@@ -2435,7 +3790,17 @@
           "en": "Career planning, skill improvement roadmap.",
           "zh": "职业规划、技能提升路线图。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 1,
+        "author": "sayaleepande",
+        "github": {
+          "stars": 1,
+          "forks": 0,
+          "author": "sayaleepande",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/35782753?v=4",
+          "description": "Built an intelligent career guidance agent using LangChain for resume review, skill gap analysis, learning paths, and interview prep. Used multi-agent architecture with tools and memory to handle natural language queries. Compared GPT-4, Claude, and Gemini for output quality.",
+          "updatedAt": "2025-06-19T14:05:18Z"
+        }
       },
       {
         "name": "linkedin-mcp",
@@ -2448,7 +3813,17 @@
           "en": "Personal branding, auto-updating career history.",
           "zh": "个人品牌建设、自动更新职业履历。"
         },
-        "type": "MCP"
+        "type": "MCP",
+        "stars": 0,
+        "author": "pegasusheavy",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "pegasusheavy",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/248767661?v=4",
+          "description": "A comprehensive Model Context Protocol (MCP) server for LinkedIn API - manage profiles, posts, connections, skills, education, certifications, and more through AI agents",
+          "updatedAt": "2026-02-02T17:33:04Z"
+        }
       }
     ]
   },
@@ -2473,7 +3848,17 @@
           "en": "Learning how to better control AI models.",
           "zh": "学习如何更好地控制 AI 模型。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 33,
+        "author": "ThamJiaHe",
+        "github": {
+          "stars": 33,
+          "forks": 6,
+          "author": "ThamJiaHe",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/82508224?v=4",
+          "description": "Comprehensive guide for writing professional Claude Standard prompts with MCP, Skills, and Superpowers integration. Official Anthropic best practices for Claude 4.x models.",
+          "updatedAt": "2026-02-05T09:40:59Z"
+        }
       },
       {
         "name": "awesome-claude-skills (mejba13)",
@@ -2486,7 +3871,17 @@
           "en": "Good source of skill collections.",
           "zh": "好的技能集合源。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 4,
+        "author": "mejba13",
+        "github": {
+          "stars": 4,
+          "forks": 0,
+          "author": "mejba13",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/11705693?v=4",
+          "description": "A comprehensive, well-documented collection of Claude skills covering development, business automation, content creation, and data analysis. Each skill includes usage examples, configuration guides, and best practices.",
+          "updatedAt": "2025-12-26T05:11:23Z"
+        }
       },
       {
         "name": "awesome-claude-skills (ponderous)",
@@ -2499,7 +3894,17 @@
           "en": "Good source of skill collections.",
           "zh": "好的技能集合源。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 5,
+        "author": "ponderous-dustiness314",
+        "github": {
+          "stars": 5,
+          "forks": 0,
+          "author": "ponderous-dustiness314",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/229837292?v=4",
+          "description": "📚 Discover essential Claude skills for tasks like document editing, data analysis, and project management to enhance productivity and collaboration.",
+          "updatedAt": "2026-02-12T09:38:46Z"
+        }
       },
       {
         "name": "everything-claude-code",
@@ -2512,7 +3917,17 @@
           "en": "Advanced CS students wanting to thoroughly customize their Claude dev environment.",
           "zh": "想要彻底定制自己 Claude 开发环境的高级计算机学生。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 44833,
+        "author": "affaan-m",
+        "github": {
+          "stars": 44833,
+          "forks": 5556,
+          "author": "affaan-m",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/124439313?v=4",
+          "description": "Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs. Battle-tested configs from an Anthropic hackathon winner.",
+          "updatedAt": "2026-02-12T08:03:20Z"
+        }
       },
       {
         "name": "skill-description-optimizer",
@@ -2525,7 +3940,17 @@
           "en": "Used when developing your own Claude skills.",
           "zh": "开发自己的 Claude 技能时使用。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 4,
+        "author": "LZMW",
+        "github": {
+          "stars": 4,
+          "forks": 0,
+          "author": "LZMW",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/64879085?v=4",
+          "description": "Meta-skill for optimizing Claude Skill descriptions using SDS standard and data-driven analysis",
+          "updatedAt": "2026-01-15T02:04:21Z"
+        }
       },
       {
         "name": "Skill Seekers",
@@ -2538,7 +3963,17 @@
           "en": "Mastering a new framework by converting documentation into an AI tutor.",
           "zh": "通过将文档转换为 AI 导师来掌握新框架。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "stars": 9454,
+        "author": "yusufkaraaslan",
+        "github": {
+          "stars": 9454,
+          "forks": 950,
+          "author": "yusufkaraaslan",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/11597362?v=4",
+          "description": "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection",
+          "updatedAt": "2026-02-08T20:24:52Z"
+        }
       },
       {
         "name": "Anthropic MCP Builder",
@@ -2551,7 +3986,8 @@
           "en": "Developing custom tools for Claude, learning MCP architecture.",
           "zh": "为 Claude 开发自定义工具，学习 MCP 架构。"
         },
-        "type": "Skill"
+        "type": "Skill",
+        "author": "anthropics"
       }
     ]
   },
@@ -2653,7 +4089,17 @@
           "en": "Educational psychology, student counseling, pedagogical support.",
           "zh": "教育心理学、学生咨询、教学支持。"
         },
-        "type": "LLM"
+        "type": "LLM",
+        "stars": 911,
+        "author": "ECNU-ICALK",
+        "github": {
+          "stars": 911,
+          "forks": 105,
+          "author": "ECNU-ICALK",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/153974232?v=4",
+          "description": "An open-source educational chat model from ICALK, East China Normal University. 开源中英教育对话大模型。(通用基座模型，GPU部署，数据清理) 致敬: LLaMA, MOSS, BELLE, Ziya, vLLM",
+          "updatedAt": "2025-07-18T13:22:39Z"
+        }
       },
       {
         "name": "ChatGLM-Edu (Zhipu)",
@@ -2692,7 +4138,17 @@
           "en": "Complex math problems, competition math, automated reasoning.",
           "zh": "复杂数学问题、竞赛数学、自动推理。"
         },
-        "type": "LLM"
+        "type": "LLM",
+        "stars": 3155,
+        "author": "deepseek-ai",
+        "github": {
+          "stars": 3155,
+          "forks": 567,
+          "author": "deepseek-ai",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/148330874?v=4",
+          "description": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+          "updatedAt": "2024-04-15T07:55:37Z"
+        }
       },
       {
         "name": "InternLM-Math",
@@ -2705,7 +4161,17 @@
           "en": "Bilingual math tutoring, chain-of-thought reasoners.",
           "zh": "双语数学辅导、思维链推理。"
         },
-        "type": "LLM"
+        "type": "LLM",
+        "stars": 538,
+        "author": "InternLM",
+        "github": {
+          "stars": 538,
+          "forks": 36,
+          "author": "InternLM",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/135356492?v=4",
+          "description": "State-of-the-art bilingual open-sourced Math reasoning LLMs.",
+          "updatedAt": "2024-10-22T16:18:00Z"
+        }
       },
       {
         "name": "MetaMath",
@@ -2718,7 +4184,17 @@
           "en": "Generating math training data, fine-tuning educational models.",
           "zh": "生成数学训练数据、微调教育模型。"
         },
-        "type": "LLM"
+        "type": "LLM",
+        "stars": 454,
+        "author": "meta-math",
+        "github": {
+          "stars": 454,
+          "forks": 41,
+          "author": "meta-math",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/145280717?v=4",
+          "description": "MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models",
+          "updatedAt": "2024-02-01T15:29:09Z"
+        }
       }
     ]
   },
@@ -2743,7 +4219,17 @@
           "en": "Building custom RAG tutors, textbook analysis pipelines.",
           "zh": "构建自定义 RAG 导师、教科书分析流程。"
         },
-        "type": "Framework"
+        "type": "Framework",
+        "stars": 126545,
+        "author": "langchain-ai",
+        "github": {
+          "stars": 126545,
+          "forks": 20817,
+          "author": "langchain-ai",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/126733545?v=4",
+          "description": "🦜🔗 The platform for reliable agents.",
+          "updatedAt": "2026-02-11T21:36:56Z"
+        }
       },
       {
         "name": "CrewAI",
@@ -2756,7 +4242,17 @@
           "en": "Classroom simulation, multi-perspective debate, lesson planning teams.",
           "zh": "课堂模拟、多角度辩论、教案设计团队。"
         },
-        "type": "Framework"
+        "type": "Framework",
+        "stars": 44026,
+        "author": "crewAIInc",
+        "github": {
+          "stars": 44026,
+          "forks": 5898,
+          "author": "crewAIInc",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/170677839?v=4",
+          "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
+          "updatedAt": "2026-02-12T05:44:54Z"
+        }
       },
       {
         "name": "AI-Tutor",
@@ -2769,7 +4265,17 @@
           "en": "Science tutoring, personalized learning paths.",
           "zh": "科学辅导、个性化学习路径。"
         },
-        "type": "Agent"
+        "type": "Agent",
+        "stars": 9,
+        "author": "Hawary00",
+        "github": {
+          "stars": 9,
+          "forks": 0,
+          "author": "Hawary00",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/127087397?v=4",
+          "description": "AI-Tutor is a modular educational assistant that leverages advanced LLMs and agentic AI workflows to help students learn science and technology. It integrates LangChain for LLM orchestration, LangGraph for agent execution, LangSmith for monitoring and analytics, FAISS for vector-based retrieval, and Gradio for a user-friendly web interface. Student",
+          "updatedAt": "2025-11-12T13:38:32Z"
+        }
       },
       {
         "name": "Multi-Agent Study Assistant",
@@ -2782,7 +4288,17 @@
           "en": "Comprehensive study aid, exam preparation.",
           "zh": "综合学习辅助、备考。"
         },
-        "type": "Agent"
+        "type": "Agent",
+        "stars": 5,
+        "author": "A-R007",
+        "github": {
+          "stars": 5,
+          "forks": 1,
+          "author": "A-R007",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/120234226?v=4",
+          "description": "AI-powered learning platform with 6 specialized agents for personalized education. Features adaptive roadmaps, quizzes, tutoring, RAG document Q&A, and learning style adaptation. Built with Phidata, Streamlit, and LangChain.",
+          "updatedAt": "2025-11-04T11:55:19Z"
+        }
       },
       {
         "name": "Evaluate Crew",
@@ -2795,7 +4311,17 @@
           "en": "Automated grading, student assessment.",
           "zh": "自动评分、学生评估。"
         },
-        "type": "Agent"
+        "type": "Agent",
+        "stars": 0,
+        "author": "poojithM",
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "author": "poojithM",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/94035082?v=4",
+          "description": "Evaluate Crew is a sophisticated multi-agent system designed to facilitate education through quiz generation, performance analysis, and quality assurance. Built on the CrewAI platform",
+          "updatedAt": "2025-02-20T00:18:48Z"
+        }
       },
       {
         "name": "Multi-Agent RAG (Medical)",
@@ -2808,7 +4334,17 @@
           "en": "Medical student training, complex document retrieval.",
           "zh": "医学生培训、复杂文档检索。"
         },
-        "type": "Agent"
+        "type": "Agent",
+        "stars": 12,
+        "author": "SJ9VRF",
+        "github": {
+          "stars": 12,
+          "forks": 0,
+          "author": "SJ9VRF",
+          "authorAvatar": "https://avatars.githubusercontent.com/u/22208959?v=4",
+          "description": "Multi-agent RAG system using AutoGen for document-focused tasks in medical education, leveraging LangChain, ChromaDB, and OpenAI embeddings.",
+          "updatedAt": "2024-09-09T05:43:38Z"
+        }
       }
     ]
   }
