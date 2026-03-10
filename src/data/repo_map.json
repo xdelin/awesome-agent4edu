@@ -89,7 +89,7 @@
   "Kubernetes CLI": "kubernetes_cli",
   "Git MCP": "git_mcp",
   "AI2-THOR": "ai2-thor",
-  "ThreeDWorld (TDW)": "threedworld_tdw",
+  "ThreeDWorld (TDW)": "threedworld_(tdw)",
   "UnrealZoo": "unrealzoo",
   "Anthropic XLSX Skill": "anthropic_xlsx_skill",
   "BrowserBase MCP": "browserbase_mcp",
@@ -159,13 +159,13 @@
   "Obsidian REST MCP": "obsidian_rest_mcp",
   "Google Drive MCP": "google_drive_mcp",
   "OpenZIM MCP": "openzim_mcp",
-  "Rember (Flashcards)": "rember_flashcards",
+  "Rember (Flashcards)": "rember_(flashcards)",
   "Apple Notes MCP": "apple_notes_mcp",
   "Exa AI Search": "exa_ai_search",
   "Brave Search": "brave_search",
   "Slack MCP": "slack_mcp",
-  "Time Tracking (Toggl)": "time_tracking_toggl",
-  "Filesystem (Go)": "filesystem_go",
+  "Time Tracking (Toggl)": "time_tracking_(toggl)",
+  "Filesystem (Go)": "filesystem_(go)",
   "Discord MCP": "discord_mcp",
   "Linear MCP": "linear_mcp",
   "Todoist MCP": "todoist_mcp",
@@ -188,5 +188,5 @@
   "AI-Tutor": "ai-tutor",
   "Multi-Agent Study Assistant": "multi-agent_study_assistant",
   "Evaluate Crew": "evaluate_crew",
-  "Multi-Agent RAG (Medical)": "multi-agent_rag_medical"
+  "Multi-Agent RAG (Medical)": "multi-agent_rag_(medical)"
 }
