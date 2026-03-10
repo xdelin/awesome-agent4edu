@@ -1,7 +1,7 @@
 =head1 LICENSE
 
 Copyright [1999-2015] Wellcome Trust Sanger Institute and the EMBL-European Bioinformatics Institute 
-Copyright [2016-2025] EMBL-European Bioinformatics Institute
+Copyright [2016-2026] EMBL-European Bioinformatics Institute
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -516,6 +516,7 @@ sub features_as_hash {
         $features->{is_canonical} = $obj->is_canonical;
         $features->{length} = $obj->length;
         $features->{gencode_primary} = $obj->gencode_primary; # boolean value for having GENCODE Primary attrib
+	$features->{ens_canon_extended} = $obj->ens_canon_extended;
       }
       if (lc($object_type) eq 'gene') {
         $features->{canonical_transcript} = $obj->canonical_transcript->stable_id.".".$obj->canonical_transcript->version;

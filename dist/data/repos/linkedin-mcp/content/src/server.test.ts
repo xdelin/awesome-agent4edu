@@ -29,7 +29,7 @@ describe('LinkedInMCPServer', () => {
       } as any);
 
       const config = { ...validConfig, linkedInAccessToken: undefined };
-      expect(() => new LinkedInMCPServer(config)).toThrow('LinkedIn access token is required');
+      expect(() => new LinkedInMCPServer(config)).toThrow('LinkedIn access token or token provider is required');
     });
 
     it('should create server with LinkedIn client', () => {
@@ -43,7 +43,7 @@ describe('LinkedInMCPServer', () => {
       } as any);
 
       const server = new LinkedInMCPServer(validConfig);
-      expect(LinkedInClient).toHaveBeenCalledWith('test-token', expect.anything());
+      expect(LinkedInClient).toHaveBeenCalledWith(expect.anything(), expect.anything());
     });
 
     it('should register all 18 tools', () => {

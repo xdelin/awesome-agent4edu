@@ -1,4 +1,4 @@
-# Claude Educational AI Skills
+# Educational AI Skills
 
 <p align="center">
   <a href="https://chatgpt3a01.github.io/claude-educational-ai-skills/">
@@ -15,7 +15,6 @@
 
 ![Skills](https://img.shields.io/badge/Skills-20-blue)
 ![Categories](https://img.shields.io/badge/Categories-7-green)
-![Claude](https://img.shields.io/badge/Claude-Opus%204.5%20%7C%20Sonnet%204-blueviolet)
 ![GPT](https://img.shields.io/badge/GPT-5.1%20%7C%205.2-74aa9c)
 ![Gemini](https://img.shields.io/badge/Gemini-2.5%20%7C%203.0-4285F4)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -24,7 +23,7 @@
 
 ## 簡介
 
-這是一個專為**數位學習與教育研究**領域打造的 Claude Skills 集合，涵蓋 AI 教育、差異化教學、偏鄉教育、學習分析、ICT 融入教學、數學科技教育等主題，專注於教育科技領域的研究與實務應用。
+這是一個專為**數位學習與教育研究**領域打造的 AI Skills 集合，涵蓋 AI 教育、差異化教學、偏鄉教育、學習分析、ICT 融入教學、數學科技教育等主題，專注於教育科技領域的研究與實務應用。
 
 ---
 
@@ -32,7 +31,7 @@
 
 - **20 個專業技能** - 涵蓋教學設計、學習分析、偏鄉教育、研究方法等 7 大領域
 - **完整提示詞範本** - 每個技能都附有可直接使用的提示詞模板
-- **多 AI 模型支援** - 相容 Claude、GPT、Gemini 等主流 AI
+- **多 AI 模型支援** - 相容 GPT、Gemini 等主流 AI
 - **偏鄉友善設計** - 特別考量資源受限環境的應用場景
 - **理論與實務並重** - 整合 SAMR、TPACK 等教學理論框架
 
@@ -68,7 +67,7 @@
 | 技能 | 說明 | 檔案 |
 |------|------|------|
 | AI 教學工具全覽 | 各類 AI 工具分類與選用指南 | [ai-teaching-tools.md](skills/AI工具應用/ai-teaching-tools.md) |
-| 生成式 AI 教育應用 | Claude/GPT/Gemini 教育應用 | [generative-ai-education.md](skills/AI工具應用/generative-ai-education.md) |
+| 生成式 AI 教育應用 | GPT/Gemini 教育應用 | [generative-ai-education.md](skills/AI工具應用/generative-ai-education.md) |
 
 ### 💻 ICT 科技融入 (ICT Integration)
 | 技能 | 說明 | 檔案 |
@@ -104,28 +103,7 @@ cd claude-educational-ai-skills
 # 直接閱讀 skills/ 資料夾中的 Markdown 檔案
 ```
 
-### 方法二：作為 Claude Code 插件使用
-
-1. **確認 Claude Code 已安裝**
-   ```bash
-   # 安裝 Claude Code (如果尚未安裝)
-   npm install -g @anthropic-ai/claude-code
-   ```
-
-2. **複製專案到本機**
-   ```bash
-   git clone https://github.com/ChatGPT3a01/claude-educational-ai-skills.git
-   ```
-
-3. **在專案目錄中啟動 Claude Code**
-   ```bash
-   cd claude-educational-ai-skills
-   claude
-   ```
-
-4. **Claude 會自動載入 `.claude-plugin/plugin.yaml` 中定義的技能**
-
-### 方法三：部署到 GitHub Pages
+### 方法二：部署到 GitHub Pages
 
 1. **Fork 此專案**
 2. **前往 Settings → Pages**
@@ -133,7 +111,7 @@ cd claude-educational-ai-skills
 4. **儲存後等待部署完成**
 5. **網址格式為：`https://ChatGPT3a01.github.io/claude-educational-ai-skills/`**
 
-### 方法四：整合到現有專案
+### 方法三：整合到現有專案
 
 ```bash
 # 將 skills 資料夾複製到您的專案中
@@ -156,7 +134,7 @@ git submodule add https://github.com/ChatGPT3a01/claude-educational-ai-skills.gi
        ↓
 3. 根據需求修改提示詞中的 [佔位符]
        ↓
-4. 貼到 Claude/GPT/Gemini 中使用
+4. 貼到 GPT/Gemini 中使用
        ↓
 5. 根據回應結果調整提示詞
 ```
@@ -262,9 +240,7 @@ git submodule add https://github.com/ChatGPT3a01/claude-educational-ai-skills.gi
 ## 專案結構
 
 ```
-claude-educational-ai-skills/
-├── .claude-plugin/
-│   └── plugin.yaml          # Claude 插件設定檔
+educational-ai-skills/
 ├── skills/
 │   ├── 教學設計/
 │   │   ├── adaptive-learning-design.md
@@ -298,7 +274,6 @@ claude-educational-ai-skills/
 
 | AI 服務 | 支援模型 | 建議用途 |
 |---------|----------|----------|
-| **Claude** | Opus 4.5, Sonnet 4 | 複雜教案設計、研究規劃 |
 | **GPT** | GPT-4o, GPT-4.1 | 一般教學設計、內容生成 |
 | **Gemini** | 2.5/3.0 Flash, Pro | 快速回應、多模態應用 |
 
@@ -328,7 +303,6 @@ claude-educational-ai-skills/
 - 📈 [Desmos](https://www.desmos.com/)
 
 ### AI 工具
-- 🤖 [Claude](https://claude.ai/)
 - 💬 [ChatGPT](https://chat.openai.com/)
 - ✨ [Google Gemini](https://gemini.google.com/)
 
@@ -406,5 +380,5 @@ copies or substantial portions of the Software.
 ---
 
 <p align="center">
-  <sub>Built with Claude Code | 讓 AI 教育不再只屬於資源豐富的都會學校，而是能在偏鄉生根發芽</sub>
+  <sub>讓 AI 教育不再只屬於資源豐富的都會學校，而是能在偏鄉生根發芽</sub>
 </p>

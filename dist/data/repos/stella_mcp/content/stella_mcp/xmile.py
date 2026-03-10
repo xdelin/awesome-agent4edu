@@ -8,6 +8,13 @@ from typing import Optional
 import uuid
 from html import escape
 
+from stella_mcp.layout import (
+    BoundingBox,
+    segments_intersect,
+    segment_intersects_box,
+    force_directed_layout,
+)
+
 
 # XML namespaces
 XMILE_NS = "http://docs.oasis-open.org/xmile/ns/XMILE/v1.0"
@@ -32,74 +39,6 @@ STELLA_FUNCTIONS = {
 # Layout constants
 AUX_RADIUS = 18  # Default aux circle radius in pixels
 
-
-# =============================================================================
-# Geometry Primitives for Layout Collision/Crossing Detection
-# =============================================================================
-
-@dataclass
-class BoundingBox:
-    """Axis-aligned bounding box for collision detection."""
-    x: float  # center x
-    y: float  # center y
-    width: float
-    height: float
-
-    def intersects(self, other: "BoundingBox", margin: float = 0) -> bool:
-        """Check if two boxes overlap (with optional margin)."""
-        return (abs(self.x - other.x) < (self.width + other.width) / 2 + margin and
-                abs(self.y - other.y) < (self.height + other.height) / 2 + margin)
-
-
-def _ccw(a: tuple[float, float], b: tuple[float, float], c: tuple[float, float]) -> bool:
-    """Check if three points are in counter-clockwise order."""
-    return (c[1] - a[1]) * (b[0] - a[0]) > (b[1] - a[1]) * (c[0] - a[0])
-
-
-def segments_intersect(
-    p1: tuple[float, float], p2: tuple[float, float],
-    p3: tuple[float, float], p4: tuple[float, float]
-) -> bool:
-    """Check if line segment p1-p2 intersects segment p3-p4.
-
-    Uses the counter-clockwise orientation test for robust intersection detection.
-    """
-    return (_ccw(p1, p3, p4) != _ccw(p2, p3, p4) and
-            _ccw(p1, p2, p3) != _ccw(p1, p2, p4))
-
-
-def segment_intersects_box(
-    p1: tuple[float, float], p2: tuple[float, float],
-    box: BoundingBox
-) -> bool:
-    """Check if line segment p1-p2 intersects a bounding box.
-
-    Tests intersection with all four edges of the box.
-    """
-    # Box corners
-    left = box.x - box.width / 2
-    right = box.x + box.width / 2
-    top = box.y - box.height / 2
-    bottom = box.y + box.height / 2
-
-    # Check if segment is entirely inside box
-    if (left <= p1[0] <= right and top <= p1[1] <= bottom and
-        left <= p2[0] <= right and top <= p2[1] <= bottom):
-        return True
-
-    # Check intersection with each edge
-    edges = [
-        ((left, top), (right, top)),      # top edge
-        ((right, top), (right, bottom)),  # right edge
-        ((right, bottom), (left, bottom)),  # bottom edge
-        ((left, bottom), (left, top)),    # left edge
-    ]
-
-    for edge_p1, edge_p2 in edges:
-        if segments_intersect(p1, p2, edge_p1, edge_p2):
-            return True
-
-    return False
 
 
 @dataclass
@@ -307,121 +246,84 @@ class StellaModel:
 
         return sorted(subsystems, key=len, reverse=True)
 
-    def _find_stock_chains(self, subsystem: set[str]) -> list[list[str]]:
-        """Find linear chains of stocks connected by flows within a subsystem.
-
-        Returns list of chains, where each chain is ordered by flow direction.
-        Stocks are ordered by incoming flow count (true sources first).
-        """
-        stocks_in_subsystem = [s for s in subsystem if s in self.stocks]
-        if not stocks_in_subsystem:
-            return []
-
-        # Build directed stock adjacency from flows
-        stock_adj: dict[str, list[str]] = {s: [] for s in stocks_in_subsystem}
-        incoming_count: dict[str, int] = {s: 0 for s in stocks_in_subsystem}
-
-        for flow in self.flows.values():
-            if (flow.from_stock in stocks_in_subsystem
-                    and flow.to_stock in stocks_in_subsystem):
-                if flow.to_stock not in stock_adj[flow.from_stock]:
-                    stock_adj[flow.from_stock].append(flow.to_stock)
-                    incoming_count[flow.to_stock] += 1
-
-        # Find true sources: sort by incoming_count ASC, then alphabetically for determinism
-        # This ensures stocks with 0 incoming flows come first (true sources)
-        start_candidates = sorted(
-            stocks_in_subsystem,
-            key=lambda s: (incoming_count[s], s)
-        )
-
-        # Trace chains starting from true sources
-        chains: list[list[str]] = []
-        visited: set[str] = set()
-
-        for start in start_candidates:
-            if start in visited:
-                continue
-
-            chain = []
-            current: Optional[str] = start
-
-            while current and current not in visited:
-                visited.add(current)
-                chain.append(current)
-                # Follow flow direction to next stock (sorted for determinism)
-                next_stocks = sorted(stock_adj.get(current, []))
-                unvisited_next = [s for s in next_stocks if s not in visited]
-                current = unvisited_next[0] if unvisited_next else None
-
-            if chain:
-                chains.append(chain)
-
-        return chains
-
-    def _find_aux_target_position(
-        self,
-        aux_name: str,
-        outgoing: dict[str, set[str]]
-    ) -> Optional[tuple[float, float]]:
-        """Find the position where an aux should be placed (near its targets).
-
-        Returns average position of all targets, or None if no targets have positions.
-        """
-        target_positions: list[tuple[float, float]] = []
-
-        # Find what this aux connects to via connectors
-        for conn in self.connectors:
-            if conn.from_var == aux_name:
-                target = conn.to_var
-                if target in self.stocks:
-                    stock = self.stocks[target]
-                    if stock.x is not None and stock.y is not None:
-                        target_positions.append((stock.x, stock.y))
-                elif target in self.flows:
-                    flow = self.flows[target]
-                    if flow.x is not None and flow.y is not None:
-                        target_positions.append((flow.x, flow.y))
-                elif target in self.auxs:
-                    aux = self.auxs[target]
-                    if aux.x is not None and aux.y is not None:
-                        target_positions.append((aux.x, aux.y))
-
-        if target_positions:
-            avg_x = sum(p[0] for p in target_positions) / len(target_positions)
-            avg_y = sum(p[1] for p in target_positions) / len(target_positions)
-            return (avg_x, avg_y)
-        return None
-
     def _position_subsystem(
         self,
         subsystem: set[str],
         outgoing: dict[str, set[str]],
         incoming: dict[str, set[str]],
-        start_x: float,
-        stock_y: float,
-        aux_y: float,
-        stock_spacing: float,
-        aux_spacing: float
     ) -> tuple[float, float, float, float]:
-        """Position all elements in a subsystem. Returns bounding box (min_x, min_y, max_x, max_y)."""
+        """Position all elements in a subsystem using force-directed layout.
 
-        # Find stock chains
-        chains = self._find_stock_chains(subsystem)
+        Returns bounding box (min_x, min_y, max_x, max_y).
+        """
+        # Collect nodes that participate in FR (stocks + auxs, not flows)
+        nodes: list[str] = sorted(
+            name for name in subsystem if name in self.stocks or name in self.auxs
+        )
 
-        # Position stocks in chains horizontally
-        x = start_x
-        for chain in chains:
-            for stock_name in chain:
-                stock = self.stocks[stock_name]
-                if stock.x is None or stock.y is None:
-                    stock.x = x
-                    stock.y = stock_y
-                x += stock_spacing
+        if not nodes:
+            return (0, 0, 0, 0)
 
-        # Position flows between their stocks
-        flows_in_subsystem = [f for f in self.flows if f in subsystem]
-        for flow_name in flows_in_subsystem:
+        # Collect fixed (user-specified) positions
+        fixed_positions: dict[str, tuple[float, float]] = {}
+        for name in nodes:
+            if name in self.stocks:
+                s = self.stocks[name]
+                if s.x is not None and s.y is not None:
+                    fixed_positions[name] = (s.x, s.y)
+            elif name in self.auxs:
+                a = self.auxs[name]
+                if a.x is not None and a.y is not None:
+                    fixed_positions[name] = (a.x, a.y)
+
+        # Build edges with weights
+        FLOW_WEIGHT = 2.0
+        CONNECTOR_WEIGHT = 1.5
+
+        edges: list[tuple[str, str, float]] = []
+
+        # Flow-stock edges (strong attraction)
+        for flow_name, flow in self.flows.items():
+            if flow_name not in subsystem:
+                continue
+            if flow.from_stock and flow.from_stock in self.stocks and flow.from_stock in subsystem:
+                if flow.to_stock and flow.to_stock in self.stocks and flow.to_stock in subsystem:
+                    # Direct stock-to-stock edge via flow
+                    edges.append((flow.from_stock, flow.to_stock, FLOW_WEIGHT))
+
+        # Connector edges (weaker attraction)
+        for conn in self.connectors:
+            if conn.from_var in subsystem and conn.to_var in subsystem:
+                src = conn.from_var
+                tgt = conn.to_var
+                # If target is a flow, redirect edge to the flow's stocks
+                if tgt in self.flows:
+                    flow = self.flows[tgt]
+                    if flow.from_stock and flow.from_stock in subsystem and src in nodes:
+                        edges.append((src, flow.from_stock, CONNECTOR_WEIGHT))
+                    if flow.to_stock and flow.to_stock in subsystem and src in nodes:
+                        edges.append((src, flow.to_stock, CONNECTOR_WEIGHT))
+                elif src in nodes and tgt in nodes:
+                    edges.append((src, tgt, CONNECTOR_WEIGHT))
+
+        # Run force-directed layout
+        positions = force_directed_layout(nodes, edges, fixed_positions)
+
+        # Apply positions to stocks and auxs
+        for name, (x, y) in positions.items():
+            if name in fixed_positions:
+                continue
+            if name in self.stocks:
+                self.stocks[name].x = x
+                self.stocks[name].y = y
+            elif name in self.auxs:
+                self.auxs[name].x = x
+                self.auxs[name].y = y
+
+        # Position flows at midpoint between their stocks
+        for flow_name in subsystem:
+            if flow_name not in self.flows:
+                continue
             flow = self.flows[flow_name]
             if flow.x is not None and flow.y is not None:
                 continue
@@ -430,113 +332,18 @@ class StellaModel:
             to_stock = self.stocks.get(flow.to_stock) if flow.to_stock else None
 
             if from_stock and to_stock:
-                from_x = from_stock.x if from_stock.x is not None else start_x
-                to_x = to_stock.x if to_stock.x is not None else start_x
-                from_y = from_stock.y if from_stock.y is not None else stock_y
-                to_y = to_stock.y if to_stock.y is not None else stock_y
-                flow.x = (from_x + to_x) / 2
-                flow.y = (from_y + to_y) / 2
+                fx = from_stock.x if from_stock.x is not None else 0
+                fy = from_stock.y if from_stock.y is not None else 0
+                tx = to_stock.x if to_stock.x is not None else 0
+                ty = to_stock.y if to_stock.y is not None else 0
+                flow.x = (fx + tx) / 2
+                flow.y = (fy + ty) / 2
             elif from_stock:
-                flow.x = (from_stock.x or start_x) + 90
-                flow.y = from_stock.y or stock_y
+                flow.x = (from_stock.x or 0) + 90
+                flow.y = from_stock.y or 0
             elif to_stock:
-                flow.x = (to_stock.x or start_x) - 90
-                flow.y = to_stock.y or stock_y
-
-        # Position auxs near their targets with horizontal spread for same-target overlap
-        auxs_in_subsystem = [a for a in sorted(subsystem) if a in self.auxs]
-        positioned_auxs: set[str] = set()
-        AUX_SPREAD_SPACING = 70  # pixels between auxs targeting the same element
-
-        # First pass: group auxs by their primary connector target
-        target_to_auxs: dict[str, list[str]] = {}
-        for aux_name in auxs_in_subsystem:
-            aux = self.auxs[aux_name]
-            if aux.x is not None and aux.y is not None:
-                positioned_auxs.add(aux_name)
-                continue
-
-            # Find targets via connectors
-            targets = [c.to_var for c in self.connectors if c.from_var == aux_name]
-            if targets:
-                # Use first target (sorted for determinism)
-                primary_target = sorted(targets)[0]
-                if primary_target not in target_to_auxs:
-                    target_to_auxs[primary_target] = []
-                target_to_auxs[primary_target].append(aux_name)
-
-        # Position each group with horizontal spread centered on target
-        for target, aux_names in target_to_auxs.items():
-            # Get target position
-            target_x: Optional[float] = None
-            target_y: Optional[float] = None
-            if target in self.stocks:
-                target_x = self.stocks[target].x
-                target_y = self.stocks[target].y
-            elif target in self.flows:
-                target_x = self.flows[target].x
-                target_y = self.flows[target].y
-            elif target in self.auxs:
-                target_x = self.auxs[target].x
-                target_y = self.auxs[target].y
-
-            if target_x is None:
-                continue
-
-            # Sort aux names for determinism
-            aux_names = sorted(aux_names)
-            n = len(aux_names)
-
-            # Center the group horizontally above target
-            # Offsets: for n=3 -> [-70, 0, +70], for n=2 -> [-35, +35]
-            start_offset = -((n - 1) * AUX_SPREAD_SPACING) / 2
-
-            for i, aux_name in enumerate(aux_names):
-                aux = self.auxs[aux_name]
-                aux.x = target_x + start_offset + (i * AUX_SPREAD_SPACING)
-                # Position above flows (80px), at aux_y for stocks
-                if target in self.flows and target_y is not None:
-                    aux.y = target_y - 80
-                else:
-                    aux.y = aux_y
-                positioned_auxs.add(aux_name)
-
-        # Second pass: position remaining auxs (those without connector targets)
-        # These may be referenced in flow equations
-        aux_x_offset = 0
-        for aux_name in auxs_in_subsystem:
-            if aux_name in positioned_auxs:
-                continue
-
-            aux = self.auxs[aux_name]
-            if aux.x is not None and aux.y is not None:
-                continue
-
-            # Check if this aux is referenced by any flow (it's a parameter for that flow)
-            for flow_name, flow in self.flows.items():
-                if flow_name not in subsystem:
-                    continue
-                flow_refs = self._extract_variable_refs(flow.equation)
-                if aux_name in flow_refs:
-                    # Position near the flow
-                    if flow.x is not None:
-                        aux.x = flow.x + aux_x_offset
-                        aux.y = aux_y
-                        aux_x_offset += aux_spacing
-                        positioned_auxs.add(aux_name)
-                        break
-
-        # Third pass: any remaining auxs go in a row at start_x
-        remaining_x = start_x
-        for aux_name in auxs_in_subsystem:
-            if aux_name in positioned_auxs:
-                continue
-
-            aux = self.auxs[aux_name]
-            if aux.x is None or aux.y is None:
-                aux.x = remaining_x
-                aux.y = aux_y - 60  # Put orphan auxs above the main aux row
-                remaining_x += aux_spacing
+                flow.x = (to_stock.x or 0) - 90
+                flow.y = to_stock.y or 0
 
         # Calculate bounding box
         all_x: list[float] = []
@@ -555,7 +362,7 @@ class StellaModel:
 
         if all_x and all_y:
             return (min(all_x), min(all_y), max(all_x), max(all_y))
-        return (start_x, aux_y, start_x + stock_spacing, stock_y)
+        return (0, 0, 100, 100)
 
     def _arrange_subsystems(
         self,
@@ -713,50 +520,21 @@ class StellaModel:
             stock.width = width
             stock.height = height
 
-    def _calculate_stock_spacing(self) -> int:
-        """Calculate appropriate spacing between stocks based on their sizes.
-
-        Returns the minimum spacing needed to prevent overlap and allow
-        room for flows, valves, and labels.
-        """
-        if not self.stocks:
-            return 200  # Default
-
-        # Find the maximum stock width
-        max_width = max(s.width for s in self.stocks.values())
-
-        # Spacing = max stock width + gap for flows/valves/labels
-        # Gap should be at least 100px for flow valve + labels
-        MIN_GAP = 100
-
-        return max_width + MIN_GAP
-
     def _auto_layout(self):
-        """Auto-arrange visual positions using graph-based hierarchical layout.
+        """Auto-arrange visual positions using force-directed layout.
 
         Uses connector relationships to position elements:
         1. Calculates stock sizes based on connectivity
-        2. Calculates dynamic spacing based on stock sizes
-        3. Builds dependency graph from connectors
-        4. Detects subsystems (connected components)
-        5. Positions stocks in chains following flow direction
-        6. Positions auxs near their connector targets
-        7. Separates independent subsystems visually
+        2. Builds dependency graph from connectors
+        3. Detects subsystems (connected components)
+        4. Positions elements via Fruchterman-Reingold force-directed layout
+        5. Separates independent subsystems visually
 
-        Falls back to simple row layout if no connectors exist.
         Always recalculates flow.points to ensure flows connect to stocks correctly.
         """
-        # Calculate stock sizes first (affects spacing and flow attachment)
+        # Calculate stock sizes first (affects flow attachment)
         self._calculate_stock_sizes()
 
-        # Calculate dynamic spacing based on stock sizes
-        STOCK_SPACING = self._calculate_stock_spacing()
-
-        # Layout constants
-        AUX_SPACING = 80
-        STOCK_Y = 300
-        AUX_Y = 150
-        START_X = 200
         SUBSYSTEM_GAP = 250
 
         # Build dependency graph from connectors
@@ -769,10 +547,7 @@ class StellaModel:
         subsystem_bounds: list[tuple[float, float, float, float]] = []
 
         for subsystem in subsystems:
-            bounds = self._position_subsystem(
-                subsystem, outgoing, incoming,
-                START_X, STOCK_Y, AUX_Y, STOCK_SPACING, AUX_SPACING
-            )
+            bounds = self._position_subsystem(subsystem, outgoing, incoming)
             subsystem_bounds.append(bounds)
 
         # Arrange subsystems relative to each other (largest centered, others offset)
@@ -780,13 +555,10 @@ class StellaModel:
             self._arrange_subsystems(subsystems, subsystem_bounds, SUBSYSTEM_GAP)
 
         # Always recalculate flow points to connect stocks at their actual positions
-        self._recalculate_flow_points(START_X, STOCK_Y)
+        self._recalculate_flow_points()
 
         # Calculate connector angles based on final positions
         self._calculate_connector_angles()
-
-        # Resolve any layout violations (collisions, crossings)
-        self._resolve_layout_violations()
 
     def _calculate_flow_offset(self, index: int, total: int) -> float:
         """Calculate vertical offset for flow attachment point.
@@ -806,14 +578,45 @@ class StellaModel:
         # Center the group: e.g., 3 flows -> offsets of -20, 0, +20
         return (index - (total - 1) / 2) * 20.0
 
-    def _recalculate_flow_points(self, start_x: float, stock_y: float):
+    @staticmethod
+    def _stock_attachment_point(
+        stock_x: float, stock_y: float,
+        half_w: float, half_h: float,
+        target_x: float, target_y: float,
+    ) -> tuple[float, float]:
+        """Find the point on a stock's edge closest to a target point.
+
+        Exits from the edge that faces the target (direction-aware).
+        """
+        dx = target_x - stock_x
+        dy = target_y - stock_y
+
+        if abs(dx) < 0.001 and abs(dy) < 0.001:
+            return (stock_x + half_w, stock_y)  # default: right edge
+
+        # Determine dominant direction
+        # Compare aspect-ratio-adjusted deltas to pick edge
+        if abs(dx) / max(half_w, 0.001) >= abs(dy) / max(half_h, 0.001):
+            # Horizontal dominant
+            if dx >= 0:
+                return (stock_x + half_w, stock_y)  # right edge
+            else:
+                return (stock_x - half_w, stock_y)  # left edge
+        else:
+            # Vertical dominant
+            if dy >= 0:
+                return (stock_x, stock_y + half_h)  # bottom edge
+            else:
+                return (stock_x, stock_y - half_h)  # top edge
+
+    def _recalculate_flow_points(self):
         """Recalculate flow.points to connect stocks at their actual positions.
 
-        Uses orthogonal (L-shaped/U-shaped) routing for multiple flows from the
-        same stock to prevent visual overlap. Routes flows in the direction of
-        their actual destination (up for destinations above, down for below).
+        Direction-aware: exits/enters from the stock edge closest to the
+        destination, supporting stocks at arbitrary angles (not just horizontal).
+        Uses orthogonal routing for multiple flows from the same stock.
         """
-        ROUTE_OFFSET = 40  # Vertical offset between routing paths (pixels)
+        ROUTE_OFFSET = 40
 
         # Group flows by their source and destination stocks
         outflows_by_stock: dict[str, list[str]] = {}
@@ -835,110 +638,84 @@ class StellaModel:
         for stock_name in inflows_by_stock:
             inflows_by_stock[stock_name].sort()
 
-        # Calculate flow points with orthogonal routing
         for name, flow in self.flows.items():
             from_stock = self.stocks.get(flow.from_stock) if flow.from_stock else None
             to_stock = self.stocks.get(flow.to_stock) if flow.to_stock else None
 
             if from_stock and to_stock:
-                from_x = from_stock.x if from_stock.x is not None else start_x
-                from_y = from_stock.y if from_stock.y is not None else stock_y
-                to_x = to_stock.x if to_stock.x is not None else start_x
-                to_y = to_stock.y if to_stock.y is not None else stock_y
+                from_x = from_stock.x if from_stock.x is not None else 0.0
+                from_y = from_stock.y if from_stock.y is not None else 0.0
+                to_x = to_stock.x if to_stock.x is not None else 0.0
+                to_y = to_stock.y if to_stock.y is not None else 0.0
 
-                # Use actual stock dimensions for attachment points
-                from_half_width = from_stock.width / 2
-                from_half_height = from_stock.height / 2
-                to_half_width = to_stock.width / 2
-                to_half_height = to_stock.height / 2
+                from_hw = from_stock.width / 2
+                from_hh = from_stock.height / 2
+                to_hw = to_stock.width / 2
+                to_hh = to_stock.height / 2
 
-                # Get flow's position in outflow group
+                # Direction-aware attachment points
+                exit_pt = self._stock_attachment_point(from_x, from_y, from_hw, from_hh, to_x, to_y)
+                entry_pt = self._stock_attachment_point(to_x, to_y, to_hw, to_hh, from_x, from_y)
+
+                # Check if multiple outflows — use orthogonal routing
                 outflows = outflows_by_stock.get(flow.from_stock, [name])
                 total = len(outflows)
 
-                # Calculate entry offset for inflows
-                to_offset = 0.0
-                if flow.to_stock and flow.to_stock in inflows_by_stock:
-                    inflows = inflows_by_stock[flow.to_stock]
-                    if len(inflows) > 1:
-                        inflow_index = inflows.index(name)
-                        to_offset = self._calculate_flow_offset(inflow_index, len(inflows))
-
                 if total == 1:
-                    # Single flow: straight 2-point path
-                    flow.points = [
-                        (from_x + from_half_width, from_y),
-                        (to_x - to_half_width, to_y + to_offset)
-                    ]
+                    flow.points = [exit_pt, entry_pt]
                 else:
-                    # Multiple flows: route based on destination position
-                    # Group flows by direction (up/same/down) relative to source
-                    flows_up = []
-                    flows_same = []
-                    flows_down = []
+                    # Multiple flows: orthogonal routing
+                    flows_above: list[str] = []
+                    flows_same: list[str] = []
+                    flows_below: list[str] = []
 
                     for flow_name in outflows:
                         f = self.flows[flow_name]
-                        dest = self.stocks.get(f.to_stock)
+                        dest = self.stocks.get(f.to_stock) if f.to_stock else None
                         if dest and dest.y is not None:
                             dest_y = dest.y
                             if dest_y < from_y - 20:
-                                flows_up.append(flow_name)
+                                flows_above.append(flow_name)
                             elif dest_y > from_y + 20:
-                                flows_down.append(flow_name)
+                                flows_below.append(flow_name)
                             else:
                                 flows_same.append(flow_name)
                         else:
                             flows_same.append(flow_name)
 
-                    # Determine this flow's direction and index within that group
-                    if name in flows_up:
+                    if name in flows_above:
                         go_up = True
-                        group_index = flows_up.index(name)
-                        group_size = len(flows_up)
-                    elif name in flows_down:
+                        group_index = flows_above.index(name)
+                    elif name in flows_below:
                         go_up = False
-                        group_index = flows_down.index(name)
-                        group_size = len(flows_down)
+                        group_index = flows_below.index(name)
                     else:
-                        # Same level: alternate up/down
                         same_index = flows_same.index(name)
                         if same_index == 0:
-                            # First same-level flow: straight
-                            flow.points = [
-                                (from_x + from_half_width, from_y),
-                                (to_x - to_half_width, to_y + to_offset)
-                            ]
+                            flow.points = [exit_pt, entry_pt]
                             continue
                         go_up = (same_index % 2 == 1)
                         group_index = (same_index - 1) // 2
-                        group_size = (len(flows_same) - 1) // 2 + 1
 
-                    # Calculate routing offset based on position in group
                     offset = (group_index + 1) * ROUTE_OFFSET
-                    route_y = from_y - from_half_height - offset if go_up else from_y + from_half_height + offset
+                    route_y = from_y - from_hh - offset if go_up else from_y + from_hh + offset
 
-                    # Offset entry X based on position in direction group to prevent overlap
-                    ENTRY_X_OFFSET = 30  # Horizontal spacing between entry points
-                    exit_x = from_x + from_half_width
-                    exit_y = from_y - from_half_height if go_up else from_y + from_half_height
-                    entry_x = to_x - to_half_width - (group_index * ENTRY_X_OFFSET)
-                    entry_y = to_y - to_half_height if go_up else to_y + to_half_height
+                    exit_edge_y = from_y - from_hh if go_up else from_y + from_hh
+                    entry_edge_y = to_y - to_hh if go_up else to_y + to_hh
 
                     flow.points = [
-                        (exit_x, exit_y),       # Exit from stock edge
-                        (exit_x, route_y),      # Go up/down
-                        (entry_x, route_y),     # Go across
-                        (entry_x, entry_y)      # Go to destination edge
+                        (exit_pt[0], exit_edge_y),
+                        (exit_pt[0], route_y),
+                        (entry_pt[0], route_y),
+                        (entry_pt[0], entry_edge_y),
                     ]
 
             elif from_stock:
-                # Source-only flow (external sink)
-                from_x = from_stock.x if from_stock.x is not None else start_x
-                from_y = from_stock.y if from_stock.y is not None else stock_y
-                from_half_width = from_stock.width / 2
+                # Source-only flow (external sink) — exit toward the right
+                from_x = from_stock.x if from_stock.x is not None else 0.0
+                from_y = from_stock.y if from_stock.y is not None else 0.0
+                from_hw = from_stock.width / 2
 
-                # Calculate offset for this flow among other outflows
                 from_offset = 0.0
                 if flow.from_stock and flow.from_stock in outflows_by_stock:
                     outflows = outflows_by_stock[flow.from_stock]
@@ -947,17 +724,16 @@ class StellaModel:
                         from_offset = self._calculate_flow_offset(index, len(outflows))
 
                 flow.points = [
-                    (from_x + from_half_width, from_y + from_offset),
-                    (from_x + 160, from_y + from_offset)
+                    (from_x + from_hw, from_y + from_offset),
+                    (from_x + 160, from_y + from_offset),
                 ]
 
             elif to_stock:
-                # Sink-only flow (external source)
-                to_x = to_stock.x if to_stock.x is not None else start_x
-                to_y = to_stock.y if to_stock.y is not None else stock_y
-                to_half_width = to_stock.width / 2
+                # Sink-only flow (external source) — enter from the left
+                to_x = to_stock.x if to_stock.x is not None else 0.0
+                to_y = to_stock.y if to_stock.y is not None else 0.0
+                to_hw = to_stock.width / 2
 
-                # Calculate offset for this flow among other inflows
                 to_offset = 0.0
                 if flow.to_stock and flow.to_stock in inflows_by_stock:
                     inflows = inflows_by_stock[flow.to_stock]
@@ -967,7 +743,7 @@ class StellaModel:
 
                 flow.points = [
                     (to_x - 160, to_y + to_offset),
-                    (to_x - to_half_width, to_y + to_offset)
+                    (to_x - to_hw, to_y + to_offset),
                 ]
 
     def _calculate_connector_angles(self):

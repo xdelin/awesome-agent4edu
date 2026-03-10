@@ -1,5 +1,6 @@
 {
   "name": "XTB MCP Server",
+  "full": true,
   "tree": [
     {
       "name": "resources",
@@ -15,7 +16,7 @@
               "name": "input_spec.md",
               "type": "file",
               "path": "resources/formats/input_spec.md",
-              "size": 4170,
+              "size": 4065,
               "language": "md"
             }
           ]
@@ -29,7 +30,7 @@
               "name": "faq.md",
               "type": "file",
               "path": "resources/help/faq.md",
-              "size": 4018,
+              "size": 3955,
               "language": "md"
             }
           ]
@@ -43,22 +44,141 @@
               "name": "gfn0.md",
               "type": "file",
               "path": "resources/parameters/gfn0.md",
-              "size": 2654,
+              "size": 2583,
               "language": "md"
             },
             {
               "name": "gfn1.md",
               "type": "file",
               "path": "resources/parameters/gfn1.md",
-              "size": 2622,
+              "size": 2546,
               "language": "md"
             },
             {
               "name": "gfn2.md",
               "type": "file",
               "path": "resources/parameters/gfn2.md",
-              "size": 2636,
+              "size": 2556,
               "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "sampling",
+          "type": "folder",
+          "path": "resources/sampling",
+          "children": [
+            {
+              "name": "metadynamics.xtb_tpl",
+              "type": "file",
+              "path": "resources/sampling/metadynamics.xtb_tpl",
+              "size": 2015,
+              "language": "xtb_tpl"
+            }
+          ]
+        },
+        {
+          "name": "templates",
+          "type": "folder",
+          "path": "resources/templates",
+          "children": [
+            {
+              "name": "advanced",
+              "type": "folder",
+              "path": "resources/templates/advanced",
+              "children": [
+                {
+                  "name": "oniom.xtb_tpl",
+                  "type": "file",
+                  "path": "resources/templates/advanced/oniom.xtb_tpl",
+                  "size": 1941,
+                  "language": "xtb_tpl"
+                },
+                {
+                  "name": "spectroscopy_ir.xtb_tpl",
+                  "type": "file",
+                  "path": "resources/templates/advanced/spectroscopy_ir.xtb_tpl",
+                  "size": 1511,
+                  "language": "xtb_tpl"
+                },
+                {
+                  "name": "spectroscopy_uv_vis.xtb_tpl",
+                  "type": "file",
+                  "path": "resources/templates/advanced/spectroscopy_uv_vis.xtb_tpl",
+                  "size": 1146,
+                  "language": "xtb_tpl"
+                }
+              ]
+            },
+            {
+              "name": "sampling",
+              "type": "folder",
+              "path": "resources/templates/sampling",
+              "children": [
+                {
+                  "name": "normal_mode_following.xtb_tpl",
+                  "type": "file",
+                  "path": "resources/templates/sampling/normal_mode_following.xtb_tpl",
+                  "size": 742,
+                  "language": "xtb_tpl"
+                },
+                {
+                  "name": "pathfinder.xtb_tpl",
+                  "type": "file",
+                  "path": "resources/templates/sampling/pathfinder.xtb_tpl",
+                  "size": 777,
+                  "language": "xtb_tpl"
+                }
+              ]
+            },
+            {
+              "name": "wavefunction",
+              "type": "folder",
+              "path": "resources/templates/wavefunction",
+              "children": [
+                {
+                  "name": "orbitals.xtb_tpl",
+                  "type": "file",
+                  "path": "resources/templates/wavefunction/orbitals.xtb_tpl",
+                  "size": 1043,
+                  "language": "xtb_tpl"
+                }
+              ]
+            },
+            {
+              "name": "frequency.xtb_tpl",
+              "type": "file",
+              "path": "resources/templates/frequency.xtb_tpl",
+              "size": 397,
+              "language": "xtb_tpl"
+            },
+            {
+              "name": "md.xtb_tpl",
+              "type": "file",
+              "path": "resources/templates/md.xtb_tpl",
+              "size": 676,
+              "language": "xtb_tpl"
+            },
+            {
+              "name": "optimization.xtb_tpl",
+              "type": "file",
+              "path": "resources/templates/optimization.xtb_tpl",
+              "size": 472,
+              "language": "xtb_tpl"
+            },
+            {
+              "name": "scan.xtb_tpl",
+              "type": "file",
+              "path": "resources/templates/scan.xtb_tpl",
+              "size": 609,
+              "language": "xtb_tpl"
+            },
+            {
+              "name": "singlepoint.xtb_tpl",
+              "type": "file",
+              "path": "resources/templates/singlepoint.xtb_tpl",
+              "size": 190,
+              "language": "xtb_tpl"
             }
           ]
         }
@@ -80,21 +200,21 @@
           "name": "test_generator.py",
           "type": "file",
           "path": "tests/test_generator.py",
-          "size": 14621,
+          "size": 14168,
           "language": "py"
         },
         {
           "name": "test_mcp_server.py",
           "type": "file",
           "path": "tests/test_mcp_server.py",
-          "size": 14643,
+          "size": 14217,
           "language": "py"
         },
         {
           "name": "test_structure_utils.py",
           "type": "file",
           "path": "tests/test_structure_utils.py",
-          "size": 6332,
+          "size": 6123,
           "language": "py"
         }
       ]
@@ -108,86 +228,93 @@
           "name": "__init__.py",
           "type": "file",
           "path": "xtb_input_generator/__init__.py",
-          "size": 146,
+          "size": 143,
           "language": "py"
         },
         {
           "name": "generator.py",
           "type": "file",
           "path": "xtb_input_generator/generator.py",
-          "size": 81197,
+          "size": 79775,
           "language": "py"
         },
         {
           "name": "structure_utils.py",
           "type": "file",
           "path": "xtb_input_generator/structure_utils.py",
-          "size": 13059,
+          "size": 12744,
           "language": "py"
         }
       ]
     },
     {
+      "name": ".gitattributes",
+      "type": "file",
+      "path": ".gitattributes",
+      "size": 66,
+      "language": "text"
+    },
+    {
       "name": "DEPLOYMENT_GUIDE.md",
       "type": "file",
       "path": "DEPLOYMENT_GUIDE.md",
-      "size": 6661,
+      "size": 6410,
       "language": "md"
     },
     {
       "name": "final_validation.py",
       "type": "file",
       "path": "final_validation.py",
-      "size": 7940,
+      "size": 7687,
       "language": "py"
     },
     {
       "name": "main.py",
       "type": "file",
       "path": "main.py",
-      "size": 21212,
+      "size": 20767,
       "language": "py"
     },
     {
       "name": "PROJECT_SUMMARY.md",
       "type": "file",
       "path": "PROJECT_SUMMARY.md",
-      "size": 7108,
+      "size": 6903,
       "language": "md"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 14497,
+      "size": 14033,
       "language": "md"
     },
     {
       "name": "requirements.txt",
       "type": "file",
       "path": "requirements.txt",
-      "size": 327,
+      "size": 312,
       "language": "txt"
     },
     {
       "name": "run_tests.py",
       "type": "file",
       "path": "run_tests.py",
-      "size": 1580,
+      "size": 1522,
       "language": "py"
     },
     {
       "name": "test_mcp_functionality.py",
       "type": "file",
       "path": "test_mcp_functionality.py",
-      "size": 8668,
+      "size": 8398,
       "language": "py"
     },
     {
       "name": "xtb_mcp_development_plan.md",
       "type": "file",
       "path": "xtb_mcp_development_plan.md",
-      "size": 12186,
+      "size": 11943,
       "language": "md"
     }
   ]

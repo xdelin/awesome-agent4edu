@@ -1,5 +1,6 @@
 {
   "name": "EdTech-AI-Coach",
+  "full": true,
   "tree": [
     {
       "name": "analytics.py",
@@ -54,7 +55,7 @@
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 1499,
+      "size": 1459,
       "language": "md"
     }
   ]

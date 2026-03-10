@@ -6,10 +6,10 @@
  */
 
 import type { ContentBlock } from '@modelcontextprotocol/sdk/types.js';
-import { container } from 'tsyringe';
+import { container } from '@/container/index.js';
 import { z } from 'zod';
 
-import { AppConfig, ClinicalTrialsProvider } from '@/container/tokens.js';
+import { AppConfig, ClinicalTrialsProvider } from '@/container/core/tokens.js';
 import type {
   SdkContext,
   ToolAnnotations,
@@ -21,41 +21,23 @@ import type { Study } from '@/services/clinical-trials-gov/types.js';
 import { JsonRpcErrorCode, McpError } from '@/types-global/errors.js';
 import { logger, type RequestContext } from '@/utils/index.js';
 
-/** --------------------------------------------------------- */
-/** Programmatic tool name (must be unique). */
 const TOOL_NAME = 'clinicaltrials_analyze_trends';
-/** --------------------------------------------------------- */
-
-/** Human-readable title used by UIs. */
 const TOOL_TITLE = 'Analyze Clinical Trial Trends';
-/** --------------------------------------------------------- */
-
-/**
- * LLM-facing description of the tool.
- */
 const TOOL_DESCRIPTION =
-  'Performs statistical analysis on clinical trial studies matching search criteria. Aggregates data by status, country, sponsor type, phase, year, or month. May fetch up to 5000 studies.';
-/** --------------------------------------------------------- */
+  'Performs statistical analysis on clinical trial studies matching search criteria. Aggregates data by status, country, sponsor type, phase, year, month, study type, or intervention type. May fetch up to 5000 studies.';
 
-/** UI/behavior hints for clients. */
 const TOOL_ANNOTATIONS: ToolAnnotations = {
   readOnlyHint: true,
   idempotentHint: true,
-  openWorldHint: true, // Accesses external ClinicalTrials.gov API
+  openWorldHint: true,
 };
-/** --------------------------------------------------------- */
 
-/** API call delay to avoid rate limiting */
 const API_CALL_DELAY_MS = 250;
 
 /**
  * A simple promise-based delay function.
  */
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-//
-// Schemas (input and output)
-// --------------------------
 
 /**
  * Defines the types of analysis that can be performed.
@@ -67,6 +49,8 @@ const AnalysisTypeSchema = z.enum([
   'countByPhase',
   'countByYear',
   'countByMonth',
+  'countByStudyType',
+  'countByInterventionType',
 ]);
 
 const InputSchema = z
@@ -92,7 +76,7 @@ const InputSchema = z
           .describe('An array of analysis types to perform.'),
       ])
       .describe(
-        'Specify one or more analysis types: countByStatus, countByCountry, countBySponsorType, countByPhase, countByYear, or countByMonth.',
+        'Specify one or more analysis types: countByStatus, countByCountry, countBySponsorType, countByPhase, countByYear, countByMonth, countByStudyType, or countByInterventionType.',
       ),
   })
   .describe('Input parameters for analyzing clinical trial trends.');
@@ -107,7 +91,7 @@ const AnalysisResultSchema = z
       .int()
       .describe('Total number of studies included in this analysis.'),
     results: z
-      .record(z.number())
+      .record(z.string(), z.number())
       .describe(
         'Aggregated counts by category (e.g., status, country, phase).',
       ),
@@ -126,18 +110,16 @@ type AnalyzeTrendsInput = z.infer<typeof InputSchema>;
 type AnalysisResult = z.infer<typeof AnalysisResultSchema>;
 type AnalyzeTrendsOutput = z.infer<typeof OutputSchema>;
 
-//
-// Pure business logic (no try/catch; throw McpError on failure)
-// -------------------------------------------------------------
-
 /**
  * Fetches all studies for a given query, handling pagination.
  * Throws if the total count exceeds the configured limit.
+ * Checks the AbortSignal between pages to support cancellation.
  */
 async function fetchAllStudies(
   query: string | undefined,
   filter: string | undefined,
   appContext: RequestContext,
+  signal?: AbortSignal,
 ): Promise<Study[]> {
   const config =
     container.resolve<
@@ -148,20 +130,21 @@ async function fetchAllStudies(
   );
 
   const maxStudies = config.maxStudiesForAnalysis;
+  const PAGE_SIZE = 1000;
 
   logger.debug('Fetching all studies for analysis...', { ...appContext });
 
-  // First, make one call to check the total number of studies
-  const initialResponse = await provider.listStudies(
+  // First page doubles as the total-count check — no wasted request.
+  const firstPage = await provider.listStudies(
     {
       ...(query && { query }),
       ...(filter && { filter }),
-      pageSize: 1,
+      pageSize: PAGE_SIZE,
     },
     appContext,
   );
 
-  const totalStudies = initialResponse.totalCount ?? 0;
+  const totalStudies = firstPage.totalCount ?? 0;
 
   if (totalStudies > maxStudies) {
     throw new McpError(
@@ -171,36 +154,34 @@ async function fetchAllStudies(
     );
   }
 
-  if (totalStudies === 0) {
-    return [];
+  const allStudies: Study[] = firstPage.studies ? [...firstPage.studies] : [];
+
+  if (allStudies.length === 0 || !firstPage.nextPageToken) {
+    return allStudies;
   }
 
-  // If within limits, proceed to fetch all studies
-  let allStudies: Study[] = [];
-  let pageToken: string | undefined = undefined;
-  let hasMore = true;
+  // Fetch remaining pages
+  let pageToken: string | undefined = firstPage.nextPageToken;
 
-  while (hasMore) {
+  while (pageToken && allStudies.length < totalStudies) {
+    signal?.throwIfAborted();
+    await delay(API_CALL_DELAY_MS);
+
     const pagedStudies = await provider.listStudies(
       {
         ...(query && { query }),
         ...(filter && { filter }),
-        ...(pageToken && { pageToken }),
-        pageSize: 1000,
+        pageToken,
+        pageSize: PAGE_SIZE,
       },
       appContext,
     );
 
     if (pagedStudies.studies) {
-      allStudies = allStudies.concat(pagedStudies.studies);
+      allStudies.push(...pagedStudies.studies);
     }
 
     pageToken = pagedStudies.nextPageToken;
-    hasMore = !!pageToken && allStudies.length < totalStudies;
-
-    if (hasMore) {
-      await delay(API_CALL_DELAY_MS);
-    }
   }
 
   logger.info(`Fetched a total of ${allStudies.length} studies for analysis.`, {
@@ -216,7 +197,7 @@ async function fetchAllStudies(
 async function analyzeTrendsLogic(
   input: AnalyzeTrendsInput,
   appContext: RequestContext,
-  _sdkContext: SdkContext,
+  sdkContext: SdkContext,
 ): Promise<AnalyzeTrendsOutput> {
   logger.debug('Executing analyzeTrendsLogic', {
     ...appContext,
@@ -227,6 +208,7 @@ async function analyzeTrendsLogic(
     input.query,
     input.filter,
     appContext,
+    sdkContext.signal,
   );
 
   const analysisTypes = Array.isArray(input.analysisType)
@@ -246,14 +228,19 @@ async function analyzeTrendsLogic(
           key = study.protocolSection?.statusModule?.overallStatus ?? 'Unknown';
           break;
 
-        case 'countByCountry':
-          study.protocolSection?.contactsLocationsModule?.locations?.forEach(
-            (loc) => {
-              const country = loc.country ?? 'Unknown';
-              results[country] = (results[country] ?? 0) + 1;
-            },
-          );
+        case 'countByCountry': {
+          // Deduplicate countries per study — a study with 10 US sites
+          // should count as 1 for "United States", not 10.
+          const countries = new Set<string>();
+          for (const loc of study.protocolSection?.contactsLocationsModule
+            ?.locations ?? []) {
+            countries.add(loc.country ?? 'Unknown');
+          }
+          for (const country of countries) {
+            results[country] = (results[country] ?? 0) + 1;
+          }
           continue;
+        }
 
         case 'countBySponsorType':
           key =
@@ -265,10 +252,10 @@ async function analyzeTrendsLogic(
           const phases = study.protocolSection?.designModule?.phases ?? [
             'Unknown',
           ];
-          phases.forEach((phase) => {
+          for (const phase of phases) {
             const phaseKey = phase ?? 'Unknown';
             results[phaseKey] = (results[phaseKey] ?? 0) + 1;
-          });
+          }
           continue;
         }
 
@@ -279,7 +266,7 @@ async function analyzeTrendsLogic(
             const year = startDate.substring(0, 4); // Extract YYYY from date
             results[year] = (results[year] ?? 0) + 1;
           } else {
-            results['Unknown'] = (results['Unknown'] ?? 0) + 1;
+            results.Unknown = (results.Unknown ?? 0) + 1;
           }
           continue;
         }
@@ -291,7 +278,29 @@ async function analyzeTrendsLogic(
             const yearMonth = startDate.substring(0, 7); // Extract YYYY-MM from date
             results[yearMonth] = (results[yearMonth] ?? 0) + 1;
           } else {
-            results['Unknown'] = (results['Unknown'] ?? 0) + 1;
+            results.Unknown = (results.Unknown ?? 0) + 1;
+          }
+          continue;
+        }
+
+        case 'countByStudyType':
+          key = study.protocolSection?.designModule?.studyType ?? 'Unknown';
+          break;
+
+        case 'countByInterventionType': {
+          const interventions =
+            study.protocolSection?.armsInterventionsModule?.interventions;
+          if (interventions?.length) {
+            // Deduplicate intervention types per study
+            const types = new Set<string>();
+            for (const intr of interventions) {
+              types.add(intr.type ?? 'Unknown');
+            }
+            for (const intrType of types) {
+              results[intrType] = (results[intrType] ?? 0) + 1;
+            }
+          } else {
+            results.Unknown = (results.Unknown ?? 0) + 1;
           }
           continue;
         }
@@ -317,9 +326,6 @@ async function analyzeTrendsLogic(
   return { analysis: finalResults };
 }
 
-/**
- * Formats a concise human-readable summary.
- */
 function responseFormatter(result: AnalyzeTrendsOutput): ContentBlock[] {
   const analysisCount = result.analysis.length;
 
@@ -328,10 +334,15 @@ function responseFormatter(result: AnalyzeTrendsOutput): ContentBlock[] {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 10);
 
+    // countByPhase counts can exceed totalStudies (multi-phase studies contribute
+    // to multiple buckets), so percentages would be misleading for that type.
+    const showPct = analysis.analysisType !== 'countByPhase';
     const categoryList = topEntries
       .map(([category, count]) => {
-        const percentage = ((count / analysis.totalStudies) * 100).toFixed(1);
-        return `  • ${category}: ${count} (${percentage}%)`;
+        const pct = showPct
+          ? ` (${((count / analysis.totalStudies) * 100).toFixed(1)}%)`
+          : '';
+        return `  • ${category}: ${count}${pct}`;
       })
       .join('\n');
 
@@ -359,9 +370,6 @@ function responseFormatter(result: AnalyzeTrendsOutput): ContentBlock[] {
   ];
 }
 
-/**
- * The complete tool definition for analyzing clinical trial trends.
- */
 export const analyzeTrendsTool: ToolDefinition<
   typeof InputSchema,
   typeof OutputSchema

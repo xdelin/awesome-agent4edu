@@ -3,14 +3,13 @@ use tokio::net::TcpStream;
 use serde_json::{json, Value};
 use std::time::Duration;
 
-/// Helper function to start the HTTP MCP server in the background for testing
-async fn start_test_server(port: u16) -> tokio::task::JoinHandle<()> {
-    tokio::spawn(async move {
-        // Simulate starting the server on the given port
-        // In a real scenario, you would import and call your server's start function
-        let addr = format!("127.0.0.1:{}", port);
-        let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
+/// Helper function to start the HTTP MCP server in the background for testing.
+/// Returns the join handle and the dynamically assigned port.
+async fn start_test_server() -> (tokio::task::JoinHandle<()>, u16) {
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let port = listener.local_addr().unwrap().port();
 
+    let handle = tokio::spawn(async move {
         // Accept one connection for testing
         let (stream, _) = listener.accept().await.unwrap();
 
@@ -29,17 +28,15 @@ async fn start_test_server(port: u16) -> tokio::task::JoinHandle<()> {
                 Err(_) => break,
             }
         }
-    })
+    });
+
+    (handle, port)
 }
 
 /// Test basic HTTP connection to the server
 #[tokio::test]
 async fn test_http_connection() {
-    let port = 9876;
-    let _server = start_test_server(port).await;
-
-    // Give server time to start
-    tokio::time::sleep(Duration::from_millis(100)).await;
+    let (_server, port) = start_test_server().await;
 
     // Connect to the server
     let result = TcpStream::connect(format!("127.0.0.1:{}", port)).await;
@@ -49,11 +46,7 @@ async fn test_http_connection() {
 /// Test HTTP upgrade request
 #[tokio::test]
 async fn test_http_upgrade_request() {
-    let port = 9877;
-    let _server = start_test_server(port).await;
-
-    // Give server time to start
-    tokio::time::sleep(Duration::from_millis(100)).await;
+    let (_server, port) = start_test_server().await;
 
     let mut stream = TcpStream::connect(format!("127.0.0.1:{}", port))
         .await
@@ -112,8 +105,7 @@ async fn test_mcp_tool_call_format() {
         "params": {
             "name": "run_js",
             "arguments": {
-                "code": "1 + 1",
-                "heap": "test-heap"
+                "code": "1 + 1"
             }
         }
     });
@@ -144,19 +136,20 @@ async fn test_javascript_execution_scenarios() {
     assert!(true);
 }
 
-/// Test heap storage naming
+/// Test content-addressed heap hash format
 #[tokio::test]
-async fn test_heap_naming() {
-    let heap_names = vec![
-        "test-heap",
-        "user-session-123",
-        "calculation-workspace",
+async fn test_heap_hash_format() {
+    // Content-addressed heap hashes are 64-character lowercase hex strings (SHA-256)
+    let valid_hashes = vec![
+        "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+        "0000000000000000000000000000000000000000000000000000000000000000",
+        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
     ];
 
-    // Verify heap names are valid strings
-    for name in heap_names {
-        assert!(!name.is_empty());
-        assert!(!name.contains('/'));  // No path separators
+    for hash in valid_hashes {
+        assert_eq!(hash.len(), 64, "Hash should be 64 characters");
+        assert!(hash.chars().all(|c| c.is_ascii_hexdigit()),
+                "Hash should be hex: {}", hash);
     }
 }
 
@@ -173,8 +166,7 @@ async fn test_invalid_javascript_handling() {
     for code in invalid_codes {
         // These should be handled gracefully by the server
         let request = json!({
-            "code": code,
-            "heap": "test-heap"
+            "code": code
         });
         assert!(request.is_object());
     }
@@ -183,13 +175,11 @@ async fn test_invalid_javascript_handling() {
 /// Test concurrent connections
 #[tokio::test]
 async fn test_concurrent_connections() {
-    let port = 9878;
-
     // Try to create multiple connection attempts
     let tasks: Vec<_> = (0..3).map(|_| {
         tokio::spawn(async move {
-            // Each task attempts to connect
-            let addr = format!("127.0.0.1:{}", port);
+            // Each task attempts to connect to a port that likely isn't listening
+            let addr = "127.0.0.1:1";
             // Connection may fail since server isn't running, but we test the logic
             let _ = tokio::time::timeout(
                 Duration::from_millis(100),

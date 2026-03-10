@@ -11,7 +11,7 @@ import {
 /**
  * Object types that can be searched
  */
-export type DatabaseObjectType = "schema" | "table" | "column" | "procedure" | "index";
+export type DatabaseObjectType = "schema" | "table" | "column" | "procedure" | "function" | "index";
 
 /**
  * Detail level for search results
@@ -24,7 +24,7 @@ export type DetailLevel = "names" | "summary" | "full";
 // Schema for search_objects tool (unified search and list)
 export const searchDatabaseObjectsSchema = {
   object_type: z
-    .enum(["schema", "table", "column", "procedure", "index"])
+    .enum(["schema", "table", "column", "procedure", "function", "index"])
     .describe("Object type to search"),
   pattern: z
     .string()
@@ -67,7 +67,9 @@ function likePatternToRegex(pattern: string): RegExp {
 }
 
 /**
- * Get row count estimate for a table
+ * Get row count estimate for a table.
+ * Prefers the connector's native statistics-based method (e.g. pg_class.reltuples)
+ * when available, falling back to COUNT(*) for connectors that don't implement it.
  */
 async function getTableRowCount(
   connector: Connector,
@@ -75,7 +77,11 @@ async function getTableRowCount(
   schemaName?: string
 ): Promise<number | null> {
   try {
-    // Use proper identifier quoting to handle special characters and reserved keywords
+    if (connector.getTableRowCount) {
+      return await connector.getTableRowCount(tableName, schemaName);
+    }
+
+    // Fallback: COUNT(*) for connectors without a statistics-based implementation
     const qualifiedTable = quoteQualifiedIdentifier(tableName, schemaName, connector.id);
     const countQuery = `SELECT COUNT(*) as count FROM ${qualifiedTable}`;
     const result = await connector.executeSQL(countQuery, { maxRows: 1 });
@@ -88,6 +94,24 @@ async function getTableRowCount(
     return null;
   }
   return null;
+}
+
+/**
+ * Get table comment from the connector if supported.
+ */
+async function getTableComment(
+  connector: Connector,
+  tableName: string,
+  schemaName?: string
+): Promise<string | null> {
+  try {
+    if (connector.getTableComment) {
+      return await connector.getTableComment(tableName, schemaName);
+    }
+    return null;
+  } catch (error) {
+    return null;
+  }
 }
 
 /**
@@ -166,16 +190,18 @@ async function searchTables(
             schema: schemaName,
           });
         } else if (detailLevel === "summary") {
-          // Get column count for summary
+          // Get column count and table comment for summary
           try {
             const columns = await connector.getTableSchema(tableName, schemaName);
             const rowCount = await getTableRowCount(connector, tableName, schemaName);
+            const comment = await getTableComment(connector, tableName, schemaName);
 
             results.push({
               name: tableName,
               schema: schemaName,
               column_count: columns.length,
               row_count: rowCount,
+              ...(comment ? { comment } : {}),
             });
           } catch (error) {
             results.push({
@@ -191,17 +217,20 @@ async function searchTables(
             const columns = await connector.getTableSchema(tableName, schemaName);
             const indexes = await connector.getTableIndexes(tableName, schemaName);
             const rowCount = await getTableRowCount(connector, tableName, schemaName);
+            const comment = await getTableComment(connector, tableName, schemaName);
 
             results.push({
               name: tableName,
               schema: schemaName,
               column_count: columns.length,
               row_count: rowCount,
+              ...(comment ? { comment } : {}),
               columns: columns.map((col: any) => ({
                 name: col.column_name,
                 type: col.data_type,
                 nullable: col.is_nullable === "YES",
                 default: col.column_default,
+                ...(col.description ? { description: col.description } : {}),
               })),
               indexes: indexes.map((idx: any) => ({
                 name: idx.index_name,
@@ -290,6 +319,7 @@ async function searchColumns(
                 type: column.data_type,
                 nullable: column.is_nullable === "YES",
                 default: column.column_default,
+                ...(column.description ? { description: column.description } : {}),
               });
             }
           }
@@ -308,14 +338,17 @@ async function searchColumns(
 }
 
 /**
- * Search for stored procedures
+ * Search for stored procedures and/or functions
+ * @param routineType Optional filter: "procedure" for procedures only, "function" for functions only.
+ *   If not provided, returns both.
  */
 async function searchProcedures(
   connector: Connector,
   pattern: string,
   schemaFilter: string | undefined,
   detailLevel: DetailLevel,
-  limit: number
+  limit: number,
+  routineType?: "procedure" | "function"
 ): Promise<any[]> {
   const regex = likePatternToRegex(pattern);
   const results: any[] = [];
@@ -328,12 +361,12 @@ async function searchProcedures(
     schemasToSearch = await connector.getSchemas();
   }
 
-  // Search procedures in each schema
+  // Search procedures/functions in each schema
   for (const schemaName of schemasToSearch) {
     if (results.length >= limit) break;
 
     try {
-      const procedures = await connector.getStoredProcedures(schemaName);
+      const procedures = await connector.getStoredProcedures(schemaName, routineType);
       const matched = procedures.filter((proc: string) => regex.test(proc));
 
       for (const procName of matched) {
@@ -526,7 +559,10 @@ export function createSearchDatabaseObjectsToolHandler(sourceId?: string) {
           results = await searchColumns(connector, pattern, schema, table, detail_level, limit);
           break;
         case "procedure":
-          results = await searchProcedures(connector, pattern, schema, detail_level, limit);
+          results = await searchProcedures(connector, pattern, schema, detail_level, limit, "procedure");
+          break;
+        case "function":
+          results = await searchProcedures(connector, pattern, schema, detail_level, limit, "function");
           break;
         case "index":
           results = await searchIndexes(connector, pattern, schema, table, detail_level, limit);

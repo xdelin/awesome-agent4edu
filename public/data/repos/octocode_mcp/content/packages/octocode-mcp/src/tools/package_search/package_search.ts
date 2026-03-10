@@ -6,12 +6,14 @@ import type { CallToolResult } from '@modelcontextprotocol/sdk/types.js';
 import type { AnySchema } from '../../types/toolTypes.js';
 import { withSecurityValidation } from '../../security/withSecurityValidation.js';
 import type { ToolInvocationCallback } from '../../types.js';
-import { TOOL_NAMES, DESCRIPTIONS } from '../toolMetadata.js';
+import { TOOL_NAMES, DESCRIPTIONS } from '../toolMetadata/index.js';
 import { PackageSearchBulkQuerySchema } from './scheme.js';
 import type { PackageSearchQuery } from './scheme.js';
 import { invokeCallbackSafely } from '../utils.js';
 import { checkNpmAvailability } from '../../utils/exec/index.js';
+import { checkNpmRegistryReachable } from '../../utils/package/npm.js';
 import { searchPackages } from './execution.js';
+import { PackageSearchOutputSchema } from '../../scheme/outputSchemas.js';
 
 export async function registerPackageSearchTool(
   server: McpServer,
@@ -22,11 +24,17 @@ export async function registerPackageSearchTool(
     return null;
   }
 
+  const registryReachable = await checkNpmRegistryReachable();
+  if (!registryReachable) {
+    return null;
+  }
+
   return server.registerTool(
     TOOL_NAMES.PACKAGE_SEARCH,
     {
       description: DESCRIPTIONS[TOOL_NAMES.PACKAGE_SEARCH],
       inputSchema: PackageSearchBulkQuerySchema as unknown as AnySchema,
+      outputSchema: PackageSearchOutputSchema as unknown as AnySchema,
       annotations: {
         title: 'Package Search',
         readOnlyHint: true,

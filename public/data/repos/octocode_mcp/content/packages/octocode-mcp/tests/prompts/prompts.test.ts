@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { registerPrompts } from '../../src/prompts/prompts.js';
-import type { CompleteMetadata } from '../../src/tools/toolMetadata.js';
+import type { CompleteMetadata } from '../../src/tools/toolMetadata/index.js';
 import type { GetPromptResult } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
 
@@ -34,6 +34,7 @@ describe('Prompts Registration', () => {
       LSP_GOTO_DEFINITION: 'lspGotoDefinition',
       LSP_FIND_REFERENCES: 'lspFindReferences',
       LSP_CALL_HIERARCHY: 'lspCallHierarchy',
+      GITHUB_CLONE_REPO: 'githubCloneRepo',
     },
     baseSchema: {
       mainResearchGoal: '',

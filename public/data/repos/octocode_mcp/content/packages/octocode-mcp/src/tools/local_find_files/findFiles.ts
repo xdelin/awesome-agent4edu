@@ -14,7 +14,6 @@ import {
 import {
   validateToolPath,
   createErrorResult,
-  checkLargeOutputSafety,
 } from '../../utils/file/toolHelpers.js';
 import type {
   FindFilesQuery,
@@ -22,14 +21,14 @@ import type {
   FoundFile,
 } from '../../utils/core/types.js';
 import fs from 'fs';
-import { ToolErrors, type LocalToolErrorCode } from '../../errorCodes.js';
-import { TOOL_NAMES } from '../toolMetadata.js';
+import { ToolErrors } from '../../errorCodes.js';
+import { TOOL_NAMES } from '../toolMetadata/index.js';
 
 export async function findFiles(
   query: FindFilesQuery
 ): Promise<FindFilesResult> {
   const details = query.details ?? true;
-  const showLastModified = query.showFileLastModified ?? false;
+  const showLastModified = query.showFileLastModified ?? true;
 
   try {
     // Check if find command is available
@@ -49,22 +48,45 @@ export async function findFiles(
       return validation.errorResult as FindFilesResult;
     }
 
+    // Use sanitized path (includes tilde expansion and path resolution)
+    const queryWithSanitizedPath = {
+      ...query,
+      path: validation.sanitizedPath!,
+    };
+
+    // Apply default directory exclusions when excludeDir is not specified
+    const DEFAULT_EXCLUDE_DIRS = [
+      'node_modules',
+      'dist',
+      '.git',
+      'coverage',
+      'build',
+      '.next',
+    ];
+    const queryWithDefaults = {
+      ...queryWithSanitizedPath,
+      excludeDir: queryWithSanitizedPath.excludeDir ?? DEFAULT_EXCLUDE_DIRS,
+    };
+
     const builder = new FindCommandBuilder();
-    const { command, args } = builder.fromQuery(query).build();
+    const { command, args } = builder.fromQuery(queryWithDefaults).build();
 
     const result = await safeExec(command, args);
 
     if (!result.success) {
-      // Provide more detailed error message including stderr
+      // Sanitize stderr to avoid exposing internal command details
       const stderrMsg = result.stderr?.trim();
+      const userMessage =
+        stderrMsg?.replace(/^find:\s*/i, '').trim() ||
+        'File search operation failed';
       const toolError = ToolErrors.commandExecutionFailed(
         'find',
-        new Error(stderrMsg || 'Unknown error'),
-        stderrMsg
+        new Error(userMessage),
+        userMessage
       );
       return createErrorResult(toolError, query, {
         toolName: TOOL_NAMES.LOCAL_FIND_FILES,
-        extra: { stderr: stderrMsg },
+        extra: { stderr: userMessage },
       }) as FindFilesResult;
     }
 
@@ -106,12 +128,26 @@ export async function findFiles(
       );
     }
 
+    const sortBy = query.sortBy || 'modified';
     files.sort((a, b) => {
-      if (showLastModified && a.modified && b.modified) {
-        return new Date(b.modified).getTime() - new Date(a.modified).getTime();
+      switch (sortBy) {
+        case 'size':
+          return (b.size ?? 0) - (a.size ?? 0);
+        case 'name':
+          return (a.path.split('/').pop() || '').localeCompare(
+            b.path.split('/').pop() || ''
+          );
+        case 'path':
+          return a.path.localeCompare(b.path);
+        case 'modified':
+        default:
+          if (showLastModified && a.modified && b.modified) {
+            return (
+              new Date(b.modified).getTime() - new Date(a.modified).getTime()
+            );
+          }
+          return a.path.localeCompare(b.path);
       }
-      // Fallback to path sorting when modified is not available
-      return a.path.localeCompare(b.path);
     });
 
     const filesForOutput: FoundFile[] = files.map(f => {
@@ -137,31 +173,11 @@ export async function findFiles(
     const endIdx = Math.min(startIdx + filesPerPage, totalFiles);
     const paginatedFiles = filesForOutput.slice(startIdx, endIdx);
 
-    const safetyCheck = checkLargeOutputSafety(
-      paginatedFiles.length,
-      !!query.charLength,
-      {
-        threshold: 100,
-        itemType: 'file',
-        detailed: details,
-      }
-    );
-    if (safetyCheck.shouldBlock) {
-      return {
-        status: 'error',
-        errorCode: safetyCheck.errorCode! as LocalToolErrorCode,
-        totalFiles,
-        researchGoal: query.researchGoal,
-        reasoning: query.reasoning,
-        hints: safetyCheck.hints!,
-      };
-    }
-
     let finalFiles = paginatedFiles;
     let paginationMetadata: PaginationMetadata | null = null;
 
     if (query.charLength) {
-      // Robust pagination: Select items that fit in the window instead of slicing JSON string
+      // Pagination: select items that fit in the char window instead of slicing the JSON string
       const fullJson = serializeForPagination(paginatedFiles, false);
       const totalChars = fullJson.length;
 
@@ -236,9 +252,7 @@ export async function findFiles(
       filePageNumber < totalPages
         ? `Next: filePageNumber=${filePageNumber + 1}`
         : 'Final page',
-      showLastModified
-        ? 'Sorted by modification time (most recent first)'
-        : 'Sorted by path',
+      `Sorted by ${sortBy}${sortBy === 'modified' ? ' (most recent first)' : sortBy === 'size' ? ' (largest first)' : ''}`,
     ];
 
     // Detect config files for context-aware hints
@@ -251,8 +265,6 @@ export async function findFiles(
     return {
       status,
       files: finalFiles,
-      cwd: process.cwd(),
-      totalFiles,
       pagination: {
         currentPage: filePageNumber,
         totalPages,

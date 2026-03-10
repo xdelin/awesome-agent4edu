@@ -1,7 +1,7 @@
 =head1 LICENSE
 
 Copyright [1999-2015] Wellcome Trust Sanger Institute and the EMBL-European Bioinformatics Institute 
-Copyright [2016-2025] EMBL-European Bioinformatics Institute
+Copyright [2016-2026] EMBL-European Bioinformatics Institute
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ limitations under the License.
 =cut
 
 package EnsEMBL::REST::Controller::VEP;
+use JSON;
 use Moose;
 use namespace::autoclean;
 use Data::Dumper;
@@ -371,6 +372,9 @@ sub _include_user_params {
 
   my $plugin_config = $self->_configure_plugins($c,\%tmp_vep_params,\%vep_params);
   $vep_params{plugins} = $plugin_config if $plugin_config;
+  my $custom_config = $self->_configure_customs($c,\%tmp_vep_params,\%vep_params);
+  $vep_params{custom} = $custom_config if $custom_config;
+  $vep_params{custom_suppress_filter} = 1;
 
   return \%vep_params;
 }
@@ -451,6 +455,26 @@ sub _configure_plugins {
 
           push @params, $param;
         }
+        # CADD - check if species is chicken and provide appropriate file based on that
+        elsif(lc $module eq 'cadd' && $c->stash->{species} eq "gallus_gallus_gca000002315v5"){
+          next unless $param =~ /^snv_chicken_rjf=/;
+
+          my $param_aux = $param;
+          $param_aux =~ s/snv_chicken_rjf=//;
+          $param = 'snv=' . $param_aux;
+
+          push @params, $param;
+        }
+        # CADD - check if species is turkey and provide appropriate file based on that
+        elsif(lc $module eq 'cadd' && $c->stash->{species} eq "meleagris_gallopavo"){
+          next unless $param =~ /^snv_turkey=/;
+
+          my $param_aux = $param;
+          $param_aux =~ s/snv_turkey=//;
+          $param = 'snv=' . $param_aux;
+
+          push @params, $param;
+        }
         elsif(lc $module eq 'cadd' && ($user_config->{$module} eq "snv_indels" || $user_config->{$module} eq "1")){
           next unless ($param =~ /^snv=/ || $param =~ /^indels=/);
           push @params, $param;
@@ -514,6 +538,76 @@ sub _configure_plugins {
   }
 
   return \@plugin_config;
+}
+
+sub _configure_customs {
+  my ($self,$c,$user_config,$vep_config) = @_;
+
+  # add dir_plugins to Perl's list of include dirs
+  # otherwise the plugins have to be somewhere in PERL5LIB on startup
+  # unshift @INC, $vep_config->{dir_plugins};
+  
+  my @custom_config = ();
+
+  # get config from file
+  my $custom_config_file = $vep_config->{vep_custom_config};
+
+  return [] unless $custom_config_file && -e $custom_config_file;
+
+  # read config from JSON config file
+  open IN, $custom_config_file or throw("ERROR: Could not read from config file $custom_config_file");
+  local $/ = undef;
+  my $json_string = <IN>;
+  close IN;
+  
+  # parse JSON into arrayref
+  my $VEP_CUSTOM_CONFIG = JSON->new->decode($json_string) or throw("ERROR: Failed to parse config file $custom_config_file");
+
+  # iterate over all defined plugins
+  foreach my $custom_hash(@{$VEP_CUSTOM_CONFIG}) {
+    my $short_name = $custom_hash->{params}->{short_name};
+
+    # has user specified it, or is it enabled by default?
+    if(defined($user_config->{$short_name})) {
+      # we now need to add the parmas in custom config file
+      my $params = $custom_hash->{params};
+      $params->{file} = $custom_hash->{params}->{file};
+      $params->{type} ||= "overlap";
+      $params->{fields} = join("%", @{$params->{fields}}) if ($params->{fields} && ref $params->{fields} eq 'ARRAY');
+      $params->{coords} = $params->{coords} == 1 ? "1" : "0";
+
+      my @custom_args = ();
+      for (qw/file format short_name fields coords/) {
+        push (@custom_args, $_."=".$params->{$_}) if $params->{$_};
+      }
+
+      # currently we only support getting overlap_cutoff from users
+      if ($params->{overlap_cutoff}) {
+        my $overlap_cutoff = $user_config->{$short_name} || 80;
+        if ( grep(/^$overlap_cutoff$/, @{$params->{overlap_cutoff}}) ) { 
+          if ($overlap_cutoff eq "exact") {
+            push @custom_args, "type=exact";
+          }
+          else {
+            push @custom_args, "type=overlap";
+            push @custom_args, "overlap_cutoff=".$overlap_cutoff;
+          }
+        }
+        else {
+            $c->log->warn("Provided un-supported overlap cutoff - $overlap_cutoff; the default value will be used instead.");
+            push @custom_args, "type=overlap";
+            push @custom_args, "overlap_cutoff=80";
+        }
+      }
+      else {
+        push @custom_args, "type=".$params->{type};
+      }
+
+      push @custom_config, join(",", @custom_args);
+    }
+  }
+
+  return \@custom_config;
 }
 
 __PACKAGE__->meta->make_immutable;

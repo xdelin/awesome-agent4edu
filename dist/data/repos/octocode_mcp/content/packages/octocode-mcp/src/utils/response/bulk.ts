@@ -1,10 +1,7 @@
 import { CallToolResult } from '@modelcontextprotocol/sdk/types';
 import { executeWithErrorIsolation } from '../core/promise.js';
 import { createResponseFormat } from '../../responses.js';
-import {
-  getGenericErrorHintsSync,
-  getToolHintsSync,
-} from '../../tools/toolMetadata.js';
+import { applyOutputSizeLimit } from '../pagination/index.js';
 import type {
   ProcessedBulkResult,
   FlatQueryResult,
@@ -16,6 +13,20 @@ import type {
 
 /** Default concurrency for bulk operations */
 const DEFAULT_BULK_CONCURRENCY = 3;
+
+/**
+ * Timeout per query in bulk operations (default 60s).
+ * Configurable via OCTOCODE_BULK_QUERY_TIMEOUT_MS.
+ *
+ * Timeout interaction: This is the INNER timeout — each query in a bulk operation
+ * gets this limit. The security wrapper (withSecurityValidation) applies an OUTER
+ * 60s timeout to the entire tool call. For N queries, the outer timeout fires at 60s
+ * regardless of per-query limits. Example: 3 queries × 55s = 165s total, but the
+ * outer timeout aborts at 60s. Tune this for single-query tools; for multi-query,
+ * consider: min(TOOL_TIMEOUT_MS / maxQueries, BULK_QUERY_TIMEOUT_MS).
+ */
+const BULK_QUERY_TIMEOUT_MS =
+  parseInt(process.env.OCTOCODE_BULK_QUERY_TIMEOUT_MS || '60000', 10) || 60000;
 
 export async function executeBulkOperation<TQuery extends object>(
   queries: Array<TQuery>,
@@ -40,13 +51,7 @@ function createBulkResponse<TQuery extends object>(
   errors: QueryError[],
   queries: Array<TQuery>
 ): CallToolResult {
-  const topLevelFields = [
-    'instructions',
-    'results',
-    'hasResultsStatusHints',
-    'emptyStatusHints',
-    'errorStatusHints',
-  ];
+  const topLevelFields = ['instructions', 'results'];
   const resultFields = [
     'id',
     'status',
@@ -54,6 +59,7 @@ function createBulkResponse<TQuery extends object>(
     'mainResearchGoal',
     'researchGoal',
     'reasoning',
+    'hints',
   ];
   const standardFields = [...topLevelFields, ...resultFields, 'owner', 'repo'];
   const fullKeysPriority = [
@@ -66,41 +72,22 @@ function createBulkResponse<TQuery extends object>(
   let emptyCount = 0;
   let errorCount = 0;
 
-  let hasAnyHasResults = false;
-  let hasAnyEmpty = false;
-  let hasAnyError = false;
-  const hasResultsHintsSet = new Set<string>();
-  const emptyHintsSet = new Set<string>();
-  const errorHintsSet = new Set<string>();
-
   results.forEach(r => {
     const status = r.result.status;
     const toolData = extractToolData(r.result);
-
-    const hintsArray = r.result.hints;
-    if (status === 'hasResults') {
-      hasAnyHasResults = true;
-      if (hintsArray && Array.isArray(hintsArray)) {
-        hintsArray.forEach(hint => hasResultsHintsSet.add(hint));
-      }
-    } else if (status === 'empty') {
-      hasAnyEmpty = true;
-      if (hintsArray && Array.isArray(hintsArray)) {
-        hintsArray.forEach(hint => emptyHintsSet.add(hint));
-      }
-    } else if (status === 'error') {
-      hasAnyError = true;
-      if (hintsArray && Array.isArray(hintsArray)) {
-        hintsArray.forEach(hint => errorHintsSet.add(hint));
-      }
-    }
 
     const flatQuery: FlatQueryResult = {
       id: r.queryIndex + 1, // 1-based ID for LLM readability
       status,
       data:
         status === 'error' && r.result.error
-          ? { error: r.result.error }
+          ? (() => {
+              const filtered = filterHints(r.result.hints);
+              return {
+                error: r.result.error,
+                ...(filtered ? { hints: filtered } : {}),
+              };
+            })()
           : toolData,
       mainResearchGoal:
         r.result.mainResearchGoal ||
@@ -123,8 +110,6 @@ function createBulkResponse<TQuery extends object>(
     const originalQuery = queries[err.queryIndex];
     if (!originalQuery) return;
 
-    hasAnyError = true;
-
     flatQueries.push({
       id: err.queryIndex + 1, // 1-based ID for LLM readability
       status: 'error',
@@ -137,24 +122,6 @@ function createBulkResponse<TQuery extends object>(
     errorCount++;
   });
 
-  const hasResultsHints = hasAnyHasResults
-    ? hasResultsHintsSet.size > 0
-      ? [...hasResultsHintsSet]
-      : [...getToolHintsSync(config.toolName, 'hasResults')]
-    : [];
-
-  const emptyHints = hasAnyEmpty
-    ? emptyHintsSet.size > 0
-      ? [...emptyHintsSet]
-      : [...getToolHintsSync(config.toolName, 'empty')]
-    : [];
-
-  const errorHints = hasAnyError
-    ? errorHintsSet.size > 0
-      ? [...errorHintsSet]
-      : [...getGenericErrorHintsSync()]
-    : [];
-
   const instructions = generateBulkInstructions(
     flatQueries.length,
     hasResultsCount,
@@ -165,19 +132,32 @@ function createBulkResponse<TQuery extends object>(
   const responseData: ToolResponse = {
     instructions,
     results: flatQueries,
-    hasResultsStatusHints: hasResultsHints,
-    emptyStatusHints: emptyHints,
-    errorStatusHints: errorHints,
   };
+
+  let text = createResponseFormat(responseData, fullKeysPriority);
+
+  const sizeLimitResult = applyOutputSizeLimit(text, {});
+  if (sizeLimitResult.wasLimited) {
+    const paginationSuffix = [
+      ...sizeLimitResult.warnings,
+      ...sizeLimitResult.paginationHints,
+    ]
+      .filter(s => s.length > 0)
+      .join('\n');
+    text =
+      sizeLimitResult.content +
+      (paginationSuffix ? '\n' + paginationSuffix : '');
+  }
 
   return {
     content: [
       {
         type: 'text' as const,
-        text: createResponseFormat(responseData, fullKeysPriority),
+        text,
       },
     ],
-    isError: false,
+    structuredContent: responseData as Record<string, unknown>,
+    isError: errorCount > 0 && hasResultsCount === 0 && emptyCount === 0,
   };
 }
 
@@ -223,7 +203,7 @@ async function processBulkQueries<TQuery extends object>(
   );
 
   const queryResults = await executeWithErrorIsolation(queryPromiseFunctions, {
-    timeout: 60000,
+    timeout: BULK_QUERY_TIMEOUT_MS,
     continueOnError: true,
     concurrency, // Configurable concurrent requests to balance rate limiting vs throughput
     onError: (error: Error, index: number) => {
@@ -255,6 +235,14 @@ async function processBulkQueries<TQuery extends object>(
   return { results, errors };
 }
 
+function filterHints(hints: unknown): string[] | undefined {
+  if (!Array.isArray(hints)) return undefined;
+  const filtered = hints.filter(
+    (h): h is string => typeof h === 'string' && h.trim().length > 0
+  );
+  return filtered.length > 0 ? filtered : undefined;
+}
+
 function extractToolData(result: ProcessedBulkResult): Record<string, unknown> {
   const excludedKeys = new Set([
     'mainResearchGoal',
@@ -263,13 +251,17 @@ function extractToolData(result: ProcessedBulkResult): Record<string, unknown> {
     'error',
     'status',
     'query',
-    'hints',
   ]);
 
   const toolData: Record<string, unknown> = {};
   for (const [key, value] of Object.entries(result)) {
     if (!excludedKeys.has(key)) {
-      toolData[key] = value;
+      if (key === 'hints') {
+        const filtered = filterHints(value);
+        if (filtered) toolData[key] = filtered;
+      } else {
+        toolData[key] = value;
+      }
     }
   }
 
@@ -290,28 +282,15 @@ function generateBulkInstructions(
   emptyCount: number,
   errorCount: number
 ): string {
-  const counts = [];
-  if (hasResultsCount > 0) counts.push(`${hasResultsCount} hasResults`);
-  if (emptyCount > 0) counts.push(`${emptyCount} empty`);
-  if (errorCount > 0) counts.push(`${errorCount} failed`);
-
-  const instructionsParts = [
-    `Bulk response with ${total} results: ${counts.join(', ')}. Each result includes the status, data, and research details.`,
-  ];
-
-  if (hasResultsCount > 0) {
-    instructionsParts.push(
-      'Review hasResultsStatusHints for guidance on results with data.'
-    );
+  if (total === 0) return '0 results.';
+  const parts = [];
+  if (hasResultsCount > 0) parts.push(`${hasResultsCount} data`);
+  if (emptyCount > 0) parts.push(`${emptyCount} empty`);
+  if (errorCount > 0) parts.push(`${errorCount} error`);
+  if (total === 1) {
+    return parts.length === 1 && hasResultsCount === 1
+      ? '1 result.'
+      : `1 result: ${parts.join(', ')}.`;
   }
-  if (emptyCount > 0) {
-    instructionsParts.push('Review emptyStatusHints for no-results scenarios.');
-  }
-  if (errorCount > 0) {
-    instructionsParts.push(
-      'Review errorStatusHints for error recovery strategies.'
-    );
-  }
-
-  return instructionsParts.join('\n');
+  return `${total} results: ${parts.join(', ')}.`;
 }

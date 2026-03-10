@@ -16,7 +16,7 @@ import { OptionsError } from './error';
 import { toUint256, UINT256_MAX } from './utils/convert-strings';
 import { setNamespacedStorage, toStorageStructInstantiation } from './set-namespaced-storage';
 
-export const crossChainBridgingOptions = [false, 'custom', 'superchain'] as const;
+export const crossChainBridgingOptions = [false, 'custom', 'erc7786native', 'superchain'] as const;
 export type CrossChainBridging = (typeof crossChainBridgingOptions)[number];
 
 export interface ERC20Options extends CommonOptions {
@@ -36,6 +36,7 @@ export interface ERC20Options extends CommonOptions {
   votes?: boolean | ClockMode;
   flashmint?: boolean;
   crossChainBridging?: CrossChainBridging;
+  crossChainLinkAllowOverride?: boolean;
   namespacePrefix?: string;
 }
 
@@ -53,6 +54,7 @@ export const defaults: Required<ERC20Options> = {
   votes: false,
   flashmint: false,
   crossChainBridging: false,
+  crossChainLinkAllowOverride: false,
   namespacePrefix: 'myProject',
 } as const;
 
@@ -70,6 +72,7 @@ export function withDefaults(opts: ERC20Options): Required<ERC20Options> {
     votes: opts.votes ?? defaults.votes,
     flashmint: opts.flashmint ?? defaults.flashmint,
     crossChainBridging: opts.crossChainBridging ?? defaults.crossChainBridging,
+    crossChainLinkAllowOverride: opts.crossChainLinkAllowOverride ?? defaults.crossChainLinkAllowOverride,
     namespacePrefix: opts.namespacePrefix ?? defaults.namespacePrefix,
   };
 }
@@ -79,7 +82,13 @@ export function printERC20(opts: ERC20Options = defaults): string {
 }
 
 export function isAccessControlRequired(opts: Partial<ERC20Options>): boolean {
-  return opts.mintable || opts.pausable || opts.upgradeable === 'uups';
+  return (
+    opts.mintable ||
+    opts.pausable ||
+    opts.upgradeable === 'uups' ||
+    opts.crossChainBridging === 'custom' ||
+    opts.crossChainBridging === 'erc7786native'
+  );
 }
 
 export function buildERC20(opts: ERC20Options): ContractBuilder {
@@ -92,7 +101,14 @@ export function buildERC20(opts: ERC20Options): ContractBuilder {
   addBase(c, allOpts.name, allOpts.symbol);
 
   if (allOpts.crossChainBridging) {
-    addCrossChainBridging(c, allOpts.crossChainBridging, access, upgradeable, allOpts.namespacePrefix);
+    addCrossChainBridging(
+      c,
+      allOpts.crossChainBridging,
+      allOpts.crossChainLinkAllowOverride,
+      access,
+      upgradeable,
+      allOpts.namespacePrefix,
+    );
   }
 
   if (allOpts.premint) {
@@ -115,14 +131,13 @@ export function buildERC20(opts: ERC20Options): ContractBuilder {
     addCallback(c);
   }
 
-  // Note: Votes requires Permit
-  if (allOpts.permit || allOpts.votes) {
+  if (allOpts.permit) {
     addPermit(c, allOpts.name);
   }
 
   if (allOpts.votes) {
     const clockMode = allOpts.votes === true ? clockModeDefault : allOpts.votes;
-    addVotes(c, clockMode);
+    addVotes(c, allOpts.name, clockMode);
   }
 
   if (allOpts.flashmint) {
@@ -173,11 +188,41 @@ export function isValidChainId(str: string): boolean {
   return chainIdPattern.test(str);
 }
 
-function scaleByPowerOfTen(base: bigint, exponent: number): bigint {
+export function scaleByPowerOfTen(base: bigint, exponent: number): bigint {
   if (exponent < 0) {
     return base / BigInt(10) ** BigInt(-exponent);
   } else {
     return base * BigInt(10) ** BigInt(exponent);
+  }
+}
+
+export interface PremintCalculation {
+  units: string;
+  exp: string;
+  decimalPlace: number;
+}
+
+export function calculatePremint(amount: string): PremintCalculation | undefined {
+  const m = amount.match(premintPattern);
+  if (!m) {
+    throw new OptionsError({
+      premint: 'Not a valid number',
+    });
+  }
+
+  const integer = m[1]?.replace(/^0+/, '') ?? '';
+  const decimals = m[2]?.replace(/0+$/, '') ?? '';
+  const exponent = Number(m[3] ?? 0);
+
+  if (Number(integer + decimals) > 0) {
+    const decimalPlace = decimals.length - exponent;
+    const zeroes = new Array(Math.max(0, -decimalPlace)).fill('0').join('');
+    const units = integer + decimals + zeroes;
+    const exp = decimalPlace <= 0 ? 'decimals()' : `(decimals() - ${decimalPlace})`;
+
+    return { units, exp, decimalPlace };
+  } else {
+    return undefined;
   }
 }
 
@@ -187,49 +232,38 @@ function addPremint(
   premintChainId: string,
   crossChainBridging: CrossChainBridging,
 ) {
-  const m = amount.match(premintPattern);
-  if (m) {
-    const integer = m[1]?.replace(/^0+/, '') ?? '';
-    const decimals = m[2]?.replace(/0+$/, '') ?? '';
-    const exponent = Number(m[3] ?? 0);
+  const premintCalculation = calculatePremint(amount);
+  if (premintCalculation === undefined) {
+    return;
+  }
 
-    if (Number(integer + decimals) > 0) {
-      const decimalPlace = decimals.length - exponent;
-      const zeroes = new Array(Math.max(0, -decimalPlace)).fill('0').join('');
-      const units = integer + decimals + zeroes;
-      const exp = decimalPlace <= 0 ? 'decimals()' : `(decimals() - ${decimalPlace})`;
+  const { units, exp, decimalPlace } = premintCalculation;
 
-      const validatedBaseUnits = toUint256(units, 'premint');
-      checkPotentialPremintOverflow(validatedBaseUnits, decimalPlace);
+  const validatedBaseUnits = toUint256(units, 'premint');
+  checkPotentialPremintOverflow(validatedBaseUnits, decimalPlace);
 
-      c.addConstructorArgument({ type: 'address', name: 'recipient' });
+  c.addConstructorArgument({ type: 'address', name: 'recipient' });
 
-      const mintLine = `_mint(recipient, ${units} * 10 ** ${exp});`;
+  const mintLine = `_mint(recipient, ${units} * 10 ** ${exp});`;
 
-      if (crossChainBridging) {
-        if (premintChainId === '') {
-          throw new OptionsError({
-            premintChainId: 'Chain ID is required when using Premint with Cross-Chain Bridging',
-          });
-        }
-
-        if (!isValidChainId(premintChainId)) {
-          throw new OptionsError({
-            premintChainId: 'Not a valid chain ID',
-          });
-        }
-
-        c.addConstructorCode(`if (block.chainid == ${premintChainId}) {`);
-        c.addConstructorCode(`    ${mintLine}`);
-        c.addConstructorCode(`}`);
-      } else {
-        c.addConstructorCode(mintLine);
-      }
+  if (crossChainBridging) {
+    if (premintChainId === '') {
+      throw new OptionsError({
+        premintChainId: 'Chain ID is required when using Premint with Cross-Chain Bridging',
+      });
     }
+
+    if (!isValidChainId(premintChainId)) {
+      throw new OptionsError({
+        premintChainId: 'Not a valid chain ID',
+      });
+    }
+
+    c.addConstructorCode(`if (block.chainid == ${premintChainId}) {`);
+    c.addConstructorCode(`    ${mintLine}`);
+    c.addConstructorCode(`}`);
   } else {
-    throw new OptionsError({
-      premint: 'Not a valid number',
-    });
+    c.addConstructorCode(mintLine);
   }
 }
 
@@ -274,9 +308,14 @@ function addPermit(c: ContractBuilder, name: string) {
   c.addOverride(ERC20Permit, functions.nonces);
 }
 
-function addVotes(c: ContractBuilder, clockMode: ClockMode) {
+function addVotes(c: ContractBuilder, name: string, clockMode: ClockMode) {
   if (!c.parents.some(p => p.contract.name === 'ERC20Permit')) {
-    throw new Error('Missing ERC20Permit requirement for ERC20Votes');
+    // ERC20Permit initializes the EIP712 domain separator. If ERC20Permit is not a parent, we need to do it here.
+    const EIP712 = {
+      name: 'EIP712',
+      path: '@openzeppelin/contracts/utils/cryptography/EIP712.sol',
+    };
+    c.addParent(EIP712, [name, '1']);
   }
 
   const ERC20Votes = {
@@ -309,6 +348,40 @@ function addFlashMint(c: ContractBuilder) {
 
 function addCrossChainBridging(
   c: ContractBuilder,
+  crossChainBridging: 'custom' | 'erc7786native' | 'superchain',
+  crossChainLinkAllowOverride: boolean,
+  access: Access,
+  upgradeable: Upgradeable,
+  namespacePrefix: string,
+) {
+  if (crossChainBridging === 'erc7786native') {
+    addERC20Crosschain(c, crossChainLinkAllowOverride, access);
+  } else {
+    addERC20Bridgeable(c, crossChainBridging, access, upgradeable, namespacePrefix);
+  }
+}
+
+function addERC20Crosschain(c: ContractBuilder, crossChainLinkAllowOverride: boolean, access: Access) {
+  c.addParent({
+    name: 'ERC20Crosschain',
+    path: '@openzeppelin/contracts/token/ERC20/extensions/ERC20Crosschain.sol',
+  });
+
+  c.addConstructionOnly(
+    {
+      name: 'CrosschainLinked',
+      path: '@openzeppelin/contracts/crosschain/CrosschainLinked.sol',
+    },
+    [{ lit: 'links' }],
+  );
+  c.addConstructorArgument({ type: 'CrosschainLinked.Link[] memory', name: 'links' });
+
+  requireAccessControl(c, functions.setLink, access, 'CROSSCHAIN_LINKER', 'crosschainLinker');
+  c.addFunctionCode(`_setLink(gateway, counterpart, ${crossChainLinkAllowOverride});`, functions.setLink);
+}
+
+function addERC20Bridgeable(
+  c: ContractBuilder,
   crossChainBridging: 'custom' | 'superchain',
   access: Access,
   upgradeable: Upgradeable,
@@ -339,31 +412,57 @@ function addCrossChainBridging(
 }
 
 function addCustomBridging(c: ContractBuilder, access: Access, upgradeable: Upgradeable, namespacePrefix: string) {
+  if (access === false) {
+    access = 'ownable';
+  }
+
   switch (access) {
-    case false:
     case 'ownable': {
       if (!upgradeable) {
+        const LINES_CHECK_AND_SET_TOKEN_BRIDGE = [
+          `require(tokenBridge_ != address(0), "Invalid tokenBridge_ address");`,
+          `tokenBridge = tokenBridge_;`,
+        ];
+
+        // Add variable and constructor logic using state variable
         const addedBridge = c.addStateVariable(`address public tokenBridge;`, false);
         if (addedBridge) {
           c.addConstructorArgument({ type: 'address', name: 'tokenBridge_' });
-          c.addConstructorCode(`require(tokenBridge_ != address(0), "Invalid tokenBridge_ address");`);
-          c.addConstructorCode(`tokenBridge = tokenBridge_;`);
+          LINES_CHECK_AND_SET_TOKEN_BRIDGE.forEach(line => {
+            c.addConstructorCode(line);
+          });
         }
         c.setFunctionBody([`if (caller != tokenBridge) revert Unauthorized();`], functions._checkTokenBridge, 'view');
+
+        // Add bridge setter
+        requireAccessControl(c, functions.setTokenBridge, access, 'TOKEN_BRIDGE_SETTER', 'tokenBridgeSetter');
+        LINES_CHECK_AND_SET_TOKEN_BRIDGE.forEach(line => {
+          c.addFunctionCode(line, functions.setTokenBridge);
+        });
       } else {
+        const LINES_CHECK_AND_SET_TOKEN_BRIDGE = [
+          `require(tokenBridge_ != address(0), "Invalid tokenBridge_ address");`,
+          toStorageStructInstantiation(c.name),
+          '$.tokenBridge = tokenBridge_;',
+        ];
+
+        // Add variable and constructor logic using namespaced storage
         setNamespacedStorage(c, ['address tokenBridge;'], namespacePrefix);
 
         c.addConstructorArgument({ type: 'address', name: 'tokenBridge_' });
-        c.addConstructorCode(`require(tokenBridge_ != address(0), "Invalid tokenBridge_ address");`);
-
-        c.addConstructorCode(toStorageStructInstantiation(c.name));
-        c.addConstructorCode(`$.tokenBridge = tokenBridge_;`);
+        LINES_CHECK_AND_SET_TOKEN_BRIDGE.forEach(line => {
+          c.addConstructorCode(line);
+        });
 
         c.setFunctionBody(
           [toStorageStructInstantiation(c.name), `if (caller != $.tokenBridge) revert Unauthorized();`],
           functions._checkTokenBridge,
           'view',
         );
+
+        // Add bridge setter
+        requireAccessControl(c, functions.setTokenBridge, access, 'TOKEN_BRIDGE_SETTER', 'tokenBridgeSetter');
+        c.setFunctionBody(LINES_CHECK_AND_SET_TOKEN_BRIDGE, functions.setTokenBridge);
       }
       break;
     }
@@ -482,5 +581,18 @@ export const functions = defineFunctions({
   _checkTokenBridge: {
     kind: 'internal' as const,
     args: [{ name: 'caller', type: 'address' }],
+  },
+
+  setTokenBridge: {
+    kind: 'public' as const,
+    args: [{ name: 'tokenBridge_', type: 'address' }],
+  },
+
+  setLink: {
+    kind: 'public' as const,
+    args: [
+      { name: 'gateway', type: 'address' },
+      { name: 'counterpart', type: 'bytes memory' },
+    ],
   },
 });

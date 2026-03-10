@@ -14,7 +14,7 @@ Commands:
     pdf                  Extract from PDF file
     unified              Multi-source scraping (docs + GitHub + PDF)
     analyze              Analyze local codebase and extract code knowledge
-    enhance              AI-powered enhancement (local, no API key)
+    enhance              AI-powered enhancement (auto: API or LOCAL mode)
     enhance-status       Check enhancement status (for background/daemon modes)
     package              Package skill into .zip file
     upload               Upload skill to Claude
@@ -42,12 +42,13 @@ from skill_seekers.cli import __version__
 
 # Command module mapping (command name -> module path)
 COMMAND_MODULES = {
+    "create": "skill_seekers.cli.create_command",  # NEW: Unified create command
     "config": "skill_seekers.cli.config_command",
     "scrape": "skill_seekers.cli.doc_scraper",
     "github": "skill_seekers.cli.github_scraper",
     "pdf": "skill_seekers.cli.pdf_scraper",
     "unified": "skill_seekers.cli.unified_scraper",
-    "enhance": "skill_seekers.cli.enhance_skill_local",
+    "enhance": "skill_seekers.cli.enhance_command",
     "enhance-status": "skill_seekers.cli.enhance_status",
     "package": "skill_seekers.cli.package_skill",
     "upload": "skill_seekers.cli.upload_skill",
@@ -61,6 +62,7 @@ COMMAND_MODULES = {
     "update": "skill_seekers.cli.incremental_updater",
     "multilang": "skill_seekers.cli.multilang_support",
     "quality": "skill_seekers.cli.quality_metrics",
+    "workflows": "skill_seekers.cli.workflows_command",
 }
 
 
@@ -127,15 +129,24 @@ def _reconstruct_argv(command: str, args: argparse.Namespace) -> list[str]:
         if key == "command":
             continue
 
+        # Handle internal/progressive help flags for create command
+        # Convert _help_web to --help-web etc.
+        if key.startswith("_help_"):
+            if value:
+                # Convert _help_web -> --help-web
+                help_flag = key.replace("_help_", "help-")
+                argv.append(f"--{help_flag}")
+            continue
+
         # Handle positional arguments (no -- prefix)
         if key in [
+            "source",  # create command
             "url",
             "directory",
             "file",
             "job_id",
             "skill_directory",
             "zip_file",
-            "config",
             "input_file",
         ]:
             if value is not None and value != "":
@@ -166,6 +177,19 @@ def main(argv: list[str] | None = None) -> int:
     Returns:
         Exit code (0 for success, non-zero for error)
     """
+    # Special handling for analyze --preset-list (no directory required)
+    if argv is None:
+        argv = sys.argv[1:]
+    if len(argv) >= 2 and argv[0] == "analyze" and "--preset-list" in argv:
+        from skill_seekers.cli.codebase_scraper import main as analyze_main
+
+        original_argv = sys.argv.copy()
+        sys.argv = ["codebase_scraper.py", "--preset-list"]
+        try:
+            return analyze_main() or 0
+        finally:
+            sys.argv = original_argv
+
     parser = create_parser()
     args = parser.parse_args(argv)
 
@@ -251,21 +275,10 @@ def _handle_analyze_command(args: argparse.Namespace) -> int:
     elif args.depth:
         sys.argv.extend(["--depth", args.depth])
 
-    # Determine enhance_level
-    if args.enhance_level is not None:
-        enhance_level = args.enhance_level
-    elif args.quick:
-        enhance_level = 0
-    elif args.enhance:
-        try:
-            from skill_seekers.cli.config_manager import get_config_manager
-
-            config = get_config_manager()
-            enhance_level = config.get_default_enhance_level()
-        except Exception:
-            enhance_level = 1
-    else:
-        enhance_level = 0
+    # Determine enhance_level (simplified - use default or override)
+    enhance_level = getattr(args, "enhance_level", 2)  # Default is 2
+    if getattr(args, "quick", False):
+        enhance_level = 0  # Quick mode disables enhancement
 
     sys.argv.extend(["--enhance-level", str(enhance_level)])
 
@@ -292,6 +305,30 @@ def _handle_analyze_command(args: argparse.Namespace) -> int:
         sys.argv.append("--no-comments")
     if args.verbose:
         sys.argv.append("--verbose")
+    if getattr(args, "quiet", False):
+        sys.argv.append("--quiet")
+    if getattr(args, "dry_run", False):
+        sys.argv.append("--dry-run")
+    if getattr(args, "preset", None):
+        sys.argv.extend(["--preset", args.preset])
+    if getattr(args, "name", None):
+        sys.argv.extend(["--name", args.name])
+    if getattr(args, "description", None):
+        sys.argv.extend(["--description", args.description])
+    if getattr(args, "api_key", None):
+        sys.argv.extend(["--api-key", args.api_key])
+    # Enhancement Workflow arguments
+    if getattr(args, "enhance_workflow", None):
+        for wf in args.enhance_workflow:
+            sys.argv.extend(["--enhance-workflow", wf])
+    if getattr(args, "enhance_stage", None):
+        for stage in args.enhance_stage:
+            sys.argv.extend(["--enhance-stage", stage])
+    if getattr(args, "workflow_var", None):
+        for var in args.workflow_var:
+            sys.argv.extend(["--var", var])
+    if getattr(args, "workflow_dry_run", False):
+        sys.argv.append("--workflow-dry-run")
 
     try:
         result = analyze_main() or 0
@@ -307,10 +344,39 @@ def _handle_analyze_command(args: argparse.Namespace) -> int:
                 print("=" * 60 + "\n")
 
                 try:
-                    from skill_seekers.cli.enhance_skill_local import LocalSkillEnhancer
+                    from skill_seekers.cli.enhance_command import (
+                        _is_root,
+                        _pick_mode,
+                        _run_api_mode,
+                        _run_local_mode,
+                    )
+                    import argparse as _ap
 
-                    enhancer = LocalSkillEnhancer(str(skill_dir), force=True)
-                    success = enhancer.run(headless=True, timeout=600)
+                    _fake_args = _ap.Namespace(
+                        skill_directory=str(skill_dir),
+                        target=None,
+                        api_key=None,
+                        dry_run=False,
+                        agent=None,
+                        agent_cmd=None,
+                        interactive_enhancement=False,
+                        background=False,
+                        daemon=False,
+                        no_force=False,
+                        timeout=600,
+                    )
+                    _mode, _target = _pick_mode(_fake_args)
+
+                    if _mode == "api":
+                        print(f"\n🤖 Enhancement mode: API ({_target})")
+                        success = _run_api_mode(_fake_args, _target) == 0
+                    elif _is_root():
+                        print("\n⚠️  Skipping SKILL.md enhancement: running as root")
+                        print("   Set ANTHROPIC_API_KEY / GOOGLE_API_KEY to enable API mode")
+                        success = False
+                    else:
+                        print("\n🤖 Enhancement mode: LOCAL (Claude Code CLI)")
+                        success = _run_local_mode(_fake_args) == 0
 
                     if success:
                         print("\n✅ SKILL.md enhancement complete!")

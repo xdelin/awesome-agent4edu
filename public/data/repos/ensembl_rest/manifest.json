@@ -1,5 +1,6 @@
 {
   "name": "Ensembl REST",
+  "full": true,
   "tree": [
     {
       "name": "benchmarks",
@@ -7,11 +8,46 @@
       "path": "benchmarks",
       "children": [
         {
+          "name": "fetch_all_genes.pl",
+          "type": "file",
+          "path": "benchmarks/fetch_all_genes.pl",
+          "size": 2187,
+          "language": "pl"
+        },
+        {
+          "name": "fetch_sequence.pl",
+          "type": "file",
+          "path": "benchmarks/fetch_sequence.pl",
+          "size": 2233,
+          "language": "pl"
+        },
+        {
           "name": "fetch_sequence.rb",
           "type": "file",
           "path": "benchmarks/fetch_sequence.rb",
-          "size": 1948,
+          "size": 1875,
           "language": "rb"
+        },
+        {
+          "name": "fetch_url.pl",
+          "type": "file",
+          "path": "benchmarks/fetch_url.pl",
+          "size": 1035,
+          "language": "pl"
+        },
+        {
+          "name": "random_ids.pl",
+          "type": "file",
+          "path": "benchmarks/random_ids.pl",
+          "size": 2188,
+          "language": "pl"
+        },
+        {
+          "name": "random_urls_to_ids.pl",
+          "type": "file",
+          "path": "benchmarks/random_urls_to_ids.pl",
+          "size": 998,
+          "language": "pl"
         }
       ]
     },
@@ -21,6 +57,48 @@
       "path": "bin",
       "children": [
         {
+          "name": "documentation",
+          "type": "folder",
+          "path": "bin/documentation",
+          "children": [
+            {
+              "name": "generate_changelog.pl",
+              "type": "file",
+              "path": "bin/documentation/generate_changelog.pl",
+              "size": 2116,
+              "language": "pl"
+            }
+          ]
+        },
+        {
+          "name": "lucy_index",
+          "type": "folder",
+          "path": "bin/lucy_index",
+          "children": [
+            {
+              "name": "lookup.pl",
+              "type": "file",
+              "path": "bin/lucy_index/lookup.pl",
+              "size": 3029,
+              "language": "pl"
+            },
+            {
+              "name": "lookup_generation.pl",
+              "type": "file",
+              "path": "bin/lucy_index/lookup_generation.pl",
+              "size": 4700,
+              "language": "pl"
+            },
+            {
+              "name": "mysql_lookup.pl",
+              "type": "file",
+              "path": "bin/lucy_index/mysql_lookup.pl",
+              "size": 2141,
+              "language": "pl"
+            }
+          ]
+        },
+        {
           "name": "memcached",
           "type": "folder",
           "path": "bin/memcached",
@@ -29,7 +107,7 @@
               "name": "list_memcached.rb",
               "type": "file",
               "path": "bin/memcached/list_memcached.rb",
-              "size": 1544,
+              "size": 1502,
               "language": "rb"
             }
           ]
@@ -40,17 +118,24 @@
           "path": "bin/production",
           "children": [
             {
+              "name": "server_control.pl",
+              "type": "file",
+              "path": "bin/production/server_control.pl",
+              "size": 2927,
+              "language": "pl"
+            },
+            {
               "name": "start_rest_server.sh",
               "type": "file",
               "path": "bin/production/start_rest_server.sh",
-              "size": 3742,
+              "size": 3638,
               "language": "sh"
             },
             {
               "name": "stop_rest_server.sh",
               "type": "file",
               "path": "bin/production/stop_rest_server.sh",
-              "size": 828,
+              "size": 811,
               "language": "sh"
             }
           ]
@@ -68,10 +153,17 @@
           "path": "configurations/production",
           "children": [
             {
+              "name": "ensrest.psgi.default",
+              "type": "file",
+              "path": "configurations/production/ensrest.psgi.default",
+              "size": 4495,
+              "language": "default"
+            },
+            {
               "name": "log4perl.conf",
               "type": "file",
               "path": "configurations/production/log4perl.conf",
-              "size": 496,
+              "size": 487,
               "language": "conf"
             }
           ]
@@ -84,18 +176,1012 @@
       "path": "examples",
       "children": [
         {
+          "name": "configurations",
+          "type": "folder",
+          "path": "examples/configurations",
+          "children": [
+            {
+              "name": "varnish",
+              "type": "folder",
+              "path": "examples/configurations/varnish",
+              "children": [
+                {
+                  "name": "varnish",
+                  "type": "file",
+                  "path": "examples/configurations/varnish/varnish",
+                  "size": 845,
+                  "language": "text"
+                },
+                {
+                  "name": "varnish.vcl",
+                  "type": "file",
+                  "path": "examples/configurations/varnish/varnish.vcl",
+                  "size": 629,
+                  "language": "vcl"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "direct_ensembl.pl",
+          "type": "file",
+          "path": "examples/direct_ensembl.pl",
+          "size": 2019,
+          "language": "pl"
+        },
+        {
+          "name": "ensembl_rest.pl",
+          "type": "file",
+          "path": "examples/ensembl_rest.pl",
+          "size": 1367,
+          "language": "pl"
+        },
+        {
           "name": "ensembl_rest.py",
           "type": "file",
           "path": "examples/ensembl_rest.py",
-          "size": 1459,
+          "size": 1419,
           "language": "py"
         },
         {
           "name": "ensembl_rest.rb",
           "type": "file",
           "path": "examples/ensembl_rest.rb",
-          "size": 1505,
+          "size": 1453,
           "language": "rb"
+        },
+        {
+          "name": "ensembl_rest_json.pl",
+          "type": "file",
+          "path": "examples/ensembl_rest_json.pl",
+          "size": 1323,
+          "language": "pl"
+        }
+      ]
+    },
+    {
+      "name": "lib",
+      "type": "folder",
+      "path": "lib",
+      "children": [
+        {
+          "name": "Catalyst",
+          "type": "folder",
+          "path": "lib/Catalyst",
+          "children": [
+            {
+              "name": "Action",
+              "type": "folder",
+              "path": "lib/Catalyst/Action",
+              "children": [
+                {
+                  "name": "Deserialize",
+                  "type": "folder",
+                  "path": "lib/Catalyst/Action/Deserialize",
+                  "children": [
+                    {
+                      "name": "JSONP.pm",
+                      "type": "file",
+                      "path": "lib/Catalyst/Action/Deserialize/JSONP.pm",
+                      "size": 886,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "Serialize",
+                  "type": "folder",
+                  "path": "lib/Catalyst/Action/Serialize",
+                  "children": [
+                    {
+                      "name": "JSON",
+                      "type": "folder",
+                      "path": "lib/Catalyst/Action/Serialize/JSON",
+                      "children": [
+                        {
+                          "name": "XS.pm",
+                          "type": "file",
+                          "path": "lib/Catalyst/Action/Serialize/JSON/XS.pm",
+                          "size": 1131,
+                          "language": "pm"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "YAML",
+                      "type": "folder",
+                      "path": "lib/Catalyst/Action/Serialize/YAML",
+                      "children": [
+                        {
+                          "name": "XS.pm",
+                          "type": "file",
+                          "path": "lib/Catalyst/Action/Serialize/YAML/XS.pm",
+                          "size": 1367,
+                          "language": "pm"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "JSON.pm",
+                      "type": "file",
+                      "path": "lib/Catalyst/Action/Serialize/JSON.pm",
+                      "size": 1731,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "Deserialize.pm",
+                  "type": "file",
+                  "path": "lib/Catalyst/Action/Deserialize.pm",
+                  "size": 5082,
+                  "language": "pm"
+                }
+              ]
+            },
+            {
+              "name": "Script",
+              "type": "folder",
+              "path": "lib/Catalyst/Script",
+              "children": [
+                {
+                  "name": "EnsemblTest.pm",
+                  "type": "file",
+                  "path": "lib/Catalyst/Script/EnsemblTest.pm",
+                  "size": 3756,
+                  "language": "pm"
+                }
+              ]
+            },
+            {
+              "name": "TraitFor",
+              "type": "folder",
+              "path": "lib/Catalyst/TraitFor",
+              "children": [
+                {
+                  "name": "Request",
+                  "type": "folder",
+                  "path": "lib/Catalyst/TraitFor/Request",
+                  "children": [
+                    {
+                      "name": "REST.pm",
+                      "type": "file",
+                      "path": "lib/Catalyst/TraitFor/Request/REST.pm",
+                      "size": 5514,
+                      "language": "pm"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "EnsEMBL",
+          "type": "folder",
+          "path": "lib/EnsEMBL",
+          "children": [
+            {
+              "name": "REST",
+              "type": "folder",
+              "path": "lib/EnsEMBL/REST",
+              "children": [
+                {
+                  "name": "Controller",
+                  "type": "folder",
+                  "path": "lib/EnsEMBL/REST/Controller",
+                  "children": [
+                    {
+                      "name": "ga4gh",
+                      "type": "folder",
+                      "path": "lib/EnsEMBL/REST/Controller/ga4gh",
+                      "children": [
+                        {
+                          "name": "annotationSets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/annotationSets.pm",
+                          "size": 2291,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "Beacon.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/Beacon.pm",
+                          "size": 2805,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "callSet.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/callSet.pm",
+                          "size": 2730,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "datasets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/datasets.pm",
+                          "size": 2391,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "features.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/features.pm",
+                          "size": 3228,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "featureSets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/featureSets.pm",
+                          "size": 2196,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "references.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/references.pm",
+                          "size": 2868,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "referenceSets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/referenceSets.pm",
+                          "size": 2470,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "variantannotations.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/variantannotations.pm",
+                          "size": 2920,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "variants.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/variants.pm",
+                          "size": 3743,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "variantSet.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Controller/ga4gh/variantSet.pm",
+                          "size": 2649,
+                          "language": "pm"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Archive.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Archive.pm",
+                      "size": 2930,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Assembly.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Assembly.pm",
+                      "size": 2848,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Cafe.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Cafe.pm",
+                      "size": 3821,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Documentation.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Documentation.pm",
+                      "size": 2488,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "GeneTree.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/GeneTree.pm",
+                      "size": 5177,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "GenomicAlignment.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/GenomicAlignment.pm",
+                      "size": 6112,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Homology.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Homology.pm",
+                      "size": 8297,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Info.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Info.pm",
+                      "size": 13882,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "LD.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/LD.pm",
+                      "size": 3356,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Lookup.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Lookup.pm",
+                      "size": 4650,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Map.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Map.pm",
+                      "size": 9139,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Ontology.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Ontology.pm",
+                      "size": 5387,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Overlap.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Overlap.pm",
+                      "size": 5243,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Phenotype.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Phenotype.pm",
+                      "size": 4782,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Regulatory.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Regulatory.pm",
+                      "size": 2231,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "ReturnError.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/ReturnError.pm",
+                      "size": 2929,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Root.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Root.pm",
+                      "size": 1521,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Sequence.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Sequence.pm",
+                      "size": 18082,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Taxonomy.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Taxonomy.pm",
+                      "size": 4091,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TranscriptHaplotypes.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/TranscriptHaplotypes.pm",
+                      "size": 2631,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "VariantRecoder.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/VariantRecoder.pm",
+                      "size": 4666,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Variation.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Variation.pm",
+                      "size": 3435,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "VEP.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/VEP.pm",
+                      "size": 19687,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Xrefs.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Controller/Xrefs.pm",
+                      "size": 5477,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "EnsemblModel",
+                  "type": "folder",
+                  "path": "lib/EnsEMBL/REST/EnsemblModel",
+                  "children": [
+                    {
+                      "name": "Biotype.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/Biotype.pm",
+                      "size": 3683,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Endpoint.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/Endpoint.pm",
+                      "size": 2185,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "ExternalDB.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/ExternalDB.pm",
+                      "size": 3848,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TranscriptVariation.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/TranscriptVariation.pm",
+                      "size": 5887,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TranslationExon.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/TranslationExon.pm",
+                      "size": 3267,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TranslationProteinFeature.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/TranslationProteinFeature.pm",
+                      "size": 4045,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TranslationSlice.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/TranslationSlice.pm",
+                      "size": 1834,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TranslationSpliceSiteOverlap.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/EnsemblModel/TranslationSpliceSiteOverlap.pm",
+                      "size": 3573,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "Model",
+                  "type": "folder",
+                  "path": "lib/EnsEMBL/REST/Model",
+                  "children": [
+                    {
+                      "name": "ga4gh",
+                      "type": "folder",
+                      "path": "lib/EnsEMBL/REST/Model/ga4gh",
+                      "children": [
+                        {
+                          "name": "annotationSets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/annotationSets.pm",
+                          "size": 7189,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "Beacon.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/Beacon.pm",
+                          "size": 45278,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "callSet.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/callSet.pm",
+                          "size": 4861,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "datasets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/datasets.pm",
+                          "size": 2782,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "features.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/features.pm",
+                          "size": 24193,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "featureSets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/featureSets.pm",
+                          "size": 1648,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "ga4gh_utils.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/ga4gh_utils.pm",
+                          "size": 9394,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "references.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/references.pm",
+                          "size": 8106,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "referenceSets.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/referenceSets.pm",
+                          "size": 4369,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "variantannotations.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/variantannotations.pm",
+                          "size": 17760,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "variants.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/variants.pm",
+                          "size": 12717,
+                          "language": "pm"
+                        },
+                        {
+                          "name": "variantSet.pm",
+                          "type": "file",
+                          "path": "lib/EnsEMBL/REST/Model/ga4gh/variantSet.pm",
+                          "size": 5807,
+                          "language": "pm"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Assembly.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Assembly.pm",
+                      "size": 4126,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Biotype.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Biotype.pm",
+                      "size": 3133,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "DatabaseIDLookup.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/DatabaseIDLookup.pm",
+                      "size": 2253,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Documentation.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Documentation.pm",
+                      "size": 8769,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "GenomicAlignment.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/GenomicAlignment.pm",
+                      "size": 7615,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "LDFeatureContainer.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/LDFeatureContainer.pm",
+                      "size": 11191,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "LongDatabaseIDLookup.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/LongDatabaseIDLookup.pm",
+                      "size": 896,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Lookup.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Lookup.pm",
+                      "size": 23155,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "LucyIDLookup.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/LucyIDLookup.pm",
+                      "size": 2194,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Overlap.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Overlap.pm",
+                      "size": 21750,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Phenotype.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Phenotype.pm",
+                      "size": 14118,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Registry.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Registry.pm",
+                      "size": 10035,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Regulatory.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Regulatory.pm",
+                      "size": 3248,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Stats.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Stats.pm",
+                      "size": 1831,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Variation.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Model/Variation.pm",
+                      "size": 17480,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "Role",
+                  "type": "folder",
+                  "path": "lib/EnsEMBL/REST/Role",
+                  "children": [
+                    {
+                      "name": "Active.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/Active.pm",
+                      "size": 1517,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Content.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/Content.pm",
+                      "size": 3233,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Homology.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/Homology.pm",
+                      "size": 1430,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "JSON.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/JSON.pm",
+                      "size": 951,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "PostLimiter.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/PostLimiter.pm",
+                      "size": 1806,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Sequence.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/Sequence.pm",
+                      "size": 4116,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "SliceLength.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/SliceLength.pm",
+                      "size": 1176,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Tree.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/Role/Tree.pm",
+                      "size": 4110,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "View",
+                  "type": "folder",
+                  "path": "lib/EnsEMBL/REST/View",
+                  "children": [
+                    {
+                      "name": "BED.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/BED.pm",
+                      "size": 1574,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "FASTAHTML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/FASTAHTML.pm",
+                      "size": 1089,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "FASTAText.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/FASTAText.pm",
+                      "size": 1066,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "GFF3.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/GFF3.pm",
+                      "size": 1766,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "HTML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/HTML.pm",
+                      "size": 1111,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "JSONHTML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/JSONHTML.pm",
+                      "size": 1053,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "NHTree.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/NHTree.pm",
+                      "size": 1122,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "OrthoXML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/OrthoXML.pm",
+                      "size": 1140,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "OrthoXML_homology.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/OrthoXML_homology.pm",
+                      "size": 1153,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "PhyloXML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/PhyloXML.pm",
+                      "size": 1141,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "PhyloXMLHTML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/PhyloXMLHTML.pm",
+                      "size": 1015,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "SequenceText.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/SequenceText.pm",
+                      "size": 1067,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "SeqXML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/SeqXML.pm",
+                      "size": 1068,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TextHTML.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/TextHTML.pm",
+                      "size": 1982,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "TT.pm",
+                      "type": "file",
+                      "path": "lib/EnsEMBL/REST/View/TT.pm",
+                      "size": 1111,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "PreloadRegistry.pm",
+                  "type": "file",
+                  "path": "lib/EnsEMBL/REST/PreloadRegistry.pm",
+                  "size": 3125,
+                  "language": "pm"
+                },
+                {
+                  "name": "RegistryHelper.pm",
+                  "type": "file",
+                  "path": "lib/EnsEMBL/REST/RegistryHelper.pm",
+                  "size": 9338,
+                  "language": "pm"
+                },
+                {
+                  "name": "Types.pm",
+                  "type": "file",
+                  "path": "lib/EnsEMBL/REST/Types.pm",
+                  "size": 982,
+                  "language": "pm"
+                }
+              ]
+            },
+            {
+              "name": "REST.pm",
+              "type": "file",
+              "path": "lib/EnsEMBL/REST.pm",
+              "size": 4630,
+              "language": "pm"
+            }
+          ]
+        },
+        {
+          "name": "Plack",
+          "type": "folder",
+          "path": "lib/Plack",
+          "children": [
+            {
+              "name": "Middleware",
+              "type": "folder",
+              "path": "lib/Plack/Middleware",
+              "children": [
+                {
+                  "name": "EnsThrottle",
+                  "type": "folder",
+                  "path": "lib/Plack/Middleware/EnsThrottle",
+                  "children": [
+                    {
+                      "name": "Hour.pm",
+                      "type": "file",
+                      "path": "lib/Plack/Middleware/EnsThrottle/Hour.pm",
+                      "size": 1075,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "MemcachedBackend.pm",
+                      "type": "file",
+                      "path": "lib/Plack/Middleware/EnsThrottle/MemcachedBackend.pm",
+                      "size": 1804,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Minute.pm",
+                      "type": "file",
+                      "path": "lib/Plack/Middleware/EnsThrottle/Minute.pm",
+                      "size": 1058,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "Second.pm",
+                      "type": "file",
+                      "path": "lib/Plack/Middleware/EnsThrottle/Second.pm",
+                      "size": 1297,
+                      "language": "pm"
+                    },
+                    {
+                      "name": "SimpleBackend.pm",
+                      "type": "file",
+                      "path": "lib/Plack/Middleware/EnsThrottle/SimpleBackend.pm",
+                      "size": 2166,
+                      "language": "pm"
+                    }
+                  ]
+                },
+                {
+                  "name": "DetectExtension.pm",
+                  "type": "file",
+                  "path": "lib/Plack/Middleware/DetectExtension.pm",
+                  "size": 2708,
+                  "language": "pm"
+                },
+                {
+                  "name": "EnsemblRestHeaders.pm",
+                  "type": "file",
+                  "path": "lib/Plack/Middleware/EnsemblRestHeaders.pm",
+                  "size": 1249,
+                  "language": "pm"
+                },
+                {
+                  "name": "EnsThrottle.pm",
+                  "type": "file",
+                  "path": "lib/Plack/Middleware/EnsThrottle.pm",
+                  "size": 11730,
+                  "language": "pm"
+                },
+                {
+                  "name": "Log4Access.pm",
+                  "type": "file",
+                  "path": "lib/Plack/Middleware/Log4Access.pm",
+                  "size": 1827,
+                  "language": "pm"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -110,214 +1196,319 @@
           "path": "root/documentation",
           "children": [
             {
+              "name": "examples",
+              "type": "folder",
+              "path": "root/documentation/examples",
+              "children": [
+                {
+                  "name": "curl.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/curl.tt",
+                  "size": 1143,
+                  "language": "tt"
+                },
+                {
+                  "name": "java.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/java.tt",
+                  "size": 3100,
+                  "language": "tt"
+                },
+                {
+                  "name": "perl.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/perl.tt",
+                  "size": 1800,
+                  "language": "tt"
+                },
+                {
+                  "name": "python2.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/python2.tt",
+                  "size": 1445,
+                  "language": "tt"
+                },
+                {
+                  "name": "python3.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/python3.tt",
+                  "size": 1447,
+                  "language": "tt"
+                },
+                {
+                  "name": "r.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/r.tt",
+                  "size": 1537,
+                  "language": "tt"
+                },
+                {
+                  "name": "ruby.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/ruby.tt",
+                  "size": 1677,
+                  "language": "tt"
+                },
+                {
+                  "name": "wget.tt",
+                  "type": "file",
+                  "path": "root/documentation/examples/wget.tt",
+                  "size": 1171,
+                  "language": "tt"
+                }
+              ]
+            },
+            {
               "name": "archive.conf",
               "type": "file",
               "path": "root/documentation/archive.conf",
-              "size": 1048,
+              "size": 1005,
               "language": "conf"
             },
             {
               "name": "assembly.conf",
               "type": "file",
               "path": "root/documentation/assembly.conf",
-              "size": 2569,
+              "size": 2481,
               "language": "conf"
+            },
+            {
+              "name": "banner.tt",
+              "type": "file",
+              "path": "root/documentation/banner.tt",
+              "size": 0,
+              "language": "tt"
             },
             {
               "name": "compara.conf",
               "type": "file",
               "path": "root/documentation/compara.conf",
-              "size": 29272,
+              "size": 28453,
               "language": "conf"
             },
             {
               "name": "compara_grch37.conf",
               "type": "file",
               "path": "root/documentation/compara_grch37.conf",
-              "size": 8703,
+              "size": 8440,
               "language": "conf"
             },
             {
               "name": "gabeacon.conf",
               "type": "file",
               "path": "root/documentation/gabeacon.conf",
-              "size": 9164,
+              "size": 8955,
               "language": "conf"
             },
             {
               "name": "gacallset.conf",
               "type": "file",
               "path": "root/documentation/gacallset.conf",
-              "size": 2089,
+              "size": 2011,
               "language": "conf"
             },
             {
               "name": "gadataset.conf",
               "type": "file",
               "path": "root/documentation/gadataset.conf",
-              "size": 1397,
+              "size": 1339,
               "language": "conf"
             },
             {
               "name": "gafeatures.conf",
               "type": "file",
               "path": "root/documentation/gafeatures.conf",
-              "size": 3816,
+              "size": 3700,
               "language": "conf"
             },
             {
               "name": "gafeatureset.conf",
               "type": "file",
               "path": "root/documentation/gafeatureset.conf",
-              "size": 1673,
+              "size": 1609,
               "language": "conf"
             },
             {
               "name": "gareferences.conf",
               "type": "file",
               "path": "root/documentation/gareferences.conf",
-              "size": 2147,
+              "size": 2064,
               "language": "conf"
             },
             {
               "name": "gareferenceset.conf",
               "type": "file",
               "path": "root/documentation/gareferenceset.conf",
-              "size": 1594,
+              "size": 1529,
               "language": "conf"
             },
             {
               "name": "gavariant.conf",
               "type": "file",
               "path": "root/documentation/gavariant.conf",
-              "size": 2613,
+              "size": 2524,
               "language": "conf"
             },
             {
               "name": "gavariantannotation.conf",
               "type": "file",
               "path": "root/documentation/gavariantannotation.conf",
-              "size": 2647,
+              "size": 2568,
               "language": "conf"
             },
             {
               "name": "gavariantannotationset.conf",
               "type": "file",
               "path": "root/documentation/gavariantannotationset.conf",
-              "size": 1727,
+              "size": 1664,
               "language": "conf"
             },
             {
               "name": "gavariantset.conf",
               "type": "file",
               "path": "root/documentation/gavariantset.conf",
-              "size": 1707,
+              "size": 1643,
               "language": "conf"
+            },
+            {
+              "name": "index.tt",
+              "type": "file",
+              "path": "root/documentation/index.tt",
+              "size": 1292,
+              "language": "tt"
             },
             {
               "name": "info.conf",
               "type": "file",
               "path": "root/documentation/info.conf",
-              "size": 17968,
+              "size": 17299,
               "language": "conf"
+            },
+            {
+              "name": "info.tt",
+              "type": "file",
+              "path": "root/documentation/info.tt",
+              "size": 7729,
+              "language": "tt"
             },
             {
               "name": "info_grch37.conf",
               "type": "file",
               "path": "root/documentation/info_grch37.conf",
-              "size": 13171,
+              "size": 12677,
               "language": "conf"
             },
             {
               "name": "ld.conf",
               "type": "file",
               "path": "root/documentation/ld.conf",
-              "size": 7506,
+              "size": 7290,
               "language": "conf"
             },
             {
               "name": "lookup.conf",
               "type": "file",
               "path": "root/documentation/lookup.conf",
-              "size": 7060,
+              "size": 6827,
               "language": "conf"
             },
             {
               "name": "map.conf",
               "type": "file",
               "path": "root/documentation/map.conf",
-              "size": 5304,
+              "size": 5125,
               "language": "conf"
+            },
+            {
+              "name": "no_info.tt",
+              "type": "file",
+              "path": "root/documentation/no_info.tt",
+              "size": 893,
+              "language": "tt"
             },
             {
               "name": "ontology.conf",
               "type": "file",
               "path": "root/documentation/ontology.conf",
-              "size": 5308,
+              "size": 5127,
               "language": "conf"
             },
             {
               "name": "overlap.conf",
               "type": "file",
               "path": "root/documentation/overlap.conf",
-              "size": 8795,
+              "size": 8538,
               "language": "conf"
             },
             {
               "name": "phenotypefeatures.conf",
               "type": "file",
               "path": "root/documentation/phenotypefeatures.conf",
-              "size": 10401,
+              "size": 10010,
               "language": "conf"
             },
             {
               "name": "regulatory.conf",
               "type": "file",
               "path": "root/documentation/regulatory.conf",
-              "size": 1092,
+              "size": 1049,
               "language": "conf"
             },
             {
               "name": "sequence.conf",
               "type": "file",
               "path": "root/documentation/sequence.conf",
-              "size": 14334,
+              "size": 13923,
               "language": "conf"
             },
             {
               "name": "taxonomy.conf",
               "type": "file",
               "path": "root/documentation/taxonomy.conf",
-              "size": 2522,
+              "size": 2424,
               "language": "conf"
             },
             {
               "name": "transcripthaplotypes.conf",
               "type": "file",
               "path": "root/documentation/transcripthaplotypes.conf",
-              "size": 1602,
+              "size": 1544,
               "language": "conf"
             },
             {
               "name": "variation.conf",
               "type": "file",
               "path": "root/documentation/variation.conf",
-              "size": 11926,
+              "size": 11554,
               "language": "conf"
             },
             {
               "name": "vep.conf",
               "type": "file",
               "path": "root/documentation/vep.conf",
-              "size": 129922,
+              "size": 136772,
               "language": "conf"
             },
             {
               "name": "xrefs.conf",
               "type": "file",
               "path": "root/documentation/xrefs.conf",
-              "size": 5278,
+              "size": 5107,
               "language": "conf"
+            }
+          ]
+        },
+        {
+          "name": "sequence",
+          "type": "folder",
+          "path": "root/sequence",
+          "children": [
+            {
+              "name": "index.tt",
+              "type": "file",
+              "path": "root/sequence/index.tt",
+              "size": 1135,
+              "language": "tt"
             }
           ]
         },
@@ -340,7 +1531,7 @@
                       "name": "bootstrap-responsive.min.css",
                       "type": "file",
                       "path": "root/static/css/premin/bootstrap-responsive.min.css",
-                      "size": 15554,
+                      "size": 15545,
                       "language": "css"
                     }
                   ]
@@ -349,85 +1540,43 @@
                   "name": "10-bootstrap-grch37.css",
                   "type": "file",
                   "path": "root/static/css/10-bootstrap-grch37.css",
-                  "size": 120696,
+                  "size": 115072,
                   "language": "css"
                 },
                 {
                   "name": "10-bootstrap.css",
                   "type": "file",
                   "path": "root/static/css/10-bootstrap.css",
-                  "size": 120696,
+                  "size": 115072,
                   "language": "css"
                 },
                 {
                   "name": "20-prettify.css",
                   "type": "file",
                   "path": "root/static/css/20-prettify.css",
-                  "size": 1622,
+                  "size": 1570,
                   "language": "css"
                 },
                 {
                   "name": "25-default.css",
                   "type": "file",
                   "path": "root/static/css/25-default.css",
-                  "size": 2754,
+                  "size": 2602,
                   "language": "css"
                 },
                 {
                   "name": "50-additional.css",
                   "type": "file",
                   "path": "root/static/css/50-additional.css",
-                  "size": 461,
+                  "size": 443,
                   "language": "css"
                 },
                 {
                   "name": "51-docs.css",
                   "type": "file",
                   "path": "root/static/css/51-docs.css",
-                  "size": 23020,
+                  "size": 21998,
                   "language": "css"
-                }
-              ]
-            },
-            {
-              "name": "img",
-              "type": "folder",
-              "path": "root/static/img",
-              "children": [
-                {
-                  "name": "e-ensembl.png",
-                  "type": "file",
-                  "path": "root/static/img/e-ensembl.png",
-                  "size": 1824,
-                  "language": "png"
-                },
-                {
-                  "name": "e-GRCh37.png",
-                  "type": "file",
-                  "path": "root/static/img/e-GRCh37.png",
-                  "size": 4973,
-                  "language": "png"
-                },
-                {
-                  "name": "e-loader.gif",
-                  "type": "file",
-                  "path": "root/static/img/e-loader.gif",
-                  "size": 12238,
-                  "language": "gif"
-                },
-                {
-                  "name": "glyphicons-halflings-white.png",
-                  "type": "file",
-                  "path": "root/static/img/glyphicons-halflings-white.png",
-                  "size": 8777,
-                  "language": "png"
-                },
-                {
-                  "name": "glyphicons-halflings.png",
-                  "type": "file",
-                  "path": "root/static/img/glyphicons-halflings.png",
-                  "size": 12799,
-                  "language": "png"
                 }
               ]
             },
@@ -450,357 +1599,336 @@
                           "name": "arta.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/arta.css",
-                          "size": 2376,
+                          "size": 2235,
                           "language": "css"
                         },
                         {
                           "name": "ascetic.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/ascetic.css",
-                          "size": 883,
+                          "size": 830,
                           "language": "css"
                         },
                         {
                           "name": "atelier-dune.dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-dune.dark.css",
-                          "size": 1832,
+                          "size": 1738,
                           "language": "css"
                         },
                         {
                           "name": "atelier-dune.light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-dune.light.css",
-                          "size": 1846,
+                          "size": 1752,
                           "language": "css"
                         },
                         {
                           "name": "atelier-forest.dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-forest.dark.css",
-                          "size": 1857,
+                          "size": 1763,
                           "language": "css"
                         },
                         {
                           "name": "atelier-forest.light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-forest.light.css",
-                          "size": 1866,
+                          "size": 1772,
                           "language": "css"
                         },
                         {
                           "name": "atelier-heath.dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-heath.dark.css",
-                          "size": 1847,
+                          "size": 1753,
                           "language": "css"
                         },
                         {
                           "name": "atelier-heath.light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-heath.light.css",
-                          "size": 1856,
+                          "size": 1762,
                           "language": "css"
                         },
                         {
                           "name": "atelier-lakeside.dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-lakeside.dark.css",
-                          "size": 1878,
+                          "size": 1784,
                           "language": "css"
                         },
                         {
                           "name": "atelier-lakeside.light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-lakeside.light.css",
-                          "size": 1887,
+                          "size": 1793,
                           "language": "css"
                         },
                         {
                           "name": "atelier-seaside.dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-seaside.dark.css",
-                          "size": 1868,
+                          "size": 1774,
                           "language": "css"
                         },
                         {
                           "name": "atelier-seaside.light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/atelier-seaside.light.css",
-                          "size": 1877,
+                          "size": 1783,
                           "language": "css"
                         },
                         {
                           "name": "brown_paper.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/brown_paper.css",
-                          "size": 1874,
+                          "size": 1769,
                           "language": "css"
-                        },
-                        {
-                          "name": "brown_papersq.png",
-                          "type": "file",
-                          "path": "root/static/js/highlight/styles/brown_papersq.png",
-                          "size": 18198,
-                          "language": "png"
                         },
                         {
                           "name": "codepen-embed.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/codepen-embed.css",
-                          "size": 1627,
+                          "size": 1520,
                           "language": "css"
                         },
                         {
                           "name": "color-brewer.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/color-brewer.css",
-                          "size": 2976,
+                          "size": 2809,
                           "language": "css"
                         },
                         {
                           "name": "dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/dark.css",
-                          "size": 1845,
+                          "size": 1740,
                           "language": "css"
                         },
                         {
                           "name": "docco.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/docco.css",
-                          "size": 1948,
+                          "size": 1814,
                           "language": "css"
                         },
                         {
                           "name": "far.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/far.css",
-                          "size": 1961,
+                          "size": 1849,
                           "language": "css"
                         },
                         {
                           "name": "foundation.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/foundation.css",
-                          "size": 1739,
+                          "size": 1604,
                           "language": "css"
                         },
                         {
                           "name": "github.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/github.css",
-                          "size": 1850,
+                          "size": 1723,
                           "language": "css"
                         },
                         {
                           "name": "googlecode.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/googlecode.css",
-                          "size": 2286,
+                          "size": 2138,
                           "language": "css"
                         },
                         {
                           "name": "hybrid.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/hybrid.css",
-                          "size": 2843,
+                          "size": 2674,
                           "language": "css"
                         },
                         {
                           "name": "idea.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/idea.css",
-                          "size": 1900,
+                          "size": 1775,
                           "language": "css"
                         },
                         {
                           "name": "ir_black.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/ir_black.css",
-                          "size": 1594,
+                          "size": 1486,
                           "language": "css"
                         },
                         {
                           "name": "kimbie.dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/kimbie.dark.css",
-                          "size": 1642,
+                          "size": 1547,
                           "language": "css"
                         },
                         {
                           "name": "kimbie.light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/kimbie.light.css",
-                          "size": 1642,
+                          "size": 1547,
                           "language": "css"
                         },
                         {
                           "name": "magula.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/magula.css",
-                          "size": 2000,
+                          "size": 1878,
                           "language": "css"
                         },
                         {
                           "name": "mono-blue.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/mono-blue.css",
-                          "size": 988,
+                          "size": 923,
                           "language": "css"
                         },
                         {
                           "name": "monokai.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/monokai.css",
-                          "size": 2119,
+                          "size": 1992,
                           "language": "css"
                         },
                         {
                           "name": "monokai_sublime.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/monokai_sublime.css",
-                          "size": 2483,
+                          "size": 2334,
                           "language": "css"
                         },
                         {
                           "name": "obsidian.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/obsidian.css",
-                          "size": 2410,
+                          "size": 2256,
                           "language": "css"
                         },
                         {
                           "name": "paraiso.dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/paraiso.dark.css",
-                          "size": 1607,
+                          "size": 1513,
                           "language": "css"
                         },
                         {
                           "name": "paraiso.light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/paraiso.light.css",
-                          "size": 1608,
+                          "size": 1514,
                           "language": "css"
                         },
                         {
                           "name": "pojoaque.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/pojoaque.css",
-                          "size": 1771,
+                          "size": 1663,
                           "language": "css"
-                        },
-                        {
-                          "name": "pojoaque.jpg",
-                          "type": "file",
-                          "path": "root/static/js/highlight/styles/pojoaque.jpg",
-                          "size": 1186,
-                          "language": "jpg"
                         },
                         {
                           "name": "railscasts.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/railscasts.css",
-                          "size": 2757,
+                          "size": 2574,
                           "language": "css"
                         },
                         {
                           "name": "rainbow.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/rainbow.css",
-                          "size": 1732,
+                          "size": 1619,
                           "language": "css"
                         },
                         {
                           "name": "school_book.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/school_book.css",
-                          "size": 2074,
+                          "size": 1961,
                           "language": "css"
-                        },
-                        {
-                          "name": "school_book.png",
-                          "type": "file",
-                          "path": "root/static/js/highlight/styles/school_book.png",
-                          "size": 486,
-                          "language": "png"
                         },
                         {
                           "name": "solarized_dark.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/solarized_dark.css",
-                          "size": 1730,
+                          "size": 1622,
                           "language": "css"
                         },
                         {
                           "name": "solarized_light.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/solarized_light.css",
-                          "size": 1730,
+                          "size": 1622,
                           "language": "css"
                         },
                         {
                           "name": "sunburst.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/sunburst.css",
-                          "size": 2425,
+                          "size": 2262,
                           "language": "css"
                         },
                         {
                           "name": "tomorrow-night-blue.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/tomorrow-night-blue.css",
-                          "size": 1717,
+                          "size": 1623,
                           "language": "css"
                         },
                         {
                           "name": "tomorrow-night-bright.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/tomorrow-night-bright.css",
-                          "size": 1646,
+                          "size": 1553,
                           "language": "css"
                         },
                         {
                           "name": "tomorrow-night-eighties.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/tomorrow-night-eighties.css",
-                          "size": 1650,
+                          "size": 1557,
                           "language": "css"
                         },
                         {
                           "name": "tomorrow-night.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/tomorrow-night.css",
-                          "size": 1714,
+                          "size": 1620,
                           "language": "css"
                         },
                         {
                           "name": "tomorrow.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/tomorrow.css",
-                          "size": 1540,
+                          "size": 1449,
                           "language": "css"
                         },
                         {
                           "name": "vs.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/vs.css",
-                          "size": 1624,
+                          "size": 1534,
                           "language": "css"
                         },
                         {
                           "name": "xcode.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/xcode.css",
-                          "size": 2429,
+                          "size": 2270,
                           "language": "css"
                         },
                         {
                           "name": "zenburn.css",
                           "type": "file",
                           "path": "root/static/js/highlight/styles/zenburn.css",
-                          "size": 1972,
+                          "size": 1854,
                           "language": "css"
                         }
                       ]
@@ -809,7 +1937,7 @@
                       "name": "CHANGES.md",
                       "type": "file",
                       "path": "root/static/js/highlight/CHANGES.md",
-                      "size": 33353,
+                      "size": 32447,
                       "language": "md"
                     },
                     {
@@ -823,21 +1951,21 @@
                       "name": "LICENSE",
                       "type": "file",
                       "path": "root/static/js/highlight/LICENSE",
-                      "size": 1522,
+                      "size": 1498,
                       "language": "text"
                     },
                     {
                       "name": "README.md",
                       "type": "file",
                       "path": "root/static/js/highlight/README.md",
-                      "size": 3332,
+                      "size": 3233,
                       "language": "md"
                     },
                     {
                       "name": "README.ru.md",
                       "type": "file",
                       "path": "root/static/js/highlight/README.ru.md",
-                      "size": 4916,
+                      "size": 4815,
                       "language": "md"
                     }
                   ]
@@ -846,28 +1974,28 @@
                   "name": "10-bootstrap.js",
                   "type": "file",
                   "path": "root/static/js/10-bootstrap.js",
-                  "size": 58242,
+                  "size": 56216,
                   "language": "js"
                 },
                 {
                   "name": "20-prettify.js",
                   "type": "file",
                   "path": "root/static/js/20-prettify.js",
-                  "size": 57366,
+                  "size": 55889,
                   "language": "js"
                 },
                 {
                   "name": "21-lang-yaml.js",
                   "type": "file",
                   "path": "root/static/js/21-lang-yaml.js",
-                  "size": 866,
+                  "size": 839,
                   "language": "js"
                 },
                 {
                   "name": "30-jquery-1.11.1.min.js",
                   "type": "file",
                   "path": "root/static/js/30-jquery-1.11.1.min.js",
-                  "size": 95790,
+                  "size": 95786,
                   "language": "js"
                 }
               ]
@@ -875,11 +2003,186 @@
           ]
         },
         {
-          "name": "favicon.ico",
+          "name": "error.tt",
           "type": "file",
-          "path": "root/favicon.ico",
-          "size": 1406,
-          "language": "ico"
+          "path": "root/error.tt",
+          "size": 875,
+          "language": "tt"
+        },
+        {
+          "name": "wrapper.tt",
+          "type": "file",
+          "path": "root/wrapper.tt",
+          "size": 3796,
+          "language": "tt"
+        }
+      ]
+    },
+    {
+      "name": "script",
+      "type": "folder",
+      "path": "script",
+      "children": [
+        {
+          "name": "ensembl_rest_cgi.pl",
+          "type": "file",
+          "path": "script/ensembl_rest_cgi.pl",
+          "size": 1171,
+          "language": "pl"
+        },
+        {
+          "name": "ensembl_rest_create.pl",
+          "type": "file",
+          "path": "script/ensembl_rest_create.pl",
+          "size": 2439,
+          "language": "pl"
+        },
+        {
+          "name": "ensembl_rest_fastcgi.pl",
+          "type": "file",
+          "path": "script/ensembl_rest_fastcgi.pl",
+          "size": 1959,
+          "language": "pl"
+        },
+        {
+          "name": "ensembl_rest_server.pl",
+          "type": "file",
+          "path": "script/ensembl_rest_server.pl",
+          "size": 2479,
+          "language": "pl"
+        },
+        {
+          "name": "ensembl_rest_test.pl",
+          "type": "file",
+          "path": "script/ensembl_rest_test.pl",
+          "size": 1414,
+          "language": "pl"
+        },
+        {
+          "name": "ensembl_rest_test_server.pl",
+          "type": "file",
+          "path": "script/ensembl_rest_test_server.pl",
+          "size": 2794,
+          "language": "pl"
+        }
+      ]
+    },
+    {
+      "name": "selenium",
+      "type": "folder",
+      "path": "selenium",
+      "children": [
+        {
+          "name": "scripts",
+          "type": "folder",
+          "path": "selenium/scripts",
+          "children": [
+            {
+              "name": "check_endpoints.pl",
+              "type": "file",
+              "path": "selenium/scripts/check_endpoints.pl",
+              "size": 3223,
+              "language": "pl"
+            }
+          ]
+        },
+        {
+          "name": "comparative_genomics",
+          "type": "file",
+          "path": "selenium/comparative_genomics",
+          "size": 1850,
+          "language": "text"
+        },
+        {
+          "name": "data_lookups",
+          "type": "file",
+          "path": "selenium/data_lookups",
+          "size": 2782,
+          "language": "text"
+        },
+        {
+          "name": "environment",
+          "type": "file",
+          "path": "selenium/environment",
+          "size": 701,
+          "language": "text"
+        },
+        {
+          "name": "features",
+          "type": "file",
+          "path": "selenium/features",
+          "size": 1107,
+          "language": "text"
+        },
+        {
+          "name": "info",
+          "type": "file",
+          "path": "selenium/info",
+          "size": 2217,
+          "language": "text"
+        },
+        {
+          "name": "lookup",
+          "type": "file",
+          "path": "selenium/lookup",
+          "size": 764,
+          "language": "text"
+        },
+        {
+          "name": "mapping",
+          "type": "file",
+          "path": "selenium/mapping",
+          "size": 1301,
+          "language": "text"
+        },
+        {
+          "name": "ontology_and_taxonomy",
+          "type": "file",
+          "path": "selenium/ontology_and_taxonomy",
+          "size": 1806,
+          "language": "text"
+        },
+        {
+          "name": "README",
+          "type": "file",
+          "path": "selenium/README",
+          "size": 700,
+          "language": "text"
+        },
+        {
+          "name": "sequence",
+          "type": "file",
+          "path": "selenium/sequence",
+          "size": 944,
+          "language": "text"
+        },
+        {
+          "name": "TestSuite",
+          "type": "file",
+          "path": "selenium/TestSuite",
+          "size": 1161,
+          "language": "text"
+        },
+        {
+          "name": "toplinks",
+          "type": "file",
+          "path": "selenium/toplinks",
+          "size": 1000,
+          "language": "text"
+        },
+        {
+          "name": "vep",
+          "type": "file",
+          "path": "selenium/vep",
+          "size": 960,
+          "language": "text"
+        },
+        {
+          "name": "xrefs",
+          "type": "file",
+          "path": "selenium/xrefs",
+          "size": 1176,
+          "language": "text"
         }
       ]
     },
@@ -888,6 +2191,27 @@
       "type": "folder",
       "path": "t",
       "children": [
+        {
+          "name": "lib",
+          "type": "folder",
+          "path": "t/lib",
+          "children": [
+            {
+              "name": "RestHelper.pm",
+              "type": "file",
+              "path": "t/lib/RestHelper.pm",
+              "size": 6057,
+              "language": "pm"
+            },
+            {
+              "name": "TapAppender.pm",
+              "type": "file",
+              "path": "t/lib/TapAppender.pm",
+              "size": 1152,
+              "language": "pm"
+            }
+          ]
+        },
         {
           "name": "test-genome-DBs",
           "type": "folder",
@@ -963,7 +2287,7 @@
                       "name": "coord_system.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/ancestral_sequences/core/coord_system.txt",
-                      "size": 58,
+                      "size": 57,
                       "language": "txt"
                     },
                     {
@@ -1040,7 +2364,7 @@
                       "name": "external_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/ancestral_sequences/core/external_db.txt",
-                      "size": 48,
+                      "size": 47,
                       "language": "txt"
                     },
                     {
@@ -1152,7 +2476,7 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/ancestral_sequences/core/meta.txt",
-                      "size": 4610,
+                      "size": 4569,
                       "language": "txt"
                     },
                     {
@@ -1299,7 +2623,7 @@
                       "name": "seq_region.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/ancestral_sequences/core/seq_region.txt",
-                      "size": 105,
+                      "size": 102,
                       "language": "txt"
                     },
                     {
@@ -1369,7 +2693,7 @@
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/ancestral_sequences/core/table.sql",
-                      "size": 42538,
+                      "size": 41589,
                       "language": "sql"
                     },
                     {
@@ -1481,7 +2805,7 @@
                       "name": "assembly.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/assembly.txt",
-                      "size": 163,
+                      "size": 159,
                       "language": "txt"
                     },
                     {
@@ -1509,14 +2833,14 @@
                       "name": "attrib_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/attrib_type.txt",
-                      "size": 17215,
+                      "size": 16969,
                       "language": "txt"
                     },
                     {
                       "name": "coord_system.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/coord_system.txt",
-                      "size": 130,
+                      "size": 127,
                       "language": "txt"
                     },
                     {
@@ -1562,13 +2886,6 @@
                       "language": "txt"
                     },
                     {
-                      "name": "dna.txt",
-                      "type": "file",
-                      "path": "t/test-genome-DBs/gallus_gallus/core/dna.txt",
-                      "size": 479497,
-                      "language": "txt"
-                    },
-                    {
                       "name": "dna_align_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/dna_align_feature.txt",
@@ -1586,21 +2903,21 @@
                       "name": "exon.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/exon.txt",
-                      "size": 318,
+                      "size": 315,
                       "language": "txt"
                     },
                     {
                       "name": "exon_transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/exon_transcript.txt",
-                      "size": 48,
+                      "size": 45,
                       "language": "txt"
                     },
                     {
                       "name": "external_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/external_db.txt",
-                      "size": 48,
+                      "size": 47,
                       "language": "txt"
                     },
                     {
@@ -1614,7 +2931,7 @@
                       "name": "gene.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/gene.txt",
-                      "size": 134,
+                      "size": 133,
                       "language": "txt"
                     },
                     {
@@ -1712,14 +3029,14 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/meta.txt",
-                      "size": 9870,
+                      "size": 9712,
                       "language": "txt"
                     },
                     {
                       "name": "meta_coord.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/meta_coord.txt",
-                      "size": 500,
+                      "size": 479,
                       "language": "txt"
                     },
                     {
@@ -1845,28 +3162,28 @@
                       "name": "repeat_consensus.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/repeat_consensus.txt",
-                      "size": 751,
+                      "size": 733,
                       "language": "txt"
                     },
                     {
                       "name": "repeat_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/repeat_feature.txt",
-                      "size": 2749,
+                      "size": 2703,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/seq_region.txt",
-                      "size": 142,
+                      "size": 137,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/seq_region_attrib.txt",
-                      "size": 106,
+                      "size": 98,
                       "language": "txt"
                     },
                     {
@@ -1929,14 +3246,14 @@
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/table.sql",
-                      "size": 42685,
+                      "size": 41736,
                       "language": "sql"
                     },
                     {
                       "name": "transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/transcript.txt",
-                      "size": 140,
+                      "size": 139,
                       "language": "txt"
                     },
                     {
@@ -1964,7 +3281,7 @@
                       "name": "translation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/gallus_gallus/core/translation.txt",
-                      "size": 95,
+                      "size": 94,
                       "language": "txt"
                     },
                     {
@@ -2027,28 +3344,28 @@
                       "name": "analysis.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/analysis.txt",
-                      "size": 4895,
+                      "size": 4862,
                       "language": "txt"
                     },
                     {
                       "name": "analysis_description.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/analysis_description.txt",
-                      "size": 13485,
+                      "size": 13453,
                       "language": "txt"
                     },
                     {
                       "name": "assembly.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/assembly.txt",
-                      "size": 2882,
+                      "size": 2807,
                       "language": "txt"
                     },
                     {
                       "name": "assembly_exception.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/assembly_exception.txt",
-                      "size": 74,
+                      "size": 73,
                       "language": "txt"
                     },
                     {
@@ -2069,21 +3386,21 @@
                       "name": "attrib_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/attrib_type.txt",
-                      "size": 16823,
+                      "size": 16849,
                       "language": "txt"
                     },
                     {
                       "name": "biotype.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/biotype.txt",
-                      "size": 285,
+                      "size": 282,
                       "language": "txt"
                     },
                     {
                       "name": "coord_system.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/coord_system.txt",
-                      "size": 280,
+                      "size": 272,
                       "language": "txt"
                     },
                     {
@@ -2132,7 +3449,7 @@
                       "name": "dna_align_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/dna_align_feature.txt",
-                      "size": 54516,
+                      "size": 53956,
                       "language": "txt"
                     },
                     {
@@ -2146,70 +3463,70 @@
                       "name": "exon.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/exon.txt",
-                      "size": 20219,
+                      "size": 20020,
                       "language": "txt"
                     },
                     {
                       "name": "exon_transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/exon_transcript.txt",
-                      "size": 5209,
+                      "size": 4936,
                       "language": "txt"
                     },
                     {
                       "name": "external_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/external_db.txt",
-                      "size": 40240,
+                      "size": 39729,
                       "language": "txt"
                     },
                     {
                       "name": "external_synonym.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/external_synonym.txt",
-                      "size": 1172,
+                      "size": 1099,
                       "language": "txt"
                     },
                     {
                       "name": "gene.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/gene.txt",
-                      "size": 3882,
+                      "size": 3860,
                       "language": "txt"
                     },
                     {
                       "name": "gene_archive.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/gene_archive.txt",
-                      "size": 261,
+                      "size": 257,
                       "language": "txt"
                     },
                     {
                       "name": "gene_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/gene_attrib.txt",
-                      "size": 796,
+                      "size": 760,
                       "language": "txt"
                     },
                     {
                       "name": "genome_statistics.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/genome_statistics.txt",
-                      "size": 1478,
+                      "size": 1449,
                       "language": "txt"
                     },
                     {
                       "name": "identity_xref.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/identity_xref.txt",
-                      "size": 4979,
+                      "size": 4863,
                       "language": "txt"
                     },
                     {
                       "name": "interpro.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/interpro.txt",
-                      "size": 19,
+                      "size": 18,
                       "language": "txt"
                     },
                     {
@@ -2223,7 +3540,7 @@
                       "name": "karyotype.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/karyotype.txt",
-                      "size": 37,
+                      "size": 36,
                       "language": "txt"
                     },
                     {
@@ -2237,7 +3554,7 @@
                       "name": "mapping_session.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/mapping_session.txt",
-                      "size": 3948,
+                      "size": 3906,
                       "language": "txt"
                     },
                     {
@@ -2279,56 +3596,56 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/meta.txt",
-                      "size": 13816,
+                      "size": 13588,
                       "language": "txt"
                     },
                     {
                       "name": "meta_coord.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/meta_coord.txt",
-                      "size": 196,
+                      "size": 187,
                       "language": "txt"
                     },
                     {
                       "name": "misc_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/misc_attrib.txt",
-                      "size": 4898,
+                      "size": 4649,
                       "language": "txt"
                     },
                     {
                       "name": "misc_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/misc_feature.txt",
-                      "size": 1485,
+                      "size": 1436,
                       "language": "txt"
                     },
                     {
                       "name": "misc_feature_misc_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/misc_feature_misc_set.txt",
-                      "size": 490,
+                      "size": 441,
                       "language": "txt"
                     },
                     {
                       "name": "misc_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/misc_set.txt",
-                      "size": 1515,
+                      "size": 1510,
                       "language": "txt"
                     },
                     {
                       "name": "object_xref.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/object_xref.txt",
-                      "size": 46143,
+                      "size": 45089,
                       "language": "txt"
                     },
                     {
                       "name": "ontology_xref.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/ontology_xref.txt",
-                      "size": 3272,
+                      "size": 3090,
                       "language": "txt"
                     },
                     {
@@ -2356,7 +3673,7 @@
                       "name": "peptide_archive.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/peptide_archive.txt",
-                      "size": 1777,
+                      "size": 1773,
                       "language": "txt"
                     },
                     {
@@ -2377,14 +3694,14 @@
                       "name": "protein_align_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/protein_align_feature.txt",
-                      "size": 13903,
+                      "size": 13758,
                       "language": "txt"
                     },
                     {
                       "name": "protein_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/protein_feature.txt",
-                      "size": 8731,
+                      "size": 8596,
                       "language": "txt"
                     },
                     {
@@ -2412,28 +3729,28 @@
                       "name": "repeat_consensus.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/repeat_consensus.txt",
-                      "size": 54717,
+                      "size": 53809,
                       "language": "txt"
                     },
                     {
                       "name": "repeat_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/repeat_feature.txt",
-                      "size": 208873,
+                      "size": 205117,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/seq_region.txt",
-                      "size": 1123,
+                      "size": 1079,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/seq_region_attrib.txt",
-                      "size": 242,
+                      "size": 227,
                       "language": "txt"
                     },
                     {
@@ -2447,14 +3764,14 @@
                       "name": "seq_region_synonym.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/seq_region_synonym.txt",
-                      "size": 47,
+                      "size": 45,
                       "language": "txt"
                     },
                     {
                       "name": "simple_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/simple_feature.txt",
-                      "size": 13586,
+                      "size": 13303,
                       "language": "txt"
                     },
                     {
@@ -2482,35 +3799,35 @@
                       "name": "stable_id_event.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/stable_id_event.txt",
-                      "size": 4984,
+                      "size": 4884,
                       "language": "txt"
                     },
                     {
                       "name": "supporting_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/supporting_feature.txt",
-                      "size": 27060,
+                      "size": 26326,
                       "language": "txt"
                     },
                     {
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/table.sql",
-                      "size": 43341,
+                      "size": 42392,
                       "language": "sql"
                     },
                     {
                       "name": "transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/transcript.txt",
-                      "size": 8977,
+                      "size": 8916,
                       "language": "txt"
                     },
                     {
                       "name": "transcript_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/transcript_attrib.txt",
-                      "size": 7516,
+                      "size": 7282,
                       "language": "txt"
                     },
                     {
@@ -2524,21 +3841,21 @@
                       "name": "transcript_supporting_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/transcript_supporting_feature.txt",
-                      "size": 724,
+                      "size": 704,
                       "language": "txt"
                     },
                     {
                       "name": "translation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/translation.txt",
-                      "size": 3087,
+                      "size": 3055,
                       "language": "txt"
                     },
                     {
                       "name": "translation_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/translation_attrib.txt",
-                      "size": 2857,
+                      "size": 2702,
                       "language": "txt"
                     },
                     {
@@ -2566,7 +3883,7 @@
                       "name": "xref.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/core/xref.txt",
-                      "size": 61167,
+                      "size": 60408,
                       "language": "txt"
                     }
                   ]
@@ -2580,7 +3897,7 @@
                       "name": "analysis.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/analysis.txt",
-                      "size": 696,
+                      "size": 691,
                       "language": "txt"
                     },
                     {
@@ -2594,21 +3911,21 @@
                       "name": "annotated_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/annotated_feature.txt",
-                      "size": 60,
+                      "size": 59,
                       "language": "txt"
                     },
                     {
                       "name": "array.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/array.txt",
-                      "size": 180,
+                      "size": 177,
                       "language": "txt"
                     },
                     {
                       "name": "array_chip.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/array_chip.txt",
-                      "size": 93,
+                      "size": 90,
                       "language": "txt"
                     },
                     {
@@ -2643,28 +3960,28 @@
                       "name": "binding_matrix.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/binding_matrix.txt",
-                      "size": 75,
+                      "size": 74,
                       "language": "txt"
                     },
                     {
                       "name": "binding_matrix_frequencies.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/binding_matrix_frequencies.txt",
-                      "size": 867,
+                      "size": 807,
                       "language": "txt"
                     },
                     {
                       "name": "binding_matrix_transcription_factor_complex.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/binding_matrix_transcription_factor_complex.txt",
-                      "size": 40,
+                      "size": 36,
                       "language": "txt"
                     },
                     {
                       "name": "coord_system.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/coord_system.txt",
-                      "size": 720,
+                      "size": 707,
                       "language": "txt"
                     },
                     {
@@ -2685,7 +4002,7 @@
                       "name": "epigenome.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/epigenome.txt",
-                      "size": 58,
+                      "size": 57,
                       "language": "txt"
                     },
                     {
@@ -2699,21 +4016,21 @@
                       "name": "experiment.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/experiment.txt",
-                      "size": 46,
+                      "size": 45,
                       "language": "txt"
                     },
                     {
                       "name": "experimental_group.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/experimental_group.txt",
-                      "size": 63,
+                      "size": 62,
                       "language": "txt"
                     },
                     {
                       "name": "external_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/external_db.txt",
-                      "size": 379,
+                      "size": 378,
                       "language": "txt"
                     },
                     {
@@ -2741,7 +4058,7 @@
                       "name": "feature_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/feature_set.txt",
-                      "size": 92,
+                      "size": 91,
                       "language": "txt"
                     },
                     {
@@ -2755,7 +4072,7 @@
                       "name": "feature_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/feature_type.txt",
-                      "size": 707,
+                      "size": 700,
                       "language": "txt"
                     },
                     {
@@ -2783,14 +4100,14 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/meta.txt",
-                      "size": 15087,
+                      "size": 14916,
                       "language": "txt"
                     },
                     {
                       "name": "meta_coord.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/meta_coord.txt",
-                      "size": 312,
+                      "size": 300,
                       "language": "txt"
                     },
                     {
@@ -2804,14 +4121,14 @@
                       "name": "motif_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/motif_feature.txt",
-                      "size": 103,
+                      "size": 101,
                       "language": "txt"
                     },
                     {
                       "name": "object_xref.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/object_xref.txt",
-                      "size": 42,
+                      "size": 41,
                       "language": "txt"
                     },
                     {
@@ -2825,56 +4142,56 @@
                       "name": "probe.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/probe.txt",
-                      "size": 144,
+                      "size": 141,
                       "language": "txt"
                     },
                     {
                       "name": "probe_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/probe_feature.txt",
-                      "size": 232,
+                      "size": 228,
                       "language": "txt"
                     },
                     {
                       "name": "probe_feature_transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/probe_feature_transcript.txt",
-                      "size": 681,
+                      "size": 665,
                       "language": "txt"
                     },
                     {
                       "name": "probe_seq.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/probe_seq.txt",
-                      "size": 102,
+                      "size": 101,
                       "language": "txt"
                     },
                     {
                       "name": "probe_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/probe_set.txt",
-                      "size": 49,
+                      "size": 47,
                       "language": "txt"
                     },
                     {
                       "name": "probe_transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/probe_transcript.txt",
-                      "size": 587,
+                      "size": 579,
                       "language": "txt"
                     },
                     {
                       "name": "regulatory_activity.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/regulatory_activity.txt",
-                      "size": 15,
+                      "size": 14,
                       "language": "txt"
                     },
                     {
                       "name": "regulatory_build.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/regulatory_build.txt",
-                      "size": 87,
+                      "size": 86,
                       "language": "txt"
                     },
                     {
@@ -2895,7 +4212,7 @@
                       "name": "regulatory_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/regulatory_feature.txt",
-                      "size": 65,
+                      "size": 64,
                       "language": "txt"
                     },
                     {
@@ -2951,7 +4268,7 @@
                       "name": "seq_region.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/seq_region.txt",
-                      "size": 79,
+                      "size": 76,
                       "language": "txt"
                     },
                     {
@@ -2965,7 +4282,7 @@
                       "name": "status_name.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/status_name.txt",
-                      "size": 501,
+                      "size": 472,
                       "language": "txt"
                     },
                     {
@@ -2979,28 +4296,28 @@
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/table.sql",
-                      "size": 42562,
+                      "size": 41665,
                       "language": "sql"
                     },
                     {
                       "name": "transcription_factor.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/transcription_factor.txt",
-                      "size": 112,
+                      "size": 108,
                       "language": "txt"
                     },
                     {
                       "name": "transcription_factor_complex.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/transcription_factor_complex.txt",
-                      "size": 58,
+                      "size": 54,
                       "language": "txt"
                     },
                     {
                       "name": "transcription_factor_complex_composition.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/transcription_factor_complex_composition.txt",
-                      "size": 46,
+                      "size": 42,
                       "language": "txt"
                     },
                     {
@@ -3021,7 +4338,7 @@
                       "name": "xref.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/funcgen/xref.txt",
-                      "size": 49,
+                      "size": 48,
                       "language": "txt"
                     }
                   ]
@@ -3035,14 +4352,14 @@
                       "name": "allele.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/allele.txt",
-                      "size": 176198,
+                      "size": 168945,
                       "language": "txt"
                     },
                     {
                       "name": "allele_code.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/allele_code.txt",
-                      "size": 260,
+                      "size": 228,
                       "language": "txt"
                     },
                     {
@@ -3056,21 +4373,21 @@
                       "name": "attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/attrib.txt",
-                      "size": 6214,
+                      "size": 5890,
                       "language": "txt"
                     },
                     {
                       "name": "attrib_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/attrib_set.txt",
-                      "size": 1913,
+                      "size": 1675,
                       "language": "txt"
                     },
                     {
                       "name": "attrib_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/attrib_type.txt",
-                      "size": 2281,
+                      "size": 2248,
                       "language": "txt"
                     },
                     {
@@ -3084,7 +4401,7 @@
                       "name": "compressed_genotype_var.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/compressed_genotype_var.txt",
-                      "size": 206024,
+                      "size": 205846,
                       "language": "txt"
                     },
                     {
@@ -3105,7 +4422,7 @@
                       "name": "failed_description.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/failed_description.txt",
-                      "size": 1091,
+                      "size": 1070,
                       "language": "txt"
                     },
                     {
@@ -3119,28 +4436,28 @@
                       "name": "failed_variation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/failed_variation.txt",
-                      "size": 60,
+                      "size": 57,
                       "language": "txt"
                     },
                     {
                       "name": "genotype_code.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/genotype_code.txt",
-                      "size": 226,
+                      "size": 206,
                       "language": "txt"
                     },
                     {
                       "name": "individual.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/individual.txt",
-                      "size": 3681,
+                      "size": 3614,
                       "language": "txt"
                     },
                     {
                       "name": "individual_genotype_multiple_bp.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/individual_genotype_multiple_bp.txt",
-                      "size": 60,
+                      "size": 58,
                       "language": "txt"
                     },
                     {
@@ -3161,21 +4478,21 @@
                       "name": "individual_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/individual_type.txt",
-                      "size": 332,
+                      "size": 328,
                       "language": "txt"
                     },
                     {
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/meta.txt",
-                      "size": 11255,
+                      "size": 11151,
                       "language": "txt"
                     },
                     {
                       "name": "meta_coord.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/meta_coord.txt",
-                      "size": 107,
+                      "size": 103,
                       "language": "txt"
                     },
                     {
@@ -3189,42 +4506,42 @@
                       "name": "phenotype.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/phenotype.txt",
-                      "size": 277,
+                      "size": 271,
                       "language": "txt"
                     },
                     {
                       "name": "phenotype_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/phenotype_feature.txt",
-                      "size": 795,
+                      "size": 783,
                       "language": "txt"
                     },
                     {
                       "name": "phenotype_feature_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/phenotype_feature_attrib.txt",
-                      "size": 169,
+                      "size": 161,
                       "language": "txt"
                     },
                     {
                       "name": "phenotype_ontology_accession.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/phenotype_ontology_accession.txt",
-                      "size": 70,
+                      "size": 67,
                       "language": "txt"
                     },
                     {
                       "name": "population.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/population.txt",
-                      "size": 14764,
+                      "size": 14722,
                       "language": "txt"
                     },
                     {
                       "name": "population_genotype.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/population_genotype.txt",
-                      "size": 6142,
+                      "size": 6004,
                       "language": "txt"
                     },
                     {
@@ -3252,7 +4569,7 @@
                       "name": "publication.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/publication.txt",
-                      "size": 596,
+                      "size": 593,
                       "language": "txt"
                     },
                     {
@@ -3266,35 +4583,35 @@
                       "name": "sample.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/sample.txt",
-                      "size": 4661,
+                      "size": 4594,
                       "language": "txt"
                     },
                     {
                       "name": "sample_genotype_multiple_bp.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/sample_genotype_multiple_bp.txt",
-                      "size": 60,
+                      "size": 58,
                       "language": "txt"
                     },
                     {
                       "name": "sample_population.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/sample_population.txt",
-                      "size": 915,
+                      "size": 854,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/seq_region.txt",
-                      "size": 260,
+                      "size": 240,
                       "language": "txt"
                     },
                     {
                       "name": "source.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/source.txt",
-                      "size": 926,
+                      "size": 918,
                       "language": "txt"
                     },
                     {
@@ -3308,35 +4625,35 @@
                       "name": "structural_variation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/structural_variation.txt",
-                      "size": 939,
+                      "size": 921,
                       "language": "txt"
                     },
                     {
                       "name": "structural_variation_association.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/structural_variation_association.txt",
-                      "size": 108,
+                      "size": 102,
                       "language": "txt"
                     },
                     {
                       "name": "structural_variation_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/structural_variation_feature.txt",
-                      "size": 1970,
+                      "size": 1952,
                       "language": "txt"
                     },
                     {
                       "name": "structural_variation_sample.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/structural_variation_sample.txt",
-                      "size": 145,
+                      "size": 140,
                       "language": "txt"
                     },
                     {
                       "name": "study.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/study.txt",
-                      "size": 1480,
+                      "size": 1472,
                       "language": "txt"
                     },
                     {
@@ -3350,35 +4667,35 @@
                       "name": "submitter.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/submitter.txt",
-                      "size": 20,
+                      "size": 18,
                       "language": "txt"
                     },
                     {
                       "name": "submitter_handle.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/submitter_handle.txt",
-                      "size": 163,
+                      "size": 153,
                       "language": "txt"
                     },
                     {
                       "name": "subsnp_handle.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/subsnp_handle.txt",
-                      "size": 3237,
+                      "size": 3074,
                       "language": "txt"
                     },
                     {
                       "name": "subsnp_map.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/subsnp_map.txt",
-                      "size": 3104,
+                      "size": 2939,
                       "language": "txt"
                     },
                     {
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/table.sql",
-                      "size": 39111,
+                      "size": 38381,
                       "language": "sql"
                     },
                     {
@@ -3399,7 +4716,7 @@
                       "name": "transcript_variation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/transcript_variation.txt",
-                      "size": 8620,
+                      "size": 8576,
                       "language": "txt"
                     },
                     {
@@ -3413,63 +4730,63 @@
                       "name": "variation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation.txt",
-                      "size": 5675,
+                      "size": 5564,
                       "language": "txt"
                     },
                     {
                       "name": "variation_citation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_citation.txt",
-                      "size": 56,
+                      "size": 53,
                       "language": "txt"
                     },
                     {
                       "name": "variation_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_feature.txt",
-                      "size": 19387,
+                      "size": 19246,
                       "language": "txt"
                     },
                     {
                       "name": "variation_feature_bak.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_feature_bak.txt",
-                      "size": 4784,
+                      "size": 4754,
                       "language": "txt"
                     },
                     {
                       "name": "variation_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_set.txt",
-                      "size": 4448,
+                      "size": 4406,
                       "language": "txt"
                     },
                     {
                       "name": "variation_set_structural_variation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_set_structural_variation.txt",
-                      "size": 34,
+                      "size": 32,
                       "language": "txt"
                     },
                     {
                       "name": "variation_set_structure.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_set_structure.txt",
-                      "size": 49,
+                      "size": 40,
                       "language": "txt"
                     },
                     {
                       "name": "variation_set_variation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_set_variation.txt",
-                      "size": 1778,
+                      "size": 1632,
                       "language": "txt"
                     },
                     {
                       "name": "variation_synonym.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homo_sapiens/variation/variation_synonym.txt",
-                      "size": 264,
+                      "size": 257,
                       "language": "txt"
                     }
                   ]
@@ -3490,14 +4807,14 @@
                       "name": "CAFE_gene_family.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/CAFE_gene_family.txt",
-                      "size": 234,
+                      "size": 230,
                       "language": "txt"
                     },
                     {
                       "name": "CAFE_species_gene.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/CAFE_species_gene.txt",
-                      "size": 3331,
+                      "size": 3169,
                       "language": "txt"
                     },
                     {
@@ -3518,7 +4835,7 @@
                       "name": "dnafrag.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/dnafrag.txt",
-                      "size": 5999,
+                      "size": 5874,
                       "language": "txt"
                     },
                     {
@@ -3539,42 +4856,35 @@
                       "name": "family.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/family.txt",
-                      "size": 107,
-                      "language": "txt"
-                    },
-                    {
-                      "name": "family_member.txt",
-                      "type": "file",
-                      "path": "t/test-genome-DBs/homology/compara/family_member.txt",
-                      "size": 948403,
+                      "size": 106,
                       "language": "txt"
                     },
                     {
                       "name": "gene_align.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_align.txt",
-                      "size": 102,
+                      "size": 98,
                       "language": "txt"
                     },
                     {
                       "name": "gene_align_member.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_align_member.txt",
-                      "size": 52594,
+                      "size": 52453,
                       "language": "txt"
                     },
                     {
                       "name": "gene_member.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_member.txt",
-                      "size": 21611,
+                      "size": 21470,
                       "language": "txt"
                     },
                     {
                       "name": "gene_member_hom_stats.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_member_hom_stats.txt",
-                      "size": 4300,
+                      "size": 4159,
                       "language": "txt"
                     },
                     {
@@ -3588,21 +4898,21 @@
                       "name": "gene_tree_node.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_tree_node.txt",
-                      "size": 196370,
+                      "size": 193038,
                       "language": "txt"
                     },
                     {
                       "name": "gene_tree_node_attr.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_tree_node_attr.txt",
-                      "size": 52785,
+                      "size": 51174,
                       "language": "txt"
                     },
                     {
                       "name": "gene_tree_node_tag.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_tree_node_tag.txt",
-                      "size": 47940,
+                      "size": 46710,
                       "language": "txt"
                     },
                     {
@@ -3616,7 +4926,7 @@
                       "name": "gene_tree_root.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_tree_root.txt",
-                      "size": 2278,
+                      "size": 2246,
                       "language": "txt"
                     },
                     {
@@ -3630,14 +4940,14 @@
                       "name": "gene_tree_root_tag.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/gene_tree_root_tag.txt",
-                      "size": 118,
+                      "size": 114,
                       "language": "txt"
                     },
                     {
                       "name": "genome_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/genome_db.txt",
-                      "size": 5916,
+                      "size": 5843,
                       "language": "txt"
                     },
                     {
@@ -3683,20 +4993,6 @@
                       "language": "txt"
                     },
                     {
-                      "name": "homology.txt",
-                      "type": "file",
-                      "path": "t/test-genome-DBs/homology/compara/homology.txt",
-                      "size": 333757,
-                      "language": "txt"
-                    },
-                    {
-                      "name": "homology_member.txt",
-                      "type": "file",
-                      "path": "t/test-genome-DBs/homology/compara/homology_member.txt",
-                      "size": 1037578,
-                      "language": "txt"
-                    },
-                    {
                       "name": "mapping_session.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/mapping_session.txt",
@@ -3714,56 +5010,49 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/meta.txt",
-                      "size": 4968,
+                      "size": 4920,
                       "language": "txt"
                     },
                     {
                       "name": "method_link.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/method_link.txt",
-                      "size": 217,
+                      "size": 213,
                       "language": "txt"
                     },
                     {
                       "name": "method_link_species_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/method_link_species_set.txt",
-                      "size": 109297,
+                      "size": 107345,
                       "language": "txt"
                     },
                     {
                       "name": "method_link_species_set_attr.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/method_link_species_set_attr.txt",
-                      "size": 13922,
+                      "size": 13536,
                       "language": "txt"
                     },
                     {
                       "name": "method_link_species_set_tag.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/method_link_species_set_tag.txt",
-                      "size": 178,
+                      "size": 175,
                       "language": "txt"
                     },
                     {
                       "name": "ncbi_taxa_name.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/ncbi_taxa_name.txt",
-                      "size": 48938,
+                      "size": 47553,
                       "language": "txt"
                     },
                     {
                       "name": "ncbi_taxa_node.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/ncbi_taxa_node.txt",
-                      "size": 17057,
-                      "language": "txt"
-                    },
-                    {
-                      "name": "other_member_sequence.txt",
-                      "type": "file",
-                      "path": "t/test-genome-DBs/homology/compara/other_member_sequence.txt",
-                      "size": 569681,
+                      "size": 16636,
                       "language": "txt"
                     },
                     {
@@ -3777,28 +5066,28 @@
                       "name": "seq_member.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/seq_member.txt",
-                      "size": 22839,
+                      "size": 22698,
                       "language": "txt"
                     },
                     {
                       "name": "sequence.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/sequence.txt",
-                      "size": 198899,
+                      "size": 198773,
                       "language": "txt"
                     },
                     {
                       "name": "species_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/species_set.txt",
-                      "size": 42532,
+                      "size": 38511,
                       "language": "txt"
                     },
                     {
                       "name": "species_set_header.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/species_set_header.txt",
-                      "size": 52599,
+                      "size": 50647,
                       "language": "txt"
                     },
                     {
@@ -3812,7 +5101,7 @@
                       "name": "species_tree_node.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/species_tree_node.txt",
-                      "size": 23370,
+                      "size": 22998,
                       "language": "txt"
                     },
                     {
@@ -3833,7 +5122,7 @@
                       "name": "species_tree_root.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/species_tree_root.txt",
-                      "size": 139,
+                      "size": 133,
                       "language": "txt"
                     },
                     {
@@ -3854,7 +5143,7 @@
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/homology/compara/table.sql",
-                      "size": 30959,
+                      "size": 30260,
                       "language": "sql"
                     }
                   ]
@@ -3896,7 +5185,7 @@
                       "name": "assembly.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/assembly.txt",
-                      "size": 246,
+                      "size": 240,
                       "language": "txt"
                     },
                     {
@@ -3924,14 +5213,14 @@
                       "name": "attrib_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/attrib_type.txt",
-                      "size": 17215,
+                      "size": 16969,
                       "language": "txt"
                     },
                     {
                       "name": "coord_system.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/coord_system.txt",
-                      "size": 124,
+                      "size": 121,
                       "language": "txt"
                     },
                     {
@@ -3980,7 +5269,7 @@
                       "name": "dna.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/dna.txt",
-                      "size": 31518,
+                      "size": 31513,
                       "language": "txt"
                     },
                     {
@@ -4001,21 +5290,21 @@
                       "name": "exon.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/exon.txt",
-                      "size": 323,
+                      "size": 320,
                       "language": "txt"
                     },
                     {
                       "name": "exon_transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/exon_transcript.txt",
-                      "size": 48,
+                      "size": 45,
                       "language": "txt"
                     },
                     {
                       "name": "external_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/external_db.txt",
-                      "size": 48,
+                      "size": 47,
                       "language": "txt"
                     },
                     {
@@ -4029,7 +5318,7 @@
                       "name": "gene.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/gene.txt",
-                      "size": 136,
+                      "size": 135,
                       "language": "txt"
                     },
                     {
@@ -4127,14 +5416,14 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/meta.txt",
-                      "size": 11282,
+                      "size": 11101,
                       "language": "txt"
                     },
                     {
                       "name": "meta_coord.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/meta_coord.txt",
-                      "size": 668,
+                      "size": 639,
                       "language": "txt"
                     },
                     {
@@ -4260,28 +5549,28 @@
                       "name": "repeat_consensus.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/repeat_consensus.txt",
-                      "size": 737,
+                      "size": 720,
                       "language": "txt"
                     },
                     {
                       "name": "repeat_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/repeat_feature.txt",
-                      "size": 2732,
+                      "size": 2686,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/seq_region.txt",
-                      "size": 197,
+                      "size": 190,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/seq_region_attrib.txt",
-                      "size": 69,
+                      "size": 64,
                       "language": "txt"
                     },
                     {
@@ -4344,14 +5633,14 @@
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/table.sql",
-                      "size": 42727,
+                      "size": 41778,
                       "language": "sql"
                     },
                     {
                       "name": "transcript.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/transcript.txt",
-                      "size": 142,
+                      "size": 141,
                       "language": "txt"
                     },
                     {
@@ -4379,7 +5668,7 @@
                       "name": "translation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/meleagris_gallopavo/core/translation.txt",
-                      "size": 95,
+                      "size": 94,
                       "language": "txt"
                     },
                     {
@@ -4456,14 +5745,14 @@
                       "name": "constrained_element.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/constrained_element.txt",
-                      "size": 258,
+                      "size": 254,
                       "language": "txt"
                     },
                     {
                       "name": "dnafrag.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/dnafrag.txt",
-                      "size": 391,
+                      "size": 384,
                       "language": "txt"
                     },
                     {
@@ -4554,28 +5843,28 @@
                       "name": "genome_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/genome_db.txt",
-                      "size": 4961,
+                      "size": 4899,
                       "language": "txt"
                     },
                     {
                       "name": "genomic_align.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/genomic_align.txt",
-                      "size": 9472,
+                      "size": 9460,
                       "language": "txt"
                     },
                     {
                       "name": "genomic_align_block.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/genomic_align_block.txt",
-                      "size": 286,
+                      "size": 280,
                       "language": "txt"
                     },
                     {
                       "name": "genomic_align_tree.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/genomic_align_tree.txt",
-                      "size": 718,
+                      "size": 710,
                       "language": "txt"
                     },
                     {
@@ -4631,42 +5920,42 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/meta.txt",
-                      "size": 7138,
+                      "size": 7046,
                       "language": "txt"
                     },
                     {
                       "name": "method_link.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/method_link.txt",
-                      "size": 934,
+                      "size": 919,
                       "language": "txt"
                     },
                     {
                       "name": "method_link_species_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/method_link_species_set.txt",
-                      "size": 298,
+                      "size": 293,
                       "language": "txt"
                     },
                     {
                       "name": "method_link_species_set_tag.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/method_link_species_set_tag.txt",
-                      "size": 1580,
+                      "size": 1539,
                       "language": "txt"
                     },
                     {
                       "name": "ncbi_taxa_name.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/ncbi_taxa_name.txt",
-                      "size": 40758,
+                      "size": 39603,
                       "language": "txt"
                     },
                     {
                       "name": "ncbi_taxa_node.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/ncbi_taxa_node.txt",
-                      "size": 12234,
+                      "size": 11852,
                       "language": "txt"
                     },
                     {
@@ -4701,14 +5990,14 @@
                       "name": "species_set.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/species_set.txt",
-                      "size": 74,
+                      "size": 67,
                       "language": "txt"
                     },
                     {
                       "name": "species_set_header.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/species_set_header.txt",
-                      "size": 69,
+                      "size": 65,
                       "language": "txt"
                     },
                     {
@@ -4757,7 +6046,7 @@
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/compara/table.sql",
-                      "size": 30873,
+                      "size": 30174,
                       "language": "sql"
                     }
                   ]
@@ -4775,67 +6064,53 @@
                       "language": "txt"
                     },
                     {
-                      "name": "closure.txt",
-                      "type": "file",
-                      "path": "t/test-genome-DBs/multi/ontology/closure.txt",
-                      "size": 414886,
-                      "language": "txt"
-                    },
-                    {
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/ontology/meta.txt",
-                      "size": 2932,
+                      "size": 2917,
                       "language": "txt"
                     },
                     {
                       "name": "ontology.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/ontology/ontology.txt",
-                      "size": 108,
+                      "size": 104,
                       "language": "txt"
                     },
                     {
                       "name": "relation.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/ontology/relation.txt",
-                      "size": 55382,
+                      "size": 52775,
                       "language": "txt"
                     },
                     {
                       "name": "relation_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/ontology/relation_type.txt",
-                      "size": 897,
+                      "size": 846,
                       "language": "txt"
                     },
                     {
                       "name": "subset.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/ontology/subset.txt",
-                      "size": 130,
+                      "size": 127,
                       "language": "txt"
                     },
                     {
                       "name": "synonym.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/ontology/synonym.txt",
-                      "size": 118335,
+                      "size": 115302,
                       "language": "txt"
                     },
                     {
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/ontology/table.sql",
-                      "size": 4090,
+                      "size": 3997,
                       "language": "sql"
-                    },
-                    {
-                      "name": "term.txt",
-                      "type": "file",
-                      "path": "t/test-genome-DBs/multi/ontology/term.txt",
-                      "size": 324729,
-                      "language": "txt"
                     }
                   ]
                 },
@@ -4848,35 +6123,35 @@
                       "name": "archive_id_lookup.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/stable_ids/archive_id_lookup.txt",
-                      "size": 5254,
+                      "size": 5094,
                       "language": "txt"
                     },
                     {
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/stable_ids/meta.txt",
-                      "size": 24,
+                      "size": 23,
                       "language": "txt"
                     },
                     {
                       "name": "species.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/stable_ids/species.txt",
-                      "size": 142,
+                      "size": 136,
                       "language": "txt"
                     },
                     {
                       "name": "stable_id_lookup.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/stable_ids/stable_id_lookup.txt",
-                      "size": 7277,
+                      "size": 7064,
                       "language": "txt"
                     },
                     {
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/multi/stable_ids/table.sql",
-                      "size": 1692,
+                      "size": 1651,
                       "language": "sql"
                     }
                   ]
@@ -4918,7 +6193,7 @@
                       "name": "assembly.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/assembly.txt",
-                      "size": 130,
+                      "size": 127,
                       "language": "txt"
                     },
                     {
@@ -4946,14 +6221,14 @@
                       "name": "attrib_type.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/attrib_type.txt",
-                      "size": 17215,
+                      "size": 16969,
                       "language": "txt"
                     },
                     {
                       "name": "coord_system.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/coord_system.txt",
-                      "size": 141,
+                      "size": 138,
                       "language": "txt"
                     },
                     {
@@ -5002,7 +6277,7 @@
                       "name": "dna.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/dna.txt",
-                      "size": 58488,
+                      "size": 58487,
                       "language": "txt"
                     },
                     {
@@ -5037,7 +6312,7 @@
                       "name": "external_db.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/external_db.txt",
-                      "size": 48,
+                      "size": 47,
                       "language": "txt"
                     },
                     {
@@ -5149,14 +6424,14 @@
                       "name": "meta.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/meta.txt",
-                      "size": 13751,
+                      "size": 13526,
                       "language": "txt"
                     },
                     {
                       "name": "meta_coord.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/meta_coord.txt",
-                      "size": 404,
+                      "size": 388,
                       "language": "txt"
                     },
                     {
@@ -5282,28 +6557,28 @@
                       "name": "repeat_consensus.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/repeat_consensus.txt",
-                      "size": 968,
+                      "size": 949,
                       "language": "txt"
                     },
                     {
                       "name": "repeat_feature.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/repeat_feature.txt",
-                      "size": 2309,
+                      "size": 2273,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/seq_region.txt",
-                      "size": 75,
+                      "size": 72,
                       "language": "txt"
                     },
                     {
                       "name": "seq_region_attrib.txt",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/seq_region_attrib.txt",
-                      "size": 89,
+                      "size": 83,
                       "language": "txt"
                     },
                     {
@@ -5366,7 +6641,7 @@
                       "name": "table.sql",
                       "type": "file",
                       "path": "t/test-genome-DBs/taeniopygia_guttata/core/table.sql",
-                      "size": 42643,
+                      "size": 41694,
                       "language": "sql"
                     },
                     {
@@ -5457,15 +6732,29 @@
                       "name": "ga_references.json",
                       "type": "file",
                       "path": "t/test-genome-DBs/testdata/ga_data/ga_references.json",
-                      "size": 6373,
+                      "size": 6112,
                       "language": "json"
                     },
                     {
                       "name": "ga_vcf_config.json",
                       "type": "file",
                       "path": "t/test-genome-DBs/testdata/ga_data/ga_vcf_config.json",
-                      "size": 1236,
+                      "size": 1196,
                       "language": "json"
+                    },
+                    {
+                      "name": "test.chr22.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz.tbi",
+                      "type": "file",
+                      "path": "t/test-genome-DBs/testdata/ga_data/test.chr22.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz.tbi",
+                      "size": 205,
+                      "language": "tbi"
+                    },
+                    {
+                      "name": "test.NA12878_S1r.chr22.vcf.gz.tbi",
+                      "type": "file",
+                      "path": "t/test-genome-DBs/testdata/ga_data/test.NA12878_S1r.chr22.vcf.gz.tbi",
+                      "size": 162,
+                      "language": "tbi"
                     }
                   ]
                 },
@@ -5488,7 +6777,7 @@
                               "name": "info.txt",
                               "type": "file",
                               "path": "t/test-genome-DBs/testdata/vep/homo_sapiens/86_GRCh37/info.txt",
-                              "size": 1005,
+                              "size": 992,
                               "language": "txt"
                             }
                           ]
@@ -5509,53 +6798,389 @@
                               "name": "info.txt",
                               "type": "file",
                               "path": "t/test-genome-DBs/testdata/vep/homo_sapiens_refseq/86_GRCh37/info.txt",
-                              "size": 1381,
+                              "size": 1358,
                               "language": "txt"
                             }
                           ]
                         }
                       ]
+                    },
+                    {
+                      "name": "7.fa.gz.fai",
+                      "type": "file",
+                      "path": "t/test-genome-DBs/testdata/vep/7.fa.gz.fai",
+                      "size": 57,
+                      "language": "fai"
+                    },
+                    {
+                      "name": "7.fa.gz.gzi",
+                      "type": "file",
+                      "path": "t/test-genome-DBs/testdata/vep/7.fa.gz.gzi",
+                      "size": 264,
+                      "language": "gzi"
                     }
                   ]
+                },
+                {
+                  "name": ".cvsignore",
+                  "type": "file",
+                  "path": "t/test-genome-DBs/testdata/.cvsignore",
+                  "size": 6,
+                  "language": "text"
                 },
                 {
                   "name": "core_regions.json",
                   "type": "file",
                   "path": "t/test-genome-DBs/testdata/core_regions.json",
-                  "size": 549,
+                  "size": 533,
                   "language": "json"
+                },
+                {
+                  "name": "haplotypes.vcf.gz.tbi",
+                  "type": "file",
+                  "path": "t/test-genome-DBs/testdata/haplotypes.vcf.gz.tbi",
+                  "size": 106,
+                  "language": "tbi"
                 },
                 {
                   "name": "haplotypes_vcf_config.json",
                   "type": "file",
                   "path": "t/test-genome-DBs/testdata/haplotypes_vcf_config.json",
-                  "size": 238,
+                  "size": 226,
                   "language": "json"
+                },
+                {
+                  "name": "ld.vcf.gz.tbi",
+                  "type": "file",
+                  "path": "t/test-genome-DBs/testdata/ld.vcf.gz.tbi",
+                  "size": 203,
+                  "language": "tbi"
                 },
                 {
                   "name": "ld_vcf_config.json",
                   "type": "file",
                   "path": "t/test-genome-DBs/testdata/ld_vcf_config.json",
-                  "size": 301,
+                  "size": 287,
                   "language": "json"
                 },
                 {
                   "name": "ontology.txt",
                   "type": "file",
                   "path": "t/test-genome-DBs/testdata/ontology.txt",
-                  "size": 1226,
+                  "size": 1197,
                   "language": "txt"
+                },
+                {
+                  "name": "RestTestPlugin.pm",
+                  "type": "file",
+                  "path": "t/test-genome-DBs/testdata/RestTestPlugin.pm",
+                  "size": 513,
+                  "language": "pm"
+                },
+                {
+                  "name": "vcf.reg",
+                  "type": "file",
+                  "path": "t/test-genome-DBs/testdata/vcf.reg",
+                  "size": 874,
+                  "language": "reg"
                 },
                 {
                   "name": "vep_plugin_config.txt",
                   "type": "file",
                   "path": "t/test-genome-DBs/testdata/vep_plugin_config.txt",
-                  "size": 198,
+                  "size": 186,
                   "language": "txt"
+                },
+                {
+                  "name": "wgs.phase1.subset.vcf",
+                  "type": "file",
+                  "path": "t/test-genome-DBs/testdata/wgs.phase1.subset.vcf",
+                  "size": 306048,
+                  "language": "vcf"
                 }
               ]
             }
           ]
+        },
+        {
+          "name": ".cvsignore",
+          "type": "file",
+          "path": "t/.cvsignore",
+          "size": 25,
+          "language": "text"
+        },
+        {
+          "name": "archive.t",
+          "type": "file",
+          "path": "t/archive.t",
+          "size": 3777,
+          "language": "t"
+        },
+        {
+          "name": "assembly_info.t",
+          "type": "file",
+          "path": "t/assembly_info.t",
+          "size": 3063,
+          "language": "t"
+        },
+        {
+          "name": "cafe_tree.t",
+          "type": "file",
+          "path": "t/cafe_tree.t",
+          "size": 13268,
+          "language": "t"
+        },
+        {
+          "name": "detect_extension.t",
+          "type": "file",
+          "path": "t/detect_extension.t",
+          "size": 2553,
+          "language": "t"
+        },
+        {
+          "name": "gabeacon.t",
+          "type": "file",
+          "path": "t/gabeacon.t",
+          "size": 26134,
+          "language": "t"
+        },
+        {
+          "name": "gacallset.t",
+          "type": "file",
+          "path": "t/gacallset.t",
+          "size": 3325,
+          "language": "t"
+        },
+        {
+          "name": "gadataset.t",
+          "type": "file",
+          "path": "t/gadataset.t",
+          "size": 2613,
+          "language": "t"
+        },
+        {
+          "name": "gafeatures.t",
+          "type": "file",
+          "path": "t/gafeatures.t",
+          "size": 7996,
+          "language": "t"
+        },
+        {
+          "name": "gafeatureset.t",
+          "type": "file",
+          "path": "t/gafeatureset.t",
+          "size": 5167,
+          "language": "t"
+        },
+        {
+          "name": "gareferences.t",
+          "type": "file",
+          "path": "t/gareferences.t",
+          "size": 10337,
+          "language": "t"
+        },
+        {
+          "name": "gareferenceset.t",
+          "type": "file",
+          "path": "t/gareferenceset.t",
+          "size": 3519,
+          "language": "t"
+        },
+        {
+          "name": "gavariant.t",
+          "type": "file",
+          "path": "t/gavariant.t",
+          "size": 5172,
+          "language": "t"
+        },
+        {
+          "name": "gavariantannotation.t",
+          "type": "file",
+          "path": "t/gavariantannotation.t",
+          "size": 7488,
+          "language": "t"
+        },
+        {
+          "name": "gavariantannotationset.t",
+          "type": "file",
+          "path": "t/gavariantannotationset.t",
+          "size": 6611,
+          "language": "t"
+        },
+        {
+          "name": "gavariantset.t",
+          "type": "file",
+          "path": "t/gavariantset.t",
+          "size": 33910,
+          "language": "t"
+        },
+        {
+          "name": "gene_tree.t",
+          "type": "file",
+          "path": "t/gene_tree.t",
+          "size": 33436,
+          "language": "t"
+        },
+        {
+          "name": "genomic_alignment.t",
+          "type": "file",
+          "path": "t/genomic_alignment.t",
+          "size": 29184,
+          "language": "t"
+        },
+        {
+          "name": "homology.t",
+          "type": "file",
+          "path": "t/homology.t",
+          "size": 16187,
+          "language": "t"
+        },
+        {
+          "name": "housekeeping_apache2.t",
+          "type": "file",
+          "path": "t/housekeeping_apache2.t",
+          "size": 1832,
+          "language": "t"
+        },
+        {
+          "name": "info.t",
+          "type": "file",
+          "path": "t/info.t",
+          "size": 16858,
+          "language": "t"
+        },
+        {
+          "name": "ld.t",
+          "type": "file",
+          "path": "t/ld.t",
+          "size": 9494,
+          "language": "t"
+        },
+        {
+          "name": "lookup.t",
+          "type": "file",
+          "path": "t/lookup.t",
+          "size": 12883,
+          "language": "t"
+        },
+        {
+          "name": "map.t",
+          "type": "file",
+          "path": "t/map.t",
+          "size": 7669,
+          "language": "t"
+        },
+        {
+          "name": "message_size.t",
+          "type": "file",
+          "path": "t/message_size.t",
+          "size": 1471,
+          "language": "t"
+        },
+        {
+          "name": "MultiTestDB.conf.default",
+          "type": "file",
+          "path": "t/MultiTestDB.conf.default",
+          "size": 1064,
+          "language": "default"
+        },
+        {
+          "name": "MultiTestDB.conf.example",
+          "type": "file",
+          "path": "t/MultiTestDB.conf.example",
+          "size": 118,
+          "language": "example"
+        },
+        {
+          "name": "ontology.t",
+          "type": "file",
+          "path": "t/ontology.t",
+          "size": 3797,
+          "language": "t"
+        },
+        {
+          "name": "overlap.t",
+          "type": "file",
+          "path": "t/overlap.t",
+          "size": 24172,
+          "language": "t"
+        },
+        {
+          "name": "phenotype_annotation.t",
+          "type": "file",
+          "path": "t/phenotype_annotation.t",
+          "size": 5203,
+          "language": "t"
+        },
+        {
+          "name": "phenotype_gene.t",
+          "type": "file",
+          "path": "t/phenotype_gene.t",
+          "size": 11321,
+          "language": "t"
+        },
+        {
+          "name": "phenotype_region.t",
+          "type": "file",
+          "path": "t/phenotype_region.t",
+          "size": 5143,
+          "language": "t"
+        },
+        {
+          "name": "ratelimit.t",
+          "type": "file",
+          "path": "t/ratelimit.t",
+          "size": 13641,
+          "language": "t"
+        },
+        {
+          "name": "regulatory.t",
+          "type": "file",
+          "path": "t/regulatory.t",
+          "size": 4309,
+          "language": "t"
+        },
+        {
+          "name": "taxonomy.t",
+          "type": "file",
+          "path": "t/taxonomy.t",
+          "size": 4049,
+          "language": "t"
+        },
+        {
+          "name": "test.stub",
+          "type": "file",
+          "path": "t/test.stub",
+          "size": 494,
+          "language": "stub"
+        },
+        {
+          "name": "transcript_haplotypes.t",
+          "type": "file",
+          "path": "t/transcript_haplotypes.t",
+          "size": 7600,
+          "language": "t"
+        },
+        {
+          "name": "variation.t",
+          "type": "file",
+          "path": "t/variation.t",
+          "size": 20211,
+          "language": "t"
+        },
+        {
+          "name": "vep.t",
+          "type": "file",
+          "path": "t/vep.t",
+          "size": 20804,
+          "language": "t"
+        },
+        {
+          "name": "xrefs.t",
+          "type": "file",
+          "path": "t/xrefs.t",
+          "size": 5079,
+          "language": "t"
         }
       ]
     },
@@ -5568,31 +7193,45 @@
           "name": "harness.sh",
           "type": "file",
           "path": "travisci/harness.sh",
-          "size": 827,
+          "size": 801,
           "language": "sh"
+        },
+        {
+          "name": "MultiTestDB.conf.travisci",
+          "type": "file",
+          "path": "travisci/MultiTestDB.conf.travisci",
+          "size": 100,
+          "language": "travisci"
         }
       ]
+    },
+    {
+      "name": ".cvsignore",
+      "type": "file",
+      "path": ".cvsignore",
+      "size": 159,
+      "language": "text"
     },
     {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 317,
+      "size": 289,
       "language": "text"
     },
     {
-      "name": ".travis.yml",
+      "name": ".gitmodules",
       "type": "file",
-      "path": ".travis.yml",
-      "size": 2383,
-      "language": "yml"
+      "path": ".gitmodules",
+      "size": 88,
+      "language": "text"
     },
     {
-      "name": "ensembl_rest_testing.conf",
+      "name": "ensembl_rest.psgi",
       "type": "file",
-      "path": "ensembl_rest_testing.conf",
-      "size": 4607,
-      "language": "conf"
+      "path": "ensembl_rest.psgi",
+      "size": 239,
+      "language": "psgi"
     },
     {
       "name": "INSTALL.md",
@@ -5602,46 +7241,18 @@
       "language": "md"
     },
     {
-      "name": "LICENSE",
-      "type": "file",
-      "path": "LICENSE",
-      "size": 24986,
-      "language": "text"
-    },
-    {
       "name": "log4perl.conf",
       "type": "file",
       "path": "log4perl.conf",
-      "size": 388,
+      "size": 381,
       "language": "conf"
     },
     {
       "name": "log4perl_testing.conf",
       "type": "file",
       "path": "log4perl_testing.conf",
-      "size": 293,
+      "size": 287,
       "language": "conf"
-    },
-    {
-      "name": "Makefile.PL",
-      "type": "file",
-      "path": "Makefile.PL",
-      "size": 949,
-      "language": "pl"
-    },
-    {
-      "name": "PULL_REQUEST_TEMPLATE.md",
-      "type": "file",
-      "path": "PULL_REQUEST_TEMPLATE.md",
-      "size": 1826,
-      "language": "md"
-    },
-    {
-      "name": "README.md",
-      "type": "file",
-      "path": "README.md",
-      "size": 489,
-      "language": "md"
     }
   ]
 }

@@ -58,9 +58,10 @@ function runHookWithInput(scriptPath, input = {}, env = {}, timeoutMs = 10000) {
     proc.stdout.on('data', data => stdout += data);
     proc.stderr.on('data', data => stderr += data);
 
-    // Ignore EPIPE errors (process may exit before we finish writing)
+    // Ignore EPIPE/EOF errors (process may exit before we finish writing)
+    // Windows uses EOF instead of EPIPE for closed pipe writes
     proc.stdin.on('error', (err) => {
-      if (err.code !== 'EPIPE') {
+      if (err.code !== 'EPIPE' && err.code !== 'EOF') {
         reject(err);
       }
     });
@@ -236,7 +237,7 @@ async function runTests() {
   })) passed++; else failed++;
 
   if (await asyncTest('blocking hooks output BLOCKED message', async () => {
-    // Test the dev server blocking hook
+    // Test the dev server blocking hook — must send a matching command
     const blockingCommand = hooks.hooks.PreToolUse[0].hooks[0].command;
     const match = blockingCommand.match(/^node -e "(.+)"$/s);
 
@@ -248,6 +249,10 @@ async function runTests() {
     let code = null;
     proc.stderr.on('data', data => stderr += data);
 
+    // Send a dev server command so the hook triggers the block
+    proc.stdin.write(JSON.stringify({
+      tool_input: { command: 'npm run dev' }
+    }));
     proc.stdin.end();
 
     await new Promise(resolve => {
@@ -257,8 +262,13 @@ async function runTests() {
       });
     });
 
-    assert.ok(stderr.includes('BLOCKED'), 'Blocking hook should output BLOCKED');
-    assert.strictEqual(code, 1, 'Blocking hook should exit with code 1');
+    // Hook only blocks on non-Windows platforms (tmux is Unix-only)
+    if (process.platform === 'win32') {
+      assert.strictEqual(code, 0, 'On Windows, hook should not block (exit 0)');
+    } else {
+      assert.ok(stderr.includes('BLOCKED'), 'Blocking hook should output BLOCKED');
+      assert.strictEqual(code, 2, 'Blocking hook should exit with code 2');
+    }
   })) passed++; else failed++;
 
   // ==========================================
@@ -271,8 +281,8 @@ async function runTests() {
     assert.strictEqual(result.code, 0, 'Non-blocking hook should exit 0');
   })) passed++; else failed++;
 
-  if (await asyncTest('blocking hooks exit with code 1', async () => {
-    // The dev server blocker always blocks
+  if (await asyncTest('blocking hooks exit with code 2', async () => {
+    // The dev server blocker blocks when a dev server command is detected
     const blockingCommand = hooks.hooks.PreToolUse[0].hooks[0].command;
     const match = blockingCommand.match(/^node -e "(.+)"$/s);
 
@@ -281,6 +291,9 @@ async function runTests() {
     });
 
     let code = null;
+    proc.stdin.write(JSON.stringify({
+      tool_input: { command: 'yarn dev' }
+    }));
     proc.stdin.end();
 
     await new Promise(resolve => {
@@ -290,7 +303,12 @@ async function runTests() {
       });
     });
 
-    assert.strictEqual(code, 1, 'Blocking hook should exit 1');
+    // Hook only blocks on non-Windows platforms (tmux is Unix-only)
+    if (process.platform === 'win32') {
+      assert.strictEqual(code, 0, 'On Windows, hook should not block (exit 0)');
+    } else {
+      assert.strictEqual(code, 2, 'Blocking hook should exit 2');
+    }
   })) passed++; else failed++;
 
   if (await asyncTest('hooks handle missing files gracefully', async () => {
@@ -300,8 +318,7 @@ async function runTests() {
     try {
       const result = await runHookWithInput(
         path.join(scriptsDir, 'evaluate-session.js'),
-        {},
-        { CLAUDE_TRANSCRIPT_PATH: transcriptPath }
+        { transcript_path: transcriptPath }
       );
 
       // Should not crash, just skip processing
@@ -357,8 +374,7 @@ async function runTests() {
     try {
       const result = await runHookWithInput(
         path.join(scriptsDir, 'evaluate-session.js'),
-        {},
-        { CLAUDE_TRANSCRIPT_PATH: transcriptPath }
+        { transcript_path: transcriptPath }
       );
 
       assert.ok(result.stderr.includes('15 messages'), 'Should process session');
@@ -400,6 +416,125 @@ async function runTests() {
   })) passed++; else failed++;
 
   // ==========================================
+  // Session End Transcript Parsing Tests
+  // ==========================================
+  console.log('\nSession End Transcript Parsing:');
+
+  if (await asyncTest('session-end extracts summary from mixed JSONL formats', async () => {
+    const testDir = createTestDir();
+    const transcriptPath = path.join(testDir, 'mixed-transcript.jsonl');
+
+    // Create transcript with both direct tool_use and nested assistant message formats
+    const lines = [
+      JSON.stringify({ type: 'user', content: 'Fix the login bug' }),
+      JSON.stringify({ type: 'tool_use', name: 'Read', input: { file_path: 'src/auth.ts' } }),
+      JSON.stringify({ type: 'assistant', message: { content: [
+        { type: 'tool_use', name: 'Edit', input: { file_path: 'src/auth.ts' } }
+      ]}}),
+      JSON.stringify({ type: 'user', content: 'Now add tests' }),
+      JSON.stringify({ type: 'assistant', message: { content: [
+        { type: 'tool_use', name: 'Write', input: { file_path: 'tests/auth.test.ts' } },
+        { type: 'text', text: 'Here are the tests' }
+      ]}}),
+      JSON.stringify({ type: 'user', content: 'Looks good, commit' })
+    ];
+    fs.writeFileSync(transcriptPath, lines.join('\n'));
+
+    try {
+      const result = await runHookWithInput(
+        path.join(scriptsDir, 'session-end.js'),
+        { transcript_path: transcriptPath },
+        { HOME: testDir, USERPROFILE: testDir }
+      );
+
+      assert.strictEqual(result.code, 0, 'Should exit 0');
+      assert.ok(result.stderr.includes('[SessionEnd]'), 'Should have SessionEnd log');
+
+      // Verify a session file was created
+      const sessionsDir = path.join(testDir, '.claude', 'sessions');
+      if (fs.existsSync(sessionsDir)) {
+        const files = fs.readdirSync(sessionsDir).filter(f => f.endsWith('.tmp'));
+        assert.ok(files.length > 0, 'Should create a session file');
+
+        // Verify session content includes tasks from user messages
+        const content = fs.readFileSync(path.join(sessionsDir, files[0]), 'utf8');
+        assert.ok(content.includes('Fix the login bug'), 'Should include first user message');
+        assert.ok(content.includes('auth.ts'), 'Should include modified files');
+      }
+    } finally {
+      cleanupTestDir(testDir);
+    }
+  })) passed++; else failed++;
+
+  if (await asyncTest('session-end handles transcript with malformed lines gracefully', async () => {
+    const testDir = createTestDir();
+    const transcriptPath = path.join(testDir, 'malformed-transcript.jsonl');
+
+    const lines = [
+      JSON.stringify({ type: 'user', content: 'Task 1' }),
+      '{broken json here',
+      JSON.stringify({ type: 'user', content: 'Task 2' }),
+      '{"truncated":',
+      JSON.stringify({ type: 'user', content: 'Task 3' })
+    ];
+    fs.writeFileSync(transcriptPath, lines.join('\n'));
+
+    try {
+      const result = await runHookWithInput(
+        path.join(scriptsDir, 'session-end.js'),
+        { transcript_path: transcriptPath },
+        { HOME: testDir, USERPROFILE: testDir }
+      );
+
+      assert.strictEqual(result.code, 0, 'Should exit 0 despite malformed lines');
+      // Should still process the valid lines
+      assert.ok(result.stderr.includes('[SessionEnd]'), 'Should have SessionEnd log');
+      assert.ok(result.stderr.includes('unparseable'), 'Should warn about unparseable lines');
+    } finally {
+      cleanupTestDir(testDir);
+    }
+  })) passed++; else failed++;
+
+  if (await asyncTest('session-end creates session file with nested user messages', async () => {
+    const testDir = createTestDir();
+    const transcriptPath = path.join(testDir, 'nested-transcript.jsonl');
+
+    // Claude Code JSONL format uses nested message.content arrays
+    const lines = [
+      JSON.stringify({ type: 'user', message: { role: 'user', content: [
+        { type: 'text', text: 'Refactor the utils module' }
+      ]}}),
+      JSON.stringify({ type: 'assistant', message: { content: [
+        { type: 'tool_use', name: 'Read', input: { file_path: 'lib/utils.js' } }
+      ]}}),
+      JSON.stringify({ type: 'user', message: { role: 'user', content: 'Approve the changes' }})
+    ];
+    fs.writeFileSync(transcriptPath, lines.join('\n'));
+
+    try {
+      const result = await runHookWithInput(
+        path.join(scriptsDir, 'session-end.js'),
+        { transcript_path: transcriptPath },
+        { HOME: testDir, USERPROFILE: testDir }
+      );
+
+      assert.strictEqual(result.code, 0, 'Should exit 0');
+
+      // Check session file was created
+      const sessionsDir = path.join(testDir, '.claude', 'sessions');
+      if (fs.existsSync(sessionsDir)) {
+        const files = fs.readdirSync(sessionsDir).filter(f => f.endsWith('.tmp'));
+        assert.ok(files.length > 0, 'Should create session file');
+        const content = fs.readFileSync(path.join(sessionsDir, files[0]), 'utf8');
+        assert.ok(content.includes('Refactor the utils module') || content.includes('Approve'),
+          'Should extract user messages from nested format');
+      }
+    } finally {
+      cleanupTestDir(testDir);
+    }
+  })) passed++; else failed++;
+
+  // ==========================================
   // Error Handling Tests
   // ==========================================
   console.log('\nError Handling:');
@@ -437,6 +572,134 @@ async function runTests() {
 
     assert.strictEqual(result.code, 0, 'Should complete successfully');
     assert.ok(elapsed < 5000, `Should complete in <5s, took ${elapsed}ms`);
+  })) passed++; else failed++;
+
+  if (await asyncTest('hooks survive stdin exceeding 1MB limit', async () => {
+    // The post-edit-console-warn hook reads stdin up to 1MB then passes through
+    // Send > 1MB to verify truncation doesn't crash the hook
+    const oversizedInput = JSON.stringify({
+      tool_input: { file_path: '/test.js' },
+      tool_output: { output: 'x'.repeat(1200000) } // ~1.2MB
+    });
+
+    const proc = spawn('node', [path.join(scriptsDir, 'post-edit-console-warn.js')], {
+      stdio: ['pipe', 'pipe', 'pipe']
+    });
+
+    let code = null;
+    // MUST drain stdout/stderr to prevent backpressure blocking the child process
+    proc.stdout.on('data', () => {});
+    proc.stderr.on('data', () => {});
+    proc.stdin.on('error', (err) => {
+      if (err.code !== 'EPIPE' && err.code !== 'EOF') throw err;
+    });
+    proc.stdin.write(oversizedInput);
+    proc.stdin.end();
+
+    await new Promise(resolve => {
+      proc.on('close', (c) => { code = c; resolve(); });
+    });
+
+    assert.strictEqual(code, 0, 'Should exit 0 despite oversized input');
+  })) passed++; else failed++;
+
+  if (await asyncTest('hooks handle truncated JSON from overflow gracefully', async () => {
+    // session-end parses stdin JSON. If input is > 1MB and truncated mid-JSON,
+    // JSON.parse should fail and fall back to env var
+    const proc = spawn('node', [path.join(scriptsDir, 'session-end.js')], {
+      stdio: ['pipe', 'pipe', 'pipe']
+    });
+
+    let code = null;
+    let stderr = '';
+    // MUST drain stdout to prevent backpressure blocking the child process
+    proc.stdout.on('data', () => {});
+    proc.stderr.on('data', data => stderr += data);
+    proc.stdin.on('error', (err) => {
+      if (err.code !== 'EPIPE' && err.code !== 'EOF') throw err;
+    });
+
+    // Build a string that will be truncated mid-JSON at 1MB
+    const bigValue = 'x'.repeat(1200000);
+    proc.stdin.write(`{"transcript_path":"/tmp/none","padding":"${bigValue}"}`);
+    proc.stdin.end();
+
+    await new Promise(resolve => {
+      proc.on('close', (c) => { code = c; resolve(); });
+    });
+
+    // Should exit 0 even if JSON parse fails (falls back to env var or null)
+    assert.strictEqual(code, 0, 'Should not crash on truncated JSON');
+  })) passed++; else failed++;
+
+  // ==========================================
+  // Round 51: Timeout Enforcement
+  // ==========================================
+  console.log('\nRound 51: Timeout Enforcement:');
+
+  if (await asyncTest('runHookWithInput kills hanging hooks after timeout', async () => {
+    const testDir = createTestDir();
+    const hangingHookPath = path.join(testDir, 'hanging-hook.js');
+    fs.writeFileSync(hangingHookPath, 'setInterval(() => {}, 100);');
+
+    try {
+      const startTime = Date.now();
+      let error = null;
+
+      try {
+        await runHookWithInput(hangingHookPath, {}, {}, 500);
+      } catch (err) {
+        error = err;
+      }
+
+      const elapsed = Date.now() - startTime;
+      assert.ok(error, 'Should throw timeout error');
+      assert.ok(error.message.includes('timed out'), 'Error should mention timeout');
+      assert.ok(elapsed >= 450, `Should wait at least ~500ms, waited ${elapsed}ms`);
+      assert.ok(elapsed < 2000, `Should not wait much longer than 500ms, waited ${elapsed}ms`);
+    } finally {
+      cleanupTestDir(testDir);
+    }
+  })) passed++; else failed++;
+
+  // ==========================================
+  // Round 51: hooks.json Schema Validation
+  // ==========================================
+  console.log('\nRound 51: hooks.json Schema Validation:');
+
+  if (await asyncTest('hooks.json async hook has valid timeout field', async () => {
+    const asyncHook = hooks.hooks.PostToolUse.find(h =>
+      h.hooks && h.hooks[0] && h.hooks[0].async === true
+    );
+
+    assert.ok(asyncHook, 'Should have at least one async hook defined');
+    assert.strictEqual(asyncHook.hooks[0].async, true, 'async field should be true');
+    assert.ok(asyncHook.hooks[0].timeout, 'Should have timeout field');
+    assert.strictEqual(typeof asyncHook.hooks[0].timeout, 'number', 'Timeout should be a number');
+    assert.ok(asyncHook.hooks[0].timeout > 0, 'Timeout should be positive');
+
+    const match = asyncHook.hooks[0].command.match(/^node -e "(.+)"$/s);
+    assert.ok(match, 'Async hook command should be node -e format');
+  })) passed++; else failed++;
+
+  if (await asyncTest('all hook commands in hooks.json are valid format', async () => {
+    for (const [hookType, hookArray] of Object.entries(hooks.hooks)) {
+      for (const hookDef of hookArray) {
+        assert.ok(hookDef.hooks, `${hookType} entry should have hooks array`);
+
+        for (const hook of hookDef.hooks) {
+          assert.ok(hook.command, `Hook in ${hookType} should have command field`);
+
+          const isInline = hook.command.startsWith('node -e');
+          const isFilePath = hook.command.startsWith('node "');
+
+          assert.ok(
+            isInline || isFilePath,
+            `Hook command in ${hookType} should be inline (node -e) or file path (node "), got: ${hook.command.substring(0, 50)}`
+          );
+        }
+      }
+    }
   })) passed++; else failed++;
 
   // Summary

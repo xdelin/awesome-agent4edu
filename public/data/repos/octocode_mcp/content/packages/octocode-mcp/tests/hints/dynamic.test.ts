@@ -454,7 +454,7 @@ describe('Dynamic Hints', () => {
       const hints = getDynamicHints(
         STATIC_TOOL_NAMES.LSP_GOTO_DEFINITION,
         'empty',
-        { searchRadius: 2, lineHint: 50 } as HintContext
+        { searchRadius: 5, lineHint: 50 } as HintContext
       );
       // Should return hints from empty metadata
       expect(hints.length).toBeGreaterThanOrEqual(0);
@@ -574,14 +574,14 @@ describe('Dynamic Hints', () => {
       expect(hints.some(h => h.includes('multiple files'))).toBe(true);
     });
 
-    it('should include page info when pagination active', () => {
+    it('should not include page info (pagination branch removed)', () => {
       const hints = getDynamicHints(
         STATIC_TOOL_NAMES.LSP_FIND_REFERENCES,
         'hasResults',
         { hasMorePages: true, currentPage: 2, totalPages: 5 } as HintContext
       );
-      // Should include page info in hints
-      expect(hints.some(h => h.includes('Page 2/5'))).toBe(true);
+      // Pagination branch was removed — these hints are dead context
+      expect(hints.some(h => h.includes('Page 2/5'))).toBe(false);
     });
 
     it('should return hints when hasMorePages', () => {

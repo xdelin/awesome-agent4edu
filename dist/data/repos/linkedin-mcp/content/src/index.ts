@@ -4,17 +4,22 @@ import { LinkedInMCPServer } from './server.js';
 import { getConfig, validateConfig, needsOAuth } from './config.js';
 import { OAuthManager } from './oauth-manager.js';
 import { Logger } from './logger.js';
+import type { TokenProvider } from './linkedin-client.js';
 
 async function main() {
   try {
     const config = getConfig();
     validateConfig(config);
 
-    // Check if we need to run OAuth flow
+    let tokenProvider: TokenProvider | undefined;
+
+    // If OAuth credentials are available, create an OAuthManager as the token
+    // provider. It handles disk persistence (~/.config/linkedin-mcp/tokens.json),
+    // automatic refresh via refresh_token, and falls back to the full OAuth
+    // browser flow only when no valid token exists.
     if (needsOAuth(config)) {
       const logger = new Logger(config.logLevel);
-      logger.info('No access token found. Starting OAuth authentication flow...');
-      logger.info('');
+      logger.info('Using OAuth token provider (tokens persisted to disk, auto-refresh enabled)');
 
       const oauthManager = new OAuthManager({
         clientId: config.linkedInClientId!,
@@ -22,18 +27,16 @@ async function main() {
         redirectUri: config.linkedInRedirectUri!,
       }, logger);
 
-      // Run OAuth flow and get access token
-      const accessToken = await oauthManager.getAccessToken();
+      // Eagerly obtain a token so the OAuth browser flow (if needed) runs
+      // before the MCP server starts accepting tool calls.
+      await oauthManager.getAccessToken();
 
-      // Update config with the new token
-      config.linkedInAccessToken = accessToken;
-
-      logger.info('💡 Tip: Save this token to your .env file to skip OAuth next time:');
-      logger.info(`   LINKEDIN_ACCESS_TOKEN=${accessToken}`);
-      logger.info('');
+      // The OAuthManager implements TokenProvider — every API request will
+      // call getAccessToken() which transparently refreshes expired tokens.
+      tokenProvider = oauthManager;
     }
 
-    const server = new LinkedInMCPServer(config);
+    const server = new LinkedInMCPServer(config, tokenProvider);
     await server.start();
 
     // Handle graceful shutdown

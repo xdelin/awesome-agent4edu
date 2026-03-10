@@ -1,5 +1,6 @@
 {
   "name": "Neon MCP",
+  "full": true,
   "tree": [
     {
       "name": ".agents",
@@ -200,7 +201,7 @@
                       "name": "route.ts",
                       "type": "file",
                       "path": "landing/app/api/[transport]/route.ts",
-                      "size": 22494,
+                      "size": 20788,
                       "language": "ts"
                     }
                   ]
@@ -242,7 +243,7 @@
                       "name": "route.ts",
                       "type": "file",
                       "path": "landing/app/api/register/route.ts",
-                      "size": 5352,
+                      "size": 5363,
                       "language": "ts"
                     }
                   ]
@@ -256,7 +257,7 @@
                       "name": "route.ts",
                       "type": "file",
                       "path": "landing/app/api/revoke/route.ts",
-                      "size": 3913,
+                      "size": 3968,
                       "language": "ts"
                     }
                   ]
@@ -270,7 +271,7 @@
                       "name": "route.ts",
                       "type": "file",
                       "path": "landing/app/api/token/route.ts",
-                      "size": 14992,
+                      "size": 15009,
                       "language": "ts"
                     }
                   ]
@@ -286,7 +287,7 @@
                   "name": "route.ts",
                   "type": "file",
                   "path": "landing/app/callback/route.ts",
-                  "size": 4051,
+                  "size": 4053,
                   "language": "ts"
                 }
               ]
@@ -295,141 +296,36 @@
               "name": "globals.css",
               "type": "file",
               "path": "landing/app/globals.css",
-              "size": 5548,
+              "size": 1085,
               "language": "css"
             },
             {
               "name": "layout.tsx",
               "type": "file",
               "path": "landing/app/layout.tsx",
-              "size": 2227,
-              "language": "tsx"
-            },
-            {
-              "name": "page.tsx",
-              "type": "file",
-              "path": "landing/app/page.tsx",
-              "size": 6135,
+              "size": 1810,
               "language": "tsx"
             }
           ]
         },
         {
-          "name": "components",
+          "name": "e2e",
           "type": "folder",
-          "path": "landing/components",
+          "path": "landing/e2e",
           "children": [
             {
-              "name": "ui",
-              "type": "folder",
-              "path": "landing/components/ui",
-              "children": [
-                {
-                  "name": "accordion.tsx",
-                  "type": "file",
-                  "path": "landing/components/ui/accordion.tsx",
-                  "size": 2130,
-                  "language": "tsx"
-                },
-                {
-                  "name": "alert.tsx",
-                  "type": "file",
-                  "path": "landing/components/ui/alert.tsx",
-                  "size": 1620,
-                  "language": "tsx"
-                },
-                {
-                  "name": "button.tsx",
-                  "type": "file",
-                  "path": "landing/components/ui/button.tsx",
-                  "size": 2235,
-                  "language": "tsx"
-                }
-              ]
+              "name": "global-setup.ts",
+              "type": "file",
+              "path": "landing/e2e/global-setup.ts",
+              "size": 2962,
+              "language": "ts"
             },
             {
-              "name": "CodeSnippet.tsx",
+              "name": "smoke.spec.ts",
               "type": "file",
-              "path": "landing/components/CodeSnippet.tsx",
-              "size": 1035,
-              "language": "tsx"
-            },
-            {
-              "name": "CopyableCommand.tsx",
-              "type": "file",
-              "path": "landing/components/CopyableCommand.tsx",
-              "size": 722,
-              "language": "tsx"
-            },
-            {
-              "name": "CopyableUrl.tsx",
-              "type": "file",
-              "path": "landing/components/CopyableUrl.tsx",
-              "size": 1006,
-              "language": "tsx"
-            },
-            {
-              "name": "DescriptionItem.tsx",
-              "type": "file",
-              "path": "landing/components/DescriptionItem.tsx",
-              "size": 3306,
-              "language": "tsx"
-            },
-            {
-              "name": "ExternalIcon.tsx",
-              "type": "file",
-              "path": "landing/components/ExternalIcon.tsx",
-              "size": 503,
-              "language": "tsx"
-            },
-            {
-              "name": "ExternalLink.tsx",
-              "type": "file",
-              "path": "landing/components/ExternalLink.tsx",
-              "size": 439,
-              "language": "tsx"
-            },
-            {
-              "name": "Header.tsx",
-              "type": "file",
-              "path": "landing/components/Header.tsx",
-              "size": 1628,
-              "language": "tsx"
-            },
-            {
-              "name": "Introduction.tsx",
-              "type": "file",
-              "path": "landing/components/Introduction.tsx",
-              "size": 3210,
-              "language": "tsx"
-            },
-            {
-              "name": "ThemeProvider.tsx",
-              "type": "file",
-              "path": "landing/components/ThemeProvider.tsx",
-              "size": 1260,
-              "language": "tsx"
-            }
-          ]
-        },
-        {
-          "name": "icons",
-          "type": "folder",
-          "path": "landing/icons",
-          "children": [
-            {
-              "name": "github.svg",
-              "type": "file",
-              "path": "landing/icons/github.svg",
-              "size": 822,
-              "language": "svg"
-            },
-            {
-              "name": "neon.svg",
-              "type": "file",
-              "path": "landing/icons/neon.svg",
-              "size": 294,
-              "language": "svg"
+              "path": "landing/e2e/smoke.spec.ts",
+              "size": 1786,
+              "language": "ts"
             }
           ]
         },
@@ -447,21 +343,21 @@
                   "name": "client.ts",
                   "type": "file",
                   "path": "landing/lib/oauth/client.ts",
-                  "size": 2214,
+                  "size": 2215,
                   "language": "ts"
                 },
                 {
                   "name": "cookies.ts",
                   "type": "file",
                   "path": "landing/lib/oauth/cookies.ts",
-                  "size": 3844,
+                  "size": 3810,
                   "language": "ts"
                 },
                 {
                   "name": "redirect-uri.ts",
                   "type": "file",
                   "path": "landing/lib/oauth/redirect-uri.ts",
-                  "size": 1506,
+                  "size": 1519,
                   "language": "ts"
                 }
               ]
@@ -470,14 +366,7 @@
               "name": "config.ts",
               "type": "file",
               "path": "landing/lib/config.ts",
-              "size": 1314,
-              "language": "ts"
-            },
-            {
-              "name": "description.ts",
-              "type": "file",
-              "path": "landing/lib/description.ts",
-              "size": 3692,
+              "size": 1234,
               "language": "ts"
             },
             {
@@ -485,13 +374,6 @@
               "type": "file",
               "path": "landing/lib/errors.ts",
               "size": 2176,
-              "language": "ts"
-            },
-            {
-              "name": "utils.ts",
-              "type": "file",
-              "path": "landing/lib/utils.ts",
-              "size": 175,
               "language": "ts"
             }
           ]
@@ -501,6 +383,41 @@
           "type": "folder",
           "path": "landing/mcp-src",
           "children": [
+            {
+              "name": "__tests__",
+              "type": "folder",
+              "path": "landing/mcp-src/__tests__",
+              "children": [
+                {
+                  "name": "docs-tools.integration.test.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/__tests__/docs-tools.integration.test.ts",
+                  "size": 3912,
+                  "language": "ts"
+                },
+                {
+                  "name": "docs-tools.test.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/__tests__/docs-tools.test.ts",
+                  "size": 8862,
+                  "language": "ts"
+                },
+                {
+                  "name": "mcp-server.e2e.test.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/__tests__/mcp-server.e2e.test.ts",
+                  "size": 4653,
+                  "language": "ts"
+                },
+                {
+                  "name": "tool-definitions.test.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/__tests__/tool-definitions.test.ts",
+                  "size": 4634,
+                  "language": "ts"
+                }
+              ]
+            },
             {
               "name": "analytics",
               "type": "folder",
@@ -573,28 +490,28 @@
                   "name": "account.ts",
                   "type": "file",
                   "path": "landing/mcp-src/server/account.ts",
-                  "size": 2451,
+                  "size": 2445,
                   "language": "ts"
                 },
                 {
                   "name": "api.ts",
                   "type": "file",
                   "path": "landing/mcp-src/server/api.ts",
-                  "size": 395,
+                  "size": 351,
                   "language": "ts"
                 },
                 {
                   "name": "errors.ts",
                   "type": "file",
                   "path": "landing/mcp-src/server/errors.ts",
-                  "size": 2000,
+                  "size": 1986,
                   "language": "ts"
                 },
                 {
                   "name": "index.ts",
                   "type": "file",
                   "path": "landing/mcp-src/server/index.ts",
-                  "size": 7360,
+                  "size": 6403,
                   "language": "ts"
                 }
               ]
@@ -620,7 +537,7 @@
                       "name": "data-api.ts",
                       "type": "file",
                       "path": "landing/mcp-src/tools/handlers/data-api.ts",
-                      "size": 11988,
+                      "size": 12002,
                       "language": "ts"
                     },
                     {
@@ -683,7 +600,7 @@
                       "name": "utils.ts",
                       "type": "file",
                       "path": "landing/mcp-src/tools/handlers/utils.ts",
-                      "size": 1688,
+                      "size": 1013,
                       "language": "ts"
                     }
                   ]
@@ -692,56 +609,42 @@
                   "name": "definitions.ts",
                   "type": "file",
                   "path": "landing/mcp-src/tools/definitions.ts",
-                  "size": 43899,
+                  "size": 46852,
                   "language": "ts"
                 },
                 {
                   "name": "index.ts",
                   "type": "file",
                   "path": "landing/mcp-src/tools/index.ts",
-                  "size": 154,
+                  "size": 140,
                   "language": "ts"
                 },
                 {
                   "name": "tools.ts",
                   "type": "file",
                   "path": "landing/mcp-src/tools/tools.ts",
-                  "size": 46825,
+                  "size": 47961,
                   "language": "ts"
                 },
                 {
                   "name": "toolsSchema.ts",
                   "type": "file",
                   "path": "landing/mcp-src/tools/toolsSchema.ts",
-                  "size": 14877,
+                  "size": 15168,
                   "language": "ts"
                 },
                 {
                   "name": "types.ts",
                   "type": "file",
                   "path": "landing/mcp-src/tools/types.ts",
-                  "size": 1345,
+                  "size": 1338,
                   "language": "ts"
                 },
                 {
                   "name": "utils.ts",
                   "type": "file",
                   "path": "landing/mcp-src/tools/utils.ts",
-                  "size": 9159,
-                  "language": "ts"
-                }
-              ]
-            },
-            {
-              "name": "transports",
-              "type": "folder",
-              "path": "landing/mcp-src/transports",
-              "children": [
-                {
-                  "name": "stdio.ts",
-                  "type": "file",
-                  "path": "landing/mcp-src/transports/stdio.ts",
-                  "size": 433,
+                  "size": 8846,
                   "language": "ts"
                 }
               ]
@@ -762,14 +665,7 @@
                   "name": "context.ts",
                   "type": "file",
                   "path": "landing/mcp-src/types/context.ts",
-                  "size": 462,
-                  "language": "ts"
-                },
-                {
-                  "name": "helpers.ts",
-                  "type": "file",
-                  "path": "landing/mcp-src/types/helpers.ts",
-                  "size": 63,
+                  "size": 452,
                   "language": "ts"
                 }
               ]
@@ -787,6 +683,13 @@
                   "language": "ts"
                 },
                 {
+                  "name": "grant-context.ts",
+                  "type": "file",
+                  "path": "landing/mcp-src/utils/grant-context.ts",
+                  "size": 1884,
+                  "language": "ts"
+                },
+                {
                   "name": "logger.ts",
                   "type": "file",
                   "path": "landing/mcp-src/utils/logger.ts",
@@ -794,17 +697,10 @@
                   "language": "ts"
                 },
                 {
-                  "name": "polyfills.ts",
-                  "type": "file",
-                  "path": "landing/mcp-src/utils/polyfills.ts",
-                  "size": 480,
-                  "language": "ts"
-                },
-                {
                   "name": "read-only.ts",
                   "type": "file",
                   "path": "landing/mcp-src/utils/read-only.ts",
-                  "size": 1928,
+                  "size": 1929,
                   "language": "ts"
                 },
                 {
@@ -817,45 +713,31 @@
               ]
             },
             {
-              "name": "cli.ts",
-              "type": "file",
-              "path": "landing/mcp-src/cli.ts",
-              "size": 2515,
-              "language": "ts"
-            },
-            {
               "name": "constants.ts",
               "type": "file",
               "path": "landing/mcp-src/constants.ts",
-              "size": 496,
+              "size": 393,
               "language": "ts"
             },
             {
               "name": "describeUtils.ts",
               "type": "file",
               "path": "landing/mcp-src/describeUtils.ts",
-              "size": 4604,
-              "language": "ts"
-            },
-            {
-              "name": "initConfig.ts",
-              "type": "file",
-              "path": "landing/mcp-src/initConfig.ts",
-              "size": 3865,
+              "size": 4569,
               "language": "ts"
             },
             {
               "name": "prompts.ts",
               "type": "file",
               "path": "landing/mcp-src/prompts.ts",
-              "size": 3592,
+              "size": 3585,
               "language": "ts"
             },
             {
               "name": "resources.ts",
               "type": "file",
               "path": "landing/mcp-src/resources.ts",
-              "size": 3314,
+              "size": 488,
               "language": "ts"
             }
           ]
@@ -894,13 +776,6 @@
               "language": "txt"
             },
             {
-              "name": "logo.png",
-              "type": "file",
-              "path": "landing/public/logo.png",
-              "size": 25435,
-              "language": "png"
-            },
-            {
               "name": "og-image.png",
               "type": "file",
               "path": "landing/public/og-image.png",
@@ -910,67 +785,81 @@
           ]
         },
         {
-          "name": "scripts",
-          "type": "folder",
-          "path": "landing/scripts",
-          "children": [
-            {
-              "name": "before-publish.ts",
-              "type": "file",
-              "path": "landing/scripts/before-publish.ts",
-              "size": 1746,
-              "language": "ts"
-            }
-          ]
-        },
-        {
           "name": ".gitignore",
           "type": "file",
           "path": "landing/.gitignore",
-          "size": 563,
+          "size": 623,
+          "language": "text"
+        },
+        {
+          "name": ".prettierignore",
+          "type": "file",
+          "path": "landing/.prettierignore",
+          "size": 100,
+          "language": "text"
+        },
+        {
+          "name": ".prettierrc",
+          "type": "file",
+          "path": "landing/.prettierrc",
+          "size": 29,
           "language": "text"
         },
         {
           "name": "CHANGELOG.md",
           "type": "file",
           "path": "landing/CHANGELOG.md",
-          "size": 5954,
+          "size": 6478,
           "language": "md"
         },
         {
-          "name": "components.json",
+          "name": "eslint.config.mjs",
           "type": "file",
-          "path": "landing/components.json",
-          "size": 446,
+          "path": "landing/eslint.config.mjs",
+          "size": 1557,
+          "language": "mjs"
+        },
+        {
+          "name": "knip.json",
+          "type": "file",
+          "path": "landing/knip.json",
+          "size": 244,
           "language": "json"
         },
         {
           "name": "next.config.ts",
           "type": "file",
           "path": "landing/next.config.ts",
-          "size": 657,
+          "size": 910,
           "language": "ts"
         },
         {
           "name": "package.json",
           "type": "file",
           "path": "landing/package.json",
-          "size": 2446,
+          "size": 2218,
           "language": "json"
+        },
+        {
+          "name": "playwright.config.ts",
+          "type": "file",
+          "path": "landing/playwright.config.ts",
+          "size": 1632,
+          "language": "ts"
+        },
+        {
+          "name": "postcss.config.mjs",
+          "type": "file",
+          "path": "landing/postcss.config.mjs",
+          "size": 86,
+          "language": "mjs"
         },
         {
           "name": "README.md",
           "type": "file",
           "path": "landing/README.md",
-          "size": 3197,
+          "size": 4753,
           "language": "md"
-        },
-        {
-          "name": "tsconfig.cli.json",
-          "type": "file",
-          "path": "landing/tsconfig.cli.json",
-          "size": 556,
-          "language": "json"
         },
         {
           "name": "tsconfig.json",
@@ -983,7 +872,7 @@
           "name": "vercel-migration.md",
           "type": "file",
           "path": "landing/vercel-migration.md",
-          "size": 17230,
+          "size": 17095,
           "language": "md"
         },
         {
@@ -992,90 +881,13 @@
           "path": "landing/vercel.json",
           "size": 239,
           "language": "json"
-        }
-      ]
-    },
-    {
-      "name": "mcp-client",
-      "type": "folder",
-      "path": "mcp-client",
-      "children": [
-        {
-          "name": "src",
-          "type": "folder",
-          "path": "mcp-client/src",
-          "children": [
-            {
-              "name": "bin.ts",
-              "type": "file",
-              "path": "mcp-client/src/bin.ts",
-              "size": 1205,
-              "language": "ts"
-            },
-            {
-              "name": "cli-client.ts",
-              "type": "file",
-              "path": "mcp-client/src/cli-client.ts",
-              "size": 1842,
-              "language": "ts"
-            },
-            {
-              "name": "index.ts",
-              "type": "file",
-              "path": "mcp-client/src/index.ts",
-              "size": 6057,
-              "language": "ts"
-            },
-            {
-              "name": "logger.ts",
-              "type": "file",
-              "path": "mcp-client/src/logger.ts",
-              "size": 942,
-              "language": "ts"
-            },
-            {
-              "name": "neon-cli-client.ts",
-              "type": "file",
-              "path": "mcp-client/src/neon-cli-client.ts",
-              "size": 344,
-              "language": "ts"
-            }
-          ]
         },
         {
-          "name": ".env.example",
+          "name": "vitest.config.ts",
           "type": "file",
-          "path": "mcp-client/.env.example",
-          "size": 35,
-          "language": "example"
-        },
-        {
-          "name": "package-lock.json",
-          "type": "file",
-          "path": "mcp-client/package-lock.json",
-          "size": 28084,
-          "language": "json"
-        },
-        {
-          "name": "package.json",
-          "type": "file",
-          "path": "mcp-client/package.json",
-          "size": 1124,
-          "language": "json"
-        },
-        {
-          "name": "README.md",
-          "type": "file",
-          "path": "mcp-client/README.md",
-          "size": 1093,
-          "language": "md"
-        },
-        {
-          "name": "tsconfig.json",
-          "type": "file",
-          "path": "mcp-client/tsconfig.json",
-          "size": 354,
-          "language": "json"
+          "path": "landing/vitest.config.ts",
+          "size": 296,
+          "language": "ts"
         }
       ]
     },
@@ -1097,7 +909,7 @@
       "name": "CLAUDE.md",
       "type": "file",
       "path": "CLAUDE.md",
-      "size": 16984,
+      "size": 19025,
       "language": "md"
     },
     {
@@ -1108,18 +920,18 @@
       "language": "text"
     },
     {
-      "name": "PUBLISH.md",
-      "type": "file",
-      "path": "PUBLISH.md",
-      "size": 715,
-      "language": "md"
-    },
-    {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 18315,
+      "size": 17341,
       "language": "md"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 1363,
+      "language": "json"
     }
   ]
 }

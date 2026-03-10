@@ -24,6 +24,12 @@ export function createResult(options: {
   instructions?: string;
   isError?: boolean;
 }): CallToolResult {
+  if (options == null || typeof options !== 'object') {
+    return {
+      content: [{ type: 'text', text: 'error: "Invalid result options"\n' }],
+      isError: true,
+    };
+  }
   const { data, instructions, isError } = options;
   const response: ToolResponse = {
     data,
@@ -37,7 +43,16 @@ export function createResult(options: {
 }
 
 // ============================================================================
-// NEW ROLE-BASED API
+// ROLE-BASED API (single-result / non-bulk tools)
+// ============================================================================
+//
+// Response patterns:
+// - **Bulk tools** (githubSearchCode, localSearchCode, etc.): Use createResponseFormat
+//   via bulk.ts → createBulkResponse. Single YAML block with instructions + results[].
+// - **Role-based** (createRoleBasedResult, ContentBuilder, QuickResult): For single-result
+//   or non-bulk tools that need structured role separation (system/assistant/user).
+//   Currently exported for future use; bulk tools do not use this pattern.
+//
 // ============================================================================
 
 /**
@@ -103,10 +118,16 @@ export const ContentBuilder = {
    * Low priority (0.3) - detailed data for agent reference
    */
   data(data: unknown, format: 'yaml' | 'json' = 'yaml'): RoleContentBlock {
-    const text =
-      format === 'yaml'
-        ? jsonToYamlString(cleanJsonObject(data))
-        : JSON.stringify(data, null, 2);
+    let text: string;
+    try {
+      text =
+        format === 'yaml'
+          ? jsonToYamlString(cleanJsonObject(data))
+          : JSON.stringify(data, null, 2);
+    } catch {
+      // Fallback for circular references or other serialization errors
+      text = 'error: "Data serialization failed"\n';
+    }
     return {
       type: 'text',
       text: sanitizeText(text),
@@ -320,6 +341,7 @@ function cleanAndStructure(data: unknown): Record<string, unknown> | undefined {
  * Sanitize text content (mask secrets, sanitize content)
  */
 function sanitizeText(text: string): string {
+  if (text == null || typeof text !== 'string') return '';
   const sanitizationResult = ContentSanitizer.sanitizeContent(text);
   return maskSensitiveData(sanitizationResult.content);
 }

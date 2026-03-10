@@ -256,6 +256,42 @@ describe('localGetFileContent', () => {
     });
   });
 
+  describe('Conflicting extraction options', () => {
+    it('should return error when fullContent and matchString are both provided', async () => {
+      const testContent = 'line 1\nline 2\nMATCH\nline 4\nline 5';
+      mockReadFile.mockResolvedValue(testContent);
+
+      const result = await fetchContent({
+        path: 'test.txt',
+        fullContent: true,
+        matchString: 'MATCH',
+      });
+
+      expect(result.status).toBe('error');
+      expect(result.error).toBeDefined();
+      expect(String(result.error)).toContain('fullContent');
+      expect(String(result.error)).toContain('matchString');
+      expect(result.hints).toBeDefined();
+      expect(result.hints!.length).toBeGreaterThan(0);
+    });
+
+    it('should return error when fullContent and matchString are both provided even with other options', async () => {
+      const testContent = 'line 1\nline 2\nMATCH\nline 4\nline 5';
+      mockReadFile.mockResolvedValue(testContent);
+
+      const result = await fetchContent({
+        path: 'test.txt',
+        fullContent: true,
+        matchString: 'MATCH',
+        matchStringContextLines: 3,
+      });
+
+      expect(result.status).toBe('error');
+      expect(String(result.error)).toContain('fullContent');
+      expect(String(result.error)).toContain('matchString');
+    });
+  });
+
   describe('Error handling', () => {
     it('should handle invalid paths', async () => {
       mockValidate.mockReturnValue({
@@ -956,7 +992,6 @@ describe('localGetFileContent', () => {
       expect(result.totalLines).toBe(5);
       expect(result.startLine).toBe(2);
       expect(result.endLine).toBe(4);
-      expect(result.extractedLines).toBe(3);
     });
 
     it('should extract first line when startLine=1', async () => {
@@ -973,7 +1008,6 @@ describe('localGetFileContent', () => {
       expect(result.content).toBe('first');
       expect(result.startLine).toBe(1);
       expect(result.endLine).toBe(1);
-      expect(result.extractedLines).toBe(1);
     });
 
     it('should handle endLine beyond file length', async () => {
@@ -989,7 +1023,6 @@ describe('localGetFileContent', () => {
       expect(result.status).toBe('hasResults');
       expect(result.content).toBe('line 2\nline 3');
       expect(result.endLine).toBe(3); // Adjusted to file end
-      expect(result.extractedLines).toBe(2);
       expect(result.warnings).toContain(
         'Requested endLine 100 adjusted to 3 (file end)'
       );
@@ -1063,7 +1096,6 @@ describe('localGetFileContent', () => {
       expect(result.status).toBe('hasResults');
       expect(result.content).toBe('single line content');
       expect(result.totalLines).toBe(1);
-      expect(result.extractedLines).toBe(1);
     });
 
     it('should handle empty lines in range', async () => {
@@ -1115,20 +1147,10 @@ describe('localGetFileContent', () => {
       expect(result.status).toBe('hasResults');
       expect(result.pagination).toBeDefined();
 
-      // Should have byte fields
-      expect(result.pagination?.byteOffset).toBeDefined();
-      expect(result.pagination?.byteLength).toBeDefined();
-      expect(result.pagination?.totalBytes).toBeDefined();
-
       // Should have char fields
       expect(result.pagination?.charOffset).toBeDefined();
       expect(result.pagination?.charLength).toBeDefined();
       expect(result.pagination?.totalChars).toBeDefined();
-
-      // For ASCII content, bytes and chars should be equal
-      expect(result.pagination?.byteOffset).toBe(result.pagination?.charOffset);
-      expect(result.pagination?.byteLength).toBe(result.pagination?.charLength);
-      expect(result.pagination?.totalBytes).toBe(result.pagination?.totalChars);
     });
 
     it('should handle UTF-8 content with correct byte/char separation', async () => {
@@ -1149,17 +1171,10 @@ describe('localGetFileContent', () => {
       expect(result.status).toBe('hasResults');
       expect(result.pagination).toBeDefined();
 
-      // Total bytes should differ from total chars
-      expect(result.pagination?.totalBytes).toBe(25000);
       expect(result.pagination?.totalChars).toBe(15000);
 
       // Local tools use character mode, so charLength should be 5000
       expect(result.pagination?.charLength).toBe(5000);
-      // Byte length should be different for emoji content
-      // First 5000 chars = all emojis (2 chars each = 2500 emojis = 10000 bytes)
-      expect(result.pagination?.byteLength).toBeGreaterThan(
-        result.pagination?.charLength ?? 0
-      );
     });
 
     it('should use character offsets for navigation hints in local tools', async () => {
@@ -1229,11 +1244,8 @@ describe('localGetFileContent', () => {
       });
 
       expect(result.status).toBe('hasResults');
-      expect(result.pagination?.totalBytes).toBe(12000);
       expect(result.pagination?.totalChars).toBe(4000);
       expect(result.pagination?.charLength).toBe(1000);
-      // 1000 CJK chars = 3000 bytes
-      expect(result.pagination?.byteLength).toBe(3000);
     });
   });
 
@@ -1353,6 +1365,8 @@ describe('localGetFileContent', () => {
   describe('Schema validation for startLine/endLine', () => {
     it('should require both startLine and endLine together', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 1,
         // Missing endLine
@@ -1369,6 +1383,8 @@ describe('localGetFileContent', () => {
 
     it('should reject endLine without startLine', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         endLine: 10,
         // Missing startLine
@@ -1385,6 +1401,8 @@ describe('localGetFileContent', () => {
 
     it('should reject startLine > endLine', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 10,
         endLine: 5,
@@ -1401,6 +1419,8 @@ describe('localGetFileContent', () => {
 
     it('should reject combining startLine/endLine with matchString', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 1,
         endLine: 10,
@@ -1418,6 +1438,8 @@ describe('localGetFileContent', () => {
 
     it('should reject combining startLine/endLine with fullContent=true', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 1,
         endLine: 10,
@@ -1435,6 +1457,8 @@ describe('localGetFileContent', () => {
 
     it('should accept valid startLine/endLine range', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 1,
         endLine: 10,
@@ -1445,6 +1469,8 @@ describe('localGetFileContent', () => {
 
     it('should accept startLine/endLine with charLength pagination', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 1,
         endLine: 100,
@@ -1456,6 +1482,8 @@ describe('localGetFileContent', () => {
 
     it('should reject startLine < 1', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 0,
         endLine: 10,
@@ -1466,12 +1494,48 @@ describe('localGetFileContent', () => {
 
     it('should accept startLine equal to endLine (single line)', () => {
       const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         path: 'test.txt',
         startLine: 5,
         endLine: 5,
       });
 
       expect(result.success).toBe(true);
+    });
+
+    it('should reject fullContent with matchString (TC-12: mutually exclusive)', () => {
+      const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
+        path: 'test.txt',
+        fullContent: true,
+        matchString: 'export',
+      });
+
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        const hasConflictError = result.error.issues.some(
+          issue =>
+            issue.message.includes('fullContent') &&
+            issue.message.includes('matchString')
+        );
+        expect(hasConflictError).toBe(true);
+      }
+    });
+
+    it('should reject fullContent with matchString and startLine/endLine (all conflicts)', () => {
+      const result = FetchContentQuerySchema.safeParse({
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
+        path: 'test.txt',
+        fullContent: true,
+        matchString: 'export',
+        startLine: 1,
+        endLine: 10,
+      });
+
+      expect(result.success).toBe(false);
     });
   });
 });

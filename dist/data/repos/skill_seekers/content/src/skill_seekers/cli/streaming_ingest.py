@@ -380,9 +380,11 @@ def main():
 
     parser = argparse.ArgumentParser(description="Stream and chunk skill documents")
     parser.add_argument("input", help="Input file or directory path")
-    parser.add_argument("--chunk-size", type=int, default=4000, help="Chunk size in characters")
     parser.add_argument(
-        "--chunk-overlap", type=int, default=200, help="Chunk overlap in characters"
+        "--streaming-chunk-chars", type=int, default=4000, help="Chunk size in characters"
+    )
+    parser.add_argument(
+        "--streaming-overlap-chars", type=int, default=200, help="Chunk overlap in characters"
     )
     parser.add_argument("--batch-size", type=int, default=100, help="Batch size for processing")
     parser.add_argument("--checkpoint", help="Checkpoint file path")
@@ -390,7 +392,9 @@ def main():
 
     # Initialize ingester
     ingester = StreamingIngester(
-        chunk_size=args.chunk_size, chunk_overlap=args.chunk_overlap, batch_size=args.batch_size
+        chunk_size=args.streaming_chunk_chars,
+        chunk_overlap=args.streaming_overlap_chars,
+        batch_size=args.batch_size,
     )
 
     # Progress callback

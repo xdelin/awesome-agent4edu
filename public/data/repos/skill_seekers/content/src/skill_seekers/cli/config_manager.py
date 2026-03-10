@@ -14,14 +14,28 @@ from pathlib import Path
 from typing import Any
 
 
+def _get_config_dir() -> Path:
+    """Return platform-appropriate config directory."""
+    if sys.platform == "win32":
+        return Path(os.environ.get("APPDATA", Path.home())) / "skill-seekers"
+    return Path.home() / ".config" / "skill-seekers"
+
+
+def _get_progress_dir() -> Path:
+    """Return platform-appropriate progress/data directory."""
+    if sys.platform == "win32":
+        return Path(os.environ.get("LOCALAPPDATA", Path.home())) / "skill-seekers" / "progress"
+    return Path.home() / ".local" / "share" / "skill-seekers" / "progress"
+
+
 class ConfigManager:
     """Manages Skill Seekers configuration with multi-token support."""
 
-    # Default paths
-    CONFIG_DIR = Path.home() / ".config" / "skill-seekers"
+    # Default paths (computed at runtime for cross-platform support)
+    CONFIG_DIR = _get_config_dir()
     CONFIG_FILE = CONFIG_DIR / "config.json"
     WELCOME_FLAG = CONFIG_DIR / ".welcomed"
-    PROGRESS_DIR = Path.home() / ".local" / "share" / "skill-seekers" / "progress"
+    PROGRESS_DIR = _get_progress_dir()
 
     # Default configuration
     DEFAULT_CONFIG = {
@@ -36,6 +50,7 @@ class ConfigManager:
         "api_keys": {"anthropic": None, "google": None, "openai": None},
         "ai_enhancement": {
             "default_enhance_level": 1,  # Default AI enhancement level (0-3)
+            "default_agent": None,  # "claude", "gemini", "openai", or None (auto-detect)
             "local_batch_size": 20,  # Patterns per Claude CLI call (default was 5)
             "local_parallel_workers": 3,  # Concurrent Claude CLI calls
         },
@@ -62,13 +77,15 @@ class ConfigManager:
         # Create main config and progress directories
         for directory in [self.config_dir, self.progress_dir]:
             directory.mkdir(parents=True, exist_ok=True)
-            # Set directory permissions to 700 (rwx------)
-            directory.chmod(stat.S_IRWXU)
+            # Set directory permissions to 700 (rwx------) - Unix only
+            if sys.platform != "win32":
+                directory.chmod(stat.S_IRWXU)
 
         # Also create configs subdirectory for user custom configs
         configs_dir = self.config_dir / "configs"
         configs_dir.mkdir(exist_ok=True)
-        configs_dir.chmod(stat.S_IRWXU)
+        if sys.platform != "win32":
+            configs_dir.chmod(stat.S_IRWXU)
 
     def _load_config(self) -> dict[str, Any]:
         """Load configuration from file or create default."""
@@ -107,8 +124,9 @@ class ConfigManager:
             with open(self.config_file, "w") as f:
                 json.dump(self.config, f, indent=2)
 
-            # Set file permissions to 600 (rw-------)
-            self.config_file.chmod(stat.S_IRUSR | stat.S_IWUSR)
+            # Set file permissions to 600 (rw-------) - Unix only
+            if sys.platform != "win32":
+                self.config_file.chmod(stat.S_IRUSR | stat.S_IWUSR)
 
         except OSError as e:
             print(f"❌ Error saving config: {e}")
@@ -319,8 +337,9 @@ class ConfigManager:
         with open(progress_file, "w") as f:
             json.dump(progress_data, f, indent=2)
 
-        # Set file permissions to 600
-        progress_file.chmod(stat.S_IRUSR | stat.S_IWUSR)
+        # Set file permissions to 600 - Unix only
+        if sys.platform != "win32":
+            progress_file.chmod(stat.S_IRUSR | stat.S_IWUSR)
 
     def load_progress(self, job_id: str) -> dict[str, Any] | None:
         """Load progress for a job."""
@@ -420,6 +439,25 @@ class ConfigManager:
         self.config["ai_enhancement"]["local_parallel_workers"] = workers
         self.save_config()
 
+    def get_default_agent(self) -> str | None:
+        """Get preferred AI agent/platform for enhancement.
+
+        Returns:
+            "claude", "gemini", "openai", or None (auto-detect from env vars).
+        """
+        return self.config.get("ai_enhancement", {}).get("default_agent")
+
+    def set_default_agent(self, agent: str | None):
+        """Set preferred AI agent/platform for enhancement.
+
+        Args:
+            agent: "claude", "gemini", "openai", or None to auto-detect.
+        """
+        if "ai_enhancement" not in self.config:
+            self.config["ai_enhancement"] = {}
+        self.config["ai_enhancement"]["default_agent"] = agent
+        self.save_config()
+
     # First Run Experience
 
     def is_first_run(self) -> bool:
@@ -433,12 +471,14 @@ class ConfigManager:
 
     def should_show_welcome(self) -> bool:
         """Check if we should show welcome message."""
-        return not self.WELCOME_FLAG.exists()
+        return not (self.config_dir / ".welcomed").exists()
 
     def mark_welcome_shown(self):
         """Mark welcome message as shown."""
-        self.WELCOME_FLAG.touch()
-        self.WELCOME_FLAG.chmod(stat.S_IRUSR | stat.S_IWUSR)
+        welcome_flag = self.config_dir / ".welcomed"
+        welcome_flag.touch()
+        if sys.platform != "win32":
+            welcome_flag.chmod(stat.S_IRUSR | stat.S_IWUSR)
 
     # Display Helpers
 

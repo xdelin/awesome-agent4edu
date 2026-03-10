@@ -1,9 +1,0 @@
-build/
-node_modules/
-*.md
-*.json
-*.yml
-*.yaml
-CHANGELOG.md
-package-lock.json
-yarn.lock 

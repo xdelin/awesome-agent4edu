@@ -1,5 +1,6 @@
 {
   "name": "Bullet MCP Server",
+  "full": true,
   "tree": [
     {
       "name": "src",
@@ -15,14 +16,14 @@
               "name": "__init__.py",
               "type": "file",
               "path": "src/bullet_mcp_server/__init__.py",
-              "size": 220,
+              "size": 212,
               "language": "py"
             },
             {
               "name": "server.py",
               "type": "file",
               "path": "src/bullet_mcp_server/server.py",
-              "size": 26929,
+              "size": 26202,
               "language": "py"
             }
           ]
@@ -33,21 +34,28 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 119,
+      "size": 109,
+      "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 5,
       "language": "text"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 512,
+      "size": 487,
       "language": "toml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 6128,
+      "size": 5906,
       "language": "md"
     }
   ]

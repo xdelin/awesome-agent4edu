@@ -1,5 +1,6 @@
 {
   "name": "NASA MCP Server",
+  "full": true,
   "tree": [
     {
       "name": "docs",
@@ -10,7 +11,7 @@
           "name": "inspector-test-examples.md",
           "type": "file",
           "path": "docs/inspector-test-examples.md",
-          "size": 4743,
+          "size": 4425,
           "language": "md"
         }
       ]
@@ -34,70 +35,70 @@
                   "name": "cad.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/cad.ts",
-                  "size": 2680,
+                  "size": 2597,
                   "language": "ts"
                 },
                 {
                   "name": "fireball.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/fireball.ts",
-                  "size": 2187,
+                  "size": 2120,
                   "language": "ts"
                 },
                 {
                   "name": "horizons.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/horizons.ts",
-                  "size": 2603,
+                  "size": 2520,
                   "language": "ts"
                 },
                 {
                   "name": "horizons_file.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/horizons_file.ts",
-                  "size": 3683,
+                  "size": 3580,
                   "language": "ts"
                 },
                 {
                   "name": "jd_cal.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/jd_cal.ts",
-                  "size": 1841,
+                  "size": 1778,
                   "language": "ts"
                 },
                 {
                   "name": "nhats.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/nhats.ts",
-                  "size": 2416,
+                  "size": 2341,
                   "language": "ts"
                 },
                 {
                   "name": "periodic_orbits.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/periodic_orbits.ts",
-                  "size": 3084,
+                  "size": 2992,
                   "language": "ts"
                 },
                 {
                   "name": "sbdb.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/sbdb.ts",
-                  "size": 3177,
+                  "size": 3084,
                   "language": "ts"
                 },
                 {
                   "name": "scout.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/scout.ts",
-                  "size": 4671,
+                  "size": 4550,
                   "language": "ts"
                 },
                 {
                   "name": "sentry.ts",
                   "type": "file",
                   "path": "src/handlers/jpl/sentry.ts",
-                  "size": 3808,
+                  "size": 3696,
                   "language": "ts"
                 }
               ]
@@ -111,98 +112,98 @@
                   "name": "apod.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/apod.ts",
-                  "size": 3332,
+                  "size": 3225,
                   "language": "ts"
                 },
                 {
                   "name": "cmr.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/cmr.ts",
-                  "size": 7539,
+                  "size": 7315,
                   "language": "ts"
                 },
                 {
                   "name": "donki.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/donki.ts",
-                  "size": 2916,
+                  "size": 2825,
                   "language": "ts"
                 },
                 {
                   "name": "earth.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/earth.ts",
-                  "size": 3398,
+                  "size": 3282,
                   "language": "ts"
                 },
                 {
                   "name": "eonet.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/eonet.ts",
-                  "size": 4012,
+                  "size": 3899,
                   "language": "ts"
                 },
                 {
                   "name": "epic.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/epic.ts",
-                  "size": 6993,
+                  "size": 6791,
                   "language": "ts"
                 },
                 {
                   "name": "exoplanet.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/exoplanet.ts",
-                  "size": 3644,
+                  "size": 3530,
                   "language": "ts"
                 },
                 {
                   "name": "firms.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/firms.ts",
-                  "size": 3745,
+                  "size": 3618,
                   "language": "ts"
                 },
                 {
                   "name": "gibs.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/gibs.ts",
-                  "size": 3380,
+                  "size": 3257,
                   "language": "ts"
                 },
                 {
                   "name": "images.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/images.ts",
-                  "size": 5028,
+                  "size": 4872,
                   "language": "ts"
                 },
                 {
                   "name": "mars_rover.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/mars_rover.ts",
-                  "size": 5155,
+                  "size": 4997,
                   "language": "ts"
                 },
                 {
                   "name": "neo.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/neo.ts",
-                  "size": 8186,
+                  "size": 7950,
                   "language": "ts"
                 },
                 {
                   "name": "osdr_files.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/osdr_files.ts",
-                  "size": 2199,
+                  "size": 2126,
                   "language": "ts"
                 },
                 {
                   "name": "power.ts",
                   "type": "file",
                   "path": "src/handlers/nasa/power.ts",
-                  "size": 9266,
+                  "size": 9041,
                   "language": "ts"
                 }
               ]
@@ -211,7 +212,7 @@
               "name": "setup.ts",
               "type": "file",
               "path": "src/handlers/setup.ts",
-              "size": 5793,
+              "size": 5633,
               "language": "ts"
             }
           ]
@@ -230,14 +231,14 @@
                   "name": "nasa-mcp-test.ts",
                   "type": "file",
                   "path": "src/tests/custom-client/nasa-mcp-test.ts",
-                  "size": 6179,
+                  "size": 5977,
                   "language": "ts"
                 },
                 {
                   "name": "simple-test.ts",
                   "type": "file",
                   "path": "src/tests/custom-client/simple-test.ts",
-                  "size": 1883,
+                  "size": 1812,
                   "language": "ts"
                 }
               ]
@@ -246,7 +247,7 @@
               "name": "direct-api-test.ts",
               "type": "file",
               "path": "src/tests/direct-api-test.ts",
-              "size": 4466,
+              "size": 4309,
               "language": "ts"
             }
           ]
@@ -260,28 +261,28 @@
               "name": "api-client.ts",
               "type": "file",
               "path": "src/utils/api-client.ts",
-              "size": 6619,
+              "size": 6427,
               "language": "ts"
             },
             {
               "name": "env-setup.ts",
               "type": "file",
               "path": "src/utils/env-setup.ts",
-              "size": 3262,
+              "size": 3162,
               "language": "ts"
             },
             {
               "name": "manifest.ts",
               "type": "file",
               "path": "src/utils/manifest.ts",
-              "size": 15347,
+              "size": 14844,
               "language": "ts"
             },
             {
               "name": "param-transformer.ts",
               "type": "file",
               "path": "src/utils/param-transformer.ts",
-              "size": 751,
+              "size": 733,
               "language": "ts"
             }
           ]
@@ -290,14 +291,14 @@
           "name": "index.ts",
           "type": "file",
           "path": "src/index.ts",
-          "size": 77712,
+          "size": 75517,
           "language": "ts"
         },
         {
           "name": "resources.ts",
           "type": "file",
           "path": "src/resources.ts",
-          "size": 348,
+          "size": 335,
           "language": "ts"
         }
       ]
@@ -306,56 +307,49 @@
       "name": ".env.example",
       "type": "file",
       "path": ".env.example",
-      "size": 122,
+      "size": 117,
       "language": "example"
     },
     {
       "name": ".eslintrc.json",
       "type": "file",
       "path": ".eslintrc.json",
-      "size": 488,
+      "size": 470,
       "language": "json"
     },
     {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 393,
+      "size": 360,
       "language": "text"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 736,
+      "size": 732,
       "language": "text"
-    },
-    {
-      "name": "package-lock.json",
-      "type": "file",
-      "path": "package-lock.json",
-      "size": 256788,
-      "language": "json"
     },
     {
       "name": "package.json",
       "type": "file",
       "path": "package.json",
-      "size": 1694,
+      "size": 1629,
       "language": "json"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 9847,
+      "size": 9501,
       "language": "md"
     },
     {
       "name": "tsconfig.json",
       "type": "file",
       "path": "tsconfig.json",
-      "size": 425,
+      "size": 409,
       "language": "json"
     }
   ]

@@ -22,6 +22,7 @@ import { quoteIdentifier } from "../../utils/identifier-quoter.js";
 import { SafeURL } from "../../utils/safe-url.js";
 import { obfuscateDSNPassword } from "../../utils/dsn-obfuscate.js";
 import { SQLRowLimiter } from "../../utils/sql-row-limiter.js";
+import { splitSQLStatements } from "../../utils/sql-parser.js";
 
 /**
  * SQLite DSN Parser
@@ -329,12 +330,14 @@ export class SQLiteConnector implements Connector {
       const rows = this.db.prepare(`PRAGMA table_info(${quotedTableName})`).all() as SQLiteTableInfo[];
 
       // Convert SQLite schema format to our standard TableColumn format
+      // SQLite does not support column comments, so description is always null
       const columns = rows.map((row) => ({
         column_name: row.name,
         data_type: row.type,
         // In SQLite, primary key columns are automatically NOT NULL even if notnull=0
         is_nullable: (row.notnull === 1 || row.pk > 0) ? "NO" : "YES",
         column_default: row.dflt_value,
+        description: null,
       }));
 
       return columns;
@@ -343,7 +346,7 @@ export class SQLiteConnector implements Connector {
     }
   }
 
-  async getStoredProcedures(schema?: string): Promise<string[]> {
+  async getStoredProcedures(schema?: string, routineType?: "procedure" | "function"): Promise<string[]> {
     if (!this.db) {
       throw new Error("Not connected to SQLite database");
     }
@@ -358,7 +361,7 @@ export class SQLiteConnector implements Connector {
     // 2. User-defined functions cannot be listed via SQL queries
     // 3. We don't want to misrepresent triggers as stored procedures
 
-    return [];
+    return []; // routineType parameter accepted but ignored for SQLite
   }
 
   async getStoredProcedureDetail(procedureName: string, schema?: string): Promise<StoredProcedure> {
@@ -385,9 +388,7 @@ export class SQLiteConnector implements Connector {
 
     try {
       // Check if this is a multi-statement query
-      const statements = sql.split(';')
-        .map(statement => statement.trim())
-        .filter(statement => statement.length > 0);
+      const statements = splitSQLStatements(sql, "sqlite");
 
       if (statements.length === 1) {
         // Single statement - determine if it returns data

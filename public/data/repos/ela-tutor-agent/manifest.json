@@ -1,5 +1,6 @@
 {
   "name": "ELA-Tutor-Agent",
+  "full": true,
   "tree": [
     {
       "name": "Session-Transcripts",
@@ -15,28 +16,28 @@
               "name": "Claude-Darryn.md",
               "type": "file",
               "path": "Session-Transcripts/Claude-Transcripts/Claude-Darryn.md",
-              "size": 15580,
+              "size": 15402,
               "language": "md"
             },
             {
               "name": "Claude-Jordan.md",
               "type": "file",
               "path": "Session-Transcripts/Claude-Transcripts/Claude-Jordan.md",
-              "size": 25945,
+              "size": 25709,
               "language": "md"
             },
             {
               "name": "Claude-Peyton.md",
               "type": "file",
               "path": "Session-Transcripts/Claude-Transcripts/Claude-Peyton.md",
-              "size": 21660,
+              "size": 21419,
               "language": "md"
             },
             {
               "name": "Claude-Sam.md",
               "type": "file",
               "path": "Session-Transcripts/Claude-Transcripts/Claude-Sam.md",
-              "size": 16268,
+              "size": 16087,
               "language": "md"
             }
           ]
@@ -50,28 +51,28 @@
               "name": "Gemini-Darryn.md",
               "type": "file",
               "path": "Session-Transcripts/Gemini-Trascripts/Gemini-Darryn.md",
-              "size": 14030,
+              "size": 13839,
               "language": "md"
             },
             {
               "name": "Gemini-Jordan.md",
               "type": "file",
               "path": "Session-Transcripts/Gemini-Trascripts/Gemini-Jordan.md",
-              "size": 30039,
+              "size": 29679,
               "language": "md"
             },
             {
               "name": "Gemini-Peyton.md",
               "type": "file",
               "path": "Session-Transcripts/Gemini-Trascripts/Gemini-Peyton.md",
-              "size": 15292,
+              "size": 15089,
               "language": "md"
             },
             {
               "name": "Gemini-Sam.md",
               "type": "file",
               "path": "Session-Transcripts/Gemini-Trascripts/Gemini-Sam.md",
-              "size": 10276,
+              "size": 10115,
               "language": "md"
             }
           ]
@@ -87,21 +88,21 @@
           "name": "1-Initial-System-Prompt.md",
           "type": "file",
           "path": "System-Prompts/1-Initial-System-Prompt.md",
-          "size": 7202,
+          "size": 7148,
           "language": "md"
         },
         {
           "name": "2-Modified-System-Prompt.md",
           "type": "file",
           "path": "System-Prompts/2-Modified-System-Prompt.md",
-          "size": 8091,
+          "size": 8029,
           "language": "md"
         },
         {
           "name": "3-Final-System-Prompt.md",
           "type": "file",
           "path": "System-Prompts/3-Final-System-Prompt.md",
-          "size": 8505,
+          "size": 8441,
           "language": "md"
         }
       ]
@@ -110,7 +111,7 @@
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 3972,
+      "size": 3956,
       "language": "md"
     }
   ]

@@ -1,5 +1,6 @@
 {
   "name": "DeepL API",
+  "full": true,
   "tree": [
     {
       "name": "deepl",
@@ -10,63 +11,70 @@
           "name": "__init__.py",
           "type": "file",
           "path": "deepl/__init__.py",
-          "size": 1614,
+          "size": 1544,
           "language": "py"
         },
         {
           "name": "__main__.py",
           "type": "file",
           "path": "deepl/__main__.py",
-          "size": 23738,
+          "size": 23038,
           "language": "py"
         },
         {
           "name": "api_data.py",
           "type": "file",
           "path": "deepl/api_data.py",
-          "size": 29020,
+          "size": 28112,
           "language": "py"
         },
         {
           "name": "deepl_client.py",
           "type": "file",
           "path": "deepl/deepl_client.py",
-          "size": 27466,
+          "size": 26801,
           "language": "py"
         },
         {
           "name": "exceptions.py",
           "type": "file",
           "path": "deepl/exceptions.py",
-          "size": 2830,
+          "size": 2728,
           "language": "py"
         },
         {
           "name": "http_client.py",
           "type": "file",
           "path": "deepl/http_client.py",
-          "size": 9077,
+          "size": 8812,
           "language": "py"
+        },
+        {
+          "name": "py.typed",
+          "type": "file",
+          "path": "deepl/py.typed",
+          "size": 0,
+          "language": "typed"
         },
         {
           "name": "translator.py",
           "type": "file",
           "path": "deepl/translator.py",
-          "size": 48542,
+          "size": 47369,
           "language": "py"
         },
         {
           "name": "util.py",
           "type": "file",
           "path": "deepl/util.py",
-          "size": 6404,
+          "size": 6213,
           "language": "py"
         },
         {
           "name": "version.py",
           "type": "file",
           "path": "deepl/version.py",
-          "size": 172,
+          "size": 167,
           "language": "py"
         }
       ]
@@ -85,21 +93,21 @@
               "name": "__main__.py",
               "type": "file",
               "path": "examples/basic_usage/__main__.py",
-              "size": 1779,
+              "size": 1721,
               "language": "py"
             },
             {
               "name": "mypy.ini",
               "type": "file",
               "path": "examples/basic_usage/mypy.ini",
-              "size": 23,
+              "size": 21,
               "language": "ini"
             },
             {
               "name": "README.md",
               "type": "file",
               "path": "examples/basic_usage/README.md",
-              "size": 187,
+              "size": 183,
               "language": "md"
             }
           ]
@@ -113,21 +121,21 @@
               "name": "__main__.py",
               "type": "file",
               "path": "examples/json/__main__.py",
-              "size": 2763,
+              "size": 2673,
               "language": "py"
             },
             {
               "name": "README.md",
               "type": "file",
               "path": "examples/json/README.md",
-              "size": 1232,
+              "size": 1168,
               "language": "md"
             },
             {
               "name": "translate_json.py",
               "type": "file",
               "path": "examples/json/translate_json.py",
-              "size": 3130,
+              "size": 3029,
               "language": "py"
             }
           ]
@@ -141,28 +149,28 @@
               "name": "__main__.py",
               "type": "file",
               "path": "examples/mustache/__main__.py",
-              "size": 2856,
+              "size": 2765,
               "language": "py"
             },
             {
               "name": "html_parsing.py",
               "type": "file",
               "path": "examples/mustache/html_parsing.py",
-              "size": 2988,
+              "size": 2892,
               "language": "py"
             },
             {
               "name": "mustache.py",
               "type": "file",
               "path": "examples/mustache/mustache.py",
-              "size": 4566,
+              "size": 4436,
               "language": "py"
             },
             {
               "name": "README.md",
               "type": "file",
               "path": "examples/mustache/README.md",
-              "size": 2155,
+              "size": 2084,
               "language": "md"
             }
           ]
@@ -181,28 +189,28 @@
                   "name": "deepl-voice-api-cli.py",
                   "type": "file",
                   "path": "examples/voice/cli/deepl-voice-api-cli.py",
-                  "size": 14082,
+                  "size": 13681,
                   "language": "py"
                 },
                 {
                   "name": "pyaudio_utils.py",
                   "type": "file",
                   "path": "examples/voice/cli/pyaudio_utils.py",
-                  "size": 4674,
+                  "size": 4540,
                   "language": "py"
                 },
                 {
                   "name": "pyproject.toml",
                   "type": "file",
                   "path": "examples/voice/cli/pyproject.toml",
-                  "size": 751,
+                  "size": 713,
                   "language": "toml"
                 },
                 {
                   "name": "README.md",
                   "type": "file",
                   "path": "examples/voice/cli/README.md",
-                  "size": 2882,
+                  "size": 2798,
                   "language": "md"
                 }
               ]
@@ -220,77 +228,77 @@
           "name": "__init__.py",
           "type": "file",
           "path": "tests/__init__.py",
-          "size": 150,
+          "size": 147,
           "language": "py"
         },
         {
           "name": "conftest.py",
           "type": "file",
           "path": "tests/conftest.py",
-          "size": 16679,
+          "size": 16162,
           "language": "py"
         },
         {
           "name": "test_cli.py",
           "type": "file",
           "path": "tests/test_cli.py",
-          "size": 15656,
+          "size": 15225,
           "language": "py"
         },
         {
           "name": "test_general.py",
           "type": "file",
           "path": "tests/test_general.py",
-          "size": 12745,
+          "size": 12393,
           "language": "py"
         },
         {
           "name": "test_glossary.py",
           "type": "file",
           "path": "tests/test_glossary.py",
-          "size": 10330,
+          "size": 10039,
           "language": "py"
         },
         {
           "name": "test_multilingual_glossary.py",
           "type": "file",
           "path": "tests/test_multilingual_glossary.py",
-          "size": 18787,
+          "size": 18275,
           "language": "py"
         },
         {
           "name": "test_rephrase_text.py",
           "type": "file",
           "path": "tests/test_rephrase_text.py",
-          "size": 1223,
+          "size": 1189,
           "language": "py"
         },
         {
           "name": "test_style_rules.py",
           "type": "file",
           "path": "tests/test_style_rules.py",
-          "size": 1238,
+          "size": 1206,
           "language": "py"
         },
         {
           "name": "test_translate_document.py",
           "type": "file",
           "path": "tests/test_translate_document.py",
-          "size": 11607,
+          "size": 11251,
           "language": "py"
         },
         {
           "name": "test_translate_text.py",
           "type": "file",
           "path": "tests/test_translate_text.py",
-          "size": 15265,
+          "size": 14805,
           "language": "py"
         },
         {
           "name": "test_util.py",
           "type": "file",
           "path": "tests/test_util.py",
-          "size": 1314,
+          "size": 1279,
           "language": "py"
         }
       ]
@@ -299,91 +307,91 @@
       "name": ".bumpversion.toml",
       "type": "file",
       "path": ".bumpversion.toml",
-      "size": 828,
+      "size": 803,
       "language": "toml"
     },
     {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 104,
+      "size": 95,
       "language": "text"
     },
     {
       "name": ".gitlab-ci.yml",
       "type": "file",
       "path": ".gitlab-ci.yml",
-      "size": 6844,
+      "size": 6560,
       "language": "yml"
     },
     {
       "name": "catalog-info.yaml",
       "type": "file",
       "path": "catalog-info.yaml",
-      "size": 292,
+      "size": 282,
       "language": "yaml"
     },
     {
       "name": "CHANGELOG.md",
       "type": "file",
       "path": "CHANGELOG.md",
-      "size": 18148,
+      "size": 17724,
       "language": "md"
     },
     {
       "name": "CODE_OF_CONDUCT.md",
       "type": "file",
       "path": "CODE_OF_CONDUCT.md",
-      "size": 5654,
+      "size": 5520,
       "language": "md"
     },
     {
       "name": "CONTRIBUTING.md",
       "type": "file",
       "path": "CONTRIBUTING.md",
-      "size": 1385,
+      "size": 1348,
       "language": "md"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1104,
+      "size": 1084,
       "language": "text"
     },
     {
       "name": "license_checker.sh",
       "type": "file",
       "path": "license_checker.sh",
-      "size": 400,
+      "size": 393,
       "language": "sh"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 1528,
+      "size": 1473,
       "language": "toml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 37603,
+      "size": 36811,
       "language": "md"
     },
     {
       "name": "SECURITY.md",
       "type": "file",
       "path": "SECURITY.md",
-      "size": 3408,
+      "size": 3351,
       "language": "md"
     },
     {
       "name": "upgrading_to_multilingual_glossaries.md",
       "type": "file",
       "path": "upgrading_to_multilingual_glossaries.md",
-      "size": 13730,
+      "size": 13520,
       "language": "md"
     }
   ]

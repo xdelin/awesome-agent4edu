@@ -15,6 +15,8 @@ describe('localSearchCode schema', () => {
   describe('RipgrepQuerySchema', () => {
     it('should validate basic query', () => {
       const query = {
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         pattern: 'test',
         path: '/src',
       };
@@ -27,6 +29,8 @@ describe('localSearchCode schema', () => {
 
     it('should apply default values', () => {
       const query = {
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         pattern: 'test',
         path: '/src',
       };
@@ -48,6 +52,8 @@ describe('localSearchCode schema', () => {
 
     it('should reject empty pattern', () => {
       const query = {
+        researchGoal: 'Test',
+        reasoning: 'Test',
         pattern: '',
         path: '/src',
       };
@@ -57,6 +63,8 @@ describe('localSearchCode schema', () => {
 
     it('should accept all optional fields', () => {
       const query = {
+        researchGoal: 'Test',
+        reasoning: 'Schema validation',
         pattern: 'test',
         path: '/src',
         mode: 'discovery' as const,
@@ -106,8 +114,18 @@ describe('localSearchCode schema', () => {
     it('should validate bulk query with multiple queries', () => {
       const bulk = {
         queries: [
-          { pattern: 'test1', path: '/src' },
-          { pattern: 'test2', path: '/lib' },
+          {
+            researchGoal: 'Test1',
+            reasoning: 'R1',
+            pattern: 'test1',
+            path: '/src',
+          },
+          {
+            researchGoal: 'Test2',
+            reasoning: 'R2',
+            pattern: 'test2',
+            path: '/lib',
+          },
         ],
       };
 
@@ -146,7 +164,7 @@ describe('localSearchCode schema', () => {
 
       const result = applyWorkflowMode(query);
 
-      expect(result.filesOnly).toBe(true);
+      expect(result.count).toBe(true);
       expect(result.smartCase).toBe(true);
     });
 
@@ -184,12 +202,12 @@ describe('localSearchCode schema', () => {
         pattern: 'test',
         path: '/src',
         mode: 'discovery',
-        filesOnly: false, // Override discovery default
+        count: false, // Override discovery default
       } as RipgrepQuery;
 
       const result = applyWorkflowMode(query);
 
-      expect(result.filesOnly).toBe(false);
+      expect(result.count).toBe(false);
     });
   });
 

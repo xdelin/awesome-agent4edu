@@ -1,447 +1,7 @@
 {
   "name": "everything-claude-code",
+  "full": true,
   "tree": [
-    {
-      "name": ".claude",
-      "type": "folder",
-      "path": ".claude",
-      "children": [
-        {
-          "name": "package-manager.json",
-          "type": "file",
-          "path": ".claude/package-manager.json",
-          "size": 71,
-          "language": "json"
-        }
-      ]
-    },
-    {
-      "name": ".claude-plugin",
-      "type": "folder",
-      "path": ".claude-plugin",
-      "children": [
-        {
-          "name": "marketplace.json",
-          "type": "file",
-          "path": ".claude-plugin/marketplace.json",
-          "size": 1139,
-          "language": "json"
-        },
-        {
-          "name": "plugin.json",
-          "type": "file",
-          "path": ".claude-plugin/plugin.json",
-          "size": 1231,
-          "language": "json"
-        },
-        {
-          "name": "PLUGIN_SCHEMA_NOTES.md",
-          "type": "file",
-          "path": ".claude-plugin/PLUGIN_SCHEMA_NOTES.md",
-          "size": 5520,
-          "language": "md"
-        },
-        {
-          "name": "README.md",
-          "type": "file",
-          "path": ".claude-plugin/README.md",
-          "size": 725,
-          "language": "md"
-        }
-      ]
-    },
-    {
-      "name": ".opencode",
-      "type": "folder",
-      "path": ".opencode",
-      "children": [
-        {
-          "name": "commands",
-          "type": "folder",
-          "path": ".opencode/commands",
-          "children": [
-            {
-              "name": "build-fix.md",
-              "type": "file",
-              "path": ".opencode/commands/build-fix.md",
-              "size": 1635,
-              "language": "md"
-            },
-            {
-              "name": "checkpoint.md",
-              "type": "file",
-              "path": ".opencode/commands/checkpoint.md",
-              "size": 1410,
-              "language": "md"
-            },
-            {
-              "name": "code-review.md",
-              "type": "file",
-              "path": ".opencode/commands/code-review.md",
-              "size": 1626,
-              "language": "md"
-            },
-            {
-              "name": "e2e.md",
-              "type": "file",
-              "path": ".opencode/commands/e2e.md",
-              "size": 2346,
-              "language": "md"
-            },
-            {
-              "name": "eval.md",
-              "type": "file",
-              "path": ".opencode/commands/eval.md",
-              "size": 1748,
-              "language": "md"
-            },
-            {
-              "name": "evolve.md",
-              "type": "file",
-              "path": ".opencode/commands/evolve.md",
-              "size": 2315,
-              "language": "md"
-            },
-            {
-              "name": "go-build.md",
-              "type": "file",
-              "path": ".opencode/commands/go-build.md",
-              "size": 1666,
-              "language": "md"
-            },
-            {
-              "name": "go-review.md",
-              "type": "file",
-              "path": ".opencode/commands/go-review.md",
-              "size": 1839,
-              "language": "md"
-            },
-            {
-              "name": "go-test.md",
-              "type": "file",
-              "path": ".opencode/commands/go-test.md",
-              "size": 2653,
-              "language": "md"
-            },
-            {
-              "name": "instinct-export.md",
-              "type": "file",
-              "path": ".opencode/commands/instinct-export.md",
-              "size": 1558,
-              "language": "md"
-            },
-            {
-              "name": "instinct-import.md",
-              "type": "file",
-              "path": ".opencode/commands/instinct-import.md",
-              "size": 1597,
-              "language": "md"
-            },
-            {
-              "name": "instinct-status.md",
-              "type": "file",
-              "path": ".opencode/commands/instinct-status.md",
-              "size": 1528,
-              "language": "md"
-            },
-            {
-              "name": "learn.md",
-              "type": "file",
-              "path": ".opencode/commands/learn.md",
-              "size": 1412,
-              "language": "md"
-            },
-            {
-              "name": "orchestrate.md",
-              "type": "file",
-              "path": ".opencode/commands/orchestrate.md",
-              "size": 2589,
-              "language": "md"
-            },
-            {
-              "name": "plan.md",
-              "type": "file",
-              "path": ".opencode/commands/plan.md",
-              "size": 1204,
-              "language": "md"
-            },
-            {
-              "name": "refactor-clean.md",
-              "type": "file",
-              "path": ".opencode/commands/refactor-clean.md",
-              "size": 2211,
-              "language": "md"
-            },
-            {
-              "name": "security.md",
-              "type": "file",
-              "path": ".opencode/commands/security.md",
-              "size": 2170,
-              "language": "md"
-            },
-            {
-              "name": "setup-pm.md",
-              "type": "file",
-              "path": ".opencode/commands/setup-pm.md",
-              "size": 1586,
-              "language": "md"
-            },
-            {
-              "name": "skill-create.md",
-              "type": "file",
-              "path": ".opencode/commands/skill-create.md",
-              "size": 2115,
-              "language": "md"
-            },
-            {
-              "name": "tdd.md",
-              "type": "file",
-              "path": ".opencode/commands/tdd.md",
-              "size": 1769,
-              "language": "md"
-            },
-            {
-              "name": "test-coverage.md",
-              "type": "file",
-              "path": ".opencode/commands/test-coverage.md",
-              "size": 1732,
-              "language": "md"
-            },
-            {
-              "name": "update-codemaps.md",
-              "type": "file",
-              "path": ".opencode/commands/update-codemaps.md",
-              "size": 1425,
-              "language": "md"
-            },
-            {
-              "name": "update-docs.md",
-              "type": "file",
-              "path": ".opencode/commands/update-docs.md",
-              "size": 1440,
-              "language": "md"
-            },
-            {
-              "name": "verify.md",
-              "type": "file",
-              "path": ".opencode/commands/verify.md",
-              "size": 1492,
-              "language": "md"
-            }
-          ]
-        },
-        {
-          "name": "instructions",
-          "type": "folder",
-          "path": ".opencode/instructions",
-          "children": [
-            {
-              "name": "INSTRUCTIONS.md",
-              "type": "file",
-              "path": ".opencode/instructions/INSTRUCTIONS.md",
-              "size": 8176,
-              "language": "md"
-            }
-          ]
-        },
-        {
-          "name": "plugins",
-          "type": "folder",
-          "path": ".opencode/plugins",
-          "children": [
-            {
-              "name": "ecc-hooks.ts",
-              "type": "file",
-              "path": ".opencode/plugins/ecc-hooks.ts",
-              "size": 9266,
-              "language": "ts"
-            },
-            {
-              "name": "index.ts",
-              "type": "file",
-              "path": ".opencode/plugins/index.ts",
-              "size": 412,
-              "language": "ts"
-            }
-          ]
-        },
-        {
-          "name": "prompts",
-          "type": "folder",
-          "path": ".opencode/prompts",
-          "children": [
-            {
-              "name": "agents",
-              "type": "folder",
-              "path": ".opencode/prompts/agents",
-              "children": [
-                {
-                  "name": "architect.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/architect.txt",
-                  "size": 4825,
-                  "language": "txt"
-                },
-                {
-                  "name": "build-error-resolver.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/build-error-resolver.txt",
-                  "size": 5851,
-                  "language": "txt"
-                },
-                {
-                  "name": "code-reviewer.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/code-reviewer.txt",
-                  "size": 2916,
-                  "language": "txt"
-                },
-                {
-                  "name": "database-reviewer.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/database-reviewer.txt",
-                  "size": 7313,
-                  "language": "txt"
-                },
-                {
-                  "name": "doc-updater.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/doc-updater.txt",
-                  "size": 4943,
-                  "language": "txt"
-                },
-                {
-                  "name": "e2e-runner.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/e2e-runner.txt",
-                  "size": 8375,
-                  "language": "txt"
-                },
-                {
-                  "name": "go-build-resolver.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/go-build-resolver.txt",
-                  "size": 6674,
-                  "language": "txt"
-                },
-                {
-                  "name": "go-reviewer.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/go-reviewer.txt",
-                  "size": 6069,
-                  "language": "txt"
-                },
-                {
-                  "name": "planner.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/planner.txt",
-                  "size": 3057,
-                  "language": "txt"
-                },
-                {
-                  "name": "refactor-cleaner.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/refactor-cleaner.txt",
-                  "size": 6233,
-                  "language": "txt"
-                },
-                {
-                  "name": "security-reviewer.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/security-reviewer.txt",
-                  "size": 5734,
-                  "language": "txt"
-                },
-                {
-                  "name": "tdd-guide.txt",
-                  "type": "file",
-                  "path": ".opencode/prompts/agents/tdd-guide.txt",
-                  "size": 5659,
-                  "language": "txt"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "tools",
-          "type": "folder",
-          "path": ".opencode/tools",
-          "children": [
-            {
-              "name": "check-coverage.ts",
-              "type": "file",
-              "path": ".opencode/tools/check-coverage.ts",
-              "size": 4939,
-              "language": "ts"
-            },
-            {
-              "name": "index.ts",
-              "type": "file",
-              "path": ".opencode/tools/index.ts",
-              "size": 318,
-              "language": "ts"
-            },
-            {
-              "name": "run-tests.ts",
-              "type": "file",
-              "path": ".opencode/tools/run-tests.ts",
-              "size": 3636,
-              "language": "ts"
-            },
-            {
-              "name": "security-audit.ts",
-              "type": "file",
-              "path": ".opencode/tools/security-audit.ts",
-              "size": 9081,
-              "language": "ts"
-            }
-          ]
-        },
-        {
-          "name": "index.ts",
-          "type": "file",
-          "path": ".opencode/index.ts",
-          "size": 1715,
-          "language": "ts"
-        },
-        {
-          "name": "MIGRATION.md",
-          "type": "file",
-          "path": ".opencode/MIGRATION.md",
-          "size": 10812,
-          "language": "md"
-        },
-        {
-          "name": "opencode.json",
-          "type": "file",
-          "path": ".opencode/opencode.json",
-          "size": 10744,
-          "language": "json"
-        },
-        {
-          "name": "package.json",
-          "type": "file",
-          "path": ".opencode/package.json",
-          "size": 1620,
-          "language": "json"
-        },
-        {
-          "name": "README.md",
-          "type": "file",
-          "path": ".opencode/README.md",
-          "size": 3765,
-          "language": "md"
-        },
-        {
-          "name": "tsconfig.json",
-          "type": "file",
-          "path": ".opencode/tsconfig.json",
-          "size": 633,
-          "language": "json"
-        }
-      ]
-    },
     {
       "name": "agents",
       "type": "folder",
@@ -451,246 +11,99 @@
           "name": "architect.md",
           "type": "file",
           "path": "agents/architect.md",
-          "size": 6502,
+          "size": 6291,
           "language": "md"
         },
         {
           "name": "build-error-resolver.md",
           "type": "file",
           "path": "agents/build-error-resolver.md",
-          "size": 12767,
+          "size": 3770,
+          "language": "md"
+        },
+        {
+          "name": "chief-of-staff.md",
+          "type": "file",
+          "path": "agents/chief-of-staff.md",
+          "size": 5641,
           "language": "md"
         },
         {
           "name": "code-reviewer.md",
           "type": "file",
           "path": "agents/code-reviewer.md",
-          "size": 3001,
+          "size": 8383,
           "language": "md"
         },
         {
           "name": "database-reviewer.md",
           "type": "file",
           "path": "agents/database-reviewer.md",
-          "size": 18577,
+          "size": 4388,
           "language": "md"
         },
         {
           "name": "doc-updater.md",
           "type": "file",
           "path": "agents/doc-updater.md",
-          "size": 11500,
+          "size": 3383,
           "language": "md"
         },
         {
           "name": "e2e-runner.md",
           "type": "file",
           "path": "agents/e2e-runner.md",
-          "size": 23430,
+          "size": 4100,
           "language": "md"
         },
         {
           "name": "go-build-resolver.md",
           "type": "file",
           "path": "agents/go-build-resolver.md",
-          "size": 7708,
+          "size": 3266,
           "language": "md"
         },
         {
           "name": "go-reviewer.md",
           "type": "file",
           "path": "agents/go-reviewer.md",
-          "size": 6890,
+          "size": 2788,
           "language": "md"
         },
         {
           "name": "planner.md",
           "type": "file",
           "path": "agents/planner.md",
-          "size": 3359,
+          "size": 7070,
           "language": "md"
         },
         {
           "name": "python-reviewer.md",
           "type": "file",
           "path": "agents/python-reviewer.md",
-          "size": 10784,
+          "size": 3408,
           "language": "md"
         },
         {
           "name": "refactor-cleaner.md",
           "type": "file",
           "path": "agents/refactor-cleaner.md",
-          "size": 8011,
+          "size": 2707,
           "language": "md"
         },
         {
           "name": "security-reviewer.md",
           "type": "file",
           "path": "agents/security-reviewer.md",
-          "size": 14879,
+          "size": 4480,
           "language": "md"
         },
         {
           "name": "tdd-guide.md",
           "type": "file",
           "path": "agents/tdd-guide.md",
-          "size": 7366,
+          "size": 2529,
           "language": "md"
-        }
-      ]
-    },
-    {
-      "name": "assets",
-      "type": "folder",
-      "path": "assets",
-      "children": [
-        {
-          "name": "images",
-          "type": "folder",
-          "path": "assets/images",
-          "children": [
-            {
-              "name": "longform",
-              "type": "folder",
-              "path": "assets/images/longform",
-              "children": [
-                {
-                  "name": "02-shortform-reference.png",
-                  "type": "file",
-                  "path": "assets/images/longform/02-shortform-reference.png",
-                  "size": 462574,
-                  "language": "png"
-                },
-                {
-                  "name": "03-session-storage.png",
-                  "type": "file",
-                  "path": "assets/images/longform/03-session-storage.png",
-                  "size": 66393,
-                  "language": "png"
-                },
-                {
-                  "name": "03b-session-storage-alt.png",
-                  "type": "file",
-                  "path": "assets/images/longform/03b-session-storage-alt.png",
-                  "size": 184699,
-                  "language": "png"
-                },
-                {
-                  "name": "04-model-selection.png",
-                  "type": "file",
-                  "path": "assets/images/longform/04-model-selection.png",
-                  "size": 327509,
-                  "language": "png"
-                },
-                {
-                  "name": "05-pricing-table.png",
-                  "type": "file",
-                  "path": "assets/images/longform/05-pricing-table.png",
-                  "size": 187745,
-                  "language": "png"
-                },
-                {
-                  "name": "06-mgrep-benchmark.png",
-                  "type": "file",
-                  "path": "assets/images/longform/06-mgrep-benchmark.png",
-                  "size": 586538,
-                  "language": "png"
-                },
-                {
-                  "name": "07-boris-parallel.png",
-                  "type": "file",
-                  "path": "assets/images/longform/07-boris-parallel.png",
-                  "size": 446483,
-                  "language": "png"
-                },
-                {
-                  "name": "08-two-terminals.png",
-                  "type": "file",
-                  "path": "assets/images/longform/08-two-terminals.png",
-                  "size": 783967,
-                  "language": "png"
-                },
-                {
-                  "name": "09-25k-stars.png",
-                  "type": "file",
-                  "path": "assets/images/longform/09-25k-stars.png",
-                  "size": 534643,
-                  "language": "png"
-                }
-              ]
-            },
-            {
-              "name": "shortform",
-              "type": "folder",
-              "path": "assets/images/shortform",
-              "children": [
-                {
-                  "name": "02-chaining-commands.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/02-chaining-commands.jpeg",
-                  "size": 37754,
-                  "language": "jpeg"
-                },
-                {
-                  "name": "03-posttooluse-hook.png",
-                  "type": "file",
-                  "path": "assets/images/shortform/03-posttooluse-hook.png",
-                  "size": 31165,
-                  "language": "png"
-                },
-                {
-                  "name": "04-supabase-mcp.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/04-supabase-mcp.jpeg",
-                  "size": 20381,
-                  "language": "jpeg"
-                },
-                {
-                  "name": "05-plugins-interface.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/05-plugins-interface.jpeg",
-                  "size": 60327,
-                  "language": "jpeg"
-                },
-                {
-                  "name": "06-marketplaces-mgrep.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/06-marketplaces-mgrep.jpeg",
-                  "size": 58953,
-                  "language": "jpeg"
-                },
-                {
-                  "name": "08-github-pr-review.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/08-github-pr-review.jpeg",
-                  "size": 64777,
-                  "language": "jpeg"
-                },
-                {
-                  "name": "09-zed-editor.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/09-zed-editor.jpeg",
-                  "size": 138974,
-                  "language": "jpeg"
-                },
-                {
-                  "name": "10-vscode-extension.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/10-vscode-extension.jpeg",
-                  "size": 218492,
-                  "language": "jpeg"
-                },
-                {
-                  "name": "11-statusline.jpeg",
-                  "type": "file",
-                  "path": "assets/images/shortform/11-statusline.jpeg",
-                  "size": 12875,
-                  "language": "jpeg"
-                }
-              ]
-            }
-          ]
         }
       ]
     },
@@ -703,217 +116,231 @@
           "name": "build-fix.md",
           "type": "file",
           "path": "commands/build-fix.md",
-          "size": 601,
+          "size": 2297,
           "language": "md"
         },
         {
           "name": "checkpoint.md",
           "type": "file",
           "path": "commands/checkpoint.md",
-          "size": 1594,
+          "size": 1520,
+          "language": "md"
+        },
+        {
+          "name": "claw.md",
+          "type": "file",
+          "path": "commands/claw.md",
+          "size": 1824,
           "language": "md"
         },
         {
           "name": "code-review.md",
           "type": "file",
           "path": "commands/code-review.md",
-          "size": 1025,
+          "size": 985,
           "language": "md"
         },
         {
           "name": "e2e.md",
           "type": "file",
           "path": "commands/e2e.md",
-          "size": 11158,
+          "size": 10795,
           "language": "md"
         },
         {
           "name": "eval.md",
           "type": "file",
           "path": "commands/eval.md",
-          "size": 2334,
+          "size": 2214,
           "language": "md"
         },
         {
           "name": "evolve.md",
           "type": "file",
           "path": "commands/evolve.md",
-          "size": 5252,
+          "size": 5062,
           "language": "md"
         },
         {
           "name": "go-build.md",
           "type": "file",
           "path": "commands/go-build.md",
-          "size": 3957,
+          "size": 3774,
           "language": "md"
         },
         {
           "name": "go-review.md",
           "type": "file",
           "path": "commands/go-review.md",
-          "size": 3576,
+          "size": 3428,
           "language": "md"
         },
         {
           "name": "go-test.md",
           "type": "file",
           "path": "commands/go-test.md",
-          "size": 5889,
+          "size": 5619,
           "language": "md"
         },
         {
           "name": "instinct-export.md",
           "type": "file",
           "path": "commands/instinct-export.md",
-          "size": 2374,
+          "size": 2283,
           "language": "md"
         },
         {
           "name": "instinct-import.md",
           "type": "file",
           "path": "commands/instinct-import.md",
-          "size": 3687,
+          "size": 3545,
           "language": "md"
         },
         {
           "name": "instinct-status.md",
           "type": "file",
           "path": "commands/instinct-status.md",
-          "size": 2340,
+          "size": 2254,
+          "language": "md"
+        },
+        {
+          "name": "learn-eval.md",
+          "type": "file",
+          "path": "commands/learn-eval.md",
+          "size": 3445,
           "language": "md"
         },
         {
           "name": "learn.md",
           "type": "file",
           "path": "commands/learn.md",
-          "size": 1675,
+          "size": 1605,
           "language": "md"
         },
         {
           "name": "multi-backend.md",
           "type": "file",
           "path": "commands/multi-backend.md",
-          "size": 5108,
+          "size": 4950,
           "language": "md"
         },
         {
           "name": "multi-execute.md",
           "type": "file",
           "path": "commands/multi-execute.md",
-          "size": 10533,
+          "size": 10222,
           "language": "md"
         },
         {
           "name": "multi-frontend.md",
           "type": "file",
           "path": "commands/multi-frontend.md",
-          "size": 5164,
+          "size": 5006,
           "language": "md"
         },
         {
           "name": "multi-plan.md",
           "type": "file",
           "path": "commands/multi-plan.md",
-          "size": 9062,
+          "size": 8800,
           "language": "md"
         },
         {
           "name": "multi-workflow.md",
           "type": "file",
           "path": "commands/multi-workflow.md",
-          "size": 7052,
+          "size": 6868,
           "language": "md"
         },
         {
           "name": "orchestrate.md",
           "type": "file",
           "path": "commands/orchestrate.md",
-          "size": 3516,
+          "size": 3343,
           "language": "md"
         },
         {
           "name": "plan.md",
           "type": "file",
           "path": "commands/plan.md",
-          "size": 3715,
+          "size": 3598,
           "language": "md"
         },
         {
           "name": "pm2.md",
           "type": "file",
           "path": "commands/pm2.md",
-          "size": 6974,
+          "size": 6676,
           "language": "md"
         },
         {
           "name": "python-review.md",
           "type": "file",
           "path": "commands/python-review.md",
-          "size": 6934,
+          "size": 6629,
           "language": "md"
         },
         {
           "name": "refactor-clean.md",
           "type": "file",
           "path": "commands/refactor-clean.md",
-          "size": 747,
+          "size": 2803,
           "language": "md"
         },
         {
           "name": "sessions.md",
           "type": "file",
           "path": "commands/sessions.md",
-          "size": 8759,
+          "size": 9344,
           "language": "md"
         },
         {
           "name": "setup-pm.md",
           "type": "file",
           "path": "commands/setup-pm.md",
-          "size": 1755,
+          "size": 1675,
           "language": "md"
         },
         {
           "name": "skill-create.md",
           "type": "file",
           "path": "commands/skill-create.md",
-          "size": 4703,
+          "size": 4529,
           "language": "md"
         },
         {
           "name": "tdd.md",
           "type": "file",
           "path": "commands/tdd.md",
-          "size": 8556,
+          "size": 8226,
           "language": "md"
         },
         {
           "name": "test-coverage.md",
           "type": "file",
           "path": "commands/test-coverage.md",
-          "size": 690,
+          "size": 2629,
           "language": "md"
         },
         {
           "name": "update-codemaps.md",
           "type": "file",
           "path": "commands/update-codemaps.md",
-          "size": 719,
+          "size": 2396,
           "language": "md"
         },
         {
           "name": "update-docs.md",
           "type": "file",
           "path": "commands/update-docs.md",
-          "size": 762,
+          "size": 3006,
           "language": "md"
         },
         {
           "name": "verify.md",
           "type": "file",
           "path": "commands/verify.md",
-          "size": 1256,
+          "size": 1197,
           "language": "md"
         }
       ]
@@ -927,21 +354,21 @@
           "name": "dev.md",
           "type": "file",
           "path": "contexts/dev.md",
-          "size": 439,
+          "size": 419,
           "language": "md"
         },
         {
           "name": "research.md",
           "type": "file",
           "path": "contexts/research.md",
-          "size": 639,
+          "size": 613,
           "language": "md"
         },
         {
           "name": "review.md",
           "type": "file",
           "path": "contexts/review.md",
-          "size": 549,
+          "size": 527,
           "language": "md"
         }
       ]
@@ -951,6 +378,965 @@
       "type": "folder",
       "path": "docs",
       "children": [
+        {
+          "name": "ja-JP",
+          "type": "folder",
+          "path": "docs/ja-JP",
+          "children": [
+            {
+              "name": "agents",
+              "type": "folder",
+              "path": "docs/ja-JP/agents",
+              "children": [
+                {
+                  "name": "architect.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/architect.md",
+                  "size": 8418,
+                  "language": "md"
+                },
+                {
+                  "name": "build-error-resolver.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/build-error-resolver.md",
+                  "size": 14967,
+                  "language": "md"
+                },
+                {
+                  "name": "code-reviewer.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/code-reviewer.md",
+                  "size": 3900,
+                  "language": "md"
+                },
+                {
+                  "name": "database-reviewer.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/database-reviewer.md",
+                  "size": 21940,
+                  "language": "md"
+                },
+                {
+                  "name": "doc-updater.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/doc-updater.md",
+                  "size": 13886,
+                  "language": "md"
+                },
+                {
+                  "name": "e2e-runner.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/e2e-runner.md",
+                  "size": 20747,
+                  "language": "md"
+                },
+                {
+                  "name": "go-build-resolver.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/go-build-resolver.md",
+                  "size": 8860,
+                  "language": "md"
+                },
+                {
+                  "name": "go-reviewer.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/go-reviewer.md",
+                  "size": 7986,
+                  "language": "md"
+                },
+                {
+                  "name": "planner.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/planner.md",
+                  "size": 4170,
+                  "language": "md"
+                },
+                {
+                  "name": "python-reviewer.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/python-reviewer.md",
+                  "size": 11881,
+                  "language": "md"
+                },
+                {
+                  "name": "refactor-cleaner.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/refactor-cleaner.md",
+                  "size": 9900,
+                  "language": "md"
+                },
+                {
+                  "name": "security-reviewer.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/security-reviewer.md",
+                  "size": 18343,
+                  "language": "md"
+                },
+                {
+                  "name": "tdd-guide.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/agents/tdd-guide.md",
+                  "size": 8393,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "commands",
+              "type": "folder",
+              "path": "docs/ja-JP/commands",
+              "children": [
+                {
+                  "name": "build-fix.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/build-fix.md",
+                  "size": 863,
+                  "language": "md"
+                },
+                {
+                  "name": "checkpoint.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/checkpoint.md",
+                  "size": 2128,
+                  "language": "md"
+                },
+                {
+                  "name": "code-review.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/code-review.md",
+                  "size": 1432,
+                  "language": "md"
+                },
+                {
+                  "name": "e2e.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/e2e.md",
+                  "size": 12530,
+                  "language": "md"
+                },
+                {
+                  "name": "eval.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/eval.md",
+                  "size": 2485,
+                  "language": "md"
+                },
+                {
+                  "name": "evolve.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/evolve.md",
+                  "size": 6239,
+                  "language": "md"
+                },
+                {
+                  "name": "go-build.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/go-build.md",
+                  "size": 4526,
+                  "language": "md"
+                },
+                {
+                  "name": "go-review.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/go-review.md",
+                  "size": 4311,
+                  "language": "md"
+                },
+                {
+                  "name": "go-test.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/go-test.md",
+                  "size": 6674,
+                  "language": "md"
+                },
+                {
+                  "name": "instinct-export.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/instinct-export.md",
+                  "size": 2848,
+                  "language": "md"
+                },
+                {
+                  "name": "instinct-import.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/instinct-import.md",
+                  "size": 4338,
+                  "language": "md"
+                },
+                {
+                  "name": "instinct-status.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/instinct-status.md",
+                  "size": 2662,
+                  "language": "md"
+                },
+                {
+                  "name": "learn.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/learn.md",
+                  "size": 2042,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-backend.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/multi-backend.md",
+                  "size": 6260,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-execute.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/multi-execute.md",
+                  "size": 13080,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-frontend.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/multi-frontend.md",
+                  "size": 6359,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-plan.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/multi-plan.md",
+                  "size": 11170,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-workflow.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/multi-workflow.md",
+                  "size": 8673,
+                  "language": "md"
+                },
+                {
+                  "name": "orchestrate.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/orchestrate.md",
+                  "size": 4181,
+                  "language": "md"
+                },
+                {
+                  "name": "pm2.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/pm2.md",
+                  "size": 7694,
+                  "language": "md"
+                },
+                {
+                  "name": "python-review.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/python-review.md",
+                  "size": 8008,
+                  "language": "md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/README.md",
+                  "size": 2968,
+                  "language": "md"
+                },
+                {
+                  "name": "refactor-clean.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/refactor-clean.md",
+                  "size": 1024,
+                  "language": "md"
+                },
+                {
+                  "name": "sessions.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/sessions.md",
+                  "size": 9542,
+                  "language": "md"
+                },
+                {
+                  "name": "setup-pm.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/setup-pm.md",
+                  "size": 2016,
+                  "language": "md"
+                },
+                {
+                  "name": "skill-create.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/skill-create.md",
+                  "size": 5516,
+                  "language": "md"
+                },
+                {
+                  "name": "tdd.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/tdd.md",
+                  "size": 9770,
+                  "language": "md"
+                },
+                {
+                  "name": "test-coverage.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/test-coverage.md",
+                  "size": 916,
+                  "language": "md"
+                },
+                {
+                  "name": "update-codemaps.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/update-codemaps.md",
+                  "size": 950,
+                  "language": "md"
+                },
+                {
+                  "name": "update-docs.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/update-docs.md",
+                  "size": 885,
+                  "language": "md"
+                },
+                {
+                  "name": "verify.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/commands/verify.md",
+                  "size": 1589,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "contexts",
+              "type": "folder",
+              "path": "docs/ja-JP/contexts",
+              "children": [
+                {
+                  "name": "dev.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/contexts/dev.md",
+                  "size": 548,
+                  "language": "md"
+                },
+                {
+                  "name": "research.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/contexts/research.md",
+                  "size": 746,
+                  "language": "md"
+                },
+                {
+                  "name": "review.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/contexts/review.md",
+                  "size": 782,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "examples",
+              "type": "folder",
+              "path": "docs/ja-JP/examples",
+              "children": [
+                {
+                  "name": "CLAUDE.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/examples/CLAUDE.md",
+                  "size": 2540,
+                  "language": "md"
+                },
+                {
+                  "name": "user-CLAUDE.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/examples/user-CLAUDE.md",
+                  "size": 3767,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "plugins",
+              "type": "folder",
+              "path": "docs/ja-JP/plugins",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/plugins/README.md",
+                  "size": 2612,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "rules",
+              "type": "folder",
+              "path": "docs/ja-JP/rules",
+              "children": [
+                {
+                  "name": "agents.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/agents.md",
+                  "size": 1842,
+                  "language": "md"
+                },
+                {
+                  "name": "coding-style.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/coding-style.md",
+                  "size": 1972,
+                  "language": "md"
+                },
+                {
+                  "name": "git-workflow.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/git-workflow.md",
+                  "size": 1384,
+                  "language": "md"
+                },
+                {
+                  "name": "hooks.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/hooks.md",
+                  "size": 965,
+                  "language": "md"
+                },
+                {
+                  "name": "patterns.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/patterns.md",
+                  "size": 1356,
+                  "language": "md"
+                },
+                {
+                  "name": "performance.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/performance.md",
+                  "size": 2021,
+                  "language": "md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/README.md",
+                  "size": 3869,
+                  "language": "md"
+                },
+                {
+                  "name": "security.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/security.md",
+                  "size": 1230,
+                  "language": "md"
+                },
+                {
+                  "name": "testing.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/rules/testing.md",
+                  "size": 1054,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "skills",
+              "type": "folder",
+              "path": "docs/ja-JP/skills",
+              "children": [
+                {
+                  "name": "backend-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/backend-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/backend-patterns/SKILL.md",
+                      "size": 14344,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "clickhouse-io",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/clickhouse-io",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/clickhouse-io/SKILL.md",
+                      "size": 10862,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "coding-standards",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/coding-standards",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/coding-standards/SKILL.md",
+                      "size": 11985,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "configure-ecc",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/configure-ecc",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/configure-ecc/SKILL.md",
+                      "size": 16402,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "continuous-learning",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/continuous-learning",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/continuous-learning/SKILL.md",
+                      "size": 4007,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "continuous-learning-v2",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/continuous-learning-v2",
+                  "children": [
+                    {
+                      "name": "agents",
+                      "type": "folder",
+                      "path": "docs/ja-JP/skills/continuous-learning-v2/agents",
+                      "children": [
+                        {
+                          "name": "observer.md",
+                          "type": "file",
+                          "path": "docs/ja-JP/skills/continuous-learning-v2/agents/observer.md",
+                          "size": 5036,
+                          "language": "md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/continuous-learning-v2/SKILL.md",
+                      "size": 10687,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "cpp-testing",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/cpp-testing",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/cpp-testing/SKILL.md",
+                      "size": 11324,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "django-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/django-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/django-patterns/SKILL.md",
+                      "size": 22368,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "django-security",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/django-security",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/django-security/SKILL.md",
+                      "size": 17379,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "django-tdd",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/django-tdd",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/django-tdd/SKILL.md",
+                      "size": 22742,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "django-verification",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/django-verification",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/django-verification/SKILL.md",
+                      "size": 13477,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "eval-harness",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/eval-harness",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/eval-harness/SKILL.md",
+                      "size": 6206,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "frontend-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/frontend-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/frontend-patterns/SKILL.md",
+                      "size": 14713,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "golang-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/golang-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/golang-patterns/SKILL.md",
+                      "size": 14913,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "golang-testing",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/golang-testing",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/golang-testing/SKILL.md",
+                      "size": 21508,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "iterative-retrieval",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/iterative-retrieval",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/iterative-retrieval/SKILL.md",
+                      "size": 7321,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "java-coding-standards",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/java-coding-standards",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/java-coding-standards/SKILL.md",
+                      "size": 4195,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "jpa-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/jpa-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/jpa-patterns/SKILL.md",
+                      "size": 4835,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "nutrient-document-processing",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/nutrient-document-processing",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/nutrient-document-processing/SKILL.md",
+                      "size": 6605,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "postgres-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/postgres-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/postgres-patterns/SKILL.md",
+                      "size": 4381,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "project-guidelines-example",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/project-guidelines-example",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/project-guidelines-example/SKILL.md",
+                      "size": 10700,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "python-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/python-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/python-patterns/SKILL.md",
+                      "size": 17523,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "python-testing",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/python-testing",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/python-testing/SKILL.md",
+                      "size": 20216,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "security-review",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/security-review",
+                  "children": [
+                    {
+                      "name": "cloud-infrastructure-security.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/security-review/cloud-infrastructure-security.md",
+                      "size": 12080,
+                      "language": "md"
+                    },
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/security-review/SKILL.md",
+                      "size": 13941,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "security-scan",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/security-scan",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/security-scan/SKILL.md",
+                      "size": 5720,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "springboot-patterns",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/springboot-patterns",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/springboot-patterns/SKILL.md",
+                      "size": 10575,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "springboot-security",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/springboot-security",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/springboot-security/SKILL.md",
+                      "size": 4737,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "springboot-tdd",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/springboot-tdd",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/springboot-tdd/SKILL.md",
+                      "size": 4231,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "springboot-verification",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/springboot-verification",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/springboot-verification/SKILL.md",
+                      "size": 2558,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "strategic-compact",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/strategic-compact",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/strategic-compact/SKILL.md",
+                      "size": 2589,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "tdd-workflow",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/tdd-workflow",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/tdd-workflow/SKILL.md",
+                      "size": 11426,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "verification-loop",
+                  "type": "folder",
+                  "path": "docs/ja-JP/skills/verification-loop",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/ja-JP/skills/verification-loop/SKILL.md",
+                      "size": 2858,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "docs/ja-JP/skills/README.md",
+                  "size": 2994,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "CONTRIBUTING.md",
+              "type": "file",
+              "path": "docs/ja-JP/CONTRIBUTING.md",
+              "size": 10528,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "docs/ja-JP/README.md",
+              "size": 35096,
+              "language": "md"
+            }
+          ]
+        },
         {
           "name": "zh-CN",
           "type": "folder",
@@ -965,91 +1351,91 @@
                   "name": "architect.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/architect.md",
-                  "size": 5740,
+                  "size": 5508,
                   "language": "md"
                 },
                 {
                   "name": "build-error-resolver.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/build-error-resolver.md",
-                  "size": 12648,
+                  "size": 12092,
                   "language": "md"
                 },
                 {
                   "name": "code-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/code-reviewer.md",
-                  "size": 2870,
+                  "size": 2761,
                   "language": "md"
                 },
                 {
                   "name": "database-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/database-reviewer.md",
-                  "size": 18349,
+                  "size": 17687,
                   "language": "md"
                 },
                 {
                   "name": "doc-updater.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/doc-updater.md",
-                  "size": 10947,
+                  "size": 10473,
                   "language": "md"
                 },
                 {
                   "name": "e2e-runner.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/e2e-runner.md",
-                  "size": 23353,
+                  "size": 22531,
                   "language": "md"
                 },
                 {
                   "name": "go-build-resolver.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/go-build-resolver.md",
-                  "size": 7643,
+                  "size": 7259,
                   "language": "md"
                 },
                 {
                   "name": "go-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/go-reviewer.md",
-                  "size": 6846,
+                  "size": 6555,
                   "language": "md"
                 },
                 {
                   "name": "planner.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/planner.md",
-                  "size": 3031,
+                  "size": 2907,
                   "language": "md"
                 },
                 {
                   "name": "python-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/python-reviewer.md",
-                  "size": 10837,
+                  "size": 10345,
                   "language": "md"
                 },
                 {
                   "name": "refactor-cleaner.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/refactor-cleaner.md",
-                  "size": 7899,
+                  "size": 7575,
                   "language": "md"
                 },
                 {
                   "name": "security-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/security-reviewer.md",
-                  "size": 14567,
+                  "size": 14008,
                   "language": "md"
                 },
                 {
                   "name": "tdd-guide.md",
                   "type": "file",
                   "path": "docs/zh-CN/agents/tdd-guide.md",
-                  "size": 7460,
+                  "size": 7163,
                   "language": "md"
                 }
               ]
@@ -1063,168 +1449,217 @@
                   "name": "build-fix.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/build-fix.md",
-                  "size": 674,
+                  "size": 645,
                   "language": "md"
                 },
                 {
                   "name": "checkpoint.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/checkpoint.md",
-                  "size": 1690,
+                  "size": 1612,
                   "language": "md"
                 },
                 {
                   "name": "code-review.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/code-review.md",
-                  "size": 1021,
+                  "size": 978,
                   "language": "md"
                 },
                 {
                   "name": "e2e.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/e2e.md",
-                  "size": 11171,
+                  "size": 10801,
                   "language": "md"
                 },
                 {
                   "name": "eval.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/eval.md",
-                  "size": 2286,
+                  "size": 2164,
                   "language": "md"
                 },
                 {
                   "name": "evolve.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/evolve.md",
-                  "size": 5070,
+                  "size": 4861,
                   "language": "md"
                 },
                 {
                   "name": "go-build.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/go-build.md",
-                  "size": 3981,
+                  "size": 3794,
                   "language": "md"
                 },
                 {
                   "name": "go-review.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/go-review.md",
-                  "size": 3507,
+                  "size": 3346,
+                  "language": "md"
+                },
+                {
+                  "name": "go-test.md",
+                  "type": "file",
+                  "path": "docs/zh-CN/commands/go-test.md",
+                  "size": 5674,
                   "language": "md"
                 },
                 {
                   "name": "instinct-export.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/instinct-export.md",
-                  "size": 2304,
+                  "size": 2210,
                   "language": "md"
                 },
                 {
                   "name": "instinct-import.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/instinct-import.md",
-                  "size": 3565,
+                  "size": 3415,
                   "language": "md"
                 },
                 {
                   "name": "instinct-status.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/instinct-status.md",
-                  "size": 2321,
+                  "size": 2235,
                   "language": "md"
                 },
                 {
                   "name": "learn.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/learn.md",
-                  "size": 1649,
+                  "size": 1579,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-backend.md",
+                  "type": "file",
+                  "path": "docs/zh-CN/commands/multi-backend.md",
+                  "size": 4785,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-execute.md",
+                  "type": "file",
+                  "path": "docs/zh-CN/commands/multi-execute.md",
+                  "size": 9855,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-frontend.md",
+                  "type": "file",
+                  "path": "docs/zh-CN/commands/multi-frontend.md",
+                  "size": 4809,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-plan.md",
+                  "type": "file",
+                  "path": "docs/zh-CN/commands/multi-plan.md",
+                  "size": 8267,
+                  "language": "md"
+                },
+                {
+                  "name": "multi-workflow.md",
+                  "type": "file",
+                  "path": "docs/zh-CN/commands/multi-workflow.md",
+                  "size": 6560,
                   "language": "md"
                 },
                 {
                   "name": "orchestrate.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/orchestrate.md",
-                  "size": 3501,
+                  "size": 3317,
                   "language": "md"
                 },
                 {
                   "name": "plan.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/plan.md",
-                  "size": 3577,
+                  "size": 3458,
+                  "language": "md"
+                },
+                {
+                  "name": "pm2.md",
+                  "type": "file",
+                  "path": "docs/zh-CN/commands/pm2.md",
+                  "size": 6688,
                   "language": "md"
                 },
                 {
                   "name": "python-review.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/python-review.md",
-                  "size": 6899,
+                  "size": 6571,
                   "language": "md"
                 },
                 {
                   "name": "refactor-clean.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/refactor-clean.md",
-                  "size": 802,
+                  "size": 774,
                   "language": "md"
                 },
                 {
                   "name": "sessions.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/sessions.md",
-                  "size": 8772,
+                  "size": 9350,
                   "language": "md"
                 },
                 {
                   "name": "setup-pm.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/setup-pm.md",
-                  "size": 1688,
+                  "size": 1605,
                   "language": "md"
                 },
                 {
                   "name": "skill-create.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/skill-create.md",
-                  "size": 4608,
+                  "size": 4431,
                   "language": "md"
                 },
                 {
                   "name": "tdd.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/tdd.md",
-                  "size": 8592,
+                  "size": 8258,
                   "language": "md"
                 },
                 {
                   "name": "test-coverage.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/test-coverage.md",
-                  "size": 694,
+                  "size": 666,
                   "language": "md"
                 },
                 {
                   "name": "update-codemaps.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/update-codemaps.md",
-                  "size": 660,
+                  "size": 639,
                   "language": "md"
                 },
                 {
                   "name": "update-docs.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/update-docs.md",
-                  "size": 700,
+                  "size": 669,
                   "language": "md"
                 },
                 {
                   "name": "verify.md",
                   "type": "file",
                   "path": "docs/zh-CN/commands/verify.md",
-                  "size": 1278,
+                  "size": 1218,
                   "language": "md"
                 }
               ]
@@ -1238,21 +1673,21 @@
                   "name": "dev.md",
                   "type": "file",
                   "path": "docs/zh-CN/contexts/dev.md",
-                  "size": 462,
+                  "size": 439,
                   "language": "md"
                 },
                 {
                   "name": "research.md",
                   "type": "file",
                   "path": "docs/zh-CN/contexts/research.md",
-                  "size": 609,
+                  "size": 579,
                   "language": "md"
                 },
                 {
                   "name": "review.md",
                   "type": "file",
                   "path": "docs/zh-CN/contexts/review.md",
-                  "size": 553,
+                  "size": 528,
                   "language": "md"
                 }
               ]
@@ -1266,14 +1701,14 @@
                   "name": "CLAUDE.md",
                   "type": "file",
                   "path": "docs/zh-CN/examples/CLAUDE.md",
-                  "size": 2105,
+                  "size": 2005,
                   "language": "md"
                 },
                 {
                   "name": "user-CLAUDE.md",
                   "type": "file",
                   "path": "docs/zh-CN/examples/user-CLAUDE.md",
-                  "size": 2858,
+                  "size": 2747,
                   "language": "md"
                 }
               ]
@@ -1287,7 +1722,7 @@
                   "name": "README.md",
                   "type": "file",
                   "path": "docs/zh-CN/plugins/README.md",
-                  "size": 2056,
+                  "size": 1967,
                   "language": "md"
                 }
               ]
@@ -1298,59 +1733,199 @@
               "path": "docs/zh-CN/rules",
               "children": [
                 {
-                  "name": "agents.md",
-                  "type": "file",
-                  "path": "docs/zh-CN/rules/agents.md",
-                  "size": 1481,
-                  "language": "md"
+                  "name": "common",
+                  "type": "folder",
+                  "path": "docs/zh-CN/rules/common",
+                  "children": [
+                    {
+                      "name": "agents.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/agents.md",
+                      "size": 1450,
+                      "language": "md"
+                    },
+                    {
+                      "name": "coding-style.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/coding-style.md",
+                      "size": 1394,
+                      "language": "md"
+                    },
+                    {
+                      "name": "git-workflow.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/git-workflow.md",
+                      "size": 1093,
+                      "language": "md"
+                    },
+                    {
+                      "name": "hooks.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/hooks.md",
+                      "size": 736,
+                      "language": "md"
+                    },
+                    {
+                      "name": "patterns.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/patterns.md",
+                      "size": 914,
+                      "language": "md"
+                    },
+                    {
+                      "name": "performance.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/performance.md",
+                      "size": 1511,
+                      "language": "md"
+                    },
+                    {
+                      "name": "security.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/security.md",
+                      "size": 838,
+                      "language": "md"
+                    },
+                    {
+                      "name": "testing.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/common/testing.md",
+                      "size": 728,
+                      "language": "md"
+                    }
+                  ]
                 },
                 {
-                  "name": "coding-style.md",
-                  "type": "file",
-                  "path": "docs/zh-CN/rules/coding-style.md",
-                  "size": 1372,
-                  "language": "md"
+                  "name": "golang",
+                  "type": "folder",
+                  "path": "docs/zh-CN/rules/golang",
+                  "children": [
+                    {
+                      "name": "coding-style.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/golang/coding-style.md",
+                      "size": 555,
+                      "language": "md"
+                    },
+                    {
+                      "name": "hooks.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/golang/hooks.md",
+                      "size": 343,
+                      "language": "md"
+                    },
+                    {
+                      "name": "patterns.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/golang/patterns.md",
+                      "size": 810,
+                      "language": "md"
+                    },
+                    {
+                      "name": "security.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/golang/security.md",
+                      "size": 490,
+                      "language": "md"
+                    },
+                    {
+                      "name": "testing.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/golang/testing.md",
+                      "size": 421,
+                      "language": "md"
+                    }
+                  ]
                 },
                 {
-                  "name": "git-workflow.md",
-                  "type": "file",
-                  "path": "docs/zh-CN/rules/git-workflow.md",
-                  "size": 1139,
-                  "language": "md"
+                  "name": "python",
+                  "type": "folder",
+                  "path": "docs/zh-CN/rules/python",
+                  "children": [
+                    {
+                      "name": "coding-style.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/python/coding-style.md",
+                      "size": 700,
+                      "language": "md"
+                    },
+                    {
+                      "name": "hooks.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/python/hooks.md",
+                      "size": 402,
+                      "language": "md"
+                    },
+                    {
+                      "name": "patterns.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/python/patterns.md",
+                      "size": 758,
+                      "language": "md"
+                    },
+                    {
+                      "name": "security.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/python/security.md",
+                      "size": 483,
+                      "language": "md"
+                    },
+                    {
+                      "name": "testing.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/python/testing.md",
+                      "size": 549,
+                      "language": "md"
+                    }
+                  ]
                 },
                 {
-                  "name": "hooks.md",
-                  "type": "file",
-                  "path": "docs/zh-CN/rules/hooks.md",
-                  "size": 1457,
-                  "language": "md"
+                  "name": "typescript",
+                  "type": "folder",
+                  "path": "docs/zh-CN/rules/typescript",
+                  "children": [
+                    {
+                      "name": "coding-style.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/typescript/coding-style.md",
+                      "size": 1084,
+                      "language": "md"
+                    },
+                    {
+                      "name": "hooks.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/typescript/hooks.md",
+                      "size": 538,
+                      "language": "md"
+                    },
+                    {
+                      "name": "patterns.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/typescript/patterns.md",
+                      "size": 961,
+                      "language": "md"
+                    },
+                    {
+                      "name": "security.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/typescript/security.md",
+                      "size": 473,
+                      "language": "md"
+                    },
+                    {
+                      "name": "testing.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/rules/typescript/testing.md",
+                      "size": 306,
+                      "language": "md"
+                    }
+                  ]
                 },
                 {
-                  "name": "patterns.md",
+                  "name": "README.md",
                   "type": "file",
-                  "path": "docs/zh-CN/rules/patterns.md",
-                  "size": 1154,
-                  "language": "md"
-                },
-                {
-                  "name": "performance.md",
-                  "type": "file",
-                  "path": "docs/zh-CN/rules/performance.md",
-                  "size": 1209,
-                  "language": "md"
-                },
-                {
-                  "name": "security.md",
-                  "type": "file",
-                  "path": "docs/zh-CN/rules/security.md",
-                  "size": 927,
-                  "language": "md"
-                },
-                {
-                  "name": "testing.md",
-                  "type": "file",
-                  "path": "docs/zh-CN/rules/testing.md",
-                  "size": 795,
+                  "path": "docs/zh-CN/rules/README.md",
+                  "size": 3006,
                   "language": "md"
                 }
               ]
@@ -1369,7 +1944,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/backend-patterns/SKILL.md",
-                      "size": 13869,
+                      "size": 13282,
                       "language": "md"
                     }
                   ]
@@ -1383,7 +1958,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/clickhouse-io/SKILL.md",
-                      "size": 10123,
+                      "size": 9688,
                       "language": "md"
                     }
                   ]
@@ -1397,7 +1972,21 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/coding-standards/SKILL.md",
-                      "size": 11755,
+                      "size": 11228,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "configure-ecc",
+                  "type": "folder",
+                  "path": "docs/zh-CN/skills/configure-ecc",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/skills/configure-ecc/SKILL.md",
+                      "size": 11691,
                       "language": "md"
                     }
                   ]
@@ -1411,7 +2000,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/continuous-learning/SKILL.md",
-                      "size": 3414,
+                      "size": 3268,
                       "language": "md"
                     }
                   ]
@@ -1430,7 +2019,7 @@
                           "name": "observer.md",
                           "type": "file",
                           "path": "docs/zh-CN/skills/continuous-learning-v2/agents/observer.md",
-                          "size": 4284,
+                          "size": 4134,
                           "language": "md"
                         }
                       ]
@@ -1439,7 +2028,21 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/continuous-learning-v2/SKILL.md",
-                      "size": 9029,
+                      "size": 8759,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "cpp-testing",
+                  "type": "folder",
+                  "path": "docs/zh-CN/skills/cpp-testing",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/skills/cpp-testing/SKILL.md",
+                      "size": 9108,
                       "language": "md"
                     }
                   ]
@@ -1453,7 +2056,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/django-patterns/SKILL.md",
-                      "size": 21549,
+                      "size": 20816,
                       "language": "md"
                     }
                   ]
@@ -1467,7 +2070,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/django-security/SKILL.md",
-                      "size": 16154,
+                      "size": 15562,
                       "language": "md"
                     }
                   ]
@@ -1481,7 +2084,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/django-tdd/SKILL.md",
-                      "size": 21562,
+                      "size": 20834,
                       "language": "md"
                     }
                   ]
@@ -1495,7 +2098,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/django-verification/SKILL.md",
-                      "size": 11467,
+                      "size": 11001,
                       "language": "md"
                     }
                   ]
@@ -1509,7 +2112,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/eval-harness/SKILL.md",
-                      "size": 5403,
+                      "size": 5143,
                       "language": "md"
                     }
                   ]
@@ -1523,7 +2126,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/frontend-patterns/SKILL.md",
-                      "size": 14771,
+                      "size": 14140,
                       "language": "md"
                     }
                   ]
@@ -1537,7 +2140,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/golang-patterns/SKILL.md",
-                      "size": 14399,
+                      "size": 13726,
                       "language": "md"
                     }
                   ]
@@ -1551,7 +2154,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/golang-testing/SKILL.md",
-                      "size": 17244,
+                      "size": 16523,
                       "language": "md"
                     }
                   ]
@@ -1565,7 +2168,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/iterative-retrieval/SKILL.md",
-                      "size": 6378,
+                      "size": 6172,
                       "language": "md"
                     }
                   ]
@@ -1579,7 +2182,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/java-coding-standards/SKILL.md",
-                      "size": 3669,
+                      "size": 3531,
                       "language": "md"
                     }
                   ]
@@ -1593,7 +2196,21 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/jpa-patterns/SKILL.md",
-                      "size": 4213,
+                      "size": 4068,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "nutrient-document-processing",
+                  "type": "folder",
+                  "path": "docs/zh-CN/skills/nutrient-document-processing",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/skills/nutrient-document-processing/SKILL.md",
+                      "size": 5759,
                       "language": "md"
                     }
                   ]
@@ -1607,7 +2224,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/postgres-patterns/SKILL.md",
-                      "size": 3927,
+                      "size": 3774,
                       "language": "md"
                     }
                   ]
@@ -1621,7 +2238,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/project-guidelines-example/SKILL.md",
-                      "size": 9917,
+                      "size": 9567,
                       "language": "md"
                     }
                   ]
@@ -1635,7 +2252,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/python-patterns/SKILL.md",
-                      "size": 17263,
+                      "size": 16514,
                       "language": "md"
                     }
                   ]
@@ -1649,7 +2266,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/python-testing/SKILL.md",
-                      "size": 19430,
+                      "size": 18615,
                       "language": "md"
                     }
                   ]
@@ -1663,14 +2280,28 @@
                       "name": "cloud-infrastructure-security.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/security-review/cloud-infrastructure-security.md",
-                      "size": 10053,
+                      "size": 9692,
                       "language": "md"
                     },
                     {
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/security-review/SKILL.md",
-                      "size": 12600,
+                      "size": 12074,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "security-scan",
+                  "type": "folder",
+                  "path": "docs/zh-CN/skills/security-scan",
+                  "children": [
+                    {
+                      "name": "SKILL.md",
+                      "type": "file",
+                      "path": "docs/zh-CN/skills/security-scan/SKILL.md",
+                      "size": 4404,
                       "language": "md"
                     }
                   ]
@@ -1684,7 +2315,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/springboot-patterns/SKILL.md",
-                      "size": 9756,
+                      "size": 9453,
                       "language": "md"
                     }
                   ]
@@ -1698,7 +2329,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/springboot-security/SKILL.md",
-                      "size": 3847,
+                      "size": 3728,
                       "language": "md"
                     }
                   ]
@@ -1712,7 +2343,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/springboot-tdd/SKILL.md",
-                      "size": 3924,
+                      "size": 3765,
                       "language": "md"
                     }
                   ]
@@ -1726,7 +2357,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/springboot-verification/SKILL.md",
-                      "size": 2165,
+                      "size": 2061,
                       "language": "md"
                     }
                   ]
@@ -1740,7 +2371,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/strategic-compact/SKILL.md",
-                      "size": 2033,
+                      "size": 1967,
                       "language": "md"
                     }
                   ]
@@ -1754,7 +2385,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/tdd-workflow/SKILL.md",
-                      "size": 10095,
+                      "size": 9656,
                       "language": "md"
                     }
                   ]
@@ -1768,7 +2399,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-CN/skills/verification-loop/SKILL.md",
-                      "size": 2477,
+                      "size": 2347,
                       "language": "md"
                     }
                   ]
@@ -1779,14 +2410,35 @@
               "name": "CONTRIBUTING.md",
               "type": "file",
               "path": "docs/zh-CN/CONTRIBUTING.md",
-              "size": 3486,
+              "size": 8322,
               "language": "md"
             },
             {
               "name": "README.md",
               "type": "file",
               "path": "docs/zh-CN/README.md",
-              "size": 18569,
+              "size": 28449,
+              "language": "md"
+            },
+            {
+              "name": "SPONSORS.md",
+              "type": "file",
+              "path": "docs/zh-CN/SPONSORS.md",
+              "size": 1433,
+              "language": "md"
+            },
+            {
+              "name": "the-longform-guide.md",
+              "type": "file",
+              "path": "docs/zh-CN/the-longform-guide.md",
+              "size": 15062,
+              "language": "md"
+            },
+            {
+              "name": "the-shortform-guide.md",
+              "type": "file",
+              "path": "docs/zh-CN/the-shortform-guide.md",
+              "size": 15883,
               "language": "md"
             }
           ]
@@ -1805,84 +2457,84 @@
                   "name": "architect.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/architect.md",
-                  "size": 5726,
+                  "size": 5515,
                   "language": "md"
                 },
                 {
                   "name": "build-error-resolver.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/build-error-resolver.md",
-                  "size": 7653,
+                  "size": 7353,
                   "language": "md"
                 },
                 {
                   "name": "code-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/code-reviewer.md",
-                  "size": 2908,
+                  "size": 2804,
                   "language": "md"
                 },
                 {
                   "name": "database-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/database-reviewer.md",
-                  "size": 11218,
+                  "size": 10840,
                   "language": "md"
                 },
                 {
                   "name": "doc-updater.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/doc-updater.md",
-                  "size": 7545,
+                  "size": 7235,
                   "language": "md"
                 },
                 {
                   "name": "e2e-runner.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/e2e-runner.md",
-                  "size": 9050,
+                  "size": 8747,
                   "language": "md"
                 },
                 {
                   "name": "go-build-resolver.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/go-build-resolver.md",
-                  "size": 7582,
+                  "size": 7214,
                   "language": "md"
                 },
                 {
                   "name": "go-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/go-reviewer.md",
-                  "size": 6753,
+                  "size": 6486,
                   "language": "md"
                 },
                 {
                   "name": "planner.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/planner.md",
-                  "size": 3049,
+                  "size": 2930,
                   "language": "md"
                 },
                 {
                   "name": "refactor-cleaner.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/refactor-cleaner.md",
-                  "size": 7239,
+                  "size": 6966,
                   "language": "md"
                 },
                 {
                   "name": "security-reviewer.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/security-reviewer.md",
-                  "size": 9794,
+                  "size": 9416,
                   "language": "md"
                 },
                 {
                   "name": "tdd-guide.md",
                   "type": "file",
                   "path": "docs/zh-TW/agents/tdd-guide.md",
-                  "size": 7347,
+                  "size": 7067,
                   "language": "md"
                 }
               ]
@@ -1896,126 +2548,126 @@
                   "name": "build-fix.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/build-fix.md",
-                  "size": 637,
+                  "size": 608,
                   "language": "md"
                 },
                 {
                   "name": "checkpoint.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/checkpoint.md",
-                  "size": 1626,
+                  "size": 1552,
                   "language": "md"
                 },
                 {
                   "name": "code-review.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/code-review.md",
-                  "size": 970,
+                  "size": 930,
                   "language": "md"
                 },
                 {
                   "name": "e2e.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/e2e.md",
-                  "size": 3163,
+                  "size": 3048,
                   "language": "md"
                 },
                 {
                   "name": "eval.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/eval.md",
-                  "size": 2270,
+                  "size": 2150,
                   "language": "md"
                 },
                 {
                   "name": "go-build.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/go-build.md",
-                  "size": 2176,
+                  "size": 2095,
                   "language": "md"
                 },
                 {
                   "name": "go-review.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/go-review.md",
-                  "size": 2283,
+                  "size": 2196,
                   "language": "md"
                 },
                 {
                   "name": "go-test.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/go-test.md",
-                  "size": 3004,
+                  "size": 2872,
                   "language": "md"
                 },
                 {
                   "name": "learn.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/learn.md",
-                  "size": 1605,
+                  "size": 1535,
                   "language": "md"
                 },
                 {
                   "name": "orchestrate.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/orchestrate.md",
-                  "size": 2764,
+                  "size": 2623,
                   "language": "md"
                 },
                 {
                   "name": "plan.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/plan.md",
-                  "size": 3316,
+                  "size": 3203,
                   "language": "md"
                 },
                 {
                   "name": "refactor-clean.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/refactor-clean.md",
-                  "size": 767,
+                  "size": 739,
                   "language": "md"
                 },
                 {
                   "name": "setup-pm.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/setup-pm.md",
-                  "size": 1689,
+                  "size": 1609,
                   "language": "md"
                 },
                 {
                   "name": "tdd.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/tdd.md",
-                  "size": 2948,
+                  "size": 2848,
                   "language": "md"
                 },
                 {
                   "name": "test-coverage.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/test-coverage.md",
-                  "size": 680,
+                  "size": 653,
                   "language": "md"
                 },
                 {
                   "name": "update-codemaps.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/update-codemaps.md",
-                  "size": 674,
+                  "size": 657,
                   "language": "md"
                 },
                 {
                   "name": "update-docs.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/update-docs.md",
-                  "size": 683,
+                  "size": 652,
                   "language": "md"
                 },
                 {
                   "name": "verify.md",
                   "type": "file",
                   "path": "docs/zh-TW/commands/verify.md",
-                  "size": 1294,
+                  "size": 1235,
                   "language": "md"
                 }
               ]
@@ -2029,56 +2681,56 @@
                   "name": "agents.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/agents.md",
-                  "size": 1419,
+                  "size": 1370,
                   "language": "md"
                 },
                 {
                   "name": "coding-style.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/coding-style.md",
-                  "size": 1369,
+                  "size": 1299,
                   "language": "md"
                 },
                 {
                   "name": "git-workflow.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/git-workflow.md",
-                  "size": 1111,
+                  "size": 1066,
                   "language": "md"
                 },
                 {
                   "name": "hooks.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/hooks.md",
-                  "size": 1415,
+                  "size": 1369,
                   "language": "md"
                 },
                 {
                   "name": "patterns.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/patterns.md",
-                  "size": 1153,
+                  "size": 1098,
                   "language": "md"
                 },
                 {
                   "name": "performance.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/performance.md",
-                  "size": 1126,
+                  "size": 1079,
                   "language": "md"
                 },
                 {
                   "name": "security.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/security.md",
-                  "size": 877,
+                  "size": 841,
                   "language": "md"
                 },
                 {
                   "name": "testing.md",
                   "type": "file",
                   "path": "docs/zh-TW/rules/testing.md",
-                  "size": 792,
+                  "size": 762,
                   "language": "md"
                 }
               ]
@@ -2097,7 +2749,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/backend-patterns/SKILL.md",
-                      "size": 13882,
+                      "size": 13295,
                       "language": "md"
                     }
                   ]
@@ -2111,7 +2763,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/clickhouse-io/SKILL.md",
-                      "size": 10070,
+                      "size": 9641,
                       "language": "md"
                     }
                   ]
@@ -2125,7 +2777,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/coding-standards/SKILL.md",
-                      "size": 11857,
+                      "size": 11337,
                       "language": "md"
                     }
                   ]
@@ -2139,7 +2791,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/continuous-learning/SKILL.md",
-                      "size": 3339,
+                      "size": 3194,
                       "language": "md"
                     }
                   ]
@@ -2153,7 +2805,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/continuous-learning-v2/SKILL.md",
-                      "size": 8071,
+                      "size": 7840,
                       "language": "md"
                     }
                   ]
@@ -2167,7 +2819,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/eval-harness/SKILL.md",
-                      "size": 5227,
+                      "size": 5000,
                       "language": "md"
                     }
                   ]
@@ -2181,7 +2833,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/frontend-patterns/SKILL.md",
-                      "size": 14793,
+                      "size": 14162,
                       "language": "md"
                     }
                   ]
@@ -2195,7 +2847,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/golang-patterns/SKILL.md",
-                      "size": 14248,
+                      "size": 13575,
                       "language": "md"
                     }
                   ]
@@ -2209,7 +2861,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/golang-testing/SKILL.md",
-                      "size": 17015,
+                      "size": 16305,
                       "language": "md"
                     }
                   ]
@@ -2223,7 +2875,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/iterative-retrieval/SKILL.md",
-                      "size": 6386,
+                      "size": 6184,
                       "language": "md"
                     }
                   ]
@@ -2237,7 +2889,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/postgres-patterns/SKILL.md",
-                      "size": 3857,
+                      "size": 3711,
                       "language": "md"
                     }
                   ]
@@ -2251,7 +2903,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/project-guidelines-example/SKILL.md",
-                      "size": 9885,
+                      "size": 9540,
                       "language": "md"
                     }
                   ]
@@ -2265,14 +2917,14 @@
                       "name": "cloud-infrastructure-security.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/security-review/cloud-infrastructure-security.md",
-                      "size": 9781,
+                      "size": 9420,
                       "language": "md"
                     },
                     {
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/security-review/SKILL.md",
-                      "size": 12162,
+                      "size": 11668,
                       "language": "md"
                     }
                   ]
@@ -2286,7 +2938,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/strategic-compact/SKILL.md",
-                      "size": 1942,
+                      "size": 1879,
                       "language": "md"
                     }
                   ]
@@ -2300,7 +2952,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/tdd-workflow/SKILL.md",
-                      "size": 9926,
+                      "size": 9517,
                       "language": "md"
                     }
                   ]
@@ -2314,7 +2966,7 @@
                       "name": "SKILL.md",
                       "type": "file",
                       "path": "docs/zh-TW/skills/verification-loop/SKILL.md",
-                      "size": 2417,
+                      "size": 2297,
                       "language": "md"
                     }
                   ]
@@ -2325,24 +2977,31 @@
               "name": "CONTRIBUTING.md",
               "type": "file",
               "path": "docs/zh-TW/CONTRIBUTING.md",
-              "size": 3440,
+              "size": 3249,
               "language": "md"
             },
             {
               "name": "README.md",
               "type": "file",
               "path": "docs/zh-TW/README.md",
-              "size": 15560,
+              "size": 15358,
               "language": "md"
             },
             {
               "name": "TERMINOLOGY.md",
               "type": "file",
               "path": "docs/zh-TW/TERMINOLOGY.md",
-              "size": 4183,
+              "size": 4079,
               "language": "md"
             }
           ]
+        },
+        {
+          "name": "token-optimization.md",
+          "type": "file",
+          "path": "docs/token-optimization.md",
+          "size": 5221,
+          "language": "md"
         }
       ]
     },
@@ -2355,21 +3014,49 @@
           "name": "CLAUDE.md",
           "type": "file",
           "path": "examples/CLAUDE.md",
-          "size": 2142,
+          "size": 2042,
+          "language": "md"
+        },
+        {
+          "name": "django-api-CLAUDE.md",
+          "type": "file",
+          "path": "examples/django-api-CLAUDE.md",
+          "size": 9018,
+          "language": "md"
+        },
+        {
+          "name": "go-microservice-CLAUDE.md",
+          "type": "file",
+          "path": "examples/go-microservice-CLAUDE.md",
+          "size": 7795,
+          "language": "md"
+        },
+        {
+          "name": "rust-api-CLAUDE.md",
+          "type": "file",
+          "path": "examples/rust-api-CLAUDE.md",
+          "size": 8220,
+          "language": "md"
+        },
+        {
+          "name": "saas-nextjs-CLAUDE.md",
+          "type": "file",
+          "path": "examples/saas-nextjs-CLAUDE.md",
+          "size": 4794,
           "language": "md"
         },
         {
           "name": "statusline.json",
           "type": "file",
           "path": "examples/statusline.json",
-          "size": 1758,
+          "size": 1739,
           "language": "json"
         },
         {
           "name": "user-CLAUDE.md",
           "type": "file",
           "path": "examples/user-CLAUDE.md",
-          "size": 2951,
+          "size": 2848,
           "language": "md"
         }
       ]
@@ -2383,8 +3070,15 @@
           "name": "hooks.json",
           "type": "file",
           "path": "hooks/hooks.json",
-          "size": 8533,
+          "size": 6633,
           "language": "json"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "hooks/README.md",
+          "size": 7412,
+          "language": "md"
         }
       ]
     },
@@ -2397,7 +3091,7 @@
           "name": "mcp-servers.json",
           "type": "file",
           "path": "mcp-configs/mcp-servers.json",
-          "size": 3072,
+          "size": 3279,
           "language": "json"
         }
       ]
@@ -2411,7 +3105,7 @@
           "name": "README.md",
           "type": "file",
           "path": "plugins/README.md",
-          "size": 2122,
+          "size": 2037,
           "language": "md"
         }
       ]
@@ -2430,56 +3124,63 @@
               "name": "agents.md",
               "type": "file",
               "path": "rules/common/agents.md",
-              "size": 1540,
+              "size": 1491,
               "language": "md"
             },
             {
               "name": "coding-style.md",
               "type": "file",
               "path": "rules/common/coding-style.md",
-              "size": 1450,
+              "size": 1402,
+              "language": "md"
+            },
+            {
+              "name": "development-workflow.md",
+              "type": "file",
+              "path": "rules/common/development-workflow.md",
+              "size": 1891,
               "language": "md"
             },
             {
               "name": "git-workflow.md",
               "type": "file",
               "path": "rules/common/git-workflow.md",
-              "size": 1114,
+              "size": 622,
               "language": "md"
             },
             {
               "name": "hooks.md",
               "type": "file",
               "path": "rules/common/hooks.md",
-              "size": 798,
+              "size": 768,
               "language": "md"
             },
             {
               "name": "patterns.md",
               "type": "file",
               "path": "rules/common/patterns.md",
-              "size": 1053,
+              "size": 1022,
               "language": "md"
             },
             {
               "name": "performance.md",
               "type": "file",
               "path": "rules/common/performance.md",
-              "size": 1654,
+              "size": 1599,
               "language": "md"
             },
             {
               "name": "security.md",
               "type": "file",
               "path": "rules/common/security.md",
-              "size": 891,
+              "size": 862,
               "language": "md"
             },
             {
               "name": "testing.md",
               "type": "file",
               "path": "rules/common/testing.md",
-              "size": 799,
+              "size": 770,
               "language": "md"
             }
           ]
@@ -2493,35 +3194,35 @@
               "name": "coding-style.md",
               "type": "file",
               "path": "rules/golang/coding-style.md",
-              "size": 545,
+              "size": 580,
               "language": "md"
             },
             {
               "name": "hooks.md",
               "type": "file",
               "path": "rules/golang/hooks.md",
-              "size": 356,
+              "size": 406,
               "language": "md"
             },
             {
               "name": "patterns.md",
               "type": "file",
               "path": "rules/golang/patterns.md",
-              "size": 867,
+              "size": 889,
               "language": "md"
             },
             {
               "name": "security.md",
               "type": "file",
               "path": "rules/golang/security.md",
-              "size": 525,
+              "size": 558,
               "language": "md"
             },
             {
               "name": "testing.md",
               "type": "file",
               "path": "rules/golang/testing.md",
-              "size": 421,
+              "size": 457,
               "language": "md"
             }
           ]
@@ -2535,35 +3236,77 @@
               "name": "coding-style.md",
               "type": "file",
               "path": "rules/python/coding-style.md",
-              "size": 704,
+              "size": 711,
               "language": "md"
             },
             {
               "name": "hooks.md",
               "type": "file",
               "path": "rules/python/hooks.md",
-              "size": 394,
+              "size": 424,
               "language": "md"
             },
             {
               "name": "patterns.md",
               "type": "file",
               "path": "rules/python/patterns.md",
-              "size": 813,
+              "size": 823,
               "language": "md"
             },
             {
               "name": "security.md",
               "type": "file",
               "path": "rules/python/security.md",
-              "size": 505,
+              "size": 524,
               "language": "md"
             },
             {
               "name": "testing.md",
               "type": "file",
               "path": "rules/python/testing.md",
-              "size": 570,
+              "size": 581,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "swift",
+          "type": "folder",
+          "path": "rules/swift",
+          "children": [
+            {
+              "name": "coding-style.md",
+              "type": "file",
+              "path": "rules/swift/coding-style.md",
+              "size": 1354,
+              "language": "md"
+            },
+            {
+              "name": "hooks.md",
+              "type": "file",
+              "path": "rules/swift/hooks.md",
+              "size": 509,
+              "language": "md"
+            },
+            {
+              "name": "patterns.md",
+              "type": "file",
+              "path": "rules/swift/patterns.md",
+              "size": 1527,
+              "language": "md"
+            },
+            {
+              "name": "security.md",
+              "type": "file",
+              "path": "rules/swift/security.md",
+              "size": 1020,
+              "language": "md"
+            },
+            {
+              "name": "testing.md",
+              "type": "file",
+              "path": "rules/swift/testing.md",
+              "size": 1005,
               "language": "md"
             }
           ]
@@ -2577,35 +3320,35 @@
               "name": "coding-style.md",
               "type": "file",
               "path": "rules/typescript/coding-style.md",
-              "size": 1124,
+              "size": 1139,
               "language": "md"
             },
             {
               "name": "hooks.md",
               "type": "file",
               "path": "rules/typescript/hooks.md",
-              "size": 503,
+              "size": 561,
               "language": "md"
             },
             {
               "name": "patterns.md",
               "type": "file",
               "path": "rules/typescript/patterns.md",
-              "size": 1002,
+              "size": 1030,
               "language": "md"
             },
             {
               "name": "security.md",
               "type": "file",
               "path": "rules/typescript/security.md",
-              "size": 496,
+              "size": 548,
               "language": "md"
             },
             {
               "name": "testing.md",
               "type": "file",
               "path": "rules/typescript/testing.md",
-              "size": 313,
+              "size": 375,
               "language": "md"
             }
           ]
@@ -2614,7 +3357,7 @@
           "name": "README.md",
           "type": "file",
           "path": "rules/README.md",
-          "size": 3112,
+          "size": 4185,
           "language": "md"
         }
       ]
@@ -2628,21 +3371,21 @@
           "name": "hooks.schema.json",
           "type": "file",
           "path": "schemas/hooks.schema.json",
-          "size": 1767,
+          "size": 2283,
           "language": "json"
         },
         {
           "name": "package-manager.schema.json",
           "type": "file",
           "path": "schemas/package-manager.schema.json",
-          "size": 333,
+          "size": 502,
           "language": "json"
         },
         {
           "name": "plugin.schema.json",
           "type": "file",
           "path": "schemas/plugin.schema.json",
-          "size": 368,
+          "size": 995,
           "language": "json"
         }
       ]
@@ -2661,36 +3404,50 @@
               "name": "validate-agents.js",
               "type": "file",
               "path": "scripts/ci/validate-agents.js",
-              "size": 1819,
+              "size": 2290,
               "language": "js"
             },
             {
               "name": "validate-commands.js",
               "type": "file",
               "path": "scripts/ci/validate-commands.js",
-              "size": 969,
+              "size": 4499,
               "language": "js"
             },
             {
               "name": "validate-hooks.js",
               "type": "file",
               "path": "scripts/ci/validate-hooks.js",
-              "size": 3947,
+              "size": 4925,
               "language": "js"
             },
             {
               "name": "validate-rules.js",
               "type": "file",
               "path": "scripts/ci/validate-rules.js",
-              "size": 1163,
+              "size": 1115,
               "language": "js"
             },
             {
               "name": "validate-skills.js",
               "type": "file",
               "path": "scripts/ci/validate-skills.js",
-              "size": 1183,
+              "size": 1289,
               "language": "js"
+            }
+          ]
+        },
+        {
+          "name": "codemaps",
+          "type": "folder",
+          "path": "scripts/codemaps",
+          "children": [
+            {
+              "name": "generate.ts",
+              "type": "file",
+              "path": "scripts/codemaps/generate.ts",
+              "size": 10237,
+              "language": "ts"
             }
           ]
         },
@@ -2703,42 +3460,70 @@
               "name": "check-console-log.js",
               "type": "file",
               "path": "scripts/hooks/check-console-log.js",
-              "size": 1651,
+              "size": 1889,
               "language": "js"
             },
             {
               "name": "evaluate-session.js",
               "type": "file",
               "path": "scripts/hooks/evaluate-session.js",
-              "size": 2314,
+              "size": 2980,
+              "language": "js"
+            },
+            {
+              "name": "post-edit-console-warn.js",
+              "type": "file",
+              "path": "scripts/hooks/post-edit-console-warn.js",
+              "size": 1501,
+              "language": "js"
+            },
+            {
+              "name": "post-edit-format.js",
+              "type": "file",
+              "path": "scripts/hooks/post-edit-format.js",
+              "size": 2761,
+              "language": "js"
+            },
+            {
+              "name": "post-edit-typecheck.js",
+              "type": "file",
+              "path": "scripts/hooks/post-edit-typecheck.js",
+              "size": 3254,
               "language": "js"
             },
             {
               "name": "pre-compact.js",
               "type": "file",
               "path": "scripts/hooks/pre-compact.js",
-              "size": 1314,
+              "size": 1274,
+              "language": "js"
+            },
+            {
+              "name": "pre-write-doc-warn.js",
+              "type": "file",
+              "path": "scripts/hooks/pre-write-doc-warn.js",
+              "size": 1859,
               "language": "js"
             },
             {
               "name": "session-end.js",
               "type": "file",
               "path": "scripts/hooks/session-end.js",
-              "size": 1810,
+              "size": 7006,
               "language": "js"
             },
             {
               "name": "session-start.js",
               "type": "file",
               "path": "scripts/hooks/session-start.js",
-              "size": 2313,
+              "size": 2511,
               "language": "js"
             },
             {
               "name": "suggest-compact.js",
               "type": "file",
               "path": "scripts/hooks/suggest-compact.js",
-              "size": 1823,
+              "size": 2694,
               "language": "js"
             }
           ]
@@ -2749,54 +3534,89 @@
           "path": "scripts/lib",
           "children": [
             {
+              "name": "package-manager.d.ts",
+              "type": "file",
+              "path": "scripts/lib/package-manager.d.ts",
+              "size": 4160,
+              "language": "ts"
+            },
+            {
               "name": "package-manager.js",
               "type": "file",
               "path": "scripts/lib/package-manager.js",
-              "size": 10035,
+              "size": 12016,
               "language": "js"
+            },
+            {
+              "name": "session-aliases.d.ts",
+              "type": "file",
+              "path": "scripts/lib/session-aliases.d.ts",
+              "size": 3966,
+              "language": "ts"
             },
             {
               "name": "session-aliases.js",
               "type": "file",
               "path": "scripts/lib/session-aliases.js",
-              "size": 10821,
+              "size": 12333,
               "language": "js"
+            },
+            {
+              "name": "session-manager.d.ts",
+              "type": "file",
+              "path": "scripts/lib/session-manager.d.ts",
+              "size": 4343,
+              "language": "ts"
             },
             {
               "name": "session-manager.js",
               "type": "file",
               "path": "scripts/lib/session-manager.js",
-              "size": 11206,
+              "size": 13080,
               "language": "js"
+            },
+            {
+              "name": "utils.d.ts",
+              "type": "file",
+              "path": "scripts/lib/utils.d.ts",
+              "size": 5839,
+              "language": "ts"
             },
             {
               "name": "utils.js",
               "type": "file",
               "path": "scripts/lib/utils.js",
-              "size": 10178,
+              "size": 13979,
               "language": "js"
             }
           ]
         },
         {
+          "name": "claw.js",
+          "type": "file",
+          "path": "scripts/claw.js",
+          "size": 7471,
+          "language": "js"
+        },
+        {
           "name": "release.sh",
           "type": "file",
           "path": "scripts/release.sh",
-          "size": 1776,
+          "size": 2482,
           "language": "sh"
         },
         {
           "name": "setup-package-manager.js",
           "type": "file",
           "path": "scripts/setup-package-manager.js",
-          "size": 6113,
+          "size": 5961,
           "language": "js"
         },
         {
           "name": "skill-create-output.js",
           "type": "file",
           "path": "scripts/skill-create-output.js",
-          "size": 8490,
+          "size": 8289,
           "language": "js"
         }
       ]
@@ -2807,6 +3627,34 @@
       "path": "skills",
       "children": [
         {
+          "name": "api-design",
+          "type": "folder",
+          "path": "skills/api-design",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/api-design/SKILL.md",
+              "size": 13110,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "article-writing",
+          "type": "folder",
+          "path": "skills/article-writing",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/article-writing/SKILL.md",
+              "size": 3142,
+              "language": "md"
+            }
+          ]
+        },
+        {
           "name": "backend-patterns",
           "type": "folder",
           "path": "skills/backend-patterns",
@@ -2815,7 +3663,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/backend-patterns/SKILL.md",
-              "size": 14002,
+              "size": 13825,
               "language": "md"
             }
           ]
@@ -2829,7 +3677,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/clickhouse-io/SKILL.md",
-              "size": 10401,
+              "size": 10417,
               "language": "md"
             }
           ]
@@ -2843,7 +3691,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/coding-standards/SKILL.md",
-              "size": 11918,
+              "size": 11733,
               "language": "md"
             }
           ]
@@ -2857,7 +3705,35 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/configure-ecc/SKILL.md",
-              "size": 12223,
+              "size": 13566,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "content-engine",
+          "type": "folder",
+          "path": "skills/content-engine",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/content-engine/SKILL.md",
+              "size": 2569,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "content-hash-cache-pattern",
+          "type": "folder",
+          "path": "skills/content-hash-cache-pattern",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/content-hash-cache-pattern/SKILL.md",
+              "size": 5604,
               "language": "md"
             }
           ]
@@ -2871,21 +3747,21 @@
               "name": "config.json",
               "type": "file",
               "path": "skills/continuous-learning/config.json",
-              "size": 409,
+              "size": 391,
               "language": "json"
             },
             {
               "name": "evaluate-session.sh",
               "type": "file",
               "path": "skills/continuous-learning/evaluate-session.sh",
-              "size": 2075,
+              "size": 2391,
               "language": "sh"
             },
             {
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/continuous-learning/SKILL.md",
-              "size": 3477,
+              "size": 3667,
               "language": "md"
             }
           ]
@@ -2904,14 +3780,14 @@
                   "name": "observer.md",
                   "type": "file",
                   "path": "skills/continuous-learning-v2/agents/observer.md",
-                  "size": 4406,
+                  "size": 4269,
                   "language": "md"
                 },
                 {
                   "name": "start-observer.sh",
                   "type": "file",
                   "path": "skills/continuous-learning-v2/agents/start-observer.sh",
-                  "size": 3786,
+                  "size": 4032,
                   "language": "sh"
                 }
               ]
@@ -2925,7 +3801,7 @@
                   "name": "observe.sh",
                   "type": "file",
                   "path": "skills/continuous-learning-v2/hooks/observe.sh",
-                  "size": 4552,
+                  "size": 4882,
                   "language": "sh"
                 }
               ]
@@ -2939,14 +3815,14 @@
                   "name": "instinct-cli.py",
                   "type": "file",
                   "path": "skills/continuous-learning-v2/scripts/instinct-cli.py",
-                  "size": 19235,
+                  "size": 22304,
                   "language": "py"
                 },
                 {
                   "name": "test_parse_instinct.py",
                   "type": "file",
                   "path": "skills/continuous-learning-v2/scripts/test_parse_instinct.py",
-                  "size": 1718,
+                  "size": 1636,
                   "language": "py"
                 }
               ]
@@ -2955,14 +3831,84 @@
               "name": "config.json",
               "type": "file",
               "path": "skills/continuous-learning-v2/config.json",
-              "size": 1152,
+              "size": 1111,
               "language": "json"
             },
             {
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/continuous-learning-v2/SKILL.md",
-              "size": 9243,
+              "size": 9431,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "cost-aware-llm-pipeline",
+          "type": "folder",
+          "path": "skills/cost-aware-llm-pipeline",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/cost-aware-llm-pipeline/SKILL.md",
+              "size": 5718,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "cpp-coding-standards",
+          "type": "folder",
+          "path": "skills/cpp-coding-standards",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/cpp-coding-standards/SKILL.md",
+              "size": 22279,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "cpp-testing",
+          "type": "folder",
+          "path": "skills/cpp-testing",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/cpp-testing/SKILL.md",
+              "size": 9115,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "database-migrations",
+          "type": "folder",
+          "path": "skills/database-migrations",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/database-migrations/SKILL.md",
+              "size": 9481,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "deployment-patterns",
+          "type": "folder",
+          "path": "skills/deployment-patterns",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/deployment-patterns/SKILL.md",
+              "size": 11000,
               "language": "md"
             }
           ]
@@ -2976,7 +3922,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/django-patterns/SKILL.md",
-              "size": 21746,
+              "size": 21025,
               "language": "md"
             }
           ]
@@ -2990,7 +3936,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/django-security/SKILL.md",
-              "size": 16385,
+              "size": 15805,
               "language": "md"
             }
           ]
@@ -3004,7 +3950,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/django-tdd/SKILL.md",
-              "size": 21638,
+              "size": 20922,
               "language": "md"
             }
           ]
@@ -3018,7 +3964,35 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/django-verification/SKILL.md",
-              "size": 11585,
+              "size": 11477,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "docker-patterns",
+          "type": "folder",
+          "path": "skills/docker-patterns",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/docker-patterns/SKILL.md",
+              "size": 8251,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "e2e-testing",
+          "type": "folder",
+          "path": "skills/e2e-testing",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/e2e-testing/SKILL.md",
+              "size": 8065,
               "language": "md"
             }
           ]
@@ -3032,7 +4006,21 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/eval-harness/SKILL.md",
-              "size": 5410,
+              "size": 5515,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "foundation-models-on-device",
+          "type": "folder",
+          "path": "skills/foundation-models-on-device",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/foundation-models-on-device/SKILL.md",
+              "size": 8176,
               "language": "md"
             }
           ]
@@ -3046,7 +4034,28 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/frontend-patterns/SKILL.md",
-              "size": 14942,
+              "size": 14759,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "frontend-slides",
+          "type": "folder",
+          "path": "skills/frontend-slides",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/frontend-slides/SKILL.md",
+              "size": 6558,
+              "language": "md"
+            },
+            {
+              "name": "STYLE_PRESETS.md",
+              "type": "file",
+              "path": "skills/frontend-slides/STYLE_PRESETS.md",
+              "size": 9145,
               "language": "md"
             }
           ]
@@ -3060,7 +4069,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/golang-patterns/SKILL.md",
-              "size": 14690,
+              "size": 14029,
               "language": "md"
             }
           ]
@@ -3074,7 +4083,35 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/golang-testing/SKILL.md",
-              "size": 17345,
+              "size": 16638,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "investor-materials",
+          "type": "folder",
+          "path": "skills/investor-materials",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/investor-materials/SKILL.md",
+              "size": 2723,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "investor-outreach",
+          "type": "folder",
+          "path": "skills/investor-outreach",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/investor-outreach/SKILL.md",
+              "size": 2140,
               "language": "md"
             }
           ]
@@ -3088,7 +4125,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/iterative-retrieval/SKILL.md",
-              "size": 6490,
+              "size": 6660,
               "language": "md"
             }
           ]
@@ -3102,7 +4139,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/java-coding-standards/SKILL.md",
-              "size": 3670,
+              "size": 3856,
               "language": "md"
             }
           ]
@@ -3116,7 +4153,35 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/jpa-patterns/SKILL.md",
-              "size": 4299,
+              "size": 4548,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "liquid-glass-design",
+          "type": "folder",
+          "path": "skills/liquid-glass-design",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/liquid-glass-design/SKILL.md",
+              "size": 9045,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "market-research",
+          "type": "folder",
+          "path": "skills/market-research",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/market-research/SKILL.md",
+              "size": 2226,
               "language": "md"
             }
           ]
@@ -3130,7 +4195,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/nutrient-document-processing/SKILL.md",
-              "size": 6004,
+              "size": 5790,
               "language": "md"
             }
           ]
@@ -3144,7 +4209,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/postgres-patterns/SKILL.md",
-              "size": 3962,
+              "size": 3828,
               "language": "md"
             }
           ]
@@ -3158,7 +4223,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/project-guidelines-example/SKILL.md",
-              "size": 10011,
+              "size": 9810,
               "language": "md"
             }
           ]
@@ -3172,7 +4237,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/python-patterns/SKILL.md",
-              "size": 17485,
+              "size": 16748,
               "language": "md"
             }
           ]
@@ -3186,7 +4251,35 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/python-testing/SKILL.md",
-              "size": 19665,
+              "size": 18862,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "regex-vs-llm-structured-text",
+          "type": "folder",
+          "path": "skills/regex-vs-llm-structured-text",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/regex-vs-llm-structured-text/SKILL.md",
+              "size": 6481,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "search-first",
+          "type": "folder",
+          "path": "skills/search-first",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/search-first/SKILL.md",
+              "size": 6686,
               "language": "md"
             }
           ]
@@ -3200,14 +4293,70 @@
               "name": "cloud-infrastructure-security.md",
               "type": "file",
               "path": "skills/security-review/cloud-infrastructure-security.md",
-              "size": 10550,
+              "size": 10189,
               "language": "md"
             },
             {
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/security-review/SKILL.md",
-              "size": 12696,
+              "size": 12214,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "security-scan",
+          "type": "folder",
+          "path": "skills/security-scan",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/security-scan/SKILL.md",
+              "size": 4469,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "skill-stocktake",
+          "type": "folder",
+          "path": "skills/skill-stocktake",
+          "children": [
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "skills/skill-stocktake/scripts",
+              "children": [
+                {
+                  "name": "quick-diff.sh",
+                  "type": "file",
+                  "path": "skills/skill-stocktake/scripts/quick-diff.sh",
+                  "size": 3271,
+                  "language": "sh"
+                },
+                {
+                  "name": "save-results.sh",
+                  "type": "file",
+                  "path": "skills/skill-stocktake/scripts/save-results.sh",
+                  "size": 1952,
+                  "language": "sh"
+                },
+                {
+                  "name": "scan.sh",
+                  "type": "file",
+                  "path": "skills/skill-stocktake/scripts/scan.sh",
+                  "size": 5677,
+                  "language": "sh"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/skill-stocktake/SKILL.md",
+              "size": 7500,
               "language": "md"
             }
           ]
@@ -3221,7 +4370,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/springboot-patterns/SKILL.md",
-              "size": 9840,
+              "size": 9919,
               "language": "md"
             }
           ]
@@ -3235,7 +4384,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/springboot-security/SKILL.md",
-              "size": 3843,
+              "size": 8019,
               "language": "md"
             }
           ]
@@ -3249,7 +4398,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/springboot-tdd/SKILL.md",
-              "size": 3919,
+              "size": 3774,
               "language": "md"
             }
           ]
@@ -3263,7 +4412,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/springboot-verification/SKILL.md",
-              "size": 2113,
+              "size": 5821,
               "language": "md"
             }
           ]
@@ -3277,15 +4426,71 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/strategic-compact/SKILL.md",
-              "size": 2118,
+              "size": 4043,
               "language": "md"
             },
             {
               "name": "suggest-compact.sh",
               "type": "file",
               "path": "skills/strategic-compact/suggest-compact.sh",
-              "size": 1686,
+              "size": 1788,
               "language": "sh"
+            }
+          ]
+        },
+        {
+          "name": "swift-actor-persistence",
+          "type": "folder",
+          "path": "skills/swift-actor-persistence",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/swift-actor-persistence/SKILL.md",
+              "size": 4798,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "swift-concurrency-6-2",
+          "type": "folder",
+          "path": "skills/swift-concurrency-6-2",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/swift-concurrency-6-2/SKILL.md",
+              "size": 8010,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "swift-protocol-di-testing",
+          "type": "folder",
+          "path": "skills/swift-protocol-di-testing",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/swift-protocol-di-testing/SKILL.md",
+              "size": 6007,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "swiftui-patterns",
+          "type": "folder",
+          "path": "skills/swiftui-patterns",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/swiftui-patterns/SKILL.md",
+              "size": 6939,
+              "language": "md"
             }
           ]
         },
@@ -3298,7 +4503,7 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/tdd-workflow/SKILL.md",
-              "size": 10172,
+              "size": 9775,
               "language": "md"
             }
           ]
@@ -3312,7 +4517,28 @@
               "name": "SKILL.md",
               "type": "file",
               "path": "skills/verification-loop/SKILL.md",
-              "size": 2489,
+              "size": 2491,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "visa-doc-translate",
+          "type": "folder",
+          "path": "skills/visa-doc-translate",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "skills/visa-doc-translate/README.md",
+              "size": 1906,
+              "language": "md"
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/visa-doc-translate/SKILL.md",
+              "size": 3859,
               "language": "md"
             }
           ]
@@ -3325,15 +4551,43 @@
       "path": "tests",
       "children": [
         {
+          "name": "ci",
+          "type": "folder",
+          "path": "tests/ci",
+          "children": [
+            {
+              "name": "validators.test.js",
+              "type": "file",
+              "path": "tests/ci/validators.test.js",
+              "size": 99625,
+              "language": "js"
+            }
+          ]
+        },
+        {
           "name": "hooks",
           "type": "folder",
           "path": "tests/hooks",
           "children": [
             {
+              "name": "evaluate-session.test.js",
+              "type": "file",
+              "path": "tests/hooks/evaluate-session.test.js",
+              "size": 16730,
+              "language": "js"
+            },
+            {
               "name": "hooks.test.js",
               "type": "file",
               "path": "tests/hooks/hooks.test.js",
-              "size": 12823,
+              "size": 176391,
+              "language": "js"
+            },
+            {
+              "name": "suggest-compact.test.js",
+              "type": "file",
+              "path": "tests/hooks/suggest-compact.test.js",
+              "size": 13584,
               "language": "js"
             }
           ]
@@ -3347,7 +4601,7 @@
               "name": "hooks.test.js",
               "type": "file",
               "path": "tests/integration/hooks.test.js",
-              "size": 14464,
+              "size": 25021,
               "language": "js"
             }
           ]
@@ -3361,14 +4615,56 @@
               "name": "package-manager.test.js",
               "type": "file",
               "path": "tests/lib/package-manager.test.js",
-              "size": 11732,
+              "size": 66298,
+              "language": "js"
+            },
+            {
+              "name": "session-aliases.test.js",
+              "type": "file",
+              "path": "tests/lib/session-aliases.test.js",
+              "size": 81239,
+              "language": "js"
+            },
+            {
+              "name": "session-manager.test.js",
+              "type": "file",
+              "path": "tests/lib/session-manager.test.js",
+              "size": 127626,
               "language": "js"
             },
             {
               "name": "utils.test.js",
               "type": "file",
               "path": "tests/lib/utils.test.js",
-              "size": 10202,
+              "size": 110908,
+              "language": "js"
+            }
+          ]
+        },
+        {
+          "name": "scripts",
+          "type": "folder",
+          "path": "tests/scripts",
+          "children": [
+            {
+              "name": "claw.test.js",
+              "type": "file",
+              "path": "tests/scripts/claw.test.js",
+              "size": 9707,
+              "language": "js"
+            },
+            {
+              "name": "setup-package-manager.test.js",
+              "type": "file",
+              "path": "tests/scripts/setup-package-manager.test.js",
+              "size": 16596,
+              "language": "js"
+            },
+            {
+              "name": "skill-create-output.test.js",
+              "type": "file",
+              "path": "tests/scripts/skill-create-output.test.js",
+              "size": 23061,
               "language": "js"
             }
           ]
@@ -3377,7 +4673,7 @@
           "name": "run-all.js",
           "type": "file",
           "path": "tests/run-all.js",
-          "size": 3204,
+          "size": 2447,
           "language": "js"
         }
       ]
@@ -3386,98 +4682,126 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 352,
+      "size": 412,
       "language": "text"
     },
     {
       "name": ".markdownlint.json",
       "type": "file",
       "path": ".markdownlint.json",
-      "size": 279,
+      "size": 263,
       "language": "json"
+    },
+    {
+      "name": ".npmignore",
+      "type": "file",
+      "path": ".npmignore",
+      "size": 233,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 6094,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 2384,
+      "language": "md"
     },
     {
       "name": "commitlint.config.js",
       "type": "file",
       "path": "commitlint.config.js",
-      "size": 382,
+      "size": 371,
       "language": "js"
     },
     {
       "name": "CONTRIBUTING.md",
       "type": "file",
       "path": "CONTRIBUTING.md",
-      "size": 8825,
+      "size": 8413,
       "language": "md"
     },
     {
       "name": "eslint.config.js",
       "type": "file",
       "path": "eslint.config.js",
-      "size": 644,
+      "size": 704,
       "language": "js"
     },
     {
       "name": "install.sh",
       "type": "file",
       "path": "install.sh",
-      "size": 1534,
+      "size": 6166,
       "language": "sh"
     },
     {
-      "name": "llms.txt",
+      "name": "LICENSE",
       "type": "file",
-      "path": "llms.txt",
-      "size": 16123,
-      "language": "txt"
-    },
-    {
-      "name": "package-lock.json",
-      "type": "file",
-      "path": "package-lock.json",
-      "size": 80168,
-      "language": "json"
+      "path": "LICENSE",
+      "size": 1071,
+      "language": "text"
     },
     {
       "name": "package.json",
       "type": "file",
       "path": "package.json",
-      "size": 153,
+      "size": 2597,
       "language": "json"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 27528,
+      "size": 48434,
       "language": "md"
     },
     {
       "name": "README.zh-CN.md",
       "type": "file",
       "path": "README.zh-CN.md",
-      "size": 17030,
+      "size": 16872,
       "language": "md"
     },
     {
       "name": "SPONSORS.md",
       "type": "file",
       "path": "SPONSORS.md",
-      "size": 1391,
+      "size": 1344,
       "language": "md"
     },
     {
       "name": "the-longform-guide.md",
       "type": "file",
       "path": "the-longform-guide.md",
-      "size": 15584,
+      "size": 15197,
+      "language": "md"
+    },
+    {
+      "name": "the-openclaw-guide.md",
+      "type": "file",
+      "path": "the-openclaw-guide.md",
+      "size": 43475,
+      "language": "md"
+    },
+    {
+      "name": "the-security-guide.md",
+      "type": "file",
+      "path": "the-security-guide.md",
+      "size": 28755,
       "language": "md"
     },
     {
       "name": "the-shortform-guide.md",
       "type": "file",
       "path": "the-shortform-guide.md",
-      "size": 16458,
+      "size": 16028,
       "language": "md"
     }
   ]

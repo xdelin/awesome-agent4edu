@@ -1,6 +1,20 @@
 # Changelog
 
 
+## 0.4.4 (2026-02-26)
+
+- Solidity `erc20`, `stablecoin`, `realWorldAsset`: Support 'erc7786native' option for `crossChainBridging`. ([#747](https://github.com/OpenZeppelin/contracts-wizard/pull/747))
+
+## 0.4.3 (2026-02-17)
+
+- Cairo: added AI prompt descriptions for: ([#774](https://github.com/OpenZeppelin/contracts-wizard/pull/774))
+  - ERC6909
+  - ERC20Wrapper
+  - ERC1155Supply, ERC1155URIStorage
+  - ERC721Wrapper, ERC721URIStorage
+
+- Add support for Confidential Contracts Wizard ([#652](https://github.com/OpenZeppelin/contracts-wizard/pull/652))
+
 ## 0.4.2 (2026-01-29)
 
 - Modify tooltip descriptions regarding default implementations to fit the changes introduced with v0.6.0 ([#768](https://github.com/OpenZeppelin/contracts-wizard/pull/768))

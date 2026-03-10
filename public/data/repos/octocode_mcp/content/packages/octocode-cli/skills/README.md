@@ -136,7 +136,7 @@ All skills follow these core principles:
 1. **Local-First**: Prefer local tools over shell commands
 2. **Research Before Action**: Always gather evidence first
 3. **User Checkpoints**: Ask before major actions
-4. **TodoWrite**: Track progress with tasks
+4. **TaskCreate/TaskUpdate**: Track progress with tasks
 5. **Validation**: Green build required
 6. **No Time Estimates**: Never provide timing
 7. **Evidence Citing**: Include file paths and code references
@@ -176,7 +176,7 @@ You can opt-out at any time:
 export LOG=false
 ```
 
-For full details, please read our [Privacy Policy](../../../PRIVACY.md) and [Terms of Usage](../../../TERMS.md).
+For full details, please read our [Privacy Policy](https://github.com/bgauryy/octocode-mcp/blob/main/PRIVACY.md) and [Terms of Usage](https://github.com/bgauryy/octocode-mcp/blob/main/TERMS.md).
 
 ---
 
@@ -186,4 +186,4 @@ This project is licensed under the **MIT License**.
 
 Copyright © 2026 Octocode AI.
 
-See [LICENSE](../LICENSE) for details.
+See [LICENSE](https://github.com/bgauryy/octocode-mcp/blob/main/packages/octocode-cli/LICENSE) for details.

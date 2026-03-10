@@ -2,7 +2,11 @@ import * as http from 'http';
 import * as https from 'https';
 import * as url from 'url';
 import * as crypto from 'crypto';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as os from 'os';
 import { Logger } from './logger.js';
+import type { TokenProvider } from './linkedin-client.js';
 
 export interface OAuthConfig {
   clientId: string;
@@ -18,6 +22,8 @@ export interface OAuthTokens {
 }
 
 const AUTHORIZATION_URL = 'https://www.linkedin.com/oauth/v2/authorization';
+const TOKEN_DIR = path.join(os.homedir(), '.config', 'linkedin-mcp');
+const TOKEN_FILE = path.join(TOKEN_DIR, 'tokens.json');
 const SCOPES = [
   'openid',
   'profile',
@@ -25,7 +31,7 @@ const SCOPES = [
   'w_member_social',
 ].join(' ');
 
-export class OAuthManager {
+export class OAuthManager implements TokenProvider {
   private logger: Logger;
   private config: OAuthConfig;
   private tokenCache: OAuthTokens | null = null;
@@ -34,6 +40,10 @@ export class OAuthManager {
   constructor(config: OAuthConfig, logger: Logger = new Logger()) {
     this.logger = logger;
     this.config = config;
+    this.tokenCache = this.loadTokensFromDisk();
+    if (this.tokenCache) {
+      this.logger.info('Restored tokens from disk');
+    }
   }
 
   /**
@@ -64,11 +74,43 @@ export class OAuthManager {
   }
 
   /**
-   * Save tokens to memory
+   * Save tokens to memory and disk
    */
   private saveCachedTokens(tokens: OAuthTokens): void {
     this.tokenCache = tokens;
-    this.logger.debug('Tokens cached in memory');
+    this.saveTokensToDisk(tokens);
+    this.logger.debug('Tokens cached in memory and persisted to disk');
+  }
+
+  /**
+   * Load tokens from disk
+   */
+  private loadTokensFromDisk(): OAuthTokens | null {
+    try {
+      const data = JSON.parse(fs.readFileSync(TOKEN_FILE, 'utf-8'));
+      if (data?.accessToken && this.isTokenValid(data)) {
+        return data as OAuthTokens;
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * Persist tokens to disk with restricted permissions
+   */
+  private saveTokensToDisk(tokens: OAuthTokens | null): void {
+    try {
+      fs.mkdirSync(TOKEN_DIR, { recursive: true });
+      if (tokens) {
+        fs.writeFileSync(TOKEN_FILE, JSON.stringify(tokens), { mode: 0o600 });
+      } else {
+        try { fs.unlinkSync(TOKEN_FILE); } catch { /* ignore */ }
+      }
+    } catch (error) {
+      this.logger.warn('Failed to persist tokens to disk', error);
+    }
   }
 
   /**
@@ -430,7 +472,8 @@ export class OAuthManager {
    */
   clearTokens(): void {
     this.tokenCache = null;
-    this.logger.info('In-memory tokens cleared');
+    this.saveTokensToDisk(null);
+    this.logger.info('Tokens cleared from memory and disk');
   }
 }
 

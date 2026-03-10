@@ -3,7 +3,10 @@ import {
   BaseQuerySchema,
   createBulkQuerySchema,
 } from '../../scheme/baseSchema.js';
-import { GITHUB_VIEW_REPO_STRUCTURE, TOOL_NAMES } from '../toolMetadata.js';
+import {
+  GITHUB_VIEW_REPO_STRUCTURE,
+  TOOL_NAMES,
+} from '../toolMetadata/index.js';
 import type { PaginationInfo } from '../../types.js';
 import type { DirectoryEntry } from './types.js';
 import type { ContentDirectoryEntry } from '../../github/githubAPI.js';
@@ -29,31 +32,37 @@ export const GitHubViewRepoStructureQuerySchema = BaseQuerySchema.extend({
     .string()
     .min(1)
     .max(255)
-    .describe(GITHUB_VIEW_REPO_STRUCTURE.scope.branch),
+    .optional()
+    .describe(
+      'Branch to clone. Omit to use the repository\'s default branch (usually "main").'
+    ),
   path: z
     .string()
-    .default('')
     .optional()
+    .default('')
     .describe(GITHUB_VIEW_REPO_STRUCTURE.scope.path),
   depth: z
     .number()
+    .int()
     .min(1)
     .max(2)
-    .default(1)
     .optional()
+    .default(1)
     .describe(GITHUB_VIEW_REPO_STRUCTURE.range.depth),
   entriesPerPage: z
     .number()
+    .int()
     .min(1)
     .max(GITHUB_STRUCTURE_DEFAULTS.MAX_ENTRIES_PER_PAGE)
-    .default(GITHUB_STRUCTURE_DEFAULTS.ENTRIES_PER_PAGE)
     .optional()
+    .default(GITHUB_STRUCTURE_DEFAULTS.ENTRIES_PER_PAGE)
     .describe(GITHUB_VIEW_REPO_STRUCTURE.pagination.entriesPerPage),
   entryPageNumber: z
     .number()
+    .int()
     .min(1)
-    .default(1)
     .optional()
+    .default(1)
     .describe(GITHUB_VIEW_REPO_STRUCTURE.pagination.entryPageNumber),
 });
 
@@ -79,6 +88,8 @@ export interface GitHubRepositoryStructureResult {
   owner: string;
   repo: string;
   branch: string;
+  /** Default branch of the repository (populated when a branch fallback occurred) */
+  defaultBranch?: string;
   path: string;
   apiSource: boolean;
   summary: {

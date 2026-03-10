@@ -1,5 +1,6 @@
 {
   "name": "OpenAPI Explorer",
+  "full": true,
   "tree": [
     {
       "name": ".devcontainer",
@@ -10,36 +11,15 @@
           "name": "devcontainer.json",
           "type": "file",
           "path": ".devcontainer/devcontainer.json",
-          "size": 606,
+          "size": 583,
           "language": "json"
         },
         {
           "name": "Dockerfile",
           "type": "file",
           "path": ".devcontainer/Dockerfile",
-          "size": 73,
+          "size": 70,
           "language": "text"
-        }
-      ]
-    },
-    {
-      "name": "assets",
-      "type": "folder",
-      "path": "assets",
-      "children": [
-        {
-          "name": "logo.min.svg",
-          "type": "file",
-          "path": "assets/logo.min.svg",
-          "size": 1369,
-          "language": "svg"
-        },
-        {
-          "name": "logo.svg",
-          "type": "file",
-          "path": "assets/logo.svg",
-          "size": 6298,
-          "language": "svg"
         }
       ]
     },
@@ -52,7 +32,7 @@
           "name": "generate-version.js",
           "type": "file",
           "path": "scripts/generate-version.js",
-          "size": 1760,
+          "size": 1711,
           "language": "js"
         }
       ]
@@ -71,42 +51,42 @@
               "name": "component-detail-handler.ts",
               "type": "file",
               "path": "src/handlers/component-detail-handler.ts",
-              "size": 4711,
+              "size": 4590,
               "language": "ts"
             },
             {
               "name": "component-map-handler.ts",
               "type": "file",
               "path": "src/handlers/component-map-handler.ts",
-              "size": 3279,
+              "size": 3187,
               "language": "ts"
             },
             {
               "name": "handler-utils.ts",
               "type": "file",
               "path": "src/handlers/handler-utils.ts",
-              "size": 9568,
+              "size": 9338,
               "language": "ts"
             },
             {
               "name": "operation-handler.ts",
               "type": "file",
               "path": "src/handlers/operation-handler.ts",
-              "size": 4706,
+              "size": 4592,
               "language": "ts"
             },
             {
               "name": "path-item-handler.ts",
               "type": "file",
               "path": "src/handlers/path-item-handler.ts",
-              "size": 3495,
+              "size": 3407,
               "language": "ts"
             },
             {
               "name": "top-level-field-handler.ts",
               "type": "file",
               "path": "src/handlers/top-level-field-handler.ts",
-              "size": 3866,
+              "size": 3774,
               "language": "ts"
             }
           ]
@@ -120,42 +100,42 @@
               "name": "components.ts",
               "type": "file",
               "path": "src/rendering/components.ts",
-              "size": 9028,
+              "size": 8777,
               "language": "ts"
             },
             {
               "name": "document.ts",
               "type": "file",
               "path": "src/rendering/document.ts",
-              "size": 6130,
+              "size": 5963,
               "language": "ts"
             },
             {
               "name": "path-item.ts",
               "type": "file",
               "path": "src/rendering/path-item.ts",
-              "size": 6386,
+              "size": 6223,
               "language": "ts"
             },
             {
               "name": "paths.ts",
               "type": "file",
               "path": "src/rendering/paths.ts",
-              "size": 3300,
+              "size": 3213,
               "language": "ts"
             },
             {
               "name": "types.ts",
               "type": "file",
               "path": "src/rendering/types.ts",
-              "size": 2182,
+              "size": 2119,
               "language": "ts"
             },
             {
               "name": "utils.ts",
               "type": "file",
               "path": "src/rendering/utils.ts",
-              "size": 5713,
+              "size": 5580,
               "language": "ts"
             }
           ]
@@ -169,21 +149,21 @@
               "name": "formatters.ts",
               "type": "file",
               "path": "src/services/formatters.ts",
-              "size": 1522,
+              "size": 1451,
               "language": "ts"
             },
             {
               "name": "reference-transform.ts",
               "type": "file",
               "path": "src/services/reference-transform.ts",
-              "size": 3413,
+              "size": 3308,
               "language": "ts"
             },
             {
               "name": "spec-loader.ts",
               "type": "file",
               "path": "src/services/spec-loader.ts",
-              "size": 2869,
+              "size": 2781,
               "language": "ts"
             }
           ]
@@ -197,7 +177,7 @@
               "name": "uri-builder.ts",
               "type": "file",
               "path": "src/utils/uri-builder.ts",
-              "size": 5019,
+              "size": 4885,
               "language": "ts"
             }
           ]
@@ -206,28 +186,28 @@
           "name": "config.ts",
           "type": "file",
           "path": "src/config.ts",
-          "size": 1043,
+          "size": 1010,
           "language": "ts"
         },
         {
           "name": "index.ts",
           "type": "file",
           "path": "src/index.ts",
-          "size": 9882,
+          "size": 9641,
           "language": "ts"
         },
         {
           "name": "types.ts",
           "type": "file",
           "path": "src/types.ts",
-          "size": 559,
+          "size": 542,
           "language": "ts"
         },
         {
           "name": "version.ts",
           "type": "file",
           "path": "src/version.ts",
-          "size": 158,
+          "size": 154,
           "language": "ts"
         }
       ]
@@ -251,21 +231,21 @@
                   "name": "format.test.ts",
                   "type": "file",
                   "path": "test/__tests__/e2e/format.test.ts",
-                  "size": 10757,
+                  "size": 10532,
                   "language": "ts"
                 },
                 {
                   "name": "resources.test.ts",
                   "type": "file",
                   "path": "test/__tests__/e2e/resources.test.ts",
-                  "size": 16232,
+                  "size": 15854,
                   "language": "ts"
                 },
                 {
                   "name": "spec-loading.test.ts",
                   "type": "file",
                   "path": "test/__tests__/e2e/spec-loading.test.ts",
-                  "size": 6879,
+                  "size": 6706,
                   "language": "ts"
                 }
               ]
@@ -284,42 +264,42 @@
                       "name": "component-detail-handler.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/handlers/component-detail-handler.test.ts",
-                      "size": 9723,
+                      "size": 9476,
                       "language": "ts"
                     },
                     {
                       "name": "component-map-handler.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/handlers/component-map-handler.test.ts",
-                      "size": 7834,
+                      "size": 7640,
                       "language": "ts"
                     },
                     {
                       "name": "handler-utils.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/handlers/handler-utils.test.ts",
-                      "size": 10129,
+                      "size": 9874,
                       "language": "ts"
                     },
                     {
                       "name": "operation-handler.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/handlers/operation-handler.test.ts",
-                      "size": 8268,
+                      "size": 8060,
                       "language": "ts"
                     },
                     {
                       "name": "path-item-handler.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/handlers/path-item-handler.test.ts",
-                      "size": 6447,
+                      "size": 6286,
                       "language": "ts"
                     },
                     {
                       "name": "top-level-field-handler.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/handlers/top-level-field-handler.test.ts",
-                      "size": 7581,
+                      "size": 7397,
                       "language": "ts"
                     }
                   ]
@@ -333,28 +313,28 @@
                       "name": "components.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/rendering/components.test.ts",
-                      "size": 11756,
+                      "size": 11476,
                       "language": "ts"
                     },
                     {
                       "name": "document.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/rendering/document.test.ts",
-                      "size": 5850,
+                      "size": 5678,
                       "language": "ts"
                     },
                     {
                       "name": "path-item.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/rendering/path-item.test.ts",
-                      "size": 8149,
+                      "size": 7951,
                       "language": "ts"
                     },
                     {
                       "name": "paths.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/rendering/paths.test.ts",
-                      "size": 4260,
+                      "size": 4145,
                       "language": "ts"
                     }
                   ]
@@ -368,21 +348,21 @@
                       "name": "formatters.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/services/formatters.test.ts",
-                      "size": 3045,
+                      "size": 2936,
                       "language": "ts"
                     },
                     {
                       "name": "reference-transform.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/services/reference-transform.test.ts",
-                      "size": 9448,
+                      "size": 9128,
                       "language": "ts"
                     },
                     {
                       "name": "spec-loader.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/services/spec-loader.test.ts",
-                      "size": 9058,
+                      "size": 8844,
                       "language": "ts"
                     }
                   ]
@@ -396,7 +376,7 @@
                       "name": "uri-builder.test.ts",
                       "type": "file",
                       "path": "test/__tests__/unit/utils/uri-builder.test.ts",
-                      "size": 4982,
+                      "size": 4879,
                       "language": "ts"
                     }
                   ]
@@ -405,7 +385,7 @@
                   "name": "config.test.ts",
                   "type": "file",
                   "path": "test/__tests__/unit/config.test.ts",
-                  "size": 1372,
+                  "size": 1333,
                   "language": "ts"
                 }
               ]
@@ -421,42 +401,42 @@
               "name": "complex-endpoint.json",
               "type": "file",
               "path": "test/fixtures/complex-endpoint.json",
-              "size": 3657,
+              "size": 3511,
               "language": "json"
             },
             {
               "name": "empty-api.json",
               "type": "file",
               "path": "test/fixtures/empty-api.json",
-              "size": 114,
+              "size": 106,
               "language": "json"
             },
             {
               "name": "multi-component-types.json",
               "type": "file",
               "path": "test/fixtures/multi-component-types.json",
-              "size": 1101,
+              "size": 1046,
               "language": "json"
             },
             {
               "name": "paths-test.json",
               "type": "file",
               "path": "test/fixtures/paths-test.json",
-              "size": 1375,
+              "size": 1314,
               "language": "json"
             },
             {
               "name": "sample-api.json",
               "type": "file",
               "path": "test/fixtures/sample-api.json",
-              "size": 1481,
+              "size": 1413,
               "language": "json"
             },
             {
               "name": "sample-v2-api.json",
               "type": "file",
               "path": "test/fixtures/sample-v2-api.json",
-              "size": 889,
+              "size": 850,
               "language": "json"
             }
           ]
@@ -470,21 +450,21 @@
               "name": "console-helpers.ts",
               "type": "file",
               "path": "test/utils/console-helpers.ts",
-              "size": 1993,
+              "size": 1945,
               "language": "ts"
             },
             {
               "name": "mcp-test-helpers.ts",
               "type": "file",
               "path": "test/utils/mcp-test-helpers.ts",
-              "size": 1651,
+              "size": 1585,
               "language": "ts"
             },
             {
               "name": "test-types.ts",
               "type": "file",
               "path": "test/utils/test-types.ts",
-              "size": 1443,
+              "size": 1389,
               "language": "ts"
             }
           ]
@@ -493,7 +473,7 @@
           "name": "setup.ts",
           "type": "file",
           "path": "test/setup.ts",
-          "size": 872,
+          "size": 840,
           "language": "ts"
         }
       ]
@@ -502,119 +482,126 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 2332,
+      "size": 2193,
+      "language": "text"
+    },
+    {
+      "name": ".prettierignore",
+      "type": "file",
+      "path": ".prettierignore",
+      "size": 32,
       "language": "text"
     },
     {
       "name": ".prettierrc.json",
       "type": "file",
       "path": ".prettierrc.json",
-      "size": 240,
+      "size": 228,
       "language": "json"
     },
     {
       "name": ".releaserc.json",
       "type": "file",
       "path": ".releaserc.json",
-      "size": 847,
+      "size": 816,
       "language": "json"
     },
     {
       "name": "CHANGELOG.md",
       "type": "file",
       "path": "CHANGELOG.md",
-      "size": 8124,
+      "size": 8029,
       "language": "md"
     },
     {
       "name": "CLAUDE_CODE.md",
       "type": "file",
       "path": "CLAUDE_CODE.md",
-      "size": 8981,
+      "size": 8704,
       "language": "md"
     },
     {
       "name": "CONTRIBUTING.md",
       "type": "file",
       "path": "CONTRIBUTING.md",
-      "size": 4149,
+      "size": 4082,
       "language": "md"
     },
     {
       "name": "Dockerfile",
       "type": "file",
       "path": "Dockerfile",
-      "size": 862,
+      "size": 830,
       "language": "text"
     },
     {
       "name": "DOCKERHUB_README.md",
       "type": "file",
       "path": "DOCKERHUB_README.md",
-      "size": 5283,
+      "size": 5155,
       "language": "md"
     },
     {
       "name": "eslint.config.js",
       "type": "file",
       "path": "eslint.config.js",
-      "size": 2667,
+      "size": 2579,
       "language": "js"
     },
     {
       "name": "jest.config.js",
       "type": "file",
       "path": "jest.config.js",
-      "size": 697,
+      "size": 665,
       "language": "js"
+    },
+    {
+      "name": "justfile",
+      "type": "file",
+      "path": "justfile",
+      "size": 1296,
+      "language": "text"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1095,
+      "size": 1074,
       "language": "text"
     },
     {
       "name": "llms-install.md",
       "type": "file",
       "path": "llms-install.md",
-      "size": 9242,
+      "size": 9028,
       "language": "md"
-    },
-    {
-      "name": "package-lock.json",
-      "type": "file",
-      "path": "package-lock.json",
-      "size": 508920,
-      "language": "json"
     },
     {
       "name": "package.json",
       "type": "file",
       "path": "package.json",
-      "size": 2562,
+      "size": 2481,
       "language": "json"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 15603,
+      "size": 15302,
       "language": "md"
     },
     {
       "name": "tsconfig.json",
       "type": "file",
       "path": "tsconfig.json",
-      "size": 674,
+      "size": 649,
       "language": "json"
     },
     {
       "name": "tsconfig.test.json",
       "type": "file",
       "path": "tsconfig.test.json",
-      "size": 133,
+      "size": 128,
       "language": "json"
     }
   ]

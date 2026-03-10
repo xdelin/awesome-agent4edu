@@ -1,5 +1,6 @@
 {
   "name": "LeetCode MCP",
+  "full": true,
   "tree": [
     {
       "name": "src",
@@ -15,14 +16,14 @@
               "name": "constants.ts",
               "type": "file",
               "path": "src/common/constants.ts",
-              "size": 2591,
+              "size": 2473,
               "language": "ts"
             },
             {
               "name": "registry-base.ts",
               "type": "file",
               "path": "src/common/registry-base.ts",
-              "size": 3992,
+              "size": 3891,
               "language": "ts"
             }
           ]
@@ -46,28 +47,28 @@
                       "name": "note-queries.ts",
                       "type": "file",
                       "path": "src/leetcode/graphql/cn/note-queries.ts",
-                      "size": 2836,
+                      "size": 2721,
                       "language": "ts"
                     },
                     {
                       "name": "search-problems.ts",
                       "type": "file",
                       "path": "src/leetcode/graphql/cn/search-problems.ts",
-                      "size": 738,
+                      "size": 701,
                       "language": "ts"
                     },
                     {
                       "name": "solution-article-detail.ts",
                       "type": "file",
                       "path": "src/leetcode/graphql/cn/solution-article-detail.ts",
-                      "size": 420,
+                      "size": 394,
                       "language": "ts"
                     },
                     {
                       "name": "solution-articles.ts",
                       "type": "file",
                       "path": "src/leetcode/graphql/cn/solution-articles.ts",
-                      "size": 755,
+                      "size": 719,
                       "language": "ts"
                     }
                   ]
@@ -81,21 +82,21 @@
                       "name": "search-problems.ts",
                       "type": "file",
                       "path": "src/leetcode/graphql/global/search-problems.ts",
-                      "size": 708,
+                      "size": 673,
                       "language": "ts"
                     },
                     {
                       "name": "solution-article-detail.ts",
                       "type": "file",
                       "path": "src/leetcode/graphql/global/solution-article-detail.ts",
-                      "size": 488,
+                      "size": 461,
                       "language": "ts"
                     },
                     {
                       "name": "solution-articles.ts",
                       "type": "file",
                       "path": "src/leetcode/graphql/global/solution-articles.ts",
-                      "size": 902,
+                      "size": 857,
                       "language": "ts"
                     }
                   ]
@@ -106,28 +107,28 @@
               "name": "leetcode-base-service.ts",
               "type": "file",
               "path": "src/leetcode/leetcode-base-service.ts",
-              "size": 9949,
+              "size": 9696,
               "language": "ts"
             },
             {
               "name": "leetcode-cn-service.ts",
               "type": "file",
               "path": "src/leetcode/leetcode-cn-service.ts",
-              "size": 18585,
+              "size": 18033,
               "language": "ts"
             },
             {
               "name": "leetcode-global-service.ts",
               "type": "file",
               "path": "src/leetcode/leetcode-global-service.ts",
-              "size": 14134,
+              "size": 13718,
               "language": "ts"
             },
             {
               "name": "leetcode-service-factory.ts",
               "type": "file",
               "path": "src/leetcode/leetcode-service-factory.ts",
-              "size": 1792,
+              "size": 1750,
               "language": "ts"
             }
           ]
@@ -146,21 +147,21 @@
                   "name": "problem-resources.ts",
                   "type": "file",
                   "path": "src/mcp/resources/problem-resources.ts",
-                  "size": 5926,
+                  "size": 5782,
                   "language": "ts"
                 },
                 {
                   "name": "resource-registry.ts",
                   "type": "file",
                   "path": "src/mcp/resources/resource-registry.ts",
-                  "size": 1171,
+                  "size": 1141,
                   "language": "ts"
                 },
                 {
                   "name": "solution-resources.ts",
                   "type": "file",
                   "path": "src/mcp/resources/solution-resources.ts",
-                  "size": 5177,
+                  "size": 5053,
                   "language": "ts"
                 }
               ]
@@ -174,42 +175,42 @@
                   "name": "contest-tools.ts",
                   "type": "file",
                   "path": "src/mcp/tools/contest-tools.ts",
-                  "size": 3097,
+                  "size": 3019,
                   "language": "ts"
                 },
                 {
                   "name": "note-tools.ts",
                   "type": "file",
                   "path": "src/mcp/tools/note-tools.ts",
-                  "size": 10866,
+                  "size": 10590,
                   "language": "ts"
                 },
                 {
                   "name": "problem-tools.ts",
                   "type": "file",
                   "path": "src/mcp/tools/problem-tools.ts",
-                  "size": 5849,
+                  "size": 5699,
                   "language": "ts"
                 },
                 {
                   "name": "solution-tools.ts",
                   "type": "file",
                   "path": "src/mcp/tools/solution-tools.ts",
-                  "size": 14109,
+                  "size": 13796,
                   "language": "ts"
                 },
                 {
                   "name": "tool-registry.ts",
                   "type": "file",
                   "path": "src/mcp/tools/tool-registry.ts",
-                  "size": 1240,
+                  "size": 1209,
                   "language": "ts"
                 },
                 {
                   "name": "user-tools.ts",
                   "type": "file",
                   "path": "src/mcp/tools/user-tools.ts",
-                  "size": 20536,
+                  "size": 20029,
                   "language": "ts"
                 }
               ]
@@ -225,7 +226,7 @@
               "name": "logger.ts",
               "type": "file",
               "path": "src/utils/logger.ts",
-              "size": 323,
+              "size": 310,
               "language": "ts"
             }
           ]
@@ -234,7 +235,7 @@
           "name": "index.ts",
           "type": "file",
           "path": "src/index.ts",
-          "size": 3985,
+          "size": 3876,
           "language": "ts"
         }
       ]
@@ -253,14 +254,14 @@
               "name": "problem-services.test.ts",
               "type": "file",
               "path": "tests/services/problem-services.test.ts",
-              "size": 4508,
+              "size": 4406,
               "language": "ts"
             },
             {
               "name": "solution-services.test.ts",
               "type": "file",
               "path": "tests/services/solution-services.test.ts",
-              "size": 7155,
+              "size": 6975,
               "language": "ts"
             }
           ]
@@ -271,84 +272,77 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 1260,
+      "size": 1174,
       "language": "text"
     },
     {
       "name": "Dockerfile",
       "type": "file",
       "path": "Dockerfile",
-      "size": 848,
+      "size": 813,
       "language": "text"
     },
     {
       "name": "eslint.config.js",
       "type": "file",
       "path": "eslint.config.js",
-      "size": 1010,
+      "size": 975,
       "language": "js"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1083,
+      "size": 1062,
       "language": "text"
-    },
-    {
-      "name": "package-lock.json",
-      "type": "file",
-      "path": "package-lock.json",
-      "size": 223785,
-      "language": "json"
     },
     {
       "name": "package.json",
       "type": "file",
       "path": "package.json",
-      "size": 2186,
+      "size": 2111,
       "language": "json"
     },
     {
       "name": "prettier.config.js",
       "type": "file",
       "path": "prettier.config.js",
-      "size": 364,
+      "size": 347,
       "language": "js"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 15787,
+      "size": 15446,
       "language": "md"
     },
     {
       "name": "README_zh-CN.md",
       "type": "file",
       "path": "README_zh-CN.md",
-      "size": 14416,
+      "size": 14072,
       "language": "md"
     },
     {
       "name": "smithery.yaml",
       "type": "file",
       "path": "smithery.yaml",
-      "size": 1142,
+      "size": 1111,
       "language": "yaml"
     },
     {
       "name": "tsconfig.json",
       "type": "file",
       "path": "tsconfig.json",
-      "size": 506,
+      "size": 488,
       "language": "json"
     },
     {
       "name": "vitest.config.ts",
       "type": "file",
       "path": "vitest.config.ts",
-      "size": 200,
+      "size": 191,
       "language": "ts"
     }
   ]

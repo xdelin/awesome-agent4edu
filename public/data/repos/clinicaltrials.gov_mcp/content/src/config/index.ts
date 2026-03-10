@@ -54,16 +54,29 @@ const ConfigSchema = z.object({
         const str = emptyStringAsUndefined(val);
         if (typeof str === 'string') {
           const lower = str.toLowerCase();
+          // Normalize common aliases to RFC5424/MCP log level names
           const aliasMap: Record<string, string> = {
-            warning: 'warn',
+            warn: 'warning',
             err: 'error',
             information: 'info',
+            fatal: 'emerg',
+            trace: 'debug',
+            silent: 'emerg',
           };
           return aliasMap[lower] ?? lower;
         }
         return str;
       },
-      z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']),
+      z.enum([
+        'debug',
+        'info',
+        'notice',
+        'warning',
+        'error',
+        'crit',
+        'alert',
+        'emerg',
+      ]),
     )
     .default('debug'),
   logsPath: z.string().optional(), // Made optional as it's Node-specific
@@ -93,6 +106,10 @@ const ConfigSchema = z.object({
     emptyStringAsUndefined,
     z.enum(['stateless', 'stateful', 'auto']).default('auto'),
   ),
+  mcpResponseVerbosity: z.preprocess(
+    emptyStringAsUndefined,
+    z.enum(['minimal', 'standard', 'full']).default('standard'),
+  ),
   mcpHttpPort: z.coerce.number().default(3017),
   mcpHttpHost: z.string().default('127.0.0.1'),
   mcpHttpEndpointPath: z.string().default('/mcp'),
@@ -113,15 +130,6 @@ const ConfigSchema = z.object({
   mcpServerResourceIdentifier: z.string().url().optional(), // RFC 8707 resource indicator
   devMcpClientId: z.string().optional(),
   devMcpScopes: z.array(z.string()).optional(),
-  openrouterAppUrl: z.string().default('http://localhost:3000'),
-  openrouterAppName: z.string(),
-  openrouterApiKey: z.string().optional(),
-  llmDefaultModel: z.string().default('google/gemini-2.5-flash'),
-  llmDefaultTemperature: z.coerce.number().optional(),
-  llmDefaultTopP: z.coerce.number().optional(),
-  llmDefaultMaxTokens: z.coerce.number().optional(),
-  llmDefaultTopK: z.coerce.number().optional(),
-  llmDefaultMinP: z.coerce.number().optional(),
   oauthProxy: z
     .object({
       authorizationUrl: z.string().url().optional(),
@@ -160,13 +168,39 @@ const ConfigSchema = z.object({
           'supabase',
           'cloudflare-r2',
           'cloudflare-kv',
+          'cloudflare-d1',
         ]),
       )
       .default('in-memory'),
-    filesystemPath: z.string().default('./.storage'), // This remains, but will only be used if providerType is 'filesystem'
+    filesystemPath: z.string().default('./.storage'),
   }),
+  // Experimental: Task store configuration
+  tasks: z.object({
+    storeType: z
+      .preprocess(
+        (val) => {
+          const str = emptyStringAsUndefined(val);
+          if (typeof str === 'string') {
+            const lower = str.toLowerCase();
+            const aliasMap: Record<string, string> = {
+              mem: 'in-memory',
+              memory: 'in-memory',
+              persistent: 'storage',
+            };
+            return aliasMap[lower] ?? lower;
+          }
+          return str;
+        },
+        z.enum(['in-memory', 'storage']),
+      )
+      .default('in-memory'),
+    tenantId: z.string().default('system-tasks'),
+    defaultTtlMs: z.coerce.number().nullable().optional(),
+  }),
+  // --- Clinical Trials specific ---
   clinicalTrialsDataPath: z.string().optional(),
   maxStudiesForAnalysis: z.coerce.number().int().positive().default(5000),
+  // --- End Clinical Trials specific ---
   openTelemetry: z.object({
     enabled: z.coerce.boolean().default(false),
     serviceName: z.string(),
@@ -193,31 +227,6 @@ const ConfigSchema = z.object({
       )
       .default('INFO'),
   }),
-  speech: z
-    .object({
-      tts: z
-        .object({
-          enabled: z.coerce.boolean().default(false),
-          provider: z.enum(['elevenlabs']).default('elevenlabs'),
-          apiKey: z.string().optional(),
-          baseUrl: z.string().url().optional(),
-          defaultVoiceId: z.string().optional(),
-          defaultModelId: z.string().optional(),
-          timeout: z.coerce.number().optional(),
-        })
-        .optional(),
-      stt: z
-        .object({
-          enabled: z.coerce.boolean().default(false),
-          provider: z.enum(['openai-whisper']).default('openai-whisper'),
-          apiKey: z.string().optional(),
-          baseUrl: z.string().url().optional(),
-          defaultModelId: z.string().optional(),
-          timeout: z.coerce.number().optional(),
-        })
-        .optional(),
-    })
-    .optional(),
 });
 
 // --- Parsing Logic ---
@@ -235,6 +244,7 @@ const parseConfig = () => {
     environment: env.NODE_ENV,
     mcpTransportType: env.MCP_TRANSPORT_TYPE,
     mcpSessionMode: env.MCP_SESSION_MODE,
+    mcpResponseVerbosity: env.MCP_RESPONSE_VERBOSITY,
     mcpHttpPort: env.MCP_HTTP_PORT,
     mcpHttpHost: env.MCP_HTTP_HOST,
     mcpHttpEndpointPath: env.MCP_HTTP_ENDPOINT_PATH,
@@ -254,15 +264,6 @@ const parseConfig = () => {
     mcpServerResourceIdentifier: env.MCP_SERVER_RESOURCE_IDENTIFIER,
     devMcpClientId: env.DEV_MCP_CLIENT_ID,
     devMcpScopes: env.DEV_MCP_SCOPES?.split(',').map((s) => s.trim()),
-    openrouterAppUrl: env.OPENROUTER_APP_URL,
-    openrouterAppName: env.OPENROUTER_APP_NAME,
-    openrouterApiKey: env.OPENROUTER_API_KEY,
-    llmDefaultModel: env.LLM_DEFAULT_MODEL,
-    llmDefaultTemperature: env.LLM_DEFAULT_TEMPERATURE,
-    llmDefaultTopP: env.LLM_DEFAULT_TOP_P,
-    llmDefaultMaxTokens: env.LLM_DEFAULT_MAX_TOKENS,
-    llmDefaultTopK: env.LLM_DEFAULT_TOP_K,
-    llmDefaultMinP: env.LLM_DEFAULT_MIN_P,
     oauthProxy:
       env.OAUTH_PROXY_AUTHORIZATION_URL || env.OAUTH_PROXY_TOKEN_URL
         ? {
@@ -289,6 +290,11 @@ const parseConfig = () => {
       providerType: env.STORAGE_PROVIDER_TYPE,
       filesystemPath: env.STORAGE_FILESYSTEM_PATH,
     },
+    tasks: {
+      storeType: env.TASK_STORE_TYPE,
+      tenantId: env.TASK_STORE_TENANT_ID,
+      defaultTtlMs: env.TASK_STORE_DEFAULT_TTL_MS,
+    },
     clinicalTrialsDataPath: env.CLINICALTRIALS_DATA_PATH,
     maxStudiesForAnalysis: env.MAX_STUDIES_FOR_ANALYSIS,
     openTelemetry: {
@@ -300,32 +306,6 @@ const parseConfig = () => {
       samplingRatio: env.OTEL_TRACES_SAMPLER_ARG,
       logLevel: env.OTEL_LOG_LEVEL,
     },
-    speech:
-      env.SPEECH_TTS_ENABLED || env.SPEECH_STT_ENABLED
-        ? {
-            tts: env.SPEECH_TTS_ENABLED
-              ? {
-                  enabled: env.SPEECH_TTS_ENABLED,
-                  provider: env.SPEECH_TTS_PROVIDER,
-                  apiKey: env.SPEECH_TTS_API_KEY,
-                  baseUrl: env.SPEECH_TTS_BASE_URL,
-                  defaultVoiceId: env.SPEECH_TTS_DEFAULT_VOICE_ID,
-                  defaultModelId: env.SPEECH_TTS_DEFAULT_MODEL_ID,
-                  timeout: env.SPEECH_TTS_TIMEOUT,
-                }
-              : undefined,
-            stt: env.SPEECH_STT_ENABLED
-              ? {
-                  enabled: env.SPEECH_STT_ENABLED,
-                  provider: env.SPEECH_STT_PROVIDER,
-                  apiKey: env.SPEECH_STT_API_KEY,
-                  baseUrl: env.SPEECH_STT_BASE_URL,
-                  defaultModelId: env.SPEECH_STT_DEFAULT_MODEL_ID,
-                  timeout: env.SPEECH_STT_TIMEOUT,
-                }
-              : undefined,
-          }
-        : undefined,
     // The following fields will be derived and are not directly from env
     mcpServerName: env.MCP_SERVER_NAME,
     mcpServerVersion: env.MCP_SERVER_VERSION,
@@ -344,7 +324,18 @@ const parseConfig = () => {
   const finalRawConfig = {
     ...rawConfig,
     pkg: parsedPkg,
-    logsPath: rawConfig.logsPath ?? (hasFileSystemAccess ? 'logs' : undefined),
+    logsPath: hasFileSystemAccess
+      ? (() => {
+          // Bundled (dist/index.js) is one level deep; source (src/config/index.ts) is two.
+          // Detect bundle path to avoid overshooting the project root.
+          const depth = import.meta.url.includes('/dist/') ? '..' : '../..';
+          const p = new URL(depth, import.meta.url).pathname;
+          const root = p.endsWith('/') ? p.slice(0, -1) : p;
+          const logsDir = rawConfig.logsPath ?? 'logs';
+          if (logsDir.startsWith('/')) return logsDir;
+          return `${root}/${logsDir}`;
+        })()
+      : undefined,
     mcpServerName: env.MCP_SERVER_NAME ?? parsedPkg.name,
     mcpServerVersion: env.MCP_SERVER_VERSION ?? parsedPkg.version,
     mcpServerDescription: env.MCP_SERVER_DESCRIPTION ?? parsedPkg.description,
@@ -353,7 +344,6 @@ const parseConfig = () => {
       serviceName: env.OTEL_SERVICE_NAME ?? parsedPkg.name,
       serviceVersion: env.OTEL_SERVICE_VERSION ?? parsedPkg.version,
     },
-    openrouterAppName: env.OPENROUTER_APP_NAME ?? parsedPkg.name,
   };
 
   const parsedConfig = ConfigSchema.safeParse(finalRawConfig);

@@ -4,7 +4,7 @@ import {
   viewGitHubRepositoryStructureAPI,
   clearDefaultBranchCache,
 } from '../../src/github/fileOperations.js';
-import { getOctokit } from '../../src/github/client.js';
+import { getOctokit, resolveDefaultBranch } from '../../src/github/client.js';
 import { clearAllCache } from '../../src/utils/http/cache.js';
 import { RequestError } from 'octokit';
 import * as minifierModule from '../../src/utils/minifier/index.js';
@@ -38,6 +38,7 @@ describe('File Operations - Additional Coverage Tests', () => {
     vi.clearAllMocks();
     clearAllCache();
     clearDefaultBranchCache();
+    vi.mocked(resolveDefaultBranch).mockResolvedValue('main');
   });
 
   describe('fetchFileTimestamp coverage', () => {
@@ -429,6 +430,8 @@ describe('File Operations - Additional Coverage Tests', () => {
 
   describe('Branch fallback with path suggestions', () => {
     it('should suggest default branch when requested branch not found', async () => {
+      vi.mocked(resolveDefaultBranch).mockResolvedValue('develop');
+
       const mockOctokit = {
         rest: {
           repos: {
@@ -468,6 +471,8 @@ describe('File Operations - Additional Coverage Tests', () => {
 
   describe('viewGitHubRepositoryStructureAPI error paths', () => {
     it('should return error when path not found on any branch', async () => {
+      vi.mocked(resolveDefaultBranch).mockResolvedValue('custom-default');
+
       const mockOctokit = {
         rest: {
           repos: {
@@ -475,7 +480,7 @@ describe('File Operations - Additional Coverage Tests', () => {
               .fn()
               // Original branch - 404
               .mockRejectedValueOnce(createRequestError('Not Found', 404))
-              // Default branch - 404
+              // Default branch (custom-default) - 404
               .mockRejectedValueOnce(createRequestError('Not Found', 404))
               // main - 404
               .mockRejectedValueOnce(createRequestError('Not Found', 404))
@@ -483,9 +488,6 @@ describe('File Operations - Additional Coverage Tests', () => {
               .mockRejectedValueOnce(createRequestError('Not Found', 404))
               // develop - 404
               .mockRejectedValueOnce(createRequestError('Not Found', 404)),
-            get: vi.fn().mockResolvedValue({
-              data: { default_branch: 'custom-default' },
-            }),
           },
         },
       };
@@ -633,6 +635,141 @@ describe('File Operations - Additional Coverage Tests', () => {
       if ('error' in result) {
         expect(result.error).toContain('Failed to access');
       }
+    });
+  });
+
+  describe('viewGitHubRepositoryStructureAPI path normalization', () => {
+    it('should strip trailing slashes from path before calling GitHub API', async () => {
+      const mockOctokit = {
+        rest: {
+          repos: {
+            getContent: vi.fn().mockResolvedValue({
+              data: [
+                {
+                  name: 'core',
+                  path: 'packages/core',
+                  type: 'dir',
+                  url: 'url',
+                  html_url: 'html',
+                  git_url: 'git',
+                  sha: 'sha1',
+                },
+              ],
+            }),
+            get: vi.fn().mockResolvedValue({
+              data: { default_branch: 'main' },
+            }),
+          },
+        },
+      };
+
+      vi.mocked(getOctokit).mockResolvedValue(
+        mockOctokit as unknown as ReturnType<typeof getOctokit>
+      );
+
+      const result = await viewGitHubRepositoryStructureAPI({
+        owner: 'facebook',
+        repo: 'react',
+        branch: 'main',
+        path: 'packages/',
+      });
+
+      // Should succeed — trailing slash stripped before API call
+      expect('structure' in result).toBe(true);
+      // Verify the API was called with cleaned path (no trailing slash)
+      expect(mockOctokit.rest.repos.getContent).toHaveBeenCalledWith(
+        expect.objectContaining({
+          path: 'packages',
+        })
+      );
+    });
+
+    it('should strip both leading and trailing slashes from path', async () => {
+      const mockOctokit = {
+        rest: {
+          repos: {
+            getContent: vi.fn().mockResolvedValue({
+              data: [
+                {
+                  name: 'index.ts',
+                  path: 'src/index.ts',
+                  type: 'file',
+                  size: 100,
+                  url: 'url',
+                  html_url: 'html',
+                  git_url: 'git',
+                  sha: 'sha1',
+                },
+              ],
+            }),
+            get: vi.fn().mockResolvedValue({
+              data: { default_branch: 'main' },
+            }),
+          },
+        },
+      };
+
+      vi.mocked(getOctokit).mockResolvedValue(
+        mockOctokit as unknown as ReturnType<typeof getOctokit>
+      );
+
+      const result = await viewGitHubRepositoryStructureAPI({
+        owner: 'test',
+        repo: 'repo',
+        branch: 'main',
+        path: '/src/',
+      });
+
+      expect('structure' in result).toBe(true);
+      expect(mockOctokit.rest.repos.getContent).toHaveBeenCalledWith(
+        expect.objectContaining({
+          path: 'src',
+        })
+      );
+    });
+
+    it('should handle path with multiple trailing slashes', async () => {
+      const mockOctokit = {
+        rest: {
+          repos: {
+            getContent: vi.fn().mockResolvedValue({
+              data: [
+                {
+                  name: 'file.ts',
+                  path: 'lib/file.ts',
+                  type: 'file',
+                  size: 50,
+                  url: 'url',
+                  html_url: 'html',
+                  git_url: 'git',
+                  sha: 'sha1',
+                },
+              ],
+            }),
+            get: vi.fn().mockResolvedValue({
+              data: { default_branch: 'main' },
+            }),
+          },
+        },
+      };
+
+      vi.mocked(getOctokit).mockResolvedValue(
+        mockOctokit as unknown as ReturnType<typeof getOctokit>
+      );
+
+      const result = await viewGitHubRepositoryStructureAPI({
+        owner: 'test',
+        repo: 'repo',
+        branch: 'main',
+        path: 'lib///',
+      });
+
+      expect('structure' in result).toBe(true);
+      expect(mockOctokit.rest.repos.getContent).toHaveBeenCalledWith(
+        expect.objectContaining({
+          path: 'lib',
+        })
+      );
     });
   });
 

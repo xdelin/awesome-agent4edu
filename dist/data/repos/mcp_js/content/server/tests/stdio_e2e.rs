@@ -17,6 +17,60 @@ struct StdioServer {
 }
 
 impl StdioServer {
+    /// Send a run_js tool call and poll get_execution until complete.
+    /// Returns the completed execution info as a JSON value with fields:
+    /// execution_id, status, result, heap, error, started_at, completed_at.
+    async fn run_js_and_wait(
+        &mut self,
+        id: u64,
+        code: &str,
+        heap: Option<&str>,
+    ) -> Result<Value, Box<dyn std::error::Error>> {
+        let mut arguments = json!({ "code": code });
+        if let Some(h) = heap {
+            arguments["heap"] = json!(h);
+        }
+
+        let msg = json!({
+            "jsonrpc": "2.0",
+            "id": id,
+            "method": "tools/call",
+            "params": {
+                "name": "run_js",
+                "arguments": arguments
+            }
+        });
+
+        let response = self.send_message(msg).await?;
+        let exec_id = common::extract_execution_id(&response)
+            .ok_or("run_js response should contain execution_id")?;
+
+        // Poll get_execution until completed/failed/timed_out
+        for i in 0..120 {
+            tokio::time::sleep(Duration::from_millis(50)).await;
+            let poll_msg = json!({
+                "jsonrpc": "2.0",
+                "id": 10000 + id * 1000 + i,
+                "method": "tools/call",
+                "params": {
+                    "name": "get_execution",
+                    "arguments": { "execution_id": exec_id }
+                }
+            });
+
+            let poll_resp = self.send_message(poll_msg).await?;
+            if let Some(info) = common::extract_execution_info(&poll_resp) {
+                match info["status"].as_str() {
+                    Some("completed") | Some("failed") | Some("timed_out") | Some("cancelled") => {
+                        return Ok(info);
+                    }
+                    _ => continue,
+                }
+            }
+        }
+        Err("Execution did not complete within polling timeout".into())
+    }
+
     /// Start a new stdio MCP server for testing
     async fn start(heap_dir: &str) -> Result<Self, Box<dyn std::error::Error>> {
         let mut child = Command::new(env!("CARGO"))
@@ -141,7 +195,7 @@ async fn test_stdio_run_js_execution() -> Result<(), Box<dyn std::error::Error>>
         "method": "notifications/initialized"
     })).await?;
 
-    // Call run_js tool
+    // Call run_js tool (no heap needed for fresh session)
     let tool_call_msg = json!({
         "jsonrpc": "2.0",
         "id": 2,
@@ -149,8 +203,7 @@ async fn test_stdio_run_js_execution() -> Result<(), Box<dyn std::error::Error>>
         "params": {
             "name": "run_js",
             "arguments": {
-                "code": "1 + 1",
-                "heap": "stdio-test-heap"
+                "code": "1 + 1"
             }
         }
     });
@@ -204,43 +257,21 @@ async fn test_stdio_heap_persistence() -> Result<(), Box<dyn std::error::Error>>
         "method": "notifications/initialized"
     })).await?;
 
-    // Set a variable in the heap
-    let set_var_msg = json!({
-        "jsonrpc": "2.0",
-        "id": 2,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "var persistentValue = 42; persistentValue",
-                "heap": "persistence-test-heap"
-            }
-        }
-    });
+    // Set a variable in a fresh heap
+    let info1 = server.run_js_and_wait(2, "var persistentValue = 42; persistentValue", None).await?;
+    assert_eq!(info1["status"], "completed", "First call should succeed");
 
-    let response1 = server.send_message(set_var_msg).await?;
-    assert!(response1["result"].is_object(), "First call should succeed");
+    // Extract the content hash from the completed execution
+    let heap_hash = info1["heap"].as_str()
+        .expect("First response should contain a heap content hash");
 
-    // Read the variable from the heap in a second call
-    let read_var_msg = json!({
-        "jsonrpc": "2.0",
-        "id": 3,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "persistentValue",
-                "heap": "persistence-test-heap"
-            }
-        }
-    });
-
-    let response2 = server.send_message(read_var_msg).await?;
-    assert!(response2["result"].is_object(), "Second call should succeed");
+    // Read the variable from the heap using the content hash
+    let info2 = server.run_js_and_wait(3, "persistentValue", Some(heap_hash)).await?;
+    assert_eq!(info2["status"], "completed", "Second call should succeed");
 
     // Verify the value persisted
-    let content_str = serde_json::to_string(&response2["result"]["content"])?;
-    assert!(content_str.contains("42"), "Persisted value should be 42");
+    let result = info2["result"].as_str().unwrap_or("");
+    assert!(result.contains("42"), "Persisted value should be 42, got: {}", result);
 
     server.stop().await;
     common::cleanup_heap_dir(&heap_dir);
@@ -276,7 +307,7 @@ async fn test_stdio_invalid_javascript_error() -> Result<(), Box<dyn std::error:
         "method": "notifications/initialized"
     })).await?;
 
-    // Send invalid JavaScript
+    // Send invalid JavaScript (no heap needed for fresh session)
     let invalid_js_msg = json!({
         "jsonrpc": "2.0",
         "id": 2,
@@ -284,8 +315,7 @@ async fn test_stdio_invalid_javascript_error() -> Result<(), Box<dyn std::error:
         "params": {
             "name": "run_js",
             "arguments": {
-                "code": "this is not valid javascript!!!",
-                "heap": "error-test-heap"
+                "code": "this is not valid javascript!!!"
             }
         }
     });
@@ -342,7 +372,7 @@ async fn test_stdio_sequential_operations() -> Result<(), Box<dyn std::error::Er
         "method": "notifications/initialized"
     })).await?;
 
-    // Perform multiple sequential operations
+    // Perform multiple sequential operations, threading the content hash
     let operations = vec![
         ("var counter = 0; counter", "0"),
         ("counter = counter + 1; counter", "1"),
@@ -350,26 +380,22 @@ async fn test_stdio_sequential_operations() -> Result<(), Box<dyn std::error::Er
         ("counter = counter + 1; counter", "3"),
     ];
 
+    let mut current_heap: Option<String> = None;
+
     for (idx, (code, expected)) in operations.iter().enumerate() {
-        let msg = json!({
-            "jsonrpc": "2.0",
-            "id": idx + 2,
-            "method": "tools/call",
-            "params": {
-                "name": "run_js",
-                "arguments": {
-                    "code": code,
-                    "heap": "sequential-test-heap"
-                }
-            }
-        });
+        let info = server.run_js_and_wait(
+            (idx + 2) as u64,
+            code,
+            current_heap.as_deref(),
+        ).await?;
+        assert_eq!(info["status"], "completed", "Operation {} should succeed", idx);
 
-        let response = server.send_message(msg).await?;
-        assert!(response["result"].is_object(), "Operation {} should succeed", idx);
+        let result = info["result"].as_str().unwrap_or("");
+        assert!(result.contains(expected),
+                "Operation {} should return {}, got: {}", idx, expected, result);
 
-        let content_str = serde_json::to_string(&response["result"]["content"])?;
-        assert!(content_str.contains(expected),
-                "Operation {} should return {}, got: {}", idx, expected, content_str);
+        // Thread the content hash to the next call
+        current_heap = info["heap"].as_str().map(|s| s.to_string());
     }
 
     server.stop().await;
@@ -406,75 +432,29 @@ async fn test_stdio_multiple_heaps() -> Result<(), Box<dyn std::error::Error>> {
         "method": "notifications/initialized"
     })).await?;
 
-    // Set variable in heap A
-    let set_heap_a = json!({
-        "jsonrpc": "2.0",
-        "id": 2,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "var heapValue = 'A'; heapValue",
-                "heap": "heap-a"
-            }
-        }
-    });
+    // Set variable in heap A (fresh session)
+    let info_a = server.run_js_and_wait(2, "var heapValue = 'A'; heapValue", None).await?;
+    assert_eq!(info_a["status"], "completed");
+    let hash_a = info_a["heap"].as_str()
+        .expect("Should get content hash for heap A");
 
-    let response_a = server.send_message(set_heap_a).await?;
-    assert!(response_a["result"].is_object());
+    // Set variable in heap B (fresh session)
+    let info_b = server.run_js_and_wait(3, "var heapValue = 'B'; heapValue", None).await?;
+    assert_eq!(info_b["status"], "completed");
+    let hash_b = info_b["heap"].as_str()
+        .expect("Should get content hash for heap B");
 
-    // Set variable in heap B
-    let set_heap_b = json!({
-        "jsonrpc": "2.0",
-        "id": 3,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "var heapValue = 'B'; heapValue",
-                "heap": "heap-b"
-            }
-        }
-    });
+    // Read from heap A using its content hash - should still be 'A'
+    let verify_a = server.run_js_and_wait(4, "heapValue", Some(hash_a)).await?;
+    assert_eq!(verify_a["status"], "completed");
+    let result_a = verify_a["result"].as_str().unwrap_or("");
+    assert!(result_a.contains("A"), "Heap A should contain 'A', got: {}", result_a);
 
-    let response_b = server.send_message(set_heap_b).await?;
-    assert!(response_b["result"].is_object());
-
-    // Read from heap A - should still be 'A'
-    let read_heap_a = json!({
-        "jsonrpc": "2.0",
-        "id": 4,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "heapValue",
-                "heap": "heap-a"
-            }
-        }
-    });
-
-    let verify_a = server.send_message(read_heap_a).await?;
-    let content_a = serde_json::to_string(&verify_a["result"]["content"])?;
-    assert!(content_a.contains("A"), "Heap A should contain 'A', got: {}", content_a);
-
-    // Read from heap B - should still be 'B'
-    let read_heap_b = json!({
-        "jsonrpc": "2.0",
-        "id": 5,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "heapValue",
-                "heap": "heap-b"
-            }
-        }
-    });
-
-    let verify_b = server.send_message(read_heap_b).await?;
-    let content_b = serde_json::to_string(&verify_b["result"]["content"])?;
-    assert!(content_b.contains("B"), "Heap B should contain 'B', got: {}", content_b);
+    // Read from heap B using its content hash - should still be 'B'
+    let verify_b = server.run_js_and_wait(5, "heapValue", Some(hash_b)).await?;
+    assert_eq!(verify_b["status"], "completed");
+    let result_b = verify_b["result"].as_str().unwrap_or("");
+    assert!(result_b.contains("B"), "Heap B should contain 'B', got: {}", result_b);
 
     server.stop().await;
     common::cleanup_heap_dir(&heap_dir);
@@ -510,41 +490,17 @@ async fn test_stdio_complex_javascript() -> Result<(), Box<dyn std::error::Error
         "method": "notifications/initialized"
     })).await?;
 
-    // Test array operations
-    let array_op = json!({
-        "jsonrpc": "2.0",
-        "id": 2,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "[1, 2, 3, 4, 5].reduce((a, b) => a + b, 0)",
-                "heap": "complex-test-heap"
-            }
-        }
-    });
+    // Test array operations (fresh session)
+    let info = server.run_js_and_wait(2, "[1, 2, 3, 4, 5].reduce((a, b) => a + b, 0)", None).await?;
+    assert_eq!(info["status"], "completed");
+    let result = info["result"].as_str().unwrap_or("");
+    assert!(result.contains("15"), "Array sum should be 15, got: {}", result);
 
-    let response = server.send_message(array_op).await?;
-    let content = serde_json::to_string(&response["result"]["content"])?;
-    assert!(content.contains("15"), "Array sum should be 15");
-
-    // Test object operations
-    let object_op = json!({
-        "jsonrpc": "2.0",
-        "id": 3,
-        "method": "tools/call",
-        "params": {
-            "name": "run_js",
-            "arguments": {
-                "code": "var obj = {a: 1, b: 2, c: 3}; Object.keys(obj).length",
-                "heap": "complex-test-heap"
-            }
-        }
-    });
-
-    let response2 = server.send_message(object_op).await?;
-    let content2 = serde_json::to_string(&response2["result"]["content"])?;
-    assert!(content2.contains("3"), "Object should have 3 keys");
+    // Test object operations (fresh session)
+    let info2 = server.run_js_and_wait(3, "var obj = {a: 1, b: 2, c: 3}; Object.keys(obj).length", None).await?;
+    assert_eq!(info2["status"], "completed");
+    let result2 = info2["result"].as_str().unwrap_or("");
+    assert!(result2.contains("3"), "Object should have 3 keys, got: {}", result2);
 
     server.stop().await;
     common::cleanup_heap_dir(&heap_dir);

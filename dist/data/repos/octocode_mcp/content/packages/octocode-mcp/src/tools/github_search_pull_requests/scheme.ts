@@ -3,7 +3,10 @@ import {
   BaseQuerySchema,
   createBulkQuerySchema,
 } from '../../scheme/baseSchema.js';
-import { GITHUB_SEARCH_PULL_REQUESTS, TOOL_NAMES } from '../toolMetadata.js';
+import {
+  GITHUB_SEARCH_PULL_REQUESTS,
+  TOOL_NAMES,
+} from '../toolMetadata/index.js';
 
 const PRMatchScopeSchema = z
   .array(z.enum(['title', 'body', 'comments']))
@@ -21,7 +24,13 @@ const DateRangeSchema = z.object({
     .describe(GITHUB_SEARCH_PULL_REQUESTS.filters.updated),
 });
 
-export const GitHubPullRequestSearchQuerySchema = BaseQuerySchema.extend({
+const PR_VALIDATION_MESSAGES = {
+  QUERY_TOO_LONG: 'Query too long. Maximum 256 characters allowed.',
+  MISSING_PARAMS:
+    'At least one valid search parameter, filter, or PR number is required.',
+} as const;
+
+const GitHubPullRequestSearchBaseSchema = BaseQuerySchema.extend({
   query: z
     .string()
     .optional()
@@ -149,33 +158,34 @@ export const GitHubPullRequestSearchQuerySchema = BaseQuerySchema.extend({
     .describe(GITHUB_SEARCH_PULL_REQUESTS.sorting.order),
   limit: z
     .number()
+    .int()
     .min(1)
     .max(10)
-    .default(5)
     .optional()
+    .default(5)
     .describe(GITHUB_SEARCH_PULL_REQUESTS.resultLimit.limit),
   page: z
     .number()
     .int()
     .min(1)
     .max(10)
-    .default(1)
     .optional()
+    .default(1)
     .describe(GITHUB_SEARCH_PULL_REQUESTS.pagination.page),
   withComments: z
     .boolean()
-    .default(false)
     .optional()
+    .default(false)
     .describe(GITHUB_SEARCH_PULL_REQUESTS.outputShaping.withComments),
   withCommits: z
     .boolean()
-    .default(false)
     .optional()
+    .default(false)
     .describe(GITHUB_SEARCH_PULL_REQUESTS.outputShaping.withCommits),
   type: z
     .enum(['metadata', 'fullContent', 'partialContent'])
-    .default('metadata')
     .optional()
+    .default('metadata')
     .describe(GITHUB_SEARCH_PULL_REQUESTS.outputShaping.type),
   partialContentMetadata: z
     .array(
@@ -187,7 +197,49 @@ export const GitHubPullRequestSearchQuerySchema = BaseQuerySchema.extend({
     )
     .optional()
     .describe(GITHUB_SEARCH_PULL_REQUESTS.outputShaping.partialContentMetadata),
+
+  charOffset: z
+    .number()
+    .int()
+    .min(0)
+    .optional()
+    .describe(GITHUB_SEARCH_PULL_REQUESTS.outputLimit.charOffset),
+
+  charLength: z
+    .number()
+    .int()
+    .min(1)
+    .max(50000)
+    .optional()
+    .describe(GITHUB_SEARCH_PULL_REQUESTS.outputLimit.charLength),
 });
+
+export const GitHubPullRequestSearchQuerySchema =
+  GitHubPullRequestSearchBaseSchema.superRefine((data, ctx) => {
+    if (data.query && String(data.query).length > 256) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: PR_VALIDATION_MESSAGES.QUERY_TOO_LONG,
+        path: ['query'],
+      });
+    }
+
+    const hasValidParams =
+      data.query?.trim() ||
+      data.owner ||
+      data.repo ||
+      data.author ||
+      data.assignee ||
+      (data.prNumber && data.owner && data.repo);
+
+    if (!hasValidParams) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: PR_VALIDATION_MESSAGES.MISSING_PARAMS,
+        path: [],
+      });
+    }
+  });
 
 export const GitHubPullRequestSearchBulkQuerySchema = createBulkQuerySchema(
   TOOL_NAMES.GITHUB_SEARCH_PULL_REQUESTS,

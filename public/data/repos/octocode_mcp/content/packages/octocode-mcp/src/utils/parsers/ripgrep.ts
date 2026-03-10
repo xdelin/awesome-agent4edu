@@ -5,73 +5,9 @@ import type {
   RipgrepMatch,
   SearchStats,
 } from '../core/types.js';
+import { RipgrepJsonMessageSchema } from './schemas.js';
 
-interface RipgrepJsonMatch {
-  type: 'match';
-  data: {
-    path: { text: string };
-    lines: { text: string };
-    line_number: number;
-    absolute_offset: number;
-    submatches: Array<{
-      match: { text: string };
-      start: number;
-      end: number;
-    }>;
-  };
-}
-
-interface RipgrepJsonContext {
-  type: 'context';
-  data: {
-    path: { text: string };
-    lines: { text: string };
-    line_number: number;
-    absolute_offset: number;
-  };
-}
-
-interface RipgrepJsonBegin {
-  type: 'begin';
-  data: {
-    path: { text: string };
-  };
-}
-
-interface RipgrepJsonEnd {
-  type: 'end';
-  data: {
-    path: { text: string };
-    stats?: {
-      elapsed: { human: string };
-      searches: number;
-      searches_with_match: number;
-    };
-  };
-}
-
-interface RipgrepJsonSummary {
-  type: 'summary';
-  data: {
-    elapsed_total: { human: string };
-    stats: {
-      elapsed: { human: string };
-      searches: number;
-      searches_with_match: number;
-      bytes_searched: number;
-      bytes_printed: number;
-      matched_lines: number;
-      matches: number;
-    };
-  };
-}
-
-type RipgrepJsonMessage =
-  | RipgrepJsonMatch
-  | RipgrepJsonContext
-  | RipgrepJsonBegin
-  | RipgrepJsonEnd
-  | RipgrepJsonSummary;
+// Ripgrep JSON types are now validated via Zod schemas in ./schemas.ts
 
 export function parseRipgrepJson(
   jsonOutput: string,
@@ -107,7 +43,10 @@ export function parseRipgrepJson(
     }
 
     try {
-      const msg: RipgrepJsonMessage = JSON.parse(line);
+      const parsed = JSON.parse(line);
+      const validation = RipgrepJsonMessageSchema.safeParse(parsed);
+      if (!validation.success) continue;
+      const msg = validation.data;
 
       if (msg.type === 'match') {
         const path = msg.data.path.text;
@@ -184,7 +123,7 @@ export function parseRipgrepJson(
           if (ctx) contextLines.push(ctx);
         }
 
-        let value = contextLines.join('\n');
+        let value = contextLines.join('\n').replace(/\n+$/, '');
         const charArray = [...value];
         if (charArray.length > maxLength) {
           // Slice to maxLength - 3 to leave room for '...'
@@ -193,12 +132,6 @@ export function parseRipgrepJson(
 
         return {
           value,
-          location: {
-            byteOffset: m.absoluteOffset,
-            byteLength: m.matchLength,
-            charOffset: m.absoluteOffset,
-            charLength: m.matchLength,
-          },
           line: m.lineNumber,
           column: m.column,
         };
@@ -245,13 +178,11 @@ export function parseGrepOutput(
     }
   } else {
     for (const line of lines) {
-      const match = line.match(/^(.+?):(\d+):(.*)$/);
-      if (match) {
-        const [, matchPath, lineNumStr, matchContent] = match;
-        // These are guaranteed to be defined when the regex matches
-        const path = matchPath!;
-        const content = matchContent!;
-        const lineNumber = parseInt(lineNumStr!, 10);
+      const match = line.match(/:(\d+):/);
+      if (match?.index && match.index > 0) {
+        const path = line.substring(0, match.index);
+        const content = line.substring(match.index + match[0].length);
+        const lineNumber = parseInt(match[1]!, 10);
 
         if (!fileMap.has(path)) {
           fileMap.set(path, []);
@@ -296,7 +227,7 @@ export function parseGrepOutput(
   const files: RipgrepFileMatches[] = Array.from(fileMap.entries()).map(
     ([path, rawMatches]) => {
       const matches: RipgrepMatch[] = rawMatches.map(m => {
-        let value = m.lineText;
+        let value = m.lineText.replace(/\n+$/, '');
         const charArray = [...value];
         if (charArray.length > maxLength) {
           value = charArray.slice(0, maxLength - 3).join('') + '...';
@@ -304,13 +235,6 @@ export function parseGrepOutput(
 
         return {
           value,
-          location: {
-            // grep doesn't provide byte offsets, use 0 as placeholder
-            byteOffset: 0,
-            byteLength: 0,
-            charOffset: 0,
-            charLength: value.length,
-          },
           line: m.lineNumber,
           column: m.column,
         };

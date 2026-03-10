@@ -5,8 +5,6 @@
  * it for the Cloudflare Workers runtime with support for bindings (KV, R2, D1, AI).
  * @module src/worker
  */
-import 'reflect-metadata';
-
 import type {
   R2Bucket,
   KVNamespace,
@@ -46,7 +44,6 @@ export interface CloudflareBindings {
   ENVIRONMENT?: string;
   LOG_LEVEL?: string;
   MCP_AUTH_SECRET_KEY?: string;
-  OPENROUTER_API_KEY?: string;
   SUPABASE_URL?: string;
   SUPABASE_ANON_KEY?: string;
   SUPABASE_SERVICE_ROLE_KEY?: string;
@@ -55,10 +52,6 @@ export interface CloudflareBindings {
   OAUTH_AUDIENCE?: string;
   OAUTH_JWKS_URI?: string;
   MCP_ALLOWED_ORIGINS?: string;
-  SPEECH_TTS_ENABLED?: string;
-  SPEECH_TTS_API_KEY?: string;
-  SPEECH_STT_ENABLED?: string;
-  SPEECH_STT_API_KEY?: string;
   OTEL_ENABLED?: string;
   OTEL_EXPORTER_OTLP_TRACES_ENDPOINT?: string;
   OTEL_EXPORTER_OTLP_METRICS_ENDPOINT?: string;
@@ -89,7 +82,6 @@ function injectEnvVars(env: CloudflareBindings): void {
     ['ENVIRONMENT', 'NODE_ENV'],
     ['LOG_LEVEL', 'MCP_LOG_LEVEL'],
     ['MCP_AUTH_SECRET_KEY', 'MCP_AUTH_SECRET_KEY'],
-    ['OPENROUTER_API_KEY', 'OPENROUTER_API_KEY'],
     ['SUPABASE_URL', 'SUPABASE_URL'],
     ['SUPABASE_ANON_KEY', 'SUPABASE_ANON_KEY'],
     ['SUPABASE_SERVICE_ROLE_KEY', 'SUPABASE_SERVICE_ROLE_KEY'],
@@ -98,10 +90,6 @@ function injectEnvVars(env: CloudflareBindings): void {
     ['OAUTH_AUDIENCE', 'OAUTH_AUDIENCE'],
     ['OAUTH_JWKS_URI', 'OAUTH_JWKS_URI'],
     ['MCP_ALLOWED_ORIGINS', 'MCP_ALLOWED_ORIGINS'],
-    ['SPEECH_TTS_ENABLED', 'SPEECH_TTS_ENABLED'],
-    ['SPEECH_TTS_API_KEY', 'SPEECH_TTS_API_KEY'],
-    ['SPEECH_STT_ENABLED', 'SPEECH_STT_ENABLED'],
-    ['SPEECH_STT_API_KEY', 'SPEECH_STT_API_KEY'],
     ['OTEL_ENABLED', 'OTEL_ENABLED'],
     [
       'OTEL_EXPORTER_OTLP_TRACES_ENDPOINT',
@@ -187,14 +175,13 @@ function initializeApp(env: CloudflareBindings): Promise<Hono<WorkerEnv>> {
         storageProvider: env.STORAGE_PROVIDER_TYPE ?? 'in-memory',
       });
 
-      // Create the MCP Server instance.
-      const mcpServer = await createMcpServerInstance();
-
-      // Create the Hono application.
-      const app = createHttpApp(
-        mcpServer,
+      // Create the Hono application with server factory.
+      // Pass factory so each request gets a fresh McpServer+transport pair
+      // (SDK 1.26.0 security fix — GHSA-345p-7cg4-v4c7)
+      const app = createHttpApp<CloudflareBindings>(
+        createMcpServerInstance,
         workerContext,
-      ) as unknown as Hono<WorkerEnv>;
+      );
 
       const initDuration = Date.now() - initStartTime;
       logger.info('Cloudflare Worker initialized successfully.', {

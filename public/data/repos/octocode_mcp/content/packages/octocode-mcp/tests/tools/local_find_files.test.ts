@@ -541,6 +541,28 @@ describe('localFindFiles', () => {
       );
     });
 
+    it('should handle path not found (within workspace)', async () => {
+      mockValidate.mockReturnValue({
+        isValid: true,
+        sanitizedPath: '/workspace/nonexistent_path_xyz_123',
+      });
+      mockSafeExec.mockResolvedValue({
+        success: false,
+        code: 1,
+        stdout: '',
+        stderr:
+          '/workspace/nonexistent_path_xyz_123: No such file or directory',
+      });
+
+      const result = await findFiles({
+        path: '/workspace/nonexistent_path_xyz_123',
+        name: '*.ts',
+      });
+
+      expect(result.status).toBe('error');
+      expect(result.error).toContain('No such file or directory');
+    });
+
     it('should handle general exceptions gracefully', async () => {
       mockSafeExec.mockRejectedValue(new Error('Unexpected error'));
 
@@ -755,7 +777,6 @@ describe('localFindFiles', () => {
 
       // Should paginate large result sets
       expect(result.status).toBe('hasResults');
-      expect(result.totalFiles).toBe(50);
       const files2 = expectDefinedFiles(result);
       expect(files2.length).toBeLessThanOrEqual(10);
     });
@@ -861,7 +882,6 @@ describe('localFindFiles', () => {
       expect(result.status).toBe('hasResults');
       const filesDefaultPage = expectDefinedFiles(result);
       expect(filesDefaultPage.length).toBeLessThanOrEqual(20);
-      expect(result.totalFiles).toBe(50);
       expect(result.pagination?.totalPages).toBe(3);
       expect(result.pagination?.hasMore).toBe(true);
     });
@@ -976,7 +996,6 @@ describe('localFindFiles', () => {
       });
 
       expect(result.status).toBe('hasResults');
-      expect(result.totalFiles).toBe(30);
     });
 
     it('should sort with time-based filters', async () => {

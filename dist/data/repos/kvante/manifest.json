@@ -1,5 +1,6 @@
 {
   "name": "Kvante",
+  "full": true,
   "tree": [
     {
       "name": "backend",
@@ -20,21 +21,21 @@
                   "name": "FeedbackController.ts",
                   "type": "file",
                   "path": "backend/src/controllers/FeedbackController.ts",
-                  "size": 1612,
+                  "size": 1564,
                   "language": "ts"
                 },
                 {
                   "name": "MathController.ts",
                   "type": "file",
                   "path": "backend/src/controllers/MathController.ts",
-                  "size": 2216,
+                  "size": 2147,
                   "language": "ts"
                 },
                 {
                   "name": "OCRController.ts",
                   "type": "file",
                   "path": "backend/src/controllers/OCRController.ts",
-                  "size": 792,
+                  "size": 767,
                   "language": "ts"
                 }
               ]
@@ -48,14 +49,14 @@
                   "name": "errorHandler.ts",
                   "type": "file",
                   "path": "backend/src/middleware/errorHandler.ts",
-                  "size": 631,
+                  "size": 608,
                   "language": "ts"
                 },
                 {
                   "name": "requestLogger.ts",
                   "type": "file",
                   "path": "backend/src/middleware/requestLogger.ts",
-                  "size": 831,
+                  "size": 800,
                   "language": "ts"
                 }
               ]
@@ -69,28 +70,28 @@
                   "name": "feedbackRoutes.ts",
                   "type": "file",
                   "path": "backend/src/routes/feedbackRoutes.ts",
-                  "size": 387,
+                  "size": 377,
                   "language": "ts"
                 },
                 {
                   "name": "index.ts",
                   "type": "file",
                   "path": "backend/src/routes/index.ts",
-                  "size": 378,
+                  "size": 366,
                   "language": "ts"
                 },
                 {
                   "name": "mathRoutes.ts",
                   "type": "file",
                   "path": "backend/src/routes/mathRoutes.ts",
-                  "size": 427,
+                  "size": 416,
                   "language": "ts"
                 },
                 {
                   "name": "ocrRoutes.ts",
                   "type": "file",
                   "path": "backend/src/routes/ocrRoutes.ts",
-                  "size": 677,
+                  "size": 655,
                   "language": "ts"
                 }
               ]
@@ -104,21 +105,21 @@
                   "name": "AIService.ts",
                   "type": "file",
                   "path": "backend/src/services/AIService.ts",
-                  "size": 3610,
+                  "size": 3490,
                   "language": "ts"
                 },
                 {
                   "name": "FeedbackService.ts",
                   "type": "file",
                   "path": "backend/src/services/FeedbackService.ts",
-                  "size": 1735,
+                  "size": 1679,
                   "language": "ts"
                 },
                 {
                   "name": "OCRService.ts",
                   "type": "file",
                   "path": "backend/src/services/OCRService.ts",
-                  "size": 842,
+                  "size": 822,
                   "language": "ts"
                 }
               ]
@@ -132,14 +133,14 @@
                   "name": "feedback.ts",
                   "type": "file",
                   "path": "backend/src/types/feedback.ts",
-                  "size": 206,
+                  "size": 198,
                   "language": "ts"
                 },
                 {
                   "name": "math.ts",
                   "type": "file",
                   "path": "backend/src/types/math.ts",
-                  "size": 456,
+                  "size": 432,
                   "language": "ts"
                 }
               ]
@@ -153,7 +154,7 @@
                   "name": "PromptManager.ts",
                   "type": "file",
                   "path": "backend/src/utils/PromptManager.ts",
-                  "size": 1699,
+                  "size": 1655,
                   "language": "ts"
                 }
               ]
@@ -162,7 +163,7 @@
               "name": "server.ts",
               "type": "file",
               "path": "backend/src/server.ts",
-              "size": 837,
+              "size": 807,
               "language": "ts"
             }
           ]
@@ -171,21 +172,21 @@
           "name": ".env.example",
           "type": "file",
           "path": "backend/.env.example",
-          "size": 252,
+          "size": 243,
           "language": "example"
         },
         {
           "name": "package.json",
           "type": "file",
           "path": "backend/package.json",
-          "size": 1065,
+          "size": 1027,
           "language": "json"
         },
         {
           "name": "tsconfig.json",
           "type": "file",
           "path": "backend/tsconfig.json",
-          "size": 1359,
+          "size": 1315,
           "language": "json"
         }
       ]
@@ -209,7 +210,7 @@
                   "name": "Layout.tsx",
                   "type": "file",
                   "path": "dashboard/src/components/Layout.tsx",
-                  "size": 2028,
+                  "size": 1971,
                   "language": "tsx"
                 }
               ]
@@ -223,28 +224,28 @@
                   "name": "FeedbackAnalysisPage.tsx",
                   "type": "file",
                   "path": "dashboard/src/pages/FeedbackAnalysisPage.tsx",
-                  "size": 9617,
+                  "size": 9384,
                   "language": "tsx"
                 },
                 {
                   "name": "OverviewPage.tsx",
                   "type": "file",
                   "path": "dashboard/src/pages/OverviewPage.tsx",
-                  "size": 7173,
+                  "size": 7005,
                   "language": "tsx"
                 },
                 {
                   "name": "PerformanceMetricsPage.tsx",
                   "type": "file",
                   "path": "dashboard/src/pages/PerformanceMetricsPage.tsx",
-                  "size": 9974,
+                  "size": 9759,
                   "language": "tsx"
                 },
                 {
                   "name": "PromptTestingPage.tsx",
                   "type": "file",
                   "path": "dashboard/src/pages/PromptTestingPage.tsx",
-                  "size": 9638,
+                  "size": 9392,
                   "language": "tsx"
                 }
               ]
@@ -253,21 +254,21 @@
               "name": "App.tsx",
               "type": "file",
               "path": "dashboard/src/App.tsx",
-              "size": 794,
+              "size": 773,
               "language": "tsx"
             },
             {
               "name": "index.css",
               "type": "file",
               "path": "dashboard/src/index.css",
-              "size": 340,
+              "size": 320,
               "language": "css"
             },
             {
               "name": "main.tsx",
               "type": "file",
               "path": "dashboard/src/main.tsx",
-              "size": 694,
+              "size": 669,
               "language": "tsx"
             }
           ]
@@ -276,49 +277,49 @@
           "name": "index.html",
           "type": "file",
           "path": "dashboard/index.html",
-          "size": 405,
+          "size": 393,
           "language": "html"
         },
         {
           "name": "package.json",
           "type": "file",
           "path": "dashboard/package.json",
-          "size": 1145,
+          "size": 1106,
           "language": "json"
         },
         {
           "name": "postcss.config.js",
           "type": "file",
           "path": "dashboard/postcss.config.js",
-          "size": 84,
+          "size": 79,
           "language": "js"
         },
         {
           "name": "tailwind.config.js",
           "type": "file",
           "path": "dashboard/tailwind.config.js",
-          "size": 696,
+          "size": 662,
           "language": "js"
         },
         {
           "name": "tsconfig.json",
           "type": "file",
           "path": "dashboard/tsconfig.json",
-          "size": 723,
+          "size": 693,
           "language": "json"
         },
         {
           "name": "tsconfig.node.json",
           "type": "file",
           "path": "dashboard/tsconfig.node.json",
-          "size": 221,
+          "size": 212,
           "language": "json"
         },
         {
           "name": "vite.config.ts",
           "type": "file",
           "path": "dashboard/vite.config.ts",
-          "size": 514,
+          "size": 489,
           "language": "ts"
         }
       ]
@@ -329,10 +330,59 @@
       "path": "data",
       "children": [
         {
+          "name": "feedback",
+          "type": "folder",
+          "path": "data/feedback",
+          "children": [
+            {
+              "name": ".gitkeep",
+              "type": "file",
+              "path": "data/feedback/.gitkeep",
+              "size": 38,
+              "language": "text"
+            }
+          ]
+        },
+        {
+          "name": "problems",
+          "type": "folder",
+          "path": "data/problems",
+          "children": [
+            {
+              "name": ".gitkeep",
+              "type": "file",
+              "path": "data/problems/.gitkeep",
+              "size": 51,
+              "language": "text"
+            }
+          ]
+        },
+        {
+          "name": "sessions",
+          "type": "folder",
+          "path": "data/sessions",
+          "children": [
+            {
+              "name": ".gitkeep",
+              "type": "file",
+              "path": "data/sessions/.gitkeep",
+              "size": 37,
+              "language": "text"
+            }
+          ]
+        },
+        {
+          "name": ".gitkeep",
+          "type": "file",
+          "path": "data/.gitkeep",
+          "size": 144,
+          "language": "text"
+        },
+        {
           "name": "README.md",
           "type": "file",
           "path": "data/README.md",
-          "size": 1189,
+          "size": 1145,
           "language": "md"
         }
       ]
@@ -356,35 +406,35 @@
                   "name": "FeedbackForm.tsx",
                   "type": "file",
                   "path": "frontend/src/components/FeedbackForm.tsx",
-                  "size": 3183,
+                  "size": 3090,
                   "language": "tsx"
                 },
                 {
                   "name": "ImageUpload.tsx",
                   "type": "file",
                   "path": "frontend/src/components/ImageUpload.tsx",
-                  "size": 2754,
+                  "size": 2666,
                   "language": "tsx"
                 },
                 {
                   "name": "Layout.tsx",
                   "type": "file",
                   "path": "frontend/src/components/Layout.tsx",
-                  "size": 1281,
+                  "size": 1240,
                   "language": "tsx"
                 },
                 {
                   "name": "ProblemInput.tsx",
                   "type": "file",
                   "path": "frontend/src/components/ProblemInput.tsx",
-                  "size": 1108,
+                  "size": 1073,
                   "language": "tsx"
                 },
                 {
                   "name": "SolutionSteps.tsx",
                   "type": "file",
                   "path": "frontend/src/components/SolutionSteps.tsx",
-                  "size": 2984,
+                  "size": 2901,
                   "language": "tsx"
                 }
               ]
@@ -398,28 +448,28 @@
                   "name": "useFeedback.ts",
                   "type": "file",
                   "path": "frontend/src/hooks/useFeedback.ts",
-                  "size": 767,
+                  "size": 739,
                   "language": "ts"
                 },
                 {
                   "name": "useHint.ts",
                   "type": "file",
                   "path": "frontend/src/hooks/useHint.ts",
-                  "size": 802,
+                  "size": 772,
                   "language": "ts"
                 },
                 {
                   "name": "useMathSolver.ts",
                   "type": "file",
                   "path": "frontend/src/hooks/useMathSolver.ts",
-                  "size": 985,
+                  "size": 948,
                   "language": "ts"
                 },
                 {
                   "name": "useOCR.ts",
                   "type": "file",
                   "path": "frontend/src/hooks/useOCR.ts",
-                  "size": 724,
+                  "size": 696,
                   "language": "ts"
                 }
               ]
@@ -433,14 +483,14 @@
                   "name": "HomePage.tsx",
                   "type": "file",
                   "path": "frontend/src/pages/HomePage.tsx",
-                  "size": 2560,
+                  "size": 2500,
                   "language": "tsx"
                 },
                 {
                   "name": "ProblemSolverPage.tsx",
                   "type": "file",
                   "path": "frontend/src/pages/ProblemSolverPage.tsx",
-                  "size": 2743,
+                  "size": 2670,
                   "language": "tsx"
                 }
               ]
@@ -454,21 +504,21 @@
                   "name": "feedbackService.ts",
                   "type": "file",
                   "path": "frontend/src/services/feedbackService.ts",
-                  "size": 682,
+                  "size": 660,
                   "language": "ts"
                 },
                 {
                   "name": "mathService.ts",
                   "type": "file",
                   "path": "frontend/src/services/mathService.ts",
-                  "size": 756,
+                  "size": 732,
                   "language": "ts"
                 },
                 {
                   "name": "ocrService.ts",
                   "type": "file",
                   "path": "frontend/src/services/ocrService.ts",
-                  "size": 500,
+                  "size": 479,
                   "language": "ts"
                 }
               ]
@@ -482,14 +532,14 @@
                   "name": "feedback.ts",
                   "type": "file",
                   "path": "frontend/src/types/feedback.ts",
-                  "size": 170,
+                  "size": 164,
                   "language": "ts"
                 },
                 {
                   "name": "math.ts",
                   "type": "file",
                   "path": "frontend/src/types/math.ts",
-                  "size": 147,
+                  "size": 142,
                   "language": "ts"
                 }
               ]
@@ -498,21 +548,21 @@
               "name": "App.tsx",
               "type": "file",
               "path": "frontend/src/App.tsx",
-              "size": 492,
+              "size": 475,
               "language": "tsx"
             },
             {
               "name": "index.css",
               "type": "file",
               "path": "frontend/src/index.css",
-              "size": 698,
+              "size": 662,
               "language": "css"
             },
             {
               "name": "main.tsx",
               "type": "file",
               "path": "frontend/src/main.tsx",
-              "size": 697,
+              "size": 672,
               "language": "tsx"
             }
           ]
@@ -521,49 +571,49 @@
           "name": "index.html",
           "type": "file",
           "path": "frontend/index.html",
-          "size": 386,
+          "size": 374,
           "language": "html"
         },
         {
           "name": "package.json",
           "type": "file",
           "path": "frontend/package.json",
-          "size": 1165,
+          "size": 1126,
           "language": "json"
         },
         {
           "name": "postcss.config.js",
           "type": "file",
           "path": "frontend/postcss.config.js",
-          "size": 84,
+          "size": 79,
           "language": "js"
         },
         {
           "name": "tailwind.config.js",
           "type": "file",
           "path": "frontend/tailwind.config.js",
-          "size": 363,
+          "size": 344,
           "language": "js"
         },
         {
           "name": "tsconfig.json",
           "type": "file",
           "path": "frontend/tsconfig.json",
-          "size": 723,
+          "size": 693,
           "language": "json"
         },
         {
           "name": "tsconfig.node.json",
           "type": "file",
           "path": "frontend/tsconfig.node.json",
-          "size": 221,
+          "size": 212,
           "language": "json"
         },
         {
           "name": "vite.config.ts",
           "type": "file",
           "path": "frontend/vite.config.ts",
-          "size": 525,
+          "size": 500,
           "language": "ts"
         }
       ]
@@ -587,21 +637,21 @@
                   "name": "ImagePreprocessor.ts",
                   "type": "file",
                   "path": "ocr/src/core/ImagePreprocessor.ts",
-                  "size": 1351,
+                  "size": 1299,
                   "language": "ts"
                 },
                 {
                   "name": "OCRProcessor.ts",
                   "type": "file",
                   "path": "ocr/src/core/OCRProcessor.ts",
-                  "size": 2170,
+                  "size": 2098,
                   "language": "ts"
                 },
                 {
                   "name": "TextPostProcessor.ts",
                   "type": "file",
                   "path": "ocr/src/core/TextPostProcessor.ts",
-                  "size": 1911,
+                  "size": 1839,
                   "language": "ts"
                 }
               ]
@@ -615,7 +665,7 @@
                   "name": "ocr.ts",
                   "type": "file",
                   "path": "ocr/src/types/ocr.ts",
-                  "size": 726,
+                  "size": 691,
                   "language": "ts"
                 }
               ]
@@ -629,7 +679,7 @@
                   "name": "validation.ts",
                   "type": "file",
                   "path": "ocr/src/utils/validation.ts",
-                  "size": 1397,
+                  "size": 1353,
                   "language": "ts"
                 }
               ]
@@ -638,7 +688,7 @@
               "name": "index.ts",
               "type": "file",
               "path": "ocr/src/index.ts",
-              "size": 291,
+              "size": 287,
               "language": "ts"
             }
           ]
@@ -647,14 +697,14 @@
           "name": "package.json",
           "type": "file",
           "path": "ocr/package.json",
-          "size": 633,
+          "size": 608,
           "language": "json"
         },
         {
           "name": "tsconfig.json",
           "type": "file",
           "path": "ocr/tsconfig.json",
-          "size": 804,
+          "size": 777,
           "language": "json"
         }
       ]
@@ -673,7 +723,7 @@
               "name": "prompt-testing-framework.md",
               "type": "file",
               "path": "prompts/evaluation/prompt-testing-framework.md",
-              "size": 4771,
+              "size": 4603,
               "language": "md"
             }
           ]
@@ -687,21 +737,21 @@
               "name": "hint-generator.md",
               "type": "file",
               "path": "prompts/math/hint-generator.md",
-              "size": 2025,
+              "size": 1975,
               "language": "md"
             },
             {
               "name": "step-by-step-solver.md",
               "type": "file",
               "path": "prompts/math/step-by-step-solver.md",
-              "size": 1960,
+              "size": 1918,
               "language": "md"
             },
             {
               "name": "step-checker.md",
               "type": "file",
               "path": "prompts/math/step-checker.md",
-              "size": 2554,
+              "size": 2489,
               "language": "md"
             }
           ]
@@ -715,14 +765,14 @@
               "name": "anti-hallucination.md",
               "type": "file",
               "path": "prompts/system/anti-hallucination.md",
-              "size": 2593,
+              "size": 2527,
               "language": "md"
             },
             {
               "name": "educational-principles.md",
               "type": "file",
               "path": "prompts/system/educational-principles.md",
-              "size": 3266,
+              "size": 3174,
               "language": "md"
             }
           ]
@@ -748,7 +798,7 @@
                   "name": "problem-solving.spec.ts",
                   "type": "file",
                   "path": "tests/e2e/specs/problem-solving.spec.ts",
-                  "size": 6135,
+                  "size": 5962,
                   "language": "ts"
                 }
               ]
@@ -757,7 +807,7 @@
               "name": "playwright.config.ts",
               "type": "file",
               "path": "tests/e2e/playwright.config.ts",
-              "size": 939,
+              "size": 899,
               "language": "ts"
             }
           ]
@@ -771,14 +821,14 @@
               "name": "math-problems.json",
               "type": "file",
               "path": "tests/fixtures/math-problems.json",
-              "size": 2921,
+              "size": 2836,
               "language": "json"
             },
             {
               "name": "sample-feedback.json",
               "type": "file",
               "path": "tests/fixtures/sample-feedback.json",
-              "size": 2217,
+              "size": 2153,
               "language": "json"
             }
           ]
@@ -792,7 +842,7 @@
               "name": "api.test.ts",
               "type": "file",
               "path": "tests/integration/api.test.ts",
-              "size": 3971,
+              "size": 3846,
               "language": "ts"
             }
           ]
@@ -816,7 +866,7 @@
                       "name": "AIService.test.ts",
                       "type": "file",
                       "path": "tests/unit/backend/services/AIService.test.ts",
-                      "size": 4458,
+                      "size": 4323,
                       "language": "ts"
                     }
                   ]
@@ -832,7 +882,7 @@
                   "name": "OCRProcessor.test.ts",
                   "type": "file",
                   "path": "tests/unit/ocr/OCRProcessor.test.ts",
-                  "size": 3431,
+                  "size": 3321,
                   "language": "ts"
                 }
               ]
@@ -843,14 +893,14 @@
           "name": "jest.config.js",
           "type": "file",
           "path": "tests/jest.config.js",
-          "size": 409,
+          "size": 393,
           "language": "js"
         },
         {
           "name": "package.json",
           "type": "file",
           "path": "tests/package.json",
-          "size": 1044,
+          "size": 1007,
           "language": "json"
         }
       ]
@@ -859,35 +909,35 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 2341,
+      "size": 2198,
       "language": "text"
     },
     {
       "name": "Claude.md",
       "type": "file",
       "path": "Claude.md",
-      "size": 1663,
+      "size": 1626,
       "language": "md"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1084,
+      "size": 1063,
       "language": "text"
     },
     {
       "name": "package.json",
       "type": "file",
       "path": "package.json",
-      "size": 1098,
+      "size": 1066,
       "language": "json"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 1409,
+      "size": 1361,
       "language": "md"
     }
   ]

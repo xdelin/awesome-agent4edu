@@ -1,4 +1,4 @@
-import mariadb from "mariadb";
+import * as mariadb from "mariadb";
 import {
   Connector,
   ConnectorType,
@@ -15,6 +15,7 @@ import { SafeURL } from "../../utils/safe-url.js";
 import { obfuscateDSNPassword } from "../../utils/dsn-obfuscate.js";
 import { SQLRowLimiter } from "../../utils/sql-row-limiter.js";
 import { parseQueryResults, extractAffectedRows } from "../../utils/multi-statement-result-parser.js";
+import { splitSQLStatements } from "../../utils/sql-parser.js";
 
 /**
  * MariaDB DSN Parser
@@ -314,14 +315,15 @@ export class MariaDBConnector implements Connector {
 
       const queryParams = schema ? [schema, tableName] : [tableName];
 
-      // Get table columns
+      // Get table columns with comments
       const rows = await this.pool.query(
         `
-        SELECT 
-          COLUMN_NAME as column_name, 
-          DATA_TYPE as data_type, 
+        SELECT
+          COLUMN_NAME as column_name,
+          DATA_TYPE as data_type,
           IS_NULLABLE as is_nullable,
-          COLUMN_DEFAULT as column_default
+          COLUMN_DEFAULT as column_default,
+          COLUMN_COMMENT as description
         FROM INFORMATION_SCHEMA.COLUMNS
         ${schemaClause}
         AND TABLE_NAME = ?
@@ -330,14 +332,46 @@ export class MariaDBConnector implements Connector {
         queryParams
       ) as any[];
 
-      return rows;
+      // Normalize empty string comments to null for token-efficient output
+      return rows.map((row: any) => ({
+        ...row,
+        description: row.description || null,
+      }));
     } catch (error) {
       console.error("Error getting table schema:", error);
       throw error;
     }
   }
 
-  async getStoredProcedures(schema?: string): Promise<string[]> {
+  async getTableComment(tableName: string, schema?: string): Promise<string | null> {
+    if (!this.pool) {
+      throw new Error("Not connected to database");
+    }
+
+    try {
+      const schemaClause = schema ? "WHERE TABLE_SCHEMA = ?" : "WHERE TABLE_SCHEMA = DATABASE()";
+      const queryParams = schema ? [schema, tableName] : [tableName];
+
+      const rows = await this.pool.query(
+        `
+        SELECT TABLE_COMMENT
+        FROM INFORMATION_SCHEMA.TABLES
+        ${schemaClause}
+        AND TABLE_NAME = ?
+      `,
+        queryParams
+      ) as any[];
+
+      if (rows.length > 0) {
+        return rows[0].TABLE_COMMENT || null;
+      }
+      return null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async getStoredProcedures(schema?: string, routineType?: "procedure" | "function"): Promise<string[]> {
     if (!this.pool) {
       throw new Error("Not connected to database");
     }
@@ -348,14 +382,22 @@ export class MariaDBConnector implements Connector {
         ? "WHERE ROUTINE_SCHEMA = ?"
         : "WHERE ROUTINE_SCHEMA = DATABASE()";
 
-      const queryParams = schema ? [schema] : [];
+      const queryParams: string[] = schema ? [schema] : [];
 
-      // Get all stored procedures and functions
+      // Build optional routine type filter
+      let typeFilter = "";
+      if (routineType === "function") {
+        typeFilter = " AND ROUTINE_TYPE = 'FUNCTION'";
+      } else if (routineType === "procedure") {
+        typeFilter = " AND ROUTINE_TYPE = 'PROCEDURE'";
+      }
+
+      // Get stored procedures and/or functions
       const rows = await this.pool.query(
         `
         SELECT ROUTINE_NAME
         FROM INFORMATION_SCHEMA.ROUTINES
-        ${schemaClause}
+        ${schemaClause}${typeFilter}
         ORDER BY ROUTINE_NAME
       `,
         queryParams
@@ -510,9 +552,7 @@ export class MariaDBConnector implements Connector {
       let processedSQL = sql;
       if (options.maxRows) {
         // Handle multi-statement SQL by processing each statement individually
-        const statements = sql.split(';')
-          .map(statement => statement.trim())
-          .filter(statement => statement.length > 0);
+        const statements = splitSQLStatements(sql, "mariadb");
 
         const processedStatements = statements.map(statement =>
           SQLRowLimiter.applyMaxRows(statement, options.maxRows)

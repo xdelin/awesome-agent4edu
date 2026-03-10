@@ -1,6 +1,6 @@
 # 貢獻指南
 
-感謝您對 Claude Educational AI Skills 專案的興趣！我們歡迎各種形式的貢獻。
+感謝您對 Educational AI Skills 專案的興趣！我們歡迎各種形式的貢獻。
 
 ---
 
@@ -89,7 +89,7 @@ skills/
 
 #### 5. 更新 plugin.yaml（如需要）
 
-如果新增了新的分類，請同步更新 `.claude-plugin/plugin.yaml`。
+如果新增了新的分類，請同步更新 `plugin.yaml`。
 
 #### 6. 提交變更
 

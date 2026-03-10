@@ -5,6 +5,19 @@ import { Logger } from './logger.js';
 
 vi.mock('axios');
 
+function createMockAxiosClient() {
+  return {
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    delete: vi.fn(),
+    interceptors: {
+      request: { use: vi.fn() },
+      response: { use: vi.fn() },
+    },
+  };
+}
+
 describe('LinkedInClient', () => {
   const mockLogger = {
     debug: vi.fn(),
@@ -17,6 +30,8 @@ describe('LinkedInClient', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    const defaultMock = createMockAxiosClient();
+    vi.mocked(axios.create).mockReturnValue(defaultMock as any);
     client = new LinkedInClient('test-token', mockLogger);
   });
 
@@ -25,11 +40,17 @@ describe('LinkedInClient', () => {
       expect(axios.create).toHaveBeenCalledWith({
         baseURL: 'https://api.linkedin.com/v2',
         headers: {
-          Authorization: 'Bearer test-token',
           'Content-Type': 'application/json',
           'X-Restli-Protocol-Version': '2.0.0',
         },
       });
+    });
+
+    it('should register a request interceptor for token injection', () => {
+      const mockClient = createMockAxiosClient();
+      vi.mocked(axios.create).mockReturnValue(mockClient as any);
+      new LinkedInClient('test-token', mockLogger);
+      expect(mockClient.interceptors.request.use).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -45,9 +66,8 @@ describe('LinkedInClient', () => {
         },
       };
 
-      const mockClient = {
-        get: vi.fn().mockResolvedValue(mockResponse),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockResolvedValue(mockResponse);
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -64,9 +84,8 @@ describe('LinkedInClient', () => {
     });
 
     it('should handle errors when fetching profile', async () => {
-      const mockClient = {
-        get: vi.fn().mockRejectedValue(new Error('API Error')),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockRejectedValue(new Error('API Error'));
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -82,9 +101,8 @@ describe('LinkedInClient', () => {
         },
       };
 
-      const mockClient = {
-        get: vi.fn().mockResolvedValue(mockResponse),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockResolvedValue(mockResponse);
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -117,9 +135,8 @@ describe('LinkedInClient', () => {
         },
       };
 
-      const mockClient = {
-        get: vi.fn().mockResolvedValue(mockResponse),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockResolvedValue(mockResponse);
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -140,9 +157,8 @@ describe('LinkedInClient', () => {
     it('should handle empty posts response', async () => {
       const mockResponse = { data: {} };
 
-      const mockClient = {
-        get: vi.fn().mockResolvedValue(mockResponse),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockResolvedValue(mockResponse);
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -152,9 +168,8 @@ describe('LinkedInClient', () => {
     });
 
     it('should handle errors when fetching posts', async () => {
-      const mockClient = {
-        get: vi.fn().mockRejectedValue(new Error('API Error')),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockRejectedValue(new Error('API Error'));
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -177,9 +192,8 @@ describe('LinkedInClient', () => {
         },
       };
 
-      const mockClient = {
-        get: vi.fn().mockResolvedValue(mockResponse),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockResolvedValue(mockResponse);
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -197,9 +211,8 @@ describe('LinkedInClient', () => {
     });
 
     it('should handle errors when fetching connections', async () => {
-      const mockClient = {
-        get: vi.fn().mockRejectedValue(new Error('API Error')),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockRejectedValue(new Error('API Error'));
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -223,10 +236,9 @@ describe('LinkedInClient', () => {
         },
       };
 
-      const mockClient = {
-        get: vi.fn().mockResolvedValue(mockProfileResponse),
-        post: vi.fn().mockResolvedValue(mockPostResponse),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockResolvedValue(mockProfileResponse);
+      mockClient.post.mockResolvedValue(mockPostResponse);
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -252,10 +264,8 @@ describe('LinkedInClient', () => {
     });
 
     it('should handle errors when sharing post', async () => {
-      const mockClient = {
-        get: vi.fn().mockRejectedValue(new Error('API Error')),
-        post: vi.fn(),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockRejectedValue(new Error('API Error'));
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -278,9 +288,8 @@ describe('LinkedInClient', () => {
         },
       };
 
-      const mockClient = {
-        get: vi.fn().mockResolvedValue(mockResponse),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockResolvedValue(mockResponse);
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 
@@ -298,9 +307,8 @@ describe('LinkedInClient', () => {
     });
 
     it('should handle errors when searching people', async () => {
-      const mockClient = {
-        get: vi.fn().mockRejectedValue(new Error('API Error')),
-      };
+      const mockClient = createMockAxiosClient();
+      mockClient.get.mockRejectedValue(new Error('API Error'));
       vi.mocked(axios.create).mockReturnValue(mockClient as any);
       client = new LinkedInClient('test-token', mockLogger);
 

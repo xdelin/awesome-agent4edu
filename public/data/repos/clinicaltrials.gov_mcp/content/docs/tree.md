@@ -1,60 +1,61 @@
 # clinicaltrialsgov-mcp-server - Directory Structure
 
-Generated on: 2025-10-15 16:55:49
+Generated on: 2026-02-28 11:19:05
 
 ```
-clinicaltrialsgov-mcp-server
-├── .clinerules
-│   └── AGENTS.md
-├── .github
-│   ├── workflows
-│   │   └── publish.yml
+clinicaltrialsgov-mcp-server/
+├── .github/
+│   ├── workflows/
+│   │   ├── claude-code-review.yml
+│   │   └── claude.yml
 │   └── FUNDING.yml
-├── .husky
+├── .husky/
 │   └── pre-commit
-├── docs
-│   ├── best-practices.md
-│   └── tree.md
-├── examples
+├── docs/
+├── examples/
 │   ├── clinicaltrials_analyze_trends.md
 │   ├── clinicaltrials_get_study.md
 │   ├── clinicaltrials_search_studies.md
 │   ├── clinicaltrials-compare-studies.md
 │   └── clinicaltrials-find-eligible-studies.md
-├── scripts
+├── scripts/
 │   ├── clean.ts
 │   ├── devcheck.ts
 │   ├── devdocs.ts
 │   ├── make-executable.ts
 │   ├── tree.ts
 │   └── update-coverage.ts
-├── src
-│   ├── config
+├── src/
+│   ├── config/
 │   │   └── index.ts
-│   ├── container
-│   │   ├── registrations
+│   ├── container/
+│   │   ├── core/
+│   │   │   ├── container.ts
+│   │   │   └── tokens.ts
+│   │   ├── registrations/
 │   │   │   ├── core.ts
 │   │   │   └── mcp.ts
-│   │   ├── index.ts
-│   │   └── tokens.ts
-│   ├── mcp-server
-│   │   ├── resources
-│   │   │   ├── definitions
+│   │   └── index.ts
+│   ├── mcp-server/
+│   │   ├── resources/
+│   │   │   ├── definitions/
 │   │   │   │   ├── echo.resource.ts
 │   │   │   │   └── index.ts
-│   │   │   ├── utils
+│   │   │   ├── utils/
 │   │   │   │   ├── resourceDefinition.ts
 │   │   │   │   └── resourceHandlerFactory.ts
 │   │   │   └── resource-registration.ts
-│   │   ├── tools
-│   │   │   ├── definitions
+│   │   ├── tools/
+│   │   │   ├── definitions/
 │   │   │   │   ├── clinicaltrials-analyze-trends.tool.ts
 │   │   │   │   ├── clinicaltrials-compare-studies.tool.ts
 │   │   │   │   ├── clinicaltrials-find-eligible-studies.tool.ts
+│   │   │   │   ├── clinicaltrials-get-field-values.tool.ts
+│   │   │   │   ├── clinicaltrials-get-study-results.tool.ts
 │   │   │   │   ├── clinicaltrials-get-study.tool.ts
 │   │   │   │   ├── clinicaltrials-search-studies.tool.ts
 │   │   │   │   └── index.ts
-│   │   │   ├── utils
+│   │   │   ├── utils/
 │   │   │   │   ├── ageParser.ts
 │   │   │   │   ├── eligibilityCheckers.ts
 │   │   │   │   ├── index.ts
@@ -63,84 +64,73 @@ clinicaltrialsgov-mcp-server
 │   │   │   │   ├── toolDefinition.ts
 │   │   │   │   └── toolHandlerFactory.ts
 │   │   │   └── tool-registration.ts
-│   │   ├── transports
-│   │   │   ├── auth
-│   │   │   │   ├── lib
+│   │   ├── transports/
+│   │   │   ├── auth/
+│   │   │   │   ├── lib/
 │   │   │   │   │   ├── authContext.ts
 │   │   │   │   │   ├── authTypes.ts
 │   │   │   │   │   ├── authUtils.ts
 │   │   │   │   │   └── withAuth.ts
-│   │   │   │   ├── strategies
+│   │   │   │   ├── strategies/
 │   │   │   │   │   ├── authStrategy.ts
 │   │   │   │   │   ├── jwtStrategy.ts
 │   │   │   │   │   └── oauthStrategy.ts
 │   │   │   │   ├── authFactory.ts
 │   │   │   │   ├── authMiddleware.ts
 │   │   │   │   └── index.ts
-│   │   │   ├── http
+│   │   │   ├── http/
 │   │   │   │   ├── httpErrorHandler.ts
 │   │   │   │   ├── httpTransport.ts
 │   │   │   │   ├── httpTypes.ts
 │   │   │   │   ├── index.ts
 │   │   │   │   ├── sessionIdUtils.ts
 │   │   │   │   └── sessionStore.ts
-│   │   │   ├── stdio
+│   │   │   ├── stdio/
 │   │   │   │   ├── index.ts
 │   │   │   │   └── stdioTransport.ts
 │   │   │   ├── ITransport.ts
 │   │   │   └── manager.ts
 │   │   └── server.ts
-│   ├── services
-│   │   ├── clinical-trials-gov
-│   │   │   ├── core
-│   │   │   │   └── IClinicalTrialsProvider.ts
-│   │   │   ├── providers
-│   │   │   │   └── clinicaltrials-gov.provider.ts
-│   │   │   ├── index.ts
-│   │   │   └── types.ts
-│   │   ├── llm
-│   │   │   ├── core
-│   │   │   │   └── ILlmProvider.ts
-│   │   │   ├── providers
-│   │   │   │   └── openrouter.provider.ts
-│   │   │   ├── index.ts
-│   │   │   └── types.ts
-│   │   └── speech
-│   │       ├── core
-│   │       │   ├── ISpeechProvider.ts
-│   │       │   └── SpeechService.ts
-│   │       ├── providers
-│   │       │   ├── elevenlabs.provider.ts
-│   │       │   └── whisper.provider.ts
+│   ├── services/
+│   │   └── clinical-trials-gov/
+│   │       ├── core/
+│   │       │   └── IClinicalTrialsProvider.ts
+│   │       ├── providers/
+│   │       │   └── clinicaltrials-gov.provider.ts
 │   │       ├── index.ts
 │   │       └── types.ts
-│   ├── storage
-│   │   ├── core
+│   ├── storage/
+│   │   ├── core/
 │   │   │   ├── IStorageProvider.ts
 │   │   │   ├── storageFactory.ts
 │   │   │   ├── StorageService.ts
 │   │   │   └── storageValidation.ts
-│   │   ├── providers
-│   │   │   ├── cloudflare
+│   │   ├── providers/
+│   │   │   ├── cloudflare/
+│   │   │   │   ├── d1Provider.ts
 │   │   │   │   ├── index.ts
 │   │   │   │   ├── kvProvider.ts
 │   │   │   │   └── r2Provider.ts
-│   │   │   ├── fileSystem
+│   │   │   ├── fileSystem/
 │   │   │   │   └── fileSystemProvider.ts
-│   │   │   ├── inMemory
+│   │   │   ├── inMemory/
 │   │   │   │   └── inMemoryProvider.ts
-│   │   │   └── supabase
+│   │   │   └── supabase/
 │   │   │       ├── supabase.types.ts
 │   │   │       └── supabaseProvider.ts
-│   │   └── index.ts
-│   ├── types-global
+│   │   ├── index.ts
+│   │   └── README.md
+│   ├── types-global/
 │   │   └── errors.ts
-│   ├── utils
-│   │   ├── formatting
+│   ├── utils/
+│   │   ├── formatting/
+│   │   │   ├── diffFormatter.ts
 │   │   │   ├── index.ts
-│   │   │   └── markdownBuilder.ts
-│   │   ├── internal
-│   │   │   ├── error-handler
+│   │   │   ├── markdownBuilder.ts
+│   │   │   ├── tableFormatter.ts
+│   │   │   └── treeFormatter.ts
+│   │   ├── internal/
+│   │   │   ├── error-handler/
 │   │   │   │   ├── errorHandler.ts
 │   │   │   │   ├── helpers.ts
 │   │   │   │   ├── index.ts
@@ -154,146 +144,165 @@ clinicaltrialsgov-mcp-server
 │   │   │   ├── requestContext.ts
 │   │   │   ├── runtime.ts
 │   │   │   └── startupBanner.ts
-│   │   ├── metrics
+│   │   ├── metrics/
 │   │   │   ├── index.ts
 │   │   │   ├── registry.ts
 │   │   │   └── tokenCounter.ts
-│   │   ├── network
+│   │   ├── network/
 │   │   │   ├── fetchWithTimeout.ts
 │   │   │   └── index.ts
-│   │   ├── pagination
+│   │   ├── pagination/
 │   │   │   └── index.ts
-│   │   ├── parsing
+│   │   ├── parsing/
 │   │   │   ├── csvParser.ts
 │   │   │   ├── dateParser.ts
+│   │   │   ├── frontmatterParser.ts
 │   │   │   ├── index.ts
 │   │   │   ├── jsonParser.ts
 │   │   │   ├── pdfParser.ts
 │   │   │   ├── xmlParser.ts
 │   │   │   └── yamlParser.ts
-│   │   ├── scheduling
+│   │   ├── scheduling/
 │   │   │   ├── index.ts
 │   │   │   └── scheduler.ts
-│   │   ├── security
+│   │   ├── security/
 │   │   │   ├── idGenerator.ts
 │   │   │   ├── index.ts
 │   │   │   ├── rateLimiter.ts
 │   │   │   └── sanitization.ts
-│   │   ├── telemetry
+│   │   ├── telemetry/
 │   │   │   ├── index.ts
 │   │   │   ├── instrumentation.ts
 │   │   │   ├── metrics.ts
 │   │   │   ├── semconv.ts
 │   │   │   └── trace.ts
+│   │   ├── types/
+│   │   │   ├── guards.ts
+│   │   │   └── index.ts
 │   │   └── index.ts
 │   ├── index.ts
 │   └── worker.ts
-├── tests
-│   ├── config
+├── tests/
+│   ├── config/
 │   │   ├── index.int.test.ts
 │   │   └── index.test.ts
-│   ├── container
-│   │   ├── registrations
+│   ├── conformance/
+│   │   ├── helpers/
+│   │   │   ├── assertions.ts
+│   │   │   └── server-harness.ts
+│   │   ├── lifecycle.test.ts
+│   │   ├── prompts.test.ts
+│   │   ├── protocol-init.test.ts
+│   │   ├── resources.test.ts
+│   │   └── tools.test.ts
+│   ├── container/
+│   │   ├── registrations/
 │   │   │   ├── core.test.ts
 │   │   │   └── mcp.test.ts
+│   │   ├── container.test.ts
 │   │   ├── index.test.ts
 │   │   └── tokens.test.ts
-│   ├── mcp-server
-│   │   ├── resources
-│   │   │   ├── definitions
-│   │   │   ├── utils
+│   ├── fixtures/
+│   │   └── index.ts
+│   ├── mcp-server/
+│   │   ├── resources/
+│   │   │   ├── definitions/
+│   │   │   │   ├── echo.resource.test.ts
+│   │   │   │   └── index.test.ts
+│   │   │   ├── schemas/
+│   │   │   │   ├── __snapshots__/
+│   │   │   │   ├── json-schema-compatibility.test.ts
+│   │   │   │   └── schema-snapshots.test.ts
+│   │   │   ├── utils/
 │   │   │   │   ├── resourceDefinition.test.ts
 │   │   │   │   └── resourceHandlerFactory.test.ts
 │   │   │   └── resource-registration.test.ts
-│   │   ├── tools
-│   │   │   ├── definitions
+│   │   ├── tools/
+│   │   │   ├── definitions/
 │   │   │   │   ├── clinicaltrials-analyze-trends.tool.test.ts
 │   │   │   │   ├── clinicaltrials-compare-studies.tool.test.ts
+│   │   │   │   ├── clinicaltrials-find-eligible-studies.tool.test.ts
 │   │   │   │   ├── clinicaltrials-get-study.tool.test.ts
-│   │   │   │   └── clinicaltrials-search-studies.tool.test.ts
-│   │   │   ├── utils
-│   │   │   │   ├── core
+│   │   │   │   ├── clinicaltrials-search-studies.tool.test.ts
+│   │   │   │   └── index.test.ts
+│   │   │   ├── fuzz/
+│   │   │   ├── schemas/
+│   │   │   │   ├── __snapshots__/
+│   │   │   │   │   └── schema-snapshots.test.ts.snap
+│   │   │   │   ├── json-schema-compatibility.test.ts
+│   │   │   │   ├── schema-snapshots.test.ts
+│   │   │   │   └── zod4-compatibility.test.ts
+│   │   │   ├── utils/
 │   │   │   │   ├── index.test.ts
 │   │   │   │   ├── toolDefinition.test.ts
 │   │   │   │   └── toolHandlerFactory.test.ts
 │   │   │   └── tool-registration.test.ts
-│   │   ├── transports
-│   │   │   ├── auth
-│   │   │   │   ├── lib
+│   │   ├── transports/
+│   │   │   ├── auth/
+│   │   │   │   ├── lib/
 │   │   │   │   │   ├── authContext.test.ts
 │   │   │   │   │   ├── authTypes.test.ts
 │   │   │   │   │   ├── authUtils.test.ts
 │   │   │   │   │   └── withAuth.test.ts
-│   │   │   │   ├── strategies
+│   │   │   │   ├── strategies/
 │   │   │   │   │   ├── authStrategy.test.ts
 │   │   │   │   │   ├── jwtStrategy.test.ts
 │   │   │   │   │   └── oauthStrategy.test.ts
 │   │   │   │   ├── authFactory.test.ts
 │   │   │   │   ├── authMiddleware.test.ts
 │   │   │   │   └── index.test.ts
-│   │   │   ├── http
+│   │   │   ├── http/
 │   │   │   │   ├── httpErrorHandler.test.ts
+│   │   │   │   ├── httpTransport.integration.test.ts
 │   │   │   │   ├── httpTransport.test.ts
 │   │   │   │   ├── httpTypes.test.ts
 │   │   │   │   ├── index.test.ts
 │   │   │   │   ├── sessionIdUtils.test.ts
 │   │   │   │   └── sessionStore.test.ts
-│   │   │   ├── stdio
+│   │   │   ├── stdio/
 │   │   │   │   ├── index.test.ts
 │   │   │   │   └── stdioTransport.test.ts
 │   │   │   ├── ITransport.test.ts
 │   │   │   └── manager.test.ts
-│   │   └── server.test.ts.disabled
-│   ├── mocks
-│   │   ├── handlers.ts
-│   │   └── server.ts
-│   ├── scripts
+│   │   └── server.test.ts
+│   ├── scripts/
 │   │   └── devdocs.test.ts
-│   ├── services
-│   │   ├── llm
-│   │   │   ├── core
-│   │   │   │   └── ILlmProvider.test.ts
-│   │   │   ├── providers
-│   │   │   │   ├── openrouter.provider.test.ts
-│   │   │   │   └── openrouter.provider.test.ts.disabled
-│   │   │   ├── index.test.ts
-│   │   │   └── types.test.ts
-│   │   └── speech
-│   │       ├── core
-│   │       │   ├── ISpeechProvider.test.ts
-│   │       │   └── SpeechService.test.ts
-│   │       ├── providers
-│   │       │   ├── elevenlabs.provider.test.ts
-│   │       │   └── whisper.provider.test.ts
-│   │       ├── index.test.ts
+│   ├── services/
+│   │   └── clinical-trials-gov/
+│   │       ├── providers/
+│   │       │   └── clinicaltrials-gov.provider.test.ts
 │   │       └── types.test.ts
-│   ├── storage
-│   │   ├── core
+│   ├── storage/
+│   │   ├── core/
 │   │   │   ├── IStorageProvider.test.ts
 │   │   │   ├── storageFactory.test.ts
 │   │   │   └── storageValidation.test.ts
-│   │   ├── providers
-│   │   │   ├── cloudflare
+│   │   ├── providers/
+│   │   │   ├── cloudflare/
+│   │   │   │   ├── d1Provider.test.ts
 │   │   │   │   ├── kvProvider.test.ts
 │   │   │   │   └── r2Provider.test.ts
-│   │   │   ├── fileSystem
+│   │   │   ├── fileSystem/
 │   │   │   │   └── fileSystemProvider.test.ts
-│   │   │   ├── inMemory
+│   │   │   ├── inMemory/
 │   │   │   │   └── inMemoryProvider.test.ts
-│   │   │   └── supabase
+│   │   │   └── supabase/
 │   │   │       ├── supabase.types.test.ts
 │   │   │       └── supabaseProvider.test.ts
 │   │   ├── index.test.ts
 │   │   ├── storageProviderCompliance.test.ts
 │   │   └── StorageService.test.ts
-│   ├── types-global
+│   ├── types-global/
 │   │   └── errors.test.ts
-│   ├── utils
-│   │   ├── formatting
+│   ├── utils/
+│   │   ├── formatting/
+│   │   │   ├── diffFormatter.test.ts
 │   │   │   ├── index.test.ts
-│   │   │   └── markdownBuilder.test.ts
-│   │   ├── internal
-│   │   │   ├── error-handler
+│   │   │   ├── markdownBuilder.test.ts
+│   │   │   ├── tableFormatter.test.ts
+│   │   │   └── treeFormatter.test.ts
+│   │   ├── internal/
+│   │   │   ├── error-handler/
 │   │   │   │   ├── errorHandler.test.ts
 │   │   │   │   ├── helpers.test.ts
 │   │   │   │   ├── index.test.ts
@@ -304,42 +313,46 @@ clinicaltrialsgov-mcp-server
 │   │   │   ├── errorHandler.unit.test.ts
 │   │   │   ├── health.test.ts
 │   │   │   ├── logger.int.test.ts
+│   │   │   ├── logger.test.ts
 │   │   │   ├── performance.init.test.ts
 │   │   │   ├── performance.test.ts
 │   │   │   ├── requestContext.test.ts
 │   │   │   ├── runtime.test.ts
 │   │   │   └── startupBanner.test.ts
-│   │   ├── metrics
+│   │   ├── metrics/
 │   │   │   ├── index.test.ts
 │   │   │   ├── registry.test.ts
 │   │   │   └── tokenCounter.test.ts
-│   │   ├── network
+│   │   ├── network/
 │   │   │   ├── fetchWithTimeout.test.ts
 │   │   │   └── index.test.ts
-│   │   ├── pagination
+│   │   ├── pagination/
 │   │   │   └── index.test.ts
-│   │   ├── parsing
+│   │   ├── parsing/
 │   │   │   ├── csvParser.test.ts
 │   │   │   ├── dateParser.test.ts
+│   │   │   ├── frontmatterParser.test.ts
 │   │   │   ├── index.test.ts
 │   │   │   ├── jsonParser.test.ts
 │   │   │   ├── pdfParser.test.ts
 │   │   │   ├── xmlParser.test.ts
 │   │   │   └── yamlParser.test.ts
-│   │   ├── scheduling
+│   │   ├── scheduling/
 │   │   │   ├── index.test.ts
 │   │   │   └── scheduler.test.ts
-│   │   ├── security
+│   │   ├── security/
 │   │   │   ├── idGenerator.test.ts
 │   │   │   ├── index.test.ts
 │   │   │   ├── rateLimiter.test.ts
 │   │   │   └── sanitization.test.ts
-│   │   ├── telemetry
+│   │   ├── telemetry/
 │   │   │   ├── index.test.ts
 │   │   │   ├── instrumentation.test.ts
 │   │   │   ├── metrics.test.ts
 │   │   │   ├── semconv.test.ts
 │   │   │   └── trace.test.ts
+│   │   ├── types/
+│   │   │   └── guards.test.ts
 │   │   └── index.test.ts
 │   ├── index.test.ts
 │   ├── setup.ts
@@ -365,11 +378,12 @@ clinicaltrialsgov-mcp-server
 ├── server.json
 ├── smithery.yaml
 ├── tsconfig.json
-├── tsconfig.typedoc.json
-├── tsconfig.vitest.json
+├── tsconfig.scripts.json
+├── tsconfig.test.json
 ├── tsdoc.json
 ├── typedoc.json
 ├── vitest.config.ts
+├── vitest.conformance.ts
 └── wrangler.toml
 ```
 

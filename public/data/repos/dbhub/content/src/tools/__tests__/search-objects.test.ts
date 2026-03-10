@@ -187,8 +187,8 @@ describe('search_database_objects tool', () => {
 
     it('should return summary with metadata', async () => {
       const mockColumns: TableColumn[] = [
-        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
-        { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null },
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+        { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: null },
       ];
 
       vi.mocked(mockConnector.getTableSchema).mockResolvedValue(mockColumns);
@@ -215,7 +215,7 @@ describe('search_database_objects tool', () => {
 
     it('should return full details with columns and indexes', async () => {
       const mockColumns: TableColumn[] = [
-        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
       ];
 
       const mockIndexes: TableIndex[] = [
@@ -262,6 +262,168 @@ describe('search_database_objects tool', () => {
         ],
       });
     });
+
+    it('should include table comment in summary when getTableComment returns a value', async () => {
+      const mockColumns: TableColumn[] = [
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+      ];
+
+      vi.mocked(mockConnector.getTableSchema).mockResolvedValue(mockColumns);
+      vi.mocked(mockConnector.executeSQL).mockResolvedValue({ rows: [{ count: 10 }] });
+      mockConnector.getTableComment = vi.fn().mockResolvedValue('Application users');
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'table',
+          pattern: 'users',
+          detail_level: 'summary',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.data.results[0].comment).toBe('Application users');
+    });
+
+    it('should omit table comment in summary when getTableComment returns null', async () => {
+      const mockColumns: TableColumn[] = [
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+      ];
+
+      vi.mocked(mockConnector.getTableSchema).mockResolvedValue(mockColumns);
+      vi.mocked(mockConnector.executeSQL).mockResolvedValue({ rows: [{ count: 10 }] });
+      mockConnector.getTableComment = vi.fn().mockResolvedValue(null);
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'table',
+          pattern: 'users',
+          detail_level: 'summary',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.data.results[0].comment).toBeUndefined();
+    });
+
+    it('should include column descriptions in full detail when present', async () => {
+      const mockColumns: TableColumn[] = [
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+        { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: 'Full name of the user' },
+        { column_name: 'email', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: 'Unique email address' },
+      ];
+
+      const mockIndexes: TableIndex[] = [];
+
+      vi.mocked(mockConnector.getTableSchema).mockResolvedValue(mockColumns);
+      vi.mocked(mockConnector.getTableIndexes).mockResolvedValue(mockIndexes);
+      vi.mocked(mockConnector.executeSQL).mockResolvedValue({ rows: [{ count: 50 }] });
+      mockConnector.getTableComment = vi.fn().mockResolvedValue('Application users');
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'table',
+          pattern: 'users',
+          detail_level: 'full',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      const tableResult = parsed.data.results[0];
+
+      // Table comment should be present
+      expect(tableResult.comment).toBe('Application users');
+
+      // Column without description should not have the field
+      expect(tableResult.columns[0].description).toBeUndefined();
+
+      // Columns with descriptions should include them
+      expect(tableResult.columns[1].description).toBe('Full name of the user');
+      expect(tableResult.columns[2].description).toBe('Unique email address');
+    });
+  });
+
+  describe('getTableRowCount dispatch', () => {
+    beforeEach(() => {
+      vi.mocked(mockConnector.getSchemas).mockResolvedValue(['public']);
+      vi.mocked(mockConnector.getTables).mockResolvedValue(['users']);
+      vi.mocked(mockConnector.getTableSchema).mockResolvedValue([
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+      ]);
+    });
+
+    it('should use connector.getTableRowCount when implemented instead of executeSQL', async () => {
+      // Add the optional method to the mock connector
+      mockConnector.getTableRowCount = vi.fn().mockResolvedValue(42);
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'table',
+          pattern: 'users',
+          detail_level: 'summary',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.success).toBe(true);
+      expect(parsed.data.results[0]).toMatchObject({
+        name: 'users',
+        row_count: 42,
+      });
+      expect(mockConnector.getTableRowCount).toHaveBeenCalledWith('users', 'public');
+      expect(mockConnector.executeSQL).not.toHaveBeenCalled();
+    });
+
+    it('should fall back to executeSQL with COUNT(*) when connector lacks getTableRowCount', async () => {
+      // Default mock connector does not have getTableRowCount
+      delete (mockConnector as any).getTableRowCount;
+      vi.mocked(mockConnector.executeSQL).mockResolvedValue({ rows: [{ count: 99 }] });
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'table',
+          pattern: 'users',
+          detail_level: 'summary',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.success).toBe(true);
+      expect(parsed.data.results[0]).toMatchObject({
+        name: 'users',
+        row_count: 99,
+      });
+      expect(mockConnector.executeSQL).toHaveBeenCalled();
+    });
+
+    it('should return row_count null when connector.getTableRowCount returns null without falling back to executeSQL', async () => {
+      mockConnector.getTableRowCount = vi.fn().mockResolvedValue(null);
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'table',
+          pattern: 'users',
+          detail_level: 'summary',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.success).toBe(true);
+      expect(parsed.data.results[0].row_count).toBeNull();
+      expect(mockConnector.getTableRowCount).toHaveBeenCalledWith('users', 'public');
+      expect(mockConnector.executeSQL).not.toHaveBeenCalled();
+    });
   });
 
   describe('search columns', () => {
@@ -272,14 +434,14 @@ describe('search_database_objects tool', () => {
 
     it('should search columns across tables', async () => {
       const usersColumns: TableColumn[] = [
-        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
-        { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null },
-        { column_name: 'email', data_type: 'TEXT', is_nullable: 'YES', column_default: null },
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+        { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: null },
+        { column_name: 'email', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: null },
       ];
 
       const ordersColumns: TableColumn[] = [
-        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
-        { column_name: 'user_id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
+        { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+        { column_name: 'user_id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
       ];
 
       vi.mocked(mockConnector.getTableSchema).mockImplementation(async (table) => {
@@ -309,7 +471,7 @@ describe('search_database_objects tool', () => {
 
     it('should return column details in summary level', async () => {
       const columns: TableColumn[] = [
-        { column_name: 'email', data_type: 'VARCHAR(255)', is_nullable: 'YES', column_default: null },
+        { column_name: 'email', data_type: 'VARCHAR(255)', is_nullable: 'YES', column_default: null, description: null },
       ];
 
       vi.mocked(mockConnector.getTableSchema).mockResolvedValue(columns);
@@ -363,6 +525,8 @@ describe('search_database_objects tool', () => {
         'get_user',
         'get_users_by_email',
       ]);
+      // Verify routineType filter is passed to connector
+      expect(mockConnector.getStoredProcedures).toHaveBeenCalledWith('public', 'procedure');
     });
 
     it('should return procedure details in summary level', async () => {
@@ -391,6 +555,117 @@ describe('search_database_objects tool', () => {
         type: 'function',
         return_type: 'TABLE',
       });
+    });
+  });
+
+  describe('search functions', () => {
+    beforeEach(() => {
+      vi.mocked(mockConnector.getSchemas).mockResolvedValue(['public']);
+      vi.mocked(mockConnector.getStoredProcedures).mockResolvedValue([
+        'calc_total',
+        'get_user_name',
+      ]);
+    });
+
+    it('should search functions with pattern', async () => {
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'function',
+          pattern: '%',
+          detail_level: 'names',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.data.count).toBe(2);
+      expect(parsed.data.object_type).toBe('function');
+      expect(parsed.data.results.map((r: any) => r.name)).toEqual([
+        'calc_total',
+        'get_user_name',
+      ]);
+      // Verify routineType filter is passed to connector
+      expect(mockConnector.getStoredProcedures).toHaveBeenCalledWith('public', 'function');
+    });
+
+    it('should return function details in summary level', async () => {
+      vi.mocked(mockConnector.getStoredProcedureDetail).mockResolvedValue({
+        procedure_name: 'calc_total',
+        procedure_type: 'function',
+        language: 'plpgsql',
+        parameter_list: 'order_id INTEGER',
+        return_type: 'NUMERIC',
+      });
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'function',
+          pattern: 'calc_total',
+          detail_level: 'summary',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.data.results[0]).toMatchObject({
+        name: 'calc_total',
+        schema: 'public',
+        type: 'function',
+        language: 'plpgsql',
+        return_type: 'NUMERIC',
+      });
+    });
+
+    it('should return function details in full level with definition', async () => {
+      vi.mocked(mockConnector.getStoredProcedureDetail).mockResolvedValue({
+        procedure_name: 'calc_total',
+        procedure_type: 'function',
+        language: 'plpgsql',
+        parameter_list: 'order_id INTEGER',
+        return_type: 'NUMERIC',
+        definition: 'BEGIN RETURN 42; END;',
+      });
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'function',
+          pattern: 'calc_total',
+          detail_level: 'full',
+        },
+        null
+      );
+
+      const parsed = parseToolResponse(result);
+      expect(parsed.data.results[0]).toMatchObject({
+        name: 'calc_total',
+        schema: 'public',
+        type: 'function',
+        parameters: 'order_id INTEGER',
+        definition: 'BEGIN RETURN 42; END;',
+      });
+    });
+
+    it('should reject table parameter for function object type', async () => {
+      vi.mocked(mockConnector.getSchemas).mockResolvedValue(['public']);
+
+      const handler = createSearchDatabaseObjectsToolHandler();
+      const result = await handler(
+        {
+          object_type: 'function',
+          pattern: '%',
+          schema: 'public',
+          table: 'users',
+          detail_level: 'names',
+        },
+        null
+      );
+
+      expect(result.isError).toBe(true);
+      const parsed = parseToolResponse(result);
+      expect(parsed.code).toBe('INVALID_TABLE_FILTER');
     });
   });
 
@@ -491,13 +766,13 @@ describe('search_database_objects tool', () => {
 
       it('should filter columns by table when table parameter is provided', async () => {
         const usersColumns: TableColumn[] = [
-          { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
-          { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null },
+          { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+          { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: null },
         ];
 
         const ordersColumns: TableColumn[] = [
-          { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
-          { column_name: 'user_id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
+          { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+          { column_name: 'user_id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
         ];
 
         vi.mocked(mockConnector.getTableSchema).mockImplementation(async (table) => {
@@ -550,9 +825,9 @@ describe('search_database_objects tool', () => {
 
       it('should work with column pattern when table filter is applied', async () => {
         const usersColumns: TableColumn[] = [
-          { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null },
-          { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null },
-          { column_name: 'email', data_type: 'TEXT', is_nullable: 'YES', column_default: null },
+          { column_name: 'id', data_type: 'INTEGER', is_nullable: 'NO', column_default: null, description: null },
+          { column_name: 'name', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: null },
+          { column_name: 'email', data_type: 'TEXT', is_nullable: 'YES', column_default: null, description: null },
         ];
 
         vi.mocked(mockConnector.getTableSchema).mockResolvedValue(usersColumns);

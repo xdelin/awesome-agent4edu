@@ -38,10 +38,10 @@ const SPINNER = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', 
 // Helper functions
 function box(title, content, width = 60) {
   const lines = content.split('\n');
-  const top = `${BOX.topLeft}${BOX.horizontal} ${chalk.bold(chalk.cyan(title))} ${BOX.horizontal.repeat(width - title.length - 5)}${BOX.topRight}`;
-  const bottom = `${BOX.bottomLeft}${BOX.horizontal.repeat(width - 1)}${BOX.bottomRight}`;
+  const top = `${BOX.topLeft}${BOX.horizontal} ${chalk.bold(chalk.cyan(title))} ${BOX.horizontal.repeat(Math.max(0, width - title.length - 5))}${BOX.topRight}`;
+  const bottom = `${BOX.bottomLeft}${BOX.horizontal.repeat(width - 2)}${BOX.bottomRight}`;
   const middle = lines.map(line => {
-    const padding = width - 3 - stripAnsi(line).length;
+    const padding = width - 4 - stripAnsi(line).length;
     return `${BOX.vertical} ${line}${' '.repeat(Math.max(0, padding))} ${BOX.vertical}`;
   }).join('\n');
   return `${top}\n${middle}\n${bottom}`;
@@ -53,7 +53,7 @@ function stripAnsi(str) {
 }
 
 function progressBar(percent, width = 30) {
-  const filled = Math.round(width * percent / 100);
+  const filled = Math.min(width, Math.max(0, Math.round(width * percent / 100)));
   const empty = width - filled;
   const bar = chalk.green('█'.repeat(filled)) + chalk.gray('░'.repeat(empty));
   return `${bar} ${chalk.bold(percent)}%`;
@@ -91,7 +91,7 @@ class SkillCreateOutput {
     console.log('\n');
     console.log(chalk.bold(chalk.magenta('╔════════════════════════════════════════════════════════════════╗')));
     console.log(chalk.bold(chalk.magenta('║')) + chalk.bold('  🔮 ECC Skill Creator                                          ') + chalk.bold(chalk.magenta('║')));
-    console.log(chalk.bold(chalk.magenta('║')) + `     ${subtitle}${' '.repeat(Math.max(0, 55 - stripAnsi(subtitle).length))}` + chalk.bold(chalk.magenta('║')));
+    console.log(chalk.bold(chalk.magenta('║')) + `     ${subtitle}${' '.repeat(Math.max(0, 59 - stripAnsi(subtitle).length))}` + chalk.bold(chalk.magenta('║')));
     console.log(chalk.bold(chalk.magenta('╚════════════════════════════════════════════════════════════════╝')));
     console.log('');
   }
@@ -125,7 +125,7 @@ ${chalk.bold('Files Tracked:')}    ${chalk.green(data.files)}
     console.log(chalk.gray('─'.repeat(50)));
 
     patterns.forEach((pattern, i) => {
-      const confidence = pattern.confidence || 0.8;
+      const confidence = pattern.confidence ?? 0.8;
       const confidenceBar = progressBar(Math.round(confidence * 100), 15);
       console.log(`
   ${chalk.bold(chalk.yellow(`${i + 1}.`))} ${chalk.bold(pattern.name)}

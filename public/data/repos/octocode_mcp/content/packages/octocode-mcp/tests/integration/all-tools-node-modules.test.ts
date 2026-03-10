@@ -19,8 +19,14 @@ import path from 'path';
 
 const NODE_MODULES_PATH = path.resolve(process.cwd(), 'node_modules');
 
-const runRipgrep = (query: Parameters<typeof RipgrepQuerySchema.parse>[0]) =>
-  searchContentRipgrep(RipgrepQuerySchema.parse(query));
+const runRipgrep = (query: Record<string, unknown>) =>
+  searchContentRipgrep(
+    RipgrepQuerySchema.parse({
+      researchGoal: 'Test',
+      reasoning: 'Integration test',
+      ...query,
+    })
+  );
 
 type ToolResult =
   | SearchContentResult

@@ -1,34 +1,7 @@
 {
   "name": "BioThings MCP",
+  "full": true,
   "tree": [
-    {
-      "name": "images",
-      "type": "folder",
-      "path": "images",
-      "children": [
-        {
-          "name": "cursor_usage_example.jpg",
-          "type": "file",
-          "path": "images/cursor_usage_example.jpg",
-          "size": 672576,
-          "language": "jpg"
-        },
-        {
-          "name": "heales.jpg",
-          "type": "file",
-          "path": "images/heales.jpg",
-          "size": 10409,
-          "language": "jpg"
-        },
-        {
-          "name": "IBIMA.jpg",
-          "type": "file",
-          "path": "images/IBIMA.jpg",
-          "size": 32632,
-          "language": "jpg"
-        }
-      ]
-    },
     {
       "name": "src",
       "type": "folder",
@@ -43,28 +16,28 @@
               "name": "__init__.py",
               "type": "file",
               "path": "src/biothings_mcp/__init__.py",
-              "size": 61,
+              "size": 59,
               "language": "py"
             },
             {
               "name": "biothings_api.py",
               "type": "file",
               "path": "src/biothings_mcp/biothings_api.py",
-              "size": 41070,
+              "size": 40284,
               "language": "py"
             },
             {
               "name": "download_api.py",
               "type": "file",
               "path": "src/biothings_mcp/download_api.py",
-              "size": 12599,
+              "size": 12302,
               "language": "py"
             },
             {
               "name": "server.py",
               "type": "file",
               "path": "src/biothings_mcp/server.py",
-              "size": 5943,
+              "size": 5800,
               "language": "py"
             }
           ]
@@ -87,93 +60,107 @@
           "name": "test_chem_endpoint.py",
           "type": "file",
           "path": "tests/test_chem_endpoint.py",
-          "size": 4167,
+          "size": 4066,
           "language": "py"
         },
         {
           "name": "test_download_endpoint.py",
           "type": "file",
           "path": "tests/test_download_endpoint.py",
-          "size": 9327,
+          "size": 9063,
           "language": "py"
         },
         {
           "name": "test_gene_endpoint.py",
           "type": "file",
           "path": "tests/test_gene_endpoint.py",
-          "size": 6052,
+          "size": 5901,
           "language": "py"
         },
         {
           "name": "test_taxons.py",
           "type": "file",
           "path": "tests/test_taxons.py",
-          "size": 3999,
+          "size": 3896,
           "language": "py"
         },
         {
           "name": "test_variants_endpoint.py",
           "type": "file",
           "path": "tests/test_variants_endpoint.py",
-          "size": 4088,
+          "size": 3990,
           "language": "py"
         }
       ]
     },
     {
+      "name": ".env.template",
+      "type": "file",
+      "path": ".env.template",
+      "size": 65,
+      "language": "template"
+    },
+    {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 3644,
+      "size": 3469,
+      "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 5,
       "language": "text"
     },
     {
       "name": "Dockerfile",
       "type": "file",
       "path": "Dockerfile",
-      "size": 328,
+      "size": 313,
       "language": "text"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1093,
+      "size": 1072,
       "language": "text"
     },
     {
       "name": "mcp-config-remote.json",
       "type": "file",
       "path": "mcp-config-remote.json",
-      "size": 222,
+      "size": 212,
       "language": "json"
     },
     {
       "name": "mcp-config-stdio.json",
       "type": "file",
       "path": "mcp-config-stdio.json",
-      "size": 154,
+      "size": 146,
       "language": "json"
     },
     {
       "name": "mcp-config.json",
       "type": "file",
       "path": "mcp-config.json",
-      "size": 205,
+      "size": 195,
       "language": "json"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 946,
+      "size": 902,
       "language": "toml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 10192,
+      "size": 9946,
       "language": "md"
     }
   ]

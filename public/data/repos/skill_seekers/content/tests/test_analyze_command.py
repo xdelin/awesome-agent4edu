@@ -48,10 +48,10 @@ class TestAnalyzeSubcommand(unittest.TestCase):
         self.assertTrue(args.comprehensive)
         # Note: Runtime will catch this and return error code 1
 
-    def test_enhance_flag(self):
-        """Test --enhance flag parsing."""
-        args = self.parser.parse_args(["analyze", "--directory", ".", "--enhance"])
-        self.assertTrue(args.enhance)
+    def test_enhance_level_flag(self):
+        """Test --enhance-level flag parsing."""
+        args = self.parser.parse_args(["analyze", "--directory", ".", "--enhance-level", "2"])
+        self.assertEqual(args.enhance_level, 2)
 
     def test_skip_flags_passed_through(self):
         """Test that skip flags are recognized."""
@@ -173,12 +173,90 @@ class TestAnalyzePresetBehavior(unittest.TestCase):
         self.assertTrue(args.comprehensive)
         # Note: Depth transformation happens in dispatch handler
 
-    def test_enhance_flag_standalone(self):
-        """Test --enhance flag can be used without presets."""
-        args = self.parser.parse_args(["analyze", "--directory", ".", "--enhance"])
-        self.assertTrue(args.enhance)
+    def test_enhance_level_standalone(self):
+        """Test --enhance-level can be used without presets."""
+        args = self.parser.parse_args(["analyze", "--directory", ".", "--enhance-level", "3"])
+        self.assertEqual(args.enhance_level, 3)
         self.assertFalse(args.quick)
         self.assertFalse(args.comprehensive)
+
+
+class TestAnalyzeWorkflowFlags(unittest.TestCase):
+    """Test workflow and parity flags added to the analyze subcommand."""
+
+    def setUp(self):
+        """Create parser for testing."""
+        self.parser = create_parser()
+
+    def test_enhance_workflow_accepted_as_list(self):
+        """Test --enhance-workflow is accepted and stored as a list."""
+        args = self.parser.parse_args(
+            ["analyze", "--directory", ".", "--enhance-workflow", "security-focus"]
+        )
+        self.assertEqual(args.enhance_workflow, ["security-focus"])
+
+    def test_enhance_workflow_chained_twice(self):
+        """Test --enhance-workflow can be chained to produce a two-item list."""
+        args = self.parser.parse_args(
+            [
+                "analyze",
+                "--directory",
+                ".",
+                "--enhance-workflow",
+                "security-focus",
+                "--enhance-workflow",
+                "minimal",
+            ]
+        )
+        self.assertEqual(args.enhance_workflow, ["security-focus", "minimal"])
+
+    def test_enhance_stage_accepted_as_list(self):
+        """Test --enhance-stage is accepted with action=append."""
+        args = self.parser.parse_args(
+            ["analyze", "--directory", ".", "--enhance-stage", "sec:Analyze security"]
+        )
+        self.assertEqual(args.enhance_stage, ["sec:Analyze security"])
+
+    def test_var_accepted_as_list(self):
+        """Test --var is accepted with action=append (dest is 'var')."""
+        args = self.parser.parse_args(["analyze", "--directory", ".", "--var", "focus=performance"])
+        self.assertEqual(args.var, ["focus=performance"])
+
+    def test_workflow_dry_run_flag(self):
+        """Test --workflow-dry-run sets the flag."""
+        args = self.parser.parse_args(["analyze", "--directory", ".", "--workflow-dry-run"])
+        self.assertTrue(args.workflow_dry_run)
+
+    def test_api_key_stored_correctly(self):
+        """Test --api-key is stored in args."""
+        args = self.parser.parse_args(["analyze", "--directory", ".", "--api-key", "sk-ant-test"])
+        self.assertEqual(args.api_key, "sk-ant-test")
+
+    def test_dry_run_stored_correctly(self):
+        """Test --dry-run is stored in args."""
+        args = self.parser.parse_args(["analyze", "--directory", ".", "--dry-run"])
+        self.assertTrue(args.dry_run)
+
+    def test_workflow_flags_combined(self):
+        """Test workflow flags can be combined with other analyze flags."""
+        args = self.parser.parse_args(
+            [
+                "analyze",
+                "--directory",
+                ".",
+                "--enhance-workflow",
+                "security-focus",
+                "--api-key",
+                "sk-ant-test",
+                "--dry-run",
+                "--enhance-level",
+                "1",
+            ]
+        )
+        self.assertEqual(args.enhance_workflow, ["security-focus"])
+        self.assertEqual(args.api_key, "sk-ant-test")
+        self.assertTrue(args.dry_run)
+        self.assertEqual(args.enhance_level, 1)
 
 
 if __name__ == "__main__":

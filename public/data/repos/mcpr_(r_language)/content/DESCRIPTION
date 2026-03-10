@@ -1,7 +1,7 @@
 Package: MCPR
 Type: Package
 Title: MCPR: Model Context Protocol Implementation for R Session Integration
-Version: 0.9.03
+Version: 0.9.04
 Authors@R: 
     person("Santiago", "Cano-Muniz", , "tisalon@outlook.com", role = c("aut", "cre"))
 Author: Santiago Cano-Muniz [aut, cre]
@@ -23,7 +23,7 @@ BugReports: https://github.com/phisanti/MCPR/issues
 License: CC BY 4.0 + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends: 
     R (>= 4.0.0)
 Imports:
@@ -76,6 +76,7 @@ Collate:
     'type-conversion-utilities.R'
     'utils.R'
     'view-utils.R'
+    'inspect-object.R'
     'view-session-state.R'
     'view-system-info.R'
     'install-mcpr-toml.R'

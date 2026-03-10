@@ -157,6 +157,8 @@ export class ConnectorManager {
         privateKey: source.ssh_key,
         passphrase: source.ssh_passphrase,
         proxyJump: source.ssh_proxy_jump,
+        keepaliveInterval: source.ssh_keepalive_interval,
+        keepaliveCountMax: source.ssh_keepalive_count_max,
       };
 
       // Validate SSH auth
@@ -218,6 +220,10 @@ export class ConnectorManager {
     // Pass readonly flag for SDK-level enforcement (PostgreSQL, SQLite)
     if (source.readonly !== undefined) {
       config.readonly = source.readonly;
+    }
+    // Pass search_path for PostgreSQL
+    if (source.search_path) {
+      config.searchPath = source.search_path;
     }
 
     // Connect to the database with config and optional init script

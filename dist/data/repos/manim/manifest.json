@@ -1,5 +1,6 @@
 {
   "name": "Manim",
+  "full": true,
   "tree": [
     {
       "name": "docs",
@@ -12,20 +13,6 @@
           "path": "docs/source",
           "children": [
             {
-              "name": "_static",
-              "type": "folder",
-              "path": "docs/source/_static",
-              "children": [
-                {
-                  "name": "icon.png",
-                  "type": "file",
-                  "path": "docs/source/_static/icon.png",
-                  "size": 188788,
-                  "language": "png"
-                }
-              ]
-            },
-            {
               "name": "development",
               "type": "folder",
               "path": "docs/source/development",
@@ -34,21 +21,21 @@
                   "name": "about.rst",
                   "type": "file",
                   "path": "docs/source/development/about.rst",
-                  "size": 1188,
+                  "size": 1158,
                   "language": "rst"
                 },
                 {
                   "name": "changelog.rst",
                   "type": "file",
                   "path": "docs/source/development/changelog.rst",
-                  "size": 34858,
+                  "size": 34447,
                   "language": "rst"
                 },
                 {
                   "name": "contributing.rst",
                   "type": "file",
                   "path": "docs/source/development/contributing.rst",
-                  "size": 1841,
+                  "size": 1783,
                   "language": "rst"
                 }
               ]
@@ -67,7 +54,7 @@
                       "name": "index.rst",
                       "type": "file",
                       "path": "docs/source/documentation/animation/index.rst",
-                      "size": 34,
+                      "size": 33,
                       "language": "rst"
                     }
                   ]
@@ -81,7 +68,7 @@
                       "name": "index.rst",
                       "type": "file",
                       "path": "docs/source/documentation/camera/index.rst",
-                      "size": 28,
+                      "size": 27,
                       "language": "rst"
                     }
                   ]
@@ -95,7 +82,7 @@
                       "name": "index.rst",
                       "type": "file",
                       "path": "docs/source/documentation/mobject/index.rst",
-                      "size": 30,
+                      "size": 29,
                       "language": "rst"
                     }
                   ]
@@ -109,7 +96,7 @@
                       "name": "index.rst",
                       "type": "file",
                       "path": "docs/source/documentation/scene/index.rst",
-                      "size": 26,
+                      "size": 25,
                       "language": "rst"
                     }
                   ]
@@ -123,7 +110,7 @@
                       "name": "index.rst",
                       "type": "file",
                       "path": "docs/source/documentation/shaders/index.rst",
-                      "size": 30,
+                      "size": 29,
                       "language": "rst"
                     }
                   ]
@@ -137,7 +124,7 @@
                       "name": "index.rst",
                       "type": "file",
                       "path": "docs/source/documentation/utils/index.rst",
-                      "size": 26,
+                      "size": 25,
                       "language": "rst"
                     }
                   ]
@@ -146,14 +133,14 @@
                   "name": "constants.rst",
                   "type": "file",
                   "path": "docs/source/documentation/constants.rst",
-                  "size": 6853,
+                  "size": 6671,
                   "language": "rst"
                 },
                 {
                   "name": "custom_config.rst",
                   "type": "file",
                   "path": "docs/source/documentation/custom_config.rst",
-                  "size": 5171,
+                  "size": 4995,
                   "language": "rst"
                 }
               ]
@@ -167,42 +154,42 @@
                   "name": "configuration.rst",
                   "type": "file",
                   "path": "docs/source/getting_started/configuration.rst",
-                  "size": 6568,
+                  "size": 6468,
                   "language": "rst"
                 },
                 {
                   "name": "example_scenes.rst",
                   "type": "file",
                   "path": "docs/source/getting_started/example_scenes.rst",
-                  "size": 30864,
+                  "size": 30148,
                   "language": "rst"
                 },
                 {
                   "name": "installation.rst",
                   "type": "file",
                   "path": "docs/source/getting_started/installation.rst",
-                  "size": 2211,
+                  "size": 2116,
                   "language": "rst"
                 },
                 {
                   "name": "quickstart.rst",
                   "type": "file",
                   "path": "docs/source/getting_started/quickstart.rst",
-                  "size": 7910,
+                  "size": 7654,
                   "language": "rst"
                 },
                 {
                   "name": "structure.rst",
                   "type": "file",
                   "path": "docs/source/getting_started/structure.rst",
-                  "size": 7539,
+                  "size": 7412,
                   "language": "rst"
                 },
                 {
                   "name": "whatsnew.rst",
                   "type": "file",
                   "path": "docs/source/getting_started/whatsnew.rst",
-                  "size": 10762,
+                  "size": 10619,
                   "language": "rst"
                 }
               ]
@@ -211,21 +198,21 @@
               "name": "conf.py",
               "type": "file",
               "path": "docs/source/conf.py",
-              "size": 1165,
+              "size": 1122,
               "language": "py"
             },
             {
               "name": "index.rst",
               "type": "file",
               "path": "docs/source/index.rst",
-              "size": 950,
+              "size": 914,
               "language": "rst"
             },
             {
               "name": "manim_example_ext.py",
               "type": "file",
               "path": "docs/source/manim_example_ext.py",
-              "size": 2589,
+              "size": 2482,
               "language": "py"
             }
           ]
@@ -234,28 +221,28 @@
           "name": "example.py",
           "type": "file",
           "path": "docs/example.py",
-          "size": 1313,
+          "size": 1276,
           "language": "py"
         },
         {
           "name": "make.bat",
           "type": "file",
           "path": "docs/make.bat",
-          "size": 799,
+          "size": 764,
           "language": "bat"
         },
         {
           "name": "Makefile",
           "type": "file",
           "path": "docs/Makefile",
-          "size": 658,
+          "size": 638,
           "language": "text"
         },
         {
           "name": "requirements.txt",
           "type": "file",
           "path": "docs/requirements.txt",
-          "size": 59,
+          "size": 56,
           "language": "txt"
         }
       ]
@@ -266,53 +253,11 @@
       "path": "logo",
       "children": [
         {
-          "name": "cropped.png",
-          "type": "file",
-          "path": "logo/cropped.png",
-          "size": 154686,
-          "language": "png"
-        },
-        {
-          "name": "graph.png",
-          "type": "file",
-          "path": "logo/graph.png",
-          "size": 116608,
-          "language": "png"
-        },
-        {
           "name": "logo.py",
           "type": "file",
           "path": "logo/logo.py",
-          "size": 6179,
+          "size": 6003,
           "language": "py"
-        },
-        {
-          "name": "transparent_graph.png",
-          "type": "file",
-          "path": "logo/transparent_graph.png",
-          "size": 93155,
-          "language": "png"
-        },
-        {
-          "name": "white_with_name.png",
-          "type": "file",
-          "path": "logo/white_with_name.png",
-          "size": 77512,
-          "language": "png"
-        },
-        {
-          "name": "with_name.png",
-          "type": "file",
-          "path": "logo/with_name.png",
-          "size": 111118,
-          "language": "png"
-        },
-        {
-          "name": "with_subtext.png",
-          "type": "file",
-          "path": "logo/with_subtext.png",
-          "size": 161453,
-          "language": "png"
         }
       ]
     },
@@ -337,91 +282,91 @@
               "name": "animation.py",
               "type": "file",
               "path": "manimlib/animation/animation.py",
-              "size": 7593,
+              "size": 7377,
               "language": "py"
             },
             {
               "name": "composition.py",
               "type": "file",
               "path": "manimlib/animation/composition.py",
-              "size": 6276,
+              "size": 6094,
               "language": "py"
             },
             {
               "name": "creation.py",
               "type": "file",
               "path": "manimlib/animation/creation.py",
-              "size": 7970,
+              "size": 7724,
               "language": "py"
             },
             {
               "name": "fading.py",
               "type": "file",
               "path": "manimlib/animation/fading.py",
-              "size": 6240,
+              "size": 6026,
               "language": "py"
             },
             {
               "name": "growing.py",
               "type": "file",
               "path": "manimlib/animation/growing.py",
-              "size": 1548,
+              "size": 1494,
               "language": "py"
             },
             {
               "name": "indication.py",
               "type": "file",
               "path": "manimlib/animation/indication.py",
-              "size": 13730,
+              "size": 13305,
               "language": "py"
             },
             {
               "name": "movement.py",
               "type": "file",
               "path": "manimlib/animation/movement.py",
-              "size": 3447,
+              "size": 3329,
               "language": "py"
             },
             {
               "name": "numbers.py",
               "type": "file",
               "path": "manimlib/animation/numbers.py",
-              "size": 1859,
+              "size": 1795,
               "language": "py"
             },
             {
               "name": "rotation.py",
               "type": "file",
               "path": "manimlib/animation/rotation.py",
-              "size": 2268,
+              "size": 2193,
               "language": "py"
             },
             {
               "name": "specialized.py",
               "type": "file",
               "path": "manimlib/animation/specialized.py",
-              "size": 1710,
+              "size": 1655,
               "language": "py"
             },
             {
               "name": "transform.py",
               "type": "file",
               "path": "manimlib/animation/transform.py",
-              "size": 10260,
+              "size": 9929,
               "language": "py"
             },
             {
               "name": "transform_matching_parts.py",
               "type": "file",
               "path": "manimlib/animation/transform_matching_parts.py",
-              "size": 6830,
+              "size": 6639,
               "language": "py"
             },
             {
               "name": "update.py",
               "type": "file",
               "path": "manimlib/animation/update.py",
-              "size": 2084,
+              "size": 2017,
               "language": "py"
             }
           ]
@@ -442,14 +387,14 @@
               "name": "camera.py",
               "type": "file",
               "path": "manimlib/camera/camera.py",
-              "size": 8967,
+              "size": 8706,
               "language": "py"
             },
             {
               "name": "camera_frame.py",
               "type": "file",
               "path": "manimlib/camera/camera_frame.py",
-              "size": 9064,
+              "size": 8798,
               "language": "py"
             }
           ]
@@ -463,28 +408,28 @@
               "name": "__init__.py",
               "type": "file",
               "path": "manimlib/event_handler/__init__.py",
-              "size": 225,
+              "size": 219,
               "language": "py"
             },
             {
               "name": "event_dispatcher.py",
               "type": "file",
               "path": "manimlib/event_handler/event_dispatcher.py",
-              "size": 3951,
+              "size": 3856,
               "language": "py"
             },
             {
               "name": "event_listner.py",
               "type": "file",
               "path": "manimlib/event_handler/event_listner.py",
-              "size": 846,
+              "size": 815,
               "language": "py"
             },
             {
               "name": "event_type.py",
               "type": "file",
               "path": "manimlib/event_handler/event_type.py",
-              "size": 354,
+              "size": 343,
               "language": "py"
             }
           ]
@@ -510,56 +455,56 @@
                   "name": "brace.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/brace.py",
-                  "size": 6255,
+                  "size": 6070,
                   "language": "py"
                 },
                 {
                   "name": "drawings.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/drawings.py",
-                  "size": 25516,
+                  "size": 24827,
                   "language": "py"
                 },
                 {
                   "name": "old_tex_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/old_tex_mobject.py",
-                  "size": 11063,
+                  "size": 10762,
                   "language": "py"
                 },
                 {
                   "name": "special_tex.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/special_tex.py",
-                  "size": 2925,
+                  "size": 2945,
                   "language": "py"
                 },
                 {
                   "name": "string_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/string_mobject.py",
-                  "size": 21860,
+                  "size": 21275,
                   "language": "py"
                 },
                 {
                   "name": "svg_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/svg_mobject.py",
-                  "size": 14367,
+                  "size": 15672,
                   "language": "py"
                 },
                 {
                   "name": "tex_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/tex_mobject.py",
-                  "size": 9203,
+                  "size": 9537,
                   "language": "py"
                 },
                 {
                   "name": "text_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/svg/text_mobject.py",
-                  "size": 16513,
+                  "size": 16611,
                   "language": "py"
                 }
               ]
@@ -580,35 +525,35 @@
                   "name": "dot_cloud.py",
                   "type": "file",
                   "path": "manimlib/mobject/types/dot_cloud.py",
-                  "size": 5667,
+                  "size": 5482,
                   "language": "py"
                 },
                 {
                   "name": "image_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/types/image_mobject.py",
-                  "size": 2618,
+                  "size": 2541,
                   "language": "py"
                 },
                 {
                   "name": "point_cloud_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/types/point_cloud_mobject.py",
-                  "size": 3821,
+                  "size": 3710,
                   "language": "py"
                 },
                 {
                   "name": "surface.py",
                   "type": "file",
                   "path": "manimlib/mobject/types/surface.py",
-                  "size": 13385,
+                  "size": 15881,
                   "language": "py"
                 },
                 {
                   "name": "vectorized_mobject.py",
                   "type": "file",
                   "path": "manimlib/mobject/types/vectorized_mobject.py",
-                  "size": 53989,
+                  "size": 53247,
                   "language": "py"
                 }
               ]
@@ -631,112 +576,112 @@
               "name": "changing.py",
               "type": "file",
               "path": "manimlib/mobject/changing.py",
-              "size": 5940,
+              "size": 5764,
               "language": "py"
             },
             {
               "name": "coordinate_systems.py",
               "type": "file",
               "path": "manimlib/mobject/coordinate_systems.py",
-              "size": 26261,
+              "size": 25552,
               "language": "py"
             },
             {
               "name": "frame.py",
               "type": "file",
               "path": "manimlib/mobject/frame.py",
-              "size": 1425,
+              "size": 1369,
               "language": "py"
             },
             {
               "name": "functions.py",
               "type": "file",
               "path": "manimlib/mobject/functions.py",
-              "size": 3961,
+              "size": 3840,
               "language": "py"
             },
             {
               "name": "geometry.py",
               "type": "file",
               "path": "manimlib/mobject/geometry.py",
-              "size": 49314,
+              "size": 47562,
               "language": "py"
             },
             {
               "name": "interactive.py",
               "type": "file",
               "path": "manimlib/mobject/interactive.py",
-              "size": 19955,
+              "size": 19387,
               "language": "py"
             },
             {
               "name": "matrix.py",
               "type": "file",
               "path": "manimlib/mobject/matrix.py",
-              "size": 9716,
+              "size": 9423,
               "language": "py"
             },
             {
               "name": "mobject.py",
               "type": "file",
               "path": "manimlib/mobject/mobject.py",
-              "size": 83080,
+              "size": 80833,
               "language": "py"
             },
             {
               "name": "mobject_update_utils.py",
               "type": "file",
               "path": "manimlib/mobject/mobject_update_utils.py",
-              "size": 3187,
+              "size": 3064,
               "language": "py"
             },
             {
               "name": "number_line.py",
               "type": "file",
               "path": "manimlib/mobject/number_line.py",
-              "size": 10743,
+              "size": 10438,
               "language": "py"
             },
             {
               "name": "numbers.py",
               "type": "file",
               "path": "manimlib/mobject/numbers.py",
-              "size": 8841,
+              "size": 8602,
               "language": "py"
             },
             {
               "name": "probability.py",
               "type": "file",
               "path": "manimlib/mobject/probability.py",
-              "size": 10718,
+              "size": 10410,
               "language": "py"
             },
             {
               "name": "shape_matchers.py",
               "type": "file",
               "path": "manimlib/mobject/shape_matchers.py",
-              "size": 3982,
+              "size": 3851,
               "language": "py"
             },
             {
               "name": "three_dimensions.py",
               "type": "file",
               "path": "manimlib/mobject/three_dimensions.py",
-              "size": 12456,
+              "size": 12043,
               "language": "py"
             },
             {
               "name": "value_tracker.py",
               "type": "file",
               "path": "manimlib/mobject/value_tracker.py",
-              "size": 1947,
+              "size": 1881,
               "language": "py"
             },
             {
               "name": "vector_field.py",
               "type": "file",
               "path": "manimlib/mobject/vector_field.py",
-              "size": 16923,
+              "size": 16445,
               "language": "py"
             }
           ]
@@ -757,28 +702,28 @@
               "name": "interactive_scene.py",
               "type": "file",
               "path": "manimlib/scene/interactive_scene.py",
-              "size": 24228,
+              "size": 23822,
               "language": "py"
             },
             {
               "name": "scene.py",
               "type": "file",
               "path": "manimlib/scene/scene.py",
-              "size": 33087,
+              "size": 32167,
               "language": "py"
             },
             {
               "name": "scene_embed.py",
               "type": "file",
               "path": "manimlib/scene/scene_embed.py",
-              "size": 9157,
+              "size": 8976,
               "language": "py"
             },
             {
               "name": "scene_file_writer.py",
               "type": "file",
               "path": "manimlib/scene/scene_file_writer.py",
-              "size": 13738,
+              "size": 13353,
               "language": "py"
             }
           ]
@@ -789,18 +734,284 @@
           "path": "manimlib/shaders",
           "children": [
             {
+              "name": "image",
+              "type": "folder",
+              "path": "manimlib/shaders/image",
+              "children": [
+                {
+                  "name": "frag.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/image/frag.glsl",
+                  "size": 200,
+                  "language": "glsl"
+                },
+                {
+                  "name": "vert.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/image/vert.glsl",
+                  "size": 302,
+                  "language": "glsl"
+                }
+              ]
+            },
+            {
               "name": "inserts",
               "type": "folder",
               "path": "manimlib/shaders/inserts",
               "children": [
                 {
+                  "name": "complex_functions.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/inserts/complex_functions.glsl",
+                  "size": 376,
+                  "language": "glsl"
+                },
+                {
+                  "name": "emit_gl_Position.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/inserts/emit_gl_Position.glsl",
+                  "size": 697,
+                  "language": "glsl"
+                },
+                {
+                  "name": "finalize_color.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/inserts/finalize_color.glsl",
+                  "size": 1768,
+                  "language": "glsl"
+                },
+                {
+                  "name": "get_unit_normal.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/inserts/get_unit_normal.glsl",
+                  "size": 615,
+                  "language": "glsl"
+                },
+                {
+                  "name": "get_xyz_to_uv.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/inserts/get_xyz_to_uv.glsl",
+                  "size": 3210,
+                  "language": "glsl"
+                },
+                {
                   "name": "NOTE.md",
                   "type": "file",
                   "path": "manimlib/shaders/inserts/NOTE.md",
-                  "size": 569,
+                  "size": 562,
                   "language": "md"
                 }
               ]
+            },
+            {
+              "name": "mandelbrot_fractal",
+              "type": "folder",
+              "path": "manimlib/shaders/mandelbrot_fractal",
+              "children": [
+                {
+                  "name": "frag.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/mandelbrot_fractal/frag.glsl",
+                  "size": 1383,
+                  "language": "glsl"
+                },
+                {
+                  "name": "vert.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/mandelbrot_fractal/vert.glsl",
+                  "size": 225,
+                  "language": "glsl"
+                }
+              ]
+            },
+            {
+              "name": "newton_fractal",
+              "type": "folder",
+              "path": "manimlib/shaders/newton_fractal",
+              "children": [
+                {
+                  "name": "frag.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/newton_fractal/frag.glsl",
+                  "size": 3895,
+                  "language": "glsl"
+                },
+                {
+                  "name": "vert.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/newton_fractal/vert.glsl",
+                  "size": 225,
+                  "language": "glsl"
+                }
+              ]
+            },
+            {
+              "name": "quadratic_bezier",
+              "type": "folder",
+              "path": "manimlib/shaders/quadratic_bezier",
+              "children": [
+                {
+                  "name": "depth",
+                  "type": "folder",
+                  "path": "manimlib/shaders/quadratic_bezier/depth",
+                  "children": [
+                    {
+                      "name": "frag.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/depth/frag.glsl",
+                      "size": 86,
+                      "language": "glsl"
+                    },
+                    {
+                      "name": "geom.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/depth/geom.glsl",
+                      "size": 648,
+                      "language": "glsl"
+                    },
+                    {
+                      "name": "vert.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/depth/vert.glsl",
+                      "size": 156,
+                      "language": "glsl"
+                    }
+                  ]
+                },
+                {
+                  "name": "fill",
+                  "type": "folder",
+                  "path": "manimlib/shaders/quadratic_bezier/fill",
+                  "children": [
+                    {
+                      "name": "frag.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/fill/frag.glsl",
+                      "size": 1371,
+                      "language": "glsl"
+                    },
+                    {
+                      "name": "geom.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/fill/geom.glsl",
+                      "size": 1721,
+                      "language": "glsl"
+                    },
+                    {
+                      "name": "vert.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/fill/vert.glsl",
+                      "size": 245,
+                      "language": "glsl"
+                    }
+                  ]
+                },
+                {
+                  "name": "stroke",
+                  "type": "folder",
+                  "path": "manimlib/shaders/quadratic_bezier/stroke",
+                  "children": [
+                    {
+                      "name": "frag.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/stroke/frag.glsl",
+                      "size": 506,
+                      "language": "glsl"
+                    },
+                    {
+                      "name": "geom.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/stroke/geom.glsl",
+                      "size": 7312,
+                      "language": "glsl"
+                    },
+                    {
+                      "name": "vert.glsl",
+                      "type": "file",
+                      "path": "manimlib/shaders/quadratic_bezier/stroke/vert.glsl",
+                      "size": 629,
+                      "language": "glsl"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "surface",
+              "type": "folder",
+              "path": "manimlib/shaders/surface",
+              "children": [
+                {
+                  "name": "frag.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/surface/frag.glsl",
+                  "size": 94,
+                  "language": "glsl"
+                },
+                {
+                  "name": "vert.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/surface/vert.glsl",
+                  "size": 362,
+                  "language": "glsl"
+                }
+              ]
+            },
+            {
+              "name": "textured_surface",
+              "type": "folder",
+              "path": "manimlib/shaders/textured_surface",
+              "children": [
+                {
+                  "name": "frag.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/textured_surface/frag.glsl",
+                  "size": 810,
+                  "language": "glsl"
+                },
+                {
+                  "name": "vert.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/textured_surface/vert.glsl",
+                  "size": 488,
+                  "language": "glsl"
+                }
+              ]
+            },
+            {
+              "name": "true_dot",
+              "type": "folder",
+              "path": "manimlib/shaders/true_dot",
+              "children": [
+                {
+                  "name": "frag.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/true_dot/frag.glsl",
+                  "size": 758,
+                  "language": "glsl"
+                },
+                {
+                  "name": "geom.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/true_dot/geom.glsl",
+                  "size": 1023,
+                  "language": "glsl"
+                },
+                {
+                  "name": "vert.glsl",
+                  "type": "file",
+                  "path": "manimlib/shaders/true_dot/vert.glsl",
+                  "size": 195,
+                  "language": "glsl"
+                }
+              ]
+            },
+            {
+              "name": "simple_vert.glsl",
+              "type": "file",
+              "path": "manimlib/shaders/simple_vert.glsl",
+              "size": 104,
+              "language": "glsl"
             }
           ]
         },
@@ -820,133 +1031,133 @@
               "name": "bezier.py",
               "type": "file",
               "path": "manimlib/utils/bezier.py",
-              "size": 13485,
+              "size": 13063,
               "language": "py"
             },
             {
               "name": "cache.py",
               "type": "file",
               "path": "manimlib/utils/cache.py",
-              "size": 832,
+              "size": 798,
               "language": "py"
             },
             {
               "name": "color.py",
               "type": "file",
               "path": "manimlib/utils/color.py",
-              "size": 5680,
+              "size": 5483,
               "language": "py"
             },
             {
               "name": "debug.py",
               "type": "file",
               "path": "manimlib/utils/debug.py",
-              "size": 919,
+              "size": 887,
               "language": "py"
             },
             {
               "name": "dict_ops.py",
               "type": "file",
               "path": "manimlib/utils/dict_ops.py",
-              "size": 721,
+              "size": 699,
               "language": "py"
             },
             {
               "name": "directories.py",
               "type": "file",
               "path": "manimlib/utils/directories.py",
-              "size": 1092,
+              "size": 1131,
               "language": "py"
             },
             {
               "name": "family_ops.py",
               "type": "file",
               "path": "manimlib/utils/family_ops.py",
-              "size": 1515,
+              "size": 1468,
               "language": "py"
             },
             {
               "name": "file_ops.py",
               "type": "file",
               "path": "manimlib/utils/file_ops.py",
-              "size": 1600,
+              "size": 1658,
               "language": "py"
             },
             {
               "name": "images.py",
               "type": "file",
               "path": "manimlib/utils/images.py",
-              "size": 957,
+              "size": 1180,
               "language": "py"
             },
             {
               "name": "iterables.py",
               "type": "file",
               "path": "manimlib/utils/iterables.py",
-              "size": 4939,
+              "size": 4766,
               "language": "py"
             },
             {
               "name": "paths.py",
               "type": "file",
               "path": "manimlib/utils/paths.py",
-              "size": 1957,
+              "size": 1891,
               "language": "py"
             },
             {
               "name": "rate_functions.py",
               "type": "file",
               "path": "manimlib/utils/rate_functions.py",
-              "size": 2784,
+              "size": 2675,
               "language": "py"
             },
             {
               "name": "shaders.py",
               "type": "file",
               "path": "manimlib/utils/shaders.py",
-              "size": 3200,
+              "size": 3086,
               "language": "py"
             },
             {
               "name": "simple_functions.py",
               "type": "file",
               "path": "manimlib/utils/simple_functions.py",
-              "size": 2490,
+              "size": 2389,
               "language": "py"
             },
             {
               "name": "sounds.py",
               "type": "file",
               "path": "manimlib/utils/sounds.py",
-              "size": 1170,
+              "size": 1130,
               "language": "py"
             },
             {
               "name": "space_ops.py",
               "type": "file",
               "path": "manimlib/utils/space_ops.py",
-              "size": 14289,
+              "size": 13781,
               "language": "py"
             },
             {
               "name": "tex.py",
               "type": "file",
               "path": "manimlib/utils/tex.py",
-              "size": 1394,
+              "size": 1353,
               "language": "py"
             },
             {
               "name": "tex_file_writing.py",
               "type": "file",
               "path": "manimlib/utils/tex_file_writing.py",
-              "size": 4529,
+              "size": 4351,
               "language": "py"
             },
             {
               "name": "tex_to_symbol_count.py",
               "type": "file",
               "path": "manimlib/utils/tex_to_symbol_count.py",
-              "size": 3730,
+              "size": 3563,
               "language": "py"
             }
           ]
@@ -955,84 +1166,84 @@
           "name": "__init__.py",
           "type": "file",
           "path": "manimlib/__init__.py",
-          "size": 2920,
+          "size": 3056,
           "language": "py"
         },
         {
           "name": "__main__.py",
           "type": "file",
           "path": "manimlib/__main__.py",
-          "size": 1686,
+          "size": 1621,
           "language": "py"
         },
         {
           "name": "config.py",
           "type": "file",
           "path": "manimlib/config.py",
-          "size": 13545,
+          "size": 13146,
           "language": "py"
         },
         {
           "name": "constants.py",
           "type": "file",
           "path": "manimlib/constants.py",
-          "size": 6470,
+          "size": 6311,
           "language": "py"
         },
         {
           "name": "default_config.yml",
           "type": "file",
           "path": "manimlib/default_config.yml",
-          "size": 5890,
+          "size": 6036,
           "language": "yml"
         },
         {
           "name": "extract_scene.py",
           "type": "file",
           "path": "manimlib/extract_scene.py",
-          "size": 6916,
+          "size": 6722,
           "language": "py"
         },
         {
           "name": "logger.py",
           "type": "file",
           "path": "manimlib/logger.py",
-          "size": 252,
+          "size": 239,
           "language": "py"
         },
         {
           "name": "module_loader.py",
           "type": "file",
           "path": "manimlib/module_loader.py",
-          "size": 6587,
+          "size": 6411,
           "language": "py"
         },
         {
           "name": "shader_wrapper.py",
           "type": "file",
           "path": "manimlib/shader_wrapper.py",
-          "size": 17923,
+          "size": 17443,
           "language": "py"
         },
         {
           "name": "tex_templates.yml",
           "type": "file",
           "path": "manimlib/tex_templates.yml",
-          "size": 20309,
+          "size": 19573,
           "language": "yml"
         },
         {
           "name": "typing.py",
           "type": "file",
           "path": "manimlib/typing.py",
-          "size": 1741,
+          "size": 1694,
           "language": "py"
         },
         {
           "name": "window.py",
           "type": "file",
           "path": "manimlib/window.py",
-          "size": 8587,
+          "size": 8345,
           "language": "py"
         }
       ]
@@ -1041,49 +1252,63 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 2406,
+      "size": 2251,
       "language": "text"
     },
     {
       "name": "example_scenes.py",
       "type": "file",
       "path": "example_scenes.py",
-      "size": 27243,
+      "size": 26519,
       "language": "py"
     },
     {
       "name": "LICENSE.md",
       "type": "file",
       "path": "LICENSE.md",
-      "size": 1098,
+      "size": 1077,
       "language": "md"
+    },
+    {
+      "name": "MANIFEST.in",
+      "type": "file",
+      "path": "MANIFEST.in",
+      "size": 58,
+      "language": "in"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 50,
+      "size": 49,
       "language": "toml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 6722,
+      "size": 7182,
       "language": "md"
     },
     {
       "name": "requirements.txt",
       "type": "file",
       "path": "requirements.txt",
-      "size": 388,
+      "size": 378,
       "language": "txt"
+    },
+    {
+      "name": "setup.cfg",
+      "type": "file",
+      "path": "setup.cfg",
+      "size": 1604,
+      "language": "cfg"
     },
     {
       "name": "setup.py",
       "type": "file",
       "path": "setup.py",
-      "size": 37,
+      "size": 36,
       "language": "py"
     }
   ]

@@ -27,9 +27,6 @@ import httpx
 import requests
 from bs4 import BeautifulSoup
 
-# Add parent directory to path for imports when run as script
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from skill_seekers.cli.config_fetcher import (
     get_last_searched_paths,
     list_available_configs,
@@ -49,26 +46,11 @@ from skill_seekers.cli.language_detector import LanguageDetector
 from skill_seekers.cli.llms_txt_detector import LlmsTxtDetector
 from skill_seekers.cli.llms_txt_downloader import LlmsTxtDownloader
 from skill_seekers.cli.llms_txt_parser import LlmsTxtParser
+from skill_seekers.cli.arguments.scrape import add_scrape_arguments
+from skill_seekers.cli.utils import setup_logging
 
 # Configure logging
 logger = logging.getLogger(__name__)
-
-
-def setup_logging(verbose: bool = False, quiet: bool = False) -> None:
-    """Configure logging based on verbosity level.
-
-    Args:
-        verbose: Enable DEBUG level logging
-        quiet: Enable WARNING level logging only
-    """
-    if quiet:
-        level = logging.WARNING
-    elif verbose:
-        level = logging.DEBUG
-    else:
-        level = logging.INFO
-
-    logging.basicConfig(level=level, format="%(message)s", force=True)
 
 
 def infer_description_from_docs(
@@ -361,12 +343,15 @@ class DocToSkillConverter:
     def _extract_markdown_content(self, content: str, url: str) -> dict[str, Any]:
         """Extract structured content from a Markdown file.
 
-        Parses markdown files from llms.txt URLs to extract:
-        - Title from first h1 heading
-        - Headings (h2-h6, excluding h1)
-        - Code blocks with language detection
+        Uses the enhanced unified MarkdownParser for comprehensive extraction:
+        - Title from first h1 heading or frontmatter
+        - Headings (h1-h6) with IDs
+        - Code blocks with language detection and quality scoring
+        - Tables (GitHub-flavored)
         - Internal .md links for BFS crawling
         - Content paragraphs (>20 chars)
+        - Admonitions/callouts
+        - Images
 
         Auto-detects HTML content and falls back to _extract_html_as_markdown.
 
@@ -394,6 +379,55 @@ class DocToSkillConverter:
         if content.strip().startswith("<!DOCTYPE") or content.strip().startswith("<html"):
             return self._extract_html_as_markdown(content, url)
 
+        # Try enhanced unified parser first
+        try:
+            from skill_seekers.cli.parsers.extractors import MarkdownParser
+
+            parser = MarkdownParser()
+            result = parser.parse_string(content, url)
+
+            if result.success and result.document:
+                doc = result.document
+
+                # Extract links from the document
+                links = []
+                for link in doc.external_links:
+                    href = link.target
+                    if href.startswith("http"):
+                        full_url = href
+                    elif not href.startswith("#"):
+                        full_url = urljoin(url, href)
+                    else:
+                        continue
+                    full_url = full_url.split("#")[0]
+                    if ".md" in full_url and self.is_valid_url(full_url) and full_url not in links:
+                        links.append(full_url)
+
+                return {
+                    "url": url,
+                    "title": doc.title or "",
+                    "content": "\n\n".join(
+                        p for p in doc._extract_content_text().split("\n\n") if len(p.strip()) >= 20
+                    ),
+                    "headings": [
+                        {"level": f"h{h.level}", "text": h.text, "id": h.id or ""}
+                        for h in doc.headings
+                        if h.level > 1
+                    ],
+                    "code_samples": [
+                        {"code": cb.code, "language": cb.language or "unknown"}
+                        for cb in doc.code_blocks
+                    ],
+                    "patterns": [],
+                    "links": links,
+                    "_enhanced": True,
+                    "_tables": len(doc.tables),
+                    "_images": len(doc.images),
+                }
+        except Exception as e:
+            logger.debug(f"Enhanced markdown parser failed: {e}, using legacy parser")
+
+        # Legacy extraction (fallback)
         page = {
             "url": url,
             "title": "",
@@ -402,6 +436,7 @@ class DocToSkillConverter:
             "code_samples": [],
             "patterns": [],
             "links": [],
+            "_enhanced": False,
         }
 
         lines = content.split("\n")
@@ -1943,6 +1978,9 @@ def setup_argument_parser() -> argparse.ArgumentParser:
     Creates an ArgumentParser with all CLI options for the doc scraper tool,
     including configuration, scraping, enhancement, and performance options.
 
+    All arguments are defined in skill_seekers.cli.arguments.scrape to ensure
+    consistency between the standalone scraper and unified CLI.
+
     Returns:
         argparse.ArgumentParser: Configured argument parser
 
@@ -1957,139 +1995,9 @@ def setup_argument_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
-    # Positional URL argument (optional, for quick scraping)
-    parser.add_argument(
-        "url",
-        nargs="?",
-        type=str,
-        help="Base documentation URL (alternative to --url)",
-    )
-
-    parser.add_argument(
-        "--interactive",
-        "-i",
-        action="store_true",
-        help="Interactive configuration mode",
-    )
-    parser.add_argument(
-        "--config",
-        "-c",
-        type=str,
-        help="Load configuration from file (e.g., configs/godot.json)",
-    )
-    parser.add_argument("--name", type=str, help="Skill name")
-    parser.add_argument(
-        "--url", type=str, help="Base documentation URL (alternative to positional URL)"
-    )
-    parser.add_argument("--description", "-d", type=str, help="Skill description")
-    parser.add_argument(
-        "--max-pages",
-        type=int,
-        metavar="N",
-        help="Maximum pages to scrape (overrides config). Use with caution - for testing/prototyping only.",
-    )
-    parser.add_argument(
-        "--skip-scrape", action="store_true", help="Skip scraping, use existing data"
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Preview what will be scraped without actually scraping",
-    )
-    parser.add_argument(
-        "--enhance",
-        action="store_true",
-        help="Enhance SKILL.md using Claude API after building (requires API key)",
-    )
-    parser.add_argument(
-        "--enhance-local",
-        action="store_true",
-        help="Enhance SKILL.md using Claude Code (no API key needed, runs in background)",
-    )
-    parser.add_argument(
-        "--interactive-enhancement",
-        action="store_true",
-        help="Open terminal window for enhancement (use with --enhance-local)",
-    )
-    parser.add_argument(
-        "--api-key",
-        type=str,
-        help="Anthropic API key for --enhance (or set ANTHROPIC_API_KEY)",
-    )
-    parser.add_argument(
-        "--resume",
-        action="store_true",
-        help="Resume from last checkpoint (for interrupted scrapes)",
-    )
-    parser.add_argument("--fresh", action="store_true", help="Clear checkpoint and start fresh")
-    parser.add_argument(
-        "--rate-limit",
-        "-r",
-        type=float,
-        metavar="SECONDS",
-        help=f"Override rate limit in seconds (default: from config or {DEFAULT_RATE_LIMIT}). Use 0 for no delay.",
-    )
-    parser.add_argument(
-        "--workers",
-        "-w",
-        type=int,
-        metavar="N",
-        help="Number of parallel workers for faster scraping (default: 1, max: 10)",
-    )
-    parser.add_argument(
-        "--async",
-        dest="async_mode",
-        action="store_true",
-        help="Enable async mode for better parallel performance (2-3x faster than threads)",
-    )
-    parser.add_argument(
-        "--no-rate-limit",
-        action="store_true",
-        help="Disable rate limiting completely (same as --rate-limit 0)",
-    )
-    parser.add_argument(
-        "--verbose",
-        "-v",
-        action="store_true",
-        help="Enable verbose output (DEBUG level logging)",
-    )
-    parser.add_argument(
-        "--quiet",
-        "-q",
-        action="store_true",
-        help="Minimize output (WARNING level logging only)",
-    )
-
-    # RAG chunking arguments (NEW - v2.10.0)
-    parser.add_argument(
-        "--chunk-for-rag",
-        action="store_true",
-        help="Enable semantic chunking for RAG pipelines (generates rag_chunks.json)",
-    )
-    parser.add_argument(
-        "--chunk-size",
-        type=int,
-        default=512,
-        metavar="TOKENS",
-        help="Target chunk size in tokens for RAG (default: 512)",
-    )
-    parser.add_argument(
-        "--chunk-overlap",
-        type=int,
-        default=50,
-        metavar="TOKENS",
-        help="Overlap size between chunks in tokens (default: 50)",
-    )
-    parser.add_argument(
-        "--no-preserve-code-blocks",
-        action="store_true",
-        help="Allow splitting code blocks across chunks (not recommended)",
-    )
-    parser.add_argument(
-        "--no-preserve-paragraphs",
-        action="store_true",
-        help="Ignore paragraph boundaries when chunking (not recommended)",
-    )
+    # Add all scrape arguments from shared definitions
+    # This ensures the standalone scraper and unified CLI stay in sync
+    add_scrape_arguments(parser)
 
     return parser
 
@@ -2270,6 +2178,10 @@ def execute_scraping_and_building(
     # Create converter
     converter = DocToSkillConverter(config, resume=args.resume)
 
+    # Initialize workflow tracking (will be updated if workflow runs)
+    converter.workflow_executed = False
+    converter.workflow_name = None
+
     # Handle fresh start (clear checkpoint)
     if args.fresh:
         converter.clear_checkpoint()
@@ -2315,8 +2227,8 @@ def execute_scraping_and_building(
         from skill_seekers.cli.rag_chunker import RAGChunker
 
         chunker = RAGChunker(
-            chunk_size=args.chunk_size,
-            chunk_overlap=args.chunk_overlap,
+            chunk_size=args.chunk_tokens,
+            chunk_overlap=args.chunk_overlap_tokens,
             preserve_code_blocks=not args.no_preserve_code_blocks,
             preserve_paragraphs=not args.no_preserve_paragraphs,
         )
@@ -2333,10 +2245,28 @@ def execute_scraping_and_building(
         logger.info(f"💡 Use with LangChain: --target langchain")
         logger.info(f"💡 Use with LlamaIndex: --target llama-index")
 
+    # ============================================================
+    # WORKFLOW SYSTEM INTEGRATION (Phase 2 - doc_scraper)
+    # ============================================================
+    from skill_seekers.cli.workflow_runner import run_workflows
+
+    # Pass doc-scraper-specific context to workflows
+    doc_context = {
+        "name": config["name"],
+        "base_url": config.get("base_url", ""),
+        "description": config.get("description", ""),
+    }
+
+    workflow_executed, workflow_names = run_workflows(args, context=doc_context)
+
+    # Store workflow execution status on converter for execute_enhancement() to access
+    converter.workflow_executed = workflow_executed
+    converter.workflow_name = ", ".join(workflow_names) if workflow_names else None
+
     return converter
 
 
-def execute_enhancement(config: dict[str, Any], args: argparse.Namespace) -> None:
+def execute_enhancement(config: dict[str, Any], args: argparse.Namespace, converter=None) -> None:
     """Execute optional SKILL.md enhancement with Claude.
 
     Supports two enhancement modes:
@@ -2349,6 +2279,7 @@ def execute_enhancement(config: dict[str, Any], args: argparse.Namespace) -> Non
     Args:
         config (dict): Configuration dictionary with skill name
         args: Parsed command-line arguments with enhancement flags
+        converter: Optional DocToSkillConverter instance (to check workflow status)
 
     Example:
         >>> execute_enhancement(config, args)
@@ -2356,63 +2287,61 @@ def execute_enhancement(config: dict[str, Any], args: argparse.Namespace) -> Non
     """
     import subprocess
 
-    # Optional enhancement with Claude API
-    if args.enhance:
-        logger.info("\n" + "=" * 60)
-        logger.info("ENHANCING SKILL.MD WITH CLAUDE API")
-        logger.info("=" * 60 + "\n")
+    # Check if workflow was already executed (for logging context)
+    workflow_executed = (
+        converter and hasattr(converter, "workflow_executed") and converter.workflow_executed
+    )
+    workflow_name = converter.workflow_name if workflow_executed else None
 
-        try:
-            enhance_cmd = [
-                "python3",
-                "cli/enhance_skill.py",
-                f"output/{config['name']}/",
-            ]
-            if args.api_key:
-                enhance_cmd.extend(["--api-key", args.api_key])
+    # Optional enhancement with auto-detected mode (API or LOCAL)
+    # Note: Runs independently of workflow system (they complement each other)
+    if getattr(args, "enhance_level", 0) > 0:
+        import os
 
-            result = subprocess.run(enhance_cmd, check=True)
-            if result.returncode == 0:
-                logger.info("\n✅ Enhancement complete!")
-        except subprocess.CalledProcessError:
-            logger.warning("\n⚠ Enhancement failed, but skill was still built")
-        except FileNotFoundError:
-            logger.warning("\n⚠ enhance_skill.py not found. Run manually:")
-            logger.info("  skill-seekers-enhance output/%s/", config["name"])
+        has_api_key = bool(os.environ.get("ANTHROPIC_API_KEY") or args.api_key)
+        mode = "API" if has_api_key else "LOCAL"
 
-    # Optional enhancement with Claude Code (local, no API key)
-    if args.enhance_local:
-        logger.info("\n" + "=" * 60)
-        if args.interactive_enhancement:
-            logger.info("ENHANCING SKILL.MD WITH CLAUDE CODE (INTERACTIVE)")
-        else:
-            logger.info("ENHANCING SKILL.MD WITH CLAUDE CODE (HEADLESS)")
-        logger.info("=" * 60 + "\n")
+        logger.info("\n" + "=" * 80)
+        logger.info(f"🤖 Traditional AI Enhancement ({mode} mode, level {args.enhance_level})")
+        logger.info("=" * 80)
+        if workflow_executed:
+            logger.info(f"   Running after workflow: {workflow_name}")
+            logger.info(
+                "   (Workflow provides specialized analysis, enhancement provides general improvements)"
+            )
+        logger.info("")
 
         try:
             enhance_cmd = ["skill-seekers-enhance", f"output/{config['name']}/"]
-            if args.interactive_enhancement:
+            enhance_cmd.extend(["--enhance-level", str(args.enhance_level)])
+
+            if args.api_key:
+                enhance_cmd.extend(["--api-key", args.api_key])
+            if getattr(args, "interactive_enhancement", False):
                 enhance_cmd.append("--interactive-enhancement")
 
             result = subprocess.run(enhance_cmd, check=True)
-
             if result.returncode == 0:
                 logger.info("\n✅ Enhancement complete!")
         except subprocess.CalledProcessError:
             logger.warning("\n⚠ Enhancement failed, but skill was still built")
         except FileNotFoundError:
             logger.warning("\n⚠ skill-seekers-enhance command not found. Run manually:")
-            logger.info("  skill-seekers-enhance output/%s/", config["name"])
+            logger.info(
+                "  skill-seekers-enhance output/%s/ --enhance-level %d",
+                config["name"],
+                args.enhance_level,
+            )
 
     # Print packaging instructions
     logger.info("\n📦 Package your skill:")
     logger.info("  skill-seekers-package output/%s/", config["name"])
 
     # Suggest enhancement if not done
-    if not args.enhance and not args.enhance_local:
+    if getattr(args, "enhance_level", 0) == 0:
         logger.info("\n💡 Optional: Enhance SKILL.md with Claude:")
-        logger.info("  Local (recommended):  skill-seekers-enhance output/%s/", config["name"])
-        logger.info("                        or re-run with: --enhance-local")
+        logger.info("  skill-seekers-enhance output/%s/ --enhance-level 2", config["name"])
+        logger.info("  or re-run with: --enhance-level 2 (auto-detects API vs LOCAL mode)")
         logger.info(
             "  API-based:            skill-seekers-enhance-api output/%s/",
             config["name"],
@@ -2439,8 +2368,8 @@ def main() -> None:
     if converter is None:
         return
 
-    # Execute enhancement and print instructions
-    execute_enhancement(config, args)
+    # Execute enhancement and print instructions (pass converter for workflow status check)
+    execute_enhancement(config, args, converter)
 
 
 if __name__ == "__main__":

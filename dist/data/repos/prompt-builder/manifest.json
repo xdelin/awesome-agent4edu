@@ -1,18 +1,19 @@
 {
   "name": "prompt-builder",
+  "full": true,
   "tree": [
     {
       "name": "index.html",
       "type": "file",
       "path": "index.html",
-      "size": 28400,
+      "size": 27696,
       "language": "html"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 3750,
+      "size": 3635,
       "language": "md"
     }
   ]

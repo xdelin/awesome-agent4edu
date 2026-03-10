@@ -499,6 +499,9 @@ class VMobject(Mobject):
             quad_approx = get_quadratic_approximation_of_cubic(
                 last, handle1, handle2, anchor
             )
+            if self.consider_points_equal(quad_approx[3], quad_approx[4]):
+                # Avoid degenerate handles (duplicate points) to prevent visual bug
+                quad_approx[3] = midpoint(*quad_approx[2:4])
         if self.consider_points_equal(quad_approx[1], last):
             # This is to prevent subpaths from accidentally being marked closed
             quad_approx[1] = midpoint(*quad_approx[1:3])
@@ -685,6 +688,9 @@ class VMobject(Mobject):
             a1 = new_subpath[2::2]
             false_ends = np.equal(a0, h).all(1)
             h[false_ends] = 0.5 * (a0[false_ends] + a1[false_ends])
+            # Avoid degenerate handles (duplicate points) to prevent visual bug
+            degenerate_handles = np.equal(h, a1).all(1)
+            h[degenerate_handles] = 0.5 * (a0[degenerate_handles] + a1[degenerate_handles])
             self.add_subpath(new_subpath)
         return self
 
@@ -872,17 +878,22 @@ class VMobject(Mobject):
         if not self.has_points():
             return np.zeros(3)
 
-        p0 = self.get_anchors()
-        p1 = np.vstack([p0[1:], p0[0]])
+        area = np.zeros(3)
+        for subpath in self.get_subpaths():
+            p0 = subpath[::2]  # anchors for this subpath
+            if len(p0) == 0:
+                continue
+            p1 = np.vstack([p0[1:], p0[0]])
 
-        # Each term goes through all edges [(x0, y0, z0), (x1, y1, z1)]
-        sums = p0 + p1
-        diffs = p1 - p0
-        return 0.5 * np.array([
-            (sums[:, 1] * diffs[:, 2]).sum(),  # Add up (y0 + y1)*(z1 - z0)
-            (sums[:, 2] * diffs[:, 0]).sum(),  # Add up (z0 + z1)*(x1 - x0)
-            (sums[:, 0] * diffs[:, 1]).sum(),  # Add up (x0 + x1)*(y1 - y0)
-        ])
+            # Each term goes through all edges [(x0, y0, z0), (x1, y1, z1)]
+            sums = p0 + p1
+            diffs = p1 - p0
+            area += 0.5 * np.array([
+                (sums[:, 1] * diffs[:, 2]).sum(),  # Add up (y0 + y1)*(z1 - z0)
+                (sums[:, 2] * diffs[:, 0]).sum(),  # Add up (z0 + z1)*(x1 - x0)
+                (sums[:, 0] * diffs[:, 1]).sum(),  # Add up (x0 + x1)*(y1 - y0)
+            ])
+        return area
 
     def get_unit_normal(self, refresh: bool = False) -> Vect3:
         if self.get_num_points() < 3:

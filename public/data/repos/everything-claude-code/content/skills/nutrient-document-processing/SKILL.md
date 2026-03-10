@@ -1,6 +1,7 @@
 ---
 name: nutrient-document-processing
 description: Process, convert, OCR, extract, redact, sign, and fill documents using the Nutrient DWS API. Works with PDFs, DOCX, XLSX, PPTX, HTML, and images.
+origin: ECC
 ---
 
 # Nutrient Document Processing
@@ -9,7 +10,7 @@ Process documents with the [Nutrient DWS Processor API](https://www.nutrient.io/
 
 ## Setup
 
-Get a free API key at **https://dashboard.nutrient.io/sign_up/?product=processor**
+Get a free API key at **[nutrient.io](https://dashboard.nutrient.io/sign_up/?product=processor)**
 
 ```bash
 export NUTRIENT_API_KEY="pdf_live_..."
@@ -161,5 +162,4 @@ For native tool integration, use the MCP server instead of curl:
 
 - [API Playground](https://dashboard.nutrient.io/processor-api/playground/)
 - [Full API Docs](https://www.nutrient.io/guides/dws-processor/)
-- [Agent Skill Repo](https://github.com/PSPDFKit-labs/nutrient-agent-skill)
 - [npm MCP Server](https://www.npmjs.com/package/@nutrient-sdk/dws-mcp-server)

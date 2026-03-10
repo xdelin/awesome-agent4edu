@@ -242,11 +242,12 @@ export interface ServerConfig {
   toolsToRun?: string[];
   enableTools?: string[];
   disableTools?: string[];
-  enableLogging: boolean;
   timeout: number;
   maxRetries: number;
   loggingEnabled: boolean;
   enableLocal: boolean;
+  /** Whether clone/fetch repository functionality is enabled (requires enableLocal) */
+  enableClone: boolean;
   /** Whether prompts/slash commands are disabled */
   disablePrompts: boolean;
   tokenSource: TokenSourceType;

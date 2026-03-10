@@ -1,224 +1,197 @@
 {
   "name": "claude-educational-ai-skills",
+  "full": true,
   "tree": [
-    {
-      "name": ".claude",
-      "type": "folder",
-      "path": ".claude",
-      "children": [
-        {
-          "name": "settings.local.json",
-          "type": "file",
-          "path": ".claude/settings.local.json",
-          "size": 1161,
-          "language": "json"
-        }
-      ]
-    },
-    {
-      "name": ".claude-plugin",
-      "type": "folder",
-      "path": ".claude-plugin",
-      "children": [
-        {
-          "name": "plugin.yaml",
-          "type": "file",
-          "path": ".claude-plugin/plugin.yaml",
-          "size": 1272,
-          "language": "yaml"
-        }
-      ]
-    },
     {
       "name": "skills",
       "type": "folder",
       "path": "skills",
       "children": [
         {
-          "name": "AI\u5de5\u5177\u61c9\u7528",
+          "name": "AI工具應用",
           "type": "folder",
-          "path": "skills/AI\u5de5\u5177\u61c9\u7528",
+          "path": "skills/AI工具應用",
           "children": [
             {
               "name": "ai-teaching-tools.md",
               "type": "file",
-              "path": "skills/AI\u5de5\u5177\u61c9\u7528/ai-teaching-tools.md",
-              "size": 6388,
+              "path": "skills/AI工具應用/ai-teaching-tools.md",
+              "size": 6047,
               "language": "md"
             },
             {
               "name": "generative-ai-education.md",
               "type": "file",
-              "path": "skills/AI\u5de5\u5177\u61c9\u7528/generative-ai-education.md",
-              "size": 8947,
+              "path": "skills/AI工具應用/generative-ai-education.md",
+              "size": 8519,
               "language": "md"
             }
           ]
         },
         {
-          "name": "ICT\u79d1\u6280\u878d\u5165",
+          "name": "ICT科技融入",
           "type": "folder",
-          "path": "skills/ICT\u79d1\u6280\u878d\u5165",
+          "path": "skills/ICT科技融入",
           "children": [
             {
               "name": "ict-integration.md",
               "type": "file",
-              "path": "skills/ICT\u79d1\u6280\u878d\u5165/ict-integration.md",
-              "size": 10038,
+              "path": "skills/ICT科技融入/ict-integration.md",
+              "size": 9798,
               "language": "md"
             }
           ]
         },
         {
-          "name": "\u504f\u9109\u6559\u80b2",
+          "name": "偏鄉教育",
           "type": "folder",
-          "path": "skills/\u504f\u9109\u6559\u80b2",
+          "path": "skills/偏鄉教育",
           "children": [
             {
               "name": "localized-content-design.md",
               "type": "file",
-              "path": "skills/\u504f\u9109\u6559\u80b2/localized-content-design.md",
-              "size": 7140,
+              "path": "skills/偏鄉教育/localized-content-design.md",
+              "size": 6921,
               "language": "md"
             },
             {
               "name": "rural-education-platform.md",
               "type": "file",
-              "path": "skills/\u504f\u9109\u6559\u80b2/rural-education-platform.md",
-              "size": 8353,
+              "path": "skills/偏鄉教育/rural-education-platform.md",
+              "size": 8131,
               "language": "md"
             }
           ]
         },
         {
-          "name": "\u5b78\u7fd2\u5206\u6790",
+          "name": "學習分析",
           "type": "folder",
-          "path": "skills/\u5b78\u7fd2\u5206\u6790",
+          "path": "skills/學習分析",
           "children": [
             {
               "name": "competency-based-assessment.md",
               "type": "file",
-              "path": "skills/\u5b78\u7fd2\u5206\u6790/competency-based-assessment.md",
-              "size": 7852,
+              "path": "skills/學習分析/competency-based-assessment.md",
+              "size": 7650,
               "language": "md"
             },
             {
               "name": "learning-analytics.md",
               "type": "file",
-              "path": "skills/\u5b78\u7fd2\u5206\u6790/learning-analytics.md",
-              "size": 6816,
+              "path": "skills/學習分析/learning-analytics.md",
+              "size": 6609,
               "language": "md"
             },
             {
               "name": "peer-assessment.md",
               "type": "file",
-              "path": "skills/\u5b78\u7fd2\u5206\u6790/peer-assessment.md",
-              "size": 16384,
+              "path": "skills/學習分析/peer-assessment.md",
+              "size": 15906,
               "language": "md"
             },
             {
               "name": "student-profiling.md",
               "type": "file",
-              "path": "skills/\u5b78\u7fd2\u5206\u6790/student-profiling.md",
-              "size": 5663,
+              "path": "skills/學習分析/student-profiling.md",
+              "size": 5475,
               "language": "md"
             }
           ]
         },
         {
-          "name": "\u6559\u5b78\u8a2d\u8a08",
+          "name": "教學設計",
           "type": "folder",
-          "path": "skills/\u6559\u5b78\u8a2d\u8a08",
+          "path": "skills/教學設計",
           "children": [
             {
               "name": "adaptive-learning-design.md",
               "type": "file",
-              "path": "skills/\u6559\u5b78\u8a2d\u8a08/adaptive-learning-design.md",
-              "size": 3270,
+              "path": "skills/教學設計/adaptive-learning-design.md",
+              "size": 3163,
               "language": "md"
             },
             {
               "name": "differentiated-instruction.md",
               "type": "file",
-              "path": "skills/\u6559\u5b78\u8a2d\u8a08/differentiated-instruction.md",
-              "size": 3815,
+              "path": "skills/教學設計/differentiated-instruction.md",
+              "size": 3669,
               "language": "md"
             },
             {
               "name": "gamified-learning.md",
               "type": "file",
-              "path": "skills/\u6559\u5b78\u8a2d\u8a08/gamified-learning.md",
-              "size": 15171,
+              "path": "skills/教學設計/gamified-learning.md",
+              "size": 14771,
               "language": "md"
             },
             {
               "name": "lesson-plan-generator.md",
               "type": "file",
-              "path": "skills/\u6559\u5b78\u8a2d\u8a08/lesson-plan-generator.md",
-              "size": 5141,
+              "path": "skills/教學設計/lesson-plan-generator.md",
+              "size": 4915,
               "language": "md"
             },
             {
               "name": "project-based-learning.md",
               "type": "file",
-              "path": "skills/\u6559\u5b78\u8a2d\u8a08/project-based-learning.md",
-              "size": 7752,
+              "path": "skills/教學設計/project-based-learning.md",
+              "size": 7533,
               "language": "md"
             },
             {
               "name": "sel-activity-designer.md",
               "type": "file",
-              "path": "skills/\u6559\u5b78\u8a2d\u8a08/sel-activity-designer.md",
-              "size": 12375,
+              "path": "skills/教學設計/sel-activity-designer.md",
+              "size": 12081,
               "language": "md"
             }
           ]
         },
         {
-          "name": "\u6578\u5b78\u79d1\u6280\u6559\u80b2",
+          "name": "數學科技教育",
           "type": "folder",
-          "path": "skills/\u6578\u5b78\u79d1\u6280\u6559\u80b2",
+          "path": "skills/數學科技教育",
           "children": [
             {
               "name": "math-technology.md",
               "type": "file",
-              "path": "skills/\u6578\u5b78\u79d1\u6280\u6559\u80b2/math-technology.md",
-              "size": 8038,
+              "path": "skills/數學科技教育/math-technology.md",
+              "size": 7782,
               "language": "md"
             }
           ]
         },
         {
-          "name": "\u7814\u7a76\u65b9\u6cd5",
+          "name": "研究方法",
           "type": "folder",
-          "path": "skills/\u7814\u7a76\u65b9\u6cd5",
+          "path": "skills/研究方法",
           "children": [
             {
               "name": "education-research-design.md",
               "type": "file",
-              "path": "skills/\u7814\u7a76\u65b9\u6cd5/education-research-design.md",
-              "size": 10532,
+              "path": "skills/研究方法/education-research-design.md",
+              "size": 10250,
               "language": "md"
             },
             {
               "name": "empirical-research-automation.md",
               "type": "file",
-              "path": "skills/\u7814\u7a76\u65b9\u6cd5/empirical-research-automation.md",
-              "size": 9878,
+              "path": "skills/研究方法/empirical-research-automation.md",
+              "size": 9574,
               "language": "md"
             },
             {
               "name": "mixed-methods.md",
               "type": "file",
-              "path": "skills/\u7814\u7a76\u65b9\u6cd5/mixed-methods.md",
-              "size": 10285,
+              "path": "skills/研究方法/mixed-methods.md",
+              "size": 9970,
               "language": "md"
             },
             {
               "name": "quasi-experimental-design.md",
               "type": "file",
-              "path": "skills/\u7814\u7a76\u65b9\u6cd5/quasi-experimental-design.md",
-              "size": 12905,
+              "path": "skills/研究方法/quasi-experimental-design.md",
+              "size": 12582,
               "language": "md"
             }
           ]
@@ -234,170 +207,184 @@
           "name": "adaptive-learning-design.html",
           "type": "file",
           "path": "tools/adaptive-learning-design.html",
-          "size": 14484,
+          "size": 14041,
           "language": "html"
         },
         {
           "name": "ai-teaching-tools.html",
           "type": "file",
           "path": "tools/ai-teaching-tools.html",
-          "size": 13402,
+          "size": 13037,
           "language": "html"
         },
         {
           "name": "competency-based-assessment.html",
           "type": "file",
           "path": "tools/competency-based-assessment.html",
-          "size": 17311,
+          "size": 16895,
           "language": "html"
         },
         {
           "name": "differentiated-instruction.html",
           "type": "file",
           "path": "tools/differentiated-instruction.html",
-          "size": 17769,
+          "size": 17140,
           "language": "html"
         },
         {
           "name": "education-research-design.html",
           "type": "file",
           "path": "tools/education-research-design.html",
-          "size": 14194,
+          "size": 13829,
           "language": "html"
         },
         {
           "name": "empirical-research-automation.html",
           "type": "file",
           "path": "tools/empirical-research-automation.html",
-          "size": 26200,
+          "size": 25399,
           "language": "html"
         },
         {
           "name": "gamified-learning.html",
           "type": "file",
           "path": "tools/gamified-learning.html",
-          "size": 30104,
+          "size": 29179,
           "language": "html"
         },
         {
           "name": "generative-ai-education.html",
           "type": "file",
           "path": "tools/generative-ai-education.html",
-          "size": 14641,
+          "size": 14260,
           "language": "html"
         },
         {
           "name": "ict-integration.html",
           "type": "file",
           "path": "tools/ict-integration.html",
-          "size": 13991,
+          "size": 13621,
           "language": "html"
         },
         {
           "name": "learning-analytics.html",
           "type": "file",
           "path": "tools/learning-analytics.html",
-          "size": 13772,
+          "size": 13412,
           "language": "html"
         },
         {
           "name": "lesson-plan-generator.html",
           "type": "file",
           "path": "tools/lesson-plan-generator.html",
-          "size": 14167,
+          "size": 13787,
           "language": "html"
         },
         {
           "name": "localized-content-design.html",
           "type": "file",
           "path": "tools/localized-content-design.html",
-          "size": 14650,
+          "size": 14281,
           "language": "html"
         },
         {
           "name": "math-technology.html",
           "type": "file",
           "path": "tools/math-technology.html",
-          "size": 14970,
+          "size": 14578,
           "language": "html"
         },
         {
           "name": "mixed-methods.html",
           "type": "file",
           "path": "tools/mixed-methods.html",
-          "size": 12529,
+          "size": 12184,
           "language": "html"
         },
         {
           "name": "peer-assessment.html",
           "type": "file",
           "path": "tools/peer-assessment.html",
-          "size": 34290,
+          "size": 33262,
           "language": "html"
         },
         {
           "name": "project-based-learning.html",
           "type": "file",
           "path": "tools/project-based-learning.html",
-          "size": 17326,
+          "size": 16909,
           "language": "html"
         },
         {
           "name": "quasi-experimental-design.html",
           "type": "file",
           "path": "tools/quasi-experimental-design.html",
-          "size": 28936,
+          "size": 28070,
           "language": "html"
         },
         {
           "name": "rural-education-platform.html",
           "type": "file",
           "path": "tools/rural-education-platform.html",
-          "size": 12869,
+          "size": 12529,
           "language": "html"
         },
         {
           "name": "sel-activity-designer.html",
           "type": "file",
           "path": "tools/sel-activity-designer.html",
-          "size": 29161,
+          "size": 28307,
           "language": "html"
         },
         {
           "name": "student-profiling.html",
           "type": "file",
           "path": "tools/student-profiling.html",
-          "size": 11655,
+          "size": 11332,
           "language": "html"
         }
       ]
     },
     {
+      "name": ".github-pages-trigger",
+      "type": "file",
+      "path": ".github-pages-trigger",
+      "size": 22,
+      "language": "text"
+    },
+    {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 739,
+      "size": 676,
       "language": "text"
     },
     {
       "name": "CONTRIBUTING.md",
       "type": "file",
       "path": "CONTRIBUTING.md",
-      "size": 4186,
+      "size": 3969,
       "language": "md"
     },
     {
       "name": "index.html",
       "type": "file",
       "path": "index.html",
-      "size": 36854,
+      "size": 35802,
       "language": "html"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1086,
+      "language": "text"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 14620,
+      "size": 13355,
       "language": "md"
     }
   ]

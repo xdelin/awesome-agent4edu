@@ -4,7 +4,7 @@ import { addBreadcrumb } from '@sentry/node';
 import { identify } from '../analytics/analytics';
 import { logger } from '../utils/logger';
 
-export type Account = {
+type Account = {
   id: string;
   name: string;
   email?: string;
@@ -18,7 +18,7 @@ export type Account = {
 export async function resolveAccountFromAuth(
   auth: AuthDetailsResponse,
   neonClient: Api<unknown>,
-  identifyContext?: Parameters<typeof identify>[1]
+  identifyContext?: Parameters<typeof identify>[1],
 ): Promise<Account> {
   let account: Account;
 

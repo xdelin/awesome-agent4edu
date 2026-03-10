@@ -7,14 +7,14 @@ import {
   BaseQuerySchemaLocal,
   createBulkQuerySchema,
 } from '../../scheme/baseSchema.js';
-import { STATIC_TOOL_NAMES } from '../toolNames.js';
-import { LSP_FIND_REFERENCES, DESCRIPTIONS } from '../toolMetadata.js';
+import { TOOL_NAMES } from '../toolMetadata/index.js';
+import { LSP_FIND_REFERENCES, DESCRIPTIONS } from '../toolMetadata/index.js';
 
 /**
  * Tool description for lspFindReferences
  */
 export const LSP_FIND_REFERENCES_DESCRIPTION =
-  DESCRIPTIONS[STATIC_TOOL_NAMES.LSP_FIND_REFERENCES];
+  DESCRIPTIONS[TOOL_NAMES.LSP_FIND_REFERENCES];
 
 /**
  * Base schema for LSP find references query
@@ -73,6 +73,22 @@ const LSPFindReferencesBaseSchema = BaseQuerySchemaLocal.extend({
     .optional()
     .default(1)
     .describe(LSP_FIND_REFERENCES.pagination.page),
+
+  includePattern: z
+    .array(z.string())
+    .optional()
+    .describe(
+      LSP_FIND_REFERENCES.filtering.includePattern ||
+        'Glob patterns to include (e.g. ["**/*.test.ts", "**/src/**"]). Only matching files are returned.'
+    ),
+
+  excludePattern: z
+    .array(z.string())
+    .optional()
+    .describe(
+      LSP_FIND_REFERENCES.filtering.excludePattern ||
+        'Glob patterns to exclude (e.g. ["**/node_modules/**", "**/dist/**"]). Matching files are removed.'
+    ),
 });
 
 /**
@@ -84,7 +100,7 @@ export const LSPFindReferencesQuerySchema = LSPFindReferencesBaseSchema;
  * Bulk query schema for finding references across multiple symbols
  */
 export const BulkLSPFindReferencesSchema = createBulkQuerySchema(
-  STATIC_TOOL_NAMES.LSP_FIND_REFERENCES,
+  TOOL_NAMES.LSP_FIND_REFERENCES,
   LSPFindReferencesQuerySchema,
   { maxQueries: 5 }
 );

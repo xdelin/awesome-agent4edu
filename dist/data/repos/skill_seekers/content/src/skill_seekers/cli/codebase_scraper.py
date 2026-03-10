@@ -32,14 +32,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from skill_seekers.cli.api_reference_builder import APIReferenceBuilder
 from skill_seekers.cli.code_analyzer import CodeAnalyzer
 from skill_seekers.cli.config_extractor import ConfigExtractor
 from skill_seekers.cli.dependency_analyzer import DependencyAnalyzer
 from skill_seekers.cli.signal_flow_analyzer import SignalFlowAnalyzer
+from skill_seekers.cli.utils import setup_logging
 
 # Try to import pathspec for .gitignore support
 try:
@@ -49,8 +47,6 @@ try:
 except ImportError:
     PATHSPEC_AVAILABLE = False
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -80,8 +76,10 @@ LANGUAGE_EXTENSIONS = {
     ".php": "PHP",
 }
 
-# Markdown extension mapping
+# Documentation file extensions
 MARKDOWN_EXTENSIONS = {".md", ".markdown", ".mdown", ".mkd"}
+RST_EXTENSIONS = {".rst", ".rest"}  # ReStructuredText (Sphinx, Godot docs, etc.)
+DOC_EXTENSIONS = MARKDOWN_EXTENSIONS | RST_EXTENSIONS  # All supported doc formats
 
 # Common documentation folders to scan
 DOC_FOLDERS = {"docs", "doc", "documentation", "wiki", ".github"}
@@ -328,8 +326,8 @@ def walk_markdown_files(
                 except ValueError:
                     continue
 
-            # Check if markdown file
-            if file_path.suffix.lower() not in MARKDOWN_EXTENSIONS:
+            # Check if documentation file (markdown or RST)
+            if file_path.suffix.lower() not in DOC_EXTENSIONS:
                 continue
 
             files.append(file_path)
@@ -435,6 +433,154 @@ def extract_markdown_structure(content: str) -> dict[str, Any]:
                 "url": match.group(2),
             }
         )
+
+    return structure
+
+
+def extract_rst_structure(content: str) -> dict[str, Any]:
+    """
+    Extract structure from ReStructuredText (RST) content.
+
+    Uses the enhanced unified RST parser for comprehensive extraction.
+
+    RST uses underline-style headers:
+        Title
+        =====
+
+        Section
+        -------
+
+        Subsection
+        ~~~~~~~~~~
+
+    Args:
+        content: RST file content
+
+    Returns:
+        Dictionary with extracted structure including:
+        - title: Document title
+        - headers: List of headers with levels
+        - code_blocks: Code blocks with language and content
+        - tables: Tables with rows and headers
+        - links: External links
+        - cross_references: Internal cross-references
+        - word_count: Total word count
+        - line_count: Total line count
+    """
+    # Use the enhanced unified RST parser
+    try:
+        from skill_seekers.cli.parsers.extractors import RstParser
+
+        parser = RstParser()
+        result = parser.parse_string(content, "<string>")
+
+        if result.success and result.document:
+            doc = result.document
+
+            # Convert to legacy structure format for backward compatibility
+            structure = {
+                "title": doc.title,
+                "headers": [
+                    {"level": h.level, "text": h.text, "line": h.source_line} for h in doc.headings
+                ],
+                "code_blocks": [
+                    {
+                        "language": cb.language or "text",
+                        "code": cb.code[:500] if len(cb.code) > 500 else cb.code,
+                        "full_length": len(cb.code),
+                        "quality_score": cb.quality_score,
+                    }
+                    for cb in doc.code_blocks
+                ],
+                "tables": [
+                    {
+                        "caption": t.caption,
+                        "headers": t.headers,
+                        "rows": t.rows,
+                        "row_count": t.num_rows,
+                        "col_count": t.num_cols,
+                    }
+                    for t in doc.tables
+                ],
+                "links": [
+                    {"text": x.text or x.target, "url": x.target} for x in doc.external_links
+                ],
+                "cross_references": [
+                    {"type": x.ref_type.value, "target": x.target} for x in doc.internal_links
+                ],
+                "word_count": len(content.split()),
+                "line_count": len(content.split("\n")),
+                # New enhanced fields
+                "_enhanced": True,
+                "_extraction_stats": {
+                    "total_blocks": doc.stats.total_blocks,
+                    "code_blocks": len(doc.code_blocks),
+                    "tables": len(doc.tables),
+                    "headings": len(doc.headings),
+                    "cross_references": len(doc.internal_links),
+                },
+            }
+            return structure
+    except Exception as e:
+        # Fall back to basic extraction if unified parser fails
+        logger.warning(f"Enhanced RST parser failed: {e}, using basic parser")
+
+    # Legacy basic extraction (fallback)
+    import re
+
+    structure = {
+        "title": None,
+        "headers": [],
+        "code_blocks": [],
+        "tables": [],
+        "links": [],
+        "cross_references": [],
+        "word_count": len(content.split()),
+        "line_count": len(content.split("\n")),
+        "_enhanced": False,
+    }
+
+    lines = content.split("\n")
+    underline_chars = ["=", "-", "~", "^", '"', "'", "`", ":", "."]
+
+    # Extract headers (RST style: text on one line, underline on next)
+    for i in range(len(lines) - 1):
+        current_line = lines[i].strip()
+        next_line = lines[i + 1].strip()
+
+        if (
+            current_line
+            and next_line
+            and len(set(next_line)) == 1
+            and next_line[0] in underline_chars
+            and len(next_line) >= len(current_line) - 2
+        ):
+            level = underline_chars.index(next_line[0]) + 1
+            text = current_line.strip()
+            structure["headers"].append({"level": level, "text": text, "line": i + 1})
+            if structure["title"] is None:
+                structure["title"] = text
+
+    # Basic code block extraction
+    code_block_pattern = re.compile(
+        r"\.\.\s+code-block::\s+(\w+)\s*\n\s+(.*?)(?=\n\S|\Z)", re.DOTALL
+    )
+    for match in code_block_pattern.finditer(content):
+        language = match.group(1) or "text"
+        code = match.group(2).strip()
+        if code:
+            structure["code_blocks"].append(
+                {
+                    "language": language,
+                    "code": code[:500],
+                    "full_length": len(code),
+                }
+            )
+
+    # Basic link extraction
+    link_pattern = re.compile(r"`([^<`]+)\s+<([^>]+)>`_")
+    for match in link_pattern.finditer(content):
+        structure["links"].append({"text": match.group(1).strip(), "url": match.group(2)})
 
     return structure
 
@@ -550,8 +696,80 @@ def process_markdown_docs(
             if depth == "surface":
                 processed_docs.append(doc_data)
             else:
-                # Deep/Full: extract structure and summary
-                structure = extract_markdown_structure(content)
+                # Deep/Full: extract structure and summary using unified parsers
+                structure = None
+                parsed_doc = None
+
+                try:
+                    from skill_seekers.cli.parsers.extractors import RstParser, MarkdownParser
+
+                    # Use appropriate unified parser based on file extension
+                    if md_path.suffix.lower() in RST_EXTENSIONS:
+                        parser = RstParser()
+                        result = parser.parse_string(content, str(md_path))
+                        if result.success:
+                            parsed_doc = result.document
+                            # Convert to legacy structure format for backward compatibility
+                            structure = {
+                                "title": parsed_doc.title,
+                                "headers": [
+                                    {"level": h.level, "text": h.text, "line": h.source_line}
+                                    for h in parsed_doc.headings
+                                ],
+                                "code_blocks": [
+                                    {"language": cb.language, "code": cb.code[:500]}
+                                    for cb in parsed_doc.code_blocks
+                                ],
+                                "tables": len(parsed_doc.tables),
+                                "cross_refs": len(parsed_doc.internal_links),
+                                "directives": len(
+                                    [b for b in parsed_doc.blocks if b.type.value == "admonition"]
+                                ),
+                                "word_count": parsed_doc.stats.total_blocks
+                                if parsed_doc.stats
+                                else 0,
+                                "line_count": len(content.split("\n")),
+                            }
+                    else:
+                        parser = MarkdownParser()
+                        result = parser.parse_string(content, str(md_path))
+                        if result.success:
+                            parsed_doc = result.document
+                            # Convert to legacy structure format
+                            structure = {
+                                "title": parsed_doc.title,
+                                "headers": [
+                                    {"level": h.level, "text": h.text, "line": h.source_line}
+                                    for h in parsed_doc.headings
+                                ],
+                                "code_blocks": [
+                                    {"language": cb.language, "code": cb.code[:500]}
+                                    for cb in parsed_doc.code_blocks
+                                ],
+                                "tables": len(parsed_doc.tables),
+                                "images": len(parsed_doc.images),
+                                "links": len(parsed_doc.external_links),
+                                "word_count": parsed_doc.stats.total_blocks
+                                if parsed_doc.stats
+                                else 0,
+                                "line_count": len(content.split("\n")),
+                            }
+                except ImportError:
+                    # Fallback to old parsers if unified parsers not available
+                    logger.debug("Unified parsers not available, using legacy parsers")
+                    if md_path.suffix.lower() in RST_EXTENSIONS:
+                        structure = extract_rst_structure(content)
+                    else:
+                        structure = extract_markdown_structure(content)
+
+                # Generate summary
+                if structure is None:
+                    # Fallback if parsing failed
+                    if md_path.suffix.lower() in RST_EXTENSIONS:
+                        structure = extract_rst_structure(content)
+                    else:
+                        structure = extract_markdown_structure(content)
+
                 summary = generate_markdown_summary(content, structure)
 
                 doc_data.update(
@@ -560,8 +778,27 @@ def process_markdown_docs(
                         "structure": structure,
                         "summary": summary,
                         "content": content if depth == "full" else None,
+                        "_enhanced": parsed_doc is not None,  # Mark if enhanced parser was used
                     }
                 )
+
+                # If we have rich parsed data, save it
+                if parsed_doc:
+                    doc_data["parsed_data"] = {
+                        "tables": len(parsed_doc.tables),
+                        "cross_references": len(parsed_doc.internal_links),
+                        "code_blocks": len(parsed_doc.code_blocks),
+                        "images": len(getattr(parsed_doc, "images", [])),
+                        "quality_scores": {
+                            "avg_code_quality": sum(
+                                cb.quality_score or 0 for cb in parsed_doc.code_blocks
+                            )
+                            / len(parsed_doc.code_blocks)
+                            if parsed_doc.code_blocks
+                            else 0,
+                        },
+                    }
+
                 processed_docs.append(doc_data)
 
             # Track categories
@@ -612,6 +849,38 @@ def process_markdown_docs(
     index_json = docs_output_dir / "documentation_index.json"
     with open(index_json, "w", encoding="utf-8") as f:
         json.dump(index_data, f, indent=2, default=str)
+
+    # Save extraction summary (tables, cross-refs, etc.)
+    enhanced_count = sum(1 for doc in processed_docs if doc.get("_enhanced", False))
+    if enhanced_count > 0:
+        total_tables = sum(doc.get("parsed_data", {}).get("tables", 0) for doc in processed_docs)
+        total_xrefs = sum(
+            doc.get("parsed_data", {}).get("cross_references", 0) for doc in processed_docs
+        )
+        total_code_blocks = sum(
+            doc.get("parsed_data", {}).get("code_blocks", 0) for doc in processed_docs
+        )
+
+        extraction_summary = {
+            "enhanced_files": enhanced_count,
+            "total_files": len(processed_docs),
+            "extraction_stats": {
+                "tables": total_tables,
+                "cross_references": total_xrefs,
+                "code_blocks": total_code_blocks,
+            },
+            "parser_version": "unified_v1.0.0",
+        }
+
+        summary_json = docs_output_dir / "extraction_summary.json"
+        with open(summary_json, "w", encoding="utf-8") as f:
+            json.dump(extraction_summary, f, indent=2)
+
+        logger.info(f"📊 Extraction Summary:")
+        logger.info(f"   - Enhanced files: {enhanced_count}/{len(processed_docs)}")
+        logger.info(f"   - Tables extracted: {total_tables}")
+        logger.info(f"   - Cross-references: {total_xrefs}")
+        logger.info(f"   - Code blocks: {total_code_blocks}")
 
     logger.info(
         f"✅ Processed {len(processed_docs)} documentation files in {len(categories)} categories"
@@ -786,6 +1055,8 @@ def analyze_codebase(
     extract_config_patterns: bool = True,
     extract_docs: bool = True,
     enhance_level: int = 0,
+    skill_name: str | None = None,
+    skill_description: str | None = None,
 ) -> dict[str, Any]:
     """
     Analyze local codebase and extract code knowledge.
@@ -805,6 +1076,8 @@ def analyze_codebase(
         extract_config_patterns: Extract configuration patterns from config files (C3.4)
         extract_docs: Extract and process markdown documentation files (default: True)
         enhance_level: AI enhancement level (0=off, 1=SKILL.md only, 2=+config+arch+docs, 3=full)
+        skill_name: Optional override for skill name (default: directory name)
+        skill_description: Optional override for skill description
 
     Returns:
         Analysis results dictionary
@@ -989,7 +1262,8 @@ def analyze_codebase(
         logger.info("Detecting design patterns...")
         from skill_seekers.cli.pattern_recognizer import PatternRecognizer
 
-        pattern_recognizer = PatternRecognizer(depth=depth, enhance_with_ai=enhance_patterns)
+        # Step 1: Detect patterns WITHOUT enhancement (collect all first)
+        pattern_recognizer = PatternRecognizer(depth=depth, enhance_with_ai=False)
         pattern_results = []
 
         for file_path in files:
@@ -1005,6 +1279,31 @@ def analyze_codebase(
             except Exception as e:
                 logger.warning(f"Pattern detection failed for {file_path}: {e}")
                 continue
+
+        # Step 2: Enhance ALL patterns at once (batched across all files)
+        if enhance_patterns and pattern_results:
+            logger.info("🤖 Enhancing patterns with AI (batched)...")
+            from skill_seekers.cli.ai_enhancer import PatternEnhancer
+
+            enhancer = PatternEnhancer()
+
+            # Flatten all patterns from all files
+            all_patterns = []
+            pattern_map = []  # Track (report_idx, pattern_idx) for each pattern
+
+            for report_idx, report in enumerate(pattern_results):
+                for pattern_idx, pattern in enumerate(report.get("patterns", [])):
+                    all_patterns.append(pattern)
+                    pattern_map.append((report_idx, pattern_idx))
+
+            if all_patterns:
+                # Enhance all patterns in batches (this is where batching happens!)
+                enhanced_patterns = enhancer.enhance_patterns(all_patterns)
+
+                # Map enhanced patterns back to their reports
+                for i, (report_idx, pattern_idx) in enumerate(pattern_map):
+                    if i < len(enhanced_patterns):
+                        pattern_results[report_idx]["patterns"][pattern_idx] = enhanced_patterns[i]
 
         # Save pattern results with multi-level filtering (Issue #240)
         if pattern_results:
@@ -1302,6 +1601,8 @@ def analyze_codebase(
         extract_config_patterns=extract_config_patterns,
         extract_docs=extract_docs,
         docs_data=docs_data,
+        skill_name=skill_name,
+        skill_description=skill_description,
     )
 
     return results
@@ -1319,6 +1620,8 @@ def _generate_skill_md(
     extract_config_patterns: bool,
     extract_docs: bool = True,
     docs_data: dict[str, Any] | None = None,
+    skill_name: str | None = None,
+    skill_description: str | None = None,
 ):
     """
     Generate rich SKILL.md from codebase analysis results.
@@ -1337,10 +1640,14 @@ def _generate_skill_md(
     repo_name = directory.name
 
     # Generate skill name (lowercase, hyphens only, max 64 chars)
-    skill_name = repo_name.lower().replace("_", "-").replace(" ", "-")[:64]
+    # Use CLI override if provided, otherwise derive from directory name
+    if skill_name:
+        skill_name = skill_name.lower().replace("_", "-").replace(" ", "-")[:64]
+    else:
+        skill_name = repo_name.lower().replace("_", "-").replace(" ", "-")[:64]
 
-    # Generate description
-    description = f"Local codebase analysis for {repo_name}"
+    # Generate description (use CLI override if provided)
+    description = skill_description or f"Local codebase analysis for {repo_name}"
 
     # Count files by language
     language_stats = _get_language_stats(results.get("files", []))
@@ -1955,12 +2262,14 @@ def _check_deprecated_flags(args):
         print("   --preset standard       (5-10 min, core features, DEFAULT)")
         print("   --preset comprehensive  (20-60 min, all features + AI)")
         print("   --enhance-level 0-3     (granular AI enhancement control)")
-        print("\n⚠️  Deprecated flags will be removed in v3.0.0")
+        print("\n⚠️  Deprecated flags will be removed in v4.0.0")
         print("=" * 70 + "\n")
 
 
 def main():
     """Command-line interface for codebase analysis."""
+    from skill_seekers.cli.arguments.analyze import add_analyze_arguments
+
     parser = argparse.ArgumentParser(
         description="Analyze local codebases and extract code knowledge",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -1989,92 +2298,10 @@ Examples:
 """,
     )
 
-    parser.add_argument("--directory", required=True, help="Directory to analyze")
-    parser.add_argument(
-        "--output", default="output/codebase/", help="Output directory (default: output/codebase/)"
-    )
+    # Register all args from the shared definitions module
+    add_analyze_arguments(parser)
 
-    # Preset selection (NEW - recommended way)
-    parser.add_argument(
-        "--preset",
-        choices=["quick", "standard", "comprehensive"],
-        help="Analysis preset: quick (1-2 min), standard (5-10 min, DEFAULT), comprehensive (20-60 min)",
-    )
-    parser.add_argument(
-        "--preset-list", action="store_true", help="Show available presets and exit"
-    )
-
-    # Legacy preset flags (kept for backward compatibility)
-    parser.add_argument(
-        "--quick",
-        action="store_true",
-        help="[DEPRECATED] Quick analysis - use '--preset quick' instead",
-    )
-    parser.add_argument(
-        "--comprehensive",
-        action="store_true",
-        help="[DEPRECATED] Comprehensive analysis - use '--preset comprehensive' instead",
-    )
-
-    parser.add_argument(
-        "--depth",
-        choices=["surface", "deep", "full"],
-        default=None,  # Don't set default here - let preset system handle it
-        help=(
-            "[DEPRECATED] Analysis depth - use --preset instead. "
-            "surface (basic code structure, ~1-2 min), "
-            "deep (code + patterns + tests, ~5-10 min, DEFAULT), "
-            "full (everything + AI enhancement, ~20-60 min)"
-        ),
-    )
-    parser.add_argument(
-        "--languages", help="Comma-separated languages to analyze (e.g., Python,JavaScript,C++)"
-    )
-    parser.add_argument(
-        "--file-patterns", help="Comma-separated file patterns (e.g., *.py,src/**/*.js)"
-    )
-    parser.add_argument(
-        "--skip-api-reference",
-        action="store_true",
-        default=False,
-        help="Skip API reference markdown documentation generation (default: enabled)",
-    )
-    parser.add_argument(
-        "--skip-dependency-graph",
-        action="store_true",
-        default=False,
-        help="Skip dependency graph and circular dependency detection (default: enabled)",
-    )
-    parser.add_argument(
-        "--skip-patterns",
-        action="store_true",
-        default=False,
-        help="Skip design pattern detection (Singleton, Factory, Observer, etc.) (default: enabled)",
-    )
-    parser.add_argument(
-        "--skip-test-examples",
-        action="store_true",
-        default=False,
-        help="Skip test example extraction (instantiation, method calls, configs, etc.) (default: enabled)",
-    )
-    parser.add_argument(
-        "--skip-how-to-guides",
-        action="store_true",
-        default=False,
-        help="Skip how-to guide generation from workflow examples (default: enabled)",
-    )
-    parser.add_argument(
-        "--skip-config-patterns",
-        action="store_true",
-        default=False,
-        help="Skip configuration pattern extraction from config files (JSON, YAML, TOML, ENV, etc.) (default: enabled)",
-    )
-    parser.add_argument(
-        "--skip-docs",
-        action="store_true",
-        default=False,
-        help="Skip project documentation extraction from markdown files (README, docs/, etc.) (default: enabled)",
-    )
+    # Extra legacy arg only used by standalone CLI (not in arguments/analyze.py)
     parser.add_argument(
         "--ai-mode",
         choices=["auto", "api", "local", "none"],
@@ -2086,21 +2313,6 @@ Examples:
             "local (Claude Code Max, FREE, no API key), "
             "none (disable AI enhancement). "
             "💡 TIP: Use --enhance flag instead for simpler UX!"
-        ),
-    )
-    parser.add_argument("--no-comments", action="store_true", help="Skip comment extraction")
-    parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
-    parser.add_argument(
-        "--enhance-level",
-        type=int,
-        choices=[0, 1, 2, 3],
-        default=0,
-        help=(
-            "AI enhancement level: "
-            "0=off (default), "
-            "1=SKILL.md only, "
-            "2=SKILL.md+Architecture+Config, "
-            "3=full (patterns, tests, config, architecture, SKILL.md)"
         ),
     )
 
@@ -2169,9 +2381,36 @@ Examples:
     if args.depth is None:
         args.depth = "deep"  # Default depth
 
-    # Set logging level
-    if args.verbose:
-        logging.getLogger().setLevel(logging.DEBUG)
+    setup_logging(verbose=args.verbose, quiet=getattr(args, "quiet", False))
+
+    # Handle --dry-run
+    if getattr(args, "dry_run", False):
+        directory = Path(args.directory)
+        print(f"\n{'=' * 60}")
+        print(f"DRY RUN: Codebase Analysis")
+        print(f"{'=' * 60}")
+        print(f"Directory:    {directory.resolve()}")
+        print(f"Output:       {args.output}")
+        print(f"Preset:       {preset_name}")
+        print(f"Depth:        {args.depth or 'deep (default)'}")
+        print(f"Name:         {getattr(args, 'name', None) or directory.name}")
+        print(f"Enhance:      level {args.enhance_level}")
+        print(f"Skip flags:   ", end="")
+        skips = []
+        for flag in [
+            "skip_api_reference",
+            "skip_dependency_graph",
+            "skip_patterns",
+            "skip_test_examples",
+            "skip_how_to_guides",
+            "skip_config_patterns",
+            "skip_docs",
+        ]:
+            if getattr(args, flag, False):
+                skips.append(f"--{flag.replace('_', '-')}")
+        print(", ".join(skips) if skips else "(none)")
+        print(f"\n✅ Dry run complete")
+        return 0
 
     # Validate directory
     directory = Path(args.directory)
@@ -2210,16 +2449,29 @@ Examples:
             extract_config_patterns=not args.skip_config_patterns,
             extract_docs=not args.skip_docs,
             enhance_level=args.enhance_level,  # AI enhancement level (0-3)
+            skill_name=getattr(args, "name", None),
+            skill_description=getattr(args, "description", None),
         )
+
+        # ============================================================
+        # WORKFLOW SYSTEM INTEGRATION (Phase 2)
+        # ============================================================
+        from skill_seekers.cli.workflow_runner import run_workflows
+
+        workflow_executed, workflow_names = run_workflows(args)
 
         # Print summary
         print(f"\n{'=' * 60}")
         print("CODEBASE ANALYSIS COMPLETE")
+        if workflow_executed:
+            print(f" + {len(workflow_names)} ENHANCEMENT WORKFLOW(S) EXECUTED")
         print(f"{'=' * 60}")
         print(f"Files analyzed: {len(results['files'])}")
         print(f"Output directory: {args.output}")
         if not args.skip_api_reference:
             print(f"API reference: {Path(args.output) / 'api_reference'}")
+        if workflow_executed:
+            print(f"Workflows applied: {', '.join(workflow_names)}")
         print(f"{'=' * 60}\n")
 
         return 0

@@ -38,9 +38,14 @@ except ImportError:
 
         TOML_AVAILABLE = True
     except ImportError:
-        toml_lib = None
-        TOML_AVAILABLE = False
-        logger.debug("toml/tomli not available - TOML parsing disabled")
+        try:
+            import tomllib as toml_lib  # noqa: F401 - Python 3.11+ stdlib
+
+            TOML_AVAILABLE = True
+        except ImportError:
+            toml_lib = None
+            TOML_AVAILABLE = False
+            logger.debug("toml/tomli not available - TOML parsing disabled")
 
 
 @dataclass
@@ -870,10 +875,9 @@ def main():
 
     # AI Enhancement (if requested)
     enhance_mode = args.ai_mode
-    if args.enhance:
-        enhance_mode = "api"
-    elif args.enhance_local:
-        enhance_mode = "local"
+    if getattr(args, "enhance_level", 0) > 0:
+        # Auto-detect mode if enhance_level is set
+        enhance_mode = "auto"  # ConfigEnhancer will auto-detect API vs LOCAL
 
     if enhance_mode != "none":
         try:

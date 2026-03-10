@@ -50,6 +50,11 @@
   $: {
     showChainId = opts.premint !== '' && opts.premint !== '0' && opts.crossChainBridging !== false;
   }
+
+  let showAllowOverride = false;
+  $: {
+    showAllowOverride = opts.crossChainBridging === 'erc7786native';
+  }
 </script>
 
 <section class="controls-section">
@@ -129,7 +134,7 @@
       </HelpTooltip>
     </label>
 
-    <label class:checked={opts.permit || opts.votes}>
+    <label class:checked={opts.permit}>
       <input type="checkbox" bind:checked={opts.permit} />
       Permit
       <HelpTooltip link="https://docs.openzeppelin.com/contracts/5.x/api/token/erc20#ERC20Permit">
@@ -186,6 +191,24 @@
       Custom
       <HelpTooltip>Uses custom bridge contract(s) as authorized token bridge(s).</HelpTooltip>
     </label>
+
+    <label class:checked={opts.crossChainBridging === 'erc7786native'}>
+      <input type="radio" bind:group={opts.crossChainBridging} value="erc7786native" />
+      ERC-7786 Native
+      <HelpTooltip link="https://docs.openzeppelin.com/contracts/5.x/api/token/erc20#ERC20Crosschain"
+        >Embeds an ERC-7786 based bridge directly in the token contract, making it natively crosschain.</HelpTooltip
+      >
+    </label>
+
+    {#if showAllowOverride}
+      <p class="subcontrol tooltip-container flex justify-between items-center pr-2">
+        <label class="text-sm flex-1">
+          <input type="checkbox" bind:checked={opts.crossChainLinkAllowOverride} />
+          Allow Link Overrides
+        </label>
+        <HelpTooltip>Whether to allow replacing a crosschain link that has already been registered.</HelpTooltip>
+      </p>
+    {/if}
 
     {#if !omitFeatures?.includes('superchain')}
       <label class:checked={opts.crossChainBridging === 'superchain'} bind:this={superchainLabel}>

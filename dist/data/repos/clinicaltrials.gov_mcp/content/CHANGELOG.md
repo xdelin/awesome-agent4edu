@@ -2,6 +2,171 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0] - 2026-02-28
+
+### Changed
+
+- **`find_eligible_studies` — removed synthetic match scoring**: Dropped the `matchScore` field (0–100 composite of condition relevance × 60% + demographic checks × 40%) from results. Results are now sorted by transparent geographic proximity: city match > state match > country-only, then by number of nearby sites. This surfaces real signal rather than an arbitrary weighted score.
+- **`find_eligible_studies` — condition relevance as hard gate only**: `calculateConditionRelevance` is now used strictly to exclude studies with zero token overlap (false positives from full-text index hits), not to produce a score. Match reasons now show the study's listed conditions instead of a percentage score.
+- **`compare_studies` — removed fabricated commonalities/differences**: Stripped the `commonalities` and `differences` arrays from the summary output and removed the `analyzeSummary` function that computed them. The fields were synthesized from structural comparisons (phase, sponsor, status, location, intervention overlaps) that LLMs can perform directly from the per-study data. Summary now returns only `totalStudies` and `comparedFields`.
+- **`analyze_trends` — suppress misleading percentages for `countByPhase`**: Phase analysis counts can exceed `totalStudies` because multi-phase studies (e.g., Phase 1/Phase 2) contribute to multiple buckets, making percentages nonsensical. Percentages are now omitted for `countByPhase` results.
+- **`get_study_results` — baseline measurements now include per-group values**: The `measurements` field on each baseline measure now exposes `category`, `groupTitle`, `value`, and `spread` per measurement, surfacing the actual data rather than just measure titles and parameter types.
+- **`search_studies` — improved field descriptions**: Clarified that `sponsorQuery` searches the full SponsorsModule (lead sponsor + collaborators) with a tip to use `AREA[LeadSponsorName]` for lead-only filtering. Added a strong recommendation to use `fields` selection, noting that full records are ~70KB each.
+- **`studyRanking.ts`**: Stripped from 133 to 19 lines — removed `RankableStudy`, `getPhaseWeight`, `rankStudies`, `calculateMatchScore`. Only `calculateConditionRelevance` remains.
+
+### Fixed
+
+- **`analyze_trends` phase percentages**: Percentages are now omitted for `countByPhase` to avoid misleading figures from multi-phase study double-counting.
+
+## [1.8.1] - 2026-02-27
+
+### Added
+
+- **OpenTelemetry HTTP request tracing**: Added `@hono/otel` middleware on the MCP endpoint to instrument HTTP request spans, filling the gap left by Node.js auto-instrumentation on Bun. Gated behind `OTEL_ENABLED` — captures `mcp-session-id` request header.
+
+## [1.8.0] - 2026-02-27
+
+### Added
+
+- **`clinicaltrials_get_field_values` tool**: Discovers valid enum values for any ClinicalTrials.gov API field (e.g., OverallStatus, Phase, InterventionType) with per-value study counts, enabling informed query construction
+- **`clinicaltrials_get_study_results` tool**: Fetches trial results data for completed studies — outcome statistics, adverse events, participant flow, and baseline characteristics with section-level filtering
+- **`countByStudyType` and `countByInterventionType` analysis types**: `clinicaltrials_analyze_trends` now supports aggregation by study type and intervention type
+- **Search query specialization**: `clinicaltrials_search_studies` gained `conditionQuery`, `interventionQuery`, and `sponsorQuery` parameters that target specific API indexes for more precise results
+- **Enum-based status and phase filters**: `clinicaltrials_search_studies` now exposes `statusFilter` and `phaseFilter` as typed enums (single or array), replacing free-form AREA[] expressions for common filters
+- **Geographic proximity filter**: `clinicaltrials_search_studies` added `geoFilter` parameter for distance-based searches (e.g., `distance(lat,lon,miles)`)
+- **StudySchema: `resultsSection`**: Full Zod schema coverage for participant flow, baseline characteristics, outcome measures, and adverse events
+- **StudySchema: additional fields**: `enrollmentInfo`, `centralContacts`, `overallOfficials`, `facility`/`zip`/`geoPoint` on locations, `studyFirstSubmitDate`, `studyFirstPostDateStruct`, `resultsFirstPostDateStruct`
+- **New enums**: `Phase`, `StudyType`, `InterventionType`, `StdAge`; expanded `Status` enum with `Available`, `NoLongerAvailable`, `TemporarilyNotAvailable`, `ApprovedForMarketing`, `Withheld`
+- **Rate limit retry**: `fetchWithTimeout` gained `retryOn429` option — parses `Retry-After` header, caps at 30s, single retry
+
+### Changed
+
+- **Provider interface**: Replaced `getStudyMetadata()` and `getApiStats()` with `getFieldValues()` and `healthCheck()` on `IClinicalTrialsProvider`
+- **Provider: location filtering**: Replaced `country`/`state`/`city` params with `locationQuery`, `statusFilter`, `phaseFilter`, `geoFilter` on `ListStudiesParams`; added `interventionQuery`, `sponsorQuery`
+- **Provider: robustness**: Increased API timeout from 15s to 30s; enabled `retryOn429`; switched backup writes to async (`writeFile` instead of `writeFileSync`); added explicit JSON parse error handling
+- **`get_study` batch fetch**: Multi-ID requests now use a single `filter.ids` batch API call instead of N parallel fetches, with fallback to individual fetches on failure
+- **`get_study` response formatter**: Multi-study results now render a markdown summary instead of raw JSON
+- **`analyze_trends` countByCountry**: Deduplicates countries per study — a study with 10 US sites counts as 1 for "United States"
+- **`compare_studies` summary analysis**: Now detects intervention overlap, shared intervention types, and eligibility (sex/age) commonalities/differences
+- **`find_eligible_studies` query building**: Multi-word conditions are now quoted to prevent token splitting in the condition index query
+- **`fetchWithTimeout` error codes**: 404 responses now throw `InvalidParams` instead of `ServiceUnavailable`
+- **Code style**: Replaced `.forEach` with `for...of` loops across all tools; removed redundant JSDoc section separators
+- **Dependencies**: Updated `@hono/mcp` to ^0.2.4, `@cloudflare/workers-types`, `@types/node`
+
+### Removed
+
+- `FieldNode`, `StudyMetadata`, `StudyMetadataSchema` types — replaced by `getFieldValues` provider method and richer enums
+
+## [1.7.2] - 2026-02-26
+
+### Added
+
+- **Condition relevance scoring**: `clinicaltrials_find_eligible_studies` now scores studies by comparing their listed conditions against patient input using normalized token overlap, and excludes studies with zero condition relevance (false positives from incidental keyword hits)
+- **Condition-specific search**: Eligible study search now uses `query.cond` (condition/synonym index) instead of `query.term` (full-text), reducing false positives from unrelated full-text matches (e.g. a cardiovascular study mentioning diabetes in exclusion criteria)
+- **`conditionQuery` parameter**: `ListStudiesParams` and `ClinicalTrialsGovProvider` now support `conditionQuery` mapped to the API's `query.cond` field
+
+### Changed
+
+- **Weighted match scoring**: Match scores are now weighted — condition relevance contributes 0–60 points and demographic eligibility (age, sex, healthy volunteers, location) contributes 0–40 points, replacing the previous equal-weight percentage system
+- **Dockerfile**: Added OCI labels (`org.opencontainers.image.source`, `description`, `licenses`) for GitHub Container Registry integration
+- **CLAUDE.md**: Added npm/Docker registry links and a Publishing section with release commands
+
+## [1.7.1] - 2026-02-26
+
+### Fixed
+
+- **Tool handler serialization**: `toolHandlerFactory` now passes only serializable properties (`sessionId`, `requestId`) as `parentContext` instead of the full `sdkContext`, preventing Bun/Pino runtime errors when encountering non-serializable values (`signal`, `sendNotification`, `sendRequest`)
+- **Fetch timeout cleanup**: Replaced `AbortSignal.timeout()` with manual `AbortController` + `setTimeout` in `fetchWithTimeout`, ensuring the timer is properly cleared in a `finally` block
+
+### Changed
+
+- **Search sort description**: Improved `sort` field description in `clinicaltrials_search_studies` with correct API field names (`LastUpdatePostDate` instead of `LastUpdateDate`) and added `@relevance` example
+
+## [1.7.0] - 2026-02-26
+
+### Fixed
+
+- **Location filtering**: `extractRelevantLocations` now actually compares the patient's country against each study location (was previously including all locations that had any country set)
+- **Match scoring**: `calculateMatchScore` now returns a percentage (0-100) based on passed/total checks instead of a fixed 25-points-per-check system that could exceed 100
+- **Study result ordering**: `clinicaltrials_get_study` now preserves input order when fetching multiple NCT IDs concurrently (previously used shared mutable arrays from concurrent callbacks)
+
+### Changed
+
+- **Eligibility matching**: Location check is now an eligibility gate (studies without matching locations are excluded earlier), and `totalAvailable` is surfaced when results are truncated so callers know more candidates exist
+- **Analyze-trends pagination**: First page now doubles as the total-count check (eliminates a wasted API request), and `AbortSignal` is threaded through for cancellation support
+- **Tool handler**: Removed `ElicitableContext` shim from `toolHandlerFactory` — elicitation is available to tool logic via `sdkContext` directly
+- **Tool annotations**: Added `destructiveHint` and `idempotentHint` to `ToolAnnotations` interface
+- **Type safety**: `allToolDefinitions` and `allResourceDefinitions` barrel exports are now typed instead of `any[]`; `ResourceRegistry` constructor call uses proper type assertion
+- **StudySchema**: Added `maximumAge` field to eligibility module (was previously accessed via unsafe cast)
+- **Config cleanup**: Removed unused OpenRouter, LLM, and Speech TTS/STT configuration schemas, env vars, worker bindings, error patterns, and test mocks
+- **Dependencies**: Added `@vitest/coverage-istanbul`, updated Bun to 1.3.2, removed `reflect-metadata` from test tsconfig types
+- **Documentation**: Fixed logging levels in CLAUDE.md (added `alert`), renamed `LOG_LEVEL` → `MCP_LOG_LEVEL` in README, added `cloudflare-d1` to server.json storage description
+
+### Removed
+
+- `tests/mocks/handlers.ts` and `tests/mocks/server.ts` — contained OpenRouter/cat image mock handlers no longer needed
+- OpenRouter/LLM error patterns from `PROVIDER_ERROR_PATTERNS`
+- Speech TTS/STT bindings from Cloudflare Worker and wrangler secrets
+
+## [1.6.0] - 2026-02-26
+
+### Alignment with `mcp-ts-template@v2.9.8`
+
+Major infrastructure upgrade aligning with `cyanheads/mcp-ts-template@v2.9.8`. Replaces the decorator-based DI system with a lightweight typed container, upgrades to Zod 4, and modernizes the full dependency stack.
+
+### Changed
+
+- **Dependency Injection**: Migrated from `tsyringe` (decorator-based, `reflect-metadata`) to a custom lightweight `Container` class with typed `token<T>()` factory
+  - New `src/container/core/container.ts` — `registerValue`, `registerSingleton`, `registerFactory`, `registerMulti`, `resolve`, `resolveAll`
+  - New `src/container/core/tokens.ts` — typed tokens with phantom type parameters
+  - Removed `@injectable()` / `@inject()` decorators from all providers and services
+  - Removed `reflect-metadata`, `tsyringe`, `tslib` dependencies
+  - Removed `experimentalDecorators` and `emitDecoratorMetadata` from `tsconfig.json`
+- **Zod 3 → 4**: Upgraded from `zod@^3.23.8` to `zod@^4.3.6`
+  - `z.record()` now requires explicit key schema
+  - `ZodError.errors` → `ZodError.issues`
+- **MCP SDK**: Updated to `@modelcontextprotocol/sdk@^1.27.1`
+  - `createHttpApp` now takes a server factory `() => Promise<McpServer>` instead of a resolved instance (SDK security fix — GHSA-345p-7cg4-v4c7)
+  - Resource metadata uses `title` instead of `name`
+  - Tool handler requires `ToolCallback` type assertion for SDK 1.27+
+- **Transports**: Copied latest transport infrastructure from template — HTTP (Hono + `@hono/mcp` Streamable HTTP), stdio, auth strategies, session management
+- **Storage**: Copied latest storage infrastructure from template — added `cloudflare-d1` provider, improved validation and factory patterns
+- **Utilities**: Copied latest utility infrastructure from template — updated error handler, logger (RFC 5424 log levels), performance, parsing (`unpdf`-based PDF text extraction, frontmatter parser), formatting (diff, table, tree formatters), scheduling (async `schedule()`), security, telemetry
+- **Config**: RFC 5424 log levels (`warn`→`warning`, `fatal`→`emerg`), `mcpResponseVerbosity`, `cloudflare-d1` storage type, bundled-path detection fix for `logsPath`
+- **Dependencies**: Major version bumps — `hono@^4.12.3`, `pino@^10.3.1`, `@supabase/supabase-js@^2.98.0`, `@opentelemetry/*@^0.212.0`. Runtime deps split into `dependencies`, build/test into `devDependencies`.
+- **Worker**: `src/worker.ts` passes server factory function instead of awaited instance to `createHttpApp`
+- **Build**: `tsconfig.json` targets `ESNext`, adds incremental compilation, `@cloudflare/workers-types`, `useUnknownInCatchVariables`, `noUncheckedSideEffectImports`. Replaced `tsconfig.typedoc.json`/`tsconfig.vitest.json` with `tsconfig.scripts.json`/`tsconfig.test.json`. `tsdoc.json` now extends `typedoc/tsdoc.json`.
+- **Test infrastructure**: Vitest config switched to `istanbul` coverage, `pool: 'forks'` for isolation, inlined `zod` for Vite SSR compatibility, added coverage thresholds (80/75/70/80). New `vitest.conformance.ts` for conformance suite.
+- **Documentation**: Rewrote `CLAUDE.md` (v1.2.1 → v1.6.0) — condensed, updated for new DI system, added service/utility reference tables, git commit conventions, command reference. `AGENTS.md` converted from hard-linked copy to symlink → `CLAUDE.md`. Tightened descriptions in `package.json`, `server.json`, `README.md`.
+
+### Added
+
+- `src/container/core/container.ts` — lightweight DI container
+- `src/container/core/tokens.ts` — typed DI tokens
+- `src/storage/providers/cloudflare/d1Provider.ts` — Cloudflare D1 storage provider
+- `src/utils/formatting/diffFormatter.ts` — diff formatting utility
+- `src/utils/formatting/tableFormatter.ts` — table formatting utility
+- `src/utils/formatting/treeFormatter.ts` — tree formatting utility
+- `src/utils/parsing/frontmatterParser.ts` — frontmatter parsing utility
+- `src/utils/types/` — shared type utilities
+- `tests/conformance/` — MCP protocol conformance test suite (lifecycle, init, tools, resources, prompts)
+- `tests/fixtures/` — shared test fixtures and factories
+- Schema snapshot and JSON Schema compatibility tests for tools and resources
+- `tests/services/clinical-trials-gov/` — provider and type tests
+- New formatter, parser, and type guard test suites
+
+### Removed
+
+- **LLM Service**: Removed `src/services/llm/` (OpenRouter provider, types, interfaces) and associated DI registrations — template scaffolding not used by clinical trials tools
+- **Speech Service**: Removed `src/services/speech/` (ElevenLabs TTS, Whisper STT providers, orchestrator) and associated DI registrations — template scaffolding not used by clinical trials tools
+- **Test files**: Removed orphaned test suites for deleted LLM and Speech services
+- `src/container/tokens.ts` — replaced by `src/container/core/tokens.ts`
+- `reflect-metadata` — removed from setup, tsconfig, and all imports
+- Unused dependencies: `openai`, `@modelcontextprotocol/ext-apps`, `@traversable/*`, `ajv`, `ajv-formats`, `fast-check`
+- `docs/best-practices.md` — superseded by `CLAUDE.md`
+- `.clinerules/AGENTS.md` — replaced by symlink
+- `tsconfig.typedoc.json`, `tsconfig.vitest.json` — replaced by `tsconfig.scripts.json`, `tsconfig.test.json`
+
 ## [1.5.0] - 2025-10-15
 
 ### Alignment with `mcp-ts-template@v2.4.4`

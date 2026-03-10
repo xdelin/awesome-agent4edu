@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import json
+import logging
 import os
 import re
 import sys
@@ -633,18 +634,34 @@ class PDFToSkillConverter:
 
 
 def main():
+    from .arguments.pdf import add_pdf_arguments
+
     parser = argparse.ArgumentParser(
         description="Convert PDF documentation to Claude skill",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
-    parser.add_argument("--config", help="PDF config JSON file")
-    parser.add_argument("--pdf", help="Direct PDF file path")
-    parser.add_argument("--name", help="Skill name (with --pdf)")
-    parser.add_argument("--from-json", help="Build skill from extracted JSON")
-    parser.add_argument("--description", help="Skill description")
+    add_pdf_arguments(parser)
 
     args = parser.parse_args()
+
+    # Set logging level from behavior args
+    if getattr(args, "quiet", False):
+        logging.getLogger().setLevel(logging.WARNING)
+    elif getattr(args, "verbose", False):
+        logging.getLogger().setLevel(logging.DEBUG)
+
+    # Handle --dry-run
+    if getattr(args, "dry_run", False):
+        source = args.pdf or args.config or args.from_json or "(none)"
+        print(f"\n{'=' * 60}")
+        print(f"DRY RUN: PDF Extraction")
+        print(f"{'=' * 60}")
+        print(f"Source:         {source}")
+        print(f"Name:           {getattr(args, 'name', None) or '(auto-detect)'}")
+        print(f"Enhance level:  {getattr(args, 'enhance_level', 0)}")
+        print(f"\n✅ Dry run complete")
+        return
 
     # Validate inputs
     if not (args.config or args.pdf or args.from_json):
@@ -692,6 +709,33 @@ def main():
 
         # Build skill
         converter.build_skill()
+
+        # ═══════════════════════════════════════════════════════════════════════════
+        # Enhancement Workflow Integration (Phase 2 - PDF Support)
+        # ═══════════════════════════════════════════════════════════════════════════
+        from skill_seekers.cli.workflow_runner import run_workflows
+
+        workflow_executed, workflow_names = run_workflows(args)
+        workflow_name = ", ".join(workflow_names) if workflow_names else None
+
+        # ═══════════════════════════════════════════════════════════════════════════
+        # Traditional Enhancement (complements workflow system)
+        # ═══════════════════════════════════════════════════════════════════════════
+        # Note: Runs independently of workflow system (they complement each other)
+        if getattr(args, "enhance_level", 0) > 0:
+            # Traditional AI enhancement (API or LOCAL mode)
+            print("\n" + "=" * 80)
+            print("🤖 Traditional AI Enhancement")
+            print("=" * 80)
+            if workflow_executed:
+                print(f"   Running after workflow: {workflow_name}")
+                print(
+                    "   (Workflow provides specialized analysis, enhancement provides general improvements)"
+                )
+            print("   (Use --enhance-workflow for more control)")
+            print("")
+            # Note: PDF scraper uses enhance_level instead of enhance/enhance_local
+            # This is consistent with the new unified enhancement system
 
     except RuntimeError as e:
         print(f"\n❌ Error: {e}", file=sys.stderr)

@@ -38,7 +38,7 @@ vi.mock('../../src/sampling.js', () => ({
 }));
 
 import { registerFetchGitHubFileContentTool } from '../../src/tools/github_fetch_content/github_fetch_content.js';
-import { TOOL_NAMES } from '../../src/tools/toolMetadata.js';
+import { TOOL_NAMES } from '../../src/tools/toolMetadata/index.js';
 
 describe('GitHub Fetch Content Tool', () => {
   let mockServer: MockMcpServer;
@@ -59,11 +59,11 @@ describe('GitHub Fetch Content Tool', () => {
       githubApiUrl: 'https://api.github.com',
       enableTools: [],
       disableTools: [],
-      enableLogging: true,
       timeout: 30000,
       maxRetries: 3,
       loggingEnabled: true,
       enableLocal: false,
+      enableClone: false,
       tokenSource: 'env:GITHUB_TOKEN',
     });
 
@@ -121,7 +121,7 @@ describe('GitHub Fetch Content Tool', () => {
       expect(result.isError).toBe(false);
       const responseText = getTextContent(result.content);
       expect(responseText).toContain('status: "hasResults"');
-      expect(responseText).toContain('contentLength: 35');
+      expect(responseText).toContain('content:');
     });
 
     it('should pass authInfo to provider', async () => {
@@ -220,7 +220,7 @@ describe('GitHub Fetch Content Tool', () => {
         }
       );
 
-      expect(result.isError).toBe(false); // Bulk operation returns success with error in result
+      expect(result.isError).toBe(true);
       const responseText = getTextContent(result.content);
       expect(responseText).toContain('error');
     });
@@ -237,7 +237,7 @@ describe('GitHub Fetch Content Tool', () => {
         }
       );
 
-      expect(result.isError).toBe(false);
+      expect(result.isError).toBe(true);
       const responseText = getTextContent(result.content);
       expect(responseText).toContain('error');
     });
@@ -258,7 +258,7 @@ describe('GitHub Fetch Content Tool', () => {
         }
       );
 
-      expect(result.isError).toBe(false);
+      expect(result.isError).toBe(true);
       const responseText = getTextContent(result.content);
       expect(responseText).toContain('error');
     });
@@ -696,6 +696,128 @@ describe('GitHub Fetch Content Tool', () => {
   describe('Schema validation', () => {
     it('should have valid bulk query schema', () => {
       expect(FileContentBulkQuerySchema).toBeDefined();
+    });
+
+    it('should accept type: "file" (default)', () => {
+      const result = FileContentBulkQuerySchema.safeParse({
+        queries: [
+          {
+            mainResearchGoal: 'test',
+            researchGoal: 'test',
+            reasoning: 'test',
+            owner: 'owner',
+            repo: 'repo',
+            path: 'src/file.ts',
+            type: 'file',
+          },
+        ],
+      });
+      expect(result.success).toBe(true);
+    });
+
+    it('should accept type: "directory"', () => {
+      const result = FileContentBulkQuerySchema.safeParse({
+        queries: [
+          {
+            mainResearchGoal: 'test',
+            researchGoal: 'test',
+            reasoning: 'test',
+            owner: 'owner',
+            repo: 'repo',
+            path: 'src/utils',
+            type: 'directory',
+          },
+        ],
+      });
+      expect(result.success).toBe(true);
+    });
+
+    it('should reject invalid type values', () => {
+      const result = FileContentBulkQuerySchema.safeParse({
+        queries: [
+          {
+            mainResearchGoal: 'test',
+            researchGoal: 'test',
+            reasoning: 'test',
+            owner: 'owner',
+            repo: 'repo',
+            path: 'src/file.ts',
+            type: 'folder',
+          },
+        ],
+      });
+      expect(result.success).toBe(false);
+    });
+
+    it('should default type to "file" when omitted', () => {
+      const result = FileContentBulkQuerySchema.safeParse({
+        queries: [
+          {
+            mainResearchGoal: 'test',
+            researchGoal: 'test',
+            reasoning: 'test',
+            owner: 'owner',
+            repo: 'repo',
+            path: 'src/file.ts',
+          },
+        ],
+      });
+      expect(result.success).toBe(true);
+    });
+
+    it('should reject startLine when type is "directory"', () => {
+      const result = FileContentBulkQuerySchema.safeParse({
+        queries: [
+          {
+            mainResearchGoal: 'test',
+            researchGoal: 'test',
+            reasoning: 'test',
+            owner: 'owner',
+            repo: 'repo',
+            path: 'src',
+            type: 'directory',
+            startLine: 1,
+            endLine: 10,
+          },
+        ],
+      });
+      expect(result.success).toBe(false);
+    });
+
+    it('should reject matchString when type is "directory"', () => {
+      const result = FileContentBulkQuerySchema.safeParse({
+        queries: [
+          {
+            mainResearchGoal: 'test',
+            researchGoal: 'test',
+            reasoning: 'test',
+            owner: 'owner',
+            repo: 'repo',
+            path: 'src',
+            type: 'directory',
+            matchString: 'search term',
+          },
+        ],
+      });
+      expect(result.success).toBe(false);
+    });
+
+    it('should reject charOffset when type is "directory"', () => {
+      const result = FileContentBulkQuerySchema.safeParse({
+        queries: [
+          {
+            mainResearchGoal: 'test',
+            researchGoal: 'test',
+            reasoning: 'test',
+            owner: 'owner',
+            repo: 'repo',
+            path: 'src',
+            type: 'directory',
+            charOffset: 100,
+          },
+        ],
+      });
+      expect(result.success).toBe(false);
     });
   });
 });

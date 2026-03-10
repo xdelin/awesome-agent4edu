@@ -31,7 +31,6 @@ vi.mock('../../src/serverConfig.js', () => ({
   })),
   getServerConfig: vi.fn(() => ({
     version: '1.0.0',
-    enableLogging: true,
     timeout: 30000,
     maxRetries: 3,
     loggingEnabled: false,
@@ -39,7 +38,7 @@ vi.mock('../../src/serverConfig.js', () => ({
 }));
 
 import { registerSearchGitHubPullRequestsTool } from '../../src/tools/github_search_pull_requests/github_search_pull_requests.js';
-import { TOOL_NAMES } from '../../src/tools/toolMetadata.js';
+import { TOOL_NAMES } from '../../src/tools/toolMetadata/index.js';
 
 // Helper to create mock PR response
 function createMockPRProviderResponse(overrides: Record<string, unknown> = {}) {
@@ -335,7 +334,7 @@ describe('GitHub Search Pull Requests Tool', () => {
         }
       );
 
-      expect(result.isError).toBe(false);
+      expect(result.isError).toBe(true);
       const responseText = getTextContent(result.content);
       expect(responseText).toContain('error');
     });
@@ -357,7 +356,7 @@ describe('GitHub Search Pull Requests Tool', () => {
         }
       );
 
-      expect(result.isError).toBe(false);
+      expect(result.isError).toBe(true);
       const responseText = getTextContent(result.content);
       expect(responseText).toContain('error');
     });
@@ -390,6 +389,160 @@ describe('GitHub Search Pull Requests Tool', () => {
       );
 
       expect(result.isError).toBe(false);
+    });
+
+    it('should forward page parameter to the provider', async () => {
+      mockProvider.searchPullRequests.mockResolvedValue(
+        createMockPRProviderResponse({
+          pagination: { currentPage: 3, totalPages: 5, hasMore: true },
+        })
+      );
+
+      await mockServer.callTool(TOOL_NAMES.GITHUB_SEARCH_PULL_REQUESTS, {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            state: 'open',
+            limit: 5,
+            page: 3,
+          },
+        ],
+      });
+
+      expect(mockProvider.searchPullRequests).toHaveBeenCalledTimes(1);
+      const providerQuery = mockProvider.searchPullRequests.mock.calls[0]?.[0];
+      expect(providerQuery).toBeDefined();
+      expect(providerQuery.page).toBe(3);
+      expect(providerQuery.limit).toBe(5);
+    });
+
+    it('should include page in provider query when explicitly set', async () => {
+      mockProvider.searchPullRequests.mockResolvedValue(
+        createMockPRProviderResponse()
+      );
+
+      await mockServer.callTool(TOOL_NAMES.GITHUB_SEARCH_PULL_REQUESTS, {
+        queries: [
+          {
+            owner: 'test',
+            repo: 'repo',
+            state: 'open',
+            page: 1,
+          },
+        ],
+      });
+
+      expect(mockProvider.searchPullRequests).toHaveBeenCalledTimes(1);
+      const providerQuery = mockProvider.searchPullRequests.mock.calls[0]?.[0];
+      expect(providerQuery).toBeDefined();
+      expect(providerQuery.page).toBe(1);
+    });
+
+    it('should include pagination hints with next/previous for middle pages', async () => {
+      mockProvider.searchPullRequests.mockResolvedValue({
+        data: {
+          items: [createMockPRProviderResponse().data.items[0]],
+          totalCount: 25,
+          pagination: {
+            currentPage: 3,
+            totalPages: 5,
+            hasMore: true,
+            entriesPerPage: 5,
+            totalMatches: 25,
+          },
+        },
+        status: 200,
+        provider: 'github',
+      });
+
+      const result = await mockServer.callTool(
+        TOOL_NAMES.GITHUB_SEARCH_PULL_REQUESTS,
+        {
+          queries: [
+            {
+              owner: 'test',
+              repo: 'repo',
+              limit: 5,
+              page: 3,
+            },
+          ],
+        }
+      );
+
+      expect(result.isError).toBe(false);
+      const responseText = getTextContent(result.content);
+      expect(responseText).toContain('Page 3/5');
+      expect(responseText).toContain('page=4');
+      expect(responseText).toContain('page=2');
+    });
+
+    it('should show final page hint on last page', async () => {
+      mockProvider.searchPullRequests.mockResolvedValue({
+        data: {
+          items: [createMockPRProviderResponse().data.items[0]],
+          totalCount: 15,
+          pagination: {
+            currentPage: 3,
+            totalPages: 3,
+            hasMore: false,
+            entriesPerPage: 5,
+            totalMatches: 15,
+          },
+        },
+        status: 200,
+        provider: 'github',
+      });
+
+      const result = await mockServer.callTool(
+        TOOL_NAMES.GITHUB_SEARCH_PULL_REQUESTS,
+        {
+          queries: [
+            {
+              owner: 'test',
+              repo: 'repo',
+              limit: 5,
+              page: 3,
+            },
+          ],
+        }
+      );
+
+      expect(result.isError).toBe(false);
+      const responseText = getTextContent(result.content);
+      expect(responseText).toContain('Final page');
+    });
+
+    it('should forward different page values correctly across bulk queries', async () => {
+      mockProvider.searchPullRequests
+        .mockResolvedValueOnce(
+          createMockPRProviderResponse({
+            pagination: { currentPage: 1, totalPages: 3, hasMore: true },
+          })
+        )
+        .mockResolvedValueOnce(
+          createMockPRProviderResponse({
+            pagination: { currentPage: 2, totalPages: 3, hasMore: true },
+          })
+        );
+
+      const result = await mockServer.callTool(
+        TOOL_NAMES.GITHUB_SEARCH_PULL_REQUESTS,
+        {
+          queries: [
+            { owner: 'test', repo: 'repo', state: 'open', page: 1 },
+            { owner: 'test', repo: 'repo', state: 'open', page: 2 },
+          ],
+        }
+      );
+
+      expect(result.isError).toBe(false);
+      expect(mockProvider.searchPullRequests).toHaveBeenCalledTimes(2);
+
+      const firstQuery = mockProvider.searchPullRequests.mock.calls[0]?.[0];
+      const secondQuery = mockProvider.searchPullRequests.mock.calls[1]?.[0];
+      expect(firstQuery.page).toBe(1);
+      expect(secondQuery.page).toBe(2);
     });
   });
 

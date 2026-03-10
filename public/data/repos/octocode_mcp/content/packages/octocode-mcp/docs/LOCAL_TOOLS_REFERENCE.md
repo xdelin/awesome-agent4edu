@@ -1,6 +1,60 @@
-# Octocode MCP Tools Reference
+# Local & LSP Tools Reference
 
-> Complete reference for all Octocode MCP tools - Local exploration, LSP semantic analysis, and research workflows.
+> Complete reference for Octocode MCP local tools — File system exploration, code search, content reading, and LSP semantic analysis.
+
+---
+
+## Configuration
+
+Local and LSP tools must be enabled before use:
+
+```
+ENABLE_LOCAL=true
+```
+
+Or via config: `local.enabled=true`
+
+### LSP Supported Languages
+
+| Status | Languages |
+|--------|-----------|
+| **Bundled** | TypeScript (`.ts`, `.tsx`), JavaScript (`.js`, `.jsx`, `.mjs`, `.cjs`) |
+| **Requires Install** | Python, Go, Rust, Java, Kotlin, C/C++, C#, Ruby, PHP, Swift, Dart, Lua, Zig, Elixir, Scala, Haskell, OCaml, Clojure, Vue, Svelte, YAML, TOML, JSON, HTML, CSS, Bash, SQL, GraphQL, Terraform |
+
+### LSP Environment Variables
+
+Override language server paths:
+
+| Variable | Language |
+|----------|----------|
+| `OCTOCODE_TS_SERVER_PATH` | TypeScript/JavaScript |
+| `OCTOCODE_PYTHON_SERVER_PATH` | Python |
+| `OCTOCODE_GO_SERVER_PATH` | Go |
+| `OCTOCODE_RUST_SERVER_PATH` | Rust |
+| `OCTOCODE_JAVA_SERVER_PATH` | Java |
+| `OCTOCODE_CLANGD_SERVER_PATH` | C/C++ |
+
+### LSP Custom Configuration
+
+Config files loaded in priority order (optional — if unset, workspace/home fallbacks are used):
+
+1. `OCTOCODE_LSP_CONFIG=/path/to/config.json` (env var)
+2. `.octocode/lsp-servers.json` (workspace)
+3. `~/.octocode/lsp-servers.json` (user)
+
+```json
+{
+  "languageServers": {
+    ".py": {
+      "command": "pylsp",
+      "args": [],
+      "languageId": "python"
+    }
+  }
+}
+```
+
+If a language server is not installed, the tool returns a helpful error with installation instructions. No crashes — other tools continue working. Works on macOS, Linux, and Windows.
 
 ---
 
@@ -14,6 +68,39 @@ Octocode MCP provides **7 tools** across 2 categories for code research and expl
 | **LSP Tools** (3) | `lspGotoDefinition`, `lspFindReferences`, `lspCallHierarchy` | Semantic code intelligence via Language Server Protocol |
 
 ---
+
+## Quick Start
+
+1. Enable local tools in configuration: set `ENABLE_LOCAL=true` (or `local.enabled=true`).
+2. Find a symbol: `localSearchCode` (get `lineHint`).
+3. Use LSP: `lspGotoDefinition` / `lspFindReferences` / `lspCallHierarchy`.
+4. Read details last: `localGetFileContent`.
+
+### Working with Cloned Repositories
+
+Local + LSP tools work on **any path on disk** — including repos cloned by `githubCloneRepo` or fetched via `githubGetFileContent` directory mode. Use the returned `localPath` as the `path` parameter:
+
+```
+githubCloneRepo(owner="vercel", repo="next.js") → localPath
+localViewStructure(path=localPath)              → browse the tree
+localSearchCode(path=localPath, pattern="...")   → search code
+lspGotoDefinition(uri=localPath+"/src/file.ts") → semantic navigation
+```
+
+> **Note:** `githubCloneRepo` and `githubGetFileContent` directory mode are **GitHub only** — they are not available when GitLab is the active provider. Both require `ENABLE_LOCAL=true` and `ENABLE_CLONE=true`.
+
+> **Full workflow guide:** [Clone & Local Tools Workflow](https://github.com/bgauryy/octocode-mcp/blob/main/packages/octocode-mcp/docs/CLONE_AND_LOCAL_TOOLS_WORKFLOW.md)
+
+### Research Context (Required)
+
+All local and LSP tools require research context fields (same as GitHub/GitLab tools):
+
+| Field | Description |
+|-------|-------------|
+| `researchGoal` | Specific goal for this query |
+| `reasoning` | Why this tool/query was chosen |
+
+These are **required** on every query for all local and LSP tools. They help track research intent and improve result quality.
 
 ## Tools at a Glance
 
@@ -76,8 +163,45 @@ Fast, text-based exploration tools that work on any codebase without IDE require
 - `excludeDir`: Directories to exclude (e.g., `node_modules`)
 - `hidden`: Search hidden files (default: false)
 - `smartCase`: Smart case sensitivity (default: true)
-- `matchesPerPage`/`filesPerPage`/`filePageNumber`: Pagination controls
+- `filesPerPage`: Files per page (default: 10, max: 50)
+- `matchesPerPage`: Matches per page (default: 10)
+- `filePageNumber`: Page number (default: 1)
 - `multiline`: Enable multiline matching (memory intensive)
+
+**Additional parameters:**
+- `fixedString`: Fixed string search instead of regex
+- `perlRegex`: Use Perl regex mode
+- `caseInsensitive`/`caseSensitive`: Explicit case control
+- `wholeWord`: Match whole words only
+- `invertMatch`: Invert match (show non-matching lines)
+- `noIgnore`: Disable .gitignore filtering
+- `followSymlinks`: Follow symbolic links
+- `filesWithoutMatch`: Show files without any match
+- `count`/`countMatches`: Return match counts instead of content
+- `matchContentLength`: Max chars per match (default: 200, max: 800)
+- `lineNumbers`: Include line numbers (default: true)
+- `column`: Include column information
+- `maxMatchesPerFile`: Limit matches per file (1-100)
+- `maxFiles`: Limit total files (1-1000)
+- `multilineDotall`: Multiline with `.` matching newlines
+- `binaryFiles`: Binary file handling (`text`, `without-match`, `binary`)
+- `includeStats`: Include search statistics (default: true)
+- `includeDistribution`: Include match distribution (default: true)
+- `sort`: Sort results (`path`, `modified`, `accessed`, `created`) (default: `path`)
+- `sortReverse`: Reverse sort order
+- `showFileLastModified`: Show file modification timestamps
+- `threads`: Thread count for parallel search (1-32)
+- `jsonOutput`: Output results in JSON format
+- `vimgrepFormat`: Vim-compatible grep output format
+- `mmap`: Use memory-mapped I/O
+- `noUnicode`: Disable Unicode handling
+- `encoding`: Input character encoding
+- `noMessages`: Suppress ripgrep messages
+- `lineRegexp`: Apply regex per line
+- `passthru`: Print all lines from matched files
+- `debug`: Enable debug output
+
+**Output format:** Each match contains `value` (text), `line` (1-indexed), and `column`. Use `line` as `lineHint` for LSP tools.
 
 **Critical:** Produces `lineHint` values **required** for all LSP tools.
 
@@ -85,25 +209,48 @@ Fast, text-based exploration tools that work on any codebase without IDE require
 
 ### `localViewStructure`
 
-**What it does:** Lists directory contents with metadata using `ls`.
+**What it does:** Lists directory contents with metadata using `ls`. Returns structured entry objects (not a formatted string).
 
 | Feature | Description |
 |---------|-------------|
-| **Metadata** | Size, type, permissions, modification time |
+| **Structured output** | Each entry is an object with `name`, `type` (`file`/`dir`/`link`), `size`, `modified`, `permissions` |
+| **Summary** | One-line summary string (e.g., `"42 entries (30 files, 12 dirs, 1.5MB)"`) |
 | **Depth control** | 1-5 levels deep |
 | **Sorting** | By name, size, time, or extension |
 | **Filtering** | Pattern, extension, directories/files only |
 
 **Key parameters:**
 - `path` (required): Directory to explore
-- `depth`: How deep to traverse (default: 1, max: 5)
+- `depth`: How deep to traverse (max: 5). When both `depth` and `recursive` are omitted, lists single-level only. When `recursive=true` and `depth` is omitted, traverses up to 5 levels.
 - `sortBy`: `name`, `size`, `time`, `extension` (default: `time`)
 - `filesOnly`/`directoriesOnly`: Filter by type
 - `hidden`: Show hidden files (default: false)
 - `humanReadable`: Format sizes (e.g., "1.2MB") (default: true)
 - `summary`: Include directory summary (default: true)
 - `pattern`: Filter by name pattern
-- `entriesPerPage`/`entryPageNumber`: Pagination controls
+- `entriesPerPage`: Entries per page (default: 20, max: 50)
+- `entryPageNumber`: Page number (default: 1)
+
+**Additional parameters:**
+- `details`: Include size, permissions, timestamps (default: false)
+- `reverse`: Reverse sort order
+- `extension`/`extensions`: Filter by file extension(s)
+- `recursive`: Enable recursive traversal
+- `limit`: Max entries returned (1-10000)
+- `showFileLastModified`: Show file modification timestamps (default: false)
+
+**Output format:**
+```yaml
+entries:
+  - name: "src/"
+    type: dir
+  - name: "README.md"
+    type: file
+    size: "4.2KB"
+    modified: "2026-02-20"
+summary: "15 entries (12 files, 3 dirs, 128KB)"
+pagination: { currentPage: 1, totalPages: 1, ... }
+```
 
 ---
 
@@ -121,11 +268,29 @@ Fast, text-based exploration tools that work on any codebase without IDE require
 **Key parameters:**
 - `path` (required): Starting directory
 - `name`/`iname`: Exact or case-insensitive name pattern
+- `names`: Multiple name patterns (array)
 - `regex`: Regex pattern for path matching
 - `regexType`: Regex flavor (`posix-egrep`, `posix-extended`, `posix-basic`)
-- `type`: `f` (file), `d` (directory), `l` (symlink)
+- `type`: `f` (file), `d` (directory), `l` (symlink), `b`, `c`, `p`, `s`
 - `modifiedWithin`: Files changed in last N time (e.g., "7d", "2h")
 - `sizeGreater`/`sizeLess`: Size filters
+
+**Additional parameters:**
+- `maxDepth`/`minDepth`: Depth control (1-10 / 0-10)
+- `pathPattern`: Glob pattern for path matching
+- `modifiedBefore`: Files modified before a date
+- `accessedWithin`: Files accessed within a time period
+- `empty`: Find empty files/directories
+- `permissions`: Filter by permission string
+- `executable`/`readable`/`writable`: Permission flags
+- `excludeDir`: Directories to exclude (array)
+- `sortBy`: Sort results — `modified` (default), `size`, `name`, `path`
+- `limit`: Max results (1-10000)
+- `details`: Include file metadata (default: true)
+- `filesPerPage`: Results per page (default: 20, max: 50)
+- `filePageNumber`: Page number (default: 1)
+- `charOffset`/`charLength`: Character-based pagination
+- `showFileLastModified`: Show modification timestamps (default: true)
 
 ---
 
@@ -143,12 +308,19 @@ Fast, text-based exploration tools that work on any codebase without IDE require
 **Key parameters:**
 - `path` (required): File to read
 - `startLine`/`endLine`: Line range (1-indexed)
-- `matchString`: Find specific content with context
+- `matchString`: Find specific content with context (max: 2000 chars)
 - `matchStringContextLines`: Lines around match (default: 5, max: 50)
-- `matchStringIsRegex`: Treat matchString as regex (default: false)
+- `matchStringIsRegex`: Treat matchString as regex (default: false, max pattern: 1000 chars)
 - `matchStringCaseSensitive`: Case-sensitive matching (default: false)
-- `charOffset`/`charLength`: Character-based pagination for large files
+- `charOffset`/`charLength`: Character-based pagination for large files (charLength max: 10000)
 - `fullContent`: Read entire file (use sparingly)
+
+**Extraction modes (choose ONE):**
+1. `matchString` with context lines
+2. `startLine` + `endLine` (must be used together)
+3. `fullContent=true` (small files only)
+
+Cannot combine `matchString` with `startLine`/`endLine`, or `fullContent` with either.
 
 **⚠️ Should be the LAST step** after search/LSP analysis.
 
@@ -157,6 +329,8 @@ Fast, text-based exploration tools that work on any codebase without IDE require
 ## LSP Tools (Detailed)
 
 Semantic code intelligence tools that understand language structure. **All require `lineHint` from `localSearchCode`.**
+
+Local tools must be enabled (`ENABLE_LOCAL` / `local.enabled`) for LSP tools to be available.
 
 ### How LSP Works
 
@@ -184,8 +358,10 @@ MCP Client → Octocode MCP → Language Server (spawned)
 - `uri` (required): File containing the symbol
 - `symbolName` (required): Exact symbol name (case-sensitive, max 255 chars)
 - `lineHint` (required): Line number from `localSearchCode` (1-indexed)
-- `orderHint`: Which occurrence on line if multiple (0-indexed, default: 0)
+- `orderHint`: Which code occurrence on the exact line if multiple (0-indexed, default: 0). String/comment text matches are ignored.
 - `contextLines`: Lines of context around definition (default: 5, max: 20)
+- `charOffset`: Character offset for output pagination (min: 0)
+- `charLength`: Character length for output pagination window (min: 1, max: 50000)
 
 **Use when:** "Where is this function/class/variable defined?"
 
@@ -210,6 +386,8 @@ MCP Client → Octocode MCP → Language Server (spawned)
 - `contextLines`: Lines of context (default: 2, max: 10)
 - `referencesPerPage`: Results per page (default: 20, max: 50)
 - `page`: Page number (default: 1)
+- `includePattern`: Filter results to files matching these glob patterns (array)
+- `excludePattern`: Exclude results from files matching these glob patterns (array)
 
 **Use when:** "Who uses this type/interface/variable/constant?"
 
@@ -235,70 +413,21 @@ MCP Client → Octocode MCP → Language Server (spawned)
 - `contextLines`: Lines of context (default: 2, max: 10)
 - `callsPerPage`: Results per page (default: 15, max: 30)
 - `page`: Page number (default: 1)
+- `charOffset`: Character offset for pagination (min: 0)
+- `charLength`: Character length for pagination (min: 1, max: 50000)
 
 **Use when:** "Trace the call flow" / "Who calls X?" / "What does X call?"
 
 ### LSP Security
 
 - **Symlink Resolution**: Paths resolved before access to prevent traversal attacks
+- **Allowed Roots**: Workspace directory + `~/.octocode/` (for cloned repos) are the allowed path roots
 - **Symbol Name Length**: Limited to 255 characters
 - **Depth Parameter**: Capped at 3 to prevent resource exhaustion
-- **Path Redaction**: When `REDACT_ERROR_PATHS=true`, full paths hidden in errors
+- **Path Redaction**: Paths are always redacted in errors for security
+- **Workspace Root Resolution**: Unified via `resolveWorkspaceRoot()` — explicit parameter → `WORKSPACE_ROOT` env → config file → `process.cwd()`
 
 > LSP tools work standalone - no IDE required. TypeScript/JavaScript bundled; other languages need server installation.
-
----
-
-## LSP Configuration & Setup
-
-### Supported Languages
-
-| Status | Languages |
-|--------|-----------|
-| **Bundled** | TypeScript (`.ts`, `.tsx`), JavaScript (`.js`, `.jsx`, `.mjs`, `.cjs`) |
-| **Requires Install** | Python, Go, Rust, Java, Kotlin, C/C++, C#, Ruby, PHP, Swift, Dart, Lua, Zig, Elixir, Scala, Haskell, OCaml, Clojure, Vue, Svelte, YAML, TOML, JSON, HTML, CSS, Bash, SQL, GraphQL, Terraform |
-
-For full installation commands, see [LSP_TOOLS.md](./LSP_TOOLS.md#supported-languages).
-
-### Environment Variables
-
-Override language server paths:
-
-| Variable | Language |
-|----------|----------|
-| `OCTOCODE_TS_SERVER_PATH` | TypeScript/JavaScript |
-| `OCTOCODE_PYTHON_SERVER_PATH` | Python |
-| `OCTOCODE_GO_SERVER_PATH` | Go |
-| `OCTOCODE_RUST_SERVER_PATH` | Rust |
-| `OCTOCODE_JAVA_SERVER_PATH` | Java |
-| `OCTOCODE_CLANGD_SERVER_PATH` | C/C++ |
-
-### Custom Configuration
-
-Config files are loaded in priority order:
-
-1. `OCTOCODE_LSP_CONFIG=/path/to/config.json` (env var)
-2. `.octocode/lsp-servers.json` (workspace)
-3. `~/.octocode/lsp-servers.json` (user)
-
-```json
-{
-  "languageServers": {
-    ".py": {
-      "command": "pylsp",
-      "args": [],
-      "languageId": "python"
-    }
-  }
-}
-```
-
-### Graceful Degradation
-
-If a language server is not installed:
-1. Tool returns helpful error with installation instructions
-2. **No crashes** - other tools continue working
-3. Works on macOS, Linux, and Windows
 
 ---
 
@@ -551,6 +680,18 @@ localSearchCode(pattern="TODO")  // Returns all matches (slower)
 
 ---
 
+## Response Format
+
+All local and LSP tool responses are optimized for LLM token efficiency:
+
+- **Per-result hints**: Hints are included inline within each result (not aggregated at the top level)
+- **No redundant metadata**: Fields like `cwd`, `contentLength`, `searchEngine`, `totalMatches`, `totalFiles`, `extractedLines` have been removed from responses
+- **Structured entries**: `localViewStructure` returns an `entries` array of objects (not a formatted string) with a `summary` one-liner
+- **Compact matches**: `localSearchCode` matches contain `value`, `line`, `column` — use `line` as `lineHint` for LSP tools
+- **LSP result stripping**: LSP tools strip internal fields (`selectionRange`, `displayRange`) from results — use `range.start.line + 1` as `lineHint` for follow-up calls
+
+---
+
 ## Anti-Patterns to Avoid
 
 | Anti-Pattern | Why It's Wrong | Correct Approach |
@@ -579,5 +720,13 @@ Tools with no dependencies can run in parallel:
 ```
 
 **Batch limits:**
-- Local tools: Up to 5 queries per call
-- LSP tools: 5 queries per call (except `lspCallHierarchy`: 3 max)
+- Local tools: Up to **5 queries** per call
+- LSP tools: Up to **5 queries** per call (except `lspCallHierarchy`: **3 max**)
+
+---
+
+## Related Documentation
+
+- [Clone & Local Tools Workflow](https://github.com/bgauryy/octocode-mcp/blob/main/packages/octocode-mcp/docs/CLONE_AND_LOCAL_TOOLS_WORKFLOW.md) — How to clone external repos and analyze them with local + LSP tools
+- [GitHub & GitLab Tools Reference](https://github.com/bgauryy/octocode-mcp/blob/main/packages/octocode-mcp/docs/GITHUB_GITLAB_TOOLS_REFERENCE.md) — GitHub/GitLab tools including `githubCloneRepo`
+- [Configuration Reference](https://github.com/bgauryy/octocode-mcp/blob/main/docs/CONFIGURATION_REFERENCE.md) — `ENABLE_LOCAL`, `ENABLE_CLONE`, and other settings

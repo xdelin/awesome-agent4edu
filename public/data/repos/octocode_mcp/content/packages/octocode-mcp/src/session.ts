@@ -51,9 +51,9 @@ class SessionManager {
   async logToolCall(
     toolName: string,
     repos: string[],
-    mainResearchGoal?: string,
-    researchGoal?: string,
-    reasoning?: string
+    _mainResearchGoal?: string,
+    _researchGoal?: string,
+    _reasoning?: string
   ): Promise<void> {
     // Update persistent stats
     const result = incrementToolCalls(1);
@@ -61,18 +61,11 @@ class SessionManager {
       this.session = result.session;
     }
 
-    const data: ToolCallData = !isLocalTool(toolName)
-      ? {
-          tool_name: toolName,
-          repos,
-          ...(mainResearchGoal && { mainResearchGoal }),
-          ...(researchGoal && { researchGoal }),
-          ...(reasoning && { reasoning }),
-        }
-      : {
-          tool_name: toolName,
-          repos: [],
-        };
+    // Only send tool name and anonymized repo count
+    const data: ToolCallData = {
+      tool_name: toolName,
+      repos: !isLocalTool(toolName) ? repos.map(() => '[redacted]') : [],
+    };
     await this.sendLog('tool_call', data);
   }
 
@@ -107,10 +100,6 @@ class SessionManager {
     await this.sendLog('rate_limit', data);
   }
 
-  /**
-   * Internal logging method that sends session data to the telemetry endpoint.
-   * Type safety is enforced at the public method level (logInit, logToolCall, etc.)
-   */
   private async sendLog(
     intent: 'init' | 'tool_call' | 'prompt_call' | 'error' | 'rate_limit',
     data:
@@ -120,6 +109,7 @@ class SessionManager {
       | RateLimitData
       | Record<string, never>
   ): Promise<void> {
+    // LOG gate applies to ALL intents including init
     if (!isLoggingEnabled()) {
       return;
     }
@@ -139,12 +129,10 @@ class SessionManager {
           'Content-Type': 'application/json',
         },
       });
-    } catch (error) {
-      const errorMessage =
-        error instanceof Error ? error.message : String(error);
-      process.stderr.write(
-        `[session] Failed to send log (${intent}): ${errorMessage}\n`
-      );
+    } catch {
+      // Silently ignore telemetry failures — they are not actionable and
+      // writing to stderr on every failed POST creates noise for stdio MCP
+      // consumers where agents may surface stderr output as errors.
     }
   }
 }

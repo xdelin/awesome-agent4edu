@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import {
   LinkedInProfile,
   LinkedInPost,
@@ -15,19 +15,50 @@ import {
 } from './types.js';
 import { Logger } from './logger.js';
 
+/**
+ * Interface for anything that can provide a valid access token.
+ * This allows the client to always use a fresh token from OAuthManager
+ * (with disk persistence and automatic refresh) instead of a static string.
+ */
+export interface TokenProvider {
+  getAccessToken(): Promise<string>;
+}
+
+/**
+ * Simple wrapper that turns a static token string into a TokenProvider.
+ * Used when the caller provides LINKEDIN_ACCESS_TOKEN directly via env.
+ */
+export class StaticTokenProvider implements TokenProvider {
+  constructor(private readonly token: string) {}
+  async getAccessToken(): Promise<string> {
+    return this.token;
+  }
+}
+
 export class LinkedInClient {
   private client: AxiosInstance;
   private logger: Logger;
+  private tokenProvider: TokenProvider;
 
-  constructor(accessToken: string, logger: Logger = new Logger()) {
+  constructor(tokenProvider: TokenProvider | string, logger: Logger = new Logger()) {
     this.logger = logger;
+    this.tokenProvider = typeof tokenProvider === 'string'
+      ? new StaticTokenProvider(tokenProvider)
+      : tokenProvider;
+
     this.client = axios.create({
       baseURL: 'https://api.linkedin.com/v2',
       headers: {
-        Authorization: `Bearer ${accessToken}`,
         'Content-Type': 'application/json',
         'X-Restli-Protocol-Version': '2.0.0',
       },
+    });
+
+    // Interceptor injects a fresh Bearer token on every request
+    this.client.interceptors.request.use(async (config: InternalAxiosRequestConfig) => {
+      const token = await this.tokenProvider.getAccessToken();
+      config.headers.Authorization = `Bearer ${token}`;
+      return config;
     });
   }
 

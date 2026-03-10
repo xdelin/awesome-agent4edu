@@ -17,6 +17,7 @@ export interface TableColumn {
   data_type: string;
   is_nullable: string;
   column_default: string | null;
+  description: string | null;
 }
 
 export interface TableIndex {
@@ -66,7 +67,12 @@ export interface ConnectorConfig {
    * Note: Application-level validation is done via ExecuteOptions.readonly
    */
   readonly?: boolean;
-  // Future database-specific options can be added here as optional fields
+  /**
+   * PostgreSQL search_path setting.
+   * Comma-separated list of schema names (e.g., "myschema,public").
+   * Sets the session search_path and uses the first schema as default for discovery methods.
+   */
+  searchPath?: string;
 }
 
 /**
@@ -166,9 +172,11 @@ export interface Connector {
   /**
    * Get stored procedures/functions in the database or in a specific schema
    * @param schema Optional schema name. If not provided, implementation should use the default schema
+   * @param routineType Optional filter: "procedure" for procedures only, "function" for functions only.
+   *   If not provided, returns both procedures and functions.
    * @returns Promise with array of stored procedure/function names
    */
-  getStoredProcedures(schema?: string): Promise<string[]>;
+  getStoredProcedures(schema?: string, routineType?: "procedure" | "function"): Promise<string[]>;
 
   /**
    * Get details for a specific stored procedure/function
@@ -177,6 +185,20 @@ export interface Connector {
    * @returns Promise with stored procedure details
    */
   getStoredProcedureDetail(procedureName: string, schema?: string): Promise<StoredProcedure>;
+
+  /**
+   * Get estimated row count for a table using database statistics.
+   * Uses catalog statistics (e.g. pg_class.reltuples) instead of COUNT(*) for performance.
+   * Optional — connectors that don't implement this fall back to COUNT(*) in search-objects.
+   */
+  getTableRowCount?(tableName: string, schema?: string): Promise<number | null>;
+
+  /**
+   * Get the comment/description for a table.
+   * Optional — connectors that don't support table comments (e.g. SQLite) may omit this.
+   * @returns The table comment string, or null if no comment is set
+   */
+  getTableComment?(tableName: string, schema?: string): Promise<string | null>;
 
   /** Execute a SQL query with execution options and optional parameters */
   executeSQL(sql: string, options: ExecuteOptions, parameters?: any[]): Promise<SQLResult>;

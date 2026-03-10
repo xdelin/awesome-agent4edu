@@ -1,6 +1,42 @@
 {
   "name": "Stella MCP",
+  "full": true,
   "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "plans",
+          "type": "folder",
+          "path": "docs/plans",
+          "children": [
+            {
+              "name": "2026-02-08-feat-force-directed-layout-engine-plan.md",
+              "type": "file",
+              "path": "docs/plans/2026-02-08-feat-force-directed-layout-engine-plan.md",
+              "size": 7394,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "generate_test_models.py",
+          "type": "file",
+          "path": "examples/generate_test_models.py",
+          "size": 6220,
+          "language": "py"
+        }
+      ]
+    },
     {
       "name": "stella_mcp",
       "type": "folder",
@@ -10,28 +46,35 @@
           "name": "__init__.py",
           "type": "file",
           "path": "stella_mcp/__init__.py",
-          "size": 105,
+          "size": 102,
+          "language": "py"
+        },
+        {
+          "name": "layout.py",
+          "type": "file",
+          "path": "stella_mcp/layout.py",
+          "size": 9331,
           "language": "py"
         },
         {
           "name": "server.py",
           "type": "file",
           "path": "stella_mcp/server.py",
-          "size": 16967,
+          "size": 16566,
           "language": "py"
         },
         {
           "name": "validator.py",
           "type": "file",
           "path": "stella_mcp/validator.py",
-          "size": 11813,
+          "size": 11536,
           "language": "py"
         },
         {
           "name": "xmile.py",
           "type": "file",
           "path": "stella_mcp/xmile.py",
-          "size": 76673,
+          "size": 65288,
           "language": "py"
         }
       ]
@@ -45,14 +88,21 @@
           "name": "__init__.py",
           "type": "file",
           "path": "tests/__init__.py",
-          "size": 24,
+          "size": 23,
+          "language": "py"
+        },
+        {
+          "name": "test_force_directed.py",
+          "type": "file",
+          "path": "tests/test_force_directed.py",
+          "size": 9312,
           "language": "py"
         },
         {
           "name": "test_positioning.py",
           "type": "file",
           "path": "tests/test_positioning.py",
-          "size": 34695,
+          "size": 34095,
           "language": "py"
         }
       ]
@@ -61,28 +111,28 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 510,
+      "size": 453,
       "language": "text"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1090,
+      "size": 1069,
       "language": "text"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 859,
+      "size": 825,
       "language": "toml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 5561,
+      "size": 5369,
       "language": "md"
     }
   ]

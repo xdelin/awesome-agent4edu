@@ -6,10 +6,10 @@
  */
 
 import type { ContentBlock } from '@modelcontextprotocol/sdk/types.js';
-import { container } from 'tsyringe';
+import { container } from '@/container/index.js';
 import { z } from 'zod';
 
-import { ClinicalTrialsProvider } from '@/container/tokens.js';
+import { ClinicalTrialsProvider } from '@/container/core/tokens.js';
 import type {
   SdkContext,
   ToolAnnotations,
@@ -24,33 +24,16 @@ import {
 import { JsonRpcErrorCode, McpError } from '@/types-global/errors.js';
 import { logger, type RequestContext } from '@/utils/index.js';
 
-/** --------------------------------------------------------- */
-/** Programmatic tool name (must be unique). */
 const TOOL_NAME = 'clinicaltrials_get_study';
-/** --------------------------------------------------------- */
-
-/** Human-readable title used by UIs. */
 const TOOL_TITLE = 'Get Clinical Study';
-/** --------------------------------------------------------- */
-
-/**
- * LLM-facing description of the tool.
- */
 const TOOL_DESCRIPTION =
   'Fetches one or more clinical trial studies from ClinicalTrials.gov by their NCT ID(s). Returns full study data or concise summaries.';
-/** --------------------------------------------------------- */
 
-/** UI/behavior hints for clients. */
 const TOOL_ANNOTATIONS: ToolAnnotations = {
   readOnlyHint: true,
   idempotentHint: true,
-  openWorldHint: true, // Accesses external ClinicalTrials.gov API
+  openWorldHint: true,
 };
-/** --------------------------------------------------------- */
-
-//
-// Schemas (input and output)
-// --------------------------
 
 /**
  * Zod schema for a summarized study, containing only essential fields for a concise overview.
@@ -137,10 +120,6 @@ type GetStudyInput = z.infer<typeof InputSchema>;
 type StudySummary = z.infer<typeof StudySummarySchema>;
 type GetStudyOutput = z.infer<typeof OutputSchema>;
 
-//
-// Pure business logic (no try/catch; throw McpError on failure)
-// -------------------------------------------------------------
-
 /**
  * Extracts a concise summary from a full study object.
  */
@@ -165,6 +144,8 @@ function createStudySummary(study: Study): StudySummary {
 
 /**
  * Fetches one or more clinical studies from ClinicalTrials.gov by their NCT IDs.
+ * Uses batch filter.ids endpoint for multi-study requests (single API call)
+ * and direct fetchStudy for single-study requests.
  */
 async function getStudyLogic(
   input: GetStudyInput,
@@ -172,11 +153,15 @@ async function getStudyLogic(
   _sdkContext: SdkContext,
 ): Promise<GetStudyOutput> {
   const nctIds = Array.isArray(input.nctIds) ? input.nctIds : [input.nctIds];
+  const normalizedIds = nctIds.map((id) => id.toUpperCase());
 
-  logger.debug(`Executing getStudyLogic for NCT IDs: ${nctIds.join(', ')}`, {
-    ...appContext,
-    toolInput: input,
-  });
+  logger.debug(
+    `Executing getStudyLogic for NCT IDs: ${normalizedIds.join(', ')}`,
+    {
+      ...appContext,
+      toolInput: input,
+    },
+  );
 
   const provider = container.resolve<IClinicalTrialsProvider>(
     ClinicalTrialsProvider,
@@ -185,35 +170,91 @@ async function getStudyLogic(
   const studies: (Study | StudySummary)[] = [];
   const errors: { nctId: string; error: string }[] = [];
 
-  const studyPromises = nctIds.map(async (nctId) => {
+  if (normalizedIds.length === 1) {
+    // Single study — direct fetch
+    const singleId = normalizedIds[0] ?? '';
+    const study = await provider.fetchStudy(singleId, appContext);
+    logger.info(`Successfully fetched study ${singleId}`, {
+      ...appContext,
+    });
+    studies.push(input.summaryOnly ? createStudySummary(study) : study);
+  } else {
+    // Multi-study — try batch fetch first, fall back to individual fetches on failure.
+    // NOTE: try/catch here is intentional — the batch API call could fail entirely
+    // (network error, malformed filter), in which case we retry individually to
+    // preserve partial-success semantics.
+    let batchSucceeded = false;
     try {
-      const study = await provider.fetchStudy(nctId, appContext);
+      const pagedStudies = await provider.listStudies(
+        {
+          filter: `AREA[NCTId](${normalizedIds.join(' OR ')})`,
+          pageSize: normalizedIds.length,
+        },
+        appContext,
+      );
 
-      logger.info(`Successfully fetched study ${nctId}`, { ...appContext });
-
-      if (input.summaryOnly) {
-        logger.debug(`Creating summary for study ${nctId}`, { ...appContext });
-        studies.push(createStudySummary(study));
-      } else {
-        studies.push(study);
+      const fetchedMap = new Map<string, Study>();
+      for (const study of pagedStudies.studies ?? []) {
+        const id =
+          study.protocolSection?.identificationModule?.nctId?.toUpperCase();
+        if (id) fetchedMap.set(id, study);
       }
-    } catch (error) {
-      const errorMessage =
-        error instanceof McpError
-          ? error.message
-          : 'An unexpected error occurred';
-      logger.warning(`Failed to fetch study ${nctId}: ${errorMessage}`, {
-        ...appContext,
-        nctId,
-        error,
-      });
-      errors.push({ nctId, error: errorMessage });
+
+      for (const id of normalizedIds) {
+        const study = fetchedMap.get(id);
+        if (study) {
+          studies.push(input.summaryOnly ? createStudySummary(study) : study);
+        } else {
+          errors.push({
+            nctId: id,
+            error: 'Study not found in batch response',
+          });
+        }
+      }
+      batchSucceeded = true;
+    } catch (batchError) {
+      logger.warning(
+        '[get_study] Batch fetch failed, falling back to individual fetches',
+        {
+          ...appContext,
+          error: batchError,
+        },
+      );
     }
-  });
 
-  await Promise.all(studyPromises);
+    // Fallback: individual fetches with per-ID error handling
+    if (!batchSucceeded) {
+      const settled = await Promise.all(
+        normalizedIds.map(async (nctId) => {
+          try {
+            const study = await provider.fetchStudy(nctId, appContext);
+            return { ok: true as const, nctId, study };
+          } catch (error) {
+            const msg =
+              error instanceof McpError
+                ? error.message
+                : 'An unexpected error occurred';
+            return { ok: false as const, nctId, error: msg };
+          }
+        }),
+      );
+      for (const entry of settled) {
+        if (entry.ok) {
+          studies.push(
+            input.summaryOnly ? createStudySummary(entry.study) : entry.study,
+          );
+        } else {
+          errors.push({ nctId: entry.nctId, error: entry.error });
+        }
+      }
+    }
 
-  // If all studies failed, throw an error
+    logger.info(`Fetched ${studies.length}/${normalizedIds.length} studies`, {
+      ...appContext,
+      missing: errors.length,
+    });
+  }
+
   if (studies.length === 0 && errors.length > 0) {
     throw new McpError(
       JsonRpcErrorCode.ServiceUnavailable,
@@ -230,22 +271,45 @@ async function getStudyLogic(
   return result;
 }
 
-/**
- * Formats the full tool output as a JSON string for the LLM.
- * The LLM requires the complete data, not just a human-readable summary.
- */
 function responseFormatter(result: GetStudyOutput): ContentBlock[] {
-  return [
-    {
-      type: 'text',
-      text: JSON.stringify(result, null, 2),
-    },
-  ];
+  // Single study: full JSON is fine
+  if (result.studies.length === 1 && !result.errors?.length) {
+    return [{ type: 'text', text: JSON.stringify(result.studies[0], null, 2) }];
+  }
+
+  // Multi-study: text summary + structured content
+  const parts: string[] = [`# ${result.studies.length} Studies Retrieved\n`];
+
+  if (result.errors?.length) {
+    parts.push(
+      `> **Errors:** ${result.errors.map((e) => `${e.nctId}: ${e.error}`).join('; ')}\n`,
+    );
+  }
+
+  for (const study of result.studies) {
+    // If it's already a summary (has nctId at top level), use it directly.
+    // Otherwise extract summary from the full Study object.
+    const isSummary = 'nctId' in study && typeof study.nctId === 'string';
+    const summary = isSummary
+      ? (study as StudySummary)
+      : createStudySummary(study as Study);
+    const nctId = summary.nctId ?? 'Unknown';
+    const title = summary.title ?? 'No title';
+    const status = summary.overallStatus ?? 'Unknown';
+    const conditions = summary.conditions ?? [];
+    const sponsor = summary.leadSponsor ?? 'N/A';
+
+    parts.push(`## ${nctId}: ${title}`);
+    parts.push(`- **Status:** ${status}`);
+    if (conditions.length > 0)
+      parts.push(`- **Conditions:** ${conditions.join(', ')}`);
+    parts.push(`- **Sponsor:** ${sponsor}`);
+    parts.push('');
+  }
+
+  return [{ type: 'text', text: parts.join('\n') }];
 }
 
-/**
- * The complete tool definition for fetching clinical trial studies.
- */
 export const getStudyTool: ToolDefinition<
   typeof InputSchema,
   typeof OutputSchema

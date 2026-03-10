@@ -30,6 +30,9 @@ except ImportError:
     print("Error: PyGithub not installed. Run: pip install PyGithub")
     sys.exit(1)
 
+from skill_seekers.cli.arguments.github import add_github_arguments
+from skill_seekers.cli.utils import setup_logging
+
 # Try to import pathspec for .gitignore support
 try:
     import pathspec
@@ -38,8 +41,6 @@ try:
 except ImportError:
     PATHSPEC_AVAILABLE = False
 
-# Configure logging FIRST (before using logger)
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 # Import code analyzer for deep code analysis
@@ -210,7 +211,14 @@ class GitHubScraper:
         self.local_repo_path = local_repo_path or config.get("local_repo_path")
         if self.local_repo_path:
             self.local_repo_path = os.path.expanduser(self.local_repo_path)
-            logger.info(f"Local repository mode enabled: {self.local_repo_path}")
+            if not os.path.isdir(self.local_repo_path):
+                logger.warning(
+                    f"local_repo_path does not exist or is not a directory: {self.local_repo_path}"
+                )
+                logger.warning("Falling back to GitHub API mode (local_repo_path ignored)")
+                self.local_repo_path = None
+            else:
+                logger.info(f"Local repository mode enabled: {self.local_repo_path}")
 
         # Configure directory exclusions (smart defaults + optional customization)
         self.excluded_dirs = set(EXCLUDED_DIRS)  # Start with smart defaults
@@ -1349,8 +1357,16 @@ Use this skill when you need to:
         logger.info(f"Generated: {structure_path}")
 
 
-def main():
-    """C1.10: CLI tool entry point."""
+def setup_argument_parser() -> argparse.ArgumentParser:
+    """Setup and configure command-line argument parser.
+
+    Creates an ArgumentParser with all CLI options for the github scraper.
+    All arguments are defined in skill_seekers.cli.arguments.github to ensure
+    consistency between the standalone scraper and unified CLI.
+
+    Returns:
+        argparse.ArgumentParser: Configured argument parser
+    """
     parser = argparse.ArgumentParser(
         description="GitHub Repository to Claude Skill Converter",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -1362,37 +1378,36 @@ Examples:
         """,
     )
 
-    parser.add_argument("--repo", help="GitHub repository (owner/repo)")
-    parser.add_argument("--config", help="Path to config JSON file")
-    parser.add_argument("--token", help="GitHub personal access token")
-    parser.add_argument("--name", help="Skill name (default: repo name)")
-    parser.add_argument("--description", help="Skill description")
-    parser.add_argument("--no-issues", action="store_true", help="Skip GitHub issues")
-    parser.add_argument("--no-changelog", action="store_true", help="Skip CHANGELOG")
-    parser.add_argument("--no-releases", action="store_true", help="Skip releases")
-    parser.add_argument("--max-issues", type=int, default=100, help="Max issues to fetch")
-    parser.add_argument("--scrape-only", action="store_true", help="Only scrape, don't build skill")
-    parser.add_argument(
-        "--enhance",
-        action="store_true",
-        help="Enhance SKILL.md using Claude API after building (requires API key)",
-    )
-    parser.add_argument(
-        "--enhance-local",
-        action="store_true",
-        help="Enhance SKILL.md using Claude Code (no API key needed)",
-    )
-    parser.add_argument(
-        "--api-key", type=str, help="Anthropic API key for --enhance (or set ANTHROPIC_API_KEY)"
-    )
-    parser.add_argument(
-        "--non-interactive",
-        action="store_true",
-        help="Non-interactive mode for CI/CD (fail fast on rate limits)",
-    )
-    parser.add_argument("--profile", type=str, help="GitHub profile name to use from config")
+    # Add all github arguments from shared definitions
+    # This ensures the standalone scraper and unified CLI stay in sync
+    add_github_arguments(parser)
 
+    return parser
+
+
+def main():
+    """C1.10: CLI tool entry point."""
+    parser = setup_argument_parser()
     args = parser.parse_args()
+
+    setup_logging(verbose=getattr(args, "verbose", False), quiet=getattr(args, "quiet", False))
+
+    # Handle --dry-run
+    if getattr(args, "dry_run", False):
+        repo = args.repo or (args.config and "(from config)")
+        print(f"\n{'=' * 60}")
+        print(f"DRY RUN: GitHub Repository Analysis")
+        print(f"{'=' * 60}")
+        print(f"Repository:     {repo}")
+        print(f"Name:           {getattr(args, 'name', None) or '(auto-detect)'}")
+        print(f"Include issues: {not getattr(args, 'no_issues', False)}")
+        print(f"Include releases: {not getattr(args, 'no_releases', False)}")
+        print(f"Include changelog: {not getattr(args, 'no_changelog', False)}")
+        print(f"Max issues:     {getattr(args, 'max_issues', 100)}")
+        print(f"Enhance level:  {getattr(args, 'enhance_level', 0)}")
+        print(f"Profile:        {getattr(args, 'profile', None) or '(default)'}")
+        print(f"\n✅ Dry run complete")
+        return 0
 
     # Build config from args or file
     if args.config:
@@ -1415,6 +1430,7 @@ Examples:
             "max_issues": args.max_issues,
             "interactive": not args.non_interactive,
             "github_profile": args.profile,
+            "local_repo_path": getattr(args, "local_repo_path", None),
         }
     else:
         parser.error("Either --repo or --config is required")
@@ -1435,49 +1451,77 @@ Examples:
         skill_name = config.get("name", config["repo"].split("/")[-1])
         skill_dir = f"output/{skill_name}"
 
-        # Phase 3: Optional enhancement
-        if args.enhance or args.enhance_local:
-            logger.info("\n📝 Enhancing SKILL.md with Claude...")
+        # ============================================================
+        # WORKFLOW SYSTEM INTEGRATION (Phase 2 - github_scraper)
+        # ============================================================
+        from skill_seekers.cli.workflow_runner import run_workflows
 
-            if args.enhance_local:
-                # Local enhancement using Claude Code
+        # Pass GitHub-specific context to workflows
+        github_context = {
+            "repo": config.get("repo", ""),
+            "name": skill_name,
+            "description": config.get("description", ""),
+        }
+
+        workflow_executed, workflow_names = run_workflows(args, context=github_context)
+        workflow_name = ", ".join(workflow_names) if workflow_names else None
+
+        # Phase 3: Optional enhancement with auto-detected mode
+        # Note: Runs independently of workflow system (they complement each other)
+        if getattr(args, "enhance_level", 0) > 0:
+            import os
+
+            # Auto-detect mode based on API key availability
+            api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY")
+            mode = "API" if api_key else "LOCAL"
+
+            logger.info("\n" + "=" * 80)
+            logger.info(f"🤖 Traditional AI Enhancement ({mode} mode, level {args.enhance_level})")
+            logger.info("=" * 80)
+            if workflow_executed:
+                logger.info(f"   Running after workflow: {workflow_name}")
+                logger.info(
+                    "   (Workflow provides specialized analysis, enhancement provides general improvements)"
+                )
+            logger.info("")
+
+            if api_key:
+                # API-based enhancement
+                try:
+                    from skill_seekers.cli.enhance_skill import enhance_skill_md
+
+                    enhance_skill_md(skill_dir, api_key)
+                    logger.info("✅ API enhancement complete!")
+                except ImportError:
+                    logger.error("❌ API enhancement not available. Install: pip install anthropic")
+                    logger.info("💡 Falling back to LOCAL mode...")
+                    # Fall back to LOCAL mode
+                    from pathlib import Path
+                    from skill_seekers.cli.enhance_skill_local import LocalSkillEnhancer
+
+                    enhancer = LocalSkillEnhancer(Path(skill_dir))
+                    enhancer.run(headless=True)
+                    logger.info("✅ Local enhancement complete!")
+            else:
+                # LOCAL enhancement (no API key)
                 from pathlib import Path
-
                 from skill_seekers.cli.enhance_skill_local import LocalSkillEnhancer
 
                 enhancer = LocalSkillEnhancer(Path(skill_dir))
                 enhancer.run(headless=True)
                 logger.info("✅ Local enhancement complete!")
 
-            elif args.enhance:
-                # API-based enhancement
-                import os
-
-                api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY")
-                if not api_key:
-                    logger.error(
-                        "❌ ANTHROPIC_API_KEY not set. Use --api-key or set environment variable."
-                    )
-                    logger.info("💡 Tip: Use --enhance-local instead (no API key needed)")
-                else:
-                    # Import and run API enhancement
-                    try:
-                        from skill_seekers.cli.enhance_skill import enhance_skill_md
-
-                        enhance_skill_md(skill_dir, api_key)
-                        logger.info("✅ API enhancement complete!")
-                    except ImportError:
-                        logger.error(
-                            "❌ API enhancement not available. Install: pip install anthropic"
-                        )
-                        logger.info("💡 Tip: Use --enhance-local instead (no API key needed)")
-
         logger.info(f"\n✅ Success! Skill created at: {skill_dir}/")
 
-        if not (args.enhance or args.enhance_local):
+        # Only suggest enhancement if neither workflow nor traditional enhancement was done
+        if not workflow_executed and getattr(args, "enhance_level", 0) == 0:
             logger.info("\n💡 Optional: Enhance SKILL.md with Claude:")
-            logger.info(f"  Local (recommended):  skill-seekers enhance {skill_dir}/")
-            logger.info("                        or re-run with: --enhance-local")
+            logger.info(f"  skill-seekers enhance {skill_dir}/ --enhance-level 2")
+            logger.info("  (auto-detects API vs LOCAL mode based on ANTHROPIC_API_KEY)")
+            logger.info("\n💡 Or use a workflow:")
+            logger.info(
+                f"  skill-seekers github --repo {config['repo']} --enhance-workflow architecture-comprehensive"
+            )
 
         logger.info(f"\nNext step: skill-seekers package {skill_dir}/")
 

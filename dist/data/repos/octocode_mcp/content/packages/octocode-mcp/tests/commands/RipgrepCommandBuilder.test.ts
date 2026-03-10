@@ -2,8 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { RipgrepCommandBuilder } from '../../src/commands/RipgrepCommandBuilder.js';
 import { RipgrepQuerySchema } from '../../src/tools/local_ripgrep/scheme.js';
 
-const createQuery = (query: Parameters<typeof RipgrepQuerySchema.parse>[0]) =>
-  RipgrepQuerySchema.parse(query);
+const createQuery = (query: Record<string, unknown>) =>
+  RipgrepQuerySchema.parse({
+    researchGoal: 'Test',
+    reasoning: 'Schema validation',
+    ...query,
+  });
 
 describe('RipgrepCommandBuilder', () => {
   describe('basic command building', () => {
@@ -26,6 +30,16 @@ describe('RipgrepCommandBuilder', () => {
       expect(args).toContain('path');
       expect(args).toContain('--color');
       expect(args).toContain('never');
+    });
+
+    it('should insert -- before positional args to prevent option injection', () => {
+      const builder = new RipgrepCommandBuilder();
+      const { args } = builder.simple('--pre=cat', '/repo').build();
+
+      const separatorIndex = args.indexOf('--');
+      expect(separatorIndex).toBeGreaterThan(-1);
+      expect(args[separatorIndex + 1]).toBe('--pre=cat');
+      expect(args[separatorIndex + 2]).toBe('/repo');
     });
   });
 
@@ -141,6 +155,23 @@ describe('RipgrepCommandBuilder', () => {
       expect(args).toContain('-g');
       expect(args).toContain('!*.test.*');
       expect(args).toContain('!*.spec.*');
+    });
+
+    it('should use fixedString when pattern has regex special chars (e.g. describe()', () => {
+      // describe( has ( which is regex special - unclosed group without fixedString
+      const query = createQuery({
+        pattern: 'describe(',
+        path: './src',
+        exclude: ['*.test.ts'],
+        fixedString: true,
+      });
+
+      const { args } = new RipgrepCommandBuilder().fromQuery(query).build();
+
+      expect(args).toContain('-F');
+      expect(args).toContain('-g');
+      expect(args).toContain('!*.test.ts');
+      expect(args).toContain('describe(');
     });
 
     it('should handle excludeDir', () => {
@@ -265,6 +296,34 @@ describe('RipgrepCommandBuilder', () => {
       const { args } = new RipgrepCommandBuilder().fromQuery(query).build();
 
       expect(args).toContain('--stats');
+    });
+
+    it('should NOT include --stats when filesOnly is true even if includeStats is true', () => {
+      const query = createQuery({
+        pattern: 'function',
+        path: './src',
+        includeStats: true,
+        filesOnly: true,
+      });
+
+      const { args } = new RipgrepCommandBuilder().fromQuery(query).build();
+
+      expect(args).not.toContain('--stats');
+      expect(args).toContain('-l');
+    });
+
+    it('should NOT include --stats when filesWithoutMatch is true even if includeStats is true', () => {
+      const query = createQuery({
+        pattern: 'function',
+        path: './src',
+        includeStats: true,
+        filesWithoutMatch: true,
+      });
+
+      const { args } = new RipgrepCommandBuilder().fromQuery(query).build();
+
+      expect(args).not.toContain('--stats');
+      expect(args).toContain('--files-without-match');
     });
 
     it('should enable JSON output', () => {

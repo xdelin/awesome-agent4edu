@@ -47,7 +47,7 @@ Example:
 - `new-table-step2`: "when adding a database table, update schema"
 - `new-table-step3`: "when adding a database table, regenerate types"
 
-→ Creates: `/new-table` command
+→ Creates: **new-table** command
 
 ### → Skill (Auto-Triggered)
 When instincts describe behaviors that should happen automatically:
@@ -74,7 +74,7 @@ Example:
 - `debug-step3`: "when debugging, create minimal reproduction"
 - `debug-step4`: "when debugging, verify fix with test"
 
-→ Creates: `debugger` agent
+→ Creates: **debugger** agent
 
 ## What to Do
 

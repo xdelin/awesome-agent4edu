@@ -17,6 +17,10 @@ export interface SSHConfig {
    * Comma-separated list of jump hosts: "jump1.example.com,user@jump2.example.com:2222"
    */
   ssh_proxy_jump?: string;
+  /** Interval in seconds between keepalive packets (default: 0 = disabled) */
+  ssh_keepalive_interval?: number;
+  /** Maximum number of missed keepalive responses before disconnecting (default: 3) */
+  ssh_keepalive_count_max?: number;
 }
 
 /**
@@ -47,6 +51,7 @@ export interface SourceConfig extends ConnectionParams, SSHConfig {
   query_timeout?: number; // Query timeout in seconds (PostgreSQL, MySQL, MariaDB, SQL Server)
   init_script?: string; // Optional SQL script to run on connection (for demo mode or initialization)
   lazy?: boolean; // Defer connection until first query (default: false)
+  search_path?: string; // Comma-separated list of schemas for PostgreSQL search_path (e.g., "myschema,public")
 }
 
 /**

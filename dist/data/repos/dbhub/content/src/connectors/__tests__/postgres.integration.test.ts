@@ -24,7 +24,8 @@ class PostgreSQLIntegrationTest extends IntegrationTestBase<PostgreSQLTestContai
       expectedTestSchemaTable: 'products',
       testSchema: 'test_schema',
       supportsStoredProcedures: true,
-      expectedStoredProcedures: ['get_user_count', 'calculate_total_age']
+      expectedStoredProcedures: ['get_user_count', 'calculate_total_age'],
+      supportsComments: true,
     };
     super(config);
   }
@@ -124,9 +125,14 @@ class PostgreSQLIntegrationTest extends IntegrationTestBase<PostgreSQLTestContai
       )
     `, {});
 
+    // Add table and column comments
+    await connector.executeSQL(`COMMENT ON TABLE users IS 'Application users'`, {});
+    await connector.executeSQL(`COMMENT ON COLUMN users.name IS 'Full name of the user'`, {});
+    await connector.executeSQL(`COMMENT ON COLUMN users.email IS 'Unique email address'`, {});
+
     // Insert test data
     await connector.executeSQL(`
-      INSERT INTO users (name, email, age) VALUES 
+      INSERT INTO users (name, email, age) VALUES
       ('John Doe', 'john@example.com', 30),
       ('Jane Smith', 'jane@example.com', 25),
       ('Bob Johnson', 'bob@example.com', 35)
@@ -142,9 +148,22 @@ class PostgreSQLIntegrationTest extends IntegrationTestBase<PostgreSQLTestContai
     `, {});
 
     await connector.executeSQL(`
-      INSERT INTO test_schema.products (name, price) VALUES 
+      INSERT INTO test_schema.products (name, price) VALUES
       ('Widget A', 19.99),
       ('Widget B', 29.99)
+      ON CONFLICT DO NOTHING
+    `, {});
+
+    // Create schema with special name (spaces, uppercase) for search_path quoting tests
+    await connector.executeSQL('CREATE SCHEMA IF NOT EXISTS "My Schema"', {});
+    await connector.executeSQL(`
+      CREATE TABLE IF NOT EXISTS "My Schema".items (
+        id SERIAL PRIMARY KEY,
+        label VARCHAR(100) NOT NULL
+      )
+    `, {});
+    await connector.executeSQL(`
+      INSERT INTO "My Schema".items (label) VALUES ('Item A'), ('Item B')
       ON CONFLICT DO NOTHING
     `, {});
 
@@ -562,6 +581,59 @@ describe('PostgreSQL Connector Integration Tests', () => {
         expect(insertResult.rows[0].id).toBeDefined();
       } finally {
         await normalConnector.disconnect();
+      }
+    });
+  });
+
+  describe('Search Path Configuration Tests', () => {
+    it('should use first schema in search_path as default for discovery', async () => {
+      const connector = new PostgresConnector();
+
+      try {
+        await connector.connect(postgresTest.connectionString, undefined, {
+          searchPath: 'test_schema,public',
+        });
+
+        // Session search_path should be set
+        const result = await connector.executeSQL('SHOW search_path', {});
+        expect(result.rows[0].search_path).toContain('test_schema');
+
+        // Discovery defaults to test_schema (first in search_path)
+        const tables = await connector.getTables();
+        expect(tables).toContain('products');
+        expect(tables).not.toContain('users');
+
+        // Explicit schema override still works
+        const publicTables = await connector.getTables('public');
+        expect(publicTables).toContain('users');
+
+        // SQL resolves unqualified names via search_path
+        const sqlResult = await connector.executeSQL('SELECT * FROM products', {});
+        expect(sqlResult.rows.length).toBeGreaterThan(0);
+      } finally {
+        await connector.disconnect();
+      }
+    });
+
+    it('should handle schema names with spaces and special characters', async () => {
+      const connector = new PostgresConnector();
+
+      try {
+        await connector.connect(postgresTest.connectionString, undefined, {
+          searchPath: 'My Schema,public',
+        });
+
+        // Discovery defaults to "My Schema"
+        const tables = await connector.getTables();
+        expect(tables).toContain('items');
+        expect(tables).not.toContain('users');
+
+        // SQL resolves unqualified names via quoted search_path
+        const result = await connector.executeSQL('SELECT * FROM items', {});
+        expect(result.rows.length).toBeGreaterThan(0);
+        expect(result.rows[0]).toHaveProperty('label');
+      } finally {
+        await connector.disconnect();
       }
     });
   });

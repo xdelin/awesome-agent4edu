@@ -6,6 +6,7 @@ import { registerFetchGitHubFileContentTool } from '../../src/tools/github_fetch
 import { registerSearchGitHubReposTool } from '../../src/tools/github_search_repos/github_search_repos.js';
 import { registerSearchGitHubPullRequestsTool } from '../../src/tools/github_search_pull_requests/github_search_pull_requests.js';
 import { registerViewGitHubRepoStructureTool } from '../../src/tools/github_view_repo_structure/github_view_repo_structure.js';
+import { registerGitHubCloneRepoTool } from '../../src/tools/github_clone_repo/index.js';
 import { registerTools } from '../../src/tools/toolsManager.js';
 
 // Mock dependencies
@@ -39,13 +40,14 @@ vi.mock('../../src/github/pullRequestSearch.js', () => ({
 vi.mock('../../src/serverConfig.js', () => ({
   getServerConfig: vi.fn().mockReturnValue({
     version: '1.0.0',
-    enableLogging: true,
     timeout: 30000,
     maxRetries: 3,
     loggingEnabled: false,
     enableLocal: false,
+    enableClone: false,
   }),
   isLocalEnabled: vi.fn().mockReturnValue(false),
+  isCloneEnabled: vi.fn().mockReturnValue(false),
 }));
 
 describe('Tool Invocation Callback', () => {
@@ -89,6 +91,16 @@ describe('Tool Invocation Callback', () => {
 
     it('should register github_view_repo_structure with callback', () => {
       const tool = registerViewGitHubRepoStructureTool(server, mockCallback);
+      expect(tool).toBeDefined();
+    });
+
+    it('should register github_clone_repo with callback', () => {
+      const tool = registerGitHubCloneRepoTool(server, mockCallback);
+      expect(tool).toBeDefined();
+    });
+
+    it('should register github_clone_repo without callback', () => {
+      const tool = registerGitHubCloneRepoTool(server);
       expect(tool).toBeDefined();
     });
   });

@@ -1,5 +1,6 @@
 {
   "name": "Wolfram Alpha MCP",
+  "full": true,
   "tree": [
     {
       "name": "src",
@@ -37,11 +38,32 @@
       ]
     },
     {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 11,
+      "language": "text"
+    },
+    {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 159,
+      "size": 147,
       "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 5,
+      "language": "text"
+    },
+    {
+      "name": "config.json.example",
+      "type": "file",
+      "path": "config.json.example",
+      "size": 372,
+      "language": "example"
     },
     {
       "name": "Dockerfile",
@@ -54,14 +76,14 @@
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1089,
+      "size": 1068,
       "language": "text"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 478,
+      "size": 458,
       "language": "toml"
     },
     {
@@ -75,7 +97,7 @@
       "name": "smithery.yaml",
       "type": "file",
       "path": "smithery.yaml",
-      "size": 661,
+      "size": 635,
       "language": "yaml"
     }
   ]

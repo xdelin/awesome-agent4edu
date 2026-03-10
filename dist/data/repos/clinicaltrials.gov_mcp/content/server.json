@@ -1,18 +1,18 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.cyanheads/clinicaltrialsgov-mcp-server",
-  "description": "Provides rich tools to search, retrieve, and analyze data from ClinicalTrials.gov API v2.",
+  "description": "MCP server for ClinicalTrials.gov v2 API. Search, retrieve, compare, and analyze trials.",
   "repository": {
     "url": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server",
     "source": "github"
   },
-  "version": "1.5.0",
+  "version": "1.9.0",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "clinicaltrialsgov-mcp-server",
-      "version": "1.5.0",
+      "version": "1.9.0",
       "runtimeHint": "bun",
       "packageArguments": [
         {
@@ -34,7 +34,7 @@
         },
         {
           "name": "STORAGE_PROVIDER_TYPE",
-          "description": "Storage provider type: 'in-memory', 'filesystem', 'supabase', 'cloudflare-r2', or 'cloudflare-kv'.",
+          "description": "Storage provider type: 'in-memory', 'filesystem', 'supabase', 'cloudflare-r2', 'cloudflare-kv', or 'cloudflare-d1'.",
           "format": "string",
           "isRequired": false,
           "default": "in-memory"
@@ -48,7 +48,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "clinicaltrialsgov-mcp-server",
-      "version": "1.5.0",
+      "version": "1.9.0",
       "runtimeHint": "bun",
       "packageArguments": [
         {
@@ -98,7 +98,7 @@
         },
         {
           "name": "STORAGE_PROVIDER_TYPE",
-          "description": "Storage provider type: 'in-memory', 'filesystem', 'supabase', 'cloudflare-r2', or 'cloudflare-kv'.",
+          "description": "Storage provider type: 'in-memory', 'filesystem', 'supabase', 'cloudflare-r2', 'cloudflare-kv', or 'cloudflare-d1'.",
           "format": "string",
           "isRequired": false,
           "default": "in-memory"
@@ -106,9 +106,8 @@
       ],
       "transport": {
         "type": "streamable-http",
-        "url": "http://localhost:3000/mcp"
+        "url": "http://localhost:3017/mcp"
       }
     }
-  ],
-  "mcpName": "io.github.cyanheads/clinicaltrialsgov-mcp-server"
+  ]
 }

@@ -16,7 +16,7 @@ import { AuthInfo } from '@modelcontextprotocol/sdk/server/auth/types';
 import { shouldIgnoreFile } from '../utils/file/filters';
 import { SEARCH_ERRORS } from '../errorCodes.js';
 import { logSessionError } from '../session.js';
-import { TOOL_NAMES } from '../tools/toolMetadata.js';
+import { TOOL_NAMES } from '../tools/toolMetadata/index.js';
 
 export async function searchGitHubCodeAPI(
   params: GitHubCodeSearchQuery,
@@ -117,7 +117,8 @@ async function searchGitHubCodeAPIInternal(
     // GitHub caps at 1000 total results
     const totalMatches = Math.min(optimizedResult.total_count, 1000);
     const totalPages = Math.min(Math.ceil(totalMatches / perPage), 10);
-    const hasMore = currentPage < totalPages;
+    const clampedPage = Math.min(currentPage, Math.max(1, totalPages));
+    const hasMore = clampedPage < totalPages;
 
     return {
       data: {
@@ -130,7 +131,7 @@ async function searchGitHubCodeAPIInternal(
         minificationTypes: optimizedResult.minificationTypes,
         _researchContext: optimizedResult._researchContext,
         pagination: {
-          currentPage,
+          currentPage: clampedPage,
           totalPages,
           perPage,
           totalMatches,
@@ -168,16 +169,20 @@ async function transformToOptimizedFormat(
 
   const filteredItems = items.filter(item => !shouldIgnoreFile(item.path));
 
-  const optimizedItems = await Promise.all(
+  let droppedItems = 0;
+  let droppedMatches = 0;
+
+  const itemResults = await Promise.allSettled(
     filteredItems.map(async item => {
       foundFiles.add(item.path);
 
-      const processedMatches = await Promise.all(
+      const matchResults = await Promise.allSettled(
         (item.text_matches || []).map(async match => {
           let processedFragment = match.fragment;
 
           const sanitizationResult = ContentSanitizer.sanitizeContent(
-            processedFragment || ''
+            processedFragment || '',
+            item.path
           );
           processedFragment = sanitizationResult.content;
 
@@ -216,6 +221,24 @@ async function transformToOptimizedFormat(
         })
       );
 
+      const processedMatches = matchResults
+        .filter(
+          (
+            r
+          ): r is PromiseFulfilledResult<{
+            context: string;
+            positions: [number, number][];
+          }> => r.status === 'fulfilled'
+        )
+        .map(r => r.value);
+
+      const rejectedMatchCount = matchResults.filter(
+        r => r.status === 'rejected'
+      ).length;
+      if (rejectedMatchCount > 0) {
+        droppedMatches += rejectedMatchCount;
+      }
+
       const itemWithOptionalFields = item as CodeSearchResultItem & {
         last_modified_at?: string;
       };
@@ -238,6 +261,20 @@ async function transformToOptimizedFormat(
       };
     })
   );
+
+  const optimizedItems = itemResults
+    .filter(
+      (
+        r
+      ): r is PromiseFulfilledResult<
+        (typeof itemResults)[number] extends PromiseFulfilledResult<infer T>
+          ? T
+          : never
+      > => r.status === 'fulfilled'
+    )
+    .map(r => r.value);
+
+  droppedItems = itemResults.filter(r => r.status === 'rejected').length;
 
   const result: OptimizedCodeSearchResult = {
     items: optimizedItems,
@@ -269,6 +306,17 @@ async function transformToOptimizedFormat(
       updatedAt: singleRepo.updated_at || undefined,
       pushedAt: singleRepo.pushed_at || undefined,
     };
+  }
+
+  if (droppedItems > 0) {
+    allMatchLocationsSet.add(
+      `${droppedItems} item(s) dropped due to processing errors`
+    );
+  }
+  if (droppedMatches > 0) {
+    allMatchLocationsSet.add(
+      `${droppedMatches} match(es) dropped due to processing errors`
+    );
   }
 
   if (allMatchLocationsSet.size > 0) {

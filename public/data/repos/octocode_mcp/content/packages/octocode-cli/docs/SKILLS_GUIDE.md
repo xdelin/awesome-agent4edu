@@ -336,7 +336,7 @@ All official skills follow these core principles:
 1. **Local-First**: Prefer local tools over shell commands
 2. **Research Before Action**: Always gather evidence first
 3. **User Checkpoints**: Ask before major actions
-4. **TodoWrite**: Track progress with tasks
+4. **TaskCreate/TaskUpdate**: Track progress with tasks
 5. **Validation**: Green build required
 6. **No Time Estimates**: Never provide timing
 7. **Evidence Citing**: Include file paths and code references
@@ -378,8 +378,8 @@ All official skills follow these core principles:
 
 ## Related Documentation
 
-- [CLI Reference](./CLI_REFERENCE.md) - Complete CLI commands
-- [Menu Flow](./MENU_FLOW.md) - Interactive menu system
-- [Architecture](./ARCHITECTURE.md) - Technical design patterns
+- [CLI Reference](https://github.com/bgauryy/octocode-mcp/blob/main/packages/octocode-cli/docs/CLI_REFERENCE.md) - Complete CLI commands
+- [Menu Flow](https://github.com/bgauryy/octocode-mcp/blob/main/packages/octocode-cli/docs/MENU_FLOW.md) - Interactive menu system
+- [Architecture](https://github.com/bgauryy/octocode-mcp/blob/main/packages/octocode-cli/docs/ARCHITECTURE.md) - Technical design patterns
 - [Claude Skills Documentation](https://support.anthropic.com/en/articles/10176498-how-to-use-custom-instructions-for-your-projects)
 - [Octocode MCP](https://octocode.ai)

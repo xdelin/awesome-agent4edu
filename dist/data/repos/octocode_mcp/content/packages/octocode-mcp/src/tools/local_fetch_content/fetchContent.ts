@@ -1,13 +1,14 @@
 import { readFile, stat } from 'fs/promises';
-import { minifyContentSync } from '../../utils/minifier/index.js';
 import { getHints } from '../../hints/index.js';
+import { applyMinification } from './contentMinifier.js';
+import { extractMatchingLines } from './contentExtractor.js';
 import {
   applyPagination,
   generatePaginationHints,
   createPaginationInfo,
 } from '../../utils/pagination/index.js';
 import { RESOURCE_LIMITS, DEFAULTS } from '../../utils/core/constants.js';
-import { TOOL_NAMES } from '../toolMetadata.js';
+import { TOOL_NAMES } from '../toolMetadata/index.js';
 import {
   validateToolPath,
   createErrorResult,
@@ -17,25 +18,6 @@ import type {
   FetchContentResult,
 } from '../../utils/core/types.js';
 import { ToolErrors, LOCAL_TOOL_ERROR_CODES } from '../../errorCodes.js';
-
-/**
- * Apply minification to content (always enabled for token efficiency)
- * Only replaces content if minification reduces size
- *
- * @param content - The content to minify
- * @param filePath - File path for determining minification strategy
- * @returns Minified content if smaller, otherwise original
- */
-function applyMinification(content: string, filePath: string): string {
-  try {
-    const minifiedContent = minifyContentSync(content, filePath);
-    // Only use minified version if it's actually smaller
-    return minifiedContent.length < content.length ? minifiedContent : content;
-  } catch {
-    // Keep original if minification fails
-    return content;
-  }
-}
 
 export async function fetchContent(
   query: FetchContentQuery
@@ -50,6 +32,24 @@ export async function fetchContent(
     }
 
     const absolutePath = pathValidation.sanitizedPath!;
+
+    // Validate mutually exclusive extraction options before any I/O
+    if (query.fullContent === true && query.matchString !== undefined) {
+      return {
+        status: 'error',
+        path: query.path,
+        error:
+          'Cannot use fullContent with matchString — these are mutually exclusive extraction methods. Choose ONE: fullContent=true to read the entire file, OR matchString to extract matching sections.',
+        researchGoal: query.researchGoal,
+        reasoning: query.reasoning,
+        hints: [
+          'fullContent and matchString are mutually exclusive — pick one extraction method',
+          'Use fullContent=true to read the entire file (small files only)',
+          'Use matchString="pattern" to extract specific sections (recommended for large files)',
+          'TIP: matchString is more token-efficient — prefer it when you know what to look for',
+        ],
+      } as FetchContentResult;
+    }
 
     let fileStats;
     try {
@@ -73,7 +73,8 @@ export async function fetchContent(
     if (
       fileSizeKB > RESOURCE_LIMITS.LARGE_FILE_THRESHOLD_KB &&
       !query.charLength &&
-      !query.matchString
+      !query.matchString &&
+      !query.startLine
     ) {
       const toolError = ToolErrors.fileTooLarge(
         query.path,
@@ -187,9 +188,7 @@ export async function fetchContent(
         return {
           status: 'hasResults',
           path: query.path,
-          cwd: process.cwd(),
           content: resultContent,
-          contentLength: resultContent.length,
           isPartial: true,
           totalLines,
           ...(actualStartLine !== undefined && {
@@ -223,9 +222,7 @@ export async function fetchContent(
         return {
           status: 'hasResults',
           path: query.path,
-          cwd: process.cwd(),
           content: autoPagination.paginatedContent,
-          contentLength: autoPagination.paginatedContent.length,
           isPartial: true,
           totalLines,
           ...(actualStartLine !== undefined && {
@@ -286,12 +283,12 @@ export async function fetchContent(
         );
       }
 
-      resultContent = applyMinification(resultContent, query.path);
+      // Note: No minification for line-range extraction — preserves readability
     } else {
       resultContent = content;
       isPartial = false;
 
-      resultContent = applyMinification(resultContent, query.path);
+      // Note: No minification for fullContent — preserves readability
     }
 
     if (!resultContent || resultContent.trim().length === 0) {
@@ -336,9 +333,7 @@ export async function fetchContent(
     return {
       status: 'hasResults',
       path: query.path,
-      cwd: process.cwd(),
       content: pagination.paginatedContent,
-      contentLength: pagination.paginatedContent.length,
       isPartial,
       totalLines,
       // Line extraction info (when startLine/endLine or matchString used)
@@ -346,9 +341,6 @@ export async function fetchContent(
         actualEndLine !== undefined && {
           startLine: actualStartLine,
           endLine: actualEndLine,
-          ...(matchRanges === undefined && {
-            extractedLines: actualEndLine - actualStartLine + 1,
-          }),
           ...(matchRanges !== undefined && { matchRanges }),
         }),
       // Include pagination info when explicitly requested OR auto-paginated
@@ -366,106 +358,4 @@ export async function fetchContent(
       extra: { path: query.path },
     }) as FetchContentResult;
   }
-}
-
-function extractMatchingLines(
-  lines: string[],
-  pattern: string,
-  contextLines: number,
-  isRegex: boolean = false,
-  caseSensitive: boolean = false,
-  maxMatches?: number
-): {
-  lines: string[];
-  matchRanges: Array<{ start: number; end: number }>;
-  matchCount: number;
-} {
-  const matchingLineNumbers: number[] = [];
-
-  // Compile regex once if needed
-  let regex: RegExp | null = null;
-  if (isRegex) {
-    try {
-      const flags = caseSensitive ? '' : 'i';
-      regex = new RegExp(pattern, flags);
-    } catch (error) {
-      throw new Error(
-        `Invalid regex pattern: ${error instanceof Error ? error.message : String(error)}`
-      );
-    }
-  }
-
-  const literalPattern = caseSensitive ? pattern : pattern.toLowerCase();
-
-  lines.forEach((line, index) => {
-    const matches =
-      isRegex && regex
-        ? regex.test(line)
-        : caseSensitive
-          ? line.includes(pattern)
-          : line.toLowerCase().includes(literalPattern);
-
-    if (matches) {
-      matchingLineNumbers.push(index + 1);
-    }
-  });
-
-  const totalMatchCount = matchingLineNumbers.length;
-
-  if (totalMatchCount === 0) {
-    return { lines: [], matchRanges: [], matchCount: 0 };
-  }
-
-  const matchesToProcess = maxMatches
-    ? matchingLineNumbers.slice(0, maxMatches)
-    : matchingLineNumbers;
-
-  // Group consecutive matches to avoid duplicating context
-  const ranges: Array<{ start: number; end: number }> = [];
-  const firstMatchLine = matchesToProcess[0];
-  if (firstMatchLine === undefined) {
-    return { lines: [], matchRanges: [], matchCount: 0 };
-  }
-
-  let currentRange = {
-    start: Math.max(1, firstMatchLine - contextLines),
-    end: Math.min(lines.length, firstMatchLine + contextLines),
-  };
-
-  for (let i = 1; i < matchesToProcess.length; i++) {
-    const matchLine = matchesToProcess[i];
-    if (matchLine === undefined) continue;
-    const rangeStart = Math.max(1, matchLine - contextLines);
-    const rangeEnd = Math.min(lines.length, matchLine + contextLines);
-
-    if (rangeStart <= currentRange.end + 1) {
-      currentRange.end = Math.max(currentRange.end, rangeEnd);
-    } else {
-      ranges.push({ ...currentRange });
-      currentRange = { start: rangeStart, end: rangeEnd };
-    }
-  }
-  ranges.push(currentRange);
-
-  const resultLines: string[] = [];
-  ranges.forEach((range, idx) => {
-    if (idx > 0) {
-      const prevRange = ranges[idx - 1];
-      if (prevRange) {
-        const omittedLines = range.start - prevRange.end - 1;
-        if (omittedLines > 0) {
-          resultLines.push('');
-          resultLines.push(`... [${omittedLines} lines omitted] ...`);
-          resultLines.push('');
-        }
-      }
-    }
-    resultLines.push(...lines.slice(range.start - 1, range.end));
-  });
-
-  return {
-    lines: resultLines,
-    matchRanges: ranges,
-    matchCount: totalMatchCount,
-  };
 }

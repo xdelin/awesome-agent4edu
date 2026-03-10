@@ -4,11 +4,9 @@ This file provides guidance to AI agents when working with code in this reposito
 
 ## Project Overview
 
-This is the **Neon MCP Server** - a Model Context Protocol server that bridges natural language requests to the Neon API, enabling LLMs to manage Neon Postgres databases through conversational commands. The project implements both local (stdio) and remote (SSE/Streamable HTTP) MCP server transports with OAuth authentication support.
+This is the **Neon MCP Server** - a Model Context Protocol server that bridges natural language requests to the Neon API, enabling LLMs to manage Neon Postgres databases through conversational commands. The project implements remote (SSE/Streamable HTTP) MCP server transports with OAuth authentication support.
 
-**Architecture Note**: The entire project is a unified Next.js application in the `landing/` directory that serves dual purposes:
-1. **Remote MCP Server**: Deployed on Vercel serverless infrastructure, accessible at `mcp.neon.tech`
-2. **Local MCP CLI**: Published as `@neondatabase/mcp-server-neon` npm package, runs locally via stdio transport
+**Architecture Note**: The project is a Next.js application in the `landing/` directory deployed on Vercel serverless infrastructure, accessible at `mcp.neon.tech`.
 
 ## Development Commands
 
@@ -22,35 +20,90 @@ bun install
 
 # Start the Next.js dev server (for the remote MCP server)
 bun run dev
-
-# Build the CLI for local testing
-bun run build:cli
-
-# Run the CLI locally with API key
-bun run start:cli $NEON_API_KEY
-
-# Or run the built CLI directly
-node dist/cli/cli.js start <NEON_API_KEY>
 ```
 
-### Development with MCP CLI Client
-
-The fastest way to iterate on the MCP Server is using the `mcp-client/` CLI:
-
-```bash
-cd landing && bun install && bun run build:cli
-cd ../mcp-client && NEON_API_KEY=<your-key> npm run start:mcp-server-neon
-```
-
-This provides an interactive terminal to test MCP tools without restarting Claude Desktop.
-
-### Linting and Type Checking
+### Formatting, Linting, and Type Checking
 
 ```bash
 cd landing
+
+# Check formatting (runs in CI)
+bun run fmt:check
+
+# Auto-fix formatting
+bun run fmt
+
+# Lint
 bun run lint
+
+# Auto-fix lint + formatting together
+bun run lint:fix
+
+# Type check
 bun run typecheck
+
+# Check for unused code and dependencies
+bun run knip
+
+# Auto-fix unused exports/dependencies
+bun run knip:fix
 ```
+
+### Testing
+
+```bash
+cd landing
+
+# Run unit tests
+bun run test:unit
+
+# Run integration tests
+bun run test:integration
+
+# Run MCP protocol e2e tests (real tool calls over MCP protocol)
+bun run test:e2e:mcp
+
+# Run website e2e tests (Playwright)
+bun run test:e2e:web
+
+# Run all e2e tests
+bun run test:e2e
+
+# Run full test pyramid (used in CI before merge)
+bun run test:all
+
+# Watch mode for Vitest
+bun run test:watch
+```
+
+### Testing Pyramid Rules
+
+The repository follows this hierarchy:
+
+1. **E2E first** (highest confidence):
+   - `test:e2e:mcp`: MCP client + server protocol tests that perform real tool calls.
+   - `test:e2e:web`: Playwright tests for website and HTTP endpoints.
+2. **Integration second**:
+   - Deterministic handler contract tests, typically with mocked external dependencies.
+3. **Unit third**:
+   - Fast tests for pure logic and validation edge cases.
+
+Use file naming to classify tiers:
+
+- `*.e2e.test.ts` for MCP protocol end-to-end tests
+- `*.integration.test.ts` for integration tests
+- `*.test.ts` for unit tests
+
+Merge-gating tests must be deterministic. Do not make third-party uptime (for example, external docs websites) a required CI dependency.
+
+**Unit and integration tests** use [Vitest](https://vitest.dev/) and live in `mcp-src/__tests__/`. Configuration is in `landing/vitest.config.ts`.
+
+**E2E tests** use [Playwright](https://playwright.dev/) and live in `landing/e2e/`. Configuration is in `landing/playwright.config.ts`.
+
+- **Global setup** (`e2e/global-setup.ts`): Provisions an ephemeral Postgres database via [Instagres](https://instagres.com) and generates a random `COOKIE_SECRET`. Both are written to `.env.e2e` (gitignored) and passed to the Next.js dev server.
+- **No secrets needed**: The e2e infrastructure is fully self-contained. Instagres databases expire after 72 hours; no explicit teardown is required.
+- **Reuse across runs**: If `.env.e2e` already exists, global-setup reuses it instead of re-provisioning. Delete the file to force a fresh database.
+- **CI**: The PR workflow runs format, lint, unit+integration tests, MCP e2e tests, website e2e tests, and build before merge.
 
 ## Architecture
 
@@ -75,24 +128,19 @@ bun run typecheck
    - `toolsSchema.ts`: Zod schemas for tool input validation
    - `handlers/`: Individual tool handler implementations organized by feature
 
-3. **CLI Entry Point (`landing/mcp-src/cli.ts`)**
-
-   - Entry point for the npm package CLI
-   - Handles stdio transport for local MCP clients (Claude Desktop, Cursor)
-
-4. **Remote Transport (`landing/app/api/[transport]/route.ts`)**
+3. **Remote Transport (`landing/app/api/[transport]/route.ts`)**
 
    - Next.js API route handling SSE and Streamable HTTP transports
    - Uses `mcp-handler` library for serverless MCP protocol handling
 
-5. **OAuth System (`landing/lib/oauth/` and `landing/mcp-src/oauth/`)**
+4. **OAuth System (`landing/lib/oauth/` and `landing/mcp-src/oauth/`)**
 
    - OAuth 2.0 server implementation for remote MCP authentication
    - Integrates with Neon's OAuth provider (UPSTREAM_OAUTH_HOST)
    - Token persistence using Keyv with Postgres backend
    - Cookie-based client approval tracking
 
-6. **Resources (`landing/mcp-src/resources.ts`)**
+5. **Resources (`landing/mcp-src/resources.ts`)**
    - MCP resources that provide read-only context (like "getting started" guides)
    - Registered alongside tools but don't execute operations
 
@@ -105,8 +153,6 @@ bun run typecheck
 - **Stateless Design**: The server is designed for serverless deployment. Tools like migrations and query tuning create temporary branches but do NOT store state in memory. Instead, all context (branch IDs, migration SQL, etc.) is returned to the LLM, which passes it back to subsequent tool calls. This enables horizontal scaling on Vercel.
 
 - **Read-Only Mode** (`landing/mcp-src/utils/read-only.ts`): Tools define a `readOnlySafe` property. When the server runs in read-only mode, only tools marked as `readOnlySafe: true` are available. Read-only mode is determined by priority: `X-READ-ONLY` header > OAuth scope (only `read` scope = read-only) > default (false). The module also exports `SCOPE_DEFINITIONS` for human-readable scope labels and `hasWriteScope()` to check for write permissions.
-
-- **OAuth Scope Selection UI**: During OAuth authorization, users see a permissions dialog where they can select which scopes to grant. Read access is always granted, while write access can be opted out of. The authorization endpoint (`landing/app/api/authorize/route.ts`) renders this UI and processes scope selections.
 
 - **MCP Tool Annotations**: All tools include MCP-standard annotations for client hints:
   - `title`: Human-readable tool name
@@ -184,12 +230,12 @@ export const NEON_HANDLERS = {
 
 See `landing/.env.local.example` for all configuration options. Key variables:
 
-- `NEON_API_KEY`: Required for local development and testing
-- `BRAINTRUST_API_KEY`: Required for running evaluations
-- `ANTHROPIC_API_KEY`: Required for running evaluations
+- `NEON_API_KEY`: Required for running tests (unit, integration, e2e)
 - `OAUTH_DATABASE_URL`: Required for remote MCP server with OAuth
 - `COOKIE_SECRET`: Required for remote MCP server OAuth flow
 - `CLIENT_ID` / `CLIENT_SECRET`: OAuth client credentials
+
+**E2E test environment**: The e2e tests do not require any manual environment configuration. `e2e/global-setup.ts` provisions an ephemeral database and generates secrets automatically, writing them to `.env.e2e` (gitignored).
 
 ## Project Structure
 
@@ -198,24 +244,33 @@ landing/                  # Next.js app (main project)
 ├── app/                 # Next.js App Router
 │   ├── api/            # API routes for remote MCP server
 │   │   ├── [transport]/route.ts  # Main MCP handler (SSE/Streamable HTTP)
-│   │   ├── authorize/  # OAuth authorization endpoint
+│   │   ├── authorize/  # OAuth authorization endpoint (renders consent UI)
 │   │   ├── token/      # OAuth token exchange
 │   │   ├── register/   # Dynamic client registration
 │   │   ├── revoke/     # OAuth token revocation
 │   │   └── health/     # Health check endpoint
 │   ├── callback/       # OAuth callback handler
 │   └── .well-known/    # OAuth discovery endpoints
+│   # Note: Root `/` redirects to https://neon.tech/docs/ai/neon-mcp-server
+│   # (configured in next.config.ts). There is no landing page.
+├── e2e/                # Playwright E2E tests
+│   ├── global-setup.ts # Instagres DB provisioning + secret generation
+│   └── smoke.spec.ts   # Smoke tests (health, OAuth discovery, redirect)
 ├── lib/                # Next.js-compatible utilities
 │   ├── config.ts       # Centralized configuration
 │   └── oauth/          # OAuth utilities for Next.js
 ├── mcp-src/            # MCP server source code
-│   ├── cli.ts          # CLI entry point (stdio transport)
+│   ├── __tests__/      # Vitest unit/integration/MCP e2e tests
+│   │   ├── *.test.ts              # Unit tests
+│   │   ├── *.integration.test.ts  # Integration tests
+│   │   └── *.e2e.test.ts          # MCP protocol e2e tests
 │   ├── server/         # MCP server factory
 │   │   ├── index.ts    # Server creation and tool registration
 │   │   ├── api.ts      # Neon API client factory
 │   │   ├── account.ts  # Account resolution (user/org/project-scoped)
 │   │   └── errors.ts   # Error handling utilities
 │   ├── tools/          # Tool definitions and handlers
+│   │   ├── index.ts       # Re-exports definitions and handlers
 │   │   ├── definitions.ts  # Tool definitions (NEON_TOOLS) with annotations
 │   │   ├── tools.ts       # Tool handlers mapping (NEON_HANDLERS)
 │   │   ├── toolsSchema.ts # Zod schemas for tool inputs
@@ -225,26 +280,24 @@ landing/                  # Next.js app (main project)
 │   ├── oauth/          # OAuth model and KV store
 │   ├── analytics/      # Segment analytics
 │   ├── sentry/         # Sentry error tracking
-│   ├── transports/     # Transport implementations
-│   │   └── stdio.ts    # Stdio transport for CLI
 │   ├── types/          # Shared TypeScript types
 │   ├── utils/          # Shared utilities
 │   │   ├── read-only.ts    # Read-only mode detection, scope definitions
 │   │   ├── trace.ts        # TraceId generation for request correlation
 │   │   ├── client-application.ts  # Client application utilities
-│   │   ├── logger.ts       # Logging utilities
-│   │   └── polyfills.ts    # Runtime polyfills
+│   │   └── logger.ts       # Logging utilities
 │   ├── resources.ts    # MCP resources
 │   ├── prompts.ts      # LLM prompts
 │   └── constants.ts    # Shared constants
-├── components/         # React components for landing page
-├── public/             # Static assets
+├── public/             # Static assets (favicons, OG image, llms.txt)
+├── .prettierrc         # Prettier config (singleQuote: true)
+├── .prettierignore     # Prettier ignore patterns
+├── vitest.config.ts    # Vitest configuration
+├── playwright.config.ts # Playwright E2E configuration
 ├── package.json        # Package configuration
 ├── tsconfig.json       # TypeScript config (bundler resolution)
 ├── vercel.json         # Vercel deployment config
 └── vercel-migration.md # Migration documentation
-
-mcp-client/             # CLI client for testing
 
 dev-notes/              # Developer notes and solution documentation
 └── *.md               # Problem solutions, fixes, and technical decisions
@@ -253,10 +306,7 @@ dev-notes/              # Developer notes and solution documentation
 ## Important Notes
 
 - **TypeScript Configuration**: Uses `bundler` module resolution for Next.js compatibility. Imports use extensionless paths (no `.js` suffix).
-
-- **Building**: The CLI build uses esbuild to bundle `mcp-src/cli.ts` into a standalone executable at `dist/cli/cli.js`.
-
-- **Logger Behavior**: In stdio mode, the logger is silenced to prevent stderr pollution. In server mode, logging is active.
+- **Registry metadata version sync**: Keep root `server.json` `version` in sync with `landing/package.json` `version`. CI enforces this via the PR workflow.
 
 - **Migration Pattern**: Tools like `prepare_database_migration` and `prepare_query_tuning` create temporary branches and return all context (branch IDs, SQL, database name, etc.) in the response. The LLM must pass this context back to subsequent `complete_*` tools. No state is stored server-side, enabling serverless deployment.
 
@@ -358,9 +408,11 @@ This repository uses an enhanced Claude Code Review workflow that provides inlin
 
 ### What's Automated (Not Reviewed by Claude)
 
+- Formatting: `bun run fmt:check` (checked by pr.yml)
 - Linting: `bun run lint` (checked by pr.yml)
+- Unit tests: `bun run test` (vitest, checked by pr.yml)
+- E2E tests: `bun run test:e2e` (playwright, checked by pr.yml)
 - Building: `bun run build` (checked by pr.yml)
-- Formatting: Automated formatting checks
 
 ### Review Process
 

@@ -124,6 +124,7 @@ export interface ToolMetadata {
   name: string;
   description: string;
   schema: Record<string, string>;
+  outputSchema?: Record<string, unknown>;
   hints: {
     hasResults: readonly string[];
     empty: readonly string[];
@@ -150,6 +151,7 @@ export interface ToolNames {
   GITHUB_SEARCH_PULL_REQUESTS: 'githubSearchPullRequests';
   GITHUB_SEARCH_REPOSITORIES: 'githubSearchRepositories';
   GITHUB_VIEW_REPO_STRUCTURE: 'githubViewRepoStructure';
+  GITHUB_CLONE_REPO: 'githubCloneRepo';
   PACKAGE_SEARCH: 'packageSearch';
   LOCAL_RIPGREP: 'localSearchCode';
   LOCAL_FETCH_CONTENT: 'localGetFileContent';

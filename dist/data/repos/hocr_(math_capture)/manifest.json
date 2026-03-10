@@ -1,5 +1,6 @@
 {
   "name": "HOCR (Math Capture)",
+  "full": true,
   "tree": [
     {
       "name": "hocr-vue-client",
@@ -7,50 +8,43 @@
       "path": "hocr-vue-client",
       "children": [
         {
-          "name": "public",
-          "type": "folder",
-          "path": "hocr-vue-client/public",
-          "children": [
-            {
-              "name": "vite.svg",
-              "type": "file",
-              "path": "hocr-vue-client/public/vite.svg",
-              "size": 1497,
-              "language": "svg"
-            }
-          ]
-        },
-        {
           "name": "src",
           "type": "folder",
           "path": "hocr-vue-client/src",
           "children": [
             {
-              "name": "assets",
+              "name": "components",
               "type": "folder",
-              "path": "hocr-vue-client/src/assets",
+              "path": "hocr-vue-client/src/components",
               "children": [
                 {
-                  "name": "vue.svg",
+                  "name": "HelloWorld.vue",
                   "type": "file",
-                  "path": "hocr-vue-client/src/assets/vue.svg",
-                  "size": 496,
-                  "language": "svg"
+                  "path": "hocr-vue-client/src/components/HelloWorld.vue",
+                  "size": 847,
+                  "language": "vue"
                 }
               ]
+            },
+            {
+              "name": "App.vue",
+              "type": "file",
+              "path": "hocr-vue-client/src/App.vue",
+              "size": 3146,
+              "language": "vue"
             },
             {
               "name": "main.js",
               "type": "file",
               "path": "hocr-vue-client/src/main.js",
-              "size": 131,
+              "size": 127,
               "language": "js"
             },
             {
               "name": "style.css",
               "type": "file",
               "path": "hocr-vue-client/src/style.css",
-              "size": 1348,
+              "size": 1269,
               "language": "css"
             }
           ]
@@ -59,99 +53,36 @@
           "name": ".gitignore",
           "type": "file",
           "path": "hocr-vue-client/.gitignore",
-          "size": 545,
+          "size": 504,
           "language": "text"
         },
         {
           "name": "index.html",
           "type": "file",
           "path": "hocr-vue-client/index.html",
-          "size": 370,
+          "size": 357,
           "language": "html"
         },
         {
           "name": "package.json",
           "type": "file",
           "path": "hocr-vue-client/package.json",
-          "size": 345,
+          "size": 327,
           "language": "json"
         },
         {
           "name": "README.md",
           "type": "file",
           "path": "hocr-vue-client/README.md",
-          "size": 390,
+          "size": 385,
           "language": "md"
         },
         {
           "name": "vite.config.js",
           "type": "file",
           "path": "hocr-vue-client/vite.config.js",
-          "size": 405,
+          "size": 386,
           "language": "js"
-        }
-      ]
-    },
-    {
-      "name": "test",
-      "type": "folder",
-      "path": "test",
-      "children": [
-        {
-          "name": "a.png",
-          "type": "file",
-          "path": "test/a.png",
-          "size": 290967,
-          "language": "png"
-        },
-        {
-          "name": "a1.png",
-          "type": "file",
-          "path": "test/a1.png",
-          "size": 543466,
-          "language": "png"
-        },
-        {
-          "name": "a2.png",
-          "type": "file",
-          "path": "test/a2.png",
-          "size": 609121,
-          "language": "png"
-        },
-        {
-          "name": "a3.png",
-          "type": "file",
-          "path": "test/a3.png",
-          "size": 541366,
-          "language": "png"
-        },
-        {
-          "name": "test.png",
-          "type": "file",
-          "path": "test/test.png",
-          "size": 13473,
-          "language": "png"
-        },
-        {
-          "name": "test1.png",
-          "type": "file",
-          "path": "test/test1.png",
-          "size": 64684,
-          "language": "png"
-        },
-        {
-          "name": "test2.png",
-          "type": "file",
-          "path": "test/test2.png",
-          "size": 65938,
-          "language": "png"
-        },
-        {
-          "name": "test3.png",
-          "type": "file",
-          "path": "test/test3.png",
-          "size": 100132,
-          "language": "png"
         }
       ]
     },
@@ -159,7 +90,14 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 320,
+      "size": 295,
+      "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 5,
       "language": "text"
     },
     {
@@ -173,28 +111,28 @@
       "name": "mcp_server.py",
       "type": "file",
       "path": "mcp_server.py",
-      "size": 4374,
+      "size": 4233,
       "language": "py"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 308,
+      "size": 294,
       "language": "toml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 486,
+      "size": 458,
       "language": "md"
     },
     {
       "name": "requirements.txt",
       "type": "file",
       "path": "requirements.txt",
-      "size": 122,
+      "size": 116,
       "language": "txt"
     }
   ]

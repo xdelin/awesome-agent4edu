@@ -10,7 +10,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { AnySchema } from '../../types/toolTypes.js';
 import { readFile, stat } from 'fs/promises';
-import * as path from 'path';
 
 import {
   BulkLSPFindReferencesSchema,
@@ -20,44 +19,35 @@ import {
 import {
   SymbolResolver,
   SymbolResolutionError,
-  createClient,
   isLanguageServerAvailable,
 } from '../../lsp/index.js';
 import type {
   FindReferencesResult,
-  ReferenceLocation,
-  LSPRange,
-  LSPPaginationInfo,
   ExactPosition,
+  ReferenceLocation,
 } from '../../lsp/types.js';
 import {
   validateToolPath,
   createErrorResult,
 } from '../../utils/file/toolHelpers.js';
-import { getHints } from '../../hints/index.js';
-import { STATIC_TOOL_NAMES } from '../toolNames.js';
 import { ToolErrors } from '../../errorCodes.js';
-import { executeFindReferences } from './execution.js';
-
-// Lazy-load exec to avoid module-level dependency on child_process
-// which can cause issues with test mocks
-const getExecAsync = async () => {
-  const { exec } = await import('child_process');
-  const { promisify } = await import('util');
-  return promisify(exec);
-};
-
-const TOOL_NAME = STATIC_TOOL_NAMES.LSP_FIND_REFERENCES;
+import { resolveWorkspaceRoot } from '../../security/workspaceRoot.js';
+import { executeFindReferences, TOOL_NAME } from './execution.js';
+import { withBasicSecurityValidation } from '../../security/withSecurityValidation.js';
+import { findReferencesWithLSP } from './lspReferencesCore.js';
+import { findReferencesWithPatternMatching } from './lspReferencesPatterns.js';
+import { LspFindReferencesOutputSchema } from '../../scheme/outputSchemas.js';
 
 /**
  * Register the LSP find references tool with the MCP server.
  */
 export function registerLSPFindReferencesTool(server: McpServer) {
   return server.registerTool(
-    'lspFindReferences',
+    TOOL_NAME,
     {
       description: LSP_FIND_REFERENCES_DESCRIPTION,
       inputSchema: BulkLSPFindReferencesSchema as unknown as AnySchema,
+      outputSchema: LspFindReferencesOutputSchema as unknown as AnySchema,
       annotations: {
         title: 'Find References',
         readOnlyHint: true,
@@ -66,7 +56,7 @@ export function registerLSPFindReferencesTool(server: McpServer) {
         openWorldHint: false,
       },
     },
-    executeFindReferences
+    withBasicSecurityValidation(executeFindReferences, TOOL_NAME)
   );
 }
 
@@ -77,7 +67,6 @@ export async function findReferences(
   query: LSPFindReferencesQuery
 ): Promise<FindReferencesResult> {
   try {
-    // Validate the file path
     const pathValidation = validateToolPath(
       { ...query, path: query.uri },
       TOOL_NAME
@@ -118,7 +107,7 @@ export async function findReferences(
     }
 
     // Resolve the symbol position
-    const resolver = new SymbolResolver({ lineSearchRadius: 2 });
+    const resolver = new SymbolResolver({ lineSearchRadius: 5 });
     let resolvedSymbol: { position: ExactPosition; foundAtLine: number };
     try {
       resolvedSymbol = resolver.resolvePositionFromContent(content, {
@@ -146,31 +135,32 @@ export async function findReferences(
       throw error;
     }
 
-    // Get workspace root
-    const workspaceRoot =
-      process.env.WORKSPACE_ROOT || findWorkspaceRoot(absolutePath);
+    const workspaceRoot = resolveWorkspaceRoot();
 
-    // Try to use LSP for semantic reference finding
+    // Try LSP for semantic reference finding, then merge with pattern matching
+    let lspResult: FindReferencesResult | null = null;
     if (await isLanguageServerAvailable(absolutePath)) {
       try {
-        const result = await findReferencesWithLSP(
+        lspResult = await findReferencesWithLSP(
           absolutePath,
           workspaceRoot,
           resolvedSymbol.position,
           query
         );
-        if (result) return result;
       } catch {
-        // Fall back to pattern matching if LSP fails
+        // LSP failed — fall through to pattern matching silently
       }
     }
 
-    // Fallback: Find references using pattern matching (ripgrep/grep)
-    return await findReferencesWithPatternMatching(
+    // Always run pattern matching for comprehensive coverage
+    const patternResult = await findReferencesWithPatternMatching(
       absolutePath,
       workspaceRoot,
       query
     );
+
+    // Merge LSP + pattern results for best coverage
+    return mergeReferenceResults(lspResult, patternResult, query);
   } catch (error) {
     return createErrorResult(error, query, {
       toolName: TOOL_NAME,
@@ -180,236 +170,77 @@ export async function findReferences(
 }
 
 /**
- * Use LSP client to find references
+ * Merge LSP and pattern-matching results for comprehensive coverage.
+ *
+ * LSP provides semantic accuracy but may miss cross-file references on cold start.
+ * Pattern matching (ripgrep) provides comprehensive text-based coverage.
+ * Merging both gives the best of both worlds without persistent caching.
+ *
+ * Deduplication is by (uri, startLine) to avoid showing the same reference twice.
  */
-export async function findReferencesWithLSP(
-  filePath: string,
-  workspaceRoot: string,
-  position: ExactPosition,
+export function mergeReferenceResults(
+  lspResult: FindReferencesResult | null,
+  patternResult: FindReferencesResult,
   query: LSPFindReferencesQuery
-): Promise<FindReferencesResult | null> {
-  const client = await createClient(workspaceRoot, filePath);
-  if (!client) return null;
-
-  try {
-    const includeDeclaration = query.includeDeclaration ?? true;
-    const locations = await client.findReferences(
-      filePath,
-      position,
-      includeDeclaration
-    );
-
-    if (!locations || locations.length === 0) {
-      return {
-        status: 'empty',
-        totalReferences: 0,
-        researchGoal: query.researchGoal,
-        reasoning: query.reasoning,
-        hints: [
-          ...getHints(TOOL_NAME, 'empty'),
-          'Language server found no references',
-          'Symbol may be unused or only referenced dynamically',
-          'Try localSearchCode for text-based search as fallback',
-        ],
-      };
-    }
-
-    // Enhance with context and convert to ReferenceLocation
-    const contextLines = query.contextLines ?? 2;
-    const referenceLocations: ReferenceLocation[] = [];
-
-    for (const loc of locations) {
-      const refLoc = await enhanceReferenceLocation(
-        loc,
-        workspaceRoot,
-        contextLines,
-        filePath,
-        position,
-        query.symbolName
-      );
-      referenceLocations.push(refLoc);
-    }
-
-    // Apply pagination
-    const referencesPerPage = query.referencesPerPage ?? 20;
-    const page = query.page ?? 1;
-    const totalReferences = referenceLocations.length;
-    const totalPages = Math.ceil(totalReferences / referencesPerPage);
-    const startIndex = (page - 1) * referencesPerPage;
-    const endIndex = Math.min(startIndex + referencesPerPage, totalReferences);
-    const paginatedReferences = referenceLocations.slice(startIndex, endIndex);
-
-    // Determine if references span multiple files
-    const uniqueFiles = new Set(paginatedReferences.map(ref => ref.uri));
-    const hasMultipleFiles = uniqueFiles.size > 1;
-
-    const pagination: LSPPaginationInfo = {
-      currentPage: page,
-      totalPages,
-      totalResults: totalReferences,
-      hasMore: page < totalPages,
-      resultsPerPage: referencesPerPage,
-    };
-
-    const hints = [
-      ...getHints(TOOL_NAME, 'hasResults'),
-      `Found ${totalReferences} reference(s) via Language Server`,
-    ];
-
-    if (pagination.hasMore) {
-      hints.push(
-        `Showing page ${page} of ${totalPages}. Use page=${page + 1} for more.`
-      );
-    }
-
-    if (hasMultipleFiles) {
-      hints.push(`References span ${uniqueFiles.size} files.`);
-    }
-
-    return {
-      status: 'hasResults',
-      locations: paginatedReferences,
-      pagination,
-      totalReferences,
-      hasMultipleFiles,
-      researchGoal: query.researchGoal,
-      reasoning: query.reasoning,
-      hints,
-    };
-  } finally {
-    await client.stop();
-  }
-}
-
-/**
- * Enhance a code snippet with context and determine if it's a definition
- */
-async function enhanceReferenceLocation(
-  loc: { uri: string; range: LSPRange; content: string },
-  workspaceRoot: string,
-  contextLines: number,
-  sourceFilePath: string,
-  sourcePosition: ExactPosition,
-  _symbolName: string
-): Promise<ReferenceLocation> {
-  let content = loc.content;
-  let displayStartLine = loc.range.start.line + 1;
-  let displayEndLine = loc.range.end.line + 1;
-
-  // Determine if this is the definition (same file and position)
-  const isDefinition =
-    loc.uri === sourceFilePath &&
-    loc.range.start.line === sourcePosition.line &&
-    loc.range.start.character === sourcePosition.character;
-
-  // Get context if needed
-  if (contextLines > 0) {
-    try {
-      const fileContent = await readFile(loc.uri, 'utf-8');
-      const lines = fileContent.split(/\r?\n/);
-      const startLine = Math.max(0, loc.range.start.line - contextLines);
-      const endLine = Math.min(
-        lines.length - 1,
-        loc.range.end.line + contextLines
-      );
-
-      const snippetLines = lines.slice(startLine, endLine + 1);
-      content = snippetLines
-        .map((line, i) => {
-          const lineNum = startLine + i + 1;
-          const isTarget = lineNum === loc.range.start.line + 1;
-          const marker = isTarget ? '>' : ' ';
-          return `${marker}${String(lineNum).padStart(4, ' ')}| ${line}`;
-        })
-        .join('\n');
-
-      displayStartLine = startLine + 1;
-      displayEndLine = endLine + 1;
-    } catch {
-      // Keep original content
-    }
+): FindReferencesResult {
+  // If LSP returned nothing useful, use pattern results directly
+  if (
+    !lspResult ||
+    lspResult.status === 'empty' ||
+    !lspResult.locations?.length
+  ) {
+    return patternResult;
   }
 
-  // Make path relative to workspace
-  const relativeUri = path.relative(workspaceRoot, loc.uri);
+  // If pattern returned nothing, use LSP results directly
+  if (patternResult.status === 'empty' || !patternResult.locations?.length) {
+    return lspResult;
+  }
 
-  return {
-    uri: relativeUri || loc.uri,
-    range: loc.range,
-    content,
-    isDefinition,
-    symbolKind: isDefinition ? 'function' : undefined,
-    displayRange: {
-      startLine: displayStartLine,
-      endLine: displayEndLine,
-    },
-  };
-}
-
-/**
- * Fallback: Find references using pattern matching (ripgrep/grep)
- */
-export async function findReferencesWithPatternMatching(
-  absolutePath: string,
-  workspaceRoot: string,
-  query: LSPFindReferencesQuery
-): Promise<FindReferencesResult> {
-  const allReferences = await searchReferencesInWorkspace(
-    workspaceRoot,
-    query.symbolName,
-    absolutePath,
-    query.contextLines ?? 2
+  // Build dedup set from LSP results (uri:startLine)
+  const seen = new Set(
+    lspResult.locations.map(
+      (loc: ReferenceLocation) => `${loc.uri}:${loc.range.start.line}`
+    )
   );
 
-  // Filter based on includeDeclaration
-  let filteredReferences = allReferences;
-  if (!query.includeDeclaration) {
-    filteredReferences = allReferences.filter(ref => !ref.isDefinition);
-  }
+  // Find pattern-only references that LSP missed
+  const additionalRefs = patternResult.locations.filter(
+    (loc: ReferenceLocation) => !seen.has(`${loc.uri}:${loc.range.start.line}`)
+  );
 
-  // Apply pagination
-  const referencesPerPage = query.referencesPerPage ?? 20;
-  const page = query.page ?? 1;
-  const totalReferences = filteredReferences.length;
-  const totalPages = Math.ceil(totalReferences / referencesPerPage);
-  const startIndex = (page - 1) * referencesPerPage;
-  const endIndex = Math.min(startIndex + referencesPerPage, totalReferences);
-  const paginatedReferences = filteredReferences.slice(startIndex, endIndex);
-
-  if (paginatedReferences.length === 0) {
+  if (additionalRefs.length === 0) {
+    // LSP found everything — return LSP result as-is (higher fidelity)
     return {
-      status: 'empty',
-      totalReferences: 0,
-      researchGoal: query.researchGoal,
-      reasoning: query.reasoning,
+      ...lspResult,
       hints: [
-        ...getHints(TOOL_NAME, 'empty'),
-        `No references found for '${query.symbolName}'`,
-        'Note: Using text-based search (language server not available)',
-        'Install typescript-language-server for semantic reference finding',
+        ...(lspResult.hints || []),
+        'All references confirmed by both LSP and text search',
       ],
     };
   }
 
-  const uniqueFiles = new Set(paginatedReferences.map(ref => ref.uri));
-  const hasMultipleFiles = uniqueFiles.size > 1;
+  // Merge: LSP results + pattern-only additions
+  const mergedLocations = [...lspResult.locations, ...additionalRefs];
+  const totalReferences = mergedLocations.length;
+  const uniqueFiles = new Set(
+    mergedLocations.map((ref: ReferenceLocation) => ref.uri)
+  );
 
-  const pagination: LSPPaginationInfo = {
-    currentPage: page,
-    totalPages,
-    totalResults: totalReferences,
-    hasMore: page < totalPages,
-    resultsPerPage: referencesPerPage,
-  };
+  // Re-paginate the merged results
+  const referencesPerPage = query.referencesPerPage ?? 20;
+  const page = query.page ?? 1;
+  const totalPages = Math.ceil(totalReferences / referencesPerPage);
+  const startIndex = (page - 1) * referencesPerPage;
+  const endIndex = Math.min(startIndex + referencesPerPage, totalReferences);
+  const paginatedLocations = mergedLocations.slice(startIndex, endIndex);
 
   const hints = [
-    ...getHints(TOOL_NAME, 'hasResults'),
-    `Found ${totalReferences} reference(s) using text search`,
-    'Note: Using text-based search (language server not available)',
-    'Install typescript-language-server for semantic reference finding',
+    ...(lspResult.hints || []),
+    `Added ${additionalRefs.length} reference(s) from text search that LSP missed`,
   ];
 
-  if (pagination.hasMore) {
+  if (page < totalPages) {
     hints.push(
       `Showing page ${page} of ${totalPages}. Use page=${page + 1} for more.`
     );
@@ -417,314 +248,30 @@ export async function findReferencesWithPatternMatching(
 
   return {
     status: 'hasResults',
-    locations: paginatedReferences,
-    pagination,
-    totalReferences,
-    hasMultipleFiles,
+    locations: paginatedLocations,
+    pagination: {
+      currentPage: page,
+      totalPages,
+      totalResults: totalReferences,
+      hasMore: page < totalPages,
+      resultsPerPage: referencesPerPage,
+    },
+    hasMultipleFiles: uniqueFiles.size > 1,
     researchGoal: query.researchGoal,
     reasoning: query.reasoning,
     hints,
   };
 }
 
-/**
- * Find the workspace root by looking for common markers
- * @internal Exported for testing
- */
-export function findWorkspaceRoot(filePath: string): string {
-  let currentDir = path.dirname(filePath);
-  const markers = [
-    'package.json',
-    'tsconfig.json',
-    '.git',
-    'Cargo.toml',
-    'go.mod',
-    'pyproject.toml',
-  ];
-
-  for (let i = 0; i < 10; i++) {
-    for (const marker of markers) {
-      try {
-        const markerPath = path.join(currentDir, marker);
-        require('fs').accessSync(markerPath);
-        return currentDir;
-      } catch {
-        // Continue
-      }
-    }
-
-    const parentDir = path.dirname(currentDir);
-    if (parentDir === currentDir) break;
-    currentDir = parentDir;
-  }
-
-  return path.dirname(filePath);
-}
-
-/**
- * Search for references in the workspace using ripgrep
- */
-async function searchReferencesInWorkspace(
-  workspaceRoot: string,
-  symbolName: string,
-  sourceFilePath: string,
-  contextLines: number
-): Promise<ReferenceLocation[]> {
-  const references: ReferenceLocation[] = [];
-  const escapedSymbol = symbolName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  const rgArgs = [
-    '--json',
-    '--line-number',
-    '--column',
-    '-w',
-    '--type-add',
-    'code:*.{ts,tsx,js,jsx,mjs,cjs,py,go,rs,java,c,cpp,h,hpp,cs,rb,php}',
-    '-t',
-    'code',
-    escapedSymbol,
-    workspaceRoot,
-  ];
-
-  try {
-    const execAsync = await getExecAsync();
-    const { stdout } = await execAsync(
-      `rg ${rgArgs.map(a => `'${a}'`).join(' ')}`,
-      {
-        maxBuffer: 10 * 1024 * 1024,
-        timeout: 30000,
-      }
-    );
-
-    const lines = stdout.trim().split('\n').filter(Boolean);
-
-    for (const line of lines) {
-      try {
-        const parsed = JSON.parse(line);
-        if (parsed.type === 'match') {
-          const match = parsed.data;
-          const filePath = match.path.text;
-          const lineNumber = match.line_number;
-          const lineContent = match.lines.text.replace(/\n$/, '');
-
-          const regex = new RegExp(`\\b${escapedSymbol}\\b`, 'g');
-          let matchResult;
-          while ((matchResult = regex.exec(lineContent)) !== null) {
-            const column = matchResult.index;
-            const isDefinition =
-              filePath === sourceFilePath &&
-              isLikelyDefinition(lineContent, symbolName);
-
-            const range: LSPRange = {
-              start: { line: lineNumber - 1, character: column },
-              end: {
-                line: lineNumber - 1,
-                character: column + symbolName.length,
-              },
-            };
-
-            let content = lineContent;
-            let displayStartLine = lineNumber;
-            let displayEndLine = lineNumber;
-
-            if (contextLines > 0) {
-              try {
-                const fileContent = await readFile(filePath, 'utf-8');
-                const fileLines = fileContent.split('\n');
-                const startLine = Math.max(0, lineNumber - 1 - contextLines);
-                const endLine = Math.min(
-                  fileLines.length,
-                  lineNumber + contextLines
-                );
-                content = fileLines.slice(startLine, endLine).join('\n');
-                displayStartLine = startLine + 1;
-                displayEndLine = endLine;
-              } catch {
-                // Keep single line
-              }
-            }
-
-            const relativeUri = path.relative(workspaceRoot, filePath);
-
-            references.push({
-              uri: relativeUri,
-              range,
-              content,
-              isDefinition,
-              displayRange: {
-                startLine: displayStartLine,
-                endLine: displayEndLine,
-              },
-            });
-          }
-        }
-      } catch {
-        // Skip malformed JSON
-      }
-    }
-  } catch (error) {
-    const execError = error as { code?: number };
-    if (execError.code !== 1) {
-      return await searchReferencesWithGrep(
-        workspaceRoot,
-        symbolName,
-        sourceFilePath,
-        contextLines
-      );
-    }
-  }
-
-  references.sort((a, b) => {
-    if (a.isDefinition && !b.isDefinition) return -1;
-    if (!a.isDefinition && b.isDefinition) return 1;
-    if (a.uri !== b.uri) return a.uri.localeCompare(b.uri);
-    return a.range.start.line - b.range.start.line;
-  });
-
-  return references;
-}
-
-/**
- * Fallback search using grep
- */
-async function searchReferencesWithGrep(
-  workspaceRoot: string,
-  symbolName: string,
-  sourceFilePath: string,
-  contextLines: number
-): Promise<ReferenceLocation[]> {
-  const references: ReferenceLocation[] = [];
-  const escapedSymbol = symbolName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  const extensions = [
-    'ts',
-    'tsx',
-    'js',
-    'jsx',
-    'py',
-    'go',
-    'rs',
-    'java',
-    'c',
-    'cpp',
-    'h',
-  ];
-  const includePattern = extensions
-    .map(ext => `--include="*.${ext}"`)
-    .join(' ');
-
-  try {
-    const execAsync = await getExecAsync();
-    const { stdout } = await execAsync(
-      `grep -rn -w ${includePattern} '${escapedSymbol}' '${workspaceRoot}' 2>/dev/null || true`,
-      { maxBuffer: 10 * 1024 * 1024, timeout: 30000 }
-    );
-
-    const lines = stdout.trim().split('\n').filter(Boolean);
-
-    for (const line of lines) {
-      const colonIndex = line.indexOf(':');
-      if (colonIndex === -1) continue;
-
-      const filePath = line.substring(0, colonIndex);
-      const rest = line.substring(colonIndex + 1);
-      const secondColon = rest.indexOf(':');
-      if (secondColon === -1) continue;
-
-      const lineNumber = parseInt(rest.substring(0, secondColon), 10);
-      const lineContent = rest.substring(secondColon + 1);
-
-      if (isNaN(lineNumber)) continue;
-
-      const regex = new RegExp(`\\b${escapedSymbol}\\b`, 'g');
-      let matchResult;
-      while ((matchResult = regex.exec(lineContent)) !== null) {
-        const column = matchResult.index;
-        const isDefinition =
-          filePath === sourceFilePath &&
-          isLikelyDefinition(lineContent, symbolName);
-
-        const range: LSPRange = {
-          start: { line: lineNumber - 1, character: column },
-          end: { line: lineNumber - 1, character: column + symbolName.length },
-        };
-
-        let content = lineContent;
-        let displayStartLine = lineNumber;
-        let displayEndLine = lineNumber;
-
-        if (contextLines > 0) {
-          try {
-            const fileContent = await readFile(filePath, 'utf-8');
-            const fileLines = fileContent.split('\n');
-            const startLine = Math.max(0, lineNumber - 1 - contextLines);
-            const endLine = Math.min(
-              fileLines.length,
-              lineNumber + contextLines
-            );
-            content = fileLines.slice(startLine, endLine).join('\n');
-            displayStartLine = startLine + 1;
-            displayEndLine = endLine;
-          } catch {
-            // Keep single line
-          }
-        }
-
-        const relativeUri = path.relative(workspaceRoot, filePath);
-
-        references.push({
-          uri: relativeUri,
-          range,
-          content,
-          isDefinition,
-          displayRange: {
-            startLine: displayStartLine,
-            endLine: displayEndLine,
-          },
-        });
-      }
-    }
-  } catch {
-    // grep failed
-  }
-
-  references.sort((a, b) => {
-    if (a.isDefinition && !b.isDefinition) return -1;
-    if (!a.isDefinition && b.isDefinition) return 1;
-    if (a.uri !== b.uri) return a.uri.localeCompare(b.uri);
-    return a.range.start.line - b.range.start.line;
-  });
-
-  return references;
-}
-
-/**
- * Heuristic to determine if a line is likely a definition
- * @internal Exported for testing
- */
-export function isLikelyDefinition(
-  lineContent: string,
-  symbolName: string
-): boolean {
-  const trimmed = lineContent.trim();
-
-  const definitionPatterns = [
-    new RegExp(
-      `^(export\\s+)?(const|let|var|function|class|interface|type|enum)\\s+${symbolName}\\b`
-    ),
-    new RegExp(`^(export\\s+)?async\\s+function\\s+${symbolName}\\b`),
-    new RegExp(`^(export\\s+)?default\\s+(function|class)\\s+${symbolName}\\b`),
-    new RegExp(
-      `^(public|private|protected|static|async|readonly)?\\s*${symbolName}\\s*[(:=]`
-    ),
-    new RegExp(`^(def|class|async\\s+def)\\s+${symbolName}\\b`),
-    new RegExp(`^${symbolName}\\s*=`),
-    new RegExp(`^func\\s+(\\([^)]+\\)\\s+)?${symbolName}\\b`),
-    new RegExp(`^(var|const|type)\\s+${symbolName}\\b`),
-    new RegExp(
-      `^(pub\\s+)?(fn|struct|enum|trait|type|const|static)\\s+${symbolName}\\b`
-    ),
-  ];
-
-  return definitionPatterns.some(pattern => pattern.test(trimmed));
-}
+// Re-export functions from focused modules
+export {
+  findReferencesWithLSP,
+  matchesFilePatterns,
+} from './lspReferencesCore.js';
+export {
+  findReferencesWithPatternMatching,
+  findWorkspaceRoot,
+  isLikelyDefinition,
+  buildRipgrepGlobArgs,
+  buildGrepFilterArgs,
+} from './lspReferencesPatterns.js';

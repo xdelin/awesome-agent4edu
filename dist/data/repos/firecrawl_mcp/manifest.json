@@ -1,5 +1,6 @@
 {
   "name": "Firecrawl MCP",
+  "full": true,
   "tree": [
     {
       "name": "docker",
@@ -10,36 +11,15 @@
           "name": "entrypoint.sh",
           "type": "file",
           "path": "docker/entrypoint.sh",
-          "size": 171,
+          "size": 158,
           "language": "sh"
         },
         {
           "name": "nginx.conf",
           "type": "file",
           "path": "docker/nginx.conf",
-          "size": 2921,
+          "size": 2821,
           "language": "conf"
-        }
-      ]
-    },
-    {
-      "name": "img",
-      "type": "folder",
-      "path": "img",
-      "children": [
-        {
-          "name": "firecrawl-logo.png",
-          "type": "file",
-          "path": "img/firecrawl-logo.png",
-          "size": 102873,
-          "language": "png"
-        },
-        {
-          "name": "firecrawl-wordmark.png",
-          "type": "file",
-          "path": "img/firecrawl-wordmark.png",
-          "size": 35708,
-          "language": "png"
         }
       ]
     },
@@ -57,7 +37,7 @@
               "name": "index.md",
               "type": "file",
               "path": "src/legacy/index.md",
-              "size": 48105,
+              "size": 46544,
               "language": "md"
             }
           ]
@@ -71,7 +51,7 @@
               "name": "fastmcp.d.ts",
               "type": "file",
               "path": "src/types/fastmcp.d.ts",
-              "size": 1414,
+              "size": 1357,
               "language": "ts"
             }
           ]
@@ -80,7 +60,7 @@
           "name": "index.ts",
           "type": "file",
           "path": "src/index.ts",
-          "size": 31501,
+          "size": 36629,
           "language": "ts"
         }
       ]
@@ -89,105 +69,105 @@
       "name": ".eslintrc.json",
       "type": "file",
       "path": ".eslintrc.json",
-      "size": 813,
+      "size": 778,
       "language": "json"
     },
     {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 280,
+      "size": 252,
+      "language": "text"
+    },
+    {
+      "name": ".prettierrc",
+      "type": "file",
+      "path": ".prettierrc",
+      "size": 125,
       "language": "text"
     },
     {
       "name": "CHANGELOG.md",
       "type": "file",
       "path": "CHANGELOG.md",
-      "size": 3759,
+      "size": 3652,
       "language": "md"
     },
     {
       "name": "Dockerfile",
       "type": "file",
       "path": "Dockerfile",
-      "size": 1423,
+      "size": 1379,
       "language": "text"
     },
     {
       "name": "Dockerfile.service",
       "type": "file",
       "path": "Dockerfile.service",
-      "size": 1100,
+      "size": 1060,
       "language": "service"
     },
     {
       "name": "jest.config.js",
       "type": "file",
       "path": "jest.config.js",
-      "size": 388,
+      "size": 370,
       "language": "js"
     },
     {
       "name": "jest.setup.ts",
       "type": "file",
       "path": "jest.setup.ts",
-      "size": 1882,
+      "size": 1810,
       "language": "ts"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1085,
+      "size": 1065,
       "language": "text"
     },
     {
       "name": "package.json",
       "type": "file",
       "path": "package.json",
-      "size": 1839,
+      "size": 1781,
       "language": "json"
-    },
-    {
-      "name": "pnpm-lock.yaml",
-      "type": "file",
-      "path": "pnpm-lock.yaml",
-      "size": 40191,
-      "language": "yaml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 26278,
+      "size": 28231,
       "language": "md"
     },
     {
       "name": "server.json",
       "type": "file",
       "path": "server.json",
-      "size": 888,
+      "size": 857,
       "language": "json"
     },
     {
       "name": "smithery.yaml",
       "type": "file",
       "path": "smithery.yaml",
-      "size": 834,
+      "size": 812,
       "language": "yaml"
     },
     {
       "name": "tsconfig.json",
       "type": "file",
       "path": "tsconfig.json",
-      "size": 375,
+      "size": 360,
       "language": "json"
     },
     {
       "name": "VERSIONING.md",
       "type": "file",
       "path": "VERSIONING.md",
-      "size": 4097,
+      "size": 3957,
       "language": "md"
     }
   ]

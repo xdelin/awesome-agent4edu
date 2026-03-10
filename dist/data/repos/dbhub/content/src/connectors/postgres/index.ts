@@ -15,6 +15,8 @@ import {
 import { SafeURL } from "../../utils/safe-url.js";
 import { obfuscateDSNPassword } from "../../utils/dsn-obfuscate.js";
 import { SQLRowLimiter } from "../../utils/sql-row-limiter.js";
+import { quoteIdentifier } from "../../utils/identifier-quoter.js";
+import { splitSQLStatements } from "../../utils/sql-parser.js";
 
 /**
  * PostgreSQL DSN Parser
@@ -110,6 +112,9 @@ export class PostgresConnector implements Connector {
   // Source ID is set by ConnectorManager after cloning
   private sourceId: string = "default";
 
+  // Default schema for discovery methods (first entry from search_path, or "public")
+  private defaultSchema: string = "public";
+
   getId(): string {
     return this.sourceId;
   }
@@ -119,12 +124,27 @@ export class PostgresConnector implements Connector {
   }
 
   async connect(dsn: string, initScript?: string, config?: ConnectorConfig): Promise<void> {
+    // Reset default schema in case this connector instance is re-used across connect() calls
+    this.defaultSchema = "public";
+
     try {
       const poolConfig = await this.dsnParser.parse(dsn, config);
 
       // SDK-level readonly enforcement: Set default_transaction_read_only for the entire connection
       if (config?.readonly) {
         poolConfig.options = (poolConfig.options || '') + ' -c default_transaction_read_only=on';
+      }
+
+      // Set search_path if configured
+      if (config?.searchPath) {
+        const schemas = config.searchPath.split(',').map(s => s.trim()).filter(s => s.length > 0);
+        if (schemas.length > 0) {
+          this.defaultSchema = schemas[0];
+          const quotedSchemas = schemas.map(s => quoteIdentifier(s, 'postgres'));
+          // Escape backslashes then spaces for PostgreSQL options string parser
+          const optionsValue = quotedSchemas.join(',').replace(/\\/g, '\\\\').replace(/ /g, '\\ ');
+          poolConfig.options = (poolConfig.options || '') + ` -c search_path=${optionsValue}`;
+        }
       }
 
       this.pool = new Pool(poolConfig);
@@ -172,9 +192,8 @@ export class PostgresConnector implements Connector {
 
     const client = await this.pool.connect();
     try {
-      // In PostgreSQL, use 'public' as the default schema if none specified
-      // 'public' is the standard default schema in PostgreSQL databases
-      const schemaToUse = schema || "public";
+      // Use the configured default schema (from search_path config, defaults to 'public')
+      const schemaToUse = schema || this.defaultSchema;
 
       const result = await client.query(
         `
@@ -199,8 +218,8 @@ export class PostgresConnector implements Connector {
 
     const client = await this.pool.connect();
     try {
-      // In PostgreSQL, use 'public' as the default schema if none specified
-      const schemaToUse = schema || "public";
+      // Use the configured default schema (from search_path config, defaults to 'public')
+      const schemaToUse = schema || this.defaultSchema;
 
       const result = await client.query(
         `
@@ -226,8 +245,8 @@ export class PostgresConnector implements Connector {
 
     const client = await this.pool.connect();
     try {
-      // In PostgreSQL, use 'public' as the default schema if none specified
-      const schemaToUse = schema || "public";
+      // Use the configured default schema (from search_path config, defaults to 'public')
+      const schemaToUse = schema || this.defaultSchema;
 
       // Query to get all indexes for the table
       const result = await client.query(
@@ -280,22 +299,31 @@ export class PostgresConnector implements Connector {
 
     const client = await this.pool.connect();
     try {
-      // In PostgreSQL, use 'public' as the default schema if none specified
-      // Tables are created in the 'public' schema by default unless otherwise specified
-      const schemaToUse = schema || "public";
+      // Use the configured default schema (from search_path config, defaults to 'public')
+      const schemaToUse = schema || this.defaultSchema;
 
-      // Get table columns
+      // Get table columns with comments from pg_catalog
+      // Use pg_class + pg_namespace directly (more efficient than pg_statio_all_tables)
       const result = await client.query(
         `
-        SELECT 
-          column_name, 
-          data_type, 
-          is_nullable,
-          column_default
-        FROM information_schema.columns
-        WHERE table_schema = $1
-        AND table_name = $2
-        ORDER BY ordinal_position
+        SELECT
+          c.column_name,
+          c.data_type,
+          c.is_nullable,
+          c.column_default,
+          pgd.description
+        FROM information_schema.columns c
+        LEFT JOIN pg_catalog.pg_namespace nsp
+          ON nsp.nspname = c.table_schema
+        LEFT JOIN pg_catalog.pg_class cls
+          ON cls.relnamespace = nsp.oid
+          AND cls.relname = c.table_name
+        LEFT JOIN pg_catalog.pg_description pgd
+          ON pgd.objoid = cls.oid
+          AND pgd.objsubid = c.ordinal_position
+        WHERE c.table_schema = $1
+        AND c.table_name = $2
+        ORDER BY c.ordinal_position
       `,
         [schemaToUse, tableName]
       );
@@ -306,26 +334,97 @@ export class PostgresConnector implements Connector {
     }
   }
 
-  async getStoredProcedures(schema?: string): Promise<string[]> {
+  async getTableRowCount(tableName: string, schema?: string): Promise<number | null> {
     if (!this.pool) {
       throw new Error("Not connected to database");
     }
 
     const client = await this.pool.connect();
     try {
-      // In PostgreSQL, use 'public' as the default schema if none specified
-      const schemaToUse = schema || "public";
+      // Use the configured default schema (from search_path config, defaults to 'public')
+      const schemaToUse = schema || this.defaultSchema;
 
-      // Get stored procedures and functions from PostgreSQL
       const result = await client.query(
         `
-        SELECT 
+        SELECT c.reltuples::bigint as count
+        FROM pg_class c
+        JOIN pg_namespace n ON n.oid = c.relnamespace
+        WHERE c.relname = $1
+        AND n.nspname = $2
+        AND c.relkind IN ('r','p','m','f')
+      `,
+        [tableName, schemaToUse]
+      );
+
+      if (result.rows.length > 0) {
+        const count = Number(result.rows[0].count);
+        return count >= 0 ? count : null;
+      }
+      return null;
+    } finally {
+      client.release();
+    }
+  }
+
+  async getTableComment(tableName: string, schema?: string): Promise<string | null> {
+    if (!this.pool) {
+      throw new Error("Not connected to database");
+    }
+
+    const client = await this.pool.connect();
+    try {
+      const schemaToUse = schema || this.defaultSchema;
+
+      const result = await client.query(
+        `
+        SELECT obj_description(c.oid) as table_comment
+        FROM pg_catalog.pg_class c
+        JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+        WHERE c.relname = $1
+        AND n.nspname = $2
+        AND c.relkind IN ('r','p','m','f')
+      `,
+        [tableName, schemaToUse]
+      );
+
+      if (result.rows.length > 0) {
+        return result.rows[0].table_comment || null;
+      }
+      return null;
+    } finally {
+      client.release();
+    }
+  }
+
+  async getStoredProcedures(schema?: string, routineType?: "procedure" | "function"): Promise<string[]> {
+    if (!this.pool) {
+      throw new Error("Not connected to database");
+    }
+
+    const client = await this.pool.connect();
+    try {
+      // Use the configured default schema (from search_path config, defaults to 'public')
+      const schemaToUse = schema || this.defaultSchema;
+
+      // Build query with optional routine type filter
+      const params: string[] = [schemaToUse];
+      let typeFilter = "";
+      if (routineType === "function") {
+        typeFilter = " AND routine_type = 'FUNCTION'";
+      } else if (routineType === "procedure") {
+        typeFilter = " AND routine_type = 'PROCEDURE'";
+      }
+
+      // Get stored procedures and/or functions from PostgreSQL
+      const result = await client.query(
+        `
+        SELECT
           routine_name
         FROM information_schema.routines
-        WHERE routine_schema = $1
+        WHERE routine_schema = $1${typeFilter}
         ORDER BY routine_name
       `,
-        [schemaToUse]
+        params
       );
 
       return result.rows.map((row) => row.routine_name);
@@ -341,8 +440,8 @@ export class PostgresConnector implements Connector {
 
     const client = await this.pool.connect();
     try {
-      // In PostgreSQL, use 'public' as the default schema if none specified
-      const schemaToUse = schema || "public";
+      // Use the configured default schema (from search_path config, defaults to 'public')
+      const schemaToUse = schema || this.defaultSchema;
 
       // Get stored procedure details from PostgreSQL
       const result = await client.query(
@@ -435,9 +534,7 @@ export class PostgresConnector implements Connector {
     const client = await this.pool.connect();
     try {
       // Check if this is a multi-statement query
-      const statements = sql.split(';')
-        .map(statement => statement.trim())
-        .filter(statement => statement.length > 0);
+      const statements = splitSQLStatements(sql, "postgres");
 
       if (statements.length === 1) {
         // Single statement - apply maxRows if applicable

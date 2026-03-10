@@ -1,46 +1,47 @@
 {
   "name": "Catalysis Hub",
+  "full": true,
   "tree": [
     {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 24,
+      "size": 22,
       "language": "text"
     },
     {
       "name": "catalysishub_mcp_server.py",
       "type": "file",
       "path": "catalysishub_mcp_server.py",
-      "size": 4021,
+      "size": 3919,
       "language": "py"
     },
     {
       "name": "CITATION.md",
       "type": "file",
       "path": "CITATION.md",
-      "size": 913,
+      "size": 889,
       "language": "md"
     },
     {
       "name": "LICENSE.md",
       "type": "file",
       "path": "LICENSE.md",
-      "size": 1525,
+      "size": 1499,
       "language": "md"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 5549,
+      "size": 5366,
       "language": "md"
     },
     {
       "name": "requirements.txt",
       "type": "file",
       "path": "requirements.txt",
-      "size": 48,
+      "size": 46,
       "language": "txt"
     }
   ]

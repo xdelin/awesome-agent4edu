@@ -107,68 +107,68 @@ proc.on('close', (code) => process.exit(code));
 ## Command File Templates (Minimal Content)
 
 ### pm2-all.md (Start all + monit)
-```markdown
+````markdown
 Start all services and open PM2 monitor.
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 start ecosystem.config.cjs && start wt.exe -d "{PROJECT_ROOT}" pwsh -NoExit -c "pm2 monit"
-\`\`\`
 ```
+````
 
 ### pm2-all-stop.md
-```markdown
+````markdown
 Stop all services.
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 stop all
-\`\`\`
 ```
+````
 
 ### pm2-all-restart.md
-```markdown
+````markdown
 Restart all services.
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 restart all
-\`\`\`
 ```
+````
 
 ### pm2-{port}.md (Start single + logs)
-```markdown
+````markdown
 Start {name} ({port}) and open logs.
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 start ecosystem.config.cjs --only {name} && start wt.exe -d "{PROJECT_ROOT}" pwsh -NoExit -c "pm2 logs {name}"
-\`\`\`
 ```
+````
 
 ### pm2-{port}-stop.md
-```markdown
+````markdown
 Stop {name} ({port}).
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 stop {name}
-\`\`\`
 ```
+````
 
 ### pm2-{port}-restart.md
-```markdown
+````markdown
 Restart {name} ({port}).
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 restart {name}
-\`\`\`
 ```
+````
 
 ### pm2-logs.md
-```markdown
+````markdown
 View all PM2 logs.
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 logs
-\`\`\`
 ```
+````
 
 ### pm2-status.md
-```markdown
+````markdown
 View PM2 status.
-\`\`\`bash
+```bash
 cd "{PROJECT_ROOT}" && pm2 status
-\`\`\`
 ```
+````
 
 ### PowerShell Scripts (pm2-logs-{port}.ps1)
 ```powershell
@@ -213,7 +213,7 @@ Based on `$ARGUMENTS`, execute init:
 
 After generating files, append PM2 section to project's `CLAUDE.md` (create if not exists):
 
-```markdown
+````markdown
 ## PM2 Services
 
 | Port | Name | Type |
@@ -230,7 +230,7 @@ pm2 logs / pm2 status / pm2 monit
 pm2 save                         # Save process list
 pm2 resurrect                    # Restore saved list
 ```
-```
+````
 
 **Rules for CLAUDE.md update:**
 - If PM2 section exists, replace it
@@ -247,6 +247,7 @@ After all files generated, output:
 ## PM2 Init Complete
 
 **Services:**
+
 | Port | Name | Type |
 |------|------|------|
 | {port} | {name} | {type} |
@@ -254,10 +255,10 @@ After all files generated, output:
 **Claude Commands:** /pm2-all, /pm2-all-stop, /pm2-{port}, /pm2-{port}-stop, /pm2-logs, /pm2-status
 
 **Terminal Commands:**
-# First time (with config file)
+## First time (with config file)
 pm2 start ecosystem.config.cjs && pm2 save
 
-# After first time (simplified)
+## After first time (simplified)
 pm2 start all          # Start all
 pm2 stop all           # Stop all
 pm2 restart all        # Restart all

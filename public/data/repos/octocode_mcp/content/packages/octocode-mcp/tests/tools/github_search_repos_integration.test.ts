@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { createMockMcpServer } from '../fixtures/mcp-fixtures.js';
-import { TOOL_NAMES } from '../../src/tools/toolMetadata.js';
+import { TOOL_NAMES } from '../../src/tools/toolMetadata/index.js';
 import { getTextContent } from '../utils/testHelpers.js';
 
 const mockGetProvider = vi.hoisted(() => vi.fn());
@@ -21,7 +21,6 @@ vi.mock('../../src/serverConfig.js', () => ({
     version: '7.0.0',
     enableTools: [],
     disableTools: [],
-    enableLogging: true,
     timeout: 30000,
     maxRetries: 3,
   })),

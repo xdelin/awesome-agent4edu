@@ -1,5 +1,6 @@
 {
   "name": "Reactome MCP Server",
+  "full": true,
   "tree": [
     {
       "name": "src",
@@ -10,7 +11,7 @@
           "name": "index.ts",
           "type": "file",
           "path": "src/index.ts",
-          "size": 36564,
+          "size": 35487,
           "language": "ts"
         }
       ]
@@ -19,42 +20,28 @@
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 393,
+      "size": 383,
       "language": "text"
-    },
-    {
-      "name": "logo.png",
-      "type": "file",
-      "path": "logo.png",
-      "size": 40818,
-      "language": "png"
-    },
-    {
-      "name": "package-lock.json",
-      "type": "file",
-      "path": "package-lock.json",
-      "size": 17170,
-      "language": "json"
     },
     {
       "name": "package.json",
       "type": "file",
       "path": "package.json",
-      "size": 1560,
+      "size": 1503,
       "language": "json"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 7438,
+      "size": 7162,
       "language": "md"
     },
     {
       "name": "tsconfig.json",
       "type": "file",
       "path": "tsconfig.json",
-      "size": 441,
+      "size": 423,
       "language": "json"
     }
   ]

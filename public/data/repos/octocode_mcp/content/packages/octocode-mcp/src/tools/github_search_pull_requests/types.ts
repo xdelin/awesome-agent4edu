@@ -43,6 +43,7 @@ export interface GitHubPullRequestSearchQuery {
   sort?: 'created' | 'updated' | 'best-match';
   order?: 'asc' | 'desc';
   limit?: number;
+  page?: number;
   withComments?: boolean;
   withCommits?: boolean;
   type?: 'metadata' | 'fullContent' | 'partialContent';
@@ -51,6 +52,8 @@ export interface GitHubPullRequestSearchQuery {
     additions?: number[];
     deletions?: number[];
   }[];
+  charOffset?: number;
+  charLength?: number;
   mainResearchGoal?: string;
   researchGoal?: string;
   reasoning?: string;
@@ -72,11 +75,9 @@ interface BaseToolResult<TQuery = object> {
 
 /** Detailed pull request information */
 export interface PullRequestInfo {
-  id?: number;
   number: number;
   title: string;
   url: string;
-  html_url?: string;
   state: 'open' | 'closed';
   draft: boolean;
   merged: boolean;
@@ -85,34 +86,19 @@ export interface PullRequestInfo {
   closed_at?: string;
   merged_at?: string;
   author: string;
-  assignees?: Array<{
-    login: string;
-    id: number;
-    avatar_url: string;
-    html_url: string;
-  }>;
+  assignees?: string[];
   labels?: Array<{
     id: number;
     name: string;
     color: string;
     description?: string;
   }>;
-  milestone?: {
-    id: number;
-    title: string;
-    description?: string;
-    state: 'open' | 'closed';
-    created_at: string;
-    updated_at: string;
-    due_on?: string;
-  };
   head_ref: string;
-  head_sha: string;
+  head_sha?: string;
   base_ref: string;
-  base_sha: string;
-  body?: string;
+  base_sha?: string;
+  body?: string | null;
   comments?: number;
-  review_comments?: number;
   commits?: number;
   additions?: number;
   deletions?: number;
@@ -165,6 +151,15 @@ export interface PullRequestSearchResultData {
   total_count?: number;
   incomplete_results?: boolean;
   pagination?: PRSearchPagination;
+  /** Character-based output pagination (when output exceeds size limit) */
+  outputPagination?: {
+    charOffset: number;
+    charLength: number;
+    totalChars: number;
+    hasMore: boolean;
+    currentPage: number;
+    totalPages: number;
+  };
 }
 
 /** Complete pull request search result */

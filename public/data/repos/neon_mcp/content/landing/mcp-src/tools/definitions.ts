@@ -1,5 +1,6 @@
 import type { ToolAnnotations } from '@modelcontextprotocol/sdk/types.js';
 import { NEON_DEFAULT_DATABASE_NAME } from '../constants';
+import type { ScopeCategory } from '../utils/grant-context';
 import {
   completeDatabaseMigrationInputSchema,
   completeQueryTuningInputSchema,
@@ -28,12 +29,23 @@ import {
   compareDatabaseSchemaInputSchema,
   searchInputSchema,
   fetchInputSchema,
-  loadResourceInputSchema,
+  listDocsResourcesInputSchema,
+  getDocResourceInputSchema,
 } from './toolsSchema';
+
+type NeonToolDefinition = {
+  name: string;
+  scope: ScopeCategory | null;
+  description: string;
+  inputSchema: unknown;
+  readOnlySafe: boolean;
+  annotations: ToolAnnotations;
+};
 
 export const NEON_TOOLS = [
   {
     name: 'list_projects' as const,
+    scope: 'projects',
     description: `Lists the first 10 Neon projects in your account. If you can't find the project, increase the limit by passing a higher value to the \`limit\` parameter. Optionally filter by project name or ID using the \`search\` parameter.`,
     inputSchema: listProjectsInputSchema,
     readOnlySafe: true,
@@ -47,6 +59,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'list_organizations' as const,
+    scope: 'projects',
     description: `Lists all organizations that the current user has access to. Optionally filter by organization name or ID using the \`search\` parameter.`,
     inputSchema: listOrganizationsInputSchema,
     readOnlySafe: true,
@@ -60,6 +73,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'list_shared_projects' as const,
+    scope: 'projects',
     description: `Lists projects that have been shared with the current user. These are projects that the user has been granted access to collaborate on. Optionally filter by project name or ID using the \`search\` parameter.`,
     inputSchema: listSharedProjectsInputSchema,
     readOnlySafe: true,
@@ -73,6 +87,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'create_project' as const,
+    scope: 'projects',
     description:
       'Create a new Neon project. If someone is trying to create a database, use this tool.',
     inputSchema: createProjectInputSchema,
@@ -87,6 +102,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'delete_project' as const,
+    scope: 'projects',
     description: 'Delete a Neon project',
     inputSchema: deleteProjectInputSchema,
     readOnlySafe: false,
@@ -100,6 +116,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'describe_project' as const,
+    scope: 'projects',
     description: 'Describes a Neon project',
     inputSchema: describeProjectInputSchema,
     readOnlySafe: true,
@@ -113,6 +130,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'run_sql' as const,
+    scope: 'querying',
     description: `
     <use_case>
       Use this tool to execute a single SQL statement against a Neon database.
@@ -135,6 +153,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'run_sql_transaction' as const,
+    scope: 'querying',
     description: `
     <use_case>
       Use this tool to execute a SQL transaction against a Neon database, should be used for multiple SQL statements.
@@ -157,6 +176,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'describe_table_schema' as const,
+    scope: 'schema',
     description: 'Describe the schema of a table in a Neon database',
     inputSchema: describeTableSchemaInputSchema,
     readOnlySafe: true,
@@ -170,6 +190,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'get_database_tables' as const,
+    scope: 'schema',
     description: 'Get all tables in a Neon database',
     inputSchema: getDatabaseTablesInputSchema,
     readOnlySafe: true,
@@ -183,6 +204,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'create_branch' as const,
+    scope: 'branches',
     description: 'Create a branch in a Neon project',
     inputSchema: createBranchInputSchema,
     readOnlySafe: false,
@@ -196,6 +218,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'prepare_database_migration' as const,
+    scope: 'querying',
     readOnlySafe: false,
     description: `
   <use_case>
@@ -334,6 +357,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'complete_database_migration' as const,
+    scope: 'querying',
     description: `Complete a database migration by applying changes to the main branch and cleaning up the temporary branch.
 
     <important_notes>
@@ -364,6 +388,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'describe_branch' as const,
+    scope: 'branches',
     description:
       'Get a tree view of all objects in a branch, including databases, schemas, tables, views, and functions',
     inputSchema: describeBranchInputSchema,
@@ -378,6 +403,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'delete_branch' as const,
+    scope: 'branches',
     description: 'Delete a branch from a Neon project',
     inputSchema: deleteBranchInputSchema,
     readOnlySafe: false,
@@ -391,6 +417,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'reset_from_parent' as const,
+    scope: 'branches',
     description: `Resets a branch to match its parent's current state, effectively discarding all changes made on the branch. To avoid data loss, provide a name to preserve the changes in a new branch using \`preserveUnderName\` parameter. This tool is commonly used to create fresh development branches from updated parent branch, undo experimental changes, or restore a branch to a known good state. Warning: This operation will discard all changes if \`preserveUnderName\` is not provided.`,
     inputSchema: resetFromParentInputSchema,
     readOnlySafe: false,
@@ -404,6 +431,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'get_connection_string' as const,
+    scope: 'branches',
     description:
       'Get a PostgreSQL connection string for a Neon database with all parameters being optional',
     inputSchema: getConnectionStringInputSchema,
@@ -418,6 +446,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'provision_neon_auth' as const,
+    scope: 'neon_auth',
     inputSchema: provisionNeonAuthInputSchema,
     readOnlySafe: false,
     description: `
@@ -449,6 +478,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'provision_neon_data_api' as const,
+    scope: 'data_api',
     inputSchema: provisionNeonDataApiInputSchema,
     readOnlySafe: false,
     description: `
@@ -501,6 +531,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'explain_sql_statement' as const,
+    scope: 'performance',
     description:
       'Describe the PostgreSQL query execution plan for a query of SQL statement by running EXPLAIN (ANAYLZE...) in the database',
     inputSchema: explainSqlStatementInputSchema,
@@ -515,6 +546,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'prepare_query_tuning' as const,
+    scope: 'performance',
     readOnlySafe: false,
     description: `
   <use_case>
@@ -672,6 +704,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'complete_query_tuning' as const,
+    scope: 'performance',
     readOnlySafe: false,
     description: `Complete a query tuning session by either applying the changes to the main branch or discarding them. 
     <important_notes>
@@ -709,6 +742,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'list_slow_queries' as const,
+    scope: 'performance',
     description: `
     <use_case>
       Use this tool to list slow queries from your Neon database.
@@ -730,6 +764,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'list_branch_computes' as const,
+    scope: 'branches',
     description: 'Lists compute endpoints for a project or specific branch',
     inputSchema: listBranchComputesInputSchema,
     readOnlySafe: true,
@@ -743,6 +778,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'compare_database_schema' as const,
+    scope: 'schema',
     readOnlySafe: true,
     description: `
     <use_case>
@@ -1020,6 +1056,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'search' as const,
+    scope: null,
     description: `Searches across all user organizations, projects, and branches that match the query. Returns a list of objects with id, title, and url. This tool searches through all accessible resources and provides direct links to the Neon Console.`,
     inputSchema: searchInputSchema,
     readOnlySafe: true,
@@ -1033,6 +1070,7 @@ export const NEON_TOOLS = [
   },
   {
     name: 'fetch' as const,
+    scope: null,
     description: `Fetches detailed information about a specific organization, project, or branch using the ID returned by the search tool. This tool provides comprehensive information about Neon resources for detailed analysis and management.`,
     inputSchema: fetchInputSchema,
     readOnlySafe: true,
@@ -1045,33 +1083,77 @@ export const NEON_TOOLS = [
     } satisfies ToolAnnotations,
   },
   {
-    name: 'load_resource' as const,
+    name: 'list_docs_resources' as const,
+    scope: 'docs',
     description: `
   <use_case>
-    Loads comprehensive Neon documentation and usage guidelines from GitHub. This tool provides instructions for various Neon features and workflows.
-    
+    Lists all available Neon documentation pages by fetching the index from https://neon.com/docs/llms.txt.
+    Returns a markdown index of documentation page URLs (with .md file endings) and titles that can be fetched individually using the get_doc_resource tool.
+
     Use this tool when:
-    - User says "Get started with Neon" or similar onboarding phrases (with neon-get-started subject)
-    - User needs detailed guidance for initial Neon setup and configuration (with neon-get-started subject)
-    - You need comprehensive context about Neon workflows and best practices (with neon-get-started subject)
-    
-    Available subjects:
-    - neon-get-started: Comprehensive interactive guide covering organization/project setup, database configuration, connection strings, dependency installation, schema creation/migration, etc.
+    - You need to find the right Neon documentation page for a topic
+    - The user asks about Neon features, setup, configuration, or best practices
+    - You want to discover what documentation is available before fetching a specific page
+    - The user says "Get started with Neon" or similar onboarding phrases
   </use_case>
 
+  <workflow>
+    1. Call this tool (no parameters needed) to get the full list of Neon docs pages
+    2. Identify the relevant page(s) based on the user's question
+    3. Use the get_doc_resource tool with the page slug (including .md extension) to fetch the full content
+  </workflow>
+
   <important_notes>
-    - This tool provides general guidance on different subjects relevant to Neon.
-    - This tool returns the FULL documentation content
-    - Load this resource early when users need onboarding guidance
+    - This tool returns a markdown index of all Neon documentation pages with their .md URLs
+    - Documentation URLs use .md file endings (e.g. https://neon.com/docs/guides/prisma.md)
+    - Always call this tool first before using get_doc_resource to find the correct slug
+    - Do not guess documentation page slugs — use this index to find them
   </important_notes>`,
-    inputSchema: loadResourceInputSchema,
+    inputSchema: listDocsResourcesInputSchema,
     readOnlySafe: true,
     annotations: {
-      title: 'Load Resource',
+      title: 'List Documentation Resources',
       readOnlyHint: true,
       destructiveHint: false,
       idempotentHint: true,
-      openWorldHint: false,
+      openWorldHint: true,
     } satisfies ToolAnnotations,
   },
-];
+  {
+    name: 'get_doc_resource' as const,
+    scope: 'docs',
+    description: `
+  <use_case>
+    Fetches a specific Neon documentation page as markdown content.
+    Use the list_docs_resources tool first to discover available page slugs, then pass the slug to this tool.
+
+    Use this tool when:
+    - You have identified a specific docs page to fetch (from list_docs_resources results)
+    - You need detailed guidance on a Neon feature, workflow, or configuration
+    - The user needs step-by-step instructions for a Neon-related task
+  </use_case>
+
+  <workflow>
+    1. First call list_docs_resources to get the index of available pages
+    2. Pick the relevant page slug from the list (e.g. "docs/guides/prisma.md")
+    3. Call this tool with that slug to get the full page content as markdown
+  </workflow>
+
+  <important_notes>
+    - The slug parameter is the path portion of the docs .md URL (e.g. "docs/connect/connection-pooling.md")
+    - Slugs use .md file endings matching the URLs in the documentation index
+    - Always use list_docs_resources first to discover the correct slug — do not guess slugs
+    - This tool fetches the page directly from https://neon.com/{slug} as markdown
+    - Returns the full documentation page content as markdown text
+  </important_notes>`,
+    inputSchema: getDocResourceInputSchema,
+    readOnlySafe: true,
+    annotations: {
+      title: 'Get Documentation Resource',
+      readOnlyHint: true,
+      destructiveHint: false,
+      idempotentHint: true,
+      openWorldHint: true,
+    } satisfies ToolAnnotations,
+  },
+] as const satisfies readonly NeonToolDefinition[];

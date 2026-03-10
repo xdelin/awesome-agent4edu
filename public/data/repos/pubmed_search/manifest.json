@@ -1,5 +1,6 @@
 {
   "name": "PubMed Search",
+  "full": true,
   "tree": [
     {
       "name": "mcp_simple_pubmed",
@@ -10,49 +11,49 @@
           "name": "__init__.py",
           "type": "file",
           "path": "mcp_simple_pubmed/__init__.py",
-          "size": 242,
+          "size": 231,
           "language": "py"
         },
         {
           "name": "__main__.py",
           "type": "file",
           "path": "mcp_simple_pubmed/__main__.py",
-          "size": 124,
+          "size": 118,
           "language": "py"
         },
         {
           "name": "fulltext_client.py",
           "type": "file",
           "path": "mcp_simple_pubmed/fulltext_client.py",
-          "size": 4686,
+          "size": 4555,
           "language": "py"
         },
         {
           "name": "pubmed_client.py",
           "type": "file",
           "path": "mcp_simple_pubmed/pubmed_client.py",
-          "size": 9092,
+          "size": 8870,
           "language": "py"
         },
         {
           "name": "pubmed_fetch.py",
           "type": "file",
           "path": "mcp_simple_pubmed/pubmed_fetch.py",
-          "size": 5134,
+          "size": 4999,
           "language": "py"
         },
         {
           "name": "pubmed_search.py",
           "type": "file",
           "path": "mcp_simple_pubmed/pubmed_search.py",
-          "size": 7882,
+          "size": 7697,
           "language": "py"
         },
         {
           "name": "server.py",
           "type": "file",
           "path": "mcp_simple_pubmed/server.py",
-          "size": 11168,
+          "size": 10867,
           "language": "py"
         }
       ]
@@ -61,70 +62,70 @@
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 3312,
+      "size": 3148,
       "language": "text"
     },
     {
       "name": "CHANGELOG.md",
       "type": "file",
       "path": "CHANGELOG.md",
-      "size": 1575,
+      "size": 1540,
       "language": "md"
     },
     {
       "name": "Dockerfile",
       "type": "file",
       "path": "Dockerfile",
-      "size": 524,
+      "size": 505,
       "language": "text"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 1089,
+      "size": 1068,
       "language": "text"
     },
     {
-      "name": "MacOs_certificates_solution.jpg",
+      "name": "MANIFEST.in",
       "type": "file",
-      "path": "MacOs_certificates_solution.jpg",
-      "size": 175641,
-      "language": "jpg"
+      "path": "MANIFEST.in",
+      "size": 56,
+      "language": "in"
     },
     {
       "name": "pyproject.toml",
       "type": "file",
       "path": "pyproject.toml",
-      "size": 886,
+      "size": 857,
       "language": "toml"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 5157,
+      "size": 5037,
       "language": "md"
     },
     {
       "name": "smithery.yaml",
       "type": "file",
       "path": "smithery.yaml",
-      "size": 787,
+      "size": 768,
       "language": "yaml"
     },
     {
       "name": "test_client.py",
       "type": "file",
       "path": "test_client.py",
-      "size": 8370,
+      "size": 8195,
       "language": "py"
     },
     {
       "name": "TODO.md",
       "type": "file",
       "path": "TODO.md",
-      "size": 1289,
+      "size": 1253,
       "language": "md"
     }
   ]

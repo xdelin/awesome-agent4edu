@@ -15,7 +15,7 @@ import { handleProvisionNeonAuth } from './handlers/neon-auth';
 import { handleProvisionNeonDataApi } from './handlers/data-api';
 import { handleSearch } from './handlers/search';
 import { handleFetch } from './handlers/fetch';
-import { fetchRawGithubContent, NEON_RESOURCES } from '../resources';
+import { NEON_DOCS_INDEX_URL, NEON_DOCS_BASE_URL } from '../resources';
 
 import {
   getDefaultDatabase,
@@ -43,7 +43,7 @@ function generateMigrationBranchName(): string {
 
 async function handleCreateProject(
   params: ProjectCreateRequest,
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ) {
   const response = await neonClient.createProject(params);
   if (response.status !== 201) {
@@ -54,7 +54,7 @@ async function handleCreateProject(
 
 async function handleDeleteProject(
   projectId: string,
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ) {
   const response = await neonClient.deleteProject(projectId);
   if (response.status !== 200) {
@@ -76,7 +76,7 @@ async function handleRunSql(
     branchId?: string;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   return await startSpan({ name: 'run_sql' }, async () => {
     const connectionString = await handleGetConnectionString(
@@ -86,7 +86,7 @@ async function handleRunSql(
         databaseName,
       },
       neonClient,
-      extra
+      extra,
     );
     const runQuery = neon(connectionString.uri);
 
@@ -118,7 +118,7 @@ async function handleRunSqlTransaction(
     branchId?: string;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   const connectionString = await handleGetConnectionString(
     {
@@ -127,14 +127,14 @@ async function handleRunSqlTransaction(
       databaseName,
     },
     neonClient,
-    extra
+    extra,
   );
   const runQuery = neon(connectionString.uri);
 
   // Use transaction with readOnly option when in read-only mode
   const response = await runQuery.transaction(
     sqlStatements.map((sql) => runQuery.query(sql)),
-    extra.readOnly ? { readOnly: true } : undefined
+    extra.readOnly ? { readOnly: true } : undefined,
   );
 
   return response;
@@ -151,7 +151,7 @@ async function handleGetDatabaseTables(
     branchId?: string;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   const connectionString = await handleGetConnectionString(
     {
@@ -160,7 +160,7 @@ async function handleGetDatabaseTables(
       databaseName,
     },
     neonClient,
-    extra
+    extra,
   );
   const runQuery = neon(connectionString.uri);
   const query = `
@@ -190,7 +190,7 @@ async function handleDescribeTableSchema(
     tableName: string;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   const connectionString = await handleGetConnectionString(
     {
@@ -199,7 +199,7 @@ async function handleDescribeTableSchema(
       databaseName,
     },
     neonClient,
-    extra
+    extra,
   );
 
   // Extract table name without schema if schema-qualified
@@ -208,7 +208,7 @@ async function handleDescribeTableSchema(
 
   const description = await describeTable(
     connectionString.uri,
-    simpleTableName
+    simpleTableName,
   );
   return {
     raw: description,
@@ -224,7 +224,7 @@ async function handleCreateBranch(
     projectId: string;
     branchName?: string;
   },
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ) {
   const response = await neonClient.createProjectBranch(projectId, {
     branch: {
@@ -255,7 +255,7 @@ async function handleDeleteBranch(
     projectId: string;
     branchId: string;
   },
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ) {
   const response = await neonClient.deleteProjectBranch(projectId, branchId);
   return response.data;
@@ -271,19 +271,19 @@ async function handleResetFromParent(
     branchIdOrName: string;
     preserveUnderName?: string;
   },
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ) {
   // Resolve branch name or ID to actual branch ID and get all branches in one call
   const { branchId: resolvedBranchId, branches } = await resolveBranchId(
     branchIdOrName,
     projectId,
-    neonClient
+    neonClient,
   );
 
   const branch = branches.find((b) => b.id === resolvedBranchId);
   if (!branch) {
     throw new NotFoundError(
-      `Branch "${branchIdOrName}" not found in project ${projectId}`
+      `Branch "${branchIdOrName}" not found in project ${projectId}`,
     );
   }
 
@@ -294,7 +294,7 @@ async function handleResetFromParent(
 
   if (!parentBranch) {
     throw new InvalidArgumentError(
-      `Branch "${branchIdOrName}" does not have a parent branch and cannot be reset`
+      `Branch "${branchIdOrName}" does not have a parent branch and cannot be reset`,
     );
   }
 
@@ -318,7 +318,7 @@ async function handleResetFromParent(
     {
       source_branch_id: parentBranch.id,
       preserve_under_name: finalPreserveName,
-    }
+    },
   );
 
   return {
@@ -339,7 +339,7 @@ async function handleSchemaMigration(
     migrationSql: string;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   return await startSpan({ name: 'prepare_schema_migration' }, async (span) => {
     let newBranch: { branch: Branch } | undefined;
@@ -349,7 +349,7 @@ async function handleSchemaMigration(
       const branchName = generateMigrationBranchName();
       newBranch = await handleCreateBranch(
         { projectId, branchName },
-        neonClient
+        neonClient,
       );
 
       let resolvedDatabaseName = databaseName;
@@ -360,7 +360,7 @@ async function handleSchemaMigration(
             branchId: newBranch.branch.id,
             databaseName,
           },
-          neonClient
+          neonClient,
         );
         resolvedDatabaseName = dbObject.name;
       }
@@ -373,7 +373,7 @@ async function handleSchemaMigration(
           branchId: newBranch.branch.id,
         },
         neonClient,
-        extra
+        extra,
       );
 
       const migrationId = crypto.randomUUID();
@@ -399,7 +399,7 @@ async function handleSchemaMigration(
         try {
           await handleDeleteBranch(
             { projectId, branchId: newBranch.branch.id },
-            neonClient
+            neonClient,
           );
         } catch {
           // Ignore cleanup errors - branch naming makes orphans identifiable
@@ -429,7 +429,7 @@ async function handleCommitMigration(
     applyChanges: boolean;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   return await startSpan({ name: 'commit_schema_migration' }, async (span) => {
     span.setAttributes({
@@ -448,7 +448,7 @@ async function handleCommitMigration(
           branchId: parentBranchId,
         },
         neonClient,
-        extra
+        extra,
       );
     }
 
@@ -461,7 +461,7 @@ async function handleCommitMigration(
           projectId,
           branchId: temporaryBranchId,
         },
-        neonClient
+        neonClient,
       );
     } catch (error) {
       branchDeleted = false;
@@ -490,7 +490,7 @@ async function handleExplainSqlStatement(
     };
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   const explainPrefix = params.analyze
     ? 'EXPLAIN (ANALYZE, VERBOSE, BUFFERS, FILECACHE, FORMAT JSON)'
@@ -506,7 +506,7 @@ async function handleExplainSqlStatement(
       branchId: params.branchId,
     },
     neonClient,
-    extra
+    extra,
   );
 
   return {
@@ -521,7 +521,7 @@ async function handleExplainSqlStatement(
 
 async function createTemporaryBranch(
   projectId: string,
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ): Promise<{ branch: Branch }> {
   const result = await handleCreateBranch({ projectId }, neonClient);
   if (!result?.branch) {
@@ -568,7 +568,7 @@ type CompleteTuningResult = {
 async function handleQueryTuning(
   params: QueryTuningParams,
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ): Promise<QueryTuningResult> {
   let tempBranch: Branch | undefined;
   const tuningId = crypto.randomUUID();
@@ -599,7 +599,7 @@ async function handleQueryTuning(
         },
       },
       neonClient,
-      extra
+      extra,
     );
 
     // Extract table names from the plan
@@ -607,7 +607,7 @@ async function handleQueryTuning(
 
     if (tableNames.length === 0) {
       throw new NotFoundError(
-        'No tables found in execution plan. Cannot proceed with optimization.'
+        'No tables found in execution plan. Cannot proceed with optimization.',
       );
     }
 
@@ -623,7 +623,7 @@ async function handleQueryTuning(
               branchId: newBranch.branch.id,
             },
             neonClient,
-            extra
+            extra,
           );
           return {
             tableName,
@@ -634,10 +634,10 @@ async function handleQueryTuning(
           throw new Error(
             `Failed to get schema for table ${tableName}: ${
               (error as Error).message
-            }`
+            }`,
           );
         }
-      })
+      }),
     );
 
     // Get the baseline execution metrics
@@ -665,7 +665,7 @@ async function handleQueryTuning(
             projectId: params.projectId,
             branchId: tempBranch.id,
           },
-          neonClient
+          neonClient,
         );
       } catch {
         // No need to handle cleanup error
@@ -826,7 +826,7 @@ function extractTableNamesFromPlan(planResult: any): string[] {
 async function handleCompleteTuning(
   params: CompleteTuningParams,
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ): Promise<CompleteTuningResult> {
   let results;
   const operationLog: string[] = [];
@@ -835,7 +835,7 @@ async function handleCompleteTuning(
     // Validate branch information
     if (!params.temporaryBranch) {
       throw new Error(
-        'Branch information is required for completing query tuning'
+        'Branch information is required for completing query tuning',
       );
     }
 
@@ -855,13 +855,13 @@ async function handleCompleteTuning(
           branchId: params.branch?.id,
         },
         neonClient,
-        extra
+        extra,
       );
 
       operationLog.push('Successfully applied optimizations to main branch.');
     } else {
       operationLog.push(
-        'No changes were applied (either none suggested or changes were discarded).'
+        'No changes were applied (either none suggested or changes were discarded).',
       );
     }
 
@@ -874,7 +874,7 @@ async function handleCompleteTuning(
           projectId: params.projectId,
           branchId: params.temporaryBranch.id,
         },
-        neonClient
+        neonClient,
       );
 
       operationLog.push('Successfully cleaned up temporary branch.');
@@ -896,7 +896,7 @@ async function handleCompleteTuning(
     return result;
   } catch (error) {
     throw new Error(
-      `Failed to complete query tuning: ${(error as Error).message}`
+      `Failed to complete query tuning: ${(error as Error).message}`,
     );
   }
 }
@@ -916,7 +916,7 @@ async function handleListSlowQueries(
     limit?: number;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   // Get connection string
   const connectionString = await handleGetConnectionString(
@@ -927,7 +927,7 @@ async function handleListSlowQueries(
       databaseName,
     },
     neonClient,
-    extra
+    extra,
   );
 
   // Connect to the database
@@ -945,7 +945,7 @@ async function handleListSlowQueries(
 
   if (!extensionExists) {
     throw new NotFoundError(
-      `pg_stat_statements extension is not installed on the database. Please install it using the following command: CREATE EXTENSION pg_stat_statements;`
+      `pg_stat_statements extension is not installed on the database. Please install it using the following command: CREATE EXTENSION pg_stat_statements;`,
     );
   }
 
@@ -1020,7 +1020,7 @@ async function handleListBranchComputes(
     branchId?: string;
   },
   neonClient: Api<unknown>,
-  extra: ToolHandlerExtraParams
+  extra: ToolHandlerExtraParams,
 ) {
   // If projectId is not provided, get the first project but only if there is only one project
   if (!projectId) {
@@ -1029,7 +1029,7 @@ async function handleListBranchComputes(
       projectId = projects[0].id;
     } else {
       throw new InvalidArgumentError(
-        'Please provide a project ID or ensure you have only one project in your account.'
+        'Please provide a project ID or ensure you have only one project in your account.',
       );
     }
   }
@@ -1038,7 +1038,7 @@ async function handleListBranchComputes(
   if (branchId) {
     const response = await neonClient.listProjectBranchEndpoints(
       projectId,
-      branchId
+      branchId,
     );
     endpoints = response.data.endpoints;
   } else {
@@ -1060,35 +1060,63 @@ async function handleListBranchComputes(
 
 async function handleListSharedProjects(
   params: ListSharedProjectsParams,
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ) {
   const response = await neonClient.listSharedProjects(params);
   return response.data.projects;
 }
 
-async function handleLoadResource({ subject }: { subject: string }) {
-  const resource = NEON_RESOURCES.find((r) => r.name === subject);
-  if (!resource) {
-    throw new InvalidArgumentError(`Resource not found: ${subject}`);
-  }
-
-  try {
-    const url = new URL(resource.uri);
-    const path = url.pathname;
-    const content = await fetchRawGithubContent(path);
-    return content;
-  } catch (error) {
-    const errorMessage =
-      error instanceof Error ? error.message : 'Unknown error';
+async function handleListDocsResources() {
+  const response = await fetch(NEON_DOCS_INDEX_URL);
+  if (!response.ok) {
+    if (response.status === 404) {
+      throw new NotFoundError('Neon docs index not found');
+    }
     throw new Error(
-      `Failed to load resource "${resource.name}": ${errorMessage}`
+      `Failed to fetch Neon docs index: ${response.status} ${response.statusText}`,
+    );
+  }
+  return response.text();
+}
+
+function validateDocSlug(slug: string): void {
+  if (slug.includes('..')) {
+    throw new InvalidArgumentError(
+      'Invalid doc slug: path traversal ("..") is not allowed',
+    );
+  }
+  if (slug.includes('://')) {
+    throw new InvalidArgumentError(
+      'Invalid doc slug: absolute URLs are not allowed',
+    );
+  }
+  if (slug.startsWith('/')) {
+    throw new InvalidArgumentError(
+      'Invalid doc slug: slug must not start with "/"',
     );
   }
 }
 
+async function handleGetDocResource({ slug }: { slug: string }) {
+  validateDocSlug(slug);
+  // Ensure the slug ends with .md for the new docs format
+  const mdSlug = slug.endsWith('.md') ? slug : `${slug}.md`;
+  const url = `${NEON_DOCS_BASE_URL}/${mdSlug}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    if (response.status === 404) {
+      throw new NotFoundError(`Doc page not found: "${mdSlug}"`);
+    }
+    throw new Error(
+      `Failed to fetch doc page "${mdSlug}": ${response.status} ${response.statusText}`,
+    );
+  }
+  return response.text();
+}
+
 async function handleCompareDatabaseSchema(
   params: GetProjectBranchSchemaComparisonParams,
-  neonClient: Api<unknown>
+  neonClient: Api<unknown>,
 ) {
   const response = await neonClient.getProjectBranchSchemaComparison(params);
   return response.data;
@@ -1099,12 +1127,12 @@ export const NEON_HANDLERS = {
     const organization = await getOrgByOrgIdOrDefault(
       params,
       neonClient,
-      extra
+      extra,
     );
     const projects = await handleListProjects(
       { ...params, org_id: organization?.id },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [
@@ -1121,7 +1149,7 @@ export const NEON_HANDLERS = {
               projects,
             },
             null,
-            2
+            2,
           ),
         },
       ],
@@ -1133,11 +1161,11 @@ export const NEON_HANDLERS = {
       const organization = await getOrgByOrgIdOrDefault(
         params,
         neonClient,
-        extra
+        extra,
       );
       const result = await handleCreateProject(
         { project: { name: params.name, org_id: organization?.id } },
-        neonClient
+        neonClient,
       );
 
       // Get the connection string for the newly created project
@@ -1148,7 +1176,7 @@ export const NEON_HANDLERS = {
           databaseName: result.databases[0].name,
         },
         neonClient,
-        extra
+        extra,
       );
 
       return {
@@ -1225,7 +1253,7 @@ export const NEON_HANDLERS = {
           text: `It contains the following branches (use the describe branch tool to learn more about each branch): ${JSON.stringify(
             result.branches,
             null,
-            2
+            2,
           )}`,
         },
       ],
@@ -1241,7 +1269,7 @@ export const NEON_HANDLERS = {
         branchId: params.branchId,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
@@ -1257,7 +1285,7 @@ export const NEON_HANDLERS = {
         branchId: params.branchId,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
@@ -1273,7 +1301,7 @@ export const NEON_HANDLERS = {
         branchId: params.branchId,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
@@ -1288,7 +1316,7 @@ export const NEON_HANDLERS = {
         databaseName: params.databaseName,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [
@@ -1306,7 +1334,7 @@ export const NEON_HANDLERS = {
         projectId: params.projectId,
         branchName: params.branchName,
       },
-      neonClient
+      neonClient,
     );
     return {
       content: [
@@ -1332,7 +1360,7 @@ export const NEON_HANDLERS = {
         projectId: params.projectId,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [
@@ -1360,7 +1388,7 @@ You MUST pass ALL these values to complete_database_migration:
 <execution_result>${JSON.stringify(
             result.migrationResult,
             null,
-            2
+            2,
           )}</execution_result>
 
 <next_actions>
@@ -1390,7 +1418,7 @@ You MUST follow these steps:
         applyChanges: params.applyChanges,
       },
       neonClient,
-      extra
+      extra,
     );
     let message: string;
     if (result.applied) {
@@ -1416,7 +1444,7 @@ You MUST follow these steps:
         databaseName: params.databaseName,
       },
       neonClient,
-      extra
+      extra,
     );
   },
 
@@ -1426,7 +1454,7 @@ You MUST follow these steps:
         projectId: params.projectId,
         branchId: params.branchId,
       },
-      neonClient
+      neonClient,
     );
     return {
       content: [
@@ -1449,7 +1477,7 @@ You MUST follow these steps:
         branchIdOrName: params.branchIdOrName,
         preserveUnderName: params.preserveUnderName,
       },
-      neonClient
+      neonClient,
     );
 
     const parentInfo = `${result.parentBranch.name} (${result.parentBranch.id})`;
@@ -1465,7 +1493,7 @@ You MUST follow these steps:
       messages.push(
         params.preserveUnderName
           ? `Previous state preserved as: ${params.preserveUnderName}`
-          : `Previous state auto-preserved as: ${result.preservedBranchName} (branch had children)`
+          : `Previous state auto-preserved as: ${result.preservedBranchName} (branch had children)`,
       );
     } else {
       messages.push('Previous state was not preserved');
@@ -1491,7 +1519,7 @@ You MUST follow these steps:
         roleName: params.roleName,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [
@@ -1525,7 +1553,7 @@ You MUST follow these steps:
         databaseName: params.databaseName,
       },
       neonClient,
-      extra
+      extra,
     );
     return result;
   },
@@ -1542,7 +1570,7 @@ You MUST follow these steps:
         jwtAudience: params.jwtAudience,
       },
       neonClient,
-      extra
+      extra,
     );
     return result;
   },
@@ -1551,7 +1579,7 @@ You MUST follow these steps:
     const result = await handleExplainSqlStatement(
       { params },
       neonClient,
-      extra
+      extra,
     );
     return result;
   },
@@ -1564,7 +1592,7 @@ You MUST follow these steps:
         projectId: params.projectId,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [
@@ -1581,7 +1609,7 @@ You MUST follow these steps:
               sql: result.sql,
             },
             null,
-            2
+            2,
           ),
         },
       ],
@@ -1606,7 +1634,7 @@ You MUST follow these steps:
           : undefined,
       },
       neonClient,
-      extra
+      extra,
     );
 
     return {
@@ -1629,7 +1657,7 @@ You MUST follow these steps:
         limit: params.limit,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [
@@ -1648,7 +1676,7 @@ You MUST follow these steps:
         branchId: params.branchId,
       },
       neonClient,
-      extra
+      extra,
     );
     return {
       content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
@@ -1659,7 +1687,7 @@ You MUST follow these steps:
     const organizations = await handleListOrganizations(
       neonClient,
       extra.account,
-      params.search
+      params.search,
     );
     return {
       content: [
@@ -1683,7 +1711,7 @@ You MUST follow these steps:
               count: sharedProjects.length,
             },
             null,
-            2
+            2,
           ),
         },
       ],
@@ -1697,7 +1725,7 @@ You MUST follow these steps:
         branchId: params.branchId,
         db_name: params.databaseName,
       },
-      neonClient
+      neonClient,
     );
     return {
       content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
@@ -1712,8 +1740,20 @@ You MUST follow these steps:
     return await handleFetch(params, neonClient, extra);
   },
 
-  load_resource: async ({ params }) => {
-    const content = await handleLoadResource({ subject: params.subject });
+  list_docs_resources: async () => {
+    const content = await handleListDocsResources();
+    return {
+      content: [
+        {
+          type: 'text',
+          text: content,
+        },
+      ],
+    };
+  },
+
+  get_doc_resource: async ({ params }) => {
+    const content = await handleGetDocResource({ slug: params.slug });
     return {
       content: [
         {

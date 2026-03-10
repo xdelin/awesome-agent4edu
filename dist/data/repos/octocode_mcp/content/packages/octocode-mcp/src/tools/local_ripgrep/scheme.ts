@@ -8,7 +8,11 @@ import {
   BaseQuerySchemaLocal,
   createBulkQuerySchema,
 } from '../../scheme/baseSchema.js';
-import { LOCAL_RIPGREP, TOOL_NAMES, DESCRIPTIONS } from '../toolMetadata.js';
+import {
+  LOCAL_RIPGREP,
+  TOOL_NAMES,
+  DESCRIPTIONS,
+} from '../toolMetadata/index.js';
 
 /**
  * Tool description for localSearchCode
@@ -21,8 +25,15 @@ export const LOCAL_RIPGREP_DESCRIPTION = DESCRIPTIONS[TOOL_NAMES.LOCAL_RIPGREP];
  */
 export const RipgrepQuerySchema = BaseQuerySchemaLocal.extend({
   // REQUIRED FIELDS
-  pattern: z.string().min(1).describe(LOCAL_RIPGREP.search.pattern),
-  path: z.string().describe(LOCAL_RIPGREP.search.path),
+  pattern: z.string().min(1).max(2000).describe(LOCAL_RIPGREP.search.pattern),
+  path: z
+    .string()
+    .min(1)
+    .max(4096)
+    .refine(value => !value.includes('\0'), {
+      message: 'path contains invalid null byte',
+    })
+    .describe(LOCAL_RIPGREP.search.path),
 
   // WORKFLOW MODE (recommended presets)
   mode: z
@@ -62,15 +73,18 @@ export const RipgrepQuerySchema = BaseQuerySchemaLocal.extend({
   // FILE FILTERING (optimized strategies)
   type: z.string().optional().describe(LOCAL_RIPGREP.filters.type),
   include: z
-    .array(z.string())
+    .array(z.string().max(256))
+    .max(100)
     .optional()
     .describe(LOCAL_RIPGREP.filters.include),
   exclude: z
-    .array(z.string())
+    .array(z.string().max(256))
+    .max(100)
     .optional()
     .describe(LOCAL_RIPGREP.filters.exclude),
   excludeDir: z
-    .array(z.string())
+    .array(z.string().max(256))
+    .max(100)
     .optional()
     .describe(LOCAL_RIPGREP.filters.excludeDir),
 
@@ -152,7 +166,7 @@ export const RipgrepQuerySchema = BaseQuerySchemaLocal.extend({
     .number()
     .int()
     .min(1)
-    .max(20)
+    .max(50)
     .optional()
     .default(10)
     .describe(LOCAL_RIPGREP.pagination.filesPerPage),
@@ -262,8 +276,10 @@ export function applyWorkflowMode(query: RipgrepQuery): RipgrepQuery {
 
   switch (query.mode) {
     case 'discovery':
-      // Workflow A: Fast file discovery (25x more efficient)
-      modeDefaults.filesOnly = true;
+      // Workflow A: Fast file discovery with per-file match counts
+      // Uses -c (count) instead of -l (filesOnly) to get accurate matchCount per file
+      // Performance is nearly identical to -l since ripgrep still skips match content
+      modeDefaults.count = true;
       modeDefaults.smartCase = true;
       break;
 

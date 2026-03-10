@@ -263,6 +263,11 @@ export namespace ProtocolMapping {
          */
         'DOM.scrollableFlagUpdated': [Protocol.DOM.ScrollableFlagUpdatedEvent];
         /**
+         * Fired when a node's ad related state changes.
+         * @experimental
+         */
+        'DOM.adRelatedStateUpdated': [Protocol.DOM.AdRelatedStateUpdatedEvent];
+        /**
          * Fired when a node's starting styles changes.
          * @experimental
          */
@@ -3562,7 +3567,8 @@ export namespace ProtocolMapping {
             returnType: void;
         };
         /**
-         * Returns device's screen configuration.
+         * Returns device's screen configuration. In headful mode, the physical screens configuration is returned,
+         * whereas in headless mode, a virtual headless screen configuration is provided instead.
          * @experimental
          */
         'Emulation.getScreenInfos': {
@@ -3583,6 +3589,17 @@ export namespace ProtocolMapping {
          */
         'Emulation.removeScreen': {
             paramsType: [Protocol.Emulation.RemoveScreenRequest];
+            returnType: void;
+        };
+        /**
+         * Set primary screen. Only supported in headless mode.
+         * Note that this changes the coordinate system origin to the top-left
+         * of the new primary screen, updating the bounds and work areas
+         * of all existing screens accordingly.
+         * @experimental
+         */
+        'Emulation.setPrimaryScreen': {
+            paramsType: [Protocol.Emulation.SetPrimaryScreenRequest];
             returnType: void;
         };
         /**
@@ -3625,6 +3642,15 @@ export namespace ProtocolMapping {
         'Extensions.loadUnpacked': {
             paramsType: [Protocol.Extensions.LoadUnpackedRequest];
             returnType: Protocol.Extensions.LoadUnpackedResponse;
+        };
+        /**
+         * Gets a list of all unpacked extensions.
+         * Available if the client is connected using the --remote-debugging-pipe flag
+         * and the --enable-unsafe-extension-debugging flag is set.
+         */
+        'Extensions.getExtensions': {
+            paramsType: [];
+            returnType: Protocol.Extensions.GetExtensionsResponse;
         };
         /**
          * Uninstalls an unpacked extension (others not supported) from the profile.

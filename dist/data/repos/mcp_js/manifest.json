@@ -1,17 +1,116 @@
 {
   "name": "MCP JS",
+  "full": true,
   "tree": [
     {
-      "name": ".cursor",
+      "name": "examples",
       "type": "folder",
-      "path": ".cursor",
+      "path": "examples",
       "children": [
         {
-          "name": "mcp.json",
+          "name": "sqlite-wasm",
+          "type": "folder",
+          "path": "examples/sqlite-wasm",
+          "children": [
+            {
+              "name": "build.sh",
+              "type": "file",
+              "path": "examples/sqlite-wasm/build.sh",
+              "size": 2307,
+              "language": "sh"
+            },
+            {
+              "name": "example.js",
+              "type": "file",
+              "path": "examples/sqlite-wasm/example.js",
+              "size": 10683,
+              "language": "js"
+            },
+            {
+              "name": "memvfs.c",
+              "type": "file",
+              "path": "examples/sqlite-wasm/memvfs.c",
+              "size": 5651,
+              "language": "c"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/sqlite-wasm/README.md",
+              "size": 6090,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "loadtest",
+      "type": "folder",
+      "path": "loadtest",
+      "children": [
+        {
+          "name": "generate-report.sh",
           "type": "file",
-          "path": ".cursor/mcp.json",
-          "size": 184,
-          "language": "json"
+          "path": "loadtest/generate-report.sh",
+          "size": 5753,
+          "language": "sh"
+        },
+        {
+          "name": "k6-load-test.js",
+          "type": "file",
+          "path": "loadtest/k6-load-test.js",
+          "size": 7925,
+          "language": "js"
+        },
+        {
+          "name": "run-local.sh",
+          "type": "file",
+          "path": "loadtest/run-local.sh",
+          "size": 5735,
+          "language": "sh"
+        }
+      ]
+    },
+    {
+      "name": "nix",
+      "type": "folder",
+      "path": "nix",
+      "children": [
+        {
+          "name": "module.nix",
+          "type": "file",
+          "path": "nix/module.nix",
+          "size": 5435,
+          "language": "nix"
+        },
+        {
+          "name": "replace-workspace-values.py",
+          "type": "file",
+          "path": "nix/replace-workspace-values.py",
+          "size": 4473,
+          "language": "py"
+        },
+        {
+          "name": "sqlite-wasm.nix",
+          "type": "file",
+          "path": "nix/sqlite-wasm.nix",
+          "size": 2033,
+          "language": "nix"
+        }
+      ]
+    },
+    {
+      "name": "policies",
+      "type": "folder",
+      "path": "policies",
+      "children": [
+        {
+          "name": "fetch.rego",
+          "type": "file",
+          "path": "policies/fetch.rego",
+          "size": 988,
+          "language": "rego"
         }
       ]
     },
@@ -21,50 +120,309 @@
       "path": "server",
       "children": [
         {
-          "name": "src",
+          "name": "fuzz",
           "type": "folder",
-          "path": "server/src",
+          "path": "server/fuzz",
           "children": [
             {
-              "name": "mcp",
+              "name": "corpus",
               "type": "folder",
-              "path": "server/src/mcp",
+              "path": "server/fuzz/corpus",
               "children": [
                 {
-                  "name": "heap_storage.rs",
+                  "name": "fuzz_execute_stateless",
+                  "type": "folder",
+                  "path": "server/fuzz/corpus/fuzz_execute_stateless",
+                  "children": [
+                    {
+                      "name": "2e74d24e887678f0681d4c7c010477b8b9697f1a",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/2e74d24e887678f0681d4c7c010477b8b9697f1a",
+                      "size": 1,
+                      "language": "text"
+                    },
+                    {
+                      "name": "356a192b7913b04c54574d18c28d46e6395428ab",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/356a192b7913b04c54574d18c28d46e6395428ab",
+                      "size": 1,
+                      "language": "text"
+                    },
+                    {
+                      "name": "7646ffeac72f9039efef365d7fcaf23664116440",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/7646ffeac72f9039efef365d7fcaf23664116440",
+                      "size": 2,
+                      "language": "text"
+                    },
+                    {
+                      "name": "7b52009b64fd0a2a49e6d8a939753077792b0554",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/7b52009b64fd0a2a49e6d8a939753077792b0554",
+                      "size": 2,
+                      "language": "text"
+                    },
+                    {
+                      "name": "array_ops",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/array_ops",
+                      "size": 33,
+                      "language": "text"
+                    },
+                    {
+                      "name": "b2c7c0caa10a0cca5ea7d69e54018ae0c0389dd6",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/b2c7c0caa10a0cca5ea7d69e54018ae0c0389dd6",
+                      "size": 1,
+                      "language": "text"
+                    },
+                    {
+                      "name": "basic_arithmetic",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/basic_arithmetic",
+                      "size": 5,
+                      "language": "text"
+                    },
+                    {
+                      "name": "ea95adc6e84bc8db82d1b6968c24249aed9b2862",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/ea95adc6e84bc8db82d1b6968c24249aed9b2862",
+                      "size": 3,
+                      "language": "text"
+                    },
+                    {
+                      "name": "error_handling",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/error_handling",
+                      "size": 42,
+                      "language": "text"
+                    },
+                    {
+                      "name": "function_call",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/function_call",
+                      "size": 29,
+                      "language": "text"
+                    },
+                    {
+                      "name": "loop",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/loop",
+                      "size": 49,
+                      "language": "text"
+                    },
+                    {
+                      "name": "object_json",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/object_json",
+                      "size": 33,
+                      "language": "text"
+                    },
+                    {
+                      "name": "regex",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/regex",
+                      "size": 28,
+                      "language": "text"
+                    },
+                    {
+                      "name": "string_ops",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_execute_stateless/string_ops",
+                      "size": 18,
+                      "language": "text"
+                    }
+                  ]
+                },
+                {
+                  "name": "fuzz_wasm_compile",
+                  "type": "folder",
+                  "path": "server/fuzz/corpus/fuzz_wasm_compile",
+                  "children": [
+                    {
+                      "name": "empty",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_wasm_compile/empty",
+                      "size": 0,
+                      "language": "text"
+                    },
+                    {
+                      "name": "invalid_magic",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_wasm_compile/invalid_magic",
+                      "size": 4,
+                      "language": "text"
+                    },
+                    {
+                      "name": "valid_add_module",
+                      "type": "file",
+                      "path": "server/fuzz/corpus/fuzz_wasm_compile/valid_add_module",
+                      "size": 41,
+                      "language": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "fuzz_targets",
+              "type": "folder",
+              "path": "server/fuzz/fuzz_targets",
+              "children": [
+                {
+                  "name": "fuzz_execute_stateful.rs",
                   "type": "file",
-                  "path": "server/src/mcp/heap_storage.rs",
-                  "size": 3514,
+                  "path": "server/fuzz/fuzz_targets/fuzz_execute_stateful.rs",
+                  "size": 2661,
+                  "language": "rs"
+                },
+                {
+                  "name": "fuzz_execute_stateless.rs",
+                  "type": "file",
+                  "path": "server/fuzz/fuzz_targets/fuzz_execute_stateless.rs",
+                  "size": 2218,
+                  "language": "rs"
+                },
+                {
+                  "name": "fuzz_snapshot_deserialization.rs",
+                  "type": "file",
+                  "path": "server/fuzz/fuzz_targets/fuzz_snapshot_deserialization.rs",
+                  "size": 1865,
+                  "language": "rs"
+                },
+                {
+                  "name": "fuzz_wasm_compile.rs",
+                  "type": "file",
+                  "path": "server/fuzz/fuzz_targets/fuzz_wasm_compile.rs",
+                  "size": 2028,
                   "language": "rs"
                 }
               ]
             },
             {
+              "name": "Cargo.toml",
+              "type": "file",
+              "path": "server/fuzz/Cargo.toml",
+              "size": 1145,
+              "language": "toml"
+            }
+          ]
+        },
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "server/src",
+          "children": [
+            {
+              "name": "engine",
+              "type": "folder",
+              "path": "server/src/engine",
+              "children": [
+                {
+                  "name": "console.rs",
+                  "type": "file",
+                  "path": "server/src/engine/console.rs",
+                  "size": 6364,
+                  "language": "rs"
+                },
+                {
+                  "name": "execution.rs",
+                  "type": "file",
+                  "path": "server/src/engine/execution.rs",
+                  "size": 11443,
+                  "language": "rs"
+                },
+                {
+                  "name": "fetch.rs",
+                  "type": "file",
+                  "path": "server/src/engine/fetch.rs",
+                  "size": 17411,
+                  "language": "rs"
+                },
+                {
+                  "name": "heap_storage.rs",
+                  "type": "file",
+                  "path": "server/src/engine/heap_storage.rs",
+                  "size": 5155,
+                  "language": "rs"
+                },
+                {
+                  "name": "heap_tags.rs",
+                  "type": "file",
+                  "path": "server/src/engine/heap_tags.rs",
+                  "size": 7343,
+                  "language": "rs"
+                },
+                {
+                  "name": "mod.rs",
+                  "type": "file",
+                  "path": "server/src/engine/mod.rs",
+                  "size": 50683,
+                  "language": "rs"
+                },
+                {
+                  "name": "opa.rs",
+                  "type": "file",
+                  "path": "server/src/engine/opa.rs",
+                  "size": 2141,
+                  "language": "rs"
+                },
+                {
+                  "name": "session_log.rs",
+                  "type": "file",
+                  "path": "server/src/engine/session_log.rs",
+                  "size": 11257,
+                  "language": "rs"
+                }
+              ]
+            },
+            {
+              "name": "api.rs",
+              "type": "file",
+              "path": "server/src/api.rs",
+              "size": 4683,
+              "language": "rs"
+            },
+            {
+              "name": "cluster.rs",
+              "type": "file",
+              "path": "server/src/cluster.rs",
+              "size": 44593,
+              "language": "rs"
+            },
+            {
+              "name": "lib.rs",
+              "type": "file",
+              "path": "server/src/lib.rs",
+              "size": 59,
+              "language": "rs"
+            },
+            {
               "name": "main.rs",
               "type": "file",
               "path": "server/src/main.rs",
-              "size": 10323,
+              "size": 28868,
               "language": "rs"
             },
             {
               "name": "mcp.rs",
               "type": "file",
               "path": "server/src/mcp.rs",
-              "size": 9126,
+              "size": 20246,
               "language": "rs"
             },
             {
               "name": "run_js_tool_description.md",
               "type": "file",
               "path": "server/src/run_js_tool_description.md",
-              "size": 11001,
+              "size": 4734,
               "language": "md"
             },
             {
               "name": "run_js_tool_stateless.md",
               "type": "file",
               "path": "server/src/run_js_tool_stateless.md",
-              "size": 10896,
+              "size": 3850,
               "language": "md"
             }
           ]
@@ -83,58 +441,163 @@
                   "name": "mod.rs",
                   "type": "file",
                   "path": "server/tests/common/mod.rs",
-                  "size": 1712,
+                  "size": 3053,
                   "language": "rs"
                 }
               ]
             },
             {
+              "name": "fixtures",
+              "type": "folder",
+              "path": "server/tests/fixtures",
+              "children": [
+                {
+                  "name": "add.wasm",
+                  "type": "file",
+                  "path": "server/tests/fixtures/add.wasm",
+                  "size": 41,
+                  "language": "wasm"
+                }
+              ]
+            },
+            {
+              "name": "cluster_simulation.rs",
+              "type": "file",
+              "path": "server/tests/cluster_simulation.rs",
+              "size": 15132,
+              "language": "rs"
+            },
+            {
+              "name": "cluster_write_forwarding.rs",
+              "type": "file",
+              "path": "server/tests/cluster_write_forwarding.rs",
+              "size": 21082,
+              "language": "rs"
+            },
+            {
+              "name": "console_log_e2e.rs",
+              "type": "file",
+              "path": "server/tests/console_log_e2e.rs",
+              "size": 16553,
+              "language": "rs"
+            },
+            {
+              "name": "fetch_header_injection.rs",
+              "type": "file",
+              "path": "server/tests/fetch_header_injection.rs",
+              "size": 8260,
+              "language": "rs"
+            },
+            {
+              "name": "heap_limit.rs",
+              "type": "file",
+              "path": "server/tests/heap_limit.rs",
+              "size": 10289,
+              "language": "rs"
+            },
+            {
+              "name": "heap_tags.rs",
+              "type": "file",
+              "path": "server/tests/heap_tags.rs",
+              "size": 10596,
+              "language": "rs"
+            },
+            {
               "name": "http_e2e.rs",
               "type": "file",
               "path": "server/tests/http_e2e.rs",
-              "size": 10073,
+              "size": 9772,
               "language": "rs"
             },
             {
               "name": "http_integration.rs",
               "type": "file",
               "path": "server/tests/http_integration.rs",
-              "size": 6833,
+              "size": 6577,
+              "language": "rs"
+            },
+            {
+              "name": "parameter_configs.rs",
+              "type": "file",
+              "path": "server/tests/parameter_configs.rs",
+              "size": 6499,
               "language": "rs"
             },
             {
               "name": "README.md",
               "type": "file",
               "path": "server/tests/README.md",
-              "size": 10373,
+              "size": 10124,
               "language": "md"
+            },
+            {
+              "name": "rss_growth.rs",
+              "type": "file",
+              "path": "server/tests/rss_growth.rs",
+              "size": 4894,
+              "language": "rs"
+            },
+            {
+              "name": "session_log.rs",
+              "type": "file",
+              "path": "server/tests/session_log.rs",
+              "size": 9766,
+              "language": "rs"
+            },
+            {
+              "name": "session_simulation.rs",
+              "type": "file",
+              "path": "server/tests/session_simulation.rs",
+              "size": 11567,
+              "language": "rs"
             },
             {
               "name": "sse_e2e.rs",
               "type": "file",
               "path": "server/tests/sse_e2e.rs",
-              "size": 17060,
+              "size": 16806,
               "language": "rs"
             },
             {
               "name": "sse_integration.rs",
               "type": "file",
               "path": "server/tests/sse_integration.rs",
-              "size": 6461,
+              "size": 6348,
               "language": "rs"
             },
             {
               "name": "stdio_e2e.rs",
               "type": "file",
               "path": "server/tests/stdio_e2e.rs",
-              "size": 17937,
+              "size": 17621,
               "language": "rs"
             },
             {
               "name": "stdio_integration.rs",
               "type": "file",
               "path": "server/tests/stdio_integration.rs",
-              "size": 6675,
+              "size": 7173,
+              "language": "rs"
+            },
+            {
+              "name": "typescript.rs",
+              "type": "file",
+              "path": "server/tests/typescript.rs",
+              "size": 9118,
+              "language": "rs"
+            },
+            {
+              "name": "wasm.rs",
+              "type": "file",
+              "path": "server/tests/wasm.rs",
+              "size": 13824,
+              "language": "rs"
+            },
+            {
+              "name": "write_through_cache.rs",
+              "type": "file",
+              "path": "server/tests/write_through_cache.rs",
+              "size": 6481,
               "language": "rs"
             }
           ]
@@ -143,35 +606,7 @@
           "name": "Cargo.toml",
           "type": "file",
           "path": "server/Cargo.toml",
-          "size": 937,
-          "language": "toml"
-        }
-      ]
-    },
-    {
-      "name": "snapshot",
-      "type": "folder",
-      "path": "snapshot",
-      "children": [
-        {
-          "name": "src",
-          "type": "folder",
-          "path": "snapshot/src",
-          "children": [
-            {
-              "name": "main.rs",
-              "type": "file",
-              "path": "snapshot/src/main.rs",
-              "size": 3126,
-              "language": "rs"
-            }
-          ]
-        },
-        {
-          "name": "Cargo.toml",
-          "type": "file",
-          "path": "snapshot/Cargo.toml",
-          "size": 155,
+          "size": 1645,
           "language": "toml"
         }
       ]
@@ -182,68 +617,201 @@
       "path": "tests",
       "children": [
         {
+          "name": "nixos",
+          "type": "folder",
+          "path": "tests/nixos",
+          "children": [
+            {
+              "name": "cluster.nix",
+              "type": "file",
+              "path": "tests/nixos/cluster.nix",
+              "size": 10999,
+              "language": "nix"
+            },
+            {
+              "name": "fetch-opa.nix",
+              "type": "file",
+              "path": "tests/nixos/fetch-opa.nix",
+              "size": 9698,
+              "language": "nix"
+            },
+            {
+              "name": "load-balancing.nix",
+              "type": "file",
+              "path": "tests/nixos/load-balancing.nix",
+              "size": 8518,
+              "language": "nix"
+            }
+          ]
+        },
+        {
+          "name": "docker-compose-integration.sh",
+          "type": "file",
+          "path": "tests/docker-compose-integration.sh",
+          "size": 5034,
+          "language": "sh"
+        },
+        {
           "name": "stdio_e2e.rs",
           "type": "file",
           "path": "tests/stdio_e2e.rs",
-          "size": 16309,
+          "size": 15790,
           "language": "rs"
         }
       ]
     },
     {
+      "name": "tutorials",
+      "type": "folder",
+      "path": "tutorials",
+      "children": [
+        {
+          "name": "github-api-token-injection.md",
+          "type": "file",
+          "path": "tutorials/github-api-token-injection.md",
+          "size": 5178,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 319,
+      "language": "text"
+    },
+    {
+      "name": ".envrc",
+      "type": "file",
+      "path": ".envrc",
+      "size": 9,
+      "language": "text"
+    },
+    {
       "name": ".gitignore",
       "type": "file",
       "path": ".gitignore",
-      "size": 77,
+      "size": 71,
       "language": "text"
+    },
+    {
+      "name": "docker-compose.cluster-stateless.yml",
+      "type": "file",
+      "path": "docker-compose.cluster-stateless.yml",
+      "size": 1749,
+      "language": "yml"
+    },
+    {
+      "name": "docker-compose.cluster.yml",
+      "type": "file",
+      "path": "docker-compose.cluster.yml",
+      "size": 2067,
+      "language": "yml"
+    },
+    {
+      "name": "docker-compose.single-node-stateful.yml",
+      "type": "file",
+      "path": "docker-compose.single-node-stateful.yml",
+      "size": 893,
+      "language": "yml"
+    },
+    {
+      "name": "docker-compose.single-node.yml",
+      "type": "file",
+      "path": "docker-compose.single-node.yml",
+      "size": 840,
+      "language": "yml"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 572,
+      "language": "yml"
     },
     {
       "name": "DOCKER.md",
       "type": "file",
       "path": "DOCKER.md",
-      "size": 3250,
+      "size": 4372,
       "language": "md"
     },
     {
       "name": "Dockerfile",
       "type": "file",
       "path": "Dockerfile",
-      "size": 1233,
+      "size": 1526,
       "language": "text"
+    },
+    {
+      "name": "Dockerfile.opa",
+      "type": "file",
+      "path": "Dockerfile.opa",
+      "size": 377,
+      "language": "opa"
+    },
+    {
+      "name": "flake.nix",
+      "type": "file",
+      "path": "flake.nix",
+      "size": 5892,
+      "language": "nix"
     },
     {
       "name": "install.sh",
       "type": "file",
       "path": "install.sh",
-      "size": 1424,
+      "size": 1362,
       "language": "sh"
     },
     {
       "name": "LICENSE",
       "type": "file",
       "path": "LICENSE",
-      "size": 668,
+      "size": 664,
       "language": "text"
+    },
+    {
+      "name": "nginx-cluster.conf",
+      "type": "file",
+      "path": "nginx-cluster.conf",
+      "size": 919,
+      "language": "conf"
+    },
+    {
+      "name": "nginx-single.conf",
+      "type": "file",
+      "path": "nginx-single.conf",
+      "size": 797,
+      "language": "conf"
     },
     {
       "name": "notes.md",
       "type": "file",
       "path": "notes.md",
-      "size": 4468,
+      "size": 4348,
       "language": "md"
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 9052,
+      "size": 34115,
       "language": "md"
+    },
+    {
+      "name": "shell.nix",
+      "type": "file",
+      "path": "shell.nix",
+      "size": 1189,
+      "language": "nix"
     },
     {
       "name": "SSE_IMPLEMENTATION.md",
       "type": "file",
       "path": "SSE_IMPLEMENTATION.md",
-      "size": 5856,
+      "size": 5062,
       "language": "md"
     }
   ]

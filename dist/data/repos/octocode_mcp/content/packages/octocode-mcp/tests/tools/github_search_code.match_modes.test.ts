@@ -27,7 +27,6 @@ vi.mock('../../src/serverConfig.js', () => ({
   getGitHubToken: vi.fn(() => Promise.resolve('test-token')),
   getServerConfig: vi.fn(() => ({
     version: '1.0.0',
-    enableLogging: true,
     timeout: 30000,
     maxRetries: 3,
     loggingEnabled: false,
@@ -35,7 +34,7 @@ vi.mock('../../src/serverConfig.js', () => ({
 }));
 
 import { registerGitHubSearchCodeTool } from '../../src/tools/github_search_code/github_search_code.js';
-import { TOOL_NAMES } from '../../src/tools/toolMetadata.js';
+import { TOOL_NAMES } from '../../src/tools/toolMetadata/index.js';
 
 describe('GitHub Search Code - match Parameter Modes', () => {
   let mockServer: MockMcpServer;
@@ -375,6 +374,88 @@ describe('GitHub Search Code - match Parameter Modes', () => {
       const responseText = getTextContent(result.content);
       expect(responseText).toContain('utils.ts');
       expect(responseText).toContain('settings.json');
+    });
+  });
+
+  describe('match parameter passed to provider', () => {
+    it('should pass match="file" to the provider searchCode call', async () => {
+      mockProvider.searchCode.mockResolvedValue({
+        data: {
+          items: [],
+          totalCount: 0,
+          pagination: { currentPage: 1, totalPages: 0, hasMore: false },
+        },
+        status: 200,
+        provider: 'github',
+      });
+
+      await mockServer.callTool(TOOL_NAMES.GITHUB_SEARCH_CODE, {
+        queries: [
+          {
+            keywordsToSearch: ['useState'],
+            owner: 'test',
+            repo: 'repo',
+            match: 'file',
+          },
+        ],
+      });
+
+      expect(mockProvider.searchCode).toHaveBeenCalledTimes(1);
+      const providerQuery = mockProvider.searchCode.mock.calls[0]?.[0];
+      expect(providerQuery.match).toBe('file');
+    });
+
+    it('should pass match="path" to the provider searchCode call', async () => {
+      mockProvider.searchCode.mockResolvedValue({
+        data: {
+          items: [],
+          totalCount: 0,
+          pagination: { currentPage: 1, totalPages: 0, hasMore: false },
+        },
+        status: 200,
+        provider: 'github',
+      });
+
+      await mockServer.callTool(TOOL_NAMES.GITHUB_SEARCH_CODE, {
+        queries: [
+          {
+            keywordsToSearch: ['config'],
+            owner: 'test',
+            repo: 'repo',
+            match: 'path',
+          },
+        ],
+      });
+
+      expect(mockProvider.searchCode).toHaveBeenCalledTimes(1);
+      const providerQuery = mockProvider.searchCode.mock.calls[0]?.[0];
+      expect(providerQuery.match).toBe('path');
+    });
+
+    it('should not pass match when it is undefined', async () => {
+      mockProvider.searchCode.mockResolvedValue({
+        data: {
+          items: [],
+          totalCount: 0,
+          pagination: { currentPage: 1, totalPages: 0, hasMore: false },
+        },
+        status: 200,
+        provider: 'github',
+      });
+
+      await mockServer.callTool(TOOL_NAMES.GITHUB_SEARCH_CODE, {
+        queries: [
+          {
+            keywordsToSearch: ['test'],
+            owner: 'test',
+            repo: 'repo',
+          },
+        ],
+      });
+
+      expect(mockProvider.searchCode).toHaveBeenCalledTimes(1);
+      const providerQuery = mockProvider.searchCode.mock.calls[0]?.[0];
+      expect(providerQuery.match).toBeUndefined();
     });
   });
 

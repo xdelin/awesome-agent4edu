@@ -1904,6 +1904,12 @@ export namespace ProtocolProxyApi {
         on(event: 'scrollableFlagUpdated', listener: (params: Protocol.DOM.ScrollableFlagUpdatedEvent) => void): void;
 
         /**
+         * Fired when a node's ad related state changes.
+         * @experimental
+         */
+        on(event: 'adRelatedStateUpdated', listener: (params: Protocol.DOM.AdRelatedStateUpdatedEvent) => void): void;
+
+        /**
          * Fired when a node's starting styles changes.
          * @experimental
          */
@@ -2366,7 +2372,8 @@ export namespace ProtocolProxyApi {
         setSmallViewportHeightDifferenceOverride(params: Protocol.Emulation.SetSmallViewportHeightDifferenceOverrideRequest): Promise<void>;
 
         /**
-         * Returns device's screen configuration.
+         * Returns device's screen configuration. In headful mode, the physical screens configuration is returned,
+         * whereas in headless mode, a virtual headless screen configuration is provided instead.
          * @experimental
          */
         getScreenInfos(): Promise<Protocol.Emulation.GetScreenInfosResponse>;
@@ -2382,6 +2389,15 @@ export namespace ProtocolProxyApi {
          * @experimental
          */
         removeScreen(params: Protocol.Emulation.RemoveScreenRequest): Promise<void>;
+
+        /**
+         * Set primary screen. Only supported in headless mode.
+         * Note that this changes the coordinate system origin to the top-left
+         * of the new primary screen, updating the bounds and work areas
+         * of all existing screens accordingly.
+         * @experimental
+         */
+        setPrimaryScreen(params: Protocol.Emulation.SetPrimaryScreenRequest): Promise<void>;
 
         /**
          * Notification sent after the virtual time budget for the current VirtualTimePolicy has run out.
@@ -2425,6 +2441,13 @@ export namespace ProtocolProxyApi {
          * flag is set.
          */
         loadUnpacked(params: Protocol.Extensions.LoadUnpackedRequest): Promise<Protocol.Extensions.LoadUnpackedResponse>;
+
+        /**
+         * Gets a list of all unpacked extensions.
+         * Available if the client is connected using the --remote-debugging-pipe flag
+         * and the --enable-unsafe-extension-debugging flag is set.
+         */
+        getExtensions(): Promise<Protocol.Extensions.GetExtensionsResponse>;
 
         /**
          * Uninstalls an unpacked extension (others not supported) from the profile.

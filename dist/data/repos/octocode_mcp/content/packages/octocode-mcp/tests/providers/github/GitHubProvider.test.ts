@@ -475,7 +475,6 @@ describe('GitHubProvider', () => {
           data: {
             path: 'src/index.ts',
             content: 'export default function() {}',
-            contentLength: 28,
             branch: 'main',
             owner: 'owner',
             repo: 'repo',
@@ -503,7 +502,6 @@ describe('GitHubProvider', () => {
           data: {
             path: 'src/utils.ts',
             content: 'function helper() {\n  return true;\n}',
-            contentLength: 35,
             branch: 'feature-branch',
             owner: 'test',
             repo: 'project',
@@ -567,7 +565,6 @@ describe('GitHubProvider', () => {
           data: {
             path: 'empty.ts',
             content: '',
-            contentLength: 0,
             branch: 'main',
           },
           status: 200,
@@ -586,7 +583,6 @@ describe('GitHubProvider', () => {
         mockFetchGitHubFileContentAPI.mockResolvedValue({
           data: {
             content: 'content',
-            contentLength: 7,
           },
           status: 200,
         });
@@ -604,7 +600,6 @@ describe('GitHubProvider', () => {
           data: {
             path: 'test.ts',
             content: 'content',
-            contentLength: 7,
           },
           status: 200,
         });
@@ -1040,19 +1035,11 @@ describe('GitHubProvider', () => {
               title: 'Add new feature',
               body: 'This PR adds a cool feature',
               url: 'https://api.github.com/repos/owner/repo/pulls/123',
-              html_url: 'https://github.com/owner/repo/pull/123',
               state: 'open',
               draft: false,
               merged: false,
               author: 'developer',
-              assignees: [
-                {
-                  login: 'reviewer',
-                  id: 1,
-                  avatar_url: 'https://github.com/reviewer.png',
-                  html_url: 'https://github.com/reviewer',
-                },
-              ],
+              assignees: ['reviewer'],
               labels: [{ id: 1, name: 'enhancement', color: 'blue' }],
               head_ref: 'feature-branch',
               base_ref: 'main',
@@ -1359,20 +1346,7 @@ describe('GitHubProvider', () => {
               base_sha: 'def456',
               created_at: '2024-01-01T10:00:00Z',
               updated_at: '2024-01-01T10:00:00Z',
-              assignees: [
-                {
-                  login: 'user1',
-                  id: 1,
-                  avatar_url: 'https://github.com/user1.png',
-                  html_url: 'https://github.com/user1',
-                },
-                {
-                  login: 'user2',
-                  id: 2,
-                  avatar_url: 'https://github.com/user2.png',
-                  html_url: 'https://github.com/user2',
-                },
-              ],
+              assignees: ['user1', 'user2'],
               labels: [
                 { id: 1, name: 'label1', color: 'red' },
                 { id: 2, name: 'label2', color: 'blue' },
@@ -2066,7 +2040,7 @@ describe('GitHubProvider', () => {
       });
 
       mockFetchGitHubFileContentAPI.mockResolvedValue({
-        data: { path: 'test.ts', content: '', contentLength: 0 },
+        data: { path: 'test.ts', content: '' },
         status: 200,
       });
 

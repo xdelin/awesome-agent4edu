@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
-import { LinkedInClient } from './linkedin-client.js';
+import { LinkedInClient, TokenProvider, StaticTokenProvider } from './linkedin-client.js';
 import { Logger } from './logger.js';
 import { ServerConfig, LinkedInPosition, LinkedInLanguage, LinkedInEducation, LinkedInCertification, LinkedInPublication } from './types.js';
 
@@ -15,7 +15,7 @@ export class LinkedInMCPServer {
   private linkedInClient: LinkedInClient;
   private logger: Logger;
 
-  constructor(config: ServerConfig) {
+  constructor(config: ServerConfig, tokenProvider?: TokenProvider) {
     this.logger = new Logger(config.logLevel);
 
     // Initialize McpServer
@@ -31,11 +31,16 @@ export class LinkedInMCPServer {
       }
     );
 
-    // Initialize LinkedIn client
-    if (!config.linkedInAccessToken) {
-      throw new Error('LinkedIn access token is required');
+    // Initialize LinkedIn client with the provided TokenProvider, or fall back to a static token
+    const provider = tokenProvider
+      ?? (config.linkedInAccessToken
+        ? new StaticTokenProvider(config.linkedInAccessToken)
+        : null);
+
+    if (!provider) {
+      throw new Error('LinkedIn access token or token provider is required');
     }
-    this.linkedInClient = new LinkedInClient(config.linkedInAccessToken, this.logger);
+    this.linkedInClient = new LinkedInClient(provider, this.logger);
 
     this.setupTools();
   }
