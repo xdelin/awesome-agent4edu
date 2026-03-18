@@ -1,0 +1,42 @@
+filters:
+  note.type == "client"
+properties:
+  file.name:
+    displayName: Name
+  note.company:
+    displayName: Company
+  note.stage:
+    displayName: Stage
+  note.next_action:
+    displayName: Next Action
+  note.next_action_note:
+    displayName: Action
+  note.last_contact:
+    displayName: Last Contact
+  note.email:
+    displayName: Email
+views:
+  - type: table
+    name: Needs Follow-up
+    filters: note.next_action != null && note.next_action <= today()
+    order:
+      - file.name
+      - next_action
+      - next_action_note
+      - company
+      - email
+    sort:
+      - property: next_action
+        direction: ASC
+  - type: table
+    name: All Clients
+    order:
+      - file.name
+      - stage
+      - company
+      - next_action
+      - last_contact
+      - email
+    sort:
+      - property: last_contact
+        direction: DESC

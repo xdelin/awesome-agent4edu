@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Custom Plugin Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 { color: #333; }
+    p { color: #666; line-height: 1.6; }
+    .chart-container {
+      position: relative;
+      height: 400px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom Plugin Example</h1>
+  <p>
+    This example demonstrates two custom plugins:
+    <strong>canvasBackground</strong> (adds a colored background to the chart area)
+    and <strong>crosshair</strong> (draws crosshair lines on hover).
+    Hover over the chart to see the crosshair in action.
+  </p>
+
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <h2>Key Concepts</h2>
+  <ul>
+    <li><code>beforeDraw</code> - Draw before the chart renders (good for backgrounds)</li>
+    <li><code>afterDraw</code> - Draw after the chart renders (good for overlays)</li>
+    <li><code>defaults</code> - Set default options for your plugin</li>
+    <li><code>chart._active</code> - Access currently hovered elements</li>
+  </ul>
+
+  <script>
+    // ============================================================
+    // Plugin 1: Canvas Background
+    // Fills the chart area with a background color before drawing
+    // ============================================================
+    const canvasBackgroundPlugin = {
+      // Unique identifier for the plugin
+      id: 'canvasBackground',
+
+      // Default options (can be overridden in chart config)
+      defaults: {
+        color: '#f8f9fa'
+      },
+
+      // beforeDraw: Called before the chart is drawn
+      // Perfect for backgrounds since they need to be behind everything
+      beforeDraw(chart, args, options) {
+        const { ctx, chartArea: { left, top, width, height } } = chart;
+
+        ctx.save();
+        ctx.fillStyle = options.color;
+        ctx.fillRect(left, top, width, height);
+        ctx.restore();
+      }
+    };
+
+    // ============================================================
+    // Plugin 2: Crosshair
+    // Draws horizontal and vertical lines through the hovered point
+    // ============================================================
+    const crosshairPlugin = {
+      id: 'crosshair',
+
+      defaults: {
+        color: 'rgba(0, 0, 0, 0.3)',
+        lineWidth: 1,
+        dashPattern: [5, 5]
+      },
+
+      // afterDraw: Called after the chart is drawn
+      // Perfect for overlays since they need to be on top of everything
+      afterDraw(chart, args, options) {
+        // Check if there's an active (hovered) element
+        if (!chart._active || chart._active.length === 0) {
+          return;
+        }
+
+        const activePoint = chart._active[0];
+        const { ctx, chartArea: { top, bottom, left, right } } = chart;
+        const { x, y } = activePoint.element;
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.setLineDash(options.dashPattern);
+        ctx.strokeStyle = options.color;
+        ctx.lineWidth = options.lineWidth;
+
+        // Draw vertical line
+        ctx.moveTo(x, top);
+        ctx.lineTo(x, bottom);
+
+        // Draw horizontal line
+        ctx.moveTo(left, y);
+        ctx.lineTo(right, y);
+
+        ctx.stroke();
+        ctx.restore();
+      }
+    };
+
+    // ============================================================
+    // Create the chart with both plugins
+    // ============================================================
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'line',
+
+      // Register plugins for this chart instance only
+      plugins: [canvasBackgroundPlugin, crosshairPlugin],
+
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Sales',
+          data: [12, 19, 3, 5, 2, 15],
+          borderColor: 'rgb(75, 192, 192)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          tension: 0.3,
+          fill: true
+        }, {
+          label: 'Revenue',
+          data: [8, 15, 7, 12, 9, 11],
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+
+        // Configure plugin options
+        plugins: {
+          // Override canvasBackground defaults
+          canvasBackground: {
+            color: '#f0f7ff'
+          },
+
+          // Override crosshair defaults
+          crosshair: {
+            color: 'rgba(59, 130, 246, 0.5)',
+            lineWidth: 1,
+            dashPattern: [4, 4]
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

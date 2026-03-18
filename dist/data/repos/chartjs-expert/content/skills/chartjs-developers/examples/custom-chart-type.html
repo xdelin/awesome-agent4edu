@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Custom Chart Type Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 { color: #333; }
+    p { color: #666; line-height: 1.6; }
+    .chart-container {
+      position: relative;
+      height: 400px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom Chart Type Example</h1>
+  <p>
+    This example creates a custom chart type called <strong>boxedBubble</strong>
+    that extends the built-in BubbleController. Each bubble is surrounded by a
+    colored square border, demonstrating how to customize chart rendering.
+  </p>
+
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <h2>Key Concepts</h2>
+  <ul>
+    <li><code>extends Chart.BubbleController</code> - Inherit from built-in controller</li>
+    <li><code>static id</code> - Unique identifier for the chart type</li>
+    <li><code>static defaults</code> - Inherit defaults from parent controller</li>
+    <li><code>draw()</code> - Override to add custom rendering</li>
+    <li><code>Chart.register()</code> - Register the custom type globally</li>
+  </ul>
+
+  <h2>TypeScript Declaration</h2>
+  <pre><code>// For TypeScript projects, add this declaration:
+declare module 'chart.js' {
+  interface ChartTypeRegistry {
+    boxedBubble: ChartTypeRegistry['bubble']
+  }
+}</code></pre>
+
+  <script>
+    // ============================================================
+    // Custom Chart Type: BoxedBubble
+    // Extends BubbleController to draw a square border around each bubble
+    // ============================================================
+    class BoxedBubbleController extends Chart.BubbleController {
+      // Override the draw method to add custom rendering
+      draw() {
+        // Call parent draw() to render the bubbles normally
+        super.draw();
+
+        // Get the dataset metadata (contains all visual elements)
+        const meta = this.getMeta();
+        const ctx = this.chart.ctx;
+
+        ctx.save();
+
+        // Iterate over each data point and draw a box around it
+        meta.data.forEach((point, index) => {
+          // Get the point's position and size
+          const { x, y } = point.getProps(['x', 'y']);
+          const { radius } = point.options;
+
+          // Get the dataset's border color for the box
+          const dataset = this.chart.data.datasets[this.index];
+          const boxColor = dataset.borderColor || 'rgba(0, 0, 0, 0.5)';
+
+          // Draw the box
+          ctx.strokeStyle = boxColor;
+          ctx.lineWidth = 2;
+          ctx.strokeRect(
+            x - radius - 4,
+            y - radius - 4,
+            (radius + 4) * 2,
+            (radius + 4) * 2
+          );
+        });
+
+        ctx.restore();
+      }
+    }
+
+    // Set the unique identifier for this chart type
+    BoxedBubbleController.id = 'boxedBubble';
+
+    // Inherit all defaults from BubbleController
+    BoxedBubbleController.defaults = Chart.BubbleController.defaults;
+
+    // Register the custom chart type globally
+    Chart.register(BoxedBubbleController);
+
+    // ============================================================
+    // Create the chart using the custom type
+    // ============================================================
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      // Use our custom chart type
+      type: 'boxedBubble',
+
+      data: {
+        datasets: [{
+          label: 'Dataset 1',
+          data: [
+            { x: 10, y: 20, r: 15 },
+            { x: 25, y: 30, r: 20 },
+            { x: 40, y: 10, r: 12 },
+            { x: 55, y: 25, r: 18 }
+          ],
+          backgroundColor: 'rgba(255, 99, 132, 0.6)',
+          borderColor: 'rgb(255, 99, 132)'
+        }, {
+          label: 'Dataset 2',
+          data: [
+            { x: 15, y: 35, r: 10 },
+            { x: 30, y: 15, r: 25 },
+            { x: 50, y: 40, r: 14 },
+            { x: 65, y: 20, r: 16 }
+          ],
+          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          borderColor: 'rgb(54, 162, 235)'
+        }]
+      },
+
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        scales: {
+          x: {
+            min: 0,
+            max: 80,
+            title: {
+              display: true,
+              text: 'X Axis'
+            }
+          },
+          y: {
+            min: 0,
+            max: 50,
+            title: {
+              display: true,
+              text: 'Y Axis'
+            }
+          }
+        },
+
+        plugins: {
+          title: {
+            display: true,
+            text: 'Custom BoxedBubble Chart Type'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

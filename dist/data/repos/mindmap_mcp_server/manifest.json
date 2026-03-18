@@ -1,0 +1,69 @@
+{
+  "name": "Mindmap MCP Server",
+  "full": true,
+  "tree": [
+    {
+      "name": "mindmap_mcp_server",
+      "type": "folder",
+      "path": "mindmap_mcp_server",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "mindmap_mcp_server/__init__.py",
+          "size": 77,
+          "language": "py"
+        },
+        {
+          "name": "server.py",
+          "type": "file",
+          "path": "mindmap_mcp_server/server.py",
+          "size": 3819,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 43,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 379,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1066,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 1024,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 10230,
+      "language": "md"
+    }
+  ]
+}

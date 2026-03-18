@@ -1,0 +1,27 @@
+{
+  "name": "humanizer",
+  "full": true,
+  "tree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 7859,
+      "language": "md"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 23183,
+      "language": "md"
+    },
+    {
+      "name": "WARP.md",
+      "type": "file",
+      "path": "WARP.md",
+      "size": 2123,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//	http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package google
+
+import (
+	"context"
+	"fmt"
+	"net/http"
+
+	"github.com/googleapis/genai-toolbox/internal/auth"
+	"google.golang.org/api/idtoken"
+)
+
+const AuthServiceType string = "google"
+
+// validate interface
+var _ auth.AuthServiceConfig = Config{}
+
+// Auth service configuration
+type Config struct {
+	Name     string `yaml:"name" validate:"required"`
+	Type     string `yaml:"type" validate:"required"`
+	ClientID string `yaml:"clientId" validate:"required"`
+}
+
+// Returns the auth service type
+func (cfg Config) AuthServiceConfigType() string {
+	return AuthServiceType
+}
+
+// Initialize a Google auth service
+func (cfg Config) Initialize() (auth.AuthService, error) {
+	a := &AuthService{
+		Config: cfg,
+	}
+	return a, nil
+}
+
+var _ auth.AuthService = AuthService{}
+
+// struct used to store auth service info
+type AuthService struct {
+	Config
+}
+
+// Returns the auth service type
+func (a AuthService) AuthServiceType() string {
+	return AuthServiceType
+}
+
+func (a AuthService) ToConfig() auth.AuthServiceConfig {
+	return a.Config
+}
+
+// Returns the name of the auth service
+func (a AuthService) GetName() string {
+	return a.Name
+}
+
+// Verifies Google ID token and return claims
+func (a AuthService) GetClaimsFromHeader(ctx context.Context, h http.Header) (map[string]any, error) {
+	if token := h.Get(a.Name + "_token"); token != "" {
+		payload, err := idtoken.Validate(ctx, token, a.ClientID)
+		if err != nil {
+			return nil, fmt.Errorf("Google ID token verification failure: %w", err) //nolint:staticcheck
+		}
+		return payload.Claims, nil
+	}
+	return nil, nil
+}

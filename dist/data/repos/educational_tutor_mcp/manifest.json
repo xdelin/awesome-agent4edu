@@ -1,0 +1,195 @@
+{
+  "name": "Educational Tutor MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "client",
+      "type": "folder",
+      "path": "client",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "client/__init__.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "agent.py",
+          "type": "file",
+          "path": "client/agent.py",
+          "size": 1428,
+          "language": "py"
+        },
+        {
+          "name": "mcp_client.py",
+          "type": "file",
+          "path": "client/mcp_client.py",
+          "size": 815,
+          "language": "py"
+        },
+        {
+          "name": "runner.py",
+          "type": "file",
+          "path": "client/runner.py",
+          "size": 1406,
+          "language": "py"
+        },
+        {
+          "name": "utils.py",
+          "type": "file",
+          "path": "client/utils.py",
+          "size": 194,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "config",
+      "type": "folder",
+      "path": "config",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "config/__init__.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "settings.py",
+          "type": "file",
+          "path": "config/settings.py",
+          "size": 443,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "server",
+      "type": "folder",
+      "path": "server",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "server/__init__.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "explain.py",
+          "type": "file",
+          "path": "server/explain.py",
+          "size": 1456,
+          "language": "py"
+        },
+        {
+          "name": "flashcards.py",
+          "type": "file",
+          "path": "server/flashcards.py",
+          "size": 1357,
+          "language": "py"
+        },
+        {
+          "name": "quiz.py",
+          "type": "file",
+          "path": "server/quiz.py",
+          "size": 1540,
+          "language": "py"
+        },
+        {
+          "name": "summarize.py",
+          "type": "file",
+          "path": "server/summarize.py",
+          "size": 1237,
+          "language": "py"
+        },
+        {
+          "name": "tutor_mcp_server.py",
+          "type": "file",
+          "path": "server/tutor_mcp_server.py",
+          "size": 1975,
+          "language": "py"
+        },
+        {
+          "name": "ui.py",
+          "type": "file",
+          "path": "server/ui.py",
+          "size": 2175,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "test_client.py",
+          "type": "file",
+          "path": "tests/test_client.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "test_server.py",
+          "type": "file",
+          "path": "tests/test_server.py",
+          "size": 0,
+          "language": "py"
+        },
+        {
+          "name": "test_tools.py",
+          "type": "file",
+          "path": "tests/test_tools.py",
+          "size": 0,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".env",
+      "type": "file",
+      "path": ".env",
+      "size": 32,
+      "language": "text"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 28,
+      "language": "text"
+    },
+    {
+      "name": "main.py",
+      "type": "file",
+      "path": "main.py",
+      "size": 1009,
+      "language": "py"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 4535,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 49,
+      "language": "txt"
+    }
+  ]
+}

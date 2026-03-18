@@ -188,5 +188,16 @@
   "AI-Tutor": "ai-tutor",
   "Multi-Agent Study Assistant": "multi-agent_study_assistant",
   "Evaluate Crew": "evaluate_crew",
-  "Multi-Agent RAG (Medical)": "multi-agent_rag_(medical)"
+  "Multi-Agent RAG (Medical)": "multi-agent_rag_(medical)",
+  "teacher-prep": "teacher-prep",
+  "smart-summarizer": "smart-summarizer",
+  "librag-knowledge-recall": "librag-knowledge-recall",
+  "wechat-article-reader": "wechat-article-reader",
+  "z-article-card": "z-article-card",
+  "youtube-summarizer": "youtube-summarizer",
+  "afrexai-data-analyst": "afrexai-data-analyst",
+  "clinical-data-extractor": "clinical-data-extractor",
+  "obsidian-cli-skills": "obsidian-cli-skills",
+  "torah-scholar": "torah-scholar",
+  "tavily-research-pro": "tavily-research-pro"
 }

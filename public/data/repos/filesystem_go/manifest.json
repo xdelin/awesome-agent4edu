@@ -1,0 +1,321 @@
+{
+  "name": "Filesystem (Go)",
+  "full": true,
+  "tree": [
+    {
+      "name": "filesystemserver",
+      "type": "folder",
+      "path": "filesystemserver",
+      "children": [
+        {
+          "name": "handler",
+          "type": "folder",
+          "path": "filesystemserver/handler",
+          "children": [
+            {
+              "name": "copy_file.go",
+              "type": "file",
+              "path": "filesystemserver/handler/copy_file.go",
+              "size": 5284,
+              "language": "go"
+            },
+            {
+              "name": "copy_file_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/copy_file_test.go",
+              "size": 3351,
+              "language": "go"
+            },
+            {
+              "name": "create_directory.go",
+              "type": "file",
+              "path": "filesystemserver/handler/create_directory.go",
+              "size": 2467,
+              "language": "go"
+            },
+            {
+              "name": "create_directory_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/create_directory_test.go",
+              "size": 2390,
+              "language": "go"
+            },
+            {
+              "name": "delete_file.go",
+              "type": "file",
+              "path": "filesystemserver/handler/delete_file.go",
+              "size": 2966,
+              "language": "go"
+            },
+            {
+              "name": "delete_file_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/delete_file_test.go",
+              "size": 4296,
+              "language": "go"
+            },
+            {
+              "name": "get_file_info.go",
+              "type": "file",
+              "path": "filesystemserver/handler/get_file_info.go",
+              "size": 3064,
+              "language": "go"
+            },
+            {
+              "name": "get_file_info_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/get_file_info_test.go",
+              "size": 3069,
+              "language": "go"
+            },
+            {
+              "name": "handler.go",
+              "type": "file",
+              "path": "filesystemserver/handler/handler.go",
+              "size": 1220,
+              "language": "go"
+            },
+            {
+              "name": "handler_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/handler_test.go",
+              "size": 789,
+              "language": "go"
+            },
+            {
+              "name": "helper.go",
+              "type": "file",
+              "path": "filesystemserver/handler/helper.go",
+              "size": 4133,
+              "language": "go"
+            },
+            {
+              "name": "helper_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/helper_test.go",
+              "size": 250,
+              "language": "go"
+            },
+            {
+              "name": "list_allowed_directories.go",
+              "type": "file",
+              "path": "filesystemserver/handler/list_allowed_directories.go",
+              "size": 836,
+              "language": "go"
+            },
+            {
+              "name": "list_allowed_directories_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/list_allowed_directories_test.go",
+              "size": 1975,
+              "language": "go"
+            },
+            {
+              "name": "list_directory.go",
+              "type": "file",
+              "path": "filesystemserver/handler/list_directory.go",
+              "size": 2805,
+              "language": "go"
+            },
+            {
+              "name": "list_directory_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/list_directory_test.go",
+              "size": 3720,
+              "language": "go"
+            },
+            {
+              "name": "modify_file.go",
+              "type": "file",
+              "path": "filesystemserver/handler/modify_file.go",
+              "size": 4956,
+              "language": "go"
+            },
+            {
+              "name": "move_file.go",
+              "type": "file",
+              "path": "filesystemserver/handler/move_file.go",
+              "size": 3571,
+              "language": "go"
+            },
+            {
+              "name": "read_file.go",
+              "type": "file",
+              "path": "filesystemserver/handler/read_file.go",
+              "size": 5436,
+              "language": "go"
+            },
+            {
+              "name": "read_file_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/read_file_test.go",
+              "size": 1938,
+              "language": "go"
+            },
+            {
+              "name": "read_multiple_files.go",
+              "type": "file",
+              "path": "filesystemserver/handler/read_multiple_files.go",
+              "size": 4894,
+              "language": "go"
+            },
+            {
+              "name": "read_multiple_files_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/read_multiple_files_test.go",
+              "size": 7160,
+              "language": "go"
+            },
+            {
+              "name": "resources.go",
+              "type": "file",
+              "path": "filesystemserver/handler/resources.go",
+              "size": 3187,
+              "language": "go"
+            },
+            {
+              "name": "search_files.go",
+              "type": "file",
+              "path": "filesystemserver/handler/search_files.go",
+              "size": 3475,
+              "language": "go"
+            },
+            {
+              "name": "search_files_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/search_files_test.go",
+              "size": 1933,
+              "language": "go"
+            },
+            {
+              "name": "search_within_files.go",
+              "type": "file",
+              "path": "filesystemserver/handler/search_within_files.go",
+              "size": 7931,
+              "language": "go"
+            },
+            {
+              "name": "tree.go",
+              "type": "file",
+              "path": "filesystemserver/handler/tree.go",
+              "size": 4920,
+              "language": "go"
+            },
+            {
+              "name": "tree_test.go",
+              "type": "file",
+              "path": "filesystemserver/handler/tree_test.go",
+              "size": 6343,
+              "language": "go"
+            },
+            {
+              "name": "types.go",
+              "type": "file",
+              "path": "filesystemserver/handler/types.go",
+              "size": 1216,
+              "language": "go"
+            },
+            {
+              "name": "write_file.go",
+              "type": "file",
+              "path": "filesystemserver/handler/write_file.go",
+              "size": 2770,
+              "language": "go"
+            }
+          ]
+        },
+        {
+          "name": "inprocess_test.go",
+          "type": "file",
+          "path": "filesystemserver/inprocess_test.go",
+          "size": 514,
+          "language": "go"
+        },
+        {
+          "name": "server.go",
+          "type": "file",
+          "path": "filesystemserver/server.go",
+          "size": 6138,
+          "language": "go"
+        },
+        {
+          "name": "server_test.go",
+          "type": "file",
+          "path": "filesystemserver/server_test.go",
+          "size": 778,
+          "language": "go"
+        },
+        {
+          "name": "utils_test.go",
+          "type": "file",
+          "path": "filesystemserver/utils_test.go",
+          "size": 1427,
+          "language": "go"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 99,
+      "language": "text"
+    },
+    {
+      "name": ".goreleaser.yml",
+      "type": "file",
+      "path": ".goreleaser.yml",
+      "size": 1062,
+      "language": "yml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 629,
+      "language": "text"
+    },
+    {
+      "name": "go.mod",
+      "type": "file",
+      "path": "go.mod",
+      "size": 619,
+      "language": "mod"
+    },
+    {
+      "name": "go.sum",
+      "type": "file",
+      "path": "go.sum",
+      "size": 3342,
+      "language": "sum"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1076,
+      "language": "text"
+    },
+    {
+      "name": "main.go",
+      "type": "file",
+      "path": "main.go",
+      "size": 624,
+      "language": "go"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5802,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 1052,
+      "language": "yaml"
+    }
+  ]
+}

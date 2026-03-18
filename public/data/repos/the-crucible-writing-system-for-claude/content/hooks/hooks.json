@@ -1,0 +1,4 @@
+{
+  "description": "Crucible Suite automation hooks for backup, context loading, and review enforcement. Note: All 'matcher' fields use regex patterns per Claude Code hooks spec (e.g., 'Write|Edit' matches either tool, 'startup|resume|clear|compact' matches any SessionStart trigger type). DISABLED: Hooks temporarily disabled due to plugin cache version mismatch. Re-enable after Claude Code restart.",
+  "hooks": {}
+}

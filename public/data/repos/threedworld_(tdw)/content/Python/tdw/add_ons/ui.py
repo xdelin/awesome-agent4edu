@@ -1,0 +1,311 @@
+from io import BytesIO
+from base64 import b64encode
+from typing import Tuple, List, Dict, Union
+from pathlib import Path
+from PIL import Image
+from tdw.controller import Controller
+from tdw.add_ons.add_on import AddOn
+
+
+class UI(AddOn):
+    """
+    Manager add-on for UI in TDW.
+
+    ## Parameter types
+
+    All parameters of type `Dict[str, float]` are Vector2, e.g. `{"x": 0, "y": 0}`. There is no `"z"` parameter.
+
+    `"x"` is the horizontal value and `"y"` is the vertical value.
+
+    In some cases, this document will note that Vector2 values must be integers. This is usually because they are adjusting a value that references the actual screen pixels.
+    """
+
+    def __init__(self, canvas_id: int = 0):
+        """
+        :param canvas_id: The ID of the UI canvas.
+        """
+
+        super().__init__()
+        self._canvas_id: int = canvas_id
+        self._ui_ids: List[int] = list()
+
+    def get_initialization_commands(self) -> List[dict]:
+        return [{"$type": "add_ui_canvas",
+                 "canvas_id": self._canvas_id}]
+
+    def on_send(self, resp: List[bytes]) -> None:
+        pass
+
+    def add_text(self, text: str, font_size: int, position: Dict[str, int], anchor: Dict[str, float] = None,
+                 pivot: Dict[str, float] = None, color: Dict[str, float] = None, raycast_target: bool = True) -> int:
+        """
+        Add UI text to the scene.
+
+        :param text: The text.
+        :param font_size: The size of the font.
+        :param position: The screen (pixel) position as a Vector2. Values must be integers.
+        :param anchor: The anchor as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+        :param pivot: The pivot as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+        :param color: The color of the text. If None, defaults to `{"r": 1, "g": 1, "b": 1, "a": 1}`.
+        :param raycast_target: If True, raycasts will hit the UI element.
+
+        :return: The ID of the new UI element.
+        """
+
+        cmd, ui_id = self._get_add_element(command_type="add_ui_text", anchor=anchor, pivot=pivot, position=position,
+                                           color=color, raycast_target=raycast_target)
+        cmd.update({"text": text,
+                    "font_size": font_size})
+        self.commands.append(cmd)
+        return ui_id
+
+    def add_image(self, image: Union[str, Path, bytes, Image.Image], position: Dict[str, int], size: Dict[str, int],
+                  rgba: bool = True, scale_factor: Dict[str, float] = None, anchor: Dict[str, float] = None,
+                  pivot: Dict[str, float] = None, color: Dict[str, float] = None, raycast_target: bool = True) -> int:
+        """
+        Add a UI image to the scene.
+
+        :param image: The image. If a string or `Path`, this is a filepath. If `bytes`, this is the image byte data. If `Image.Image`, this is a PIL image.
+        :param position: The screen (pixel) position as a Vector2. Values must be integers.
+        :param size: The pixel size of the image as a Vector2. Values must be integers and must match the actual image size.
+        :param rgba: If True, this is an RGBA image. If False, this is an RGB image.
+        :param scale_factor: Scale the UI image by this factor. If None, defaults to {"x": 1, "y": 1}.
+        :param anchor: The anchor as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+        :param pivot: The pivot as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+        :param color: The color of the text. If None, defaults to `{"r": 1, "g": 1, "b": 1, "a": 1}`.
+        :param raycast_target: If True, raycasts will hit the UI element.
+
+        :return: The ID of the new UI element.
+        """
+
+        img = UI._get_base64_image(image)
+        if scale_factor is None:
+            scale_factor = {"x": 1, "y": 1}
+        cmd, ui_id = self._get_add_element(command_type="add_ui_image", anchor=anchor, pivot=pivot,
+                                           position=position, color=color, raycast_target=raycast_target)
+        cmd.update({"image": img,
+                    "size": size,
+                    "rgba": rgba,
+                    "scale_factor": scale_factor})
+        self.commands.append(cmd)
+        return ui_id
+
+    def add_cutout(self, base_id: int, image: Union[str, Path, bytes, Image.Image], position: Dict[str, int],
+                   size: Dict[str, int], scale_factor: Dict[str, float] = None, anchor: Dict[str, float] = None,
+                   pivot: Dict[str, float] = None) -> int:
+        """
+        Add a UI image that cuts a transparent hole in another UI image.
+
+        :param base_id: The ID of the image that will have a hole in it. This can be added on the same frame as the cutout image but it must be added prior to the cutout image.
+        :param image: The image. *This must be an RGBA image.* If a string or `Path`, this is a filepath. If `bytes`, this is the image byte data. If `Image.Image`, this is a PIL image.
+        :param position: The screen (pixel) position as a Vector2. Values must be integers.
+        :param size: The pixel size of the image as a Vector2. Values must be integers and must match the actual image size.
+        :param scale_factor: Scale the UI image by this factor. If None, defaults to {"x": 1, "y": 1}.
+        :param anchor: The anchor as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+        :param pivot: The pivot as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+
+        :return: The ID of the new UI element.
+        """
+
+        img = UI._get_base64_image(image)
+        if scale_factor is None:
+            scale_factor = {"x": 1, "y": 1}
+        if anchor is None:
+            anchor = {"x": 0.5, "y": 0.5}
+        if pivot is None:
+            pivot = {"x": 0.5, "y": 0.5}
+        ui_id = Controller.get_unique_id()
+        self._ui_ids.append(ui_id)
+        self.commands.append({"$type": "add_ui_cutout",
+                              "id": ui_id,
+                              "canvas_id": self._canvas_id,
+                              "anchor": anchor,
+                              "pivot": pivot,
+                              "position": position,
+                              "size": size,
+                              "scale_factor": scale_factor,
+                              "image": img,
+                              "base_id": base_id})
+        return ui_id
+
+    def set_text(self, ui_id: int, text: str) -> None:
+        """
+        Set the text of a UI text element that is already in the scene.
+
+        :param ui_id: The ID of the UI text element.
+        :param text: The text.
+        """
+
+        self.commands.append({"$type": "set_ui_text",
+                              "id": ui_id,
+                              "canvas_id": self._canvas_id,
+                              "text": text})
+
+    def attach_canvas_to_avatar(self, avatar_id: str = "a", focus_distance: float = 2.5, plane_distance: float = 0.101) -> None:
+        """
+        Attach the UI canvas to an avatar. This allows the UI to appear in image output data.
+
+        :param avatar_id: The avatar ID.
+        :param focus_distance: The focus distance. If the focus distance is less than the default value (2.5), the UI will appear blurry unless post-processing is disabled.
+        :param plane_distance: The distance from the camera to the UI canvas. This should be slightly further than the near clipping plane.
+        """
+
+        self.commands.extend([{"$type": "set_focus_distance",
+                               "focus_distance": focus_distance},
+                              {"$type": "attach_ui_canvas_to_avatar",
+                               "avatar_id": avatar_id,
+                               "canvas_id": self._canvas_id,
+                               "plane_distance": plane_distance}])
+
+    def attach_canvas_to_vr_rig(self, plane_distance: float = 0.25) -> None:
+        """
+        Attach the UI canvas to a VR rig.
+
+        :param plane_distance: The distance from the camera to the UI canvas.
+        """
+
+        self.commands.append({"$type": "attach_ui_canvas_to_vr_rig",
+                              "plane_distance": plane_distance})
+
+    def set_position(self, ui_id: int, position: Dict[str, float]) -> None:
+        """
+        Set the position of a UI element.
+
+        :param ui_id: The UI element's ID.
+        :param position: The screen (pixel) position as a Vector2. Values must be integers.
+        """
+
+        self.commands.append({"$type": "set_ui_element_position",
+                              "id": ui_id,
+                              "position": position})
+
+    def set_size(self, ui_id: int, size: Dict[str, float]) -> None:
+        """
+        Set the size of a UI element that is already in the scene.
+
+        :param ui_id: The ID of the UI element.
+        :param size: The size.
+        """
+
+        self.commands.append({"$type": "set_ui_element_size",
+                              "id": ui_id,
+                              "canvas_id": self._canvas_id,
+                              "size": size})
+
+    def set_rotation(self, ui_id: int, angle: float) -> None:
+        """
+        Rotate a UI element to an angle.
+
+        :param ui_id: The ID of the UI element.
+        :param angle: The new rotation angle in degrees.
+        """
+
+        self.commands.append({"$type": "set_ui_element_rotation",
+                              "id": ui_id,
+                              "canvas_id": self._canvas_id,
+                              "angle": angle})
+
+    def set_depth(self, ui_id: int, depth: float) -> None:
+        """
+        Set the depth (z value) of a UI element relative its canvas (not its camera).
+
+        If the canvas is attached to an avatar or VR rig, the canvas depth relative to the camera is the `plane_distance`.
+
+        :param ui_id: The UI element's ID.
+        :param depth: The depth (z value) in meters.
+        """
+
+        self.commands.append({"$type": "set_ui_element_depth",
+                              "id": ui_id,
+                              "depth": depth})
+
+    def destroy(self, ui_id: int) -> None:
+        """
+        Destroy a UI element.
+
+        :param ui_id: The ID of the UI element.
+        """
+
+        self.commands.append({"$type": "destroy_ui_element",
+                              "id": ui_id,
+                              "canvas_id": self._canvas_id})
+
+    def destroy_all(self, destroy_canvas: bool = False) -> None:
+        """
+        Destroy all UI elements.
+
+        :param destroy_canvas: If True, destroy the UI canvas and all of its UI elements. If False, destroy the canvas' UI elements but not the canvas itself.
+        """
+
+        if destroy_canvas:
+            self.commands.append({"$type": "destroy_ui_canvas",
+                                  "canvas_id": self._canvas_id})
+        else:
+            for ui_id in self._ui_ids:
+                self.commands.append({"$type": "destroy_ui_element",
+                                      "id": ui_id,
+                                      "canvas_id": self._canvas_id})
+        self._ui_ids.clear()
+
+    def _get_add_element(self, command_type: str, position: Dict[str, int], anchor: Tuple[float, float] = None,
+                         pivot: Dict[str, float] = None, color: Dict[str, float] = None,
+                         raycast_target: bool = True) -> Tuple[dict, int]:
+        """
+        :param position: The screen (pixel) position as a Vector2. Values must be integers.
+        :param anchor: The anchor as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+        :param pivot: The pivot as a Vector2. Values are floats between 0 and 1. If None, defaults to `{"x": 0.5, "y": 0.5}`.
+        :param color: The color of the text. If None, defaults to `{"r": 1, "g": 1, "b": 1, "a": 1}`.
+        :param raycast_target: If True, raycasts will hit the UI element.
+
+        :return: Tuple: A partial command, the ID of the new UI element.
+        """
+
+        if anchor is None:
+            anchor = {"x": 0.5, "y": 0.5}
+        if pivot is None:
+            pivot = {"x": 0.5, "y": 0.5}
+        if color is None:
+            color = {"r": 1, "g": 1, "b": 1, "a": 1}
+        ui_id = Controller.get_unique_id()
+        self._ui_ids.append(ui_id)
+        return {"$type": command_type,
+                "id": ui_id,
+                "canvas_id": self._canvas_id,
+                "anchor": anchor,
+                "pivot": pivot,
+                "position": position,
+                "color": color,
+                "raycast_target": raycast_target}, ui_id
+
+    @staticmethod
+    def _get_image(color: Tuple[int, int, int], size: Dict[str, int]) -> bytes:
+        """
+        :param color: The color of the image.
+        :param size: The pixel size of the image. The values must be integers. Example: `{"x": 64, "y": 128}`.
+
+        :return: A new image of size `self._size` with color `color`.
+        """
+
+        with BytesIO() as output:
+            Image.new(mode="RGB", size=(size["x"], size["y"]), color=color).save(output, "PNG")
+            return output.getvalue()
+
+    @staticmethod
+    def _get_base64_image(image: Union[str, Path, bytes, Image.Image]) -> str:
+        """
+        :param image: Image data as a path to a file, raw bytes, or a PIL image.
+
+        :return: The image encoded as a base64 string.
+        """
+        
+        if isinstance(image, str) or isinstance(image, Path):
+            image_bytes = Path(image).read_bytes()
+        elif isinstance(image, bytes):
+            image_bytes = image
+        elif isinstance(image, Image.Image):
+            with BytesIO() as output:
+                image.save(output, "PNG")
+                image_bytes = output.getvalue()
+        else:
+            raise Exception(f"Invalid image type: {image.__class__}")
+        return b64encode(image_bytes).decode("utf-8")

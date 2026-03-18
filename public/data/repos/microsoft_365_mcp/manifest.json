@@ -1,0 +1,426 @@
+{
+  "name": "Microsoft 365 MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "bin",
+      "type": "folder",
+      "path": "bin",
+      "children": [
+        {
+          "name": "modules",
+          "type": "folder",
+          "path": "bin/modules",
+          "children": [
+            {
+              "name": "download-openapi.mjs",
+              "type": "file",
+              "path": "bin/modules/download-openapi.mjs",
+              "size": 1184,
+              "language": "mjs"
+            },
+            {
+              "name": "extract-descriptions.mjs",
+              "type": "file",
+              "path": "bin/modules/extract-descriptions.mjs",
+              "size": 1517,
+              "language": "mjs"
+            },
+            {
+              "name": "generate-mcp-tools.mjs",
+              "type": "file",
+              "path": "bin/modules/generate-mcp-tools.mjs",
+              "size": 2686,
+              "language": "mjs"
+            },
+            {
+              "name": "simplified-openapi.mjs",
+              "type": "file",
+              "path": "bin/modules/simplified-openapi.mjs",
+              "size": 23585,
+              "language": "mjs"
+            }
+          ]
+        },
+        {
+          "name": "generate-graph-client.mjs",
+          "type": "file",
+          "path": "bin/generate-graph-client.mjs",
+          "size": 2042,
+          "language": "mjs"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "generated",
+          "type": "folder",
+          "path": "src/generated",
+          "children": [
+            {
+              "name": "endpoint-types.ts",
+              "type": "file",
+              "path": "src/generated/endpoint-types.ts",
+              "size": 564,
+              "language": "ts"
+            },
+            {
+              "name": "hack.ts",
+              "type": "file",
+              "path": "src/generated/hack.ts",
+              "size": 1445,
+              "language": "ts"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "src/generated/README.md",
+              "size": 2263,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "lib",
+          "type": "folder",
+          "path": "src/lib",
+          "children": [
+            {
+              "name": "microsoft-auth.ts",
+              "type": "file",
+              "path": "src/lib/microsoft-auth.ts",
+              "size": 3559,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "auth-tools.ts",
+          "type": "file",
+          "path": "src/auth-tools.ts",
+          "size": 5913,
+          "language": "ts"
+        },
+        {
+          "name": "auth.ts",
+          "type": "file",
+          "path": "src/auth.ts",
+          "size": 22757,
+          "language": "ts"
+        },
+        {
+          "name": "cli.ts",
+          "type": "file",
+          "path": "src/cli.ts",
+          "size": 4823,
+          "language": "ts"
+        },
+        {
+          "name": "cloud-config.ts",
+          "type": "file",
+          "path": "src/cloud-config.ts",
+          "size": 3206,
+          "language": "ts"
+        },
+        {
+          "name": "endpoints.json",
+          "type": "file",
+          "path": "src/endpoints.json",
+          "size": 24790,
+          "language": "json"
+        },
+        {
+          "name": "graph-client.ts",
+          "type": "file",
+          "path": "src/graph-client.ts",
+          "size": 9147,
+          "language": "ts"
+        },
+        {
+          "name": "graph-tools.ts",
+          "type": "file",
+          "path": "src/graph-tools.ts",
+          "size": 23289,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 2803,
+          "language": "ts"
+        },
+        {
+          "name": "logger.ts",
+          "type": "file",
+          "path": "src/logger.ts",
+          "size": 1160,
+          "language": "ts"
+        },
+        {
+          "name": "oauth-provider.ts",
+          "type": "file",
+          "path": "src/oauth-provider.ts",
+          "size": 2045,
+          "language": "ts"
+        },
+        {
+          "name": "request-context.ts",
+          "type": "file",
+          "path": "src/request-context.ts",
+          "size": 315,
+          "language": "ts"
+        },
+        {
+          "name": "secrets.ts",
+          "type": "file",
+          "path": "src/secrets.ts",
+          "size": 4041,
+          "language": "ts"
+        },
+        {
+          "name": "server.ts",
+          "type": "file",
+          "path": "src/server.ts",
+          "size": 17777,
+          "language": "ts"
+        },
+        {
+          "name": "tool-categories.ts",
+          "type": "file",
+          "path": "src/tool-categories.ts",
+          "size": 2811,
+          "language": "ts"
+        },
+        {
+          "name": "version.ts",
+          "type": "file",
+          "path": "src/version.ts",
+          "size": 354,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "type": "folder",
+      "path": "test",
+      "children": [
+        {
+          "name": "auth-paths.test.ts",
+          "type": "file",
+          "path": "test/auth-paths.test.ts",
+          "size": 3354,
+          "language": "ts"
+        },
+        {
+          "name": "auth-tools.test.ts",
+          "type": "file",
+          "path": "test/auth-tools.test.ts",
+          "size": 3099,
+          "language": "ts"
+        },
+        {
+          "name": "calendar-fix.test.js",
+          "type": "file",
+          "path": "test/calendar-fix.test.js",
+          "size": 2263,
+          "language": "js"
+        },
+        {
+          "name": "calendar-view.test.ts",
+          "type": "file",
+          "path": "test/calendar-view.test.ts",
+          "size": 10100,
+          "language": "ts"
+        },
+        {
+          "name": "cli.test.ts",
+          "type": "file",
+          "path": "test/cli.test.ts",
+          "size": 1129,
+          "language": "ts"
+        },
+        {
+          "name": "graph-api.test.ts",
+          "type": "file",
+          "path": "test/graph-api.test.ts",
+          "size": 2499,
+          "language": "ts"
+        },
+        {
+          "name": "multi-account.test.ts",
+          "type": "file",
+          "path": "test/multi-account.test.ts",
+          "size": 9142,
+          "language": "ts"
+        },
+        {
+          "name": "path-encoding.test.ts",
+          "type": "file",
+          "path": "test/path-encoding.test.ts",
+          "size": 3840,
+          "language": "ts"
+        },
+        {
+          "name": "read-only.test.ts",
+          "type": "file",
+          "path": "test/read-only.test.ts",
+          "size": 2540,
+          "language": "ts"
+        },
+        {
+          "name": "request-context.test.ts",
+          "type": "file",
+          "path": "test/request-context.test.ts",
+          "size": 6905,
+          "language": "ts"
+        },
+        {
+          "name": "secrets.test.ts",
+          "type": "file",
+          "path": "test/secrets.test.ts",
+          "size": 2089,
+          "language": "ts"
+        },
+        {
+          "name": "test-hack.ts",
+          "type": "file",
+          "path": "test/test-hack.ts",
+          "size": 522,
+          "language": "ts"
+        },
+        {
+          "name": "tool-filtering.test.ts",
+          "type": "file",
+          "path": "test/tool-filtering.test.ts",
+          "size": 4348,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 2402,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 2469,
+      "language": "text"
+    },
+    {
+      "name": ".npmignore",
+      "type": "file",
+      "path": ".npmignore",
+      "size": 341,
+      "language": "text"
+    },
+    {
+      "name": ".prettierrc",
+      "type": "file",
+      "path": ".prettierrc",
+      "size": 105,
+      "language": "text"
+    },
+    {
+      "name": ".releaserc.json",
+      "type": "file",
+      "path": ".releaserc.json",
+      "size": 197,
+      "language": "json"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 357,
+      "language": "text"
+    },
+    {
+      "name": "eslint.config.js",
+      "type": "file",
+      "path": "eslint.config.js",
+      "size": 970,
+      "language": "js"
+    },
+    {
+      "name": "glama.json",
+      "type": "file",
+      "path": "glama.json",
+      "size": 89,
+      "language": "json"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1065,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2289,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 22518,
+      "language": "md"
+    },
+    {
+      "name": "remove-recursive-refs.js",
+      "type": "file",
+      "path": "remove-recursive-refs.js",
+      "size": 9308,
+      "language": "js"
+    },
+    {
+      "name": "test-calendar-fix.js",
+      "type": "file",
+      "path": "test-calendar-fix.js",
+      "size": 1616,
+      "language": "js"
+    },
+    {
+      "name": "test-real-calendar.js",
+      "type": "file",
+      "path": "test-real-calendar.js",
+      "size": 2958,
+      "language": "js"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 230,
+      "language": "json"
+    },
+    {
+      "name": "tsup.config.ts",
+      "type": "file",
+      "path": "tsup.config.ts",
+      "size": 555,
+      "language": "ts"
+    },
+    {
+      "name": "vitest.config.js",
+      "type": "file",
+      "path": "vitest.config.js",
+      "size": 140,
+      "language": "js"
+    }
+  ]
+}

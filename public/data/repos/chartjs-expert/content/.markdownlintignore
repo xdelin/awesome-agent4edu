@@ -1,0 +1,7 @@
+# Ignore
+
+node_modules/
+dist/
+build/
+.git/
+CODE_OF_CONDUCT.md

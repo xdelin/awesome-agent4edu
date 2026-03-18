@@ -1,0 +1,175 @@
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package tools
+
+import (
+	"context"
+	"fmt"
+	"net/http"
+	"slices"
+	"strings"
+
+	yaml "github.com/goccy/go-yaml"
+	"github.com/googleapis/genai-toolbox/internal/embeddingmodels"
+	"github.com/googleapis/genai-toolbox/internal/sources"
+	"github.com/googleapis/genai-toolbox/internal/util"
+	"github.com/googleapis/genai-toolbox/internal/util/parameters"
+)
+
+// ToolConfigFactory defines the signature for a function that creates and
+// decodes a specific tool's configuration. It takes the context, the tool's
+// name, and a YAML decoder to parse the config.
+type ToolConfigFactory func(ctx context.Context, name string, decoder *yaml.Decoder) (ToolConfig, error)
+
+var toolRegistry = make(map[string]ToolConfigFactory)
+
+// Register allows individual tool packages to register their configuration
+// factory function. This is typically called from an init() function in the
+// tool's package. It associates a 'type' string with a function that can
+// produce the specific ToolConfig type. It returns true if the registration was
+// successful, and false if a tool with the same type was already registered.
+func Register(resourceType string, factory ToolConfigFactory) bool {
+	if _, exists := toolRegistry[resourceType]; exists {
+		// Tool with this type already exists, do not overwrite.
+		return false
+	}
+	toolRegistry[resourceType] = factory
+	return true
+}
+
+// DecodeConfig looks up the registered factory for the given type and uses it
+// to decode the tool configuration.
+func DecodeConfig(ctx context.Context, resourceType string, name string, decoder *yaml.Decoder) (ToolConfig, error) {
+	factory, found := toolRegistry[resourceType]
+	if !found {
+		return nil, fmt.Errorf("unknown tool type: %q", resourceType)
+	}
+	toolConfig, err := factory(ctx, name, decoder)
+	if err != nil {
+		return nil, fmt.Errorf("unable to parse tool %q as type %q: %w", name, resourceType, err)
+	}
+	return toolConfig, nil
+}
+
+type ToolConfig interface {
+	ToolConfigType() string
+	Initialize(map[string]sources.Source) (Tool, error)
+}
+
+// https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations
+type ToolAnnotations struct {
+	DestructiveHint *bool `json:"destructiveHint,omitempty" yaml:"destructiveHint,omitempty"`
+	IdempotentHint  *bool `json:"idempotentHint,omitempty" yaml:"idempotentHint,omitempty"`
+	OpenWorldHint   *bool `json:"openWorldHint,omitempty" yaml:"openWorldHint,omitempty"`
+	ReadOnlyHint    *bool `json:"readOnlyHint,omitempty" yaml:"readOnlyHint,omitempty"`
+}
+
+type AccessToken string
+
+func (token AccessToken) ParseBearerToken() (string, error) {
+	headerParts := strings.Split(string(token), " ")
+	if len(headerParts) != 2 || strings.ToLower(headerParts[0]) != "bearer" {
+		return "", util.NewClientServerError("authorization header must be in the format 'Bearer <token>'", http.StatusUnauthorized, nil)
+	}
+	return headerParts[1], nil
+}
+
+type Tool interface {
+	Invoke(context.Context, SourceProvider, parameters.ParamValues, AccessToken) (any, util.ToolboxError)
+	EmbedParams(context.Context, parameters.ParamValues, map[string]embeddingmodels.EmbeddingModel) (parameters.ParamValues, error)
+	Manifest() Manifest
+	McpManifest() McpManifest
+	Authorized([]string) bool
+	RequiresClientAuthorization(SourceProvider) (bool, error)
+	ToConfig() ToolConfig
+	GetAuthTokenHeaderName(SourceProvider) (string, error)
+	GetParameters() parameters.Parameters
+}
+
+// SourceProvider defines the minimal view of the server.ResourceManager
+// that the Tool package needs.
+// This is implemented to prevent import cycles.
+type SourceProvider interface {
+	GetSource(sourceName string) (sources.Source, bool)
+}
+
+// Manifest is the representation of tools sent to Client SDKs.
+type Manifest struct {
+	Description  string                         `json:"description"`
+	Parameters   []parameters.ParameterManifest `json:"parameters"`
+	AuthRequired []string                       `json:"authRequired"`
+}
+
+// Definition for a tool the MCP client can call.
+type McpManifest struct {
+	// The name of the tool.
+	Name string `json:"name"`
+	// A human-readable description of the tool.
+	Description string           `json:"description,omitempty"`
+	Annotations *ToolAnnotations `json:"annotations,omitempty"`
+	// A JSON Schema object defining the expected parameters for the tool.
+	InputSchema parameters.McpToolsSchema `json:"inputSchema,omitempty"`
+	Metadata    map[string]any            `json:"_meta,omitempty"`
+}
+
+func GetMcpManifest(name, desc string, authInvoke []string, params parameters.Parameters, annotations *ToolAnnotations) McpManifest {
+	inputSchema, authParams := params.McpManifest()
+	mcpManifest := McpManifest{
+		Name:        name,
+		Description: desc,
+		InputSchema: inputSchema,
+		Annotations: annotations,
+	}
+
+	// construct metadata, if applicable
+	metadata := make(map[string]any)
+	if len(authInvoke) > 0 {
+		metadata["toolbox/authInvoke"] = authInvoke
+	}
+	if len(authParams) > 0 {
+		metadata["toolbox/authParam"] = authParams
+	}
+	if len(metadata) > 0 {
+		mcpManifest.Metadata = metadata
+	}
+	return mcpManifest
+}
+
+// Helper function that returns if a tool invocation request is authorized
+func IsAuthorized(authRequiredSources []string, verifiedAuthServices []string) bool {
+	if len(authRequiredSources) == 0 {
+		// no authorization requirement
+		return true
+	}
+	for _, a := range authRequiredSources {
+		if slices.Contains(verifiedAuthServices, a) {
+			return true
+		}
+	}
+	return false
+}
+
+func GetCompatibleSource[T any](resourceMgr SourceProvider, sourceName, toolName, toolType string) (T, error) {
+	var zero T
+	s, ok := resourceMgr.GetSource(sourceName)
+	if !ok {
+		return zero, fmt.Errorf("unable to retrieve source %q for tool %q", sourceName, toolName)
+	}
+	source, ok := s.(T)
+	if !ok {
+		return zero, fmt.Errorf("invalid source for %q tool: source %q is not a compatible type", toolType, sourceName)
+	}
+	return source, nil
+}

@@ -1,0 +1,1409 @@
+{
+  "claude-educational-ai-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/claude-educational-ai-skills/manifest.json",
+    "content_base_url": "data/repos/claude-educational-ai-skills/content/",
+    "author": "ChatGPT3a01",
+    "description": "AI skills set for educational researchers, teachers, and digital learning platform developers. Includes curriculum design, assessment generation, etc."
+  },
+  "EdTech-AI-Coach": {
+    "type": "hosted",
+    "manifest_url": "data/repos/edtech-ai-coach/manifest.json",
+    "content_base_url": "data/repos/edtech-ai-coach/content/",
+    "author": "VaibhavKanojia3773",
+    "description": "Python-based tool using Claude to analyze student test data (JSON) and generate personalized, motivating feedback reports (PDF)."
+  },
+  "ELA-Tutor-Agent": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ela-tutor-agent/manifest.json",
+    "content_base_url": "data/repos/ela-tutor-agent/content/",
+    "author": "cozette-brown",
+    "description": "An experimental System Prompt transforming Claude into a professional English Language Arts (ELA) tutor."
+  },
+  "quiz-master": {
+    "type": "hosted",
+    "manifest_url": "data/repos/quiz-master/manifest.json",
+    "content_base_url": "data/repos/quiz-master/content/",
+    "author": "tanmaypatil",
+    "description": "App generating general knowledge quizzes using GenAI and Claude Code."
+  },
+  "apprenticemode": {
+    "type": "hosted",
+    "manifest_url": "data/repos/apprenticemode/manifest.json",
+    "content_base_url": "data/repos/apprenticemode/content/",
+    "author": "yavzius",
+    "description": "A unique skill to detect user \"Knowledge Gaps\". Infers what you don't know from your Prompt."
+  },
+  "EduBase": {
+    "type": "hosted",
+    "manifest_url": "data/repos/edubase/manifest.json",
+    "content_base_url": "data/repos/edubase/content/",
+    "author": "EduBase",
+    "description": "Interact with EduBase, an e-learning platform with quizzing and exam management capabilities."
+  },
+  "Canvas LMS": {
+    "type": "hosted",
+    "manifest_url": "data/repos/canvas_lms/manifest.json",
+    "content_base_url": "data/repos/canvas_lms/content/",
+    "author": "ahnopologetic",
+    "description": "Connects to the Canvas Learning Management System to access course data, assignments, and announcements."
+  },
+  "Educational Tutor MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/educational_tutor_mcp/manifest.json",
+    "content_base_url": "data/repos/educational_tutor_mcp/content/",
+    "author": "iamisaackn",
+    "description": "AI-powered educational toolkit built on the Model Context Protocol (MCP)."
+  },
+  "teacher-prep": {
+    "type": "hosted",
+    "manifest_url": "data/repos/teacher-prep/manifest.json",
+    "content_base_url": "data/repos/teacher-prep/content/",
+    "author": "870021840",
+    "description": "教师备课助手，用于小学语文教学备课。支持古诗、现代文、寓言、童话等各类课文。当用户提出备课需求时，自动执行：(1)搜索课文相关资料（原文、作者、背景、生字词、段落分析等），生成markdown备课资料；(2)生成教案PPT；(3)生成Word格式课后练习题及参考答案。适用于小学各年级语文备课场景。"
+  },
+  "Kvante": {
+    "type": "hosted",
+    "manifest_url": "data/repos/kvante/manifest.json",
+    "content_base_url": "data/repos/kvante/content/",
+    "author": "MaxPowerBoy1980",
+    "description": "AI math assistant helping students recognize handwritten math problems via OCR and providing **step-by-step solutions** (rather than just answers)."
+  },
+  "MCPR (R Language)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mcpr_(r_language)/manifest.json",
+    "content_base_url": "data/repos/mcpr_(r_language)/content/",
+    "author": "phisanti",
+    "description": "Enables AI agents to participate in interactive live R sessions for statistical analysis."
+  },
+  "HOCR (Math Capture)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/hocr_(math_capture)/manifest.json",
+    "content_base_url": "data/repos/hocr_(math_capture)/content/",
+    "author": "Wooonster",
+    "description": "Extracts handwritten mathematical formulas from images and converts them to LaTeX."
+  },
+  "Stella MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/stella_mcp/manifest.json",
+    "content_base_url": "data/repos/stella_mcp/content/",
+    "author": "bradleylab",
+    "description": "Create and validate system dynamics models (.stmx files) for scientific simulation."
+  },
+  "Calculator": {
+    "type": "hosted",
+    "manifest_url": "data/repos/calculator/manifest.json",
+    "content_base_url": "data/repos/calculator/content/",
+    "author": "githejie",
+    "description": "A precise numerical calculator to prevent LLM math hallucinations."
+  },
+  "Manim Composer": {
+    "type": "hosted",
+    "manifest_url": "data/repos/manim_composer/manifest.json",
+    "content_base_url": "data/repos/manim_composer/content/",
+    "author": "openclaw",
+    "description": "Create mathematical animations and visualizations using the Manim engine."
+  },
+  "Quantum Lab": {
+    "type": "hosted",
+    "manifest_url": "data/repos/quantum_lab/manifest.json",
+    "content_base_url": "data/repos/quantum_lab/content/",
+    "author": "openclaw",
+    "description": "Run quantum physics simulations and Python scripts for quantum lab experiments."
+  },
+  "NetKet MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/netket_mcp/manifest.json",
+    "content_base_url": "data/repos/netket_mcp/content/",
+    "author": "pathintegral-institute",
+    "description": "Interface with NetKet for simulating quantum many-body systems using neural networks."
+  },
+  "Fermat Math Engine": {
+    "type": "hosted",
+    "manifest_url": "data/repos/fermat_math_engine/manifest.json",
+    "content_base_url": "data/repos/fermat_math_engine/content/",
+    "author": "abhiphile",
+    "description": "Unifies SymPy, NumPy, and Matplotlib into one server for symbolic algebra, numerical computing, and visualization."
+  },
+  "Phys-MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/phys-mcp/manifest.json",
+    "content_base_url": "data/repos/phys-mcp/content/",
+    "author": "BlinkZer0",
+    "description": "A physics-focused CAS for solving physics problems with unit-aware calculations."
+  },
+  "Bullet MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/bullet_mcp_server/manifest.json",
+    "content_base_url": "data/repos/bullet_mcp_server/content/",
+    "author": "devgabrielsborges",
+    "description": "Interface with PyBullet physics engine to set up and control physics simulations."
+  },
+  "NASA MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/nasa_mcp_server/manifest.json",
+    "content_base_url": "data/repos/nasa_mcp_server/content/",
+    "author": "ProgramComputer",
+    "description": "Access NASA's API for astronomy data, including Mars Rover photos and Earth imagery."
+  },
+  "Wolfram Alpha MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/wolfram_alpha_mcp/manifest.json",
+    "content_base_url": "data/repos/wolfram_alpha_mcp/content/",
+    "author": "SecretiveShell",
+    "description": "Access Wolfram Alpha's computational intelligence for math, physics, and data queries."
+  },
+  "WolframAlpha": {
+    "type": "hosted",
+    "manifest_url": "data/repos/wolframalpha/manifest.json",
+    "content_base_url": "data/repos/wolframalpha/content/",
+    "author": "mcp-servers",
+    "description": "Integration with WolframAlpha for computational knowledge and science data."
+  },
+  "Manim": {
+    "type": "hosted",
+    "manifest_url": "data/repos/manim/manifest.json",
+    "content_base_url": "data/repos/manim/content/",
+    "author": "3b1b",
+    "description": "Animation engine for explanatory math videos. Create precise animations programmaticly."
+  },
+  "OpenFOAM": {
+    "type": "hosted",
+    "manifest_url": "data/repos/openfoam/manifest.json",
+    "content_base_url": "data/repos/openfoam/content/",
+    "author": "OpenFOAM",
+    "description": "Free, open source CFD (Computational Fluid Dynamics) software."
+  },
+  "Open-Meteo MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/open-meteo_mcp/manifest.json",
+    "content_base_url": "data/repos/open-meteo_mcp/content/",
+    "author": "open-meteo",
+    "description": "Weather data API integration."
+  },
+  "Bio Agents": {
+    "type": "hosted",
+    "manifest_url": "data/repos/bio_agents/manifest.json",
+    "content_base_url": "data/repos/bio_agents/content/",
+    "author": "dogeplusplus",
+    "description": "Integration with Protein Data Bank (PDB) and ChEMBL for checking drug data and protein structures."
+  },
+  "Ensembl MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ensembl_mcp/manifest.json",
+    "content_base_url": "data/repos/ensembl_mcp/content/",
+    "author": "effieklimi",
+    "description": "Access the Ensembl database for vertebrate genomes, gene lookups, and sequence alignments."
+  },
+  "PubMed Search": {
+    "type": "hosted",
+    "manifest_url": "data/repos/pubmed_search/manifest.json",
+    "content_base_url": "data/repos/pubmed_search/content/",
+    "author": "andybrandt",
+    "description": "Search and read medical and life sciences papers from PubMed."
+  },
+  "ClinicalTrials.gov MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/clinicaltrials.gov_mcp/manifest.json",
+    "content_base_url": "data/repos/clinicaltrials.gov_mcp/content/",
+    "author": "cyanheads",
+    "description": "Query the ClinicalTrials.gov API for clinical study records and eligibility criteria."
+  },
+  "AlphaFold MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/alphafold_mcp_server/manifest.json",
+    "content_base_url": "data/repos/alphafold_mcp_server/content/",
+    "author": "Augmented-Nature",
+    "description": "Retrieve predicted 3D protein structures from the AlphaFold Protein Structure Database."
+  },
+  "Reactome MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/reactome_mcp_server/manifest.json",
+    "content_base_url": "data/repos/reactome_mcp_server/content/",
+    "author": "Augmented-Nature",
+    "description": "Interface with Reactome pathway database for systems biology analysis."
+  },
+  "BioThings MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/biothings_mcp/manifest.json",
+    "content_base_url": "data/repos/biothings_mcp/content/",
+    "author": "longevity-genie",
+    "description": "Interact with BioThings APIs to retrieve gene, variant, drug, and chemical data."
+  },
+  "UCSC Genome Browser": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ucsc_genome_browser/manifest.json",
+    "content_base_url": "data/repos/ucsc_genome_browser/content/",
+    "author": "hlydecker",
+    "description": "Interact with the UCSC Genome Browser API to find genomes and chromosomes."
+  },
+  "BioContext": {
+    "type": "hosted",
+    "manifest_url": "data/repos/biocontext/manifest.json",
+    "content_base_url": "data/repos/biocontext/content/",
+    "author": "biocontext",
+    "description": "Utilities for finding and visualizing biological context in text."
+  },
+  "Ensembl REST": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ensembl_rest/manifest.json",
+    "content_base_url": "data/repos/ensembl_rest/content/",
+    "author": "Ensembl",
+    "description": "Access to Ensembl genome data via REST API."
+  },
+  "Materials Project MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/materials_project_mcp/manifest.json",
+    "content_base_url": "data/repos/materials_project_mcp/content/",
+    "author": "pathintegral-institute",
+    "description": "Access data on batteries, molecules, and crystal structures via the Materials Project API."
+  },
+  "MatMCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/matmcp/manifest.json",
+    "content_base_url": "data/repos/matmcp/content/",
+    "author": "ZuchGuillotine",
+    "description": "A dedicated server for Materials Science queries and chemical property retrieval."
+  },
+  "RDKit MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/rdkit_mcp_server/manifest.json",
+    "content_base_url": "data/repos/rdkit_mcp_server/content/",
+    "author": "tandemai-inc",
+    "description": "Wraps the RDKit library for cheminformatics tasks like SMILES generation and molecule modification."
+  },
+  "ChemMCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/chemmcp/manifest.json",
+    "content_base_url": "data/repos/chemmcp/content/",
+    "author": "OSU-NLP-Group",
+    "description": "A comprehensive chemistry toolkit for molecular analysis and interaction."
+  },
+  "XTB MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/xtb_mcp_server/manifest.json",
+    "content_base_url": "data/repos/xtb_mcp_server/content/",
+    "author": "PhelanShao",
+    "description": "Tools for generating Extended Tight-Binding (xTB) quantum chemistry calculation input files."
+  },
+  "Catalysis Hub": {
+    "type": "hosted",
+    "manifest_url": "data/repos/catalysis_hub/manifest.json",
+    "content_base_url": "data/repos/catalysis_hub/content/",
+    "author": "QuentinCody",
+    "description": "Search and retrieve scientific data from the Catalysis Hub database."
+  },
+  "Google Maps MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/google_maps_mcp/manifest.json",
+    "content_base_url": "data/repos/google_maps_mcp/content/",
+    "author": "modelcontextprotocol",
+    "description": "Access to geographical data and location services."
+  },
+  "DeepL API": {
+    "type": "hosted",
+    "manifest_url": "data/repos/deepl_api/manifest.json",
+    "content_base_url": "data/repos/deepl_api/content/",
+    "author": "DeepLcom",
+    "description": "High quality machine translation library."
+  },
+  "Music21": {
+    "type": "hosted",
+    "manifest_url": "data/repos/music21/manifest.json",
+    "content_base_url": "data/repos/music21/content/",
+    "author": "cuthbertLab",
+    "description": "A Toolkit for Computer-Aided Musicology."
+  },
+  "MuseScore": {
+    "type": "hosted",
+    "manifest_url": "data/repos/musescore/manifest.json",
+    "content_base_url": "data/repos/musescore/content/",
+    "author": "musescore",
+    "description": "Open source music notation software."
+  },
+  "Anthropic Web App Testing": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anthropic_web_app_testing/manifest.json",
+    "content_base_url": "data/repos/anthropic_web_app_testing/content/",
+    "author": "anthropics",
+    "description": "Automated web application testing skill using Playwright/Puppeteer concepts."
+  },
+  "paper2code-skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/paper2code-skill/manifest.json",
+    "content_base_url": "data/repos/paper2code-skill/content/",
+    "author": "issol14",
+    "description": "Skill to convert research papers into executable code using Claude Code."
+  },
+  "Git MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/git_mcp_server/manifest.json",
+    "content_base_url": "data/repos/git_mcp_server/content/",
+    "author": "modelcontextprotocol",
+    "description": "Tools to read, search, and manipulate git repositories locally."
+  },
+  "GitHub MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/github_mcp_server/manifest.json",
+    "content_base_url": "data/repos/github_mcp_server/content/",
+    "author": "modelcontextprotocol",
+    "description": "The official GitHub integration for MCP. Manage issues, PRs, and analyze repository content directly."
+  },
+  "Playwright MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/playwright_mcp/manifest.json",
+    "content_base_url": "data/repos/playwright_mcp/content/",
+    "author": "executeautomation",
+    "description": "Browser automation server enabling Claude to browse the web, test sites, and take screenshots."
+  },
+  "Desktop Commander": {
+    "type": "hosted",
+    "manifest_url": "data/repos/desktop_commander/manifest.json",
+    "content_base_url": "data/repos/desktop_commander/content/",
+    "author": "wonderwhy-er",
+    "description": "Deep control of your desktop OS. File management, terminal execution, and window control."
+  },
+  "Kubernetes MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/kubernetes_mcp/manifest.json",
+    "content_base_url": "data/repos/kubernetes_mcp/content/",
+    "author": "fluxninja",
+    "description": "Interact with Kubernetes clusters. View logs, describe pods, and manage resources."
+  },
+  "Sentry MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/sentry_mcp/manifest.json",
+    "content_base_url": "data/repos/sentry_mcp/content/",
+    "author": "sentry-demos",
+    "description": "Retrieve Sentry issues and errors to debug applications faster with context."
+  },
+  "awesome-vibe-coding": {
+    "type": "hosted",
+    "manifest_url": "data/repos/awesome-vibe-coding/manifest.json",
+    "content_base_url": "data/repos/awesome-vibe-coding/content/",
+    "author": "adriannoes",
+    "description": "Resource library for non-technical builders. Includes Cursor/Claude Rules, AI Prompts, and automation templates."
+  },
+  "coding-agent-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/coding-agent-skills/manifest.json",
+    "content_base_url": "data/repos/coding-agent-skills/content/",
+    "author": "Miaoge-Ge",
+    "description": "General expert system prompt library, including bilingual role settings (e.g., Deep Learning Expert, Architect)."
+  },
+  "test-generator": {
+    "type": "hosted",
+    "manifest_url": "data/repos/test-generator/manifest.json",
+    "content_base_url": "data/repos/test-generator/content/",
+    "author": "mkdirrobert",
+    "description": "Universal test generation skill for Claude Code, supports self-learning and covers 9 programming languages."
+  },
+  "mlx-dev-skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mlx-dev-skill/manifest.json",
+    "content_base_url": "data/repos/mlx-dev-skill/content/",
+    "author": "tkwn2080",
+    "description": "Skill specifically for writing idiomatic Apple MLX code on Apple Silicon."
+  },
+  "prompt-builder": {
+    "type": "hosted",
+    "manifest_url": "data/repos/prompt-builder/manifest.json",
+    "content_base_url": "data/repos/prompt-builder/content/",
+    "author": "Sorata-sensei",
+    "description": "Interactive form helping non-technical students generate high-quality Claude/ChatGPT prompts for building PWA apps."
+  },
+  "Octocode MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/octocode_mcp/manifest.json",
+    "content_base_url": "data/repos/octocode_mcp/content/",
+    "author": "bgauryy",
+    "description": "MCP server for semantic code research across repositories, allowing you to find real implementations."
+  },
+  "MCP JS": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mcp_js/manifest.json",
+    "content_base_url": "data/repos/mcp_js/content/",
+    "author": "r33drichards",
+    "description": "A secure JavaScript execution sandbox using V8 for running locally generated code."
+  },
+  "Neovim MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/neovim_mcp/manifest.json",
+    "content_base_url": "data/repos/neovim_mcp/content/",
+    "author": "linw1995",
+    "description": "Allows LLMs to interact directly with a Neovim instance to read buffers and edit text."
+  },
+  "VS Code MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/vs_code_mcp_server/manifest.json",
+    "content_base_url": "data/repos/vs_code_mcp_server/content/",
+    "author": "juehang",
+    "description": "Allows an external agent to control VS Code, read the file tree, and see linter errors."
+  },
+  "Smart Contracts Wizard": {
+    "type": "hosted",
+    "manifest_url": "data/repos/smart_contracts_wizard/manifest.json",
+    "content_base_url": "data/repos/smart_contracts_wizard/content/",
+    "author": "OpenZeppelin",
+    "description": "Generates secure smart contracts based on OpenZeppelin templates."
+  },
+  "Go Language Server (gopls)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/go_language_server_(gopls)/manifest.json",
+    "content_base_url": "data/repos/go_language_server_(gopls)/content/",
+    "author": "hloiseau",
+    "description": "Interact with the Go Language Server Protocol to explain code and find definitions."
+  },
+  "MindsDB MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mindsdb_mcp/manifest.json",
+    "content_base_url": "data/repos/mindsdb_mcp/content/",
+    "author": "mindsdb",
+    "description": "Connects Claude to MindsDB's AI layer for databases. Train models and make predictions via SQL."
+  },
+  "SQLite Explorer": {
+    "type": "hosted",
+    "manifest_url": "data/repos/sqlite_explorer/manifest.json",
+    "content_base_url": "data/repos/sqlite_explorer/content/",
+    "author": "hannesrudolph",
+    "description": "Safe, read-only access to SQLite databases. Explore tables and schema without risk."
+  },
+  "DBHub": {
+    "type": "hosted",
+    "manifest_url": "data/repos/dbhub/manifest.json",
+    "content_base_url": "data/repos/dbhub/content/",
+    "author": "bytebase",
+    "description": "Database version control and collaboration tool. Like GitHub for your database schema."
+  },
+  "Neon MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/neon_mcp/manifest.json",
+    "content_base_url": "data/repos/neon_mcp/content/",
+    "author": "neondatabase",
+    "description": "Serverless Postgres operations via MCP. Scale specific branches of data for testing."
+  },
+  "a11y-specialist-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/a11y-specialist-skills/manifest.json",
+    "content_base_url": "data/repos/a11y-specialist-skills/content/",
+    "author": "masuP9",
+    "description": "Accessibility specialist skill plugin for Claude Code."
+  },
+  "Docker MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/docker_mcp/manifest.json",
+    "content_base_url": "data/repos/docker_mcp/content/",
+    "author": "ckreiling",
+    "description": "Manage Docker containers, images, and volumes directly from Claude chat."
+  },
+  "LeetCode MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/leetcode_mcp/manifest.json",
+    "content_base_url": "data/repos/leetcode_mcp/content/",
+    "author": "jinzcdev",
+    "description": "Enable AI to search and retrieve LeetCode programming problems, solutions, and submission data."
+  },
+  "OpenAPI Explorer": {
+    "type": "hosted",
+    "manifest_url": "data/repos/openapi_explorer/manifest.json",
+    "content_base_url": "data/repos/openapi_explorer/content/",
+    "author": "kadykov",
+    "description": "Explore and understand API structures by interacting with OpenAPI specifications."
+  },
+  "Code Mentor": {
+    "type": "hosted",
+    "manifest_url": "data/repos/code_mentor/manifest.json",
+    "content_base_url": "data/repos/code_mentor/content/",
+    "author": "openclaw",
+    "description": "Comprehensive AI programming tutor for all levels of experience."
+  },
+  "Backend Patterns": {
+    "type": "hosted",
+    "manifest_url": "data/repos/backend_patterns/manifest.json",
+    "content_base_url": "data/repos/backend_patterns/content/",
+    "author": "openclaw",
+    "description": "Guide to backend architecture patterns, API design, and database management."
+  },
+  "Git Essentials": {
+    "type": "hosted",
+    "manifest_url": "data/repos/git_essentials/manifest.json",
+    "content_base_url": "data/repos/git_essentials/content/",
+    "author": "openclaw",
+    "description": "Essential Git commands and workflows for version control mastery."
+  },
+  "Docker Essentials": {
+    "type": "hosted",
+    "manifest_url": "data/repos/docker_essentials/manifest.json",
+    "content_base_url": "data/repos/docker_essentials/content/",
+    "author": "openclaw",
+    "description": "Essential Docker commands and workflows for containerization."
+  },
+  "Postgres MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/postgres_mcp/manifest.json",
+    "content_base_url": "data/repos/postgres_mcp/content/",
+    "author": "modelcontextprotocol",
+    "description": "Official Postgres MCP server. Inspect schemas and run queries."
+  },
+  "LeetCode": {
+    "type": "hosted",
+    "manifest_url": "data/repos/leetcode/manifest.json",
+    "content_base_url": "data/repos/leetcode/content/",
+    "author": "unknown",
+    "description": "Platform for learning programming and preparing for interviews."
+  },
+  "Kubernetes CLI": {
+    "type": "hosted",
+    "manifest_url": "data/repos/kubernetes_cli/manifest.json",
+    "content_base_url": "data/repos/kubernetes_cli/content/",
+    "author": "kubernetes",
+    "description": "Production-grade container orchestration."
+  },
+  "Chrome DevTools Protocol": {
+    "type": "hosted",
+    "manifest_url": "data/repos/chrome_devtools_protocol/manifest.json",
+    "content_base_url": "data/repos/chrome_devtools_protocol/content/",
+    "author": "ChromeDevTools",
+    "description": "Tools to debug and profile web applications."
+  },
+  "Git MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/git_mcp/manifest.json",
+    "content_base_url": "data/repos/git_mcp/content/",
+    "author": "idosal",
+    "description": "Tools to read, search, and manipulate local Git repositories. Visualize history and diffs."
+  },
+  "AI2-THOR": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ai2-thor/manifest.json",
+    "content_base_url": "data/repos/ai2-thor/content/",
+    "author": "allenai",
+    "description": "An interactive 3D environment for visual AI, enabling agents to navigate and interact with objects."
+  },
+  "ThreeDWorld (TDW)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/threedworld_(tdw)/manifest.json",
+    "content_base_url": "data/repos/threedworld_(tdw)/content/",
+    "author": "threedworld-mit",
+    "description": "A platform for interactive physical simulation of high-fidelity sensory data."
+  },
+  "UnrealZoo": {
+    "type": "hosted",
+    "manifest_url": "data/repos/unrealzoo/manifest.json",
+    "content_base_url": "data/repos/unrealzoo/content/",
+    "author": "UnrealZoo",
+    "description": "A platform for developing and evaluating embodied AI agents in Unreal Engine 5 (ICCV 2025)."
+  },
+  "Anthropic XLSX Skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anthropic_xlsx_skill/manifest.json",
+    "content_base_url": "data/repos/anthropic_xlsx_skill/content/",
+    "author": "anthropics",
+    "description": "Official skill for analyzing and manipulating Excel spreadsheets. Calculate data and generate insights."
+  },
+  "Firecrawl MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/firecrawl_mcp/manifest.json",
+    "content_base_url": "data/repos/firecrawl_mcp/content/",
+    "author": "firecrawl",
+    "description": "Advanced web scraping/crawling MCP turning websites into LLM-ready markdown. Handles dynamic content."
+  },
+  "BrowserBase MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/browserbase_mcp/manifest.json",
+    "content_base_url": "data/repos/browserbase_mcp/content/",
+    "author": "browserbase",
+    "description": "Cloud-based headless browser for AI. Allows running browser automation scripts in a secure cloud environment."
+  },
+  "GenAI Toolbox": {
+    "type": "hosted",
+    "manifest_url": "data/repos/genai_toolbox/manifest.json",
+    "content_base_url": "data/repos/genai_toolbox/content/",
+    "author": "googleapis",
+    "description": "Official Google tools for BigQuery, AlloyDB, etc. Interact with massive datasets using natural language."
+  },
+  "claude-skill-data-cleaner": {
+    "type": "hosted",
+    "manifest_url": "data/repos/claude-skill-data-cleaner/manifest.json",
+    "content_base_url": "data/repos/claude-skill-data-cleaner/content/",
+    "author": "brook-miller",
+    "description": "Lets Claude check CSV files and create a Python script to clean data and prepare for analysis."
+  },
+  "activitywatch-analysis-skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/activitywatch-analysis-skill/manifest.json",
+    "content_base_url": "data/repos/activitywatch-analysis-skill/content/",
+    "author": "BayramAnnakov",
+    "description": "Weekly productivity analysis using ActivityWatch data. Calculates focus scores, detects \"death loops,\" and generates insights."
+  },
+  "Jupyter Notebook MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/jupyter_notebook_mcp/manifest.json",
+    "content_base_url": "data/repos/jupyter_notebook_mcp/content/",
+    "author": "datalayer",
+    "description": "Interact with Jupyter notebooks primarily for data analysis tasks."
+  },
+  "NetworkX Graph Analysis": {
+    "type": "hosted",
+    "manifest_url": "data/repos/networkx_graph_analysis/manifest.json",
+    "content_base_url": "data/repos/networkx_graph_analysis/content/",
+    "author": "brightlikethelight",
+    "description": "Perform graph analysis and visualization (centrality, community detection) using NetworkX."
+  },
+  "Fetch MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/fetch_mcp/manifest.json",
+    "content_base_url": "data/repos/fetch_mcp/content/",
+    "author": "zcaceres",
+    "description": "Flexibly fetch JSON, text, and HTML data from the web. Useful for gathering dataset material."
+  },
+  "Vizro (Data Viz)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/vizro_data_viz/manifest.json",
+    "content_base_url": "data/repos/vizro_data_viz/content/",
+    "author": "mckinsey",
+    "description": "Tools to create validated and maintainable data charts and dashboards."
+  },
+  "Kaggle MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/kaggle_mcp/manifest.json",
+    "content_base_url": "data/repos/kaggle_mcp/content/",
+    "author": "KrishnaPramodParupudi",
+    "description": "Browse Kaggle competitions, leaderboards, datasets, and kernels directly."
+  },
+  "Anthropic PPTX Skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anthropic_pptx_skill/manifest.json",
+    "content_base_url": "data/repos/anthropic_pptx_skill/content/",
+    "author": "anthropics",
+    "description": "Official skill for generating PowerPoint presentations programmatically."
+  },
+  "Anthropic Algorithmic Art": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anthropic_algorithmic_art/manifest.json",
+    "content_base_url": "data/repos/anthropic_algorithmic_art/content/",
+    "author": "anthropics",
+    "description": "Generates SVG-based algorithmic art using mathematical functions."
+  },
+  "chartjs-expert": {
+    "type": "hosted",
+    "manifest_url": "data/repos/chartjs-expert/manifest.json",
+    "content_base_url": "data/repos/chartjs-expert/content/",
+    "author": "sjnims",
+    "description": "Chart.js expert skill supporting interactive code generation and multi-framework integration (React/Vue/etc.)."
+  },
+  "census-demographics-skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/census-demographics-skill/manifest.json",
+    "content_base_url": "data/repos/census-demographics-skill/content/",
+    "author": "baofeng-dong",
+    "description": "Data visualization skill for Claude Code creating maps showing education, income, and demographic data."
+  },
+  "Observable-Plot-Claude-Skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/observable-plot-claude-skill/manifest.json",
+    "content_base_url": "data/repos/observable-plot-claude-skill/content/",
+    "author": "jkoets",
+    "description": "Skill guiding creation of data visualizations using Observable Plot (JS library)."
+  },
+  "Figma Context MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/figma_context_mcp/manifest.json",
+    "content_base_url": "data/repos/figma_context_mcp/content/",
+    "author": "GLips",
+    "description": "Extracts operational context from Figma designs to help Claude understand UI structure."
+  },
+  "neurodivergent-visual-org": {
+    "type": "hosted",
+    "manifest_url": "data/repos/neurodivergent-visual-org/manifest.json",
+    "content_base_url": "data/repos/neurodivergent-visual-org/content/",
+    "author": "JackReis",
+    "description": "Visual organization tool designed for Neurodivergent thinking - providing empathetic task breakdown and decision trees."
+  },
+  "pptx-mcp": {
+    "type": "hosted",
+    "manifest_url": "data/repos/pptx-mcp/manifest.json",
+    "content_base_url": "data/repos/pptx-mcp/content/",
+    "author": "samos123",
+    "description": "Simple MCP server to create slides using Python PPTX library."
+  },
+  "mcp-server-okppt": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mcp-server-okppt/manifest.json",
+    "content_base_url": "data/repos/mcp-server-okppt/content/",
+    "author": "NeekChaw",
+    "description": "Generates high-quality PPTX slides from SVG images created by LLMs. Ensures vector quality."
+  },
+  "Office-PowerPoint-MCP-Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/office-powerpoint-mcp-server/manifest.json",
+    "content_base_url": "data/repos/office-powerpoint-mcp-server/content/",
+    "author": "GongRzhe",
+    "description": "A powerful MCP server for PowerPoint manipulation using python-pptx. Create, edit, and manipulate presentations."
+  },
+  "claude-dolphin": {
+    "type": "hosted",
+    "manifest_url": "data/repos/claude-dolphin/manifest.json",
+    "content_base_url": "data/repos/claude-dolphin/content/",
+    "author": "nyldn",
+    "description": "Comprehensive UX/UI design system skill - includes WCAG 2.2 AA audit, design consistency checks, and Refactoring UI principles."
+  },
+  "Markmap": {
+    "type": "hosted",
+    "manifest_url": "data/repos/markmap/manifest.json",
+    "content_base_url": "data/repos/markmap/content/",
+    "author": "jinzcdev",
+    "description": "Converts Markdown content into interactive mind maps for visual learning."
+  },
+  "Excalidraw MCP App": {
+    "type": "hosted",
+    "manifest_url": "data/repos/excalidraw_mcp_app/manifest.json",
+    "content_base_url": "data/repos/excalidraw_mcp_app/content/",
+    "author": "excalidraw",
+    "description": "Official MCP app for Excalidraw. Create and edit beautiful hand-drawn diagrams programmatically."
+  },
+  "MCP Mermaid": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mcp_mermaid/manifest.json",
+    "content_base_url": "data/repos/mcp_mermaid/content/",
+    "author": "hustcc",
+    "description": "Generate Mermaid diagrams and charts dynamically using AI. Supports flowcharts, sequence diagrams, and more."
+  },
+  "Leap MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/leap_mcp/manifest.json",
+    "content_base_url": "data/repos/leap_mcp/content/",
+    "author": "sid-thephysicskid",
+    "description": "Transform any topic into an explainer video with AI narration and 3Blue1Brown-style animations."
+  },
+  "Manim MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/manim_mcp/manifest.json",
+    "content_base_url": "data/repos/manim_mcp/content/",
+    "author": "wstcpyt",
+    "description": "MCP server for Manim math animation engine. Generate precise mathematical animations code."
+  },
+  "Kroki MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/kroki_mcp/manifest.json",
+    "content_base_url": "data/repos/kroki_mcp/content/",
+    "author": "utain",
+    "description": "Converts textual diagram definitions (PlantUML, Mermaid, BlockDiag, etc.) into images via Kroki."
+  },
+  "Mindmap MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mindmap_mcp_server/manifest.json",
+    "content_base_url": "data/repos/mindmap_mcp_server/content/",
+    "author": "YuChenSSR",
+    "description": "Generate and manage mind maps. Helps in organizing thoughts and brainstorming."
+  },
+  "FFmpeg MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ffmpeg_mcp/manifest.json",
+    "content_base_url": "data/repos/ffmpeg_mcp/content/",
+    "author": "egoist",
+    "description": "An MCP server for FFmpeg. Process video and audio simply by chatting."
+  },
+  "Anthropic DOCX Skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anthropic_docx_skill/manifest.json",
+    "content_base_url": "data/repos/anthropic_docx_skill/content/",
+    "author": "anthropics",
+    "description": "Comprehensive document creation, editing, and analysis with support for tracked changes and formatting."
+  },
+  "Anthropic PDF Skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anthropic_pdf_skill/manifest.json",
+    "content_base_url": "data/repos/anthropic_pdf_skill/content/",
+    "author": "anthropics",
+    "description": "Comprehensive PDF manipulation toolkit for extracting text/tables, creating PDFs, and handling forms."
+  },
+  "writing-agent": {
+    "type": "hosted",
+    "manifest_url": "data/repos/writing-agent/manifest.json",
+    "content_base_url": "data/repos/writing-agent/content/",
+    "author": "dongbeixiaohuo",
+    "description": "An \"Anti-AI-flavor\" writing system based on Claude Code Skills. Supports full workflow from topic generation, style modeling to publication review."
+  },
+  "The-Crucible-Writing-System-For-Claude": {
+    "type": "hosted",
+    "manifest_url": "data/repos/the-crucible-writing-system-for-claude/manifest.json",
+    "content_base_url": "data/repos/the-crucible-writing-system-for-claude/content/",
+    "author": "forsonny",
+    "description": "Integrated writing system with three Claude Skills, guiding writers from story concept to completed first draft. Based on a 36-beat narrative framework."
+  },
+  "humanizer": {
+    "type": "hosted",
+    "manifest_url": "data/repos/humanizer/manifest.json",
+    "content_base_url": "data/repos/humanizer/content/",
+    "author": "blader",
+    "description": "A Claude Code skill specifically for removing \"AI generation traces\" from text, making language more natural and human-like."
+  },
+  "ux-writing-skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ux-writing-skill/manifest.json",
+    "content_base_url": "data/repos/ux-writing-skill/content/",
+    "author": "content-designer",
+    "description": "Systematic UX writing skill for enforcing content quality standards in design systems."
+  },
+  "vibe-writing": {
+    "type": "hosted",
+    "manifest_url": "data/repos/vibe-writing/manifest.json",
+    "content_base_url": "data/repos/vibe-writing/content/",
+    "author": "pakholeung37",
+    "description": "A wiki-style methodology for fiction writing collaboration with AI."
+  },
+  "academic-paper-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/academic-paper-skills/manifest.json",
+    "content_base_url": "data/repos/academic-paper-skills/content/",
+    "author": "lishix520",
+    "description": "System framework using Claude Code to plan and write academic papers. Includes \"Strategist\" (planning) and \"Composer\" (writing) skills."
+  },
+  "research-units-pipeline-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/research-units-pipeline-skills/manifest.json",
+    "content_base_url": "data/repos/research-units-pipeline-skills/content/",
+    "author": "WILLOSCAR",
+    "description": "Treating research pipelines as semantic execution units. Emphasizes evidence-first methodology to prevent hollow writing."
+  },
+  "academic-writing-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/academic-writing-skills/manifest.json",
+    "content_base_url": "data/repos/academic-writing-skills/content/",
+    "author": "bahayonghang",
+    "description": "Claude Code and Codex assistance capabilities optimized specifically for academic writing scenarios."
+  },
+  "GPT Researcher": {
+    "type": "hosted",
+    "manifest_url": "data/repos/gpt_researcher/manifest.json",
+    "content_base_url": "data/repos/gpt_researcher/content/",
+    "author": "assafelovic",
+    "description": "An autonomous agent that conducts deep research on any topic, scraping and aggregating info from web sources with citations."
+  },
+  "ZotLink": {
+    "type": "hosted",
+    "manifest_url": "data/repos/zotlink/manifest.json",
+    "content_base_url": "data/repos/zotlink/content/",
+    "author": "TonybotNi",
+    "description": "Production-ready MCP server for Zotero. Saves open preprints with rich metadata and smart PDF attachments."
+  },
+  "arXiv Search": {
+    "type": "hosted",
+    "manifest_url": "data/repos/arxiv_search/manifest.json",
+    "content_base_url": "data/repos/arxiv_search/content/",
+    "author": "andybrandt",
+    "description": "Search and read research papers directly from arXiv. Essential for literature review."
+  },
+  "Open Library": {
+    "type": "hosted",
+    "manifest_url": "data/repos/open_library/manifest.json",
+    "content_base_url": "data/repos/open_library/content/",
+    "author": "8enSmith",
+    "description": "Search for book and author information via the Internet Archive's Open Library API."
+  },
+  "Mendeley MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mendeley_mcp/manifest.json",
+    "content_base_url": "data/repos/mendeley_mcp/content/",
+    "author": "pallaprolus",
+    "description": "Search library, browse folders, and manage references in Mendeley."
+  },
+  "TexMCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/texmcp/manifest.json",
+    "content_base_url": "data/repos/texmcp/content/",
+    "author": "devroopsaha744",
+    "description": "Convert LaTeX into high-quality PDF documents or other formats."
+  },
+  "Doc Co-authoring": {
+    "type": "hosted",
+    "manifest_url": "data/repos/doc_co-authoring/manifest.json",
+    "content_base_url": "data/repos/doc_co-authoring/content/",
+    "author": "openclaw",
+    "description": "Structured workflow for co-authoring documents with AI, ensuring coherent voice and content."
+  },
+  "Nano PDF": {
+    "type": "hosted",
+    "manifest_url": "data/repos/nano_pdf/manifest.json",
+    "content_base_url": "data/repos/nano_pdf/content/",
+    "author": "openclaw",
+    "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI."
+  },
+  "Mineru PDF Parser": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mineru_pdf_parser/manifest.json",
+    "content_base_url": "data/repos/mineru_pdf_parser/content/",
+    "author": "openclaw",
+    "description": "Fast, high-quality local PDF parsing into Markdown/JSON using CPU."
+  },
+  "Nutrient Doc Processing": {
+    "type": "hosted",
+    "manifest_url": "data/repos/nutrient_doc_processing/manifest.json",
+    "content_base_url": "data/repos/nutrient_doc_processing/content/",
+    "author": "openclaw",
+    "description": "Enterprise-grade document processing: conversion, extraction, and OCR."
+  },
+  "Markdown Converter": {
+    "type": "hosted",
+    "manifest_url": "data/repos/markdown_converter/manifest.json",
+    "content_base_url": "data/repos/markdown_converter/content/",
+    "author": "openclaw",
+    "description": "Convert various document formats (HTML, Text, etc.) into clean Markdown."
+  },
+  "Typst MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/typst_mcp/manifest.json",
+    "content_base_url": "data/repos/typst_mcp/content/",
+    "author": "johannesbrandenburger",
+    "description": "Compiles and validates Typst code (a modern alternative to LaTeX)."
+  },
+  "MarkItDown": {
+    "type": "hosted",
+    "manifest_url": "data/repos/markitdown/manifest.json",
+    "content_base_url": "data/repos/markitdown/content/",
+    "author": "microsoft",
+    "description": "Converts various file formats (PDF, PowerPoint, Word) into clean Markdown."
+  },
+  "Pandoc MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/pandoc_mcp/manifest.json",
+    "content_base_url": "data/repos/pandoc_mcp/content/",
+    "author": "vivekVells",
+    "description": "Seamless document format conversion (Docx ↔ Markdown ↔ HTML ↔ PDF) using Pandoc."
+  },
+  "Microsoft 365 MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/microsoft_365_mcp/manifest.json",
+    "content_base_url": "data/repos/microsoft_365_mcp/content/",
+    "author": "Softeria",
+    "description": "Connects to Microsoft Graph API for Word, Excel, and Outlook."
+  },
+  "Wikipedia MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/wikipedia_mcp/manifest.json",
+    "content_base_url": "data/repos/wikipedia_mcp/content/",
+    "author": "Rudra-ravi",
+    "description": "Search and retrieve summaries from Wikipedia."
+  },
+  "PDFMathTranslate": {
+    "type": "hosted",
+    "manifest_url": "data/repos/pdfmathtranslate/manifest.json",
+    "content_base_url": "data/repos/pdfmathtranslate/content/",
+    "author": "PDFMathTranslate",
+    "description": "Translate scientific papers while preserving layout and formulas."
+  },
+  "claudian": {
+    "type": "hosted",
+    "manifest_url": "data/repos/claudian/manifest.json",
+    "content_base_url": "data/repos/claudian/content/",
+    "author": "YishenTu",
+    "description": "Obsidian plugin embedding Claude Code into your note vault as an AI collaborator."
+  },
+  "Logseq Skill": {
+    "type": "hosted",
+    "manifest_url": "data/repos/logseq_skill/manifest.json",
+    "content_base_url": "data/repos/logseq_skill/content/",
+    "author": "openclaw",
+    "description": "Commands for interacting with a local Logseq graph/knowledge base."
+  },
+  "Rationality": {
+    "type": "hosted",
+    "manifest_url": "data/repos/rationality/manifest.json",
+    "content_base_url": "data/repos/rationality/content/",
+    "author": "openclaw",
+    "description": "A structured framework for rational thinking, bias checking, and decision making."
+  },
+  "claude-code-obsidian-starter": {
+    "type": "hosted",
+    "manifest_url": "data/repos/claude-code-obsidian-starter/manifest.json",
+    "content_base_url": "data/repos/claude-code-obsidian-starter/content/",
+    "author": "ArtemXTech",
+    "description": "Free starter kit for Claude Code + Obsidian. Pre-configured with Skills for project management, tasks, daily routines."
+  },
+  "productivity-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/productivity-skills/manifest.json",
+    "content_base_url": "data/repos/productivity-skills/content/",
+    "author": "mcdow-webworks",
+    "description": "Transforms Claude into an AI productivity partner. Includes note skills supporting conversational information capture and smart search."
+  },
+  "NotebookLM MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/notebooklm_mcp/manifest.json",
+    "content_base_url": "data/repos/notebooklm_mcp/content/",
+    "author": "PleasePrompto",
+    "description": "Integrates Claude with Google's NotebookLM allowing your AI agent to research your own documentation with grounded answers."
+  },
+  "Official Notion MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/official_notion_mcp_server/manifest.json",
+    "content_base_url": "data/repos/official_notion_mcp_server/content/",
+    "author": "makenotion",
+    "description": "Official MCP server from Notion. Enables reading pages, searching databases, and creating content directly from Claude."
+  },
+  "Anki MCP Server": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anki_mcp_server/manifest.json",
+    "content_base_url": "data/repos/anki_mcp_server/content/",
+    "author": "nailuoGG",
+    "description": "Connects Claude to Anki via AnkiConnect. Generate flashcards from conversation and automatically add them to decks."
+  },
+  "PDF Reader MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/pdf_reader_mcp/manifest.json",
+    "content_base_url": "data/repos/pdf_reader_mcp/content/",
+    "author": "SylphxAI",
+    "description": "High-performance PDF processing server optimized for speed (10x faster) and accuracy in text extraction."
+  },
+  "Obsidian REST MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/obsidian_rest_mcp/manifest.json",
+    "content_base_url": "data/repos/obsidian_rest_mcp/content/",
+    "author": "MarkusPfundstein",
+    "description": "Interact with a local Obsidian vault via REST API for knowledge management."
+  },
+  "Google Drive MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/google_drive_mcp/manifest.json",
+    "content_base_url": "data/repos/google_drive_mcp/content/",
+    "author": "isaacphi",
+    "description": "Read and search for files within Google Drive."
+  },
+  "OpenZIM MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/openzim_mcp/manifest.json",
+    "content_base_url": "data/repos/openzim_mcp/content/",
+    "author": "cameronrye",
+    "description": "Access ZIM format knowledge bases offline (Wikipedia, etc.) without internet access."
+  },
+  "Rember (Flashcards)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/rember_(flashcards)/manifest.json",
+    "content_base_url": "data/repos/rember_(flashcards)/content/",
+    "author": "rember",
+    "description": "Create spaced repetition flashcards in Rember to remember anything you learn."
+  },
+  "Apple Notes MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/apple_notes_mcp/manifest.json",
+    "content_base_url": "data/repos/apple_notes_mcp/content/",
+    "author": "henilcalagiya",
+    "description": "Read and write Apple Notes directly. Organize lecture notes on macOS."
+  },
+  "Exa AI Search": {
+    "type": "hosted",
+    "manifest_url": "data/repos/exa_ai_search/manifest.json",
+    "content_base_url": "data/repos/exa_ai_search/content/",
+    "author": "exa-labs",
+    "description": "A search engine designed specifically for AI agents to retrieve high-quality, relevant content."
+  },
+  "Brave Search": {
+    "type": "hosted",
+    "manifest_url": "data/repos/brave_search/manifest.json",
+    "content_base_url": "data/repos/brave_search/content/",
+    "author": "brave",
+    "description": "Privacy-focused web search to let agents find current information without tracking."
+  },
+  "Slack MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/slack_mcp/manifest.json",
+    "content_base_url": "data/repos/slack_mcp/content/",
+    "author": "jtalk22",
+    "description": "Interact with Slack channels and DMs. Good for study groups or class communication."
+  },
+  "Time Tracking (Toggl)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/time_tracking_(toggl)/manifest.json",
+    "content_base_url": "data/repos/time_tracking_(toggl)/content/",
+    "author": "louis030195",
+    "description": "Start and stop timers via Toggl Track. Useful for the Pomodoro technique."
+  },
+  "Filesystem (Go)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/filesystem_(go)/manifest.json",
+    "content_base_url": "data/repos/filesystem_(go)/content/",
+    "author": "mark3labs",
+    "description": "Robust local file system access to let agents read your project files (Go implementation)."
+  },
+  "Discord MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/discord_mcp/manifest.json",
+    "content_base_url": "data/repos/discord_mcp/content/",
+    "author": "v-v-vishnu",
+    "description": "Connects Claude to Discord servers. Read messages and manage communities."
+  },
+  "Linear MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/linear_mcp/manifest.json",
+    "content_base_url": "data/repos/linear_mcp/content/",
+    "author": "jerhadf",
+    "description": "Manage tasks and issues in Linear. Create tickets from conversations."
+  },
+  "Todoist MCP": {
+    "type": "hosted",
+    "manifest_url": "data/repos/todoist_mcp/manifest.json",
+    "content_base_url": "data/repos/todoist_mcp/content/",
+    "author": "actionsOnGoogle",
+    "description": "Manage your Todoist tasks directly. Add homework or project deadlines."
+  },
+  "Resume-Analysis-Assistant": {
+    "type": "hosted",
+    "manifest_url": "data/repos/resume-analysis-assistant/manifest.json",
+    "content_base_url": "data/repos/resume-analysis-assistant/content/",
+    "author": "amogh-vardhan",
+    "description": "Uses NLP and Claude integration to analyze resume vs. job description (JD) matching."
+  },
+  "JobCoach": {
+    "type": "hosted",
+    "manifest_url": "data/repos/jobcoach/manifest.json",
+    "content_base_url": "data/repos/jobcoach/content/",
+    "author": "sayaleepande",
+    "description": "Intelligent career guidance Agent for resume review, skill gap analysis, and learning path planning."
+  },
+  "linkedin-mcp": {
+    "type": "hosted",
+    "manifest_url": "data/repos/linkedin-mcp/manifest.json",
+    "content_base_url": "data/repos/linkedin-mcp/content/",
+    "author": "pegasusheavy",
+    "description": "Model Context Protocol (MCP) server for managing LinkedIn profile, skills, and education background."
+  },
+  "claude-prompt-engineering-guide": {
+    "type": "hosted",
+    "manifest_url": "data/repos/claude-prompt-engineering-guide/manifest.json",
+    "content_base_url": "data/repos/claude-prompt-engineering-guide/content/",
+    "author": "ThamJiaHe",
+    "description": "Comprehensive guide for writing professional Claude prompts, including MCP, Skills integration. Aligns with Anthropic official best practices."
+  },
+  "awesome-claude-skills (mejba13)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/awesome-claude-skills_(mejba13)/manifest.json",
+    "content_base_url": "data/repos/awesome-claude-skills_(mejba13)/content/",
+    "author": "mejba13",
+    "description": "Verified Claude Skills collection."
+  },
+  "awesome-claude-skills (ponderous)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/awesome-claude-skills_(ponderous)/manifest.json",
+    "content_base_url": "data/repos/awesome-claude-skills_(ponderous)/content/",
+    "author": "ponderous-dustiness314",
+    "description": "Verified Claude Skills collection."
+  },
+  "everything-claude-code": {
+    "type": "hosted",
+    "manifest_url": "data/repos/everything-claude-code/manifest.json",
+    "content_base_url": "data/repos/everything-claude-code/content/",
+    "author": "affaan-m",
+    "description": "Ultimate collection of Claude Code configurations - Agents, Skills, Hooks, MCPs."
+  },
+  "skill-description-optimizer": {
+    "type": "hosted",
+    "manifest_url": "data/repos/skill-description-optimizer/manifest.json",
+    "content_base_url": "data/repos/skill-description-optimizer/content/",
+    "author": "LZMW",
+    "description": "\"Meta-skill\" for optimizing Claude Skill descriptions using data-driven analysis."
+  },
+  "Skill Seekers": {
+    "type": "hosted",
+    "manifest_url": "data/repos/skill_seekers/manifest.json",
+    "content_base_url": "data/repos/skill_seekers/content/",
+    "author": "yusufkaraaslan",
+    "description": "Converts documentation websites, git repos, and PDFs into structured Claude AI Skills to teach Claude new domains."
+  },
+  "Anthropic MCP Builder": {
+    "type": "hosted",
+    "manifest_url": "data/repos/anthropic_mcp_builder/manifest.json",
+    "content_base_url": "data/repos/anthropic_mcp_builder/content/",
+    "author": "anthropics",
+    "description": "A meta-skill that helps you build, test, and debug new MCP servers."
+  },
+  "Khanmigo": {
+    "type": "hosted",
+    "manifest_url": "data/repos/khanmigo/manifest.json",
+    "content_base_url": "data/repos/khanmigo/content/",
+    "author": "unknown",
+    "description": "Khan Academy's AI-powered guide that helps students learn by asking questions rather than giving answers."
+  },
+  "Claude for Education": {
+    "type": "hosted",
+    "manifest_url": "data/repos/claude_for_education/manifest.json",
+    "content_base_url": "data/repos/claude_for_education/content/",
+    "author": "unknown",
+    "description": "Anthropic's responsibly designed AI assistant for educational institutions."
+  },
+  "Duolingo Max": {
+    "type": "hosted",
+    "manifest_url": "data/repos/duolingo_max/manifest.json",
+    "content_base_url": "data/repos/duolingo_max/content/",
+    "author": "unknown",
+    "description": "Duolingo's subscription tier powered by GPT-4, featuring Explain My Answer and Roleplay."
+  },
+  "Speak": {
+    "type": "hosted",
+    "manifest_url": "data/repos/speak/manifest.json",
+    "content_base_url": "data/repos/speak/content/",
+    "author": "unknown",
+    "description": "AI language tutor focusing on spoken conversation practice."
+  },
+  "Quizlet Q-Chat": {
+    "type": "hosted",
+    "manifest_url": "data/repos/quizlet_q-chat/manifest.json",
+    "content_base_url": "data/repos/quizlet_q-chat/content/",
+    "author": "unknown",
+    "description": "AI-powered tutor built into Quizlet for interactive study sessions."
+  },
+  "EduChat": {
+    "type": "hosted",
+    "manifest_url": "data/repos/educhat/manifest.json",
+    "content_base_url": "data/repos/educhat/content/",
+    "author": "ECNU-ICALK",
+    "description": "An LLM developed by ECNU for education, identifying psychological and learning needs."
+  },
+  "ChatGLM-Edu (Zhipu)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/chatglm-edu_zhipu/manifest.json",
+    "content_base_url": "data/repos/chatglm-edu_zhipu/content/",
+    "author": "unknown",
+    "description": "Zhipu AI's educational model leveraging the powerful ChatGLM base."
+  },
+  "MathGPT (TAL)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/mathgpt_tal/manifest.json",
+    "content_base_url": "data/repos/mathgpt_tal/content/",
+    "author": "unknown",
+    "description": "TAL Education Group's large model specialized in mathematical problem solving."
+  },
+  "DeepSeek-Math": {
+    "type": "hosted",
+    "manifest_url": "data/repos/deepseek-math/manifest.json",
+    "content_base_url": "data/repos/deepseek-math/content/",
+    "author": "deepseek-ai",
+    "description": "A specialized math model that pushes the limits of mathematical reasoning in open language models."
+  },
+  "InternLM-Math": {
+    "type": "hosted",
+    "manifest_url": "data/repos/internlm-math/manifest.json",
+    "content_base_url": "data/repos/internlm-math/content/",
+    "author": "InternLM",
+    "description": "State-of-the-art bilingual (English/Chinese) open-sourced Math reasoning LLMs."
+  },
+  "MetaMath": {
+    "type": "hosted",
+    "manifest_url": "data/repos/metamath/manifest.json",
+    "content_base_url": "data/repos/metamath/content/",
+    "author": "meta-math",
+    "description": "A project to bootstrap your own mathematical questions for Large Language Models."
+  },
+  "LangChain": {
+    "type": "hosted",
+    "manifest_url": "data/repos/langchain/manifest.json",
+    "content_base_url": "data/repos/langchain/content/",
+    "author": "langchain-ai",
+    "description": "The industry standard framework for building context-aware reasoning applications and agents."
+  },
+  "CrewAI": {
+    "type": "hosted",
+    "manifest_url": "data/repos/crewai/manifest.json",
+    "content_base_url": "data/repos/crewai/content/",
+    "author": "crewAIInc",
+    "description": "Framework for orchestrating role-playing, autonomous AI agents working together."
+  },
+  "AI-Tutor": {
+    "type": "hosted",
+    "manifest_url": "data/repos/ai-tutor/manifest.json",
+    "content_base_url": "data/repos/ai-tutor/content/",
+    "author": "Hawary00",
+    "description": "Modular educational assistant leveraging LangChain, LangGraph, and RAG for science learning."
+  },
+  "Multi-Agent Study Assistant": {
+    "type": "hosted",
+    "manifest_url": "data/repos/multi-agent_study_assistant/manifest.json",
+    "content_base_url": "data/repos/multi-agent_study_assistant/content/",
+    "author": "A-R007",
+    "description": "Platform with 6 specialized agents (quizzes, roadmaps, Q&A) built with Phidata and LangChain."
+  },
+  "Evaluate Crew": {
+    "type": "hosted",
+    "manifest_url": "data/repos/evaluate_crew/manifest.json",
+    "content_base_url": "data/repos/evaluate_crew/content/",
+    "author": "poojithM",
+    "description": "A CrewAI-based system for quiz generation, performance analysis, and quality assurance."
+  },
+  "Multi-Agent RAG (Medical)": {
+    "type": "hosted",
+    "manifest_url": "data/repos/multi-agent_rag_(medical)/manifest.json",
+    "content_base_url": "data/repos/multi-agent_rag_(medical)/content/",
+    "author": "SJ9VRF",
+    "description": "AutoGen-based multi-agent RAG system specialized for medical education documents."
+  },
+  "smart-summarizer": {
+    "type": "hosted",
+    "manifest_url": "data/repos/smart-summarizer/manifest.json",
+    "content_base_url": "data/repos/smart-summarizer/content/",
+    "author": "27555402-spec",
+    "description": "Instantly summarize any content — articles, PDFs, YouTube videos, web pages, long documents, or pasted text. Extracts key points, action items, and insights. Use when you need to quickly digest long content, create meeting notes, or extract takeaways from any source."
+  },
+  "librag-knowledge-recall": {
+    "type": "hosted",
+    "manifest_url": "data/repos/librag-knowledge-recall/manifest.json",
+    "content_base_url": "data/repos/librag-knowledge-recall/content/",
+    "author": "7010g",
+    "description": "使用 LibRAG 本地 `/api/v1/librag/knowbase/recall` 接口做知识库数据召回。适用于中文场景下的知识库检索、资料召回、证据段落提取、出处定位、基于知识库的问答取证，以及用户用“知识库查询”“数据召回”“从文档里找答案”等表达发起的任务。\r"
+  },
+  "wechat-article-reader": {
+    "type": "hosted",
+    "manifest_url": "data/repos/wechat-article-reader/manifest.json",
+    "content_base_url": "data/repos/wechat-article-reader/content/",
+    "author": "8421bit",
+    "description": "将微信公众号文章导出为 Markdown 格式。当用户提供微信公众号链接 (mp.weixin.qq.com) 或要求下载/导出/保存微信文章时触发。默认保存到工作空间的 source 目录。"
+  },
+  "z-article-card": {
+    "type": "hosted",
+    "manifest_url": "data/repos/z-article-card/manifest.json",
+    "content_base_url": "data/repos/z-article-card/content/",
+    "author": "aatrooox",
+    "description": "长文分页卡片生成器（文章→多张 PNG）。触发词：长文、文章转图、分页卡片、多图、帮我把文章做成图、做成卡片、生成多图。"
+  },
+  "youtube-summarizer": {
+    "type": "hosted",
+    "manifest_url": "data/repos/youtube-summarizer/manifest.json",
+    "content_base_url": "data/repos/youtube-summarizer/content/",
+    "author": "abe238",
+    "description": "Automatically fetch YouTube video transcripts, generate structured summaries, and send full transcripts to messaging platforms. Detects YouTube URLs and provides metadata, key insights, and downloadable transcripts."
+  },
+  "afrexai-data-analyst": {
+    "type": "hosted",
+    "manifest_url": "data/repos/afrexai-data-analyst/manifest.json",
+    "content_base_url": "data/repos/afrexai-data-analyst/content/",
+    "author": "1kalin",
+    "description": "**Transform raw data into decisions. Not just charts — answers.**"
+  },
+  "clinical-data-extractor": {
+    "type": "hosted",
+    "manifest_url": "data/repos/clinical-data-extractor/manifest.json",
+    "content_base_url": "data/repos/clinical-data-extractor/content/",
+    "author": "abinww",
+    "description": "Extract clinical trial data from pharmaceutical conference websites or PDF documents. Use when user provides a URL or PDF file containing innovative drug clinical trial data and needs structured extraction of: drug name, manufacturer, indication, clinical phase, trial name, conference, efficacy and "
+  },
+  "obsidian-cli-skills": {
+    "type": "hosted",
+    "manifest_url": "data/repos/obsidian-cli-skills/manifest.json",
+    "content_base_url": "data/repos/obsidian-cli-skills/content/",
+    "author": "0x-cryptopriest",
+    "description": "> 更新时间：2026-03-05"
+  },
+  "torah-scholar": {
+    "type": "hosted",
+    "manifest_url": "data/repos/torah-scholar/manifest.json",
+    "content_base_url": "data/repos/torah-scholar/content/",
+    "author": "abeperl",
+    "description": "Search and explore Jewish texts (Torah, Tanach, Talmud, Midrash, commentaries) via Sefaria API. Use when researching Torah sources, looking up verses, finding commentaries, cross-references, or preparing divrei Torah. Supports Hebrew and English. Handles references like \"Genesis 1:1\", \"Berakhot 2a\","
+  },
+  "tavily-research-pro": {
+    "type": "hosted",
+    "manifest_url": "data/repos/tavily-research-pro/manifest.json",
+    "content_base_url": "data/repos/tavily-research-pro/content/",
+    "author": "airoom-ai",
+    "description": "Professional AI-powered search and deep research engine. Features multi-dimensional data aggregation, semantic analysis, and automated report generation for structured information gathering."
+  }
+}

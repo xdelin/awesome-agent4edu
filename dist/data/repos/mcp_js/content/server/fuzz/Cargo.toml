@@ -1,0 +1,50 @@
+[package]
+name = "server-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+arbitrary = { version = "1", features = ["derive"] }
+# Pin serde below 1.0.220 to avoid incompatibility with swc_config 2.0.0
+# (swc_config uses serde::__private which was removed in serde 1.0.220+)
+serde = ">=1.0,<1.0.220"
+
+[dependencies.server]
+path = ".."
+
+[dependencies.deno_core]
+version = "0.381"
+
+# Override rmcp to use the same git source as the server crate
+[patch.crates-io]
+rmcp = { git = "https://github.com/modelcontextprotocol/rust-sdk", rev = "787cc015b719773f66d4ac32e695b9a0079e12ef" }
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "fuzz_execute_stateless"
+path = "fuzz_targets/fuzz_execute_stateless.rs"
+doc = false
+
+[[bin]]
+name = "fuzz_execute_stateful"
+path = "fuzz_targets/fuzz_execute_stateful.rs"
+doc = false
+
+[[bin]]
+name = "fuzz_snapshot_deserialization"
+path = "fuzz_targets/fuzz_snapshot_deserialization.rs"
+doc = false
+
+[[bin]]
+name = "fuzz_wasm_compile"
+path = "fuzz_targets/fuzz_wasm_compile.rs"
+doc = false
+

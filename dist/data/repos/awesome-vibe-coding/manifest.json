@@ -1,0 +1,1609 @@
+{
+  "name": "awesome-vibe-coding",
+  "full": true,
+  "tree": [
+    {
+      "name": "cursor-rules",
+      "type": "folder",
+      "path": "cursor-rules",
+      "children": [
+        {
+          "name": "best-practices",
+          "type": "folder",
+          "path": "cursor-rules/best-practices",
+          "children": [
+            {
+              "name": "accessibility.mdc",
+              "type": "file",
+              "path": "cursor-rules/best-practices/accessibility.mdc",
+              "size": 2894,
+              "language": "mdc"
+            },
+            {
+              "name": "claude-cli-commands.mdc",
+              "type": "file",
+              "path": "cursor-rules/best-practices/claude-cli-commands.mdc",
+              "size": 1633,
+              "language": "mdc"
+            },
+            {
+              "name": "clean-code.mdc",
+              "type": "file",
+              "path": "cursor-rules/best-practices/clean-code.mdc",
+              "size": 1820,
+              "language": "mdc"
+            },
+            {
+              "name": "codequality.md",
+              "type": "file",
+              "path": "cursor-rules/best-practices/codequality.md",
+              "size": 1414,
+              "language": "md"
+            },
+            {
+              "name": "hooks-guide.mdc",
+              "type": "file",
+              "path": "cursor-rules/best-practices/hooks-guide.mdc",
+              "size": 1491,
+              "language": "mdc"
+            },
+            {
+              "name": "how-to-documentation.md",
+              "type": "file",
+              "path": "cursor-rules/best-practices/how-to-documentation.md",
+              "size": 4453,
+              "language": "md"
+            },
+            {
+              "name": "mcp-guide.mdc",
+              "type": "file",
+              "path": "cursor-rules/best-practices/mcp-guide.mdc",
+              "size": 1298,
+              "language": "mdc"
+            },
+            {
+              "name": "meta-prompt.md",
+              "type": "file",
+              "path": "cursor-rules/best-practices/meta-prompt.md",
+              "size": 1358,
+              "language": "md"
+            },
+            {
+              "name": "reflect.md",
+              "type": "file",
+              "path": "cursor-rules/best-practices/reflect.md",
+              "size": 583,
+              "language": "md"
+            },
+            {
+              "name": "system-prompts.mdc",
+              "type": "file",
+              "path": "cursor-rules/best-practices/system-prompts.mdc",
+              "size": 1442,
+              "language": "mdc"
+            },
+            {
+              "name": "test-coverage-review.md",
+              "type": "file",
+              "path": "cursor-rules/best-practices/test-coverage-review.md",
+              "size": 2216,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "coding",
+          "type": "folder",
+          "path": "cursor-rules/coding",
+          "children": [
+            {
+              "name": "dev-philosophy.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/dev-philosophy.mdc",
+              "size": 1841,
+              "language": "mdc"
+            },
+            {
+              "name": "django-rest-api.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/django-rest-api.mdc",
+              "size": 5152,
+              "language": "mdc"
+            },
+            {
+              "name": "docker-best-practices.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/docker-best-practices.mdc",
+              "size": 1716,
+              "language": "mdc"
+            },
+            {
+              "name": "fastapi-enhanced.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/fastapi-enhanced.mdc",
+              "size": 3971,
+              "language": "mdc"
+            },
+            {
+              "name": "fastapi.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/fastapi.mdc",
+              "size": 2133,
+              "language": "mdc"
+            },
+            {
+              "name": "git-worktree-workflow.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/git-worktree-workflow.mdc",
+              "size": 1184,
+              "language": "mdc"
+            },
+            {
+              "name": "laravel-php.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/laravel-php.mdc",
+              "size": 3157,
+              "language": "mdc"
+            },
+            {
+              "name": "nestjs-clean.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/nestjs-clean.mdc",
+              "size": 4556,
+              "language": "mdc"
+            },
+            {
+              "name": "nextjs-typescript.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/nextjs-typescript.mdc",
+              "size": 2220,
+              "language": "mdc"
+            },
+            {
+              "name": "playwright-testing.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/playwright-testing.mdc",
+              "size": 2946,
+              "language": "mdc"
+            },
+            {
+              "name": "prisma-orm.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/prisma-orm.mdc",
+              "size": 3950,
+              "language": "mdc"
+            },
+            {
+              "name": "python-1.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/python-1.mdc",
+              "size": 3372,
+              "language": "mdc"
+            },
+            {
+              "name": "python-ai-friendly-coding-practices-rule.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/python-ai-friendly-coding-practices-rule.mdc",
+              "size": 327,
+              "language": "mdc"
+            },
+            {
+              "name": "python-fastapi.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/python-fastapi.mdc",
+              "size": 3630,
+              "language": "mdc"
+            },
+            {
+              "name": "react-best-practices.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/react-best-practices.mdc",
+              "size": 1909,
+              "language": "mdc"
+            },
+            {
+              "name": "shopify-theme.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/shopify-theme.mdc",
+              "size": 6556,
+              "language": "mdc"
+            },
+            {
+              "name": "tailwind.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/tailwind.mdc",
+              "size": 2166,
+              "language": "mdc"
+            },
+            {
+              "name": "typescript-2.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/typescript-2.mdc",
+              "size": 2047,
+              "language": "mdc"
+            },
+            {
+              "name": "typescript-guidelines.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/typescript-guidelines.mdc",
+              "size": 3428,
+              "language": "mdc"
+            },
+            {
+              "name": "typescript.mdc",
+              "type": "file",
+              "path": "cursor-rules/coding/typescript.mdc",
+              "size": 5710,
+              "language": "mdc"
+            }
+          ]
+        },
+        {
+          "name": "product-management",
+          "type": "folder",
+          "path": "cursor-rules/product-management",
+          "children": [
+            {
+              "name": "ccpm-agents.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/ccpm-agents.mdc",
+              "size": 1824,
+              "language": "mdc"
+            },
+            {
+              "name": "context-preservation.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/context-preservation.mdc",
+              "size": 5736,
+              "language": "mdc"
+            },
+            {
+              "name": "create-prd.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/create-prd.mdc",
+              "size": 3977,
+              "language": "mdc"
+            },
+            {
+              "name": "epic-management.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/epic-management.mdc",
+              "size": 3598,
+              "language": "mdc"
+            },
+            {
+              "name": "generate-tasks.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/generate-tasks.mdc",
+              "size": 3799,
+              "language": "mdc"
+            },
+            {
+              "name": "no-vibe-coding.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/no-vibe-coding.mdc",
+              "size": 1626,
+              "language": "mdc"
+            },
+            {
+              "name": "parallel-execution.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/parallel-execution.mdc",
+              "size": 4886,
+              "language": "mdc"
+            },
+            {
+              "name": "project-status-tracking.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/project-status-tracking.mdc",
+              "size": 6175,
+              "language": "mdc"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "cursor-rules/product-management/README.md",
+              "size": 2381,
+              "language": "md"
+            },
+            {
+              "name": "task-list-development.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/task-list-development.mdc",
+              "size": 3198,
+              "language": "mdc"
+            },
+            {
+              "name": "traceability.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/traceability.mdc",
+              "size": 5980,
+              "language": "mdc"
+            },
+            {
+              "name": "user-stories.mdc",
+              "type": "file",
+              "path": "cursor-rules/product-management/user-stories.mdc",
+              "size": 1131,
+              "language": "mdc"
+            }
+          ]
+        },
+        {
+          "name": "security",
+          "type": "folder",
+          "path": "cursor-rules/security",
+          "children": [
+            {
+              "name": "anthropic-security-audit.mdc",
+              "type": "file",
+              "path": "cursor-rules/security/anthropic-security-audit.mdc",
+              "size": 1930,
+              "language": "mdc"
+            },
+            {
+              "name": "secure-dev-c.mdc",
+              "type": "file",
+              "path": "cursor-rules/security/secure-dev-c.mdc",
+              "size": 2219,
+              "language": "mdc"
+            },
+            {
+              "name": "secure-dev-python.mdc",
+              "type": "file",
+              "path": "cursor-rules/security/secure-dev-python.mdc",
+              "size": 2441,
+              "language": "mdc"
+            },
+            {
+              "name": "secure-development-principles.mdc",
+              "type": "file",
+              "path": "cursor-rules/security/secure-development-principles.mdc",
+              "size": 1818,
+              "language": "mdc"
+            },
+            {
+              "name": "secure-mcp-usage.mdc",
+              "type": "file",
+              "path": "cursor-rules/security/secure-mcp-usage.mdc",
+              "size": 1837,
+              "language": "mdc"
+            },
+            {
+              "name": "secure-sql-usage.mdc",
+              "type": "file",
+              "path": "cursor-rules/security/secure-sql-usage.mdc",
+              "size": 2695,
+              "language": "mdc"
+            },
+            {
+              "name": "security-pr-review.md",
+              "type": "file",
+              "path": "cursor-rules/security/security-pr-review.md",
+              "size": 10603,
+              "language": "md"
+            },
+            {
+              "name": "security-review.md",
+              "type": "file",
+              "path": "cursor-rules/security/security-review.md",
+              "size": 3225,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "cursor-rules/README.md",
+          "size": 3242,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "n8n-templates",
+      "type": "folder",
+      "path": "n8n-templates",
+      "children": [
+        {
+          "name": "AI Agent - Google calendar assistant using OpenAI.json",
+          "type": "file",
+          "path": "n8n-templates/AI Agent - Google calendar assistant using OpenAI.json",
+          "size": 11965,
+          "language": "json"
+        },
+        {
+          "name": "AI-Powered YouTube Video Summarization & Analysis.json",
+          "type": "file",
+          "path": "n8n-templates/AI-Powered YouTube Video Summarization & Analysis.json",
+          "size": 6488,
+          "language": "json"
+        },
+        {
+          "name": "Auto Categorise Outlook Emails with AI.json",
+          "type": "file",
+          "path": "n8n-templates/Auto Categorise Outlook Emails with AI.json",
+          "size": 26364,
+          "language": "json"
+        },
+        {
+          "name": "Chat with a Google Sheet using AI.json",
+          "type": "file",
+          "path": "n8n-templates/Chat with a Google Sheet using AI.json",
+          "size": 11040,
+          "language": "json"
+        },
+        {
+          "name": "Chatbot de WhatsApp para cadastro de leads no Notion.json",
+          "type": "file",
+          "path": "n8n-templates/Chatbot de WhatsApp para cadastro de leads no Notion.json",
+          "size": 13475,
+          "language": "json"
+        },
+        {
+          "name": "Compara colunas no Google Sheets.json",
+          "type": "file",
+          "path": "n8n-templates/Compara colunas no Google Sheets.json",
+          "size": 2376,
+          "language": "json"
+        },
+        {
+          "name": "Convert text to speech with OpenAI.json",
+          "type": "file",
+          "path": "n8n-templates/Convert text to speech with OpenAI.json",
+          "size": 4005,
+          "language": "json"
+        },
+        {
+          "name": "Envio de emails em massa (via lista em texto).json",
+          "type": "file",
+          "path": "n8n-templates/Envio de emails em massa (via lista em texto).json",
+          "size": 2335,
+          "language": "json"
+        },
+        {
+          "name": "Envio de WhatsApp em Massa com Relatório de Envios.json",
+          "type": "file",
+          "path": "n8n-templates/Envio de WhatsApp em Massa com Relatório de Envios.json",
+          "size": 5110,
+          "language": "json"
+        },
+        {
+          "name": "Envio em massa de WhatsApp (via Texto  Simples).json",
+          "type": "file",
+          "path": "n8n-templates/Envio em massa de WhatsApp (via Texto  Simples).json",
+          "size": 4740,
+          "language": "json"
+        },
+        {
+          "name": "Envios em massa para o WhatsApp (via Json).json",
+          "type": "file",
+          "path": "n8n-templates/Envios em massa para o WhatsApp (via Json).json",
+          "size": 42410,
+          "language": "json"
+        },
+        {
+          "name": "Envios em massa para WhatsApp (via CSV do Google Drive).json",
+          "type": "file",
+          "path": "n8n-templates/Envios em massa para WhatsApp (via CSV do Google Drive).json",
+          "size": 5352,
+          "language": "json"
+        },
+        {
+          "name": "Notion knowledge base AI assistant.json",
+          "type": "file",
+          "path": "n8n-templates/Notion knowledge base AI assistant.json",
+          "size": 10276,
+          "language": "json"
+        },
+        {
+          "name": "Receive Daily Market News from FT.com to your Microsoft outlook inbox.json",
+          "type": "file",
+          "path": "n8n-templates/Receive Daily Market News from FT.com to your Microsoft outlook inbox.json",
+          "size": 7289,
+          "language": "json"
+        },
+        {
+          "name": "Scrape and summarize webpages with AI.json",
+          "type": "file",
+          "path": "n8n-templates/Scrape and summarize webpages with AI.json",
+          "size": 5989,
+          "language": "json"
+        },
+        {
+          "name": "Suggest meeting slots using AI.json",
+          "type": "file",
+          "path": "n8n-templates/Suggest meeting slots using AI.json",
+          "size": 10997,
+          "language": "json"
+        },
+        {
+          "name": "Summarize your emails with A.I. (via Openrouter) and send to Line messenger.json",
+          "type": "file",
+          "path": "n8n-templates/Summarize your emails with A.I. (via Openrouter) and send to Line messenger.json",
+          "size": 4976,
+          "language": "json"
+        },
+        {
+          "name": "Telegram chat with PDF.json",
+          "type": "file",
+          "path": "n8n-templates/Telegram chat with PDF.json",
+          "size": 10228,
+          "language": "json"
+        },
+        {
+          "name": "Telegram Messaging Agent for Text_Audio_Images.json",
+          "type": "file",
+          "path": "n8n-templates/Telegram Messaging Agent for Text_Audio_Images.json",
+          "size": 21189,
+          "language": "json"
+        },
+        {
+          "name": "Ultimate_Personal_Assistant.json",
+          "type": "file",
+          "path": "n8n-templates/Ultimate_Personal_Assistant.json",
+          "size": 14826,
+          "language": "json"
+        },
+        {
+          "name": "Web Scraping.json",
+          "type": "file",
+          "path": "n8n-templates/Web Scraping.json",
+          "size": 3077,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": "nice-projects",
+      "type": "folder",
+      "path": "nice-projects",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "nice-projects/README.md",
+          "size": 5996,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "papers",
+      "type": "folder",
+      "path": "papers",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "papers/README.md",
+          "size": 8664,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "prompt-engineering",
+      "type": "folder",
+      "path": "prompt-engineering",
+      "children": [
+        {
+          "name": "prompts",
+          "type": "folder",
+          "path": "prompt-engineering/prompts",
+          "children": [
+            {
+              "name": "Claude_Sonnet-4.5_Sep-29-2025.txt",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Claude_Sonnet-4.5_Sep-29-2025.txt",
+              "size": 85298,
+              "language": "txt"
+            },
+            {
+              "name": "Cursor-Agent.mdc",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Cursor-Agent.mdc",
+              "size": 18454,
+              "language": "mdc"
+            },
+            {
+              "name": "Devin2_09-08-2025.md",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Devin2_09-08-2025.md",
+              "size": 50815,
+              "language": "md"
+            },
+            {
+              "name": "Gemini-2.5-Pro-04-18-2025.md",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Gemini-2.5-Pro-04-18-2025.md",
+              "size": 11992,
+              "language": "md"
+            },
+            {
+              "name": "GROK-4-NEW_Jul-13-2025.txt",
+              "type": "file",
+              "path": "prompt-engineering/prompts/GROK-4-NEW_Jul-13-2025.txt",
+              "size": 9869,
+              "language": "txt"
+            },
+            {
+              "name": "Grok-Code-Fast-1_Aug-26-2025.txt",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Grok-Code-Fast-1_Aug-26-2025.txt",
+              "size": 3917,
+              "language": "txt"
+            },
+            {
+              "name": "Kimi_2_July-11-2025.txt",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Kimi_2_July-11-2025.txt",
+              "size": 1420,
+              "language": "txt"
+            },
+            {
+              "name": "Lovable-2.0.mdc",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Lovable-2.0.mdc",
+              "size": 16704,
+              "language": "mdc"
+            },
+            {
+              "name": "n8n-day-hour.txt",
+              "type": "file",
+              "path": "prompt-engineering/prompts/n8n-day-hour.txt",
+              "size": 2139,
+              "language": "txt"
+            },
+            {
+              "name": "n8n-sql.txt",
+              "type": "file",
+              "path": "prompt-engineering/prompts/n8n-sql.txt",
+              "size": 5212,
+              "language": "txt"
+            },
+            {
+              "name": "Perplexity_Deep_Research.txt",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Perplexity_Deep_Research.txt",
+              "size": 7622,
+              "language": "txt"
+            },
+            {
+              "name": "Replit_Agent.md",
+              "type": "file",
+              "path": "prompt-engineering/prompts/Replit_Agent.md",
+              "size": 6716,
+              "language": "md"
+            },
+            {
+              "name": "vercel-v0.mdc",
+              "type": "file",
+              "path": "prompt-engineering/prompts/vercel-v0.mdc",
+              "size": 20059,
+              "language": "mdc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "research",
+      "type": "folder",
+      "path": "research",
+      "children": [
+        {
+          "name": "ML-Notebooks",
+          "type": "folder",
+          "path": "research/ML-Notebooks",
+          "children": [
+            {
+              "name": "notebooks",
+              "type": "folder",
+              "path": "research/ML-Notebooks/notebooks",
+              "children": [
+                {
+                  "name": "maths",
+                  "type": "folder",
+                  "path": "research/ML-Notebooks/notebooks/maths",
+                  "children": [
+                    {
+                      "name": "algebra.ipynb",
+                      "type": "file",
+                      "path": "research/ML-Notebooks/notebooks/maths/algebra.ipynb",
+                      "size": 303949,
+                      "language": "ipynb"
+                    },
+                    {
+                      "name": "feature-scaling.ipynb",
+                      "type": "file",
+                      "path": "research/ML-Notebooks/notebooks/maths/feature-scaling.ipynb",
+                      "size": 28754,
+                      "language": "ipynb"
+                    },
+                    {
+                      "name": "mean.ipynb",
+                      "type": "file",
+                      "path": "research/ML-Notebooks/notebooks/maths/mean.ipynb",
+                      "size": 2906,
+                      "language": "ipynb"
+                    }
+                  ]
+                },
+                {
+                  "name": "bow-dataloader.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/bow-dataloader.ipynb",
+                  "size": 11218,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "bow.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/bow.ipynb",
+                  "size": 10423,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "cbow.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/cbow.ipynb",
+                  "size": 10744,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "comp_graphs.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/comp_graphs.ipynb",
+                  "size": 11983,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "concise_log_reg.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/concise_log_reg.ipynb",
+                  "size": 8012,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "deep_cbow.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/deep_cbow.ipynb",
+                  "size": 14319,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "first_nn.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/first_nn.ipynb",
+                  "size": 5808,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "intro_gnn.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/intro_gnn.ipynb",
+                  "size": 46611,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "linear_regression.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/linear_regression.ipynb",
+                  "size": 91194,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "logistic_regression.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/logistic_regression.ipynb",
+                  "size": 135138,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "loglin-lm-dataloader.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/loglin-lm-dataloader.ipynb",
+                  "size": 17110,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "loglin-lm.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/loglin-lm.ipynb",
+                  "size": 21997,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "nn-lm-batch.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/nn-lm-batch.ipynb",
+                  "size": 16691,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "nn-lm.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/nn-lm.ipynb",
+                  "size": 27317,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "nn_from_scratch.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/nn_from_scratch.ipynb",
+                  "size": 16746,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "pytorch_hello_world.ipynb",
+                  "type": "file",
+                  "path": "research/ML-Notebooks/notebooks/pytorch_hello_world.ipynb",
+                  "size": 16744,
+                  "language": "ipynb"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "nanochat",
+          "type": "folder",
+          "path": "research/nanochat",
+          "children": [
+            {
+              "name": "dev",
+              "type": "folder",
+              "path": "research/nanochat/dev",
+              "children": [
+                {
+                  "name": "estimate_gpt3_core.ipynb",
+                  "type": "file",
+                  "path": "research/nanochat/dev/estimate_gpt3_core.ipynb",
+                  "size": 73112,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "scaling_analysis.ipynb",
+                  "type": "file",
+                  "path": "research/nanochat/dev/scaling_analysis.ipynb",
+                  "size": 8821,
+                  "language": "ipynb"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "nlp-with-transformers",
+          "type": "folder",
+          "path": "research/nlp-with-transformers",
+          "children": [
+            {
+              "name": "SageMaker",
+              "type": "folder",
+              "path": "research/nlp-with-transformers/SageMaker",
+              "children": [
+                {
+                  "name": "01_introduction.ipynb",
+                  "type": "file",
+                  "path": "research/nlp-with-transformers/SageMaker/01_introduction.ipynb",
+                  "size": 12871,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "02_classification.ipynb",
+                  "type": "file",
+                  "path": "research/nlp-with-transformers/SageMaker/02_classification.ipynb",
+                  "size": 29855,
+                  "language": "ipynb"
+                }
+              ]
+            },
+            {
+              "name": "01_introduction.ipynb",
+              "type": "file",
+              "path": "research/nlp-with-transformers/01_introduction.ipynb",
+              "size": 17877,
+              "language": "ipynb"
+            },
+            {
+              "name": "06_summarization.ipynb",
+              "type": "file",
+              "path": "research/nlp-with-transformers/06_summarization.ipynb",
+              "size": 163792,
+              "language": "ipynb"
+            },
+            {
+              "name": "10_transformers-from-scratch.ipynb",
+              "type": "file",
+              "path": "research/nlp-with-transformers/10_transformers-from-scratch.ipynb",
+              "size": 57201,
+              "language": "ipynb"
+            }
+          ]
+        },
+        {
+          "name": "nn-zero-to-hero",
+          "type": "folder",
+          "path": "research/nn-zero-to-hero",
+          "children": [
+            {
+              "name": "lectures",
+              "type": "folder",
+              "path": "research/nn-zero-to-hero/lectures",
+              "children": [
+                {
+                  "name": "makemore",
+                  "type": "folder",
+                  "path": "research/nn-zero-to-hero/lectures/makemore",
+                  "children": [
+                    {
+                      "name": "makemore_part2_mlp.ipynb",
+                      "type": "file",
+                      "path": "research/nn-zero-to-hero/lectures/makemore/makemore_part2_mlp.ipynb",
+                      "size": 47747,
+                      "language": "ipynb"
+                    },
+                    {
+                      "name": "makemore_part4_backprop.ipynb",
+                      "type": "file",
+                      "path": "research/nn-zero-to-hero/lectures/makemore/makemore_part4_backprop.ipynb",
+                      "size": 37502,
+                      "language": "ipynb"
+                    },
+                    {
+                      "name": "makemore_part5_cnn1.ipynb",
+                      "type": "file",
+                      "path": "research/nn-zero-to-hero/lectures/makemore/makemore_part5_cnn1.ipynb",
+                      "size": 35882,
+                      "language": "ipynb"
+                    }
+                  ]
+                },
+                {
+                  "name": "micrograd",
+                  "type": "folder",
+                  "path": "research/nn-zero-to-hero/lectures/micrograd",
+                  "children": [
+                    {
+                      "name": "micrograd_lecture_first_half_roughly.ipynb",
+                      "type": "file",
+                      "path": "research/nn-zero-to-hero/lectures/micrograd/micrograd_lecture_first_half_roughly.ipynb",
+                      "size": 81042,
+                      "language": "ipynb"
+                    },
+                    {
+                      "name": "micrograd_lecture_second_half_roughly.ipynb",
+                      "type": "file",
+                      "path": "research/nn-zero-to-hero/lectures/micrograd/micrograd_lecture_second_half_roughly.ipynb",
+                      "size": 76357,
+                      "language": "ipynb"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "reasoning-from-scratch",
+          "type": "folder",
+          "path": "research/reasoning-from-scratch",
+          "children": [
+            {
+              "name": "01_main-chapter-code",
+              "type": "folder",
+              "path": "research/reasoning-from-scratch/01_main-chapter-code",
+              "children": [
+                {
+                  "name": "ch02_exercise-solutions.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch02_exercise-solutions.ipynb",
+                  "size": 21551,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "ch02_main.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch02_main.ipynb",
+                  "size": 53684,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "ch03_exercise-solutions.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch03_exercise-solutions.ipynb",
+                  "size": 17576,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "ch03_main.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch03_main.ipynb",
+                  "size": 63356,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "ch04_exercise-solutions.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch04_exercise-solutions.ipynb",
+                  "size": 26082,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "ch04_main.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch04_main.ipynb",
+                  "size": 255743,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "ch05_exercise-solutions.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch05_exercise-solutions.ipynb",
+                  "size": 25199,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "ch05_main.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/ch05_main.ipynb",
+                  "size": 107222,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "chC_main.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/chC_main.ipynb",
+                  "size": 30622,
+                  "language": "ipynb"
+                },
+                {
+                  "name": "chF_main.ipynb",
+                  "type": "file",
+                  "path": "research/reasoning-from-scratch/01_main-chapter-code/chF_main.ipynb",
+                  "size": 32589,
+                  "language": "ipynb"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "understanding-deep-learning",
+          "type": "folder",
+          "path": "research/understanding-deep-learning",
+          "children": [
+            {
+              "name": "Notebook 1.1 - Background mathematics.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 1.1 - Background mathematics.ipynb",
+              "size": 15133,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 10.1 - 1D convolution.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 10.1 - 1D convolution.ipynb",
+              "size": 11922,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 10.2 - Convolution for MNIST-1D.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 10.2 - Convolution for MNIST-1D.ipynb",
+              "size": 9961,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 10.3 - 2D convolution.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 10.3 - 2D convolution.ipynb",
+              "size": 17225,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 10.4 - Downsampling & upsampling.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 10.4 - Downsampling & upsampling.ipynb",
+              "size": 14560,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 10.5 - Convolution for MNIST.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 10.5 - Convolution for MNIST.ipynb",
+              "size": 11529,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 11.1 - Shattered gradients.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 11.1 - Shattered gradients.ipynb",
+              "size": 13246,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 11.2 - Residual networks.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 11.2 - Residual networks.ipynb",
+              "size": 10649,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 11.3 - Batch normalization.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 11.3 - Batch normalization.ipynb",
+              "size": 12178,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 12.1 - Self-attention.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 12.1 - Self-attention.ipynb",
+              "size": 12038,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 12.2 - Multi-head self-attention.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 12.2 - Multi-head self-attention.ipynb",
+              "size": 7017,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 12.3 - Tokenization.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 12.3 - Tokenization.ipynb",
+              "size": 10255,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 12.4 - Decoding strategies.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 12.4 - Decoding strategies.ipynb",
+              "size": 27361,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 13.1 - Encoding graphs.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 13.1 - Encoding graphs.ipynb",
+              "size": 4646,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 13.2 - Graph classification.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 13.2 - Graph classification.ipynb",
+              "size": 8301,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 13.3 - Neighborhood sampling.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 13.3 - Neighborhood sampling.ipynb",
+              "size": 11343,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 13.4 - Graph attention.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 13.4 - Graph attention.ipynb",
+              "size": 6824,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 15.1 - GAN toy example.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 15.1 - GAN toy example.ipynb",
+              "size": 13695,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 15.2 - Wasserstein distance.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 15.2 - Wasserstein distance.ipynb",
+              "size": 9913,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 16.1 - 1D normalizing flows.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 16.1 - 1D normalizing flows.ipynb",
+              "size": 6256,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 16.2 - Autoregressive flows.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 16.2 - Autoregressive flows.ipynb",
+              "size": 9951,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 16.3 - Contraction mappings.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 16.3 - Contraction mappings.ipynb",
+              "size": 7966,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 17.1 - Latent variable models.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 17.1 - Latent variable models.ipynb",
+              "size": 15299,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 17.2 - Reparameterization trick.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 17.2 - Reparameterization trick.ipynb",
+              "size": 14883,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 17.3 - Importance sampling.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 17.3 - Importance sampling.ipynb",
+              "size": 16545,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 18.1 - Diffusion encoder.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 18.1 - Diffusion encoder.ipynb",
+              "size": 18187,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 18.2 - 1D diffusion model.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 18.2 - 1D diffusion model.ipynb",
+              "size": 16309,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 18.3 - Reparameterized model.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 18.3 - Reparameterized model.ipynb",
+              "size": 15381,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 18.4 - Families of diffusion models.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 18.4 - Families of diffusion models.ipynb",
+              "size": 20881,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 19.1 - Markov decision processes.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 19.1 - Markov decision processes.ipynb",
+              "size": 38397,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 19.2 - Dynamic programming.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 19.2 - Dynamic programming.ipynb",
+              "size": 32203,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 19.3 - Monte-Carlo methods.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 19.3 - Monte-Carlo methods.ipynb",
+              "size": 42414,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 19.4 - Temporal difference methods.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 19.4 - Temporal difference methods.ipynb",
+              "size": 43339,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 19.5 - Control variates.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 19.5 - Control variates.ipynb",
+              "size": 5392,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 2.1 - Supervised learning.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 2.1 - Supervised learning.ipynb",
+              "size": 7642,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 20.1 - Random data.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 20.1 - Random data.ipynb",
+              "size": 10197,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 20.2 - Full-batch gradient descent.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 20.2 - Full-batch gradient descent.ipynb",
+              "size": 9826,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 20.3 - Lottery tickets.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 20.3 - Lottery tickets.ipynb",
+              "size": 14859,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 20.4 - Adversarial attacks.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 20.4 - Adversarial attacks.ipynb",
+              "size": 13815,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 21.1 - Bias mitigation.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 21.1 - Bias mitigation.ipynb",
+              "size": 19083,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 21.2 - Explainability.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 21.2 - Explainability.ipynb",
+              "size": 19171,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 3.1 - Shallow networks I.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 3.1 - Shallow networks I.ipynb",
+              "size": 43950,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 3.2 - Shallow networks II.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 3.2 - Shallow networks II.ipynb",
+              "size": 12813,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 3.3 - Shallow network regions.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 3.3 - Shallow network regions.ipynb",
+              "size": 8857,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 3.4 - Activation functions.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 3.4 - Activation functions.ipynb",
+              "size": 15376,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 4.1 - Composing networks.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 4.1 - Composing networks.ipynb",
+              "size": 13880,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 4.2 - Clipping functions.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 4.2 - Clipping functions.ipynb",
+              "size": 8698,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 4.3 - Deep networks.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 4.3 - Deep networks.ipynb",
+              "size": 11907,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 5.1 - Least squares loss.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 5.1 - Least squares loss.ipynb",
+              "size": 24346,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 5.2 - Binary cross-entropy loss.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 5.2 - Binary cross-entropy loss.ipynb",
+              "size": 17317,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 5.3 - Multiclass cross-entropy loss.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 5.3 - Multiclass cross-entropy loss.ipynb",
+              "size": 19327,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 6.1 - Line search.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 6.1 - Line search.ipynb",
+              "size": 6556,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 6.2 - Gradient descent.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 6.2 - Gradient descent.ipynb",
+              "size": 18362,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 6.3 - Stochastic gradient descent.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 6.3 - Stochastic gradient descent.ipynb",
+              "size": 25105,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 6.4 - Momentum.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 6.4 - Momentum.ipynb",
+              "size": 17274,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 6.5 - Adam.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 6.5 - Adam.ipynb",
+              "size": 13825,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 7.1 - Backpropagation in toy model.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 7.1 - Backpropagation in toy model.ipynb",
+              "size": 21124,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 7.2 - Backpropagation.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 7.2 - Backpropagation.ipynb",
+              "size": 13743,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 7.3 - Initialization.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 7.3 - Initialization.ipynb",
+              "size": 12477,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 8.1 - MNIST-1D performance.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 8.1 - MNIST-1D performance.ipynb",
+              "size": 9051,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 8.2 - Bias-variance trade-off.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 8.2 - Bias-variance trade-off.ipynb",
+              "size": 12036,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 8.3 - Double descent.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 8.3 - Double descent.ipynb",
+              "size": 12035,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 8.4 - High-dimensional spaces.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 8.4 - High-dimensional spaces.ipynb",
+              "size": 8146,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 9.1 - L2 regularization.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 9.1 - L2 regularization.ipynb",
+              "size": 23152,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 9.2 - Implicit regularization.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 9.2 - Implicit regularization.ipynb",
+              "size": 15696,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 9.3 - Ensembling.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 9.3 - Ensembling.ipynb",
+              "size": 11828,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 9.4 - Bayesian approach.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 9.4 - Bayesian approach.ipynb",
+              "size": 18136,
+              "language": "ipynb"
+            },
+            {
+              "name": "Notebook 9.5 - Augmentation.ipynb",
+              "type": "file",
+              "path": "research/understanding-deep-learning/Notebook 9.5 - Augmentation.ipynb",
+              "size": 13052,
+              "language": "ipynb"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "research/understanding-deep-learning/README.md",
+              "size": 4936,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "Deepseek_OCR_(3B).ipynb",
+          "type": "file",
+          "path": "research/Deepseek_OCR_(3B).ipynb",
+          "size": 128369,
+          "language": "ipynb"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "research/README.md",
+          "size": 7493,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 477,
+      "language": "text"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 2120,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1075,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8209,
+      "language": "md"
+    }
+  ]
+}

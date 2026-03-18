@@ -1,0 +1,201 @@
+{
+  "name": "Rember (Flashcards)",
+  "tree": [
+    {
+      "name": "context",
+      "type": "folder",
+      "path": "context",
+      "children": [
+        {
+          "name": "mcp-docs.txt",
+          "type": "file",
+          "path": "context/mcp-docs.txt",
+          "size": 205128,
+          "language": "txt"
+        },
+        {
+          "name": "mcp-readme-typescript-sdk.txt",
+          "type": "file",
+          "path": "context/mcp-readme-typescript-sdk.txt",
+          "size": 12367,
+          "language": "txt"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "copy-package-json.ts",
+          "type": "file",
+          "path": "scripts/copy-package-json.ts",
+          "size": 1121,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "test",
+          "type": "folder",
+          "path": "src/test",
+          "children": [
+            {
+              "name": "create-flashcards.test.ts",
+              "type": "file",
+              "path": "src/test/create-flashcards.test.ts",
+              "size": 10036,
+              "language": "ts"
+            },
+            {
+              "name": "system-prompt-claude-2025-02-24.md",
+              "type": "file",
+              "path": "src/test/system-prompt-claude-2025-02-24.md",
+              "size": 13052,
+              "language": "md"
+            },
+            {
+              "name": "thesis-chapter-2.md",
+              "type": "file",
+              "path": "src/test/thesis-chapter-2.md",
+              "size": 28673,
+              "language": "md"
+            },
+            {
+              "name": "utils.ts",
+              "type": "file",
+              "path": "src/test/utils.ts",
+              "size": 2627,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "bin.ts",
+          "type": "file",
+          "path": "src/bin.ts",
+          "size": 2130,
+          "language": "ts"
+        },
+        {
+          "name": "logger.ts",
+          "type": "file",
+          "path": "src/logger.ts",
+          "size": 326,
+          "language": "ts"
+        },
+        {
+          "name": "rember.ts",
+          "type": "file",
+          "path": "src/rember.ts",
+          "size": 3537,
+          "language": "ts"
+        },
+        {
+          "name": "server-mcp.ts",
+          "type": "file",
+          "path": "src/server-mcp.ts",
+          "size": 9802,
+          "language": "ts"
+        },
+        {
+          "name": "tools.ts",
+          "type": "file",
+          "path": "src/tools.ts",
+          "size": 7108,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 25,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 200,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1088,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2271,
+      "language": "json"
+    },
+    {
+      "name": "pnpm-lock.yaml",
+      "type": "file",
+      "path": "pnpm-lock.yaml",
+      "size": 244398,
+      "language": "yaml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 4049,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.base.json",
+      "type": "file",
+      "path": "tsconfig.base.json",
+      "size": 1289,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 147,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.scripts.json",
+      "type": "file",
+      "path": "tsconfig.scripts.json",
+      "size": 323,
+      "language": "json"
+    },
+    {
+      "name": "tsconfig.src.json",
+      "type": "file",
+      "path": "tsconfig.src.json",
+      "size": 219,
+      "language": "json"
+    },
+    {
+      "name": "tsup.config.ts",
+      "type": "file",
+      "path": "tsup.config.ts",
+      "size": 195,
+      "language": "ts"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 285,
+      "language": "ts"
+    }
+  ]
+}

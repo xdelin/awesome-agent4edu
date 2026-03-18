@@ -1,0 +1,287 @@
+{
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "add": "Agregar",
+    "remove": "Eliminar",
+    "clear": "Limpiar",
+    "clearAll": "Limpiar todo",
+    "loading": "Cargando",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "confirm": "Confirmar",
+    "settings": "Configuración",
+    "advanced": "Avanzado",
+    "enabled": "Habilitado",
+    "disabled": "Deshabilitado",
+    "platform": "Plataforma",
+    "refresh": "Actualizar",
+    "rewind": "Rebobinar"
+  },
+  "chat": {
+    "rewind": {
+      "confirmMessage": "¿Rebobinar a este punto? Los cambios de archivos después de este mensaje serán revertidos. El rebobinado no afecta archivos editados manualmente o mediante bash.",
+      "confirmButton": "Rebobinar",
+      "ariaLabel": "Rebobinar hasta aquí",
+      "notice": "Rebobinado: {count} archivo(s) revertido(s)",
+      "noticeSaveFailed": "Rebobinado: {count} archivo(s) revertido(s), pero no se pudo guardar el estado: {error}",
+      "failed": "Error al rebobinar: {error}",
+      "cannot": "No se puede rebobinar: {error}",
+      "unavailableStreaming": "No se puede rebobinar durante la transmisión",
+      "unavailableNoUuid": "No se puede rebobinar: faltan identificadores de mensaje"
+    },
+    "fork": {
+      "ariaLabel": "Bifurcar conversación",
+      "chooseTarget": "Bifurcar conversación",
+      "targetNewTab": "Nueva pestaña",
+      "targetCurrentTab": "Pestaña actual",
+      "maxTabsReached": "No se puede bifurcar: máximo de {count} pestañas alcanzado",
+      "notice": "Bifurcado a nueva pestaña",
+      "noticeCurrentTab": "Bifurcado en pestaña actual",
+      "failed": "Error al bifurcar: {error}",
+      "unavailableStreaming": "No se puede bifurcar durante la transmisión",
+      "unavailableNoUuid": "No se puede bifurcar: faltan identificadores de mensaje",
+      "unavailableNoResponse": "No se puede bifurcar: no hay respuesta para bifurcar",
+      "errorMessageNotFound": "Message not found",
+      "errorNoSession": "No session ID available",
+      "errorNoActiveTab": "No active tab",
+      "commandNoMessages": "No se puede bifurcar: no hay mensajes en la conversación",
+      "commandNoAssistantUuid": "No se puede bifurcar: no hay respuesta del asistente con identificadores"
+    },
+    "bangBash": {
+      "placeholder": "> Run a bash command...",
+      "commandPanel": "Command panel",
+      "copyAriaLabel": "Copy latest command output",
+      "clearAriaLabel": "Clear bash output",
+      "commandLabel": "{command}",
+      "statusLabel": "Status: {status}",
+      "collapseOutput": "Collapse command output",
+      "expandOutput": "Expand command output",
+      "running": "Running...",
+      "copyFailed": "Failed to copy to clipboard"
+    }
+  },
+  "settings": {
+    "title": "Configuración de Claudian",
+    "customization": "Personalización",
+    "userName": {
+      "name": "¿Cómo debería Claudian llamarte?",
+      "desc": "Tu nombre para saludos personalizados (dejar vacío para saludos genéricos)"
+    },
+    "excludedTags": {
+      "name": "Etiquetas excluidas",
+      "desc": "Las notas con estas etiquetas no se cargarán automáticamente como contexto (una por línea, sin #)"
+    },
+    "mediaFolder": {
+      "name": "Carpeta de medios",
+      "desc": "Carpeta que contiene archivos adjuntos/imagenes. Cuando las notas usan ![[image.jpg]], Claude buscará aquí. Dejar vacío para la raíz del depósito."
+    },
+    "systemPrompt": {
+      "name": "Prompt de sistema personalizado",
+      "desc": "Instrucciones adicionales añadidas al prompt de sistema por defecto"
+    },
+    "autoTitle": {
+      "name": "Generar automáticamente títulos de conversación",
+      "desc": "Genera automáticamente títulos de conversación después del primer mensaje del usuario."
+    },
+    "titleModel": {
+      "name": "Modelo de generación de títulos",
+      "desc": "Modelo utilizado para generar automáticamente títulos de conversación.",
+      "auto": "Auto (Haiku)"
+    },
+    "navMappings": {
+      "name": "Mapeos de navegación estilo Vim",
+      "desc": "Un mapeo por línea. Formato: \"map <tecla> <acción>\" (acciones: scrollUp, scrollDown, focusInput)."
+    },
+    "hotkeys": "Atajos de teclado",
+    "inlineEditHotkey": {
+      "name": "Edición en línea",
+      "descWithKey": "Atajo actual: {hotkey}",
+      "descNoKey": "Sin atajo configurado",
+      "btnChange": "Cambiar",
+      "btnSet": "Configurar"
+    },
+    "openChatHotkey": {
+      "name": "Abrir chat",
+      "descWithKey": "Atajo actual: {hotkey}",
+      "descNoKey": "Sin atajo configurado",
+      "btnChange": "Cambiar",
+      "btnSet": "Configurar"
+    },
+    "newSessionHotkey": {
+      "name": "Nueva sesión",
+      "descWithKey": "Atajo actual: {hotkey}",
+      "descNoKey": "Sin atajo configurado",
+      "btnChange": "Cambiar",
+      "btnSet": "Configurar"
+    },
+    "newTabHotkey": {
+      "name": "Nueva pestaña",
+      "descWithKey": "Atajo actual: {hotkey}",
+      "descNoKey": "Sin atajo configurado",
+      "btnChange": "Cambiar",
+      "btnSet": "Configurar"
+    },
+    "closeTabHotkey": {
+      "name": "Cerrar pestaña",
+      "descWithKey": "Atajo actual: {hotkey}",
+      "descNoKey": "Sin atajo configurado",
+      "btnChange": "Cambiar",
+      "btnSet": "Configurar"
+    },
+    "slashCommands": {
+      "name": "Comandos y habilidades",
+      "desc": "Define comandos y habilidades personalizados activados por /nombre."
+    },
+    "hiddenSlashCommands": {
+      "name": "Comandos ocultos",
+      "desc": "Oculta comandos slash específicos del menú desplegable. Útil para ocultar comandos de Claude Code que no son relevantes para Claudian. Ingresa nombres de comandos sin la barra inicial, uno por línea.",
+      "placeholder": "commit\nbuild\ntest"
+    },
+    "mcpServers": {
+      "name": "Servidores MCP",
+      "desc": "Configura servidores Model Context Protocol para extender las capacidades de Claude con herramientas y fuentes de datos externas. Los servidores con modo de guardado de contexto requieren @mention para activarse."
+    },
+    "plugins": {
+      "name": "Plugins de Claude Code",
+      "desc": "Habilita o deshabilita plugins de Claude Code descubiertos desde ~/.claude/plugins. Los plugins habilitados se almacenan por bóveda."
+    },
+    "subagents": {
+      "name": "Subagents",
+      "desc": "Configure custom subagents that Claude can delegate to.",
+      "noAgents": "No subagents configured. Click + to create one.",
+      "deleteConfirm": "Delete subagent \"{name}\"?",
+      "saveFailed": "Failed to save subagent: {message}",
+      "refreshFailed": "No se pudieron actualizar los subagentes: {message}",
+      "deleteFailed": "Failed to delete subagent: {message}",
+      "renameCleanupFailed": "Warning: could not remove old file for \"{name}\"",
+      "saved": "Subagent \"{name}\" {action}",
+      "deleted": "Subagent \"{name}\" deleted",
+      "duplicateName": "An agent named \"{name}\" already exists",
+      "descriptionRequired": "Description is required",
+      "promptRequired": "System prompt is required",
+      "modal": {
+        "titleEdit": "Edit Subagent",
+        "titleAdd": "Add Subagent",
+        "name": "Name",
+        "nameDesc": "Lowercase letters, numbers, and hyphens only",
+        "namePlaceholder": "code-reviewer",
+        "description": "Description",
+        "descriptionDesc": "Brief description of this agent",
+        "descriptionPlaceholder": "Reviews code for bugs and style",
+        "advancedOptions": "Advanced options",
+        "model": "Model",
+        "modelDesc": "Model override for this agent",
+        "tools": "Tools",
+        "toolsDesc": "Comma-separated list of allowed tools (empty = all)",
+        "disallowedTools": "Disallowed tools",
+        "disallowedToolsDesc": "Comma-separated list of tools to disallow",
+        "skills": "Skills",
+        "skillsDesc": "Comma-separated list of skills",
+        "prompt": "System prompt",
+        "promptDesc": "Instructions for the agent",
+        "promptPlaceholder": "You are a code reviewer. Analyze the given code for..."
+      }
+    },
+    "safety": "Seguridad",
+    "loadUserSettings": {
+      "name": "Cargar configuración de usuario Claude",
+      "desc": "Carga ~/.claude/settings.json. Cuando está habilitado, las reglas de permisos del usuario pueden eludir el modo seguro."
+    },
+    "enableBlocklist": {
+      "name": "Habilitar lista negra de comandos",
+      "desc": "Bloquea comandos bash potencialmente peligrosos"
+    },
+    "blockedCommands": {
+      "name": "Comandos bloqueados ({platform})",
+      "desc": "Patrones a bloquear en {platform} (uno por línea). Soporta expresiones regulares.",
+      "unixName": "Comandos bloqueados (Unix/Git Bash)",
+      "unixDesc": "Los patrones Unix también se bloquean en Windows porque Git Bash puede invocarlos."
+    },
+    "exportPaths": {
+      "name": "Rutas de exportación permitidas",
+      "desc": "Rutas fuera del depósito donde se pueden exportar archivos (una por línea). Soporta ~ para el directorio home."
+    },
+    "environment": "Entorno",
+    "customVariables": {
+      "name": "Variables personalizadas",
+      "desc": "Variables de entorno para Claude SDK (formato KEY=VALUE, una por línea). Prefijo export soportado."
+    },
+    "envSnippets": {
+      "name": "Snippets",
+      "addBtn": "Añadir fragmento",
+      "noSnippets": "No hay fragmentos de entorno guardados. Haga clic en + para guardar su configuración actual.",
+      "nameRequired": "Por favor ingrese un nombre para el fragmento",
+      "modal": {
+        "titleEdit": "Editar fragmento",
+        "titleSave": "Guardar fragmento",
+        "name": "Nombre",
+        "namePlaceholder": "Un nombre descriptivo para esta configuración",
+        "description": "Descripción",
+        "descPlaceholder": "Descripción opcional",
+        "envVars": "Variables de entorno",
+        "envVarsPlaceholder": "Formato KEY=VALUE, una por línea (prefijo export soportado)",
+        "save": "Guardar",
+        "update": "Actualizar",
+        "cancel": "Cancelar"
+      }
+    },
+    "customContextLimits": {
+      "name": "Límites de contexto personalizados",
+      "desc": "Establezca tamaños de ventana de contexto para sus modelos personalizados. Deje vacío para usar el valor predeterminado (200k tokens).",
+      "invalid": "Formato inválido. Use: 256k, 1m o número exacto (1000-10000000)."
+    },
+    "advanced": "Avanzado",
+    "show1MModel": {
+      "name": "Habilitar Sonnet con ventana de contexto de 1M",
+      "desc": "Reemplazar Sonnet estándar con Sonnet (1M) en el selector de modelos. Mismo precio bajo 200k tokens. Requiere suscripción Max."
+    },
+    "enableChrome": {
+      "name": "Habilitar extensión de Chrome",
+      "desc": "Permitir que Claude interactúe con Chrome a través de la extensión claude-in-chrome. Requiere que la extensión esté instalada. Requiere reinicio de sesión."
+    },
+    "enableBangBash": {
+      "name": "Enable bash mode (!)",
+      "desc": "Type ! on empty input to enter bash mode. Runs commands directly via Node.js child_process.",
+      "validation": {
+        "noNode": "Node.js not found on PATH. Install Node.js or check your PATH configuration."
+      }
+    },
+    "maxTabs": {
+      "name": "Máximo de pestañas de chat",
+      "desc": "Número máximo de pestañas de chat simultáneas (3-10). Cada pestaña usa una sesión de Claude separada.",
+      "warning": "Más de 5 pestañas puede afectar el rendimiento y el uso de memoria."
+    },
+    "tabBarPosition": {
+      "name": "Posición de la barra de pestañas",
+      "desc": "Elige dónde mostrar las insignias de pestañas y los botones de acción",
+      "input": "Sobre el área de entrada (predeterminado)",
+      "header": "En el encabezado"
+    },
+    "enableAutoScroll": {
+      "name": "Desplazamiento automático durante streaming",
+      "desc": "Desplazarse automáticamente hacia abajo mientras Claude transmite respuestas. Desactivar para quedarse arriba y leer desde el principio."
+    },
+    "openInMainTab": {
+      "name": "Abrir en área de editor principal",
+      "desc": "Abrir el panel de chat como una pestaña principal en el área de editor central en lugar de la barra lateral derecha"
+    },
+    "cliPath": {
+      "name": "Ruta CLI Claude",
+      "desc": "Ruta personalizada a Claude Code CLI. Dejar vacío para detección automática.",
+      "descWindows": "Para el instalador nativo, use claude.exe. Para instalaciones con npm/pnpm/yarn u otros gestores de paquetes, use la ruta cli.js (no claude.cmd).",
+      "descUnix": "Pegue la salida de \"which claude\" — funciona tanto para instalaciones nativas como npm/pnpm/yarn.",
+      "validation": {
+        "notExist": "La ruta no existe",
+        "isDirectory": "La ruta es un directorio, no un archivo"
+      }
+    },
+    "language": {
+      "name": "Idioma",
+      "desc": "Cambiar el idioma de visualización de la interfaz del plugin"
+    }
+  }
+}

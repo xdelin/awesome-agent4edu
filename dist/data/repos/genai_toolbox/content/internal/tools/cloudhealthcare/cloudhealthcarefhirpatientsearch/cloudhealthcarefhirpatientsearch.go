@@ -1,0 +1,277 @@
+// Copyright 2025 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package fhirpatientsearch
+
+import (
+	"context"
+	"fmt"
+	"net/http"
+	"strings"
+
+	"github.com/goccy/go-yaml"
+	"github.com/googleapis/genai-toolbox/internal/embeddingmodels"
+	"github.com/googleapis/genai-toolbox/internal/sources"
+	"github.com/googleapis/genai-toolbox/internal/tools"
+	"github.com/googleapis/genai-toolbox/internal/tools/cloudhealthcare/common"
+	"github.com/googleapis/genai-toolbox/internal/util"
+	"github.com/googleapis/genai-toolbox/internal/util/parameters"
+	"google.golang.org/api/googleapi"
+)
+
+const resourceType string = "cloud-healthcare-fhir-patient-search"
+const (
+	activeKey           = "active"
+	cityKey             = "city"
+	countryKey          = "country"
+	postalCodeKey       = "postalcode"
+	stateKey            = "state"
+	addressSubstringKey = "addressSubstring"
+	birthDateRangeKey   = "birthDateRange"
+	deathDateRangeKey   = "deathDateRange"
+	deceasedKey         = "deceased"
+	emailKey            = "email"
+	genderKey           = "gender"
+	addressUseKey       = "addressUse"
+	nameKey             = "name"
+	givenNameKey        = "givenName"
+	familyNameKey       = "familyName"
+	phoneKey            = "phone"
+	languageKey         = "language"
+	identifierKey       = "identifier"
+	summaryKey          = "summary"
+)
+
+func init() {
+	if !tools.Register(resourceType, newConfig) {
+		panic(fmt.Sprintf("tool type %q already registered", resourceType))
+	}
+}
+
+func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.ToolConfig, error) {
+	actual := Config{Name: name}
+	if err := decoder.DecodeContext(ctx, &actual); err != nil {
+		return nil, err
+	}
+	return actual, nil
+}
+
+type compatibleSource interface {
+	AllowedFHIRStores() map[string]struct{}
+	UseClientAuthorization() bool
+	FHIRPatientSearch(string, string, []googleapi.CallOption) (any, error)
+}
+
+type Config struct {
+	Name         string   `yaml:"name" validate:"required"`
+	Type         string   `yaml:"type" validate:"required"`
+	Source       string   `yaml:"source" validate:"required"`
+	Description  string   `yaml:"description" validate:"required"`
+	AuthRequired []string `yaml:"authRequired"`
+}
+
+// validate interface
+var _ tools.ToolConfig = Config{}
+
+func (cfg Config) ToolConfigType() string {
+	return resourceType
+}
+
+func (cfg Config) Initialize(srcs map[string]sources.Source) (tools.Tool, error) {
+	// verify source exists
+	rawS, ok := srcs[cfg.Source]
+	if !ok {
+		return nil, fmt.Errorf("no source named %q configured", cfg.Source)
+	}
+
+	// verify the source is compatible
+	s, ok := rawS.(compatibleSource)
+	if !ok {
+		return nil, fmt.Errorf("invalid source for %q tool: source %q not compatible", resourceType, cfg.Source)
+	}
+
+	params := parameters.Parameters{
+		parameters.NewStringParameterWithDefault(activeKey, "", "Whether the patient record is active. Use true or false"),
+		parameters.NewStringParameterWithDefault(cityKey, "", "The city of the patient's address"),
+		parameters.NewStringParameterWithDefault(countryKey, "", "The country of the patient's address"),
+		parameters.NewStringParameterWithDefault(postalCodeKey, "", "The postal code of the patient's address"),
+		parameters.NewStringParameterWithDefault(stateKey, "", "The state of the patient's address"),
+		parameters.NewStringParameterWithDefault(addressSubstringKey, "", "A substring to search for in any address field"),
+		parameters.NewStringParameterWithDefault(birthDateRangeKey, "", "A date range for the patient's birthdate in the format YYYY-MM-DD/YYYY-MM-DD. Omit the first or second date to indicate open-ended ranges (e.g. '/2000-01-01' or '1950-01-01/')"),
+		parameters.NewStringParameterWithDefault(deathDateRangeKey, "", "A date range for the patient's death date in the format YYYY-MM-DD/YYYY-MM-DD. Omit the first or second date to indicate open-ended ranges (e.g. '/2000-01-01' or '1950-01-01/')"),
+		parameters.NewStringParameterWithDefault(deceasedKey, "", "Whether the patient is deceased. Use true or false"),
+		parameters.NewStringParameterWithDefault(emailKey, "", "The patient's email address"),
+		parameters.NewStringParameterWithDefault(genderKey, "", "The patient's gender. Must be one of 'male', 'female', 'other', or 'unknown'"),
+		parameters.NewStringParameterWithDefault(addressUseKey, "", "The use of the patient's address. Must be one of 'home', 'work', 'temp', 'old', or 'billing'"),
+		parameters.NewStringParameterWithDefault(nameKey, "", "The patient's name. Can be a family name, given name, or both"),
+		parameters.NewStringParameterWithDefault(givenNameKey, "", "A portion of the given name of the patient"),
+		parameters.NewStringParameterWithDefault(familyNameKey, "", "A portion of the family name of the patient"),
+		parameters.NewStringParameterWithDefault(phoneKey, "", "The patient's phone number"),
+		parameters.NewStringParameterWithDefault(languageKey, "", "The patient's preferred language. Must be a valid BCP-47 code (e.g. 'en-US', 'es')"),
+		parameters.NewStringParameterWithDefault(identifierKey, "", "An identifier for the patient"),
+		parameters.NewBooleanParameterWithDefault(summaryKey, true, "Requests the server to return a subset of the resource. Return a limited subset of elements from the resource. Enabled by default to reduce response size. Use get-fhir-resource tool to get full resource details (preferred) or set to false to disable."),
+	}
+
+	if len(s.AllowedFHIRStores()) != 1 {
+		params = append(params, parameters.NewStringParameter(common.StoreKey, "The FHIR store ID to retrieve the resource from."))
+	}
+	mcpManifest := tools.GetMcpManifest(cfg.Name, cfg.Description, cfg.AuthRequired, params, nil)
+
+	// finish tool setup
+	t := Tool{
+		Config:      cfg,
+		Parameters:  params,
+		manifest:    tools.Manifest{Description: cfg.Description, Parameters: params.Manifest(), AuthRequired: cfg.AuthRequired},
+		mcpManifest: mcpManifest,
+	}
+	return t, nil
+}
+
+// validate interface
+var _ tools.Tool = Tool{}
+
+type Tool struct {
+	Config
+	Parameters  parameters.Parameters `yaml:"parameters"`
+	manifest    tools.Manifest
+	mcpManifest tools.McpManifest
+}
+
+func (t Tool) ToConfig() tools.ToolConfig {
+	return t.Config
+}
+
+func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, params parameters.ParamValues, accessToken tools.AccessToken) (any, util.ToolboxError) {
+	source, err := tools.GetCompatibleSource[compatibleSource](resourceMgr, t.Source, t.Name, t.Type)
+	if err != nil {
+		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
+	}
+
+	storeID, err := common.ValidateAndFetchStoreID(params, source.AllowedFHIRStores())
+	if err != nil {
+		return nil, util.NewAgentError("failed to validate store ID", err)
+	}
+
+	var tokenStr string
+	if source.UseClientAuthorization() {
+		tokenStr, err = accessToken.ParseBearerToken()
+		if err != nil {
+			return nil, util.NewClientServerError("error parsing access token", http.StatusUnauthorized, err)
+		}
+	}
+
+	var summary bool
+	var opts []googleapi.CallOption
+	for k, v := range params.AsMap() {
+		if k == common.StoreKey {
+			continue
+		}
+		if k == summaryKey {
+			var ok bool
+			summary, ok = v.(bool)
+			if !ok {
+				return nil, util.NewAgentError(fmt.Sprintf("invalid '%s' parameter; expected a boolean", summaryKey), nil)
+			}
+			continue
+		}
+
+		val, ok := v.(string)
+		if !ok {
+			return nil, util.NewAgentError(fmt.Sprintf("invalid parameter '%s'; expected a string", k), nil)
+		}
+		if val == "" {
+			continue
+		}
+		switch k {
+		case activeKey, deceasedKey, emailKey, genderKey, phoneKey, languageKey, identifierKey:
+			opts = append(opts, googleapi.QueryParameter(k, val))
+		case cityKey, countryKey, postalCodeKey, stateKey:
+			opts = append(opts, googleapi.QueryParameter("address-"+k, val))
+		case addressSubstringKey:
+			opts = append(opts, googleapi.QueryParameter("address", val))
+		case birthDateRangeKey, deathDateRangeKey:
+			key := "birthdate"
+			if k == deathDateRangeKey {
+				key = "death-date"
+			}
+			parts := strings.Split(val, "/")
+			if len(parts) != 2 {
+				return nil, util.NewAgentError(fmt.Sprintf("invalid '%s' format; expected YYYY-MM-DD/YYYY-MM-DD", k), nil)
+			}
+			var values []string
+			if parts[0] != "" {
+				values = append(values, "ge"+parts[0])
+			}
+			if parts[1] != "" {
+				values = append(values, "le"+parts[1])
+			}
+			if len(values) != 0 {
+				opts = append(opts, googleapi.QueryParameter(key, values...))
+			}
+		case addressUseKey:
+			opts = append(opts, googleapi.QueryParameter("address-use", val))
+		case nameKey:
+			parts := strings.Split(val, " ")
+			for _, part := range parts {
+				opts = append(opts, googleapi.QueryParameter("name", part))
+			}
+		case givenNameKey:
+			opts = append(opts, googleapi.QueryParameter("given", val))
+		case familyNameKey:
+			opts = append(opts, googleapi.QueryParameter("family", val))
+		default:
+			return nil, util.NewAgentError(fmt.Sprintf("unexpected parameter key %q", k), nil)
+		}
+	}
+	if summary {
+		opts = append(opts, googleapi.QueryParameter("_summary", "text"))
+	}
+	resp, err := source.FHIRPatientSearch(storeID, tokenStr, opts)
+	if err != nil {
+		return nil, util.ProcessGcpError(err)
+	}
+	return resp, nil
+}
+
+func (t Tool) EmbedParams(ctx context.Context, paramValues parameters.ParamValues, embeddingModelsMap map[string]embeddingmodels.EmbeddingModel) (parameters.ParamValues, error) {
+	return parameters.EmbedParams(ctx, t.Parameters, paramValues, embeddingModelsMap, nil)
+}
+
+func (t Tool) Manifest() tools.Manifest {
+	return t.manifest
+}
+
+func (t Tool) McpManifest() tools.McpManifest {
+	return t.mcpManifest
+}
+
+func (t Tool) Authorized(verifiedAuthServices []string) bool {
+	return tools.IsAuthorized(t.AuthRequired, verifiedAuthServices)
+}
+
+func (t Tool) RequiresClientAuthorization(resourceMgr tools.SourceProvider) (bool, error) {
+	source, err := tools.GetCompatibleSource[compatibleSource](resourceMgr, t.Source, t.Name, t.Type)
+	if err != nil {
+		return false, err
+	}
+	return source.UseClientAuthorization(), nil
+}
+
+func (t Tool) GetAuthTokenHeaderName(resourceMgr tools.SourceProvider) (string, error) {
+	return "Authorization", nil
+}
+
+func (t Tool) GetParameters() parameters.Parameters {
+	return t.Parameters
+}

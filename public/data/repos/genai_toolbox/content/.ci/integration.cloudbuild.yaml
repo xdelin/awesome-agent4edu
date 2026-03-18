@@ -1,0 +1,1247 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+steps:
+  - id: "install-dependencies"
+    name: golang:1
+    waitFor: ["-"]
+    env:
+      - "GOPATH=/gopath"
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    script: |
+      go get -d ./...
+
+  - id: "compile-test-binary"
+    name: golang:1
+    waitFor: ["install-dependencies"]
+    env:
+      - "GOPATH=/gopath"
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    script: |
+      go test -c -race -cover \
+      -coverpkg=./internal/sources/...,./internal/tools/... \
+      $(go list ./tests/... | grep -v '/tests/prompts')
+      chmod +x .ci/test_with_coverage.sh
+
+  - id: "compile-prompt-test-binary"
+    name: golang:1
+    waitFor: ["install-dependencies"]
+    env:
+      - "GOPATH=/gopath"
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    script: |
+      for dir in ./tests/prompts/*; do
+        if [ -d "$dir" ]; then
+          PROMPT_TYPE=$(basename "$dir")
+          echo "--- Compiling prompt test for ${PROMPT_TYPE} with targeted coverage ---"
+
+          go test -c -race -cover \
+            -coverpkg=./internal/prompts/... \
+            -o "prompt.${PROMPT_TYPE}.test" \
+            "${dir}"
+        fi
+      done
+
+      chmod +x .ci/test_prompts_with_coverage.sh
+
+  - id: "prompts-custom"
+    name: golang:1
+    waitFor: ["compile-prompt-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_prompts_with_coverage.sh "custom"
+
+  - id: "cloud-sql-pg"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "CLOUD_SQL_POSTGRES_PROJECT=$PROJECT_ID"
+      - "CLOUD_SQL_POSTGRES_INSTANCE=$_CLOUD_SQL_POSTGRES_INSTANCE"
+      - "CLOUD_SQL_POSTGRES_DATABASE=$_DATABASE_NAME"
+      - "CLOUD_SQL_POSTGRES_REGION=$_REGION"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv:
+      ["CLOUD_SQL_POSTGRES_USER", "CLOUD_SQL_POSTGRES_PASS", "CLIENT_ID", "API_KEY"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cloud SQL Postgres" \
+          cloudsqlpg \
+          postgressql \
+          postgresexecutesql
+
+  - id: "alloydb"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "ALLOYDB_PROJECT=$PROJECT_ID"
+      - "ALLOYDB_CLUSTER=$_ALLOYDB_POSTGRES_CLUSTER"
+      - "ALLOYDB_INSTANCE=$_ALLOYDB_POSTGRES_INSTANCE"
+      - "ALLOYDB_REGION=$_REGION"
+    secretEnv: ["ALLOYDB_POSTGRES_USER"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "AlloyDB" \
+          alloydb \
+          alloydb
+
+  - id: "alloydb-pg"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "ALLOYDB_POSTGRES_PROJECT=$PROJECT_ID"
+      - "ALLOYDB_POSTGRES_CLUSTER=$_ALLOYDB_POSTGRES_CLUSTER"
+      - "ALLOYDB_POSTGRES_INSTANCE=$_ALLOYDB_POSTGRES_INSTANCE"
+      - "ALLOYDB_POSTGRES_DATABASE=$_DATABASE_NAME"
+      - "ALLOYDB_POSTGRES_REGION=$_REGION"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["ALLOYDB_POSTGRES_USER", "ALLOYDB_POSTGRES_PASS", "CLIENT_ID", "API_KEY"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "AlloyDB Postgres" \
+          alloydbpg \
+          postgressql \
+          postgresexecutesql
+
+  - id: "alloydb-ai-nl"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "ALLOYDB_AI_NL_PROJECT=$PROJECT_ID"
+      - "ALLOYDB_AI_NL_CLUSTER=$_ALLOYDB_AI_NL_CLUSTER"
+      - "ALLOYDB_AI_NL_INSTANCE=$_ALLOYDB_AI_NL_INSTANCE"
+      - "ALLOYDB_AI_NL_DATABASE=$_DATABASE_NAME"
+      - "ALLOYDB_AI_NL_REGION=$_REGION"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["ALLOYDB_AI_NL_USER", "ALLOYDB_AI_NL_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "AlloyDB AI NL" \
+          alloydbainl \
+          alloydbainl
+
+  - id: "alloydb-omni"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "AlloyDB Omni" \
+          alloydbomni \
+          postgres
+
+  - id: "bigtable"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "BIGTABLE_PROJECT=$PROJECT_ID"
+      - "BIGTABLE_INSTANCE=$_BIGTABLE_INSTANCE"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Bigtable" \
+          bigtable \
+          bigtable
+
+  - id: "bigquery"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "BIGQUERY_PROJECT=$PROJECT_ID"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "BigQuery" \
+          bigquery \
+          bigquery
+
+  - id: "cloud-gda"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "CLOUD_GDA_PROJECT=$PROJECT_ID"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cloud Gemini Data Analytics" \
+          cloudgda \
+          cloudgda
+
+  - id: "dataplex"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "DATAPLEX_PROJECT=$PROJECT_ID"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Dataplex" \
+          dataplex \
+          dataplex
+
+  - id: "dataform"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        apt-get update && apt-get install -y npm && \
+        npm install -g @dataform/cli && \
+        .ci/test_with_coverage.sh \
+          "Dataform" \
+          dataform \
+          dataform
+
+  - id: "cloud-healthcare"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "HEALTHCARE_PROJECT=$PROJECT_ID"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+      - "HEALTHCARE_REGION=$_REGION"
+      - "HEALTHCARE_DATASET=$_HEALTHCARE_DATASET"
+      - "HEALTHCARE_PREPOPULATED_DICOM_STORE=$_HEALTHCARE_PREPOPULATED_DICOM_STORE"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cloud Healthcare API" \
+          cloudhealthcare \
+          cloudhealthcare
+
+  - id: "cloud-logging-admin"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "LOGADMIN_PROJECT=$PROJECT_ID"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cloud Logging Admin" \
+          cloudloggingadmin \
+          cloudloggingadmin
+
+  - id: "postgres"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "POSTGRES_DATABASE=$_DATABASE_NAME"
+      - "POSTGRES_HOST=$_POSTGRES_HOST"
+      - "POSTGRES_PORT=$_POSTGRES_PORT"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["POSTGRES_USER", "POSTGRES_PASS", "CLIENT_ID", "API_KEY"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Postgres" \
+          postgres \
+          postgressql \
+          postgresexecutesql
+
+  - id: "cockroachdb"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "COCKROACHDB_DATABASE=$_DATABASE_NAME"
+      - "COCKROACHDB_PORT=$_COCKROACHDB_PORT"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["COCKROACHDB_USER", "COCKROACHDB_HOST","CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "CockroachDB" \
+          cockroachdb \
+          cockroachdbsql \
+          cockroachdbexecutesql \
+          cockroachdblisttables \
+          cockroachdblistschemas
+
+  - id: "spanner"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SPANNER_PROJECT=$PROJECT_ID"
+      - "SPANNER_DATABASE=$_DATABASE_NAME"
+      - "SPANNER_INSTANCE=$_SPANNER_INSTANCE"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Spanner" \
+          spanner \
+          spanner || echo "Integration tests failed." # ignore test failures
+
+  - id: "neo4j"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "NEO4J_DATABASE=$_NEO4J_DATABASE"
+      - "NEO4J_URI=$_NEO4J_URI"
+    secretEnv: ["NEO4J_USER", "NEO4J_PASS"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Neo4j" \
+          neo4j \
+          neo4j
+
+  - id: "cloud-sql-mssql"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "CLOUD_SQL_MSSQL_PROJECT=$PROJECT_ID"
+      - "CLOUD_SQL_MSSQL_INSTANCE=$_CLOUD_SQL_MSSQL_INSTANCE"
+      - "CLOUD_SQL_MSSQL_IP=$_CLOUD_SQL_MSSQL_IP"
+      - "CLOUD_SQL_MSSQL_DATABASE=$_DATABASE_NAME"
+      - "CLOUD_SQL_MSSQL_REGION=$_REGION"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLOUD_SQL_MSSQL_USER", "CLOUD_SQL_MSSQL_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cloud SQL MSSQL" \
+          cloudsqlmssql \
+          mssql
+
+  - id: "cloud-sql-mysql"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "CLOUD_SQL_MYSQL_PROJECT=$PROJECT_ID"
+      - "CLOUD_SQL_MYSQL_INSTANCE=$_CLOUD_SQL_MYSQL_INSTANCE"
+      - "CLOUD_SQL_MYSQL_DATABASE=$_DATABASE_NAME"
+      - "CLOUD_SQL_MYSQL_REGION=$_REGION"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLOUD_SQL_MYSQL_USER", "CLOUD_SQL_MYSQL_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cloud SQL MySQL" \
+          cloudsqlmysql \
+          mysql
+
+  - id: "mysql"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "MYSQL_DATABASE=$_DATABASE_NAME"
+      - "MYSQL_HOST=$_MYSQL_HOST"
+      - "MYSQL_PORT=$_MYSQL_PORT"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["MYSQL_USER", "MYSQL_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "MySQL" \
+          mysql \
+          mysql
+
+  - id: "mssql"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "MSSQL_DATABASE=$_DATABASE_NAME"
+      - "MSSQL_HOST=$_MSSQL_HOST"
+      - "MSSQL_PORT=$_MSSQL_PORT"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["MSSQL_USER", "MSSQL_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "MSSQL" \
+          mssql \
+          mssql
+
+  # - id: "dgraph"
+  #   name: golang:1
+  #   waitFor: ["compile-test-binary"]
+  #   entrypoint: /bin/bash
+  #   env:
+  #     - "GOPATH=/gopath"
+  #     - "DGRAPH_URL=$_DGRAPHURL"
+  #   volumes:
+  #     - name: "go"
+  #       path: "/gopath"
+  #   args:
+  #     - -c
+  #     - |
+  #       .ci/test_with_coverage.sh \
+  #         "Dgraph" \
+  #         dgraph \
+  #         dgraph
+
+  - id: "http"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "HTTP" \
+          http \
+          http
+
+  - id: "sqlite"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    secretEnv: ["CLIENT_ID"]
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "SQLite" \
+          sqlite \
+          sqlite
+
+  - id: "couchbase"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "COUCHBASE_SCOPE=$_COUCHBASE_SCOPE"
+      - "COUCHBASE_BUCKET=$_COUCHBASE_BUCKET"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv:
+      ["COUCHBASE_CONNECTION", "COUCHBASE_USER", "COUCHBASE_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Couchbase" \
+          couchbase \
+          couchbase
+
+  - id: "redis"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["REDIS_ADDRESS", "REDIS_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Redis" \
+          redis \
+          redis
+
+  - id: "valkey"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "VALKEY_DATABASE=$_VALKEY_DATABASE"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["VALKEY_ADDRESS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Valkey" \
+          valkey \
+          valkey
+
+  - id: "oceanbase"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "OCEANBASE_PORT=$_OCEANBASE_PORT"
+      - "OCEANBASE_DATABASE=$_OCEANBASE_DATABASE"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv:
+      ["CLIENT_ID", "OCEANBASE_HOST", "OCEANBASE_USER", "OCEANBASE_PASSWORD"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "OceanBase" \
+          oceanbase \
+          oceanbase
+
+  - id: "firestore"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "FIRESTORE_PROJECT=$PROJECT_ID"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Firestore" \
+          firestore \
+          firestore
+
+  - id: "mongodb"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "MONGODB_DATABASE=$_DATABASE_NAME"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["MONGODB_URI", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "MongoDB" \
+          mongodb \
+          mongodb
+
+  - id: "looker"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "FIRESTORE_PROJECT=$PROJECT_ID"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+      - "LOOKER_VERIFY_SSL=$_LOOKER_VERIFY_SSL"
+      - "LOOKER_PROJECT=$_LOOKER_PROJECT"
+      - "LOOKER_LOCATION=$_LOOKER_LOCATION"
+    secretEnv:
+      [
+        "CLIENT_ID",
+        "LOOKER_BASE_URL",
+        "LOOKER_CLIENT_ID",
+        "LOOKER_CLIENT_SECRET",
+      ]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Looker" \
+          looker \
+          looker
+
+  - id: "mindsdb"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "MINDSDB_PORT=$_MINDSDB_PORT"
+      - "MINDSDB_DATABASE=$_MINDSDB_DATABASE"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["MINDSDB_HOST", "MINDSDB_USER", "MINDSDB_PASS", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "MindsDB" \
+          mindsdb \
+          mindsdb
+
+  - id: "cloud-sql"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cloud SQL Wait for Operation" \
+          cloudsql \
+          cloudsql
+
+  - id: "tidb"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "TIDB_DATABASE=$_DATABASE_NAME"
+      - "TIDB_HOST=$_TIDB_HOST"
+      - "TIDB_PORT=$_TIDB_PORT"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID", "TIDB_USER", "TIDB_PASS"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "TiDB" \
+          tidb \
+          tidbsql tidbexecutesql
+
+  - id: "firebird"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "FIREBIRD_DATABASE=$_FIREBIRD_DATABASE_NAME"
+      - "FIREBIRD_HOST=$_FIREBIRD_HOST"
+      - "FIREBIRD_PORT=$_FIREBIRD_PORT"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID", "FIREBIRD_USER", "FIREBIRD_PASS"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Firebird" \
+          firebird \
+          firebirdsql firebirdexecutesql
+
+  - id: "clickhouse"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "CLICKHOUSE_DATABASE=$_CLICKHOUSE_DATABASE"
+      - "CLICKHOUSE_PORT=$_CLICKHOUSE_PORT"
+      - "CLICKHOUSE_PROTOCOL=$_CLICKHOUSE_PROTOCOL"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLICKHOUSE_HOST", "CLICKHOUSE_USER", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "ClickHouse" \
+          clickhouse \
+          clickhouse
+
+  - id: "trino"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "TRINO_HOST=$_TRINO_HOST"
+      - "TRINO_PORT=$_TRINO_PORT"
+      - "TRINO_CATALOG=$_TRINO_CATALOG"
+      - "TRINO_SCHEMA=$_TRINO_SCHEMA"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID", "TRINO_USER"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Trino" \
+          trino \
+          trinosql trinoexecutesql
+
+  - id: "yugabytedb"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "YUGABYTEDB_DATABASE=$_YUGABYTEDB_DATABASE"
+      - "YUGABYTEDB_PORT=$_YUGABYTEDB_PORT"
+      - "YUGABYTEDB_LOADBALANCE=$_YUGABYTEDB_LOADBALANCE"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv:
+      ["YUGABYTEDB_USER", "YUGABYTEDB_PASS", "YUGABYTEDB_HOST", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        ./yugabytedb.test -test.v
+
+  - id: "elasticsearch"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID", "ELASTICSEARCH_USER", "ELASTICSEARCH_PASS", "ELASTICSEARCH_HOST"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Elasticsearch" \
+          elasticsearch \
+          elasticsearch
+
+  - id: "snowflake"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+      - "SNOWFLAKE_DATABASE=$_SNOWFLAKE_DATABASE"
+      - "SNOWFLAKE_SCHEMA=$_SNOWFLAKE_SCHEMA"
+    secretEnv: ["CLIENT_ID", "SNOWFLAKE_USER", "SNOWFLAKE_PASS", "SNOWFLAKE_ACCOUNT"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Snowflake" \
+          snowflake \
+          snowflake
+
+  - id: "cassandra"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID", "CASSANDRA_USER", "CASSANDRA_PASS", "CASSANDRA_HOST"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Cassandra" \
+          cassandra \
+          cassandra
+
+  - id: "oracle"
+    name: ghcr.io/oracle/oraclelinux9-instantclient:23
+    waitFor: ["install-dependencies"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+      - "ORACLE_SERVER_NAME=$_ORACLE_SERVER_NAME"
+    secretEnv: ["CLIENT_ID", "ORACLE_USER", "ORACLE_PASS", "ORACLE_HOST"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        # Install the C compiler and Oracle SDK headers needed for cgo
+        dnf install -y gcc oracle-instantclient-devel
+        # Install Go
+        curl -L -o go.tar.gz "https://go.dev/dl/go1.25.1.linux-amd64.tar.gz"
+        tar -C /usr/local -xzf go.tar.gz
+        export PATH="/usr/local/go/bin:$$PATH"
+
+        go test -v ./tests/oracle/... \
+          -coverprofile=oracle_coverage.out \
+          -coverpkg=./internal/sources/oracle/...,./internal/tools/oracle/...
+
+        # Coverage check
+        total_coverage=$(go tool cover -func=oracle_coverage.out | grep "total:" | awk '{print $3}')
+        echo "Oracle total coverage: $total_coverage"
+        coverage_numeric=$(echo "$total_coverage" | sed 's/%//')
+        if awk -v cov="$coverage_numeric" 'BEGIN {exit !(cov < 60)}'; then
+            echo "Coverage failure: $total_coverage is below 60%."
+            exit 1
+        fi
+
+  - id: "serverless-spark"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SERVERLESS_SPARK_LOCATION=$_REGION"
+      - "SERVERLESS_SPARK_PROJECT=$PROJECT_ID"
+      - "SERVERLESS_SPARK_SERVICE_ACCOUNT=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Serverless Spark" \
+          serverlessspark
+
+  - id: "dataproc"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "DATAPROC_PROJECT=$PROJECT_ID"
+      - "DATAPROC_REGION=$_REGION"
+      - "DATAPROC_LIST_JOBS_CLUSTER=cluster-36"
+    secretEnv: ["CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "Dataproc" \
+          dataproc
+
+  - id: "singlestore"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "SINGLESTORE_PORT=$_SINGLESTORE_PORT"
+      - "SINGLESTORE_USER=$_SINGLESTORE_USER"
+      - "SINGLESTORE_DATABASE=$_SINGLESTORE_DATABASE"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["SINGLESTORE_PASSWORD", "SINGLESTORE_HOST", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        .ci/test_with_coverage.sh \
+          "SingleStore" \
+          singlestore \
+          singlestore
+
+  - id: "mariadb"
+    name: golang:1
+    waitFor: ["compile-test-binary"]
+    entrypoint: /bin/bash
+    env:
+      - "GOPATH=/gopath"
+      - "MARIADB_DATABASE=$_MARIADB_DATABASE"
+      - "MARIADB_PORT=$_MARIADB_PORT"
+      - "SERVICE_ACCOUNT_EMAIL=$SERVICE_ACCOUNT_EMAIL"
+    secretEnv: ["MARIADB_USER", "MARIADB_PASS", "MARIADB_HOST", "CLIENT_ID"]
+    volumes:
+      - name: "go"
+        path: "/gopath"
+    args:
+      - -c
+      - |
+        # skip coverage check as it re-uses current MySQL implementation
+        go test ./tests/mariadb
+
+
+availableSecrets:
+  secretManager:
+    # Common secrets
+    - versionName: projects/$PROJECT_ID/secrets/client_id/versions/latest
+      env: CLIENT_ID
+    - versionName: projects/$PROJECT_ID/secrets/api_key/versions/latest
+      env: API_KEY
+
+    # Resource-specific secrets
+    - versionName: projects/$PROJECT_ID/secrets/cloud_sql_pg_user/versions/latest
+      env: CLOUD_SQL_POSTGRES_USER
+    - versionName: projects/$PROJECT_ID/secrets/cloud_sql_pg_pass/versions/latest
+      env: CLOUD_SQL_POSTGRES_PASS
+    - versionName: projects/$PROJECT_ID/secrets/alloydb_pg_user/versions/latest
+      env: ALLOYDB_POSTGRES_USER
+    - versionName: projects/$PROJECT_ID/secrets/alloydb_pg_pass/versions/latest
+      env: ALLOYDB_POSTGRES_PASS
+    - versionName: projects/$PROJECT_ID/secrets/alloydb_ai_nl_user/versions/latest
+      env: ALLOYDB_AI_NL_USER
+    - versionName: projects/$PROJECT_ID/secrets/alloydb_ai_nl_pass/versions/latest
+      env: ALLOYDB_AI_NL_PASS
+    - versionName: projects/$PROJECT_ID/secrets/postgres_user/versions/latest
+      env: POSTGRES_USER
+    - versionName: projects/$PROJECT_ID/secrets/postgres_pass/versions/latest
+      env: POSTGRES_PASS
+    - versionName: projects/$PROJECT_ID/secrets/neo4j_user/versions/latest
+      env: NEO4J_USER
+    - versionName: projects/$PROJECT_ID/secrets/neo4j_pass/versions/latest
+      env: NEO4J_PASS
+    - versionName: projects/$PROJECT_ID/secrets/cloud_sql_mssql_user/versions/latest
+      env: CLOUD_SQL_MSSQL_USER
+    - versionName: projects/$PROJECT_ID/secrets/cloud_sql_mssql_pass/versions/latest
+      env: CLOUD_SQL_MSSQL_PASS
+    - versionName: projects/$PROJECT_ID/secrets/cloud_sql_mysql_user/versions/latest
+      env: CLOUD_SQL_MYSQL_USER
+    - versionName: projects/$PROJECT_ID/secrets/cloud_sql_mysql_pass/versions/latest
+      env: CLOUD_SQL_MYSQL_PASS
+    - versionName: projects/$PROJECT_ID/secrets/mysql_user/versions/latest
+      env: MYSQL_USER
+    - versionName: projects/$PROJECT_ID/secrets/mysql_pass/versions/latest
+      env: MYSQL_PASS
+    - versionName: projects/$PROJECT_ID/secrets/mssql_user/versions/latest
+      env: MSSQL_USER
+    - versionName: projects/$PROJECT_ID/secrets/mssql_pass/versions/latest
+      env: MSSQL_PASS
+    - versionName: projects/$PROJECT_ID/secrets/couchbase_connection/versions/latest
+      env: COUCHBASE_CONNECTION
+    - versionName: projects/$PROJECT_ID/secrets/couchbase_user/versions/latest
+      env: COUCHBASE_USER
+    - versionName: projects/$PROJECT_ID/secrets/couchbase_pass/versions/latest
+      env: COUCHBASE_PASS
+    - versionName: projects/$PROJECT_ID/secrets/memorystore_redis_address/versions/latest
+      env: REDIS_ADDRESS
+    - versionName: projects/$PROJECT_ID/secrets/memorystore_redis_pass/versions/latest
+      env: REDIS_PASS
+    - versionName: projects/$PROJECT_ID/secrets/memorystore_valkey_address/versions/latest
+      env: VALKEY_ADDRESS
+    - versionName: projects/$PROJECT_ID/secrets/looker_base_url/versions/latest
+      env: LOOKER_BASE_URL
+    - versionName: projects/$PROJECT_ID/secrets/looker_client_id/versions/latest
+      env: LOOKER_CLIENT_ID
+    - versionName: projects/$PROJECT_ID/secrets/looker_client_secret/versions/latest
+      env: LOOKER_CLIENT_SECRET
+    - versionName: projects/$PROJECT_ID/secrets/tidb_user/versions/latest
+      env: TIDB_USER
+    - versionName: projects/$PROJECT_ID/secrets/tidb_pass/versions/latest
+      env: TIDB_PASS
+    - versionName: projects/$PROJECT_ID/secrets/clickhouse_host/versions/latest
+      env: CLICKHOUSE_HOST
+    - versionName: projects/$PROJECT_ID/secrets/clickhouse_user/versions/latest
+      env: CLICKHOUSE_USER
+    - versionName: projects/$PROJECT_ID/secrets/firebird_user/versions/latest
+      env: FIREBIRD_USER
+    - versionName: projects/$PROJECT_ID/secrets/firebird_pass/versions/latest
+      env: FIREBIRD_PASS
+    - versionName: projects/$PROJECT_ID/secrets/trino_user/versions/latest
+      env: TRINO_USER
+    - versionName: projects/$PROJECT_ID/secrets/oceanbase_host/versions/latest
+      env: OCEANBASE_HOST
+    - versionName: projects/$PROJECT_ID/secrets/oceanbase_user/versions/latest
+      env: OCEANBASE_USER
+    - versionName: projects/$PROJECT_ID/secrets/oceanbase_pass/versions/latest
+      env: OCEANBASE_PASSWORD
+    - versionName: projects/$PROJECT_ID/secrets/mindsdb_host/versions/latest
+      env: MINDSDB_HOST
+    - versionName: projects/$PROJECT_ID/secrets/mindsdb_user/versions/latest
+      env: MINDSDB_USER
+    - versionName: projects/$PROJECT_ID/secrets/mindsdb_pass/versions/latest
+      env: MINDSDB_PASS
+    - versionName: projects/$PROJECT_ID/secrets/yugabytedb_host/versions/latest
+      env: YUGABYTEDB_HOST
+    - versionName: projects/$PROJECT_ID/secrets/yugabytedb_user/versions/latest
+      env: YUGABYTEDB_USER
+    - versionName: projects/$PROJECT_ID/secrets/yugabytedb_pass/versions/latest
+      env: YUGABYTEDB_PASS
+    - versionName: projects/$PROJECT_ID/secrets/elastic_search_host/versions/latest
+      env: ELASTICSEARCH_HOST
+    - versionName: projects/$PROJECT_ID/secrets/elastic_search_user/versions/latest
+      env: ELASTICSEARCH_USER
+    - versionName: projects/$PROJECT_ID/secrets/elastic_search_pass/versions/latest
+      env: ELASTICSEARCH_PASS
+    - versionName: projects/$PROJECT_ID/secrets/snowflake_account/versions/latest
+      env: SNOWFLAKE_ACCOUNT
+    - versionName: projects/$PROJECT_ID/secrets/snowflake_user/versions/latest
+      env: SNOWFLAKE_USER
+    - versionName: projects/$PROJECT_ID/secrets/snowflake_pass/versions/latest
+      env: SNOWFLAKE_PASS
+    - versionName: projects/$PROJECT_ID/secrets/cassandra_user/versions/latest
+      env: CASSANDRA_USER
+    - versionName: projects/$PROJECT_ID/secrets/cassandra_pass/versions/latest
+      env: CASSANDRA_PASS
+    - versionName: projects/$PROJECT_ID/secrets/cassandra_host/versions/latest
+      env: CASSANDRA_HOST
+    - versionName: projects/$PROJECT_ID/secrets/oracle_user/versions/latest
+      env: ORACLE_USER
+    - versionName: projects/$PROJECT_ID/secrets/oracle_pass/versions/latest
+      env: ORACLE_PASS
+    - versionName: projects/$PROJECT_ID/secrets/oracle_host/versions/latest
+      env: ORACLE_HOST
+    - versionName: projects/$PROJECT_ID/secrets/singlestore_pass/versions/latest
+      env: SINGLESTORE_PASSWORD
+    - versionName: projects/$PROJECT_ID/secrets/singlestore_host/versions/latest
+      env: SINGLESTORE_HOST
+    - versionName: projects/$PROJECT_ID/secrets/mariadb_user/versions/latest
+      env: MARIADB_USER
+    - versionName: projects/$PROJECT_ID/secrets/mariadb_pass/versions/latest
+      env: MARIADB_PASS
+    - versionName: projects/$PROJECT_ID/secrets/mariadb_host/versions/latest
+      env: MARIADB_HOST
+    - versionName: projects/$PROJECT_ID/secrets/mongodb_uri/versions/latest
+      env: MONGODB_URI
+    - versionName: projects/$PROJECT_ID/secrets/cockroachdb_user/versions/latest
+      env: COCKROACHDB_USER
+    - versionName: projects/$PROJECT_ID/secrets/cockroachdb_host/versions/latest
+      env: COCKROACHDB_HOST
+
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  automapSubstitutions: true
+  substitutionOption: "ALLOW_LOOSE"
+  dynamicSubstitutions: true
+  pool:
+    name: projects/$PROJECT_ID/locations/us-central1/workerPools/integration-testing # Necessary for VPC network connection
+
+substitutions:
+  _DATABASE_NAME: test_database
+  _FIREBIRD_DATABASE_NAME: /firebird/test_database.fdb
+  _REGION: "us-central1"
+  _CLOUD_SQL_POSTGRES_INSTANCE: "cloud-sql-pg-testing"
+  _ALLOYDB_POSTGRES_CLUSTER: "alloydb-pg-testing"
+  _ALLOYDB_POSTGRES_INSTANCE: "alloydb-pg-testing-instance"
+  _ALLOYDB_AI_NL_CLUSTER: "alloydb-ai-nl-testing"
+  _ALLOYDB_AI_NL_INSTANCE: "alloydb-ai-nl-testing-instance"
+  _BIGTABLE_INSTANCE: "bigtable-testing-instance"
+  _HEALTHCARE_DATASET: "test-dataset"
+  _HEALTHCARE_PREPOPULATED_DICOM_STORE: "prepopulated-test-dicom-store"
+  _POSTGRES_HOST: 127.0.0.1
+  _POSTGRES_PORT: "5432"
+  _SPANNER_INSTANCE: "spanner-testing"
+  _NEO4J_DATABASE: "neo4j"
+  _CLOUD_SQL_MSSQL_INSTANCE: "cloud-sql-mssql-testing"
+  _CLOUD_SQL_MYSQL_INSTANCE: "cloud-sql-mysql-testing"
+  _MYSQL_HOST: 127.0.0.1
+  _MYSQL_PORT: "3306"
+  _MSSQL_HOST: 127.0.0.1
+  _MSSQL_PORT: "1433"
+  _DGRAPHURL: "https://play.dgraph.io"
+  _COUCHBASE_BUCKET: "couchbase-bucket"
+  _COUCHBASE_SCOPE: "couchbase-scope"
+  _LOOKER_LOCATION: "us"
+  _LOOKER_PROJECT: "149671255749"
+  _LOOKER_VERIFY_SSL: "true"
+  _TIDB_HOST: 127.0.0.1
+  _TIDB_PORT: "4000"
+  _CLICKHOUSE_DATABASE: "default"
+  _CLICKHOUSE_PORT: "8123"
+  _CLICKHOUSE_PROTOCOL: "http"
+  _FIREBIRD_HOST: 127.0.0.1
+  _FIREBIRD_PORT: "3050"
+  _TRINO_HOST: 127.0.0.1
+  _TRINO_PORT: "8080"
+  _TRINO_CATALOG: "memory"
+  _TRINO_SCHEMA: "default"
+  _OCEANBASE_PORT: "2883"
+  _OCEANBASE_DATABASE: "oceanbase"
+  _MINDSDB_PORT: "47335"
+  _MINDSDB_DATABASE: "mindsdb_test"
+  _YUGABYTEDB_DATABASE: "yugabyte"
+  _YUGABYTEDB_PORT: "5433"
+  _YUGABYTEDB_LOADBALANCE: "false"
+  _ORACLE_SERVER_NAME: "FREEPDB1"
+  _SINGLESTORE_HOST: 127.0.0.1
+  _SINGLESTORE_PORT: "3308"
+  _SINGLESTORE_DATABASE: "singlestore"
+  _SINGLESTORE_USER: "root"
+  _COCKROACHDB_HOST: 127.0.0.1
+  _COCKROACHDB_PORT: "26257"
+  _COCKROACHDB_USER: "root"
+  _MARIADB_PORT: "3307"
+  _MARIADB_DATABASE: test_database
+  _SNOWFLAKE_DATABASE: "test"
+  _SNOWFLAKE_SCHEMA: "PUBLIC"

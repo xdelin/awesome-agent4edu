@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Bar Charts</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .chart-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .chart-container h2 {
+      margin-top: 0;
+      color: #555;
+      font-size: 1.1rem;
+    }
+    canvas { max-height: 300px; }
+  </style>
+</head>
+<body>
+  <h1>Bar Charts</h1>
+
+  <!-- Basic Bar Chart -->
+  <div class="chart-container">
+    <h2>Basic Vertical Bar Chart</h2>
+    <canvas id="basicBar"></canvas>
+  </div>
+
+  <!-- Horizontal Bar Chart -->
+  <div class="chart-container">
+    <h2>Horizontal Bar Chart (indexAxis: 'y')</h2>
+    <canvas id="horizontalBar"></canvas>
+  </div>
+
+  <!-- Stacked Bar Chart -->
+  <div class="chart-container">
+    <h2>Stacked Bar Chart</h2>
+    <canvas id="stackedBar"></canvas>
+  </div>
+
+  <!-- Mixed Bar + Line Chart -->
+  <div class="chart-container">
+    <h2>Mixed Chart: Bar + Line</h2>
+    <canvas id="mixedChart"></canvas>
+  </div>
+
+  <script>
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+
+    // ========================================
+    // Basic Vertical Bar Chart
+    // ========================================
+    new Chart(document.getElementById('basicBar'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Sales 2024',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: 'rgba(54, 162, 235, 0.7)',
+          borderColor: 'rgb(54, 162, 235)',
+          borderWidth: 1,
+          borderRadius: 4  // Rounded corners
+        }, {
+          label: 'Sales 2023',
+          data: [8, 15, 7, 9, 6, 4],
+          backgroundColor: 'rgba(255, 99, 132, 0.7)',
+          borderColor: 'rgb(255, 99, 132)',
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // ========================================
+    // Horizontal Bar Chart
+    // ========================================
+    new Chart(document.getElementById('horizontalBar'), {
+      type: 'bar',
+      data: {
+        labels: ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'],
+        datasets: [{
+          label: 'Units Sold',
+          data: [350, 280, 420, 190, 310],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)'
+          ],
+          borderRadius: 4
+        }]
+      },
+      options: {
+        indexAxis: 'y',  // Makes bars horizontal
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: { beginAtZero: true }
+        }
+      }
+    });
+
+    // ========================================
+    // Stacked Bar Chart
+    // ========================================
+    new Chart(document.getElementById('stackedBar'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Desktop',
+            data: [50, 60, 70, 80, 65, 75],
+            backgroundColor: 'rgba(54, 162, 235, 0.8)'
+          },
+          {
+            label: 'Mobile',
+            data: [30, 35, 25, 40, 45, 50],
+            backgroundColor: 'rgba(255, 99, 132, 0.8)'
+          },
+          {
+            label: 'Tablet',
+            data: [20, 15, 25, 20, 30, 25],
+            backgroundColor: 'rgba(255, 206, 86, 0.8)'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' }
+        },
+        scales: {
+          x: { stacked: true },
+          y: { stacked: true, beginAtZero: true }
+        }
+      }
+    });
+
+    // ========================================
+    // Mixed Chart: Bar + Line
+    // ========================================
+    new Chart(document.getElementById('mixedChart'), {
+      type: 'bar',  // Base type
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            type: 'line',  // Override to line
+            label: 'Trend',
+            data: [45, 55, 48, 60, 52, 65],
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(255, 99, 132)',
+            tension: 0.3,
+            fill: false,
+            order: 1  // Draw on top
+          },
+          {
+            type: 'bar',
+            label: 'Revenue',
+            data: [40, 50, 45, 55, 48, 60],
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            order: 2  // Draw behind
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

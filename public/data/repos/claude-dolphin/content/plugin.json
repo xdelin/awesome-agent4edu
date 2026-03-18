@@ -1,0 +1,36 @@
+{
+  "name": "claude-dolphin",
+  "version": "1.0.0",
+  "description": "Comprehensive UX/UI design system skill for Claude Code with WCAG 2.2 AA accessibility auditing, design consistency checks, Refactoring UI principles, and shadcn/ui integration",
+  "author": "nyldn",
+  "license": "MIT",
+  "repository": "https://github.com/nyldn/claude-dolphin",
+  "keywords": [
+    "claude-code",
+    "ux",
+    "ui",
+    "design-system",
+    "accessibility",
+    "wcag",
+    "a11y",
+    "shadcn",
+    "audit",
+    "refactoring-ui",
+    "tailwind"
+  ],
+  "skills": [
+    "skills/ux-ui-design-system/SKILL.md"
+  ],
+  "commands": [
+    "commands/ui-audit.md",
+    "commands/accessibility-check.md",
+    "commands/design-system-review.md",
+    "commands/refactor-ui.md"
+  ],
+  "mcpServers": {
+    "shadcn": {
+      "type": "http",
+      "url": "https://www.shadcn.io/api/mcp"
+    }
+  }
+}

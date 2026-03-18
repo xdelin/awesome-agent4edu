@@ -1,0 +1,2393 @@
+{
+  "name": "academic-writing-skills",
+  "full": true,
+  "tree": [
+    {
+      "name": "academic-writing-skills",
+      "type": "folder",
+      "path": "academic-writing-skills",
+      "children": [
+        {
+          "name": "latex-paper-en",
+          "type": "folder",
+          "path": "academic-writing-skills/latex-paper-en",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "academic-writing-skills/latex-paper-en/references",
+              "children": [
+                {
+                  "name": "modules",
+                  "type": "folder",
+                  "path": "academic-writing-skills/latex-paper-en/references/modules",
+                  "children": [
+                    {
+                      "name": "BIBLIOGRAPHY.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/BIBLIOGRAPHY.md",
+                      "size": 602,
+                      "language": "md"
+                    },
+                    {
+                      "name": "CAPTION.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/CAPTION.md",
+                      "size": 2101,
+                      "language": "md"
+                    },
+                    {
+                      "name": "COMPILE.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/COMPILE.md",
+                      "size": 2786,
+                      "language": "md"
+                    },
+                    {
+                      "name": "DEAI.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/DEAI.md",
+                      "size": 4096,
+                      "language": "md"
+                    },
+                    {
+                      "name": "EXPERIMENT.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/EXPERIMENT.md",
+                      "size": 2900,
+                      "language": "md"
+                    },
+                    {
+                      "name": "EXPRESSION.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/EXPRESSION.md",
+                      "size": 792,
+                      "language": "md"
+                    },
+                    {
+                      "name": "FORMAT.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/FORMAT.md",
+                      "size": 331,
+                      "language": "md"
+                    },
+                    {
+                      "name": "GRAMMAR.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/GRAMMAR.md",
+                      "size": 1508,
+                      "language": "md"
+                    },
+                    {
+                      "name": "LOGIC.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/LOGIC.md",
+                      "size": 4282,
+                      "language": "md"
+                    },
+                    {
+                      "name": "SENTENCES.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/SENTENCES.md",
+                      "size": 574,
+                      "language": "md"
+                    },
+                    {
+                      "name": "TITLE.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/TITLE.md",
+                      "size": 8065,
+                      "language": "md"
+                    },
+                    {
+                      "name": "TRANSLATION.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/TRANSLATION.md",
+                      "size": 1582,
+                      "language": "md"
+                    },
+                    {
+                      "name": "WORKFLOW.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-paper-en/references/modules/WORKFLOW.md",
+                      "size": 787,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "BEST_PRACTICES.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/BEST_PRACTICES.md",
+                  "size": 463,
+                  "language": "md"
+                },
+                {
+                  "name": "CITATION_VERIFICATION.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/CITATION_VERIFICATION.md",
+                  "size": 4345,
+                  "language": "md"
+                },
+                {
+                  "name": "COMMON_ERRORS.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/COMMON_ERRORS.md",
+                  "size": 2919,
+                  "language": "md"
+                },
+                {
+                  "name": "COMPILATION.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/COMPILATION.md",
+                  "size": 2145,
+                  "language": "md"
+                },
+                {
+                  "name": "DEAI_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/DEAI_GUIDE.md",
+                  "size": 17725,
+                  "language": "md"
+                },
+                {
+                  "name": "FORBIDDEN_TERMS.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/FORBIDDEN_TERMS.md",
+                  "size": 1450,
+                  "language": "md"
+                },
+                {
+                  "name": "REVIEWER_PERSPECTIVE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/REVIEWER_PERSPECTIVE.md",
+                  "size": 5103,
+                  "language": "md"
+                },
+                {
+                  "name": "STYLE_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/STYLE_GUIDE.md",
+                  "size": 4186,
+                  "language": "md"
+                },
+                {
+                  "name": "TERMINOLOGY.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/TERMINOLOGY.md",
+                  "size": 10416,
+                  "language": "md"
+                },
+                {
+                  "name": "TRANSLATION_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/TRANSLATION_GUIDE.md",
+                  "size": 12039,
+                  "language": "md"
+                },
+                {
+                  "name": "VENUES.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/VENUES.md",
+                  "size": 6160,
+                  "language": "md"
+                },
+                {
+                  "name": "WRITING_PHILOSOPHY.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/references/WRITING_PHILOSOPHY.md",
+                  "size": 6711,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "academic-writing-skills/latex-paper-en/scripts",
+              "children": [
+                {
+                  "name": "analyze_experiment.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/analyze_experiment.py",
+                  "size": 1752,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_grammar.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/analyze_grammar.py",
+                  "size": 3749,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_logic.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/analyze_logic.py",
+                  "size": 4171,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_sentences.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/analyze_sentences.py",
+                  "size": 3743,
+                  "language": "py"
+                },
+                {
+                  "name": "check_figures.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/check_figures.py",
+                  "size": 6717,
+                  "language": "py"
+                },
+                {
+                  "name": "check_format.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/check_format.py",
+                  "size": 6735,
+                  "language": "py"
+                },
+                {
+                  "name": "check_references.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/check_references.py",
+                  "size": 14882,
+                  "language": "py"
+                },
+                {
+                  "name": "compile.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/compile.py",
+                  "size": 18189,
+                  "language": "py"
+                },
+                {
+                  "name": "deai_batch.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/deai_batch.py",
+                  "size": 10403,
+                  "language": "py"
+                },
+                {
+                  "name": "deai_check.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/deai_check.py",
+                  "size": 14778,
+                  "language": "py"
+                },
+                {
+                  "name": "extract_prose.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/extract_prose.py",
+                  "size": 2848,
+                  "language": "py"
+                },
+                {
+                  "name": "improve_expression.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/improve_expression.py",
+                  "size": 3416,
+                  "language": "py"
+                },
+                {
+                  "name": "online_bib_verify.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/online_bib_verify.py",
+                  "size": 12464,
+                  "language": "py"
+                },
+                {
+                  "name": "optimize_title.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/optimize_title.py",
+                  "size": 16256,
+                  "language": "py"
+                },
+                {
+                  "name": "parsers.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/parsers.py",
+                  "size": 15371,
+                  "language": "py"
+                },
+                {
+                  "name": "translate_academic.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/translate_academic.py",
+                  "size": 4412,
+                  "language": "py"
+                },
+                {
+                  "name": "verify_bib.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-paper-en/scripts/verify_bib.py",
+                  "size": 15842,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "academic-writing-skills/latex-paper-en/SKILL.md",
+              "size": 1645,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "latex-thesis-zh",
+          "type": "folder",
+          "path": "academic-writing-skills/latex-thesis-zh",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "academic-writing-skills/latex-thesis-zh/references",
+              "children": [
+                {
+                  "name": "modules",
+                  "type": "folder",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/modules",
+                  "children": [
+                    {
+                      "name": "EXPERIMENT.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-thesis-zh/references/modules/EXPERIMENT.md",
+                      "size": 2873,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "UNIVERSITIES",
+                  "type": "folder",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/UNIVERSITIES",
+                  "children": [
+                    {
+                      "name": "generic.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-thesis-zh/references/UNIVERSITIES/generic.md",
+                      "size": 2315,
+                      "language": "md"
+                    },
+                    {
+                      "name": "pku.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-thesis-zh/references/UNIVERSITIES/pku.md",
+                      "size": 1647,
+                      "language": "md"
+                    },
+                    {
+                      "name": "tsinghua.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-thesis-zh/references/UNIVERSITIES/tsinghua.md",
+                      "size": 1410,
+                      "language": "md"
+                    },
+                    {
+                      "name": "yanshan.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/latex-thesis-zh/references/UNIVERSITIES/yanshan.md",
+                      "size": 1210,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "ACADEMIC_STYLE_ZH.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/ACADEMIC_STYLE_ZH.md",
+                  "size": 4016,
+                  "language": "md"
+                },
+                {
+                  "name": "CAPTION_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/CAPTION_GUIDE.md",
+                  "size": 2312,
+                  "language": "md"
+                },
+                {
+                  "name": "COMPILATION.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/COMPILATION.md",
+                  "size": 2145,
+                  "language": "md"
+                },
+                {
+                  "name": "DEAI_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/DEAI_GUIDE.md",
+                  "size": 15939,
+                  "language": "md"
+                },
+                {
+                  "name": "FORBIDDEN_TERMS.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/FORBIDDEN_TERMS.md",
+                  "size": 1450,
+                  "language": "md"
+                },
+                {
+                  "name": "GB_STANDARD.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/GB_STANDARD.md",
+                  "size": 3987,
+                  "language": "md"
+                },
+                {
+                  "name": "LOGIC_COHERENCE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/LOGIC_COHERENCE.md",
+                  "size": 3740,
+                  "language": "md"
+                },
+                {
+                  "name": "STRUCTURE_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/STRUCTURE_GUIDE.md",
+                  "size": 3713,
+                  "language": "md"
+                },
+                {
+                  "name": "TITLE_OPTIMIZATION.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/TITLE_OPTIMIZATION.md",
+                  "size": 7413,
+                  "language": "md"
+                },
+                {
+                  "name": "WRITING_PHILOSOPHY_ZH.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/references/WRITING_PHILOSOPHY_ZH.md",
+                  "size": 4908,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "academic-writing-skills/latex-thesis-zh/scripts",
+              "children": [
+                {
+                  "name": "analyze_experiment.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/analyze_experiment.py",
+                  "size": 1993,
+                  "language": "py"
+                },
+                {
+                  "name": "check_consistency.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/check_consistency.py",
+                  "size": 12654,
+                  "language": "py"
+                },
+                {
+                  "name": "check_format.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/check_format.py",
+                  "size": 7348,
+                  "language": "py"
+                },
+                {
+                  "name": "check_references.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/check_references.py",
+                  "size": 18437,
+                  "language": "py"
+                },
+                {
+                  "name": "compile.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/compile.py",
+                  "size": 16607,
+                  "language": "py"
+                },
+                {
+                  "name": "deai_batch.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/deai_batch.py",
+                  "size": 10519,
+                  "language": "py"
+                },
+                {
+                  "name": "deai_check.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/deai_check.py",
+                  "size": 13567,
+                  "language": "py"
+                },
+                {
+                  "name": "detect_template.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/detect_template.py",
+                  "size": 3940,
+                  "language": "py"
+                },
+                {
+                  "name": "map_structure.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/map_structure.py",
+                  "size": 11842,
+                  "language": "py"
+                },
+                {
+                  "name": "online_bib_verify.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/online_bib_verify.py",
+                  "size": 12464,
+                  "language": "py"
+                },
+                {
+                  "name": "optimize_title.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/optimize_title.py",
+                  "size": 13183,
+                  "language": "py"
+                },
+                {
+                  "name": "parsers.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/parsers.py",
+                  "size": 8941,
+                  "language": "py"
+                },
+                {
+                  "name": "verify_bib.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/latex-thesis-zh/scripts/verify_bib.py",
+                  "size": 10158,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "academic-writing-skills/latex-thesis-zh/SKILL.md",
+              "size": 1741,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "paper-audit",
+          "type": "folder",
+          "path": "academic-writing-skills/paper-audit",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "academic-writing-skills/paper-audit/references",
+              "children": [
+                {
+                  "name": "AUDIT_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/references/AUDIT_GUIDE.md",
+                  "size": 3540,
+                  "language": "md"
+                },
+                {
+                  "name": "CHECKLIST.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/references/CHECKLIST.md",
+                  "size": 3674,
+                  "language": "md"
+                },
+                {
+                  "name": "FORBIDDEN_TERMS.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/references/FORBIDDEN_TERMS.md",
+                  "size": 6682,
+                  "language": "md"
+                },
+                {
+                  "name": "POLISH_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/references/POLISH_GUIDE.md",
+                  "size": 2414,
+                  "language": "md"
+                },
+                {
+                  "name": "QUICK_REFERENCE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/references/QUICK_REFERENCE.md",
+                  "size": 5754,
+                  "language": "md"
+                },
+                {
+                  "name": "REVIEW_CRITERIA.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/references/REVIEW_CRITERIA.md",
+                  "size": 3740,
+                  "language": "md"
+                },
+                {
+                  "name": "SCHOLAR_EVAL_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/references/SCHOLAR_EVAL_GUIDE.md",
+                  "size": 5853,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "academic-writing-skills/paper-audit/scripts",
+              "children": [
+                {
+                  "name": "audit.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/audit.py",
+                  "size": 24636,
+                  "language": "py"
+                },
+                {
+                  "name": "check_references.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/check_references.py",
+                  "size": 20885,
+                  "language": "py"
+                },
+                {
+                  "name": "detect_language.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/detect_language.py",
+                  "size": 2028,
+                  "language": "py"
+                },
+                {
+                  "name": "parsers.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/parsers.py",
+                  "size": 3499,
+                  "language": "py"
+                },
+                {
+                  "name": "pdf_parser.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/pdf_parser.py",
+                  "size": 8419,
+                  "language": "py"
+                },
+                {
+                  "name": "report_generator.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/report_generator.py",
+                  "size": 16303,
+                  "language": "py"
+                },
+                {
+                  "name": "scholar_eval.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/scholar_eval.py",
+                  "size": 12648,
+                  "language": "py"
+                },
+                {
+                  "name": "visual_check.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/paper-audit/scripts/visual_check.py",
+                  "size": 11220,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "academic-writing-skills/paper-audit/SKILL.md",
+              "size": 1654,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "typst-paper",
+          "type": "folder",
+          "path": "academic-writing-skills/typst-paper",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "academic-writing-skills/typst-paper/references",
+              "children": [
+                {
+                  "name": "modules",
+                  "type": "folder",
+                  "path": "academic-writing-skills/typst-paper/references/modules",
+                  "children": [
+                    {
+                      "name": "BIBLIOGRAPHY.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/BIBLIOGRAPHY.md",
+                      "size": 682,
+                      "language": "md"
+                    },
+                    {
+                      "name": "CAPTION.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/CAPTION.md",
+                      "size": 2225,
+                      "language": "md"
+                    },
+                    {
+                      "name": "COMPILE.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/COMPILE.md",
+                      "size": 1288,
+                      "language": "md"
+                    },
+                    {
+                      "name": "DEAI.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/DEAI.md",
+                      "size": 2971,
+                      "language": "md"
+                    },
+                    {
+                      "name": "EXPERIMENT.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/EXPERIMENT.md",
+                      "size": 2866,
+                      "language": "md"
+                    },
+                    {
+                      "name": "EXPRESSION.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/EXPRESSION.md",
+                      "size": 1655,
+                      "language": "md"
+                    },
+                    {
+                      "name": "FORMAT.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/FORMAT.md",
+                      "size": 1211,
+                      "language": "md"
+                    },
+                    {
+                      "name": "GRAMMAR.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/GRAMMAR.md",
+                      "size": 1098,
+                      "language": "md"
+                    },
+                    {
+                      "name": "LOGIC.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/LOGIC.md",
+                      "size": 4064,
+                      "language": "md"
+                    },
+                    {
+                      "name": "SENTENCES.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/SENTENCES.md",
+                      "size": 739,
+                      "language": "md"
+                    },
+                    {
+                      "name": "TITLE.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/TITLE.md",
+                      "size": 7624,
+                      "language": "md"
+                    },
+                    {
+                      "name": "TRANSLATION.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/TRANSLATION.md",
+                      "size": 1567,
+                      "language": "md"
+                    },
+                    {
+                      "name": "WORKFLOW.md",
+                      "type": "file",
+                      "path": "academic-writing-skills/typst-paper/references/modules/WORKFLOW.md",
+                      "size": 722,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "BEST_PRACTICES.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/BEST_PRACTICES.md",
+                  "size": 398,
+                  "language": "md"
+                },
+                {
+                  "name": "CITATION_VERIFICATION.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/CITATION_VERIFICATION.md",
+                  "size": 5174,
+                  "language": "md"
+                },
+                {
+                  "name": "COMMON_ERRORS.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/COMMON_ERRORS.md",
+                  "size": 5635,
+                  "language": "md"
+                },
+                {
+                  "name": "DEAI_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/DEAI_GUIDE.md",
+                  "size": 15650,
+                  "language": "md"
+                },
+                {
+                  "name": "REVIEWER_PERSPECTIVE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/REVIEWER_PERSPECTIVE.md",
+                  "size": 5103,
+                  "language": "md"
+                },
+                {
+                  "name": "STYLE_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/STYLE_GUIDE.md",
+                  "size": 5712,
+                  "language": "md"
+                },
+                {
+                  "name": "TEMPLATES.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/TEMPLATES.md",
+                  "size": 2695,
+                  "language": "md"
+                },
+                {
+                  "name": "TERMINOLOGY.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/TERMINOLOGY.md",
+                  "size": 10416,
+                  "language": "md"
+                },
+                {
+                  "name": "TRANSLATION_GUIDE.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/TRANSLATION_GUIDE.md",
+                  "size": 12040,
+                  "language": "md"
+                },
+                {
+                  "name": "TYPST_SYNTAX.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/TYPST_SYNTAX.md",
+                  "size": 10676,
+                  "language": "md"
+                },
+                {
+                  "name": "VENUES.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/VENUES.md",
+                  "size": 13223,
+                  "language": "md"
+                },
+                {
+                  "name": "WRITING_PHILOSOPHY.md",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/references/WRITING_PHILOSOPHY.md",
+                  "size": 6711,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "scripts",
+              "type": "folder",
+              "path": "academic-writing-skills/typst-paper/scripts",
+              "children": [
+                {
+                  "name": "analyze_experiment.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/analyze_experiment.py",
+                  "size": 1744,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_grammar.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/analyze_grammar.py",
+                  "size": 3749,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_logic.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/analyze_logic.py",
+                  "size": 4171,
+                  "language": "py"
+                },
+                {
+                  "name": "analyze_sentences.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/analyze_sentences.py",
+                  "size": 3743,
+                  "language": "py"
+                },
+                {
+                  "name": "check_format.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/check_format.py",
+                  "size": 11834,
+                  "language": "py"
+                },
+                {
+                  "name": "check_references.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/check_references.py",
+                  "size": 14858,
+                  "language": "py"
+                },
+                {
+                  "name": "compile.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/compile.py",
+                  "size": 8517,
+                  "language": "py"
+                },
+                {
+                  "name": "deai_batch.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/deai_batch.py",
+                  "size": 10749,
+                  "language": "py"
+                },
+                {
+                  "name": "deai_check.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/deai_check.py",
+                  "size": 14969,
+                  "language": "py"
+                },
+                {
+                  "name": "improve_expression.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/improve_expression.py",
+                  "size": 3416,
+                  "language": "py"
+                },
+                {
+                  "name": "online_bib_verify.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/online_bib_verify.py",
+                  "size": 12464,
+                  "language": "py"
+                },
+                {
+                  "name": "optimize_title.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/optimize_title.py",
+                  "size": 17852,
+                  "language": "py"
+                },
+                {
+                  "name": "parsers.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/parsers.py",
+                  "size": 8061,
+                  "language": "py"
+                },
+                {
+                  "name": "translate_academic.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/translate_academic.py",
+                  "size": 4412,
+                  "language": "py"
+                },
+                {
+                  "name": "verify_bib.py",
+                  "type": "file",
+                  "path": "academic-writing-skills/typst-paper/scripts/verify_bib.py",
+                  "size": 14946,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "academic-writing-skills/typst-paper/SKILL.md",
+              "size": 1575,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": ".vitepress",
+          "type": "folder",
+          "path": "docs/.vitepress",
+          "children": [
+            {
+              "name": "theme",
+              "type": "folder",
+              "path": "docs/.vitepress/theme",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "docs/.vitepress/theme/index.ts",
+                  "size": 421,
+                  "language": "ts"
+                },
+                {
+                  "name": "style.css",
+                  "type": "file",
+                  "path": "docs/.vitepress/theme/style.css",
+                  "size": 7990,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "config.ts",
+              "type": "file",
+              "path": "docs/.vitepress/config.ts",
+              "size": 18653,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "plans",
+          "type": "folder",
+          "path": "docs/plans",
+          "children": [
+            {
+              "name": "2026-02-23-paper-audit-design.md",
+              "type": "file",
+              "path": "docs/plans/2026-02-23-paper-audit-design.md",
+              "size": 18090,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "public",
+          "type": "folder",
+          "path": "docs/public",
+          "children": [
+            {
+              "name": ".nojekyll",
+              "type": "file",
+              "path": "docs/public/.nojekyll",
+              "size": 0,
+              "language": "text"
+            }
+          ]
+        },
+        {
+          "name": "report",
+          "type": "folder",
+          "path": "docs/report",
+          "children": [
+            {
+              "name": "csw-vs-aws-analysis.md",
+              "type": "file",
+              "path": "docs/report/csw-vs-aws-analysis.md",
+              "size": 15992,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "skills",
+          "type": "folder",
+          "path": "docs/skills",
+          "children": [
+            {
+              "name": "latex-paper-en",
+              "type": "folder",
+              "path": "docs/skills/latex-paper-en",
+              "children": [
+                {
+                  "name": "resources",
+                  "type": "folder",
+                  "path": "docs/skills/latex-paper-en/resources",
+                  "children": [
+                    {
+                      "name": "modules",
+                      "type": "folder",
+                      "path": "docs/skills/latex-paper-en/resources/modules",
+                      "children": [
+                        {
+                          "name": "BIBLIOGRAPHY.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/BIBLIOGRAPHY.md",
+                          "size": 602,
+                          "language": "md"
+                        },
+                        {
+                          "name": "COMPILE.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/COMPILE.md",
+                          "size": 2786,
+                          "language": "md"
+                        },
+                        {
+                          "name": "DEAI.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/DEAI.md",
+                          "size": 4096,
+                          "language": "md"
+                        },
+                        {
+                          "name": "EXPERIMENT.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/EXPERIMENT.md",
+                          "size": 1170,
+                          "language": "md"
+                        },
+                        {
+                          "name": "EXPRESSION.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/EXPRESSION.md",
+                          "size": 792,
+                          "language": "md"
+                        },
+                        {
+                          "name": "FORMAT.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/FORMAT.md",
+                          "size": 331,
+                          "language": "md"
+                        },
+                        {
+                          "name": "GRAMMAR.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/GRAMMAR.md",
+                          "size": 1508,
+                          "language": "md"
+                        },
+                        {
+                          "name": "LOGIC.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/LOGIC.md",
+                          "size": 4282,
+                          "language": "md"
+                        },
+                        {
+                          "name": "SENTENCES.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/SENTENCES.md",
+                          "size": 574,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TITLE.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/TITLE.md",
+                          "size": 8065,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TRANSLATION.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/TRANSLATION.md",
+                          "size": 1582,
+                          "language": "md"
+                        },
+                        {
+                          "name": "WORKFLOW.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/modules/WORKFLOW.md",
+                          "size": 787,
+                          "language": "md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "references",
+                      "type": "folder",
+                      "path": "docs/skills/latex-paper-en/resources/references",
+                      "children": [
+                        {
+                          "name": "BEST_PRACTICES.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/BEST_PRACTICES.md",
+                          "size": 463,
+                          "language": "md"
+                        },
+                        {
+                          "name": "CITATION_VERIFICATION.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/CITATION_VERIFICATION.md",
+                          "size": 4345,
+                          "language": "md"
+                        },
+                        {
+                          "name": "COMMON_ERRORS.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/COMMON_ERRORS.md",
+                          "size": 2919,
+                          "language": "md"
+                        },
+                        {
+                          "name": "COMPILATION.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/COMPILATION.md",
+                          "size": 2145,
+                          "language": "md"
+                        },
+                        {
+                          "name": "DEAI_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/DEAI_GUIDE.md",
+                          "size": 17725,
+                          "language": "md"
+                        },
+                        {
+                          "name": "FORBIDDEN_TERMS.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/FORBIDDEN_TERMS.md",
+                          "size": 1450,
+                          "language": "md"
+                        },
+                        {
+                          "name": "REVIEWER_PERSPECTIVE.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/REVIEWER_PERSPECTIVE.md",
+                          "size": 5103,
+                          "language": "md"
+                        },
+                        {
+                          "name": "STYLE_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/STYLE_GUIDE.md",
+                          "size": 4186,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TERMINOLOGY.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/TERMINOLOGY.md",
+                          "size": 10416,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TRANSLATION_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/TRANSLATION_GUIDE.md",
+                          "size": 12039,
+                          "language": "md"
+                        },
+                        {
+                          "name": "VENUES.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/VENUES.md",
+                          "size": 6160,
+                          "language": "md"
+                        },
+                        {
+                          "name": "WRITING_PHILOSOPHY.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-paper-en/resources/references/WRITING_PHILOSOPHY.md",
+                          "size": 6711,
+                          "language": "md"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "index.md",
+                  "type": "file",
+                  "path": "docs/skills/latex-paper-en/index.md",
+                  "size": 19598,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "latex-thesis-zh",
+              "type": "folder",
+              "path": "docs/skills/latex-thesis-zh",
+              "children": [
+                {
+                  "name": "resources",
+                  "type": "folder",
+                  "path": "docs/skills/latex-thesis-zh/resources",
+                  "children": [
+                    {
+                      "name": "UNIVERSITIES",
+                      "type": "folder",
+                      "path": "docs/skills/latex-thesis-zh/resources/UNIVERSITIES",
+                      "children": [
+                        {
+                          "name": "generic.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-thesis-zh/resources/UNIVERSITIES/generic.md",
+                          "size": 2315,
+                          "language": "md"
+                        },
+                        {
+                          "name": "pku.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-thesis-zh/resources/UNIVERSITIES/pku.md",
+                          "size": 1647,
+                          "language": "md"
+                        },
+                        {
+                          "name": "tsinghua.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-thesis-zh/resources/UNIVERSITIES/tsinghua.md",
+                          "size": 1410,
+                          "language": "md"
+                        },
+                        {
+                          "name": "yanshan.md",
+                          "type": "file",
+                          "path": "docs/skills/latex-thesis-zh/resources/UNIVERSITIES/yanshan.md",
+                          "size": 1210,
+                          "language": "md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ACADEMIC_STYLE_ZH.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/ACADEMIC_STYLE_ZH.md",
+                      "size": 4016,
+                      "language": "md"
+                    },
+                    {
+                      "name": "COMPILATION.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/COMPILATION.md",
+                      "size": 2145,
+                      "language": "md"
+                    },
+                    {
+                      "name": "DEAI_GUIDE.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/DEAI_GUIDE.md",
+                      "size": 15939,
+                      "language": "md"
+                    },
+                    {
+                      "name": "FORBIDDEN_TERMS.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/FORBIDDEN_TERMS.md",
+                      "size": 1450,
+                      "language": "md"
+                    },
+                    {
+                      "name": "GB_STANDARD.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/GB_STANDARD.md",
+                      "size": 3987,
+                      "language": "md"
+                    },
+                    {
+                      "name": "LOGIC_COHERENCE.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/LOGIC_COHERENCE.md",
+                      "size": 3740,
+                      "language": "md"
+                    },
+                    {
+                      "name": "STRUCTURE_GUIDE.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/STRUCTURE_GUIDE.md",
+                      "size": 3713,
+                      "language": "md"
+                    },
+                    {
+                      "name": "TITLE_OPTIMIZATION.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/TITLE_OPTIMIZATION.md",
+                      "size": 7413,
+                      "language": "md"
+                    },
+                    {
+                      "name": "WRITING_PHILOSOPHY_ZH.md",
+                      "type": "file",
+                      "path": "docs/skills/latex-thesis-zh/resources/WRITING_PHILOSOPHY_ZH.md",
+                      "size": 4908,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.md",
+                  "type": "file",
+                  "path": "docs/skills/latex-thesis-zh/index.md",
+                  "size": 18600,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "paper-audit",
+              "type": "folder",
+              "path": "docs/skills/paper-audit",
+              "children": [
+                {
+                  "name": "index.md",
+                  "type": "file",
+                  "path": "docs/skills/paper-audit/index.md",
+                  "size": 9138,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "typst-paper",
+              "type": "folder",
+              "path": "docs/skills/typst-paper",
+              "children": [
+                {
+                  "name": "resources",
+                  "type": "folder",
+                  "path": "docs/skills/typst-paper/resources",
+                  "children": [
+                    {
+                      "name": "modules",
+                      "type": "folder",
+                      "path": "docs/skills/typst-paper/resources/modules",
+                      "children": [
+                        {
+                          "name": "BIBLIOGRAPHY.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/BIBLIOGRAPHY.md",
+                          "size": 682,
+                          "language": "md"
+                        },
+                        {
+                          "name": "COMPILE.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/COMPILE.md",
+                          "size": 1288,
+                          "language": "md"
+                        },
+                        {
+                          "name": "DEAI.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/DEAI.md",
+                          "size": 2971,
+                          "language": "md"
+                        },
+                        {
+                          "name": "EXPERIMENT.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/EXPERIMENT.md",
+                          "size": 1227,
+                          "language": "md"
+                        },
+                        {
+                          "name": "EXPRESSION.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/EXPRESSION.md",
+                          "size": 1655,
+                          "language": "md"
+                        },
+                        {
+                          "name": "FORMAT.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/FORMAT.md",
+                          "size": 1211,
+                          "language": "md"
+                        },
+                        {
+                          "name": "GRAMMAR.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/GRAMMAR.md",
+                          "size": 1098,
+                          "language": "md"
+                        },
+                        {
+                          "name": "LOGIC.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/LOGIC.md",
+                          "size": 4064,
+                          "language": "md"
+                        },
+                        {
+                          "name": "SENTENCES.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/SENTENCES.md",
+                          "size": 739,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TITLE.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/TITLE.md",
+                          "size": 7624,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TRANSLATION.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/TRANSLATION.md",
+                          "size": 1567,
+                          "language": "md"
+                        },
+                        {
+                          "name": "WORKFLOW.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/modules/WORKFLOW.md",
+                          "size": 722,
+                          "language": "md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "references",
+                      "type": "folder",
+                      "path": "docs/skills/typst-paper/resources/references",
+                      "children": [
+                        {
+                          "name": "BEST_PRACTICES.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/BEST_PRACTICES.md",
+                          "size": 398,
+                          "language": "md"
+                        },
+                        {
+                          "name": "CITATION_VERIFICATION.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/CITATION_VERIFICATION.md",
+                          "size": 5174,
+                          "language": "md"
+                        },
+                        {
+                          "name": "COMMON_ERRORS.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/COMMON_ERRORS.md",
+                          "size": 5635,
+                          "language": "md"
+                        },
+                        {
+                          "name": "DEAI_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/DEAI_GUIDE.md",
+                          "size": 15650,
+                          "language": "md"
+                        },
+                        {
+                          "name": "REVIEWER_PERSPECTIVE.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/REVIEWER_PERSPECTIVE.md",
+                          "size": 5103,
+                          "language": "md"
+                        },
+                        {
+                          "name": "STYLE_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/STYLE_GUIDE.md",
+                          "size": 5712,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TEMPLATES.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/TEMPLATES.md",
+                          "size": 2695,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TERMINOLOGY.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/TERMINOLOGY.md",
+                          "size": 10416,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TRANSLATION_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/TRANSLATION_GUIDE.md",
+                          "size": 12040,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TYPST_SYNTAX.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/TYPST_SYNTAX.md",
+                          "size": 10676,
+                          "language": "md"
+                        },
+                        {
+                          "name": "VENUES.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/VENUES.md",
+                          "size": 13223,
+                          "language": "md"
+                        },
+                        {
+                          "name": "WRITING_PHILOSOPHY.md",
+                          "type": "file",
+                          "path": "docs/skills/typst-paper/resources/references/WRITING_PHILOSOPHY.md",
+                          "size": 6711,
+                          "language": "md"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "index.md",
+                  "type": "file",
+                  "path": "docs/skills/typst-paper/index.md",
+                  "size": 20974,
+                  "language": "md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "zh",
+          "type": "folder",
+          "path": "docs/zh",
+          "children": [
+            {
+              "name": "skills",
+              "type": "folder",
+              "path": "docs/zh/skills",
+              "children": [
+                {
+                  "name": "latex-paper-en",
+                  "type": "folder",
+                  "path": "docs/zh/skills/latex-paper-en",
+                  "children": [
+                    {
+                      "name": "resources",
+                      "type": "folder",
+                      "path": "docs/zh/skills/latex-paper-en/resources",
+                      "children": [
+                        {
+                          "name": "modules",
+                          "type": "folder",
+                          "path": "docs/zh/skills/latex-paper-en/resources/modules",
+                          "children": [
+                            {
+                              "name": "BIBLIOGRAPHY.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/BIBLIOGRAPHY.md",
+                              "size": 602,
+                              "language": "md"
+                            },
+                            {
+                              "name": "COMPILE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/COMPILE.md",
+                              "size": 2786,
+                              "language": "md"
+                            },
+                            {
+                              "name": "DEAI.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/DEAI.md",
+                              "size": 4096,
+                              "language": "md"
+                            },
+                            {
+                              "name": "EXPERIMENT.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/EXPERIMENT.md",
+                              "size": 1419,
+                              "language": "md"
+                            },
+                            {
+                              "name": "EXPRESSION.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/EXPRESSION.md",
+                              "size": 792,
+                              "language": "md"
+                            },
+                            {
+                              "name": "FORMAT.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/FORMAT.md",
+                              "size": 331,
+                              "language": "md"
+                            },
+                            {
+                              "name": "GRAMMAR.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/GRAMMAR.md",
+                              "size": 1508,
+                              "language": "md"
+                            },
+                            {
+                              "name": "LOGIC.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/LOGIC.md",
+                              "size": 4282,
+                              "language": "md"
+                            },
+                            {
+                              "name": "SENTENCES.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/SENTENCES.md",
+                              "size": 574,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TITLE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/TITLE.md",
+                              "size": 8065,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TRANSLATION.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/TRANSLATION.md",
+                              "size": 1582,
+                              "language": "md"
+                            },
+                            {
+                              "name": "WORKFLOW.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/modules/WORKFLOW.md",
+                              "size": 787,
+                              "language": "md"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "references",
+                          "type": "folder",
+                          "path": "docs/zh/skills/latex-paper-en/resources/references",
+                          "children": [
+                            {
+                              "name": "BEST_PRACTICES.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/BEST_PRACTICES.md",
+                              "size": 463,
+                              "language": "md"
+                            },
+                            {
+                              "name": "CITATION_VERIFICATION.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/CITATION_VERIFICATION.md",
+                              "size": 4345,
+                              "language": "md"
+                            },
+                            {
+                              "name": "COMMON_ERRORS.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/COMMON_ERRORS.md",
+                              "size": 2919,
+                              "language": "md"
+                            },
+                            {
+                              "name": "COMPILATION.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/COMPILATION.md",
+                              "size": 2145,
+                              "language": "md"
+                            },
+                            {
+                              "name": "DEAI_GUIDE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/DEAI_GUIDE.md",
+                              "size": 17725,
+                              "language": "md"
+                            },
+                            {
+                              "name": "FORBIDDEN_TERMS.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/FORBIDDEN_TERMS.md",
+                              "size": 1450,
+                              "language": "md"
+                            },
+                            {
+                              "name": "REVIEWER_PERSPECTIVE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/REVIEWER_PERSPECTIVE.md",
+                              "size": 5103,
+                              "language": "md"
+                            },
+                            {
+                              "name": "STYLE_GUIDE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/STYLE_GUIDE.md",
+                              "size": 4186,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TERMINOLOGY.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/TERMINOLOGY.md",
+                              "size": 10416,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TRANSLATION_GUIDE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/TRANSLATION_GUIDE.md",
+                              "size": 12039,
+                              "language": "md"
+                            },
+                            {
+                              "name": "VENUES.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/VENUES.md",
+                              "size": 6160,
+                              "language": "md"
+                            },
+                            {
+                              "name": "WRITING_PHILOSOPHY.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-paper-en/resources/references/WRITING_PHILOSOPHY.md",
+                              "size": 6711,
+                              "language": "md"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.md",
+                      "type": "file",
+                      "path": "docs/zh/skills/latex-paper-en/index.md",
+                      "size": 10624,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "latex-thesis-zh",
+                  "type": "folder",
+                  "path": "docs/zh/skills/latex-thesis-zh",
+                  "children": [
+                    {
+                      "name": "resources",
+                      "type": "folder",
+                      "path": "docs/zh/skills/latex-thesis-zh/resources",
+                      "children": [
+                        {
+                          "name": "UNIVERSITIES",
+                          "type": "folder",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/UNIVERSITIES",
+                          "children": [
+                            {
+                              "name": "generic.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-thesis-zh/resources/UNIVERSITIES/generic.md",
+                              "size": 2315,
+                              "language": "md"
+                            },
+                            {
+                              "name": "pku.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-thesis-zh/resources/UNIVERSITIES/pku.md",
+                              "size": 1647,
+                              "language": "md"
+                            },
+                            {
+                              "name": "tsinghua.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-thesis-zh/resources/UNIVERSITIES/tsinghua.md",
+                              "size": 1410,
+                              "language": "md"
+                            },
+                            {
+                              "name": "yanshan.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/latex-thesis-zh/resources/UNIVERSITIES/yanshan.md",
+                              "size": 1210,
+                              "language": "md"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "ACADEMIC_STYLE_ZH.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/ACADEMIC_STYLE_ZH.md",
+                          "size": 4016,
+                          "language": "md"
+                        },
+                        {
+                          "name": "COMPILATION.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/COMPILATION.md",
+                          "size": 2145,
+                          "language": "md"
+                        },
+                        {
+                          "name": "DEAI_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/DEAI_GUIDE.md",
+                          "size": 15939,
+                          "language": "md"
+                        },
+                        {
+                          "name": "FORBIDDEN_TERMS.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/FORBIDDEN_TERMS.md",
+                          "size": 1450,
+                          "language": "md"
+                        },
+                        {
+                          "name": "GB_STANDARD.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/GB_STANDARD.md",
+                          "size": 3987,
+                          "language": "md"
+                        },
+                        {
+                          "name": "LOGIC_COHERENCE.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/LOGIC_COHERENCE.md",
+                          "size": 3740,
+                          "language": "md"
+                        },
+                        {
+                          "name": "STRUCTURE_GUIDE.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/STRUCTURE_GUIDE.md",
+                          "size": 3713,
+                          "language": "md"
+                        },
+                        {
+                          "name": "TITLE_OPTIMIZATION.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/TITLE_OPTIMIZATION.md",
+                          "size": 7413,
+                          "language": "md"
+                        },
+                        {
+                          "name": "WRITING_PHILOSOPHY_ZH.md",
+                          "type": "file",
+                          "path": "docs/zh/skills/latex-thesis-zh/resources/WRITING_PHILOSOPHY_ZH.md",
+                          "size": 4908,
+                          "language": "md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.md",
+                      "type": "file",
+                      "path": "docs/zh/skills/latex-thesis-zh/index.md",
+                      "size": 13389,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "paper-audit",
+                  "type": "folder",
+                  "path": "docs/zh/skills/paper-audit",
+                  "children": [
+                    {
+                      "name": "index.md",
+                      "type": "file",
+                      "path": "docs/zh/skills/paper-audit/index.md",
+                      "size": 6241,
+                      "language": "md"
+                    }
+                  ]
+                },
+                {
+                  "name": "typst-paper",
+                  "type": "folder",
+                  "path": "docs/zh/skills/typst-paper",
+                  "children": [
+                    {
+                      "name": "resources",
+                      "type": "folder",
+                      "path": "docs/zh/skills/typst-paper/resources",
+                      "children": [
+                        {
+                          "name": "modules",
+                          "type": "folder",
+                          "path": "docs/zh/skills/typst-paper/resources/modules",
+                          "children": [
+                            {
+                              "name": "BIBLIOGRAPHY.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/BIBLIOGRAPHY.md",
+                              "size": 682,
+                              "language": "md"
+                            },
+                            {
+                              "name": "COMPILE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/COMPILE.md",
+                              "size": 1288,
+                              "language": "md"
+                            },
+                            {
+                              "name": "DEAI.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/DEAI.md",
+                              "size": 2971,
+                              "language": "md"
+                            },
+                            {
+                              "name": "EXPERIMENT.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/EXPERIMENT.md",
+                              "size": 1316,
+                              "language": "md"
+                            },
+                            {
+                              "name": "EXPRESSION.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/EXPRESSION.md",
+                              "size": 1655,
+                              "language": "md"
+                            },
+                            {
+                              "name": "FORMAT.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/FORMAT.md",
+                              "size": 1211,
+                              "language": "md"
+                            },
+                            {
+                              "name": "GRAMMAR.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/GRAMMAR.md",
+                              "size": 1098,
+                              "language": "md"
+                            },
+                            {
+                              "name": "LOGIC.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/LOGIC.md",
+                              "size": 4064,
+                              "language": "md"
+                            },
+                            {
+                              "name": "SENTENCES.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/SENTENCES.md",
+                              "size": 739,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TITLE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/TITLE.md",
+                              "size": 7624,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TRANSLATION.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/TRANSLATION.md",
+                              "size": 1567,
+                              "language": "md"
+                            },
+                            {
+                              "name": "WORKFLOW.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/modules/WORKFLOW.md",
+                              "size": 722,
+                              "language": "md"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "references",
+                          "type": "folder",
+                          "path": "docs/zh/skills/typst-paper/resources/references",
+                          "children": [
+                            {
+                              "name": "BEST_PRACTICES.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/BEST_PRACTICES.md",
+                              "size": 398,
+                              "language": "md"
+                            },
+                            {
+                              "name": "CITATION_VERIFICATION.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/CITATION_VERIFICATION.md",
+                              "size": 5174,
+                              "language": "md"
+                            },
+                            {
+                              "name": "COMMON_ERRORS.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/COMMON_ERRORS.md",
+                              "size": 5635,
+                              "language": "md"
+                            },
+                            {
+                              "name": "DEAI_GUIDE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/DEAI_GUIDE.md",
+                              "size": 15650,
+                              "language": "md"
+                            },
+                            {
+                              "name": "REVIEWER_PERSPECTIVE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/REVIEWER_PERSPECTIVE.md",
+                              "size": 5103,
+                              "language": "md"
+                            },
+                            {
+                              "name": "STYLE_GUIDE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/STYLE_GUIDE.md",
+                              "size": 5712,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TEMPLATES.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/TEMPLATES.md",
+                              "size": 2695,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TERMINOLOGY.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/TERMINOLOGY.md",
+                              "size": 10416,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TRANSLATION_GUIDE.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/TRANSLATION_GUIDE.md",
+                              "size": 12040,
+                              "language": "md"
+                            },
+                            {
+                              "name": "TYPST_SYNTAX.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/TYPST_SYNTAX.md",
+                              "size": 10676,
+                              "language": "md"
+                            },
+                            {
+                              "name": "VENUES.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/VENUES.md",
+                              "size": 13223,
+                              "language": "md"
+                            },
+                            {
+                              "name": "WRITING_PHILOSOPHY.md",
+                              "type": "file",
+                              "path": "docs/zh/skills/typst-paper/resources/references/WRITING_PHILOSOPHY.md",
+                              "size": 6711,
+                              "language": "md"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.md",
+                      "type": "file",
+                      "path": "docs/zh/skills/typst-paper/index.md",
+                      "size": 19173,
+                      "language": "md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "index.md",
+              "type": "file",
+              "path": "docs/zh/index.md",
+              "size": 4907,
+              "language": "md"
+            },
+            {
+              "name": "installation.md",
+              "type": "file",
+              "path": "docs/zh/installation.md",
+              "size": 6129,
+              "language": "md"
+            },
+            {
+              "name": "quick-start.md",
+              "type": "file",
+              "path": "docs/zh/quick-start.md",
+              "size": 7927,
+              "language": "md"
+            },
+            {
+              "name": "usage.md",
+              "type": "file",
+              "path": "docs/zh/usage.md",
+              "size": 10730,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": "docs/.gitignore",
+          "size": 480,
+          "language": "text"
+        },
+        {
+          "name": "CHANGELOG.md",
+          "type": "file",
+          "path": "docs/CHANGELOG.md",
+          "size": 1740,
+          "language": "md"
+        },
+        {
+          "name": "index.md",
+          "type": "file",
+          "path": "docs/index.md",
+          "size": 5273,
+          "language": "md"
+        },
+        {
+          "name": "installation.md",
+          "type": "file",
+          "path": "docs/installation.md",
+          "size": 6321,
+          "language": "md"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "docs/package.json",
+          "size": 385,
+          "language": "json"
+        },
+        {
+          "name": "quick-start.md",
+          "type": "file",
+          "path": "docs/quick-start.md",
+          "size": 8143,
+          "language": "md"
+        },
+        {
+          "name": "usage.md",
+          "type": "file",
+          "path": "docs/usage.md",
+          "size": 11922,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "conftest.py",
+          "type": "file",
+          "path": "tests/conftest.py",
+          "size": 862,
+          "language": "py"
+        },
+        {
+          "name": "test_latex_paper_en_scripts.py",
+          "type": "file",
+          "path": "tests/test_latex_paper_en_scripts.py",
+          "size": 7181,
+          "language": "py"
+        },
+        {
+          "name": "test_latex_thesis_zh_scripts.py",
+          "type": "file",
+          "path": "tests/test_latex_thesis_zh_scripts.py",
+          "size": 16771,
+          "language": "py"
+        },
+        {
+          "name": "test_paper_audit.py",
+          "type": "file",
+          "path": "tests/test_paper_audit.py",
+          "size": 31568,
+          "language": "py"
+        },
+        {
+          "name": "test_parsers.py",
+          "type": "file",
+          "path": "tests/test_parsers.py",
+          "size": 3797,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 787,
+      "language": "text"
+    },
+    {
+      "name": ".python-version",
+      "type": "file",
+      "path": ".python-version",
+      "size": 6,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 2451,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 4272,
+      "language": "md"
+    },
+    {
+      "name": "justfile",
+      "type": "file",
+      "path": "justfile",
+      "size": 4630,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 2544,
+      "language": "toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 17064,
+      "language": "md"
+    },
+    {
+      "name": "README_CN.md",
+      "type": "file",
+      "path": "README_CN.md",
+      "size": 17542,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 16,
+      "language": "txt"
+    }
+  ]
+}

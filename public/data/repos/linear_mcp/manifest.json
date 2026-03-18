@@ -1,0 +1,48 @@
+{
+  "name": "Linear MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 24,
+      "language": "text"
+    },
+    {
+      "name": "index.ts",
+      "type": "file",
+      "path": "index.ts",
+      "size": 37294,
+      "language": "ts"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1055,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 971,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5087,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 368,
+      "language": "json"
+    }
+  ]
+}

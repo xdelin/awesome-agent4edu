@@ -1,0 +1,412 @@
+{
+  "name": "Wikipedia MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "API.md",
+          "type": "file",
+          "path": "docs/API.md",
+          "size": 6960,
+          "language": "md"
+        },
+        {
+          "name": "ARCHITECTURE.md",
+          "type": "file",
+          "path": "docs/ARCHITECTURE.md",
+          "size": 2968,
+          "language": "md"
+        },
+        {
+          "name": "CLI.md",
+          "type": "file",
+          "path": "docs/CLI.md",
+          "size": 3825,
+          "language": "md"
+        },
+        {
+          "name": "DEVELOPMENT.md",
+          "type": "file",
+          "path": "docs/DEVELOPMENT.md",
+          "size": 2242,
+          "language": "md"
+        },
+        {
+          "name": "RELEASE_PROCESS.md",
+          "type": "file",
+          "path": "docs/RELEASE_PROCESS.md",
+          "size": 5960,
+          "language": "md"
+        },
+        {
+          "name": "TESTING.md",
+          "type": "file",
+          "path": "docs/TESTING.md",
+          "size": 4856,
+          "language": "md"
+        },
+        {
+          "name": "USER_GUIDE.md",
+          "type": "file",
+          "path": "docs/USER_GUIDE.md",
+          "size": 2889,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "wikipedia_mcp_example.py",
+          "type": "file",
+          "path": "examples/wikipedia_mcp_example.py",
+          "size": 5075,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 48,
+          "language": "py"
+        },
+        {
+          "name": "test_access_token.py",
+          "type": "file",
+          "path": "tests/test_access_token.py",
+          "size": 10097,
+          "language": "py"
+        },
+        {
+          "name": "test_auth_modes.py",
+          "type": "file",
+          "path": "tests/test_auth_modes.py",
+          "size": 4891,
+          "language": "py"
+        },
+        {
+          "name": "test_basic.py",
+          "type": "file",
+          "path": "tests/test_basic.py",
+          "size": 358,
+          "language": "py"
+        },
+        {
+          "name": "test_cli.py",
+          "type": "file",
+          "path": "tests/test_cli.py",
+          "size": 7934,
+          "language": "py"
+        },
+        {
+          "name": "test_cli_country.py",
+          "type": "file",
+          "path": "tests/test_cli_country.py",
+          "size": 9999,
+          "language": "py"
+        },
+        {
+          "name": "test_coordinates.py",
+          "type": "file",
+          "path": "tests/test_coordinates.py",
+          "size": 12375,
+          "language": "py"
+        },
+        {
+          "name": "test_country_support.py",
+          "type": "file",
+          "path": "tests/test_country_support.py",
+          "size": 11757,
+          "language": "py"
+        },
+        {
+          "name": "test_docker_compatibility.py",
+          "type": "file",
+          "path": "tests/test_docker_compatibility.py",
+          "size": 2750,
+          "language": "py"
+        },
+        {
+          "name": "test_google_adk_compatibility.py",
+          "type": "file",
+          "path": "tests/test_google_adk_compatibility.py",
+          "size": 8919,
+          "language": "py"
+        },
+        {
+          "name": "test_language_variants.py",
+          "type": "file",
+          "path": "tests/test_language_variants.py",
+          "size": 11398,
+          "language": "py"
+        },
+        {
+          "name": "test_new_features.py",
+          "type": "file",
+          "path": "tests/test_new_features.py",
+          "size": 10352,
+          "language": "py"
+        },
+        {
+          "name": "test_server_tools.py",
+          "type": "file",
+          "path": "tests/test_server_tools.py",
+          "size": 22589,
+          "language": "py"
+        },
+        {
+          "name": "tool_helpers.py",
+          "type": "file",
+          "path": "tests/tool_helpers.py",
+          "size": 1420,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "wikipedia-mcp-env",
+      "type": "folder",
+      "path": "wikipedia-mcp-env",
+      "children": [
+        {
+          "name": "bin",
+          "type": "folder",
+          "path": "wikipedia-mcp-env/bin",
+          "children": [
+            {
+              "name": "activate",
+              "type": "file",
+              "path": "wikipedia-mcp-env/bin/activate",
+              "size": 2224,
+              "language": "text"
+            },
+            {
+              "name": "activate.csh",
+              "type": "file",
+              "path": "wikipedia-mcp-env/bin/activate.csh",
+              "size": 1019,
+              "language": "csh"
+            },
+            {
+              "name": "activate.fish",
+              "type": "file",
+              "path": "wikipedia-mcp-env/bin/activate.fish",
+              "size": 2336,
+              "language": "fish"
+            },
+            {
+              "name": "Activate.ps1",
+              "type": "file",
+              "path": "wikipedia-mcp-env/bin/Activate.ps1",
+              "size": 9033,
+              "language": "ps1"
+            }
+          ]
+        },
+        {
+          "name": "pyvenv.cfg",
+          "type": "file",
+          "path": "wikipedia-mcp-env/pyvenv.cfg",
+          "size": 251,
+          "language": "cfg"
+        }
+      ]
+    },
+    {
+      "name": "wikipedia_mcp",
+      "type": "folder",
+      "path": "wikipedia_mcp",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "wikipedia_mcp/__init__.py",
+          "size": 118,
+          "language": "py"
+        },
+        {
+          "name": "__main__.py",
+          "type": "file",
+          "path": "wikipedia_mcp/__main__.py",
+          "size": 10283,
+          "language": "py"
+        },
+        {
+          "name": "auth_config.py",
+          "type": "file",
+          "path": "wikipedia_mcp/auth_config.py",
+          "size": 4002,
+          "language": "py"
+        },
+        {
+          "name": "schemas.py",
+          "type": "file",
+          "path": "wikipedia_mcp/schemas.py",
+          "size": 2660,
+          "language": "py"
+        },
+        {
+          "name": "server.py",
+          "type": "file",
+          "path": "wikipedia_mcp/server.py",
+          "size": 14710,
+          "language": "py"
+        },
+        {
+          "name": "wikipedia_client.py",
+          "type": "file",
+          "path": "wikipedia_mcp/wikipedia_client.py",
+          "size": 41642,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".flake8",
+      "type": "file",
+      "path": ".flake8",
+      "size": 138,
+      "language": "text"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 1522,
+      "language": "text"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file",
+      "path": "AGENTS.md",
+      "size": 395,
+      "language": "md"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 10967,
+      "language": "md"
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 2240,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 1766,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 1090,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1086,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 67,
+      "language": "json"
+    },
+    {
+      "name": "PUBLISHING_GUIDE.md",
+      "type": "file",
+      "path": "PUBLISHING_GUIDE.md",
+      "size": 5080,
+      "language": "md"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 1846,
+      "language": "toml"
+    },
+    {
+      "name": "pytest.ini",
+      "type": "file",
+      "path": "pytest.ini",
+      "size": 441,
+      "language": "ini"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 27423,
+      "language": "md"
+    },
+    {
+      "name": "release_payload.json",
+      "type": "file",
+      "path": "release_payload.json",
+      "size": 1058,
+      "language": "json"
+    },
+    {
+      "name": "requirements-dev.txt",
+      "type": "file",
+      "path": "requirements-dev.txt",
+      "size": 213,
+      "language": "txt"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 77,
+      "language": "txt"
+    },
+    {
+      "name": "setup.py",
+      "type": "file",
+      "path": "setup.py",
+      "size": 160,
+      "language": "py"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 545,
+      "language": "yaml"
+    },
+    {
+      "name": "test_build.py",
+      "type": "file",
+      "path": "test_build.py",
+      "size": 2616,
+      "language": "py"
+    }
+  ]
+}

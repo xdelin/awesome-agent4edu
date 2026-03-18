@@ -1,0 +1,139 @@
+{
+  "name": "Multi-Agent Study Assistant",
+  "full": true,
+  "tree": [
+    {
+      "name": ".devcontainer",
+      "type": "folder",
+      "path": ".devcontainer",
+      "children": [
+        {
+          "name": "devcontainer.json",
+          "type": "file",
+          "path": ".devcontainer/devcontainer.json",
+          "size": 442,
+          "language": "json"
+        }
+      ]
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 199,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 380,
+      "language": "text"
+    },
+    {
+      "name": "agent_handler.py",
+      "type": "file",
+      "path": "agent_handler.py",
+      "size": 10760,
+      "language": "py"
+    },
+    {
+      "name": "app.py",
+      "type": "file",
+      "path": "app.py",
+      "size": 16200,
+      "language": "py"
+    },
+    {
+      "name": "ARCHITECTURE.md",
+      "type": "file",
+      "path": "ARCHITECTURE.md",
+      "size": 14013,
+      "language": "md"
+    },
+    {
+      "name": "config.py",
+      "type": "file",
+      "path": "config.py",
+      "size": 4262,
+      "language": "py"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 204,
+      "language": "yml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 910,
+      "language": "text"
+    },
+    {
+      "name": "FILE_GUIDE.md",
+      "type": "file",
+      "path": "FILE_GUIDE.md",
+      "size": 1145,
+      "language": "md"
+    },
+    {
+      "name": "prompts.yaml",
+      "type": "file",
+      "path": "prompts.yaml",
+      "size": 13669,
+      "language": "yaml"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 553,
+      "language": "toml"
+    },
+    {
+      "name": "QUICKSTART.md",
+      "type": "file",
+      "path": "QUICKSTART.md",
+      "size": 7734,
+      "language": "md"
+    },
+    {
+      "name": "rag_helper.py",
+      "type": "file",
+      "path": "rag_helper.py",
+      "size": 7887,
+      "language": "py"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9915,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 1151,
+      "language": "txt"
+    },
+    {
+      "name": "setup.sh",
+      "type": "file",
+      "path": "setup.sh",
+      "size": 1889,
+      "language": "sh"
+    },
+    {
+      "name": "study_agents.py",
+      "type": "file",
+      "path": "study_agents.py",
+      "size": 8616,
+      "language": "py"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "coderag": {
+      "type": "local",
+      "command": ["npx", "-y", "@sylphx/coderag-mcp"],
+      "environment": {
+        "OPENAI_API_KEY": "",
+        "CODEBASE_ROOT": "",
+        "INDEX_PATH": ".coderag"
+      }
+    }
+  }
+}

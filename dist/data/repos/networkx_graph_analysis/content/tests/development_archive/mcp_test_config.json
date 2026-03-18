@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "networkx-mcp-server": {
+      "command": "python",
+      "args": [
+        "-m",
+        "networkx_mcp"
+      ],
+      "env": {
+        "PYTHONPATH": "/Users/brightliu/Coding_Projects/networkx-mcp-server/src"
+      }
+    }
+  }
+}

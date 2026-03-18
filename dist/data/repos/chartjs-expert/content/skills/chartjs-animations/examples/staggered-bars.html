@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Staggered Bar Animations</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .chart-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .chart-container h2 {
+      margin-top: 0;
+      color: #555;
+      font-size: 1.1rem;
+    }
+    .chart-container p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    canvas { max-height: 300px; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 8px;
+      margin-bottom: 10px;
+    }
+    button:hover { background: #45a049; }
+  </style>
+</head>
+<body>
+  <h1>Staggered Bar Animations</h1>
+
+  <!-- Basic Staggered Animation -->
+  <div class="chart-container">
+    <h2>Basic Staggered Animation</h2>
+    <p>Bars appear one at a time from left to right. Click "Randomize" to see the
+       animation again (note: stagger only applies on initial load).</p>
+    <button onclick="randomizeBasic()">Randomize</button>
+    <button onclick="resetBasic()">Reset Animation</button>
+    <canvas id="basicStagger"></canvas>
+  </div>
+
+  <!-- Stacked Staggered Animation -->
+  <div class="chart-container">
+    <h2>Stacked Staggered Animation</h2>
+    <p>Stacked bars with diagonal cascade effect - each bar and dataset combination
+       has a unique delay.</p>
+    <button onclick="randomizeStacked()">Randomize</button>
+    <button onclick="resetStacked()">Reset Animation</button>
+    <canvas id="stackedStagger"></canvas>
+  </div>
+
+  <!-- Reverse Stagger Animation -->
+  <div class="chart-container">
+    <h2>Reverse Stagger (Right to Left)</h2>
+    <p>Bars animate from right to left using reversed delay calculation.</p>
+    <button onclick="resetReverse()">Reset Animation</button>
+    <canvas id="reverseStagger"></canvas>
+  </div>
+
+  <!-- Drop + Stagger Combination -->
+  <div class="chart-container">
+    <h2>Drop + Stagger Combination</h2>
+    <p>Bars drop from above with bouncy easing, staggered by position.</p>
+    <button onclick="resetDrop()">Reset Animation</button>
+    <canvas id="dropStagger"></canvas>
+  </div>
+
+  <script>
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+
+    // Helper to generate random data
+    function randomData(count, min = -100, max = 100) {
+      return Array.from({ length: count }, () =>
+        Math.floor(Math.random() * (max - min + 1)) + min
+      );
+    }
+
+    // ========================================
+    // Basic Staggered Animation
+    // ========================================
+    let basicDelayed = false;
+
+    const basicChart = new Chart(document.getElementById('basicStagger'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Dataset 1',
+          data: randomData(7, 0, 100),
+          backgroundColor: 'rgba(54, 162, 235, 0.7)',
+          borderColor: 'rgb(54, 162, 235)',
+          borderWidth: 1,
+          borderRadius: 4
+        }, {
+          label: 'Dataset 2',
+          data: randomData(7, 0, 100),
+          backgroundColor: 'rgba(255, 99, 132, 0.7)',
+          borderColor: 'rgb(255, 99, 132)',
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          onComplete: () => {
+            basicDelayed = true;
+          },
+          delay: (context) => {
+            let delay = 0;
+            if (context.type === 'data' && context.mode === 'default' && !basicDelayed) {
+              // 300ms between data points, 100ms between datasets
+              delay = context.dataIndex * 300 + context.datasetIndex * 100;
+            }
+            return delay;
+          }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    function randomizeBasic() {
+      basicChart.data.datasets.forEach(dataset => {
+        dataset.data = randomData(7, 0, 100);
+      });
+      basicChart.update();
+    }
+
+    function resetBasic() {
+      basicDelayed = false;
+      basicChart.data.datasets.forEach(dataset => {
+        dataset.data = randomData(7, 0, 100);
+      });
+      basicChart.update();
+    }
+
+    // ========================================
+    // Stacked Staggered Animation
+    // ========================================
+    let stackedDelayed = false;
+
+    const stackedChart = new Chart(document.getElementById('stackedStagger'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Red',
+            data: randomData(7, 0, 100),
+            backgroundColor: 'rgba(255, 99, 132, 0.8)'
+          },
+          {
+            label: 'Blue',
+            data: randomData(7, 0, 100),
+            backgroundColor: 'rgba(54, 162, 235, 0.8)'
+          },
+          {
+            label: 'Green',
+            data: randomData(7, 0, 100),
+            backgroundColor: 'rgba(75, 192, 192, 0.8)'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          onComplete: () => {
+            stackedDelayed = true;
+          },
+          delay: (context) => {
+            let delay = 0;
+            if (context.type === 'data' && context.mode === 'default' && !stackedDelayed) {
+              // Creates diagonal cascade effect
+              delay = context.dataIndex * 200 + context.datasetIndex * 150;
+            }
+            return delay;
+          }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        },
+        scales: {
+          x: { stacked: true },
+          y: { stacked: true, beginAtZero: true }
+        }
+      }
+    });
+
+    function randomizeStacked() {
+      stackedChart.data.datasets.forEach(dataset => {
+        dataset.data = randomData(7, 0, 100);
+      });
+      stackedChart.update();
+    }
+
+    function resetStacked() {
+      stackedDelayed = false;
+      stackedChart.data.datasets.forEach(dataset => {
+        dataset.data = randomData(7, 0, 100);
+      });
+      stackedChart.update();
+    }
+
+    // ========================================
+    // Reverse Stagger Animation
+    // ========================================
+    let reverseDelayed = false;
+    const dataCount = 7;
+
+    const reverseChart = new Chart(document.getElementById('reverseStagger'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Revenue',
+          data: randomData(7, 0, 100),
+          backgroundColor: 'rgba(153, 102, 255, 0.7)',
+          borderColor: 'rgb(153, 102, 255)',
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          onComplete: () => {
+            reverseDelayed = true;
+          },
+          delay: (context) => {
+            let delay = 0;
+            if (context.type === 'data' && context.mode === 'default' && !reverseDelayed) {
+              // Reverse: rightmost bar first
+              delay = (dataCount - 1 - context.dataIndex) * 200;
+            }
+            return delay;
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    function resetReverse() {
+      reverseDelayed = false;
+      reverseChart.data.datasets[0].data = randomData(7, 0, 100);
+      reverseChart.update();
+    }
+
+    // ========================================
+    // Drop + Stagger Combination
+    // ========================================
+    let dropDelayed = false;
+
+    const dropChart = new Chart(document.getElementById('dropStagger'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Performance',
+          data: randomData(7, 20, 100),
+          backgroundColor: 'rgba(255, 159, 64, 0.7)',
+          borderColor: 'rgb(255, 159, 64)',
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          onComplete: () => {
+            dropDelayed = true;
+          },
+          delay: (context) => {
+            let delay = 0;
+            if (context.type === 'data' && context.mode === 'default' && !dropDelayed) {
+              delay = context.dataIndex * 150;
+            }
+            return delay;
+          }
+        },
+        animations: {
+          y: {
+            easing: 'easeOutBounce',
+            duration: 1500,
+            from: (ctx) => {
+              if (ctx.type === 'data' && ctx.mode === 'default' && !ctx.dropped) {
+                ctx.dropped = true;
+                return 0;  // Start from top
+              }
+            }
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    function resetDrop() {
+      dropDelayed = false;
+      // Reset the dropped flags
+      const meta = dropChart.getDatasetMeta(0);
+      for (let i = 0; i < dropChart.data.datasets[0].data.length; i++) {
+        const ctx = meta.controller.getContext(i);
+        ctx.dropped = false;
+      }
+      dropChart.data.datasets[0].data = randomData(7, 20, 100);
+      dropChart.update();
+    }
+  </script>
+</body>
+</html>

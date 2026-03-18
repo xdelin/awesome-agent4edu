@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Time Scale Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+  <!-- Date adapter required for time scale -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+  <style>
+    .chart-container {
+      max-width: 900px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-container">
+    <canvas id="timeChart"></canvas>
+  </div>
+
+  <script>
+    // Time Scale Chart: Stock price over time
+    // Demonstrates time axis with various date formats
+
+    const ctx = document.getElementById('timeChart');
+
+    // Sample data with ISO date strings
+    const stockData = [
+      { x: '2024-01-05', y: 142.50 },
+      { x: '2024-01-12', y: 148.30 },
+      { x: '2024-01-19', y: 145.80 },
+      { x: '2024-01-26', y: 152.00 },
+      { x: '2024-02-02', y: 158.50 },
+      { x: '2024-02-09', y: 155.20 },
+      { x: '2024-02-16', y: 162.80 },
+      { x: '2024-02-23', y: 168.00 },
+      { x: '2024-03-01', y: 171.50 },
+      { x: '2024-03-08', y: 165.30 },
+      { x: '2024-03-15', y: 172.80 },
+      { x: '2024-03-22', y: 178.50 }
+    ];
+
+    // Volume data (secondary dataset)
+    const volumeData = [
+      { x: '2024-01-05', y: 52000000 },
+      { x: '2024-01-12', y: 48000000 },
+      { x: '2024-01-19', y: 61000000 },
+      { x: '2024-01-26', y: 55000000 },
+      { x: '2024-02-02', y: 72000000 },
+      { x: '2024-02-09', y: 45000000 },
+      { x: '2024-02-16', y: 68000000 },
+      { x: '2024-02-23', y: 58000000 },
+      { x: '2024-03-01', y: 82000000 },
+      { x: '2024-03-08', y: 95000000 },
+      { x: '2024-03-15', y: 63000000 },
+      { x: '2024-03-22', y: 71000000 }
+    ];
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [
+          {
+            label: 'Stock Price',
+            data: stockData,
+            borderColor: 'rgb(75, 192, 192)',
+            backgroundColor: 'rgba(75, 192, 192, 0.1)',
+            fill: true,
+            tension: 0.2,
+            yAxisID: 'y'
+          },
+          {
+            label: 'Volume',
+            data: volumeData,
+            type: 'bar',
+            backgroundColor: 'rgba(153, 102, 255, 0.5)',
+            borderColor: 'rgb(153, 102, 255)',
+            borderWidth: 1,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Stock Performance Q1 2024'
+          },
+          tooltip: {
+            callbacks: {
+              title: function(context) {
+                // Format tooltip date
+                const date = new Date(context[0].parsed.x);
+                return date.toLocaleDateString('en-US', {
+                  weekday: 'short',
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                });
+              }
+            }
+          }
+        },
+        scales: {
+          // Time X-Axis
+          x: {
+            type: 'time',
+            time: {
+              unit: 'week',           // Display by week
+              displayFormats: {
+                week: 'MMM d'         // Format: "Jan 5"
+              },
+              tooltipFormat: 'PPP'    // Full date in tooltip
+            },
+            title: {
+              display: true,
+              text: 'Date'
+            },
+            // Optional: Set explicit date range
+            // min: '2024-01-01',
+            // max: '2024-03-31',
+            ticks: {
+              source: 'auto',         // auto, data, or labels
+              maxRotation: 0          // Keep labels horizontal
+            }
+          },
+          // Price Y-Axis (left)
+          y: {
+            type: 'linear',
+            position: 'left',
+            title: {
+              display: true,
+              text: 'Price ($)'
+            },
+            ticks: {
+              callback: function(value) {
+                return '$' + value.toFixed(2);
+              }
+            },
+            grace: '5%'               // Add padding above/below data
+          },
+          // Volume Y-Axis (right)
+          y1: {
+            type: 'linear',
+            position: 'right',
+            title: {
+              display: true,
+              text: 'Volume'
+            },
+            ticks: {
+              callback: function(value) {
+                return (value / 1000000).toFixed(0) + 'M';
+              }
+            },
+            grid: {
+              drawOnChartArea: false
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

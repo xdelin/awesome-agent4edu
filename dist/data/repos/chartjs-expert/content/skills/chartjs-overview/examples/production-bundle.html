@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js - Production Bundle with Tree-Shaking</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .description {
+      color: #666;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      border-radius: 4px;
+    }
+    .code-info {
+      background: #e8f4f8;
+      padding: 15px;
+      border-left: 4px solid #2196F3;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    pre code {
+      background: transparent;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <h1>Production-Ready Chart.js with Tree-Shaking</h1>
+
+  <div class="description">
+    <strong>⚠️ Important:</strong> This example uses ES modules (<code>type="module"</code>) and imports
+    only the specific Chart.js components needed. This is the recommended approach for production
+    to minimize bundle size. Unlike using <code>chart.js/auto</code>, this enables tree-shaking
+    which can reduce bundle size by 25-60%.
+  </div>
+
+  <div class="code-info">
+    <strong>Bundle Size Comparison:</strong><br>
+    • Using <code>chart.js/auto</code>: ~67 KB (minified + gzipped)<br>
+    • Manual registration (this example): ~35 KB for bar chart, ~38 KB for line chart<br>
+    • <strong>Savings: 40-50% smaller bundle!</strong>
+  </div>
+
+  <!-- Bar Chart Example -->
+  <div class="chart-container">
+    <h2>Tree-Shaken Bar Chart</h2>
+    <p>This chart only loads: BarController, BarElement, CategoryScale, LinearScale, Legend, Tooltip, Title</p>
+    <div style="width: 100%; max-width: 800px;">
+      <canvas id="productionBarChart"></canvas>
+    </div>
+
+    <details style="margin-top: 20px;">
+      <summary style="cursor: pointer; color: #2196F3; font-weight: bold;">Show Implementation Code</summary>
+      <pre><code>import {
+  Chart,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Legend,
+  Tooltip,
+  Title
+} from 'https://cdn.jsdelivr.net/npm/chart.js/+esm';
+
+// Register only needed components
+Chart.register(
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Legend,
+  Tooltip,
+  Title
+);
+
+// Create chart
+new Chart(ctx, {
+  type: 'bar',
+  data: { /* ... */ },
+  options: { /* ... */ }
+});</code></pre>
+    </details>
+  </div>
+
+  <!-- Line Chart Example -->
+  <div class="chart-container">
+    <h2>Tree-Shaken Line Chart</h2>
+    <p>This chart only loads: LineController, LineElement, PointElement, CategoryScale, LinearScale, Filler, Legend, Tooltip</p>
+    <div style="width: 100%; max-width: 800px;">
+      <canvas id="productionLineChart"></canvas>
+    </div>
+
+    <details style="margin-top: 20px;">
+      <summary style="cursor: pointer; color: #2196F3; font-weight: bold;">Show Implementation Code</summary>
+      <pre><code>import {
+  Chart,
+  LineController,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Filler,
+  Legend,
+  Tooltip
+} from 'https://cdn.jsdelivr.net/npm/chart.js/+esm';
+
+// Register only needed components
+Chart.register(
+  LineController,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Filler,
+  Legend,
+  Tooltip
+);
+
+// Create chart with fill
+new Chart(ctx, {
+  type: 'line',
+  data: { /* ... */ },
+  options: {
+    elements: {
+      line: { fill: true }
+    }
+  }
+});</code></pre>
+    </details>
+  </div>
+
+  <!-- Doughnut Chart Example -->
+  <div class="chart-container">
+    <h2>Tree-Shaken Doughnut Chart</h2>
+    <p>This chart only loads: DoughnutController, ArcElement, Legend, Tooltip (no scales needed!)</p>
+    <div style="width: 100%; max-width: 500px; margin: 0 auto;">
+      <canvas id="productionDoughnutChart"></canvas>
+    </div>
+
+    <details style="margin-top: 20px;">
+      <summary style="cursor: pointer; color: #2196F3; font-weight: bold;">Show Implementation Code</summary>
+      <pre><code>import {
+  Chart,
+  DoughnutController,
+  ArcElement,
+  Legend,
+  Tooltip
+} from 'https://cdn.jsdelivr.net/npm/chart.js/+esm';
+
+// Register only needed components (no scales for doughnut!)
+Chart.register(
+  DoughnutController,
+  ArcElement,
+  Legend,
+  Tooltip
+);
+
+// Create chart
+new Chart(ctx, {
+  type: 'doughnut',
+  data: { /* ... */ },
+  options: { /* ... */ }
+});</code></pre>
+    </details>
+  </div>
+
+  <div class="description" style="margin-top: 30px;">
+    <strong>💡 Best Practice:</strong> In a real production app using Webpack/Vite/Rollup, import from
+    <code>'chart.js'</code> (not the CDN) and your bundler will automatically tree-shake unused code.
+    This example uses the ESM CDN to demonstrate the concept without requiring a build step.
+  </div>
+
+  <script type="module">
+    // Import only what we need for bar chart
+    import {
+      Chart,
+      BarController,
+      BarElement,
+      CategoryScale,
+      LinearScale,
+      Legend,
+      Tooltip,
+      Title
+    } from 'https://cdn.jsdelivr.net/npm/chart.js/+esm';
+
+    // Register bar chart components
+    Chart.register(
+      BarController,
+      BarElement,
+      CategoryScale,
+      LinearScale,
+      Legend,
+      Tooltip,
+      Title
+    );
+
+    // Create bar chart
+    new Chart(document.getElementById('productionBarChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Revenue ($K)',
+          data: [45, 52, 48, 61, 58, 70],
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',
+          borderColor: 'rgb(54, 162, 235)',
+          borderWidth: 2,
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Monthly Revenue - Tree-Shaken Build',
+            font: {
+              size: 16,
+              weight: 'bold'
+            }
+          },
+          legend: {
+            display: true,
+            position: 'bottom'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: function(value) {
+                return '$' + value + 'K';
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+  <script type="module">
+    // Import only what we need for line chart
+    import {
+      Chart,
+      LineController,
+      LineElement,
+      PointElement,
+      CategoryScale,
+      LinearScale,
+      Filler,
+      Legend,
+      Tooltip
+    } from 'https://cdn.jsdelivr.net/npm/chart.js/+esm';
+
+    // Register line chart components
+    Chart.register(
+      LineController,
+      LineElement,
+      PointElement,
+      CategoryScale,
+      LinearScale,
+      Filler,
+      Legend,
+      Tooltip
+    );
+
+    // Create line chart
+    new Chart(document.getElementById('productionLineChart'), {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+        datasets: [{
+          label: 'Active Users',
+          data: [1200, 1450, 1380, 1620, 1580, 1750],
+          fill: true,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgb(75, 192, 192)',
+          borderWidth: 2,
+          tension: 0.4,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          pointBackgroundColor: 'rgb(75, 192, 192)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'bottom'
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.dataset.label + ': ' + context.parsed.y.toLocaleString();
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: function(value) {
+                return value.toLocaleString();
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+  <script type="module">
+    // Import only what we need for doughnut chart
+    import {
+      Chart,
+      DoughnutController,
+      ArcElement,
+      Legend,
+      Tooltip
+    } from 'https://cdn.jsdelivr.net/npm/chart.js/+esm';
+
+    // Register doughnut chart components (no scales needed!)
+    Chart.register(
+      DoughnutController,
+      ArcElement,
+      Legend,
+      Tooltip
+    );
+
+    // Create doughnut chart
+    new Chart(document.getElementById('productionDoughnutChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Desktop', 'Mobile', 'Tablet'],
+        datasets: [{
+          data: [55, 35, 10],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 206, 86)'
+          ],
+          borderWidth: 2,
+          hoverOffset: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const label = context.label || '';
+                const value = context.parsed || 0;
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const percentage = ((value / total) * 100).toFixed(1);
+                return label + ': ' + value + '% (' + percentage + '% of total)';
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

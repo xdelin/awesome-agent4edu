@@ -1,0 +1,118 @@
+{
+  "name": "writing-agent",
+  "full": true,
+  "tree": [
+    {
+      "name": "articles",
+      "type": "folder",
+      "path": "articles",
+      "children": [
+        {
+          "name": "_case_library",
+          "type": "folder",
+          "path": "articles/_case_library",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "articles/_case_library/README.md",
+              "size": 1078,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "_topic_pool",
+          "type": "folder",
+          "path": "articles/_topic_pool",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "articles/_topic_pool/README.md",
+              "size": 2439,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "articles/README.md",
+          "size": 3035,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate_image.ts",
+          "type": "file",
+          "path": "scripts/generate_image.ts",
+          "size": 5106,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 342,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 17276,
+      "language": "md"
+    },
+    {
+      "name": "CLAUDE.MD",
+      "type": "file",
+      "path": "CLAUDE.MD",
+      "size": 6007,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 3063,
+      "language": "md"
+    },
+    {
+      "name": "humanSKILL.md",
+      "type": "file",
+      "path": "humanSKILL.md",
+      "size": 18898,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1079,
+      "language": "text"
+    },
+    {
+      "name": "PRD：协作 Agent 写作工作流（Writer Room Workflow）.md",
+      "type": "file",
+      "path": "PRD：协作 Agent 写作工作流（Writer Room Workflow）.md",
+      "size": 21797,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 31618,
+      "language": "md"
+    }
+  ]
+}

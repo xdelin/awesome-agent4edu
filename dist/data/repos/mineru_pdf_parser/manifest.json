@@ -1,0 +1,55 @@
+{
+  "name": "Mineru PDF Parser",
+  "full": true,
+  "tree": [
+    {
+      "name": "references",
+      "type": "folder",
+      "path": "references",
+      "children": [
+        {
+          "name": "mineru-cli.md",
+          "type": "file",
+          "path": "references/mineru-cli.md",
+          "size": 1545,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "mineru_parse.sh",
+          "type": "file",
+          "path": "scripts/mineru_parse.sh",
+          "size": 4190,
+          "language": "sh"
+        }
+      ]
+    },
+    {
+      "name": "_meta.json",
+      "type": "file",
+      "path": "_meta.json",
+      "size": 319,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 3896,
+      "language": "md"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "size": 1043,
+      "language": "md"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+// Copyright 2025 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package clickhouse
+
+import (
+	"testing"
+
+	"github.com/google/go-cmp/cmp"
+	"github.com/googleapis/genai-toolbox/internal/server"
+	"github.com/googleapis/genai-toolbox/internal/sources"
+	"github.com/googleapis/genai-toolbox/internal/sources/clickhouse"
+	"github.com/googleapis/genai-toolbox/internal/testutils"
+	"github.com/googleapis/genai-toolbox/internal/tools"
+	"github.com/googleapis/genai-toolbox/internal/util/parameters"
+)
+
+func TestConfigToolConfigType(t *testing.T) {
+	config := Config{}
+	if config.ToolConfigType() != sqlType {
+		t.Errorf("Expected %s, got %s", sqlType, config.ToolConfigType())
+	}
+}
+
+func TestParseFromYamlClickHouseSQL(t *testing.T) {
+	ctx, err := testutils.ContextWithNewLogger()
+	if err != nil {
+		t.Fatalf("unexpected error: %s", err)
+	}
+	tcs := []struct {
+		desc string
+		in   string
+		want server.ToolConfigs
+	}{
+		{
+			desc: "basic example",
+			in: `
+			kind: tools
+			name: example_tool
+			type: clickhouse-sql
+			source: my-instance
+			description: some description
+			statement: SELECT 1
+			`,
+			want: server.ToolConfigs{
+				"example_tool": Config{
+					Name:         "example_tool",
+					Type:         "clickhouse-sql",
+					Source:       "my-instance",
+					Description:  "some description",
+					Statement:    "SELECT 1",
+					AuthRequired: []string{},
+				},
+			},
+		},
+		{
+			desc: "with parameters",
+			in: `
+			kind: tools
+			name: param_tool
+			type: clickhouse-sql
+			source: test-source
+			description: Test ClickHouse tool
+			statement: SELECT * FROM test_table WHERE id = $1
+			parameters:
+			  - name: id
+			    type: string
+			    description: Test ID
+			`,
+			want: server.ToolConfigs{
+				"param_tool": Config{
+					Name:        "param_tool",
+					Type:        "clickhouse-sql",
+					Source:      "test-source",
+					Description: "Test ClickHouse tool",
+					Statement:   "SELECT * FROM test_table WHERE id = $1",
+					Parameters: parameters.Parameters{
+						parameters.NewStringParameter("id", "Test ID"),
+					},
+					AuthRequired: []string{},
+				},
+			},
+		},
+	}
+	for _, tc := range tcs {
+		t.Run(tc.desc, func(t *testing.T) {
+			_, _, _, got, _, _, err := server.UnmarshalResourceConfig(ctx, testutils.FormatYaml(tc.in))
+			if err != nil {
+				t.Fatalf("unable to unmarshal: %s", err)
+			}
+			if diff := cmp.Diff(tc.want, got); diff != "" {
+				t.Fatalf("incorrect parse: diff %v", diff)
+			}
+		})
+	}
+}
+
+func TestSQLConfigInitializeValidSource(t *testing.T) {
+	config := Config{
+		Name:        "test-tool",
+		Type:        sqlType,
+		Source:      "test-clickhouse",
+		Description: "Test tool",
+		Statement:   "SELECT 1",
+		Parameters:  parameters.Parameters{},
+	}
+
+	// Create a mock ClickHouse source
+	mockSource := &clickhouse.Source{}
+
+	sources := map[string]sources.Source{
+		"test-clickhouse": mockSource,
+	}
+
+	tool, err := config.Initialize(sources)
+	if err != nil {
+		t.Fatalf("Expected no error, got: %v", err)
+	}
+
+	clickhouseTool, ok := tool.(Tool)
+	if !ok {
+		t.Fatalf("Expected Tool type, got %T", tool)
+	}
+
+	if clickhouseTool.Name != "test-tool" {
+		t.Errorf("Expected name 'test-tool', got %s", clickhouseTool.Name)
+	}
+}
+
+func TestToolManifest(t *testing.T) {
+	tool := Tool{
+		manifest: tools.Manifest{
+			Description: "Test description",
+			Parameters:  []parameters.ParameterManifest{},
+		},
+	}
+
+	manifest := tool.Manifest()
+	if manifest.Description != "Test description" {
+		t.Errorf("Expected description 'Test description', got %s", manifest.Description)
+	}
+}
+
+func TestToolMcpManifest(t *testing.T) {
+	tool := Tool{
+		mcpManifest: tools.McpManifest{
+			Name:        "test-tool",
+			Description: "Test description",
+		},
+	}
+
+	manifest := tool.McpManifest()
+	if manifest.Name != "test-tool" {
+		t.Errorf("Expected name 'test-tool', got %s", manifest.Name)
+	}
+	if manifest.Description != "Test description" {
+		t.Errorf("Expected description 'Test description', got %s", manifest.Description)
+	}
+}
+
+func TestToolAuthorized(t *testing.T) {
+	tests := []struct {
+		name                 string
+		authRequired         []string
+		verifiedAuthServices []string
+		expectedAuthorized   bool
+	}{
+		{
+			name:                 "no auth required",
+			authRequired:         []string{},
+			verifiedAuthServices: []string{},
+			expectedAuthorized:   true,
+		},
+		{
+			name:                 "auth required and verified",
+			authRequired:         []string{"google"},
+			verifiedAuthServices: []string{"google"},
+			expectedAuthorized:   true,
+		},
+		{
+			name:                 "auth required but not verified",
+			authRequired:         []string{"google"},
+			verifiedAuthServices: []string{},
+			expectedAuthorized:   false,
+		},
+		{
+			name:                 "auth required but different service verified",
+			authRequired:         []string{"google"},
+			verifiedAuthServices: []string{"aws"},
+			expectedAuthorized:   false,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			tool := Tool{
+				Config: Config{
+					AuthRequired: tt.authRequired,
+				},
+			}
+
+			authorized := tool.Authorized(tt.verifiedAuthServices)
+			if authorized != tt.expectedAuthorized {
+				t.Errorf("Expected authorized %t, got %t", tt.expectedAuthorized, authorized)
+			}
+		})
+	}
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js - Basic Bar Chart Example</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .description {
+      color: #666;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #e8f4f8;
+      border-left: 4px solid #2196F3;
+      border-radius: 4px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chart.js Basic Bar Chart Examples</h1>
+
+  <div class="description">
+    <strong>About this example:</strong> This page demonstrates basic bar chart configurations
+    using Chart.js v4.5.1 loaded via CDN. Open this file directly in your browser to see the charts.
+    View the source code to see the complete implementation.
+  </div>
+
+  <!-- Example 1: Simple Bar Chart -->
+  <div class="chart-container">
+    <h2>Simple Bar Chart</h2>
+    <p>Basic bar chart with minimal configuration showing monthly sales data.</p>
+    <div style="width: 100%; max-width: 800px;">
+      <canvas id="simpleBarChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Example 2: Horizontal Bar Chart -->
+  <div class="chart-container">
+    <h2>Horizontal Bar Chart</h2>
+    <p>Use <code>indexAxis: 'y'</code> to create horizontal bars - great for rankings and comparisons.</p>
+    <div style="width: 100%; max-width: 800px;">
+      <canvas id="horizontalBarChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Example 3: Stacked Bar Chart -->
+  <div class="chart-container">
+    <h2>Stacked Bar Chart</h2>
+    <p>Multiple datasets stacked on top of each other using <code>stacked: true</code> on both axes.</p>
+    <div style="width: 100%; max-width: 800px;">
+      <canvas id="stackedBarChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Load Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+
+  <script>
+    // Example 1: Simple Bar Chart
+    new Chart(document.getElementById('simpleBarChart'), {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+          label: 'Monthly Sales ($)',
+          data: [12000, 19000, 15000, 25000, 22000, 30000],
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',
+          borderColor: 'rgb(54, 162, 235)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Sales Performance - H1 2024'
+          },
+          legend: {
+            display: true,
+            position: 'bottom'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: function(value) {
+                return '$' + value.toLocaleString();
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Example 2: Horizontal Bar Chart
+    new Chart(document.getElementById('horizontalBarChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'],
+        datasets: [{
+          label: 'Units Sold',
+          data: [165, 259, 180, 281, 156],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(54, 162, 235, 0.5)',
+            'rgba(255, 206, 86, 0.5)',
+            'rgba(75, 192, 192, 0.5)',
+            'rgba(153, 102, 255, 0.5)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 206, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(153, 102, 255)'
+          ],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        indexAxis: 'y',  // This makes it horizontal
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Product Sales Comparison'
+          },
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Example 3: Stacked Bar Chart
+    new Chart(document.getElementById('stackedBarChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [
+          {
+            label: 'Product A',
+            data: [10, 20, 30, 40],
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderColor: 'rgb(255, 99, 132)',
+            borderWidth: 1
+          },
+          {
+            label: 'Product B',
+            data: [20, 30, 20, 10],
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgb(54, 162, 235)',
+            borderWidth: 1
+          },
+          {
+            label: 'Product C',
+            data: [30, 10, 40, 20],
+            backgroundColor: 'rgba(255, 206, 86, 0.5)',
+            borderColor: 'rgb(255, 206, 86)',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Quarterly Revenue by Product (Stacked)'
+          },
+          legend: {
+            position: 'bottom'
+          }
+        },
+        scales: {
+          x: {
+            stacked: true
+          },
+          y: {
+            stacked: true,
+            beginAtZero: true,
+            ticks: {
+              callback: function(value) {
+                return '$' + value + 'K';
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+{
+  "name": "AI-Tutor",
+  "full": true,
+  "tree": [
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "agents",
+          "type": "folder",
+          "path": "src/agents",
+          "children": [
+            {
+              "name": "agent.py",
+              "type": "file",
+              "path": "src/agents/agent.py",
+              "size": 1245,
+              "language": "py"
+            },
+            {
+              "name": "graph.png",
+              "type": "file",
+              "path": "src/agents/graph.png",
+              "size": 21495,
+              "language": "png"
+            },
+            {
+              "name": "summarizer_agent.png",
+              "type": "file",
+              "path": "src/agents/summarizer_agent.png",
+              "size": 83420,
+              "language": "png"
+            },
+            {
+              "name": "summarizer_agent.py",
+              "type": "file",
+              "path": "src/agents/summarizer_agent.py",
+              "size": 8182,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "___init__.py",
+              "type": "file",
+              "path": "src/tools/___init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "transcript_tool.py",
+              "type": "file",
+              "path": "src/tools/transcript_tool.py",
+              "size": 359,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "src/__init__.py",
+          "size": 36,
+          "language": "py"
+        },
+        {
+          "name": "app.py",
+          "type": "file",
+          "path": "src/app.py",
+          "size": 11138,
+          "language": "py"
+        },
+        {
+          "name": "chat.py",
+          "type": "file",
+          "path": "src/chat.py",
+          "size": 3848,
+          "language": "py"
+        },
+        {
+          "name": "pdf_processor.py",
+          "type": "file",
+          "path": "src/pdf_processor.py",
+          "size": 1783,
+          "language": "py"
+        },
+        {
+          "name": "prompts.py",
+          "type": "file",
+          "path": "src/prompts.py",
+          "size": 3543,
+          "language": "py"
+        },
+        {
+          "name": "utils.py",
+          "type": "file",
+          "path": "src/utils.py",
+          "size": 34,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 155,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 424,
+      "language": "text"
+    },
+    {
+      "name": "langgraph.json",
+      "type": "file",
+      "path": "langgraph.json",
+      "size": 256,
+      "language": "json"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 11558,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9093,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 3458,
+      "language": "txt"
+    }
+  ]
+}

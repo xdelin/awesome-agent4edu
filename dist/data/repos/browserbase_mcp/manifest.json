@@ -1,0 +1,363 @@
+{
+  "name": "BrowserBase MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "assets",
+      "type": "folder",
+      "path": "assets",
+      "children": [
+        {
+          "name": "smithery.jpg",
+          "type": "file",
+          "path": "assets/smithery.jpg",
+          "size": 232595,
+          "language": "jpg"
+        }
+      ]
+    },
+    {
+      "name": "evals",
+      "type": "folder",
+      "path": "evals",
+      "children": [
+        {
+          "name": "mcp-eval-basic.config.json",
+          "type": "file",
+          "path": "evals/mcp-eval-basic.config.json",
+          "size": 3869,
+          "language": "json"
+        },
+        {
+          "name": "mcp-eval-minimal.config.json",
+          "type": "file",
+          "path": "evals/mcp-eval-minimal.config.json",
+          "size": 2004,
+          "language": "json"
+        },
+        {
+          "name": "mcp-eval.config.json",
+          "type": "file",
+          "path": "evals/mcp-eval.config.json",
+          "size": 3336,
+          "language": "json"
+        },
+        {
+          "name": "run-evals.ts",
+          "type": "file",
+          "path": "evals/run-evals.ts",
+          "size": 8185,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "mcp",
+          "type": "folder",
+          "path": "src/mcp",
+          "children": [
+            {
+              "name": "resources.ts",
+              "type": "file",
+              "path": "src/mcp/resources.ts",
+              "size": 2387,
+              "language": "ts"
+            },
+            {
+              "name": "sampling.ts",
+              "type": "file",
+              "path": "src/mcp/sampling.ts",
+              "size": 1021,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "act.ts",
+              "type": "file",
+              "path": "src/tools/act.ts",
+              "size": 2005,
+              "language": "ts"
+            },
+            {
+              "name": "agent.ts",
+              "type": "file",
+              "path": "src/tools/agent.ts",
+              "size": 2464,
+              "language": "ts"
+            },
+            {
+              "name": "extract.ts",
+              "type": "file",
+              "path": "src/tools/extract.ts",
+              "size": 2029,
+              "language": "ts"
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/tools/index.ts",
+              "size": 1002,
+              "language": "ts"
+            },
+            {
+              "name": "navigate.ts",
+              "type": "file",
+              "path": "src/tools/navigate.ts",
+              "size": 1838,
+              "language": "ts"
+            },
+            {
+              "name": "observe.ts",
+              "type": "file",
+              "path": "src/tools/observe.ts",
+              "size": 2554,
+              "language": "ts"
+            },
+            {
+              "name": "screenshot.ts",
+              "type": "file",
+              "path": "src/tools/screenshot.ts",
+              "size": 4549,
+              "language": "ts"
+            },
+            {
+              "name": "session.ts",
+              "type": "file",
+              "path": "src/tools/session.ts",
+              "size": 8363,
+              "language": "ts"
+            },
+            {
+              "name": "tool.ts",
+              "type": "file",
+              "path": "src/tools/tool.ts",
+              "size": 895,
+              "language": "ts"
+            },
+            {
+              "name": "url.ts",
+              "type": "file",
+              "path": "src/tools/url.ts",
+              "size": 1644,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "types",
+          "type": "folder",
+          "path": "src/types",
+          "children": [
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "src/types/types.ts",
+              "size": 1040,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "config.ts",
+          "type": "file",
+          "path": "src/config.ts",
+          "size": 4373,
+          "language": "ts"
+        },
+        {
+          "name": "context.ts",
+          "type": "file",
+          "path": "src/context.ts",
+          "size": 3645,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 5888,
+          "language": "ts"
+        },
+        {
+          "name": "program.ts",
+          "type": "file",
+          "path": "src/program.ts",
+          "size": 3133,
+          "language": "ts"
+        },
+        {
+          "name": "server.ts",
+          "type": "file",
+          "path": "src/server.ts",
+          "size": 666,
+          "language": "ts"
+        },
+        {
+          "name": "sessionManager.ts",
+          "type": "file",
+          "path": "src/sessionManager.ts",
+          "size": 16275,
+          "language": "ts"
+        },
+        {
+          "name": "transport.ts",
+          "type": "file",
+          "path": "src/transport.ts",
+          "size": 3589,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": ".gitkeep",
+          "type": "file",
+          "path": "tests/.gitkeep",
+          "size": 0,
+          "language": "text"
+        }
+      ]
+    },
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 274,
+      "language": "text"
+    },
+    {
+      "name": ".gitattributes",
+      "type": "file",
+      "path": ".gitattributes",
+      "size": 42,
+      "language": "text"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 5016,
+      "language": "text"
+    },
+    {
+      "name": ".npmrc",
+      "type": "file",
+      "path": ".npmrc",
+      "size": 52,
+      "language": "text"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 918,
+      "language": "md"
+    },
+    {
+      "name": "cli.js",
+      "type": "file",
+      "path": "cli.js",
+      "size": 48,
+      "language": "js"
+    },
+    {
+      "name": "config.d.ts",
+      "type": "file",
+      "path": "config.d.ts",
+      "size": 2700,
+      "language": "ts"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 659,
+      "language": "text"
+    },
+    {
+      "name": "eslint.config.js",
+      "type": "file",
+      "path": "eslint.config.js",
+      "size": 820,
+      "language": "js"
+    },
+    {
+      "name": "gemini-extension.json",
+      "type": "file",
+      "path": "gemini-extension.json",
+      "size": 202,
+      "language": "json"
+    },
+    {
+      "name": "index.d.ts",
+      "type": "file",
+      "path": "index.d.ts",
+      "size": 198,
+      "language": "ts"
+    },
+    {
+      "name": "index.js",
+      "type": "file",
+      "path": "index.js",
+      "size": 81,
+      "language": "js"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 11442,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2565,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13842,
+      "language": "md"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 2211,
+      "language": "json"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 22,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 402,
+      "language": "json"
+    }
+  ]
+}

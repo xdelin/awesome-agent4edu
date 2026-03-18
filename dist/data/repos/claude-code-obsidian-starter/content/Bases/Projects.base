@@ -1,0 +1,42 @@
+filters: note.type == "project"
+properties:
+  file.name:
+    displayName: Project
+  note.status:
+    displayName: Status
+  note.priority:
+    displayName: Priority
+  note.deadline:
+    displayName: Deadline
+  note.client:
+    displayName: Client
+views:
+  - type: table
+    name: Active
+    filters: note.status == "active"
+    order:
+      - file.name
+      - status
+      - priority
+      - deadline
+      - client
+    sort:
+      - property: deadline
+        direction: ASC
+    columnSize:
+      note.deadline: 143
+  - type: table
+    name: All Projects
+    order:
+      - file.name
+      - status
+      - priority
+      - deadline
+    sort:
+      - property: status
+        direction: ASC
+    columnSize:
+      file.name: 145
+      note.status: 105
+      note.priority: 113
+      note.deadline: 120

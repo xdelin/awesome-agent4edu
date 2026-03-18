@@ -1,0 +1,118 @@
+{
+  "name": "Google Drive MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "tools",
+      "type": "folder",
+      "path": "tools",
+      "children": [
+        {
+          "name": "gdrive_read_file.ts",
+          "type": "file",
+          "path": "tools/gdrive_read_file.ts",
+          "size": 2673,
+          "language": "ts"
+        },
+        {
+          "name": "gdrive_search.ts",
+          "type": "file",
+          "path": "tools/gdrive_search.ts",
+          "size": 2287,
+          "language": "ts"
+        },
+        {
+          "name": "gsheets_read.ts",
+          "type": "file",
+          "path": "tools/gsheets_read.ts",
+          "size": 4040,
+          "language": "ts"
+        },
+        {
+          "name": "gsheets_update_cell.ts",
+          "type": "file",
+          "path": "tools/gsheets_update_cell.ts",
+          "size": 1181,
+          "language": "ts"
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "tools/index.ts",
+          "size": 842,
+          "language": "ts"
+        },
+        {
+          "name": "types.ts",
+          "type": "file",
+          "path": "tools/types.ts",
+          "size": 910,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 24,
+      "language": "text"
+    },
+    {
+      "name": "auth.ts",
+      "type": "file",
+      "path": "auth.ts",
+      "size": 5167,
+      "language": "ts"
+    },
+    {
+      "name": "index.ts",
+      "type": "file",
+      "path": "index.ts",
+      "size": 3910,
+      "language": "ts"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1101,
+      "language": "text"
+    },
+    {
+      "name": "NOTICE",
+      "type": "file",
+      "path": "NOTICE",
+      "size": 99,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1003,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 4884,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 360,
+      "language": "json"
+    },
+    {
+      "name": "tsconfigoriginal.json",
+      "type": "file",
+      "path": "tsconfigoriginal.json",
+      "size": 322,
+      "language": "json"
+    }
+  ]
+}

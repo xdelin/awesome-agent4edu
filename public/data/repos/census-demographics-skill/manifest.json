@@ -1,0 +1,104 @@
+{
+  "name": "census-demographics-skill",
+  "full": true,
+  "tree": [
+    {
+      "name": "census_output",
+      "type": "folder",
+      "path": "census_output",
+      "children": [
+        {
+          "name": "island_county_income_tracts_map.py",
+          "type": "file",
+          "path": "census_output/island_county_income_tracts_map.py",
+          "size": 7861,
+          "language": "py"
+        },
+        {
+          "name": "oregon_education_map.py",
+          "type": "file",
+          "path": "census_output/oregon_education_map.py",
+          "size": 6857,
+          "language": "py"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "census_output/README.md",
+          "size": 2570,
+          "language": "md"
+        },
+        {
+          "name": "washington_education_map.py",
+          "type": "file",
+          "path": "census_output/washington_education_map.py",
+          "size": 6945,
+          "language": "py"
+        },
+        {
+          "name": "washington_income_map.py",
+          "type": "file",
+          "path": "census_output/washington_income_map.py",
+          "size": 6980,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 747,
+      "language": "text"
+    },
+    {
+      "name": "census_fetch.py",
+      "type": "file",
+      "path": "census_fetch.py",
+      "size": 8000,
+      "language": "py"
+    },
+    {
+      "name": "create_state_density_map.py",
+      "type": "file",
+      "path": "create_state_density_map.py",
+      "size": 6695,
+      "language": "py"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1246,
+      "language": "text"
+    },
+    {
+      "name": "map_visualize.py",
+      "type": "file",
+      "path": "map_visualize.py",
+      "size": 11834,
+      "language": "py"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9589,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 292,
+      "language": "txt"
+    },
+    {
+      "name": "skill.md",
+      "type": "file",
+      "path": "skill.md",
+      "size": 5241,
+      "language": "md"
+    }
+  ]
+}

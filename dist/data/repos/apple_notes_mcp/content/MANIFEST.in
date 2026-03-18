@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include pyproject.toml
+include uv.lock
+recursive-include mcp_apple_notes *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

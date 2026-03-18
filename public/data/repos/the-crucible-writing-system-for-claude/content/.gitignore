@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# Virtual environments
+venv/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+nul
+
+# Project state (user-specific)
+.crucible/state/
+.crucible/backups/
+
+# Logs
+*.log
+
+# Development archive (not part of plugin)
+_dev_archive/

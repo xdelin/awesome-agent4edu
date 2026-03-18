@@ -192,6 +192,23 @@
           "description": "It is an AI-powered educational toolkit built on the Model Context Protocol (MCP).",
           "updatedAt": "2025-10-27T19:24:36Z"
         }
+      },
+      {
+        "name": "teacher-prep",
+        "url": "",
+        "description": {
+          "en": "教师备课助手，用于小学语文教学备课。支持古诗、现代文、寓言、童话等各类课文。当用户提出备课需求时，自动执行：(1)搜索课文相关资料（原文、作者、背景、生字词、段落分析等），生成markdown备课资料；(2)生成教案PPT；(3)生成Word格式课后练习题及参考答案。适用于小学各年级语文备课场景。",
+          "zh": "教师备课助手，用于小学语文教学备课。支持古诗、现代文、寓言、童话等各类课文。当用户提出备课需求时，自动执行：(1)搜索课文相关资料（原文、作者、背景、生字词、段落分析等），生成markdown备课资料；(2)生成教案PPT；(3)生成Word格式课后练习题及参考答案。适用于小学各年级语文备课场景。"
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "870021840",
+        "localPath": "data/repos/teacher-prep",
+        "installPrompt": "claw install teacher-prep"
       }
     ]
   },
@@ -4345,6 +4362,224 @@
           "description": "Multi-agent RAG system using AutoGen for document-focused tasks in medical education, leveraging LangChain, ChromaDB, and OpenAI embeddings.",
           "updatedAt": "2024-09-09T05:43:38Z"
         }
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Reading & Analytics",
+      "zh": "内容分析与阅读"
+    },
+    "description": {
+      "en": "",
+      "zh": ""
+    },
+    "skills": [
+      {
+        "name": "smart-summarizer",
+        "url": "",
+        "description": {
+          "en": "Instantly summarize any content — articles, PDFs, YouTube videos, web pages, long documents, or pasted text. Extracts key points, action items, and insights. Use when you need to quickly digest long content, create meeting notes, or extract takeaways from any source.",
+          "zh": "Instantly summarize any content — articles, PDFs, YouTube videos, web pages, long documents, or pasted text. Extracts key points, action items, and insights. Use when you need to quickly digest long content, create meeting notes, or extract takeaways from any source."
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "27555402-spec",
+        "localPath": "data/repos/smart-summarizer",
+        "installPrompt": "claw install smart-summarizer"
+      },
+      {
+        "name": "librag-knowledge-recall",
+        "url": "",
+        "description": {
+          "en": "使用 LibRAG 本地 `/api/v1/librag/knowbase/recall` 接口做知识库数据召回。适用于中文场景下的知识库检索、资料召回、证据段落提取、出处定位、基于知识库的问答取证，以及用户用“知识库查询”“数据召回”“从文档里找答案”等表达发起的任务。\r",
+          "zh": "使用 LibRAG 本地 `/api/v1/librag/knowbase/recall` 接口做知识库数据召回。适用于中文场景下的知识库检索、资料召回、证据段落提取、出处定位、基于知识库的问答取证，以及用户用“知识库查询”“数据召回”“从文档里找答案”等表达发起的任务。\r"
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "7010g",
+        "localPath": "data/repos/librag-knowledge-recall",
+        "installPrompt": "claw install librag-knowledge-recall"
+      },
+      {
+        "name": "wechat-article-reader",
+        "url": "",
+        "description": {
+          "en": "将微信公众号文章导出为 Markdown 格式。当用户提供微信公众号链接 (mp.weixin.qq.com) 或要求下载/导出/保存微信文章时触发。默认保存到工作空间的 source 目录。",
+          "zh": "将微信公众号文章导出为 Markdown 格式。当用户提供微信公众号链接 (mp.weixin.qq.com) 或要求下载/导出/保存微信文章时触发。默认保存到工作空间的 source 目录。"
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "8421bit",
+        "localPath": "data/repos/wechat-article-reader",
+        "installPrompt": "claw install wechat-article-reader"
+      },
+      {
+        "name": "z-article-card",
+        "url": "",
+        "description": {
+          "en": "长文分页卡片生成器（文章→多张 PNG）。触发词：长文、文章转图、分页卡片、多图、帮我把文章做成图、做成卡片、生成多图。",
+          "zh": "长文分页卡片生成器（文章→多张 PNG）。触发词：长文、文章转图、分页卡片、多图、帮我把文章做成图、做成卡片、生成多图。"
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "aatrooox",
+        "localPath": "data/repos/z-article-card",
+        "installPrompt": "claw install z-article-card"
+      },
+      {
+        "name": "youtube-summarizer",
+        "url": "",
+        "description": {
+          "en": "Automatically fetch YouTube video transcripts, generate structured summaries, and send full transcripts to messaging platforms. Detects YouTube URLs and provides metadata, key insights, and downloadable transcripts.",
+          "zh": "Automatically fetch YouTube video transcripts, generate structured summaries, and send full transcripts to messaging platforms. Detects YouTube URLs and provides metadata, key insights, and downloadable transcripts."
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "abe238",
+        "localPath": "data/repos/youtube-summarizer",
+        "installPrompt": "claw install youtube-summarizer"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Data & Analytics",
+      "zh": "数据分析与可视化"
+    },
+    "description": {
+      "en": "",
+      "zh": ""
+    },
+    "skills": [
+      {
+        "name": "afrexai-data-analyst",
+        "url": "",
+        "description": {
+          "en": "**Transform raw data into decisions. Not just charts — answers.**",
+          "zh": "**Transform raw data into decisions. Not just charts — answers.**"
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "1kalin",
+        "localPath": "data/repos/afrexai-data-analyst",
+        "installPrompt": "claw install afrexai-data-analyst"
+      },
+      {
+        "name": "clinical-data-extractor",
+        "url": "",
+        "description": {
+          "en": "Extract clinical trial data from pharmaceutical conference websites or PDF documents. Use when user provides a URL or PDF file containing innovative drug clinical trial data and needs structured extraction of: drug name, manufacturer, indication, clinical phase, trial name, conference, efficacy and ",
+          "zh": "Extract clinical trial data from pharmaceutical conference websites or PDF documents. Use when user provides a URL or PDF file containing innovative drug clinical trial data and needs structured extraction of: drug name, manufacturer, indication, clinical phase, trial name, conference, efficacy and "
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "abinww",
+        "localPath": "data/repos/clinical-data-extractor",
+        "installPrompt": "claw install clinical-data-extractor"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Code & Developer Skills",
+      "zh": "代码与开发"
+    },
+    "description": {
+      "en": "",
+      "zh": ""
+    },
+    "skills": [
+      {
+        "name": "obsidian-cli-skills",
+        "url": "",
+        "description": {
+          "en": "> 更新时间：2026-03-05",
+          "zh": "> 更新时间：2026-03-05"
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "0x-cryptopriest",
+        "localPath": "data/repos/obsidian-cli-skills",
+        "installPrompt": "claw install obsidian-cli-skills"
+      }
+    ]
+  },
+  {
+    "category": {
+      "en": "Research & Academic",
+      "zh": "科研与学术"
+    },
+    "description": {
+      "en": "",
+      "zh": ""
+    },
+    "skills": [
+      {
+        "name": "torah-scholar",
+        "url": "",
+        "description": {
+          "en": "Search and explore Jewish texts (Torah, Tanach, Talmud, Midrash, commentaries) via Sefaria API. Use when researching Torah sources, looking up verses, finding commentaries, cross-references, or preparing divrei Torah. Supports Hebrew and English. Handles references like \"Genesis 1:1\", \"Berakhot 2a\",",
+          "zh": "Search and explore Jewish texts (Torah, Tanach, Talmud, Midrash, commentaries) via Sefaria API. Use when researching Torah sources, looking up verses, finding commentaries, cross-references, or preparing divrei Torah. Supports Hebrew and English. Handles references like \"Genesis 1:1\", \"Berakhot 2a\","
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "abeperl",
+        "localPath": "data/repos/torah-scholar",
+        "installPrompt": "claw install torah-scholar"
+      },
+      {
+        "name": "tavily-research-pro",
+        "url": "",
+        "description": {
+          "en": "Professional AI-powered search and deep research engine. Features multi-dimensional data aggregation, semantic analysis, and automated report generation for structured information gathering.",
+          "zh": "Professional AI-powered search and deep research engine. Features multi-dimensional data aggregation, semantic analysis, and automated report generation for structured information gathering."
+        },
+        "useCase": {
+          "en": "",
+          "zh": ""
+        },
+        "type": "Skill",
+        "stars": 0,
+        "author": "airoom-ai",
+        "localPath": "data/repos/tavily-research-pro",
+        "installPrompt": "claw install tavily-research-pro"
       }
     ]
   }

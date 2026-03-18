@@ -1,0 +1,125 @@
+{
+  "name": "claude-dolphin",
+  "full": true,
+  "tree": [
+    {
+      "name": "commands",
+      "type": "folder",
+      "path": "commands",
+      "children": [
+        {
+          "name": "accessibility-check.md",
+          "type": "file",
+          "path": "commands/accessibility-check.md",
+          "size": 5668,
+          "language": "md"
+        },
+        {
+          "name": "design-system-review.md",
+          "type": "file",
+          "path": "commands/design-system-review.md",
+          "size": 5397,
+          "language": "md"
+        },
+        {
+          "name": "refactor-ui.md",
+          "type": "file",
+          "path": "commands/refactor-ui.md",
+          "size": 6519,
+          "language": "md"
+        },
+        {
+          "name": "ui-audit.md",
+          "type": "file",
+          "path": "commands/ui-audit.md",
+          "size": 4406,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "ux-ui-design-system",
+          "type": "folder",
+          "path": "skills/ux-ui-design-system",
+          "children": [
+            {
+              "name": "references",
+              "type": "folder",
+              "path": "skills/ux-ui-design-system/references",
+              "children": [
+                {
+                  "name": "audit-framework.md",
+                  "type": "file",
+                  "path": "skills/ux-ui-design-system/references/audit-framework.md",
+                  "size": 9543,
+                  "language": "md"
+                },
+                {
+                  "name": "refactoring-ui.md",
+                  "type": "file",
+                  "path": "skills/ux-ui-design-system/references/refactoring-ui.md",
+                  "size": 8114,
+                  "language": "md"
+                },
+                {
+                  "name": "shadcn-patterns.md",
+                  "type": "file",
+                  "path": "skills/ux-ui-design-system/references/shadcn-patterns.md",
+                  "size": 9417,
+                  "language": "md"
+                },
+                {
+                  "name": "wcag-checklist.md",
+                  "type": "file",
+                  "path": "skills/ux-ui-design-system/references/wcag-checklist.md",
+                  "size": 8581,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/ux-ui-design-system/SKILL.md",
+              "size": 6884,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 333,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1062,
+      "language": "text"
+    },
+    {
+      "name": "plugin.json",
+      "type": "file",
+      "path": "plugin.json",
+      "size": 871,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 8349,
+      "language": "md"
+    }
+  ]
+}

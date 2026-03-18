@@ -1,0 +1,335 @@
+{
+  "name": "Official Notion MCP Server",
+  "full": true,
+  "tree": [
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "images",
+          "type": "folder",
+          "path": "docs/images",
+          "children": [
+            {
+              "name": "integration-access.png",
+              "type": "file",
+              "path": "docs/images/integration-access.png",
+              "size": 148103,
+              "language": "png"
+            },
+            {
+              "name": "integrations-capabilities.png",
+              "type": "file",
+              "path": "docs/images/integrations-capabilities.png",
+              "size": 240329,
+              "language": "png"
+            },
+            {
+              "name": "integrations-creation.png",
+              "type": "file",
+              "path": "docs/images/integrations-creation.png",
+              "size": 98512,
+              "language": "png"
+            },
+            {
+              "name": "page-access-edit.png",
+              "type": "file",
+              "path": "docs/images/page-access-edit.png",
+              "size": 200307,
+              "language": "png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "build-cli.js",
+          "type": "file",
+          "path": "scripts/build-cli.js",
+          "size": 841,
+          "language": "js"
+        },
+        {
+          "name": "notion-openapi.json",
+          "type": "file",
+          "path": "scripts/notion-openapi.json",
+          "size": 68665,
+          "language": "json"
+        },
+        {
+          "name": "start-server.ts",
+          "type": "file",
+          "path": "scripts/start-server.ts",
+          "size": 9433,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "openapi-mcp-server",
+          "type": "folder",
+          "path": "src/openapi-mcp-server",
+          "children": [
+            {
+              "name": "auth",
+              "type": "folder",
+              "path": "src/openapi-mcp-server/auth",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/auth/index.ts",
+                  "size": 53,
+                  "language": "ts"
+                },
+                {
+                  "name": "template.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/auth/template.ts",
+                  "size": 785,
+                  "language": "ts"
+                },
+                {
+                  "name": "types.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/auth/types.ts",
+                  "size": 510,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "client",
+              "type": "folder",
+              "path": "src/openapi-mcp-server/client",
+              "children": [
+                {
+                  "name": "__tests__",
+                  "type": "folder",
+                  "path": "src/openapi-mcp-server/client/__tests__",
+                  "children": [
+                    {
+                      "name": "http-client-upload.test.ts",
+                      "type": "file",
+                      "path": "src/openapi-mcp-server/client/__tests__/http-client-upload.test.ts",
+                      "size": 6602,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "http-client.integration.test.ts",
+                      "type": "file",
+                      "path": "src/openapi-mcp-server/client/__tests__/http-client.integration.test.ts",
+                      "size": 9425,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "http-client.test.ts",
+                      "type": "file",
+                      "path": "src/openapi-mcp-server/client/__tests__/http-client.test.ts",
+                      "size": 15194,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "http-client.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/client/http-client.ts",
+                  "size": 6323,
+                  "language": "ts"
+                },
+                {
+                  "name": "polyfill-headers.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/client/polyfill-headers.ts",
+                  "size": 1129,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "mcp",
+              "type": "folder",
+              "path": "src/openapi-mcp-server/mcp",
+              "children": [
+                {
+                  "name": "__tests__",
+                  "type": "folder",
+                  "path": "src/openapi-mcp-server/mcp/__tests__",
+                  "children": [
+                    {
+                      "name": "proxy.test.ts",
+                      "type": "file",
+                      "path": "src/openapi-mcp-server/mcp/__tests__/proxy.test.ts",
+                      "size": 15724,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "proxy.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/mcp/proxy.ts",
+                  "size": 8761,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "openapi",
+              "type": "folder",
+              "path": "src/openapi-mcp-server/openapi",
+              "children": [
+                {
+                  "name": "__tests__",
+                  "type": "folder",
+                  "path": "src/openapi-mcp-server/openapi/__tests__",
+                  "children": [
+                    {
+                      "name": "file-upload.test.ts",
+                      "type": "file",
+                      "path": "src/openapi-mcp-server/openapi/__tests__/file-upload.test.ts",
+                      "size": 2607,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "parser-multipart.test.ts",
+                      "type": "file",
+                      "path": "src/openapi-mcp-server/openapi/__tests__/parser-multipart.test.ts",
+                      "size": 20510,
+                      "language": "ts"
+                    },
+                    {
+                      "name": "parser.test.ts",
+                      "type": "file",
+                      "path": "src/openapi-mcp-server/openapi/__tests__/parser.test.ts",
+                      "size": 52702,
+                      "language": "ts"
+                    }
+                  ]
+                },
+                {
+                  "name": "file-upload.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/openapi/file-upload.ts",
+                  "size": 1506,
+                  "language": "ts"
+                },
+                {
+                  "name": "parser.ts",
+                  "type": "file",
+                  "path": "src/openapi-mcp-server/openapi/parser.ts",
+                  "size": 19905,
+                  "language": "ts"
+                }
+              ]
+            },
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "src/openapi-mcp-server/index.ts",
+              "size": 170,
+              "language": "ts"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "src/openapi-mcp-server/README.md",
+              "size": 248,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "init-server.ts",
+          "type": "file",
+          "path": "src/init-server.ts",
+          "size": 1425,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 44,
+      "language": "text"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 96,
+      "language": "text"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "path": "CLAUDE.md",
+      "size": 2480,
+      "language": "md"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 113,
+      "language": "yml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 993,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1066,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 1762,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 13078,
+      "language": "md"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 648,
+      "language": "json"
+    },
+    {
+      "name": "vitest.config.ts",
+      "type": "file",
+      "path": "vitest.config.ts",
+      "size": 153,
+      "language": "ts"
+    }
+  ]
+}

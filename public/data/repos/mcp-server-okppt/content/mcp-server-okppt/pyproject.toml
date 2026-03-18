@@ -1,0 +1,28 @@
+[project]
+name = "mcp-server-okppt"
+version = "0.2.0"
+description = "A Python package to insert SVG images into PowerPoint presentations, with MCP server capabilities."
+authors = [
+  { name="NeekChaw", email="your.email@example.com" },
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.8.0",
+    "lxml>=4.9.2",
+    "python-pptx>=0.6.21",
+    "reportlab>=4.0.0",
+    "svglib>=1.5.1",
+    "rlPyCairo>=0.1.0",
+]
+
+[project.scripts]
+mcp-server-okppt = "mcp_server_okppt.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/NeekChaw/mcp-server-okppt"
+"Bug Tracker" = "https://github.com/NeekChaw/mcp-server-okppt/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

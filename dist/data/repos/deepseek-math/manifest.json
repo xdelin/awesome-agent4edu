@@ -1,0 +1,503 @@
+{
+  "name": "DeepSeek-Math",
+  "full": true,
+  "tree": [
+    {
+      "name": "evaluation",
+      "type": "folder",
+      "path": "evaluation",
+      "children": [
+        {
+          "name": "configs",
+          "type": "folder",
+          "path": "evaluation/configs",
+          "children": [
+            {
+              "name": "few_shot_test_configs.json",
+              "type": "file",
+              "path": "evaluation/configs/few_shot_test_configs.json",
+              "size": 4070,
+              "language": "json"
+            },
+            {
+              "name": "zero_shot_test_configs.json",
+              "type": "file",
+              "path": "evaluation/configs/zero_shot_test_configs.json",
+              "size": 1119,
+              "language": "json"
+            }
+          ]
+        },
+        {
+          "name": "data_processing",
+          "type": "folder",
+          "path": "evaluation/data_processing",
+          "children": [
+            {
+              "name": "answer_extraction.py",
+              "type": "file",
+              "path": "evaluation/data_processing/answer_extraction.py",
+              "size": 11113,
+              "language": "py"
+            },
+            {
+              "name": "process_utils.py",
+              "type": "file",
+              "path": "evaluation/data_processing/process_utils.py",
+              "size": 5339,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "datasets",
+          "type": "folder",
+          "path": "evaluation/datasets",
+          "children": [
+            {
+              "name": "agieval",
+              "type": "folder",
+              "path": "evaluation/datasets/agieval",
+              "children": [
+                {
+                  "name": "gaokao-mathcloze.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/agieval/gaokao-mathcloze.jsonl",
+                  "size": 38690,
+                  "language": "jsonl"
+                },
+                {
+                  "name": "gaokao-mathqa.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/agieval/gaokao-mathqa.jsonl",
+                  "size": 139660,
+                  "language": "jsonl"
+                }
+              ]
+            },
+            {
+              "name": "cmath",
+              "type": "folder",
+              "path": "evaluation/datasets/cmath",
+              "children": [
+                {
+                  "name": "test.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/cmath/test.jsonl",
+                  "size": 222216,
+                  "language": "jsonl"
+                }
+              ]
+            },
+            {
+              "name": "mgsm_zh",
+              "type": "folder",
+              "path": "evaluation/datasets/mgsm_zh",
+              "children": [
+                {
+                  "name": "mgsm_zh.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/mgsm_zh/mgsm_zh.jsonl",
+                  "size": 90978,
+                  "language": "jsonl"
+                }
+              ]
+            },
+            {
+              "name": "minif2f",
+              "type": "folder",
+              "path": "evaluation/datasets/minif2f",
+              "children": [
+                {
+                  "name": "test.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/minif2f/test.jsonl",
+                  "size": 282615,
+                  "language": "jsonl"
+                },
+                {
+                  "name": "validation.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/minif2f/validation.jsonl",
+                  "size": 253492,
+                  "language": "jsonl"
+                }
+              ]
+            },
+            {
+              "name": "ocw",
+              "type": "folder",
+              "path": "evaluation/datasets/ocw",
+              "children": [
+                {
+                  "name": "test.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/ocw/test.jsonl",
+                  "size": 242381,
+                  "language": "jsonl"
+                }
+              ]
+            },
+            {
+              "name": "sat",
+              "type": "folder",
+              "path": "evaluation/datasets/sat",
+              "children": [
+                {
+                  "name": "test.jsonl",
+                  "type": "file",
+                  "path": "evaluation/datasets/sat/test.jsonl",
+                  "size": 14128,
+                  "language": "jsonl"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "eval",
+          "type": "folder",
+          "path": "evaluation/eval",
+          "children": [
+            {
+              "name": "eval_script.py",
+              "type": "file",
+              "path": "evaluation/eval/eval_script.py",
+              "size": 6098,
+              "language": "py"
+            },
+            {
+              "name": "eval_utils.py",
+              "type": "file",
+              "path": "evaluation/eval/eval_utils.py",
+              "size": 11025,
+              "language": "py"
+            },
+            {
+              "name": "ocwcourses_eval_utils.py",
+              "type": "file",
+              "path": "evaluation/eval/ocwcourses_eval_utils.py",
+              "size": 8056,
+              "language": "py"
+            },
+            {
+              "name": "python_executor.py",
+              "type": "file",
+              "path": "evaluation/eval/python_executor.py",
+              "size": 6811,
+              "language": "py"
+            },
+            {
+              "name": "utils.py",
+              "type": "file",
+              "path": "evaluation/eval/utils.py",
+              "size": 12348,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "few_shot_prompts",
+          "type": "folder",
+          "path": "evaluation/few_shot_prompts",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/__init__.py",
+              "size": 549,
+              "language": "py"
+            },
+            {
+              "name": "cot_cmath_6_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_cmath_6_shot.py",
+              "size": 2714,
+              "language": "py"
+            },
+            {
+              "name": "cot_gaokao_mathcloze_5_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_gaokao_mathcloze_5_shot.py",
+              "size": 3085,
+              "language": "py"
+            },
+            {
+              "name": "cot_gaokao_mathqa_5_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_gaokao_mathqa_5_shot.py",
+              "size": 5158,
+              "language": "py"
+            },
+            {
+              "name": "cot_gsm_8_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_gsm_8_shot.py",
+              "size": 2535,
+              "language": "py"
+            },
+            {
+              "name": "cot_math_sat_4_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_math_sat_4_shot.py",
+              "size": 2663,
+              "language": "py"
+            },
+            {
+              "name": "cot_minerva_math_4_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_minerva_math_4_shot.py",
+              "size": 2243,
+              "language": "py"
+            },
+            {
+              "name": "cot_mmlu_stem_4_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_mmlu_stem_4_shot.py",
+              "size": 2655,
+              "language": "py"
+            },
+            {
+              "name": "cot_ocwcourses_4_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/cot_ocwcourses_4_shot.py",
+              "size": 4472,
+              "language": "py"
+            },
+            {
+              "name": "few_shot_prompting.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/few_shot_prompting.py",
+              "size": 169,
+              "language": "py"
+            },
+            {
+              "name": "minif2f_isabelle.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/minif2f_isabelle.py",
+              "size": 11540,
+              "language": "py"
+            },
+            {
+              "name": "pal_gsm_8_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/pal_gsm_8_shot.py",
+              "size": 4471,
+              "language": "py"
+            },
+            {
+              "name": "pal_math_4_shot.py",
+              "type": "file",
+              "path": "evaluation/few_shot_prompts/pal_math_4_shot.py",
+              "size": 3404,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "infer",
+          "type": "folder",
+          "path": "evaluation/infer",
+          "children": [
+            {
+              "name": "run_cot_eval.py",
+              "type": "file",
+              "path": "evaluation/infer/run_cot_eval.py",
+              "size": 10103,
+              "language": "py"
+            },
+            {
+              "name": "run_pal_eval.py",
+              "type": "file",
+              "path": "evaluation/infer/run_pal_eval.py",
+              "size": 10321,
+              "language": "py"
+            },
+            {
+              "name": "run_tool_integrated_eval.py",
+              "type": "file",
+              "path": "evaluation/infer/run_tool_integrated_eval.py",
+              "size": 15026,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "environment.yml",
+          "type": "file",
+          "path": "evaluation/environment.yml",
+          "size": 6883,
+          "language": "yml"
+        },
+        {
+          "name": "evaluation_results.json",
+          "type": "file",
+          "path": "evaluation/evaluation_results.json",
+          "size": 5194,
+          "language": "json"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "evaluation/README.md",
+          "size": 1951,
+          "language": "md"
+        },
+        {
+          "name": "run_subset_parallel.py",
+          "type": "file",
+          "path": "evaluation/run_subset_parallel.py",
+          "size": 8976,
+          "language": "py"
+        },
+        {
+          "name": "submit_eval_jobs.py",
+          "type": "file",
+          "path": "evaluation/submit_eval_jobs.py",
+          "size": 2136,
+          "language": "py"
+        },
+        {
+          "name": "summarize_results.py",
+          "type": "file",
+          "path": "evaluation/summarize_results.py",
+          "size": 4600,
+          "language": "py"
+        },
+        {
+          "name": "unsafe_score_minif2f_isabelle.py",
+          "type": "file",
+          "path": "evaluation/unsafe_score_minif2f_isabelle.py",
+          "size": 9641,
+          "language": "py"
+        },
+        {
+          "name": "utils.py",
+          "type": "file",
+          "path": "evaluation/utils.py",
+          "size": 691,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "images",
+      "type": "folder",
+      "path": "images",
+      "children": [
+        {
+          "name": "badge.svg",
+          "type": "file",
+          "path": "images/badge.svg",
+          "size": 6179,
+          "language": "svg"
+        },
+        {
+          "name": "base_results_1.png",
+          "type": "file",
+          "path": "images/base_results_1.png",
+          "size": 199989,
+          "language": "png"
+        },
+        {
+          "name": "base_results_2.png",
+          "type": "file",
+          "path": "images/base_results_2.png",
+          "size": 172663,
+          "language": "png"
+        },
+        {
+          "name": "base_results_3.png",
+          "type": "file",
+          "path": "images/base_results_3.png",
+          "size": 127849,
+          "language": "png"
+        },
+        {
+          "name": "corpus.png",
+          "type": "file",
+          "path": "images/corpus.png",
+          "size": 215206,
+          "language": "png"
+        },
+        {
+          "name": "instruct_results.png",
+          "type": "file",
+          "path": "images/instruct_results.png",
+          "size": 238656,
+          "language": "png"
+        },
+        {
+          "name": "logo.svg",
+          "type": "file",
+          "path": "images/logo.svg",
+          "size": 10656,
+          "language": "svg"
+        },
+        {
+          "name": "math.png",
+          "type": "file",
+          "path": "images/math.png",
+          "size": 110646,
+          "language": "png"
+        }
+      ]
+    },
+    {
+      "name": "replicate",
+      "type": "folder",
+      "path": "replicate",
+      "children": [
+        {
+          "name": "predict.py",
+          "type": "file",
+          "path": "replicate/predict.py",
+          "size": 3013,
+          "language": "py"
+        },
+        {
+          "name": "predict_instruct.py",
+          "type": "file",
+          "path": "replicate/predict_instruct.py",
+          "size": 3246,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 13,
+      "language": "text"
+    },
+    {
+      "name": "cog.yaml",
+      "type": "file",
+      "path": "cog.yaml",
+      "size": 381,
+      "language": "yaml"
+    },
+    {
+      "name": "LICENSE-CODE",
+      "type": "file",
+      "path": "LICENSE-CODE",
+      "size": 1065,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE-MODEL",
+      "type": "file",
+      "path": "LICENSE-MODEL",
+      "size": 13760,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 10684,
+      "language": "md"
+    }
+  ]
+}

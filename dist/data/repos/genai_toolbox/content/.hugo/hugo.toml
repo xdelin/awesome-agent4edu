@@ -1,0 +1,172 @@
+title = 'MCP Toolbox for Databases'
+relativeURLs = false
+
+languageCode = 'en-us'
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+enableGitInfo = true
+enableRobotsTXT = true
+
+ignoreFiles = ["quickstart/shared", "quickstart/python", "quickstart/js", "quickstart/go"]
+
+[languages]
+  [languages.en]
+    languageName ="English"
+    weight = 1
+
+[module]
+  proxy = "direct"
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"
+  [[module.mounts]]
+    source = "../docs/en"
+    target = 'content'
+  [[module.imports]]
+    path = "github.com/google/docsy"
+    disable = false
+  [[module.imports]]
+    path = "github.com/martignoni/hugo-notice"
+
+[params]
+  description = "MCP Toolbox for Databases is an open source MCP server for databases. It enables you to develop tools easier, faster, and more securely by handling the complexities such as connection pooling, authentication, and more."
+  copyright = "Google LLC"
+  github_repo = "https://github.com/googleapis/genai-toolbox"
+  github_project_repo = "https://github.com/googleapis/genai-toolbox"
+  github_subdir = "docs"
+  offlineSearch = true
+  version_menu = "Releases"
+  [params.ui]
+    ul_show = 100
+    showLightDarkModeMenu = true
+    breadcrumb_disable = true
+    sidebar_menu_foldable = true
+    sidebar_menu_compact = false
+
+[[params.versions]]
+  version = "Dev"
+  url = "https://googleapis.github.io/genai-toolbox/dev/"
+
+# Add a new version block here before every release
+# The order of versions in this file is mirrored into the dropdown
+
+[[params.versions]]
+  version = "v0.28.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.28.0/"
+
+[[params.versions]]
+  version = "v0.27.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.27.0/"
+
+[[params.versions]]
+  version = "v0.26.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.26.0/"
+
+[[params.versions]]
+  version = "v0.25.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.25.0/"
+
+[[params.versions]]
+  version = "v0.24.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.24.0/"
+
+[[params.versions]]
+  version = "v0.23.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.23.0/"
+
+[[params.versions]]
+  version = "v0.22.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.22.0/"
+
+[[params.versions]]
+  version = "v0.21.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.21.0/"
+  
+[[params.versions]]
+  version = "v0.20.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.20.0/"
+  
+[[params.versions]]
+  version = "v0.19.1"
+  url = "https://googleapis.github.io/genai-toolbox/v0.19.1/"
+  
+[[params.versions]]
+  version = "v0.18.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.18.0/"
+  
+[[params.versions]]
+  version = "v0.17.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.17.0/"
+  
+[[params.versions]]
+  version = "v0.16.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.16.0/"
+
+[[params.versions]]
+  version = "v0.15.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.15.0/"
+
+[[params.versions]]
+  version = "v0.14.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.14.0/"
+
+[[params.versions]]
+  version = "v0.13.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.13.0/"
+
+[[params.versions]]
+  version = "v0.12.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.12.0/"
+
+[[params.versions]]
+  version = "v0.11.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.11.0/"
+
+[[params.versions]]
+  version = "v0.10.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.10.0/"
+
+[[params.versions]]
+  version = "v0.9.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.9.0/"
+
+[[params.versions]]
+  version = "v0.8.0"
+  url = "https://googleapis.github.io/genai-toolbox/v0.8.0/"
+
+
+[[menu.main]]
+  name = "GitHub"
+  weight = 50
+  url = "https://github.com/googleapis/genai-toolbox"
+  pre = "<i class='fa-brands fa-github'></i>"
+
+[markup.goldmark.renderer]
+  unsafe= true
+
+[markup.highlight]
+  noClasses = false
+  style = "tango"
+
+[outputFormats]
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    root = true
+  [outputFormats.LLMS-FULL]
+    mediaType = "text/plain"
+    baseName = "llms-full"
+    isPlainText = true
+    root = true
+  [outputFormats.releases]
+    baseName = 'releases'
+    isPlainText = true
+    mediaType = 'text/releases'
+
+[mediaTypes."text/releases"]
+  suffixes = ["releases"]
+
+[outputs]
+  home = ["HTML", "RSS", "LLMS", "LLMS-FULL", "releases"]

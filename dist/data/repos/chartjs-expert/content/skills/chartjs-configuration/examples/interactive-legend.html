@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Legend - Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+
+    /* HTML Legend Styles */
+    .html-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .html-legend-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #f0f0f0;
+      user-select: none;
+    }
+
+    .html-legend-item:hover {
+      background: #e0e0e0;
+    }
+
+    .html-legend-item.hidden {
+      opacity: 0.4;
+    }
+
+    .html-legend-item.hidden .legend-text {
+      text-decoration: line-through;
+    }
+
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      margin-right: 8px;
+    }
+
+    .legend-text {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .legend-value {
+      margin-left: 8px;
+      font-weight: bold;
+      color: #666;
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 12px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Legend Examples</h1>
+
+  <h2>1. Linked Dataset Visibility</h2>
+  <p>Clicking first two legend items toggles both datasets together.</p>
+  <div class="chart-container">
+    <canvas id="linkedChart"></canvas>
+    <div class="status" id="linkedStatus">Click a legend item to see the behavior.</div>
+  </div>
+
+  <h2>2. Single Selection Mode</h2>
+  <p>Only one dataset can be visible at a time. Clicking shows only that dataset.</p>
+  <div class="chart-container">
+    <canvas id="singleSelectChart"></canvas>
+  </div>
+
+  <h2>3. Protected Datasets</h2>
+  <p>The "Baseline" dataset cannot be hidden. Other datasets toggle normally.</p>
+  <div class="chart-container">
+    <canvas id="protectedChart"></canvas>
+    <div class="status" id="protectedStatus">Try hiding the Baseline dataset - it won't work!</div>
+  </div>
+
+  <h2>4. HTML Legend with Values</h2>
+  <p>Custom HTML legend showing current values. Click to toggle visibility.</p>
+  <div class="chart-container">
+    <div id="html-legend" class="html-legend"></div>
+    <canvas id="htmlLegendChart"></canvas>
+  </div>
+
+  <h2>5. Hover Highlighting</h2>
+  <p>Hovering over a legend item highlights that dataset and dims others.</p>
+  <div class="chart-container">
+    <canvas id="hoverHighlightChart"></canvas>
+  </div>
+
+  <script>
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+    const colors = [
+      { bg: 'rgba(255, 99, 132, 0.5)', border: 'rgb(255, 99, 132)' },
+      { bg: 'rgba(54, 162, 235, 0.5)', border: 'rgb(54, 162, 235)' },
+      { bg: 'rgba(255, 206, 86, 0.5)', border: 'rgb(255, 206, 86)' },
+      { bg: 'rgba(75, 192, 192, 0.5)', border: 'rgb(75, 192, 192)' },
+      { bg: 'rgba(153, 102, 255, 0.5)', border: 'rgb(153, 102, 255)' }
+    ];
+
+    // ============================================
+    // 1. Linked Dataset Visibility
+    // ============================================
+    const defaultLegendClickHandler = Chart.defaults.plugins.legend.onClick;
+
+    new Chart(document.getElementById('linkedChart'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          { label: 'Product A', data: [65, 59, 80, 81, 56, 55], ...colors[0] },
+          { label: 'Product B', data: [45, 79, 50, 41, 76, 65], ...colors[1] },
+          { label: 'Product C', data: [28, 48, 40, 19, 86, 27], ...colors[2] },
+          { label: 'Product D', data: [38, 28, 60, 49, 66, 47], ...colors[3] }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            onClick: function(e, legendItem, legend) {
+              const index = legendItem.datasetIndex;
+              const chart = legend.chart;
+              const statusEl = document.getElementById('linkedStatus');
+
+              // Link first two datasets (A and B)
+              if (index <= 1) {
+                const isVisible = chart.isDatasetVisible(0);
+                chart.setDatasetVisibility(0, !isVisible);
+                chart.setDatasetVisibility(1, !isVisible);
+                chart.update();
+                statusEl.textContent = `Products A & B are now ${!isVisible ? 'visible' : 'hidden'} together.`;
+              } else {
+                // Default behavior for C and D
+                defaultLegendClickHandler.call(this, e, legendItem, legend);
+                statusEl.textContent = `${legendItem.text} toggled individually.`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // ============================================
+    // 2. Single Selection Mode
+    // ============================================
+    new Chart(document.getElementById('singleSelectChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          { label: 'Series 1', data: [65, 59, 80, 81, 56, 55], borderColor: colors[0].border, tension: 0.4 },
+          { label: 'Series 2', data: [45, 79, 50, 41, 76, 65], borderColor: colors[1].border, tension: 0.4 },
+          { label: 'Series 3', data: [28, 48, 40, 19, 86, 27], borderColor: colors[2].border, tension: 0.4 },
+          { label: 'Series 4', data: [38, 28, 60, 49, 66, 47], borderColor: colors[3].border, tension: 0.4 }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            onClick: function(e, legendItem, legend) {
+              const clickedIndex = legendItem.datasetIndex;
+              const chart = legend.chart;
+
+              // Hide all, show only clicked
+              chart.data.datasets.forEach((dataset, index) => {
+                chart.setDatasetVisibility(index, index === clickedIndex);
+              });
+
+              chart.update();
+            }
+          }
+        }
+      }
+    });
+
+    // ============================================
+    // 3. Protected Datasets
+    // ============================================
+    new Chart(document.getElementById('protectedChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Baseline',
+            data: [50, 50, 50, 50, 50, 50],
+            borderColor: '#999',
+            borderDash: [5, 5],
+            pointRadius: 0,
+            protected: true  // Custom property
+          },
+          { label: 'Actual', data: [65, 59, 80, 81, 56, 55], borderColor: colors[0].border, tension: 0.4 },
+          { label: 'Target', data: [70, 65, 75, 80, 70, 65], borderColor: colors[1].border, tension: 0.4 }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            onClick: function(e, legendItem, legend) {
+              const index = legendItem.datasetIndex;
+              const chart = legend.chart;
+              const dataset = chart.data.datasets[index];
+              const statusEl = document.getElementById('protectedStatus');
+
+              // Check if dataset is protected
+              if (dataset.protected) {
+                statusEl.textContent = `"${legendItem.text}" is protected and cannot be hidden!`;
+                return;  // Do nothing
+              }
+
+              // Default behavior
+              defaultLegendClickHandler.call(this, e, legendItem, legend);
+              statusEl.textContent = `"${legendItem.text}" toggled.`;
+            }
+          }
+        }
+      }
+    });
+
+    // ============================================
+    // 4. HTML Legend with Values
+    // ============================================
+    const htmlLegendPlugin = {
+      id: 'htmlLegend',
+      afterUpdate(chart, args, options) {
+        const container = document.getElementById('html-legend');
+        container.innerHTML = '';
+
+        chart.data.datasets.forEach((dataset, index) => {
+          const item = document.createElement('div');
+          item.className = 'html-legend-item';
+          if (!chart.isDatasetVisible(index)) {
+            item.classList.add('hidden');
+          }
+
+          // Calculate sum
+          const sum = dataset.data.reduce((a, b) => a + b, 0);
+
+          item.innerHTML = `
+            <span class="legend-color" style="background: ${dataset.backgroundColor}"></span>
+            <span class="legend-text">${dataset.label}</span>
+            <span class="legend-value">${sum}</span>
+          `;
+
+          item.addEventListener('click', () => {
+            chart.setDatasetVisibility(index, !chart.isDatasetVisible(index));
+            chart.update();
+          });
+
+          container.appendChild(item);
+        });
+      }
+    };
+
+    new Chart(document.getElementById('htmlLegendChart'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          { label: 'Revenue', data: [120, 190, 150, 180, 140, 160], backgroundColor: colors[0].bg },
+          { label: 'Expenses', data: [80, 100, 90, 110, 95, 105], backgroundColor: colors[1].bg },
+          { label: 'Profit', data: [40, 90, 60, 70, 45, 55], backgroundColor: colors[2].bg }
+        ]
+      },
+      plugins: [htmlLegendPlugin],
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false  // Hide default legend
+          }
+        }
+      }
+    });
+
+    // ============================================
+    // 5. Hover Highlighting
+    // ============================================
+    const originalColors = {};
+
+    const hoverChart = new Chart(document.getElementById('hoverHighlightChart'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          { label: 'Q1', data: [65, 59, 80, 81, 56, 55], backgroundColor: colors[0].bg, borderColor: colors[0].border, borderWidth: 1 },
+          { label: 'Q2', data: [45, 79, 50, 41, 76, 65], backgroundColor: colors[1].bg, borderColor: colors[1].border, borderWidth: 1 },
+          { label: 'Q3', data: [28, 48, 40, 19, 86, 27], backgroundColor: colors[2].bg, borderColor: colors[2].border, borderWidth: 1 },
+          { label: 'Q4', data: [38, 28, 60, 49, 66, 47], backgroundColor: colors[3].bg, borderColor: colors[3].border, borderWidth: 1 }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            onHover: function(e, legendItem, legend) {
+              const chart = legend.chart;
+              const hoveredIndex = legendItem.datasetIndex;
+
+              // Store original colors on first hover
+              if (Object.keys(originalColors).length === 0) {
+                chart.data.datasets.forEach((ds, i) => {
+                  originalColors[i] = {
+                    backgroundColor: ds.backgroundColor,
+                    borderColor: ds.borderColor
+                  };
+                });
+              }
+
+              // Dim non-hovered datasets
+              chart.data.datasets.forEach((dataset, i) => {
+                if (i !== hoveredIndex) {
+                  dataset.backgroundColor = 'rgba(200, 200, 200, 0.3)';
+                  dataset.borderColor = 'rgba(200, 200, 200, 0.5)';
+                } else {
+                  dataset.backgroundColor = originalColors[i].backgroundColor;
+                  dataset.borderColor = originalColors[i].borderColor;
+                }
+              });
+
+              chart.update('none');  // Update without animation
+              chart.canvas.style.cursor = 'pointer';
+            },
+            onLeave: function(e, legendItem, legend) {
+              const chart = legend.chart;
+
+              // Restore all colors
+              chart.data.datasets.forEach((dataset, i) => {
+                if (originalColors[i]) {
+                  dataset.backgroundColor = originalColors[i].backgroundColor;
+                  dataset.borderColor = originalColors[i].borderColor;
+                }
+              });
+
+              chart.update('none');
+              chart.canvas.style.cursor = 'default';
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+{
+  "name": "TexMCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "assets",
+      "type": "folder",
+      "path": "assets",
+      "children": [
+        {
+          "name": "demo-1.png",
+          "type": "file",
+          "path": "assets/demo-1.png",
+          "size": 114465,
+          "language": "png"
+        },
+        {
+          "name": "demo-2.png",
+          "type": "file",
+          "path": "assets/demo-2.png",
+          "size": 49755,
+          "language": "png"
+        },
+        {
+          "name": "demo-3.png",
+          "type": "file",
+          "path": "assets/demo-3.png",
+          "size": 198727,
+          "language": "png"
+        },
+        {
+          "name": "desktop.ini",
+          "type": "file",
+          "path": "assets/desktop.ini",
+          "size": 90,
+          "language": "ini"
+        },
+        {
+          "name": "Latex--Streamline-Simple-Icons.svg",
+          "type": "file",
+          "path": "assets/Latex--Streamline-Simple-Icons.svg",
+          "size": 7697,
+          "language": "svg"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "mcp_server",
+          "type": "folder",
+          "path": "src/mcp_server",
+          "children": [
+            {
+              "name": "templates",
+              "type": "folder",
+              "path": "src/mcp_server/templates",
+              "children": [
+                {
+                  "name": "default.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/default.tex.j2",
+                  "size": 221,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_certificate.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_certificate.tex.j2",
+                  "size": 242,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_coverletter.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_coverletter.tex.j2",
+                  "size": 225,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_cv.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_cv.tex.j2",
+                  "size": 196,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_invoice.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_invoice.tex.j2",
+                  "size": 262,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_invoice2.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_invoice2.tex.j2",
+                  "size": 154,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_letter.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_letter.tex.j2",
+                  "size": 232,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_poem.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_poem.tex.j2",
+                  "size": 137,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_poster.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_poster.tex.j2",
+                  "size": 189,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_presentation.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_presentation.tex.j2",
+                  "size": 164,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_receipt.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_receipt.tex.j2",
+                  "size": 135,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_recipe.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_recipe.tex.j2",
+                  "size": 185,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_report.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_report.tex.j2",
+                  "size": 166,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_resume.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_resume.tex.j2",
+                  "size": 1956,
+                  "language": "j2"
+                },
+                {
+                  "name": "sample_thesis.tex.j2",
+                  "type": "file",
+                  "path": "src/mcp_server/templates/sample_thesis.tex.j2",
+                  "size": 145,
+                  "language": "j2"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/mcp_server/__init__.py",
+              "size": 76,
+              "language": "py"
+            },
+            {
+              "name": "latex_renderer.py",
+              "type": "file",
+              "path": "src/mcp_server/latex_renderer.py",
+              "size": 3507,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "src/mcp_server/server.py",
+              "size": 6437,
+              "language": "py"
+            },
+            {
+              "name": "service.py",
+              "type": "file",
+              "path": "src/mcp_server/service.py",
+              "size": 1540,
+              "language": "py"
+            },
+            {
+              "name": "templating.py",
+              "type": "file",
+              "path": "src/mcp_server/templating.py",
+              "size": 1026,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "latex_mcp_cli.py",
+          "type": "file",
+          "path": "tests/latex_mcp_cli.py",
+          "size": 10523,
+          "language": "py"
+        },
+        {
+          "name": "test_latex_service.py",
+          "type": "file",
+          "path": "tests/test_latex_service.py",
+          "size": 1499,
+          "language": "py"
+        },
+        {
+          "name": "test_mcp.py",
+          "type": "file",
+          "path": "tests/test_mcp.py",
+          "size": 7532,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".claude.json",
+      "type": "file",
+      "path": ".claude.json",
+      "size": 165,
+      "language": "json"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 726,
+      "language": "text"
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 547,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 1130,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 1050,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1056,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 6527,
+      "language": "md"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "size": 103,
+      "language": "txt"
+    },
+    {
+      "name": "run_server.py",
+      "type": "file",
+      "path": "run_server.py",
+      "size": 632,
+      "language": "py"
+    }
+  ]
+}

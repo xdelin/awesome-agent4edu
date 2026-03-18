@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom HTML Tooltip - Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+
+    /* Custom tooltip styles */
+    #chartjs-tooltip {
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 8px;
+      color: white;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      transform: translate(-50%, -100%);
+      transition: all 0.15s ease;
+      padding: 12px;
+      min-width: 150px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    #chartjs-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px 8px 0;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.85) transparent transparent;
+    }
+
+    #chartjs-tooltip .tooltip-title {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #chartjs-tooltip .tooltip-body {
+      font-size: 13px;
+    }
+
+    #chartjs-tooltip .tooltip-body-item {
+      display: flex;
+      align-items: center;
+      margin: 4px 0;
+    }
+
+    #chartjs-tooltip .color-box {
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    #chartjs-tooltip .tooltip-footer {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Styled tooltip variant */
+    #styled-tooltip {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      color: white;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 16px;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+      z-index: 1000;
+    }
+
+    #styled-tooltip .value {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    #styled-tooltip .label {
+      font-size: 12px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #styled-tooltip .change {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    #styled-tooltip .change.positive {
+      color: #4ade80;
+    }
+
+    #styled-tooltip .change.negative {
+      color: #f87171;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom HTML Tooltips in Chart.js</h1>
+
+  <h2>1. Basic External Tooltip</h2>
+  <p>Replaces the default canvas tooltip with a styled HTML element.</p>
+  <div class="chart-container">
+    <canvas id="basicTooltipChart"></canvas>
+  </div>
+
+  <h2>2. Styled Dashboard Tooltip</h2>
+  <p>A more elaborate tooltip design with gradient background and metrics.</p>
+  <div class="chart-container">
+    <canvas id="styledTooltipChart"></canvas>
+  </div>
+
+  <h2>3. Positioned Tooltip Modes</h2>
+  <p>Custom tooltip positioner that always shows tooltip at top-right of chart.</p>
+  <div class="chart-container">
+    <canvas id="positionedTooltipChart"></canvas>
+  </div>
+
+  <!-- Tooltip containers -->
+  <div id="chartjs-tooltip"></div>
+  <div id="styled-tooltip"></div>
+
+  <script>
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+    const previousData = [40, 55, 70, 65, 50, 45];
+    const currentData = [65, 59, 80, 81, 56, 55];
+
+    // ============================================
+    // 1. Basic External Tooltip
+    // ============================================
+    function getOrCreateTooltip(chart) {
+      let tooltipEl = document.getElementById('chartjs-tooltip');
+      if (!tooltipEl) {
+        tooltipEl = document.createElement('div');
+        tooltipEl.id = 'chartjs-tooltip';
+        document.body.appendChild(tooltipEl);
+      }
+      return tooltipEl;
+    }
+
+    const externalTooltipHandler = (context) => {
+      const { chart, tooltip } = context;
+      const tooltipEl = getOrCreateTooltip(chart);
+
+      // Hide if no tooltip
+      if (tooltip.opacity === 0) {
+        tooltipEl.style.opacity = 0;
+        return;
+      }
+
+      // Set content
+      if (tooltip.body) {
+        const titleLines = tooltip.title || [];
+        const bodyLines = tooltip.body.map(b => b.lines);
+
+        // Build title
+        let html = '';
+        if (titleLines.length) {
+          html += `<div class="tooltip-title">${titleLines.join('<br>')}</div>`;
+        }
+
+        // Build body
+        html += '<div class="tooltip-body">';
+        bodyLines.forEach((lines, i) => {
+          const colors = tooltip.labelColors[i];
+          const bgColor = colors.backgroundColor;
+          const borderColor = colors.borderColor;
+
+          lines.forEach(line => {
+            html += `
+              <div class="tooltip-body-item">
+                <span class="color-box" style="background: ${bgColor}; border: 1px solid ${borderColor}"></span>
+                <span>${line}</span>
+              </div>
+            `;
+          });
+        });
+        html += '</div>';
+
+        // Build footer (sum)
+        if (tooltip.dataPoints && tooltip.dataPoints.length > 1) {
+          const sum = tooltip.dataPoints.reduce((acc, dp) => acc + dp.parsed.y, 0);
+          html += `<div class="tooltip-footer">Total: ${sum}</div>`;
+        }
+
+        tooltipEl.innerHTML = html;
+      }
+
+      // Position tooltip
+      const position = chart.canvas.getBoundingClientRect();
+      const bodyFont = Chart.helpers.toFont(tooltip.options.bodyFont);
+
+      tooltipEl.style.opacity = 1;
+      tooltipEl.style.left = position.left + window.pageXOffset + tooltip.caretX + 'px';
+      tooltipEl.style.top = position.top + window.pageYOffset + tooltip.caretY - 10 + 'px';
+      tooltipEl.style.font = bodyFont.string;
+    };
+
+    new Chart(document.getElementById('basicTooltipChart'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Sales 2023',
+            data: previousData,
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgb(54, 162, 235)',
+            borderWidth: 1
+          },
+          {
+            label: 'Sales 2024',
+            data: currentData,
+            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+            borderColor: 'rgb(75, 192, 192)',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          tooltip: {
+            enabled: false,  // Disable default canvas tooltip
+            external: externalTooltipHandler
+          }
+        }
+      }
+    });
+
+    // ============================================
+    // 2. Styled Dashboard Tooltip
+    // ============================================
+    const styledTooltipHandler = (context) => {
+      const { chart, tooltip } = context;
+      let tooltipEl = document.getElementById('styled-tooltip');
+
+      if (tooltip.opacity === 0) {
+        tooltipEl.style.opacity = 0;
+        return;
+      }
+
+      if (tooltip.dataPoints && tooltip.dataPoints.length > 0) {
+        const dataPoint = tooltip.dataPoints[0];
+        const currentValue = dataPoint.parsed.y;
+        const dataIndex = dataPoint.dataIndex;
+        const previousValue = previousData[dataIndex];
+        const change = ((currentValue - previousValue) / previousValue * 100).toFixed(1);
+        const isPositive = currentValue >= previousValue;
+
+        tooltipEl.innerHTML = `
+          <div class="label">${dataPoint.label}</div>
+          <div class="value">$${currentValue.toLocaleString()}</div>
+          <div class="change ${isPositive ? 'positive' : 'negative'}">
+            ${isPositive ? '▲' : '▼'} ${Math.abs(change)}% vs last year
+          </div>
+        `;
+      }
+
+      const position = chart.canvas.getBoundingClientRect();
+      tooltipEl.style.opacity = 1;
+      tooltipEl.style.left = position.left + window.pageXOffset + tooltip.caretX + 'px';
+      tooltipEl.style.top = position.top + window.pageYOffset + tooltip.caretY - 20 + 'px';
+      tooltipEl.style.transform = 'translate(-50%, -100%)';
+    };
+
+    new Chart(document.getElementById('styledTooltipChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Revenue',
+          data: currentData.map(v => v * 1000),
+          borderColor: '#667eea',
+          backgroundColor: 'rgba(102, 126, 234, 0.1)',
+          fill: true,
+          tension: 0.4,
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          pointBackgroundColor: '#667eea',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            enabled: false,
+            external: styledTooltipHandler
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: (value) => '$' + value.toLocaleString()
+            }
+          }
+        }
+      }
+    });
+
+    // ============================================
+    // 3. Custom Tooltip Positioner
+    // ============================================
+
+    // Register custom positioner
+    Chart.Tooltip.positioners.topRight = function(elements, eventPosition) {
+      const chart = this.chart;
+
+      return {
+        x: chart.chartArea.right - 10,
+        y: chart.chartArea.top + 10,
+        xAlign: 'right',
+        yAlign: 'top'
+      };
+    };
+
+    new Chart(document.getElementById('positionedTooltipChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Performance',
+          data: [28, 48, 40, 19, 86, 27],
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          tooltip: {
+            position: 'topRight',  // Use custom positioner
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            padding: 12,
+            cornerRadius: 8,
+            titleFont: { size: 14, weight: 'bold' },
+            bodyFont: { size: 13 },
+            callbacks: {
+              title: (items) => `📊 ${items[0].label}`,
+              label: (context) => `Value: ${context.parsed.y}`,
+              afterLabel: (context) => {
+                const avg = context.dataset.data.reduce((a, b) => a + b, 0) / context.dataset.data.length;
+                const diff = context.parsed.y - avg;
+                return diff >= 0 ? `+${diff.toFixed(1)} above avg` : `${diff.toFixed(1)} below avg`;
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

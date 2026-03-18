@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Circular Charts</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+    }
+    .chart-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .chart-container h2 {
+      margin-top: 0;
+      color: #555;
+      font-size: 1.1rem;
+    }
+    .chart-container.full-width {
+      grid-column: 1 / -1;
+    }
+    canvas { max-height: 280px; }
+  </style>
+</head>
+<body>
+  <h1>Circular Charts</h1>
+
+  <div class="grid">
+    <!-- Pie Chart -->
+    <div class="chart-container">
+      <h2>Pie Chart</h2>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <!-- Doughnut Chart -->
+    <div class="chart-container">
+      <h2>Doughnut Chart (cutout: 50%)</h2>
+      <canvas id="doughnutChart"></canvas>
+    </div>
+
+    <!-- Semi-Circle / Gauge -->
+    <div class="chart-container">
+      <h2>Semi-Circle (rotation: -90, circumference: 180)</h2>
+      <canvas id="semiCircle"></canvas>
+    </div>
+
+    <!-- Polar Area Chart -->
+    <div class="chart-container">
+      <h2>Polar Area Chart</h2>
+      <canvas id="polarChart"></canvas>
+    </div>
+
+    <!-- Radar Chart -->
+    <div class="chart-container full-width">
+      <h2>Radar Chart</h2>
+      <canvas id="radarChart" style="max-height: 350px;"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const colors = [
+      'rgba(255, 99, 132, 0.8)',
+      'rgba(54, 162, 235, 0.8)',
+      'rgba(255, 206, 86, 0.8)',
+      'rgba(75, 192, 192, 0.8)',
+      'rgba(153, 102, 255, 0.8)'
+    ];
+
+    // ========================================
+    // Pie Chart
+    // ========================================
+    new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+        datasets: [{
+          data: [300, 150, 100, 80, 50],
+          backgroundColor: colors,
+          borderWidth: 2,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'right' }
+        }
+      }
+    });
+
+    // ========================================
+    // Doughnut Chart
+    // ========================================
+    new Chart(document.getElementById('doughnutChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Desktop', 'Mobile', 'Tablet'],
+        datasets: [{
+          data: [55, 35, 10],
+          backgroundColor: [
+            'rgba(54, 162, 235, 0.8)',
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(255, 206, 86, 0.8)'
+          ],
+          borderWidth: 2,
+          borderColor: '#fff',
+          hoverOffset: 10  // Offset on hover
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '50%',  // Size of center hole
+        plugins: {
+          legend: { position: 'right' }
+        }
+      }
+    });
+
+    // ========================================
+    // Semi-Circle / Gauge Chart
+    // ========================================
+    new Chart(document.getElementById('semiCircle'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Completed', 'Remaining'],
+        datasets: [{
+          data: [75, 25],
+          backgroundColor: [
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(200, 200, 200, 0.3)'
+          ],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        rotation: -90,        // Start from top
+        circumference: 180,   // Half circle
+        cutout: '70%',
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true }
+        }
+      }
+    });
+
+    // ========================================
+    // Polar Area Chart
+    // ========================================
+    new Chart(document.getElementById('polarChart'), {
+      type: 'polarArea',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+        datasets: [{
+          data: [11, 16, 7, 14, 10],
+          backgroundColor: colors.map(c => c.replace('0.8', '0.6'))
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'right' }
+        },
+        scales: {
+          r: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // ========================================
+    // Radar Chart
+    // ========================================
+    new Chart(document.getElementById('radarChart'), {
+      type: 'radar',
+      data: {
+        labels: ['Speed', 'Power', 'Defense', 'Stamina', 'Agility', 'Technique'],
+        datasets: [
+          {
+            label: 'Player A',
+            data: [85, 70, 90, 75, 60, 80],
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)'
+          },
+          {
+            label: 'Player B',
+            data: [65, 85, 60, 90, 80, 70],
+            fill: true,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgb(54, 162, 235)',
+            pointBackgroundColor: 'rgb(54, 162, 235)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(54, 162, 235)'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' }
+        },
+        scales: {
+          r: {
+            angleLines: { display: true },
+            suggestedMin: 0,
+            suggestedMax: 100
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

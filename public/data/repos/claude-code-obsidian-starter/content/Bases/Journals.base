@@ -1,0 +1,37 @@
+filters:
+  file.inFolder("Daily")
+properties:
+  file:
+    displayName: Entry
+  file.ctime:
+    displayName: Date
+  note.mood:
+    displayName: Mood
+  note.energy:
+    displayName: Energy
+  note.sleep_quality:
+    displayName: Sleep
+views:
+  - type: table
+    name: All Entries
+    order:
+      - file
+      - mood
+      - energy
+      - sleep_quality
+      - file.ctime
+    sort:
+      - property: file.ctime
+        direction: DESC
+  - type: table
+    name: Last 7 Days
+    filters:
+      file.ctime > now() - "7d"
+    order:
+      - file
+      - mood
+      - energy
+      - sleep_quality
+    sort:
+      - property: file.ctime
+        direction: DESC

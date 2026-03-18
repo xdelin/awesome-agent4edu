@@ -1,0 +1,363 @@
+{
+  "name": "Exa AI Search",
+  "full": true,
+  "tree": [
+    {
+      "name": "api",
+      "type": "folder",
+      "path": "api",
+      "children": [
+        {
+          "name": "mcp.ts",
+          "type": "file",
+          "path": "api/mcp.ts",
+          "size": 12924,
+          "language": "ts"
+        },
+        {
+          "name": "well-known-mcp-config.ts",
+          "type": "file",
+          "path": "api/well-known-mcp-config.ts",
+          "size": 2342,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "type": "folder",
+      "path": "skills",
+      "children": [
+        {
+          "name": "code-search",
+          "type": "folder",
+          "path": "skills/code-search",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/code-search/SKILL.md",
+              "size": 2295,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "company-search",
+          "type": "folder",
+          "path": "skills/company-search",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/company-search/SKILL.md",
+              "size": 3376,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "financial-report-search",
+          "type": "folder",
+          "path": "skills/financial-report-search",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/financial-report-search/SKILL.md",
+              "size": 3101,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "people-search",
+          "type": "folder",
+          "path": "skills/people-search",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/people-search/SKILL.md",
+              "size": 3343,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "personal-site-search",
+          "type": "folder",
+          "path": "skills/personal-site-search",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/personal-site-search/SKILL.md",
+              "size": 2976,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "research-paper-search",
+          "type": "folder",
+          "path": "skills/research-paper-search",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/research-paper-search/SKILL.md",
+              "size": 2810,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "x-search",
+          "type": "folder",
+          "path": "skills/x-search",
+          "children": [
+            {
+              "name": "SKILL.md",
+              "type": "file",
+              "path": "skills/x-search/SKILL.md",
+              "size": 3027,
+              "language": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "src/tools",
+          "children": [
+            {
+              "name": "companyResearch.ts",
+              "type": "file",
+              "path": "src/tools/companyResearch.ts",
+              "size": 4560,
+              "language": "ts"
+            },
+            {
+              "name": "config.ts",
+              "type": "file",
+              "path": "src/tools/config.ts",
+              "size": 254,
+              "language": "ts"
+            },
+            {
+              "name": "crawling.ts",
+              "type": "file",
+              "path": "src/tools/crawling.ts",
+              "size": 4172,
+              "language": "ts"
+            },
+            {
+              "name": "deepResearchCheck.ts",
+              "type": "file",
+              "path": "src/tools/deepResearchCheck.ts",
+              "size": 7827,
+              "language": "ts"
+            },
+            {
+              "name": "deepResearchStart.ts",
+              "type": "file",
+              "path": "src/tools/deepResearchStart.ts",
+              "size": 5932,
+              "language": "ts"
+            },
+            {
+              "name": "exaCode.ts",
+              "type": "file",
+              "path": "src/tools/exaCode.ts",
+              "size": 5003,
+              "language": "ts"
+            },
+            {
+              "name": "linkedInSearch.ts",
+              "type": "file",
+              "path": "src/tools/linkedInSearch.ts",
+              "size": 5069,
+              "language": "ts"
+            },
+            {
+              "name": "peopleSearch.ts",
+              "type": "file",
+              "path": "src/tools/peopleSearch.ts",
+              "size": 4441,
+              "language": "ts"
+            },
+            {
+              "name": "webSearch.ts",
+              "type": "file",
+              "path": "src/tools/webSearch.ts",
+              "size": 5138,
+              "language": "ts"
+            },
+            {
+              "name": "webSearchAdvanced.ts",
+              "type": "file",
+              "path": "src/tools/webSearchAdvanced.ts",
+              "size": 10064,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "path": "src/utils",
+          "children": [
+            {
+              "name": "errorHandler.ts",
+              "type": "file",
+              "path": "src/utils/errorHandler.ts",
+              "size": 1470,
+              "language": "ts"
+            },
+            {
+              "name": "logger.ts",
+              "type": "file",
+              "path": "src/utils/logger.ts",
+              "size": 732,
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "name": "index.ts",
+          "type": "file",
+          "path": "src/index.ts",
+          "size": 3279,
+          "language": "ts"
+        },
+        {
+          "name": "mcp-handler.ts",
+          "type": "file",
+          "path": "src/mcp-handler.ts",
+          "size": 7689,
+          "language": "ts"
+        },
+        {
+          "name": "types.ts",
+          "type": "file",
+          "path": "src/types.ts",
+          "size": 3527,
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 294,
+      "language": "text"
+    },
+    {
+      "name": ".npmignore",
+      "type": "file",
+      "path": ".npmignore",
+      "size": 69,
+      "language": "text"
+    },
+    {
+      "name": ".vercelignore",
+      "type": "file",
+      "path": ".vercelignore",
+      "size": 308,
+      "language": "text"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 962,
+      "language": "text"
+    },
+    {
+      "name": "env.example",
+      "type": "file",
+      "path": "env.example",
+      "size": 744,
+      "language": "example"
+    },
+    {
+      "name": "gemini-extension.json",
+      "type": "file",
+      "path": "gemini-extension.json",
+      "size": 236,
+      "language": "json"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1065,
+      "language": "text"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "size": 2164,
+      "language": "json"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 31864,
+      "language": "md"
+    },
+    {
+      "name": "server.json",
+      "type": "file",
+      "path": "server.json",
+      "size": 915,
+      "language": "json"
+    },
+    {
+      "name": "smithery-example.json",
+      "type": "file",
+      "path": "smithery-example.json",
+      "size": 238,
+      "language": "json"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 20,
+      "language": "yaml"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "size": 483,
+      "language": "json"
+    },
+    {
+      "name": "vercel.json",
+      "type": "file",
+      "path": "vercel.json",
+      "size": 430,
+      "language": "json"
+    },
+    {
+      "name": "VERCEL_DEPLOYMENT_GUIDE.md",
+      "type": "file",
+      "path": "VERCEL_DEPLOYMENT_GUIDE.md",
+      "size": 8283,
+      "language": "md"
+    }
+  ]
+}

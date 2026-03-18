@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import skillsData from './data/skills.json';
+import initialSkillsData from './data/skills.json';
 import repoMap from './data/repo_map.json';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -9,7 +9,7 @@ import {
   Search, ExternalLink, BookOpen, Code, PenTool, Database, Layout, 
   Brain, Calculator, Briefcase, Box, Menu, X, Filter, Globe, Loader2, 
   Info, Folder, File as FileIcon, ChevronRight, ChevronDown, FileCode, 
-  FileJson, FileText, Image as ImageIcon, Star, User, ArrowLeft, GitFork
+  FileJson, FileText, Image as ImageIcon, Star, User, ArrowLeft, GitFork, Download, Upload, Copy, Terminal
 } from 'lucide-react';
 
 const CATEGORY_ICONS = {
@@ -117,6 +117,34 @@ const FileTreeNode = ({ node, level, onSelect, selectedPath }) => {
   );
 };
 
+const CodeBlock = ({ children }) => {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(children).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  return (
+    <div className="relative group rounded-lg bg-stone-900 text-stone-100 font-mono text-sm my-3 border border-stone-800">
+      <div className="overflow-x-auto p-4 custom-scrollbar">
+        {children}
+      </div>
+      <button 
+        onClick={handleCopy}
+        className="absolute right-2 top-2 p-1.5 rounded-md text-stone-400 hover:text-white hover:bg-stone-700 opacity-0 group-hover:opacity-100 transition-all"
+        title="Copy to clipboard"
+      >
+        {copied ? 
+          <span className="text-xs text-green-400 font-sans">Copied!</span> : 
+          <Copy size={14} />
+        }
+      </button>
+    </div>
+  );
+};
+
 function RepoDetailView({ skill, repoId, onBack, t }) {
   const [manifest, setManifest] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -196,6 +224,39 @@ function RepoDetailView({ skill, repoId, onBack, t }) {
 
   const isImage = selectedFile && /\.(png|jpg|jpeg|gif|svg|ico)$/i.test(selectedFile.name);
 
+  // One-click import handler
+  const handleImport = async () => {
+    if (!manifest || !manifest.tree) return;
+    
+    const findSkillFile = (nodes) => {
+        for (let node of nodes) {
+            if (node.type === 'file' && (node.name === 'SKILL.md' || node.name.toLowerCase().startsWith('readme'))) return node;
+            if (node.type === 'folder') {
+                const found = findSkillFile(node.children);
+                if (found) return found;
+            }
+        }
+        return null;
+    };
+    
+    const skillFile = findSkillFile(manifest.tree);
+    
+    if (skillFile) {
+        try {
+            const res = await fetch(`data/repos/${repoId}/content/${skillFile.path}`);
+            if (!res.ok) throw new Error("Failed to fetch content");
+            const text = await res.text();
+            await navigator.clipboard.writeText(text);
+            alert(repoId + " " + t({en: 'Skill content copied to clipboard!', zh: '技能内容已复制到剪贴板！'}));
+        } catch (err) {
+            alert(t({en: 'Failed to copy skill content.', zh: '复制技能内容失败。'}));
+            console.error(err);
+        }
+    } else {
+        alert(t({en: 'No skill definition file found (SKILL.md or README).', zh: '未找到技能定义文件 (SKILL.md 或 README)。'}));
+    }
+  };
+
   return (
     <div className="flex flex-col h-full bg-white rounded-xl shadow-lg border border-stone-200 overflow-hidden">
        {/* Header */}
@@ -218,6 +279,14 @@ function RepoDetailView({ skill, repoId, onBack, t }) {
                             <span className="font-medium">{author}</span>
                         </div>
                     )}
+                    
+                    <button 
+                        onClick={handleImport} 
+                        className="flex items-center gap-1.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:from-orange-600 hover:to-amber-600 transition-all shadow-md shadow-orange-200/50 active:scale-95"
+                    >
+                        <Download size={14} />
+                        <span>{t({en: 'Copy Skill Content', zh: '复制技能源码'})}</span>
+                    </button>
                     {stars > 0 && (
                         <div className="flex items-center gap-1.5 bg-white border border-stone-200 px-2 py-1 rounded-md">
                             <Star size={14} className="text-amber-400 fill-amber-400" />
@@ -229,6 +298,23 @@ function RepoDetailView({ skill, repoId, onBack, t }) {
                        GitHub
                     </a>
                 </div>
+                
+                {skill.installPrompt ? (
+                    <div className="mt-4 mb-2">
+                         <span className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-2 block">{t({en: 'Installation', zh: '一键导入'})}</span>
+                         <CodeBlock>{skill.installPrompt}</CodeBlock>
+                         <p className="text-xs text-stone-400 mt-1">{t({en: 'Run this command in your ClawHub CLI.', zh: '在 ClawHub CLI 中运行此命令。'})}</p>
+                    </div>
+                ) : (
+                    repoId && (
+                        <div className="mt-4 mb-2">
+                             <span className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-2 block">{t({en: 'Installation', zh: '一键导入'})}</span>
+                             <CodeBlock>{`claw install ${skill.name}`}</CodeBlock>
+                             <p className="text-xs text-stone-400 mt-1">{t({en: 'Run this command in your ClawHub CLI.', zh: '在 ClawHub CLI 中运行此命令。'})}</p>
+                        </div>
+                    )
+                )}
+
                 <p className="mt-3 text-stone-600 max-w-3xl leading-relaxed">{skill.description}</p>
              </div>
              <div>
@@ -447,11 +533,44 @@ function RepoDetailView({ skill, repoId, onBack, t }) {
 }
 
 function App() {
+  const [skillsData, setSkillsData] = useState(initialSkillsData);
   const [language, setLanguage] = useState('en');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedSkill, setSelectedSkill] = useState(null);
+
+  const handleUpload = () => {
+      const skillJSON = prompt(t({
+          en: "Paste your Skill JSON to add (simulated):",
+          zh: "粘贴您的技能 JSON 以添加 (模拟):"
+      }));
+      try {
+          if (skillJSON) {
+              const newSkill = JSON.parse(skillJSON);
+              setSkillsData(prev => {
+                  const newData = [...prev];
+                  // Assume 'Other' category or provided category
+                  const catName = newSkill.category || "Other";
+                  const catIndex = newData.findIndex(c => c.category && (c.category.en === catName || c.category === catName));
+                  
+                  if (catIndex >= 0) {
+                      newData[catIndex].skills.push(newSkill);
+                  } else {
+                      newData.push({
+                          category: { en: catName, zh: catName },
+                          description: { en: "User uploaded skills", zh: "用户上传的技能" },
+                          skills: [newSkill]
+                      });
+                  }
+                  return newData;
+              });
+              alert(t({en: "Skill added!", zh: "技能已添加！"}));
+          }
+      } catch (e) {
+          alert("Invalid JSON");
+      }
+  };
 
   // Helper to get localized text
   const t = (content) => {
@@ -593,6 +712,14 @@ function App() {
               />
             </div>
 
+            <button 
+                onClick={handleUpload} 
+                className="hidden sm:flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-2xl hover:bg-orange-600 shadow-md shadow-orange-200/50 transition-all active:scale-95"
+            >
+                <Upload size={18} />
+                <span className="font-medium text-sm">{t({en: 'Upload Skill', zh: '上传技能'})}</span>
+            </button>
+
             <button
                 onClick={toggleLanguage}
                 className="flex items-center gap-2 px-4 py-2 bg-white border border-stone-200 rounded-2xl text-stone-600 hover:text-orange-600 hover:border-orange-200 hover:shadow-sm transition-all duration-200"
@@ -679,6 +806,16 @@ function App() {
                            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-stone-100 text-stone-600 border border-stone-200 group-hover:bg-orange-50 group-hover:border-orange-100 group-hover:text-orange-600 transition-colors">
                               {skill.category.split(' & ')[0]}
                            </span>
+                           {hasRepo && (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-mono border border-slate-200 truncate max-w-[150px]" onClick={(e) => {
+                                  e.stopPropagation();
+                                  navigator.clipboard.writeText(`claw install ${skill.name}`);
+                                  // Could add toast here
+                              }}>
+                                  <Terminal size={10} /> 
+                                  claw install {skill.name}
+                              </span>
+                           )}
                         </div>
                       </div>
 

@@ -1,0 +1,1413 @@
+{
+  "name": "Jupyter Notebook MCP",
+  "full": true,
+  "tree": [
+    {
+      "name": "dev",
+      "type": "folder",
+      "path": "dev",
+      "children": [
+        {
+          "name": "content",
+          "type": "folder",
+          "path": "dev/content",
+          "children": [
+            {
+              "name": "new.ipynb",
+              "type": "file",
+              "path": "dev/content/new.ipynb",
+              "size": 975,
+              "language": "ipynb"
+            },
+            {
+              "name": "notebook.ipynb",
+              "type": "file",
+              "path": "dev/content/notebook.ipynb",
+              "size": 186362,
+              "language": "ipynb"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "dev/content/README.md",
+              "size": 359,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "dev/README.md",
+          "size": 359,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "docs",
+          "type": "folder",
+          "path": "docs/docs",
+          "children": [
+            {
+              "name": "clients",
+              "type": "folder",
+              "path": "docs/docs/clients",
+              "children": [
+                {
+                  "name": "claude_desktop",
+                  "type": "folder",
+                  "path": "docs/docs/clients/claude_desktop",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/clients/claude_desktop/_category_.yaml",
+                      "size": 36,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/clients/claude_desktop/index.mdx",
+                      "size": 1242,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "cline",
+                  "type": "folder",
+                  "path": "docs/docs/clients/cline",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/clients/cline/_category_.yaml",
+                      "size": 27,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/clients/cline/index.mdx",
+                      "size": 586,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "cursor",
+                  "type": "folder",
+                  "path": "docs/docs/clients/cursor",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/clients/cursor/_category_.yaml",
+                      "size": 28,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/clients/cursor/index.mdx",
+                      "size": 521,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "vscode",
+                  "type": "folder",
+                  "path": "docs/docs/clients/vscode",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/clients/vscode/_category_.yaml",
+                      "size": 29,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/clients/vscode/index.mdx",
+                      "size": 5154,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "windsurf",
+                  "type": "folder",
+                  "path": "docs/docs/clients/windsurf",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/clients/windsurf/_category_.yaml",
+                      "size": 30,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/clients/windsurf/index.mdx",
+                      "size": 499,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "_category_.yaml",
+                  "type": "file",
+                  "path": "docs/docs/clients/_category_.yaml",
+                  "size": 29,
+                  "language": "yaml"
+                },
+                {
+                  "name": "index.mdx",
+                  "type": "file",
+                  "path": "docs/docs/clients/index.mdx",
+                  "size": 815,
+                  "language": "mdx"
+                }
+              ]
+            },
+            {
+              "name": "community",
+              "type": "folder",
+              "path": "docs/docs/community",
+              "children": [
+                {
+                  "name": "_category_.yaml",
+                  "type": "file",
+                  "path": "docs/docs/community/_category_.yaml",
+                  "size": 31,
+                  "language": "yaml"
+                },
+                {
+                  "name": "community.mdx",
+                  "type": "file",
+                  "path": "docs/docs/community/community.mdx",
+                  "size": 1204,
+                  "language": "mdx"
+                }
+              ]
+            },
+            {
+              "name": "getting_started",
+              "type": "folder",
+              "path": "docs/docs/getting_started",
+              "children": [
+                {
+                  "name": "_category_.yaml",
+                  "type": "file",
+                  "path": "docs/docs/getting_started/_category_.yaml",
+                  "size": 37,
+                  "language": "yaml"
+                },
+                {
+                  "name": "index.mdx",
+                  "type": "file",
+                  "path": "docs/docs/getting_started/index.mdx",
+                  "size": 4877,
+                  "language": "mdx"
+                }
+              ]
+            },
+            {
+              "name": "providers",
+              "type": "folder",
+              "path": "docs/docs/providers",
+              "children": [
+                {
+                  "name": "datalayer",
+                  "type": "folder",
+                  "path": "docs/docs/providers/datalayer",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/providers/datalayer/_category_.yaml",
+                      "size": 31,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/providers/datalayer/index.mdx",
+                      "size": 112,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "google-colab",
+                  "type": "folder",
+                  "path": "docs/docs/providers/google-colab",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/providers/google-colab/_category_.yaml",
+                      "size": 34,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/providers/google-colab/index.mdx",
+                      "size": 183,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "jupyter-stdio",
+                  "type": "folder",
+                  "path": "docs/docs/providers/jupyter-stdio",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyter-stdio/_category_.yaml",
+                      "size": 35,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyter-stdio/index.mdx",
+                      "size": 7062,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "jupyter-streamable-http-extension",
+                  "type": "folder",
+                  "path": "docs/docs/providers/jupyter-streamable-http-extension",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyter-streamable-http-extension/_category_.yaml",
+                      "size": 57,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyter-streamable-http-extension/index.mdx",
+                      "size": 2721,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "jupyter-streamable-http-standalone",
+                  "type": "folder",
+                  "path": "docs/docs/providers/jupyter-streamable-http-standalone",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyter-streamable-http-standalone/_category_.yaml",
+                      "size": 58,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyter-streamable-http-standalone/index.mdx",
+                      "size": 4293,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "jupyterhub-streamable-http",
+                  "type": "folder",
+                  "path": "docs/docs/providers/jupyterhub-streamable-http",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyterhub-streamable-http/_category_.yaml",
+                      "size": 48,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/providers/jupyterhub-streamable-http/index.mdx",
+                      "size": 3998,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "_category_.yaml",
+                  "type": "file",
+                  "path": "docs/docs/providers/_category_.yaml",
+                  "size": 31,
+                  "language": "yaml"
+                }
+              ]
+            },
+            {
+              "name": "reference",
+              "type": "folder",
+              "path": "docs/docs/reference",
+              "children": [
+                {
+                  "name": "configuration",
+                  "type": "folder",
+                  "path": "docs/docs/reference/configuration",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/reference/configuration/_category_.yaml",
+                      "size": 35,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/reference/configuration/index.mdx",
+                      "size": 10543,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "multi-users",
+                  "type": "folder",
+                  "path": "docs/docs/reference/multi-users",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/reference/multi-users/_category_.yaml",
+                      "size": 33,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/reference/multi-users/index.mdx",
+                      "size": 13955,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "prompts",
+                  "type": "folder",
+                  "path": "docs/docs/reference/prompts",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/reference/prompts/_category_.yaml",
+                      "size": 29,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/reference/prompts/index.mdx",
+                      "size": 1772,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "security",
+                  "type": "folder",
+                  "path": "docs/docs/reference/security",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/reference/security/_category_.yaml",
+                      "size": 30,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/reference/security/index.mdx",
+                      "size": 10140,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "tools",
+                  "type": "folder",
+                  "path": "docs/docs/reference/tools",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/reference/tools/_category_.yaml",
+                      "size": 27,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/reference/tools/index.mdx",
+                      "size": 10617,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "tools-additional",
+                  "type": "folder",
+                  "path": "docs/docs/reference/tools-additional",
+                  "children": [
+                    {
+                      "name": "_category_.yaml",
+                      "type": "file",
+                      "path": "docs/docs/reference/tools-additional/_category_.yaml",
+                      "size": 41,
+                      "language": "yaml"
+                    },
+                    {
+                      "name": "index.mdx",
+                      "type": "file",
+                      "path": "docs/docs/reference/tools-additional/index.mdx",
+                      "size": 3175,
+                      "language": "mdx"
+                    }
+                  ]
+                },
+                {
+                  "name": "_category_.yaml",
+                  "type": "file",
+                  "path": "docs/docs/reference/_category_.yaml",
+                  "size": 31,
+                  "language": "yaml"
+                }
+              ]
+            },
+            {
+              "name": "releases",
+              "type": "folder",
+              "path": "docs/docs/releases",
+              "children": [
+                {
+                  "name": "_category_.yaml",
+                  "type": "file",
+                  "path": "docs/docs/releases/_category_.yaml",
+                  "size": 31,
+                  "language": "yaml"
+                },
+                {
+                  "name": "index.mdx",
+                  "type": "file",
+                  "path": "docs/docs/releases/index.mdx",
+                  "size": 2879,
+                  "language": "mdx"
+                }
+              ]
+            },
+            {
+              "name": "resources",
+              "type": "folder",
+              "path": "docs/docs/resources",
+              "children": [
+                {
+                  "name": "_category_.yaml",
+                  "type": "file",
+                  "path": "docs/docs/resources/_category_.yaml",
+                  "size": 32,
+                  "language": "yaml"
+                },
+                {
+                  "name": "index.mdx",
+                  "type": "file",
+                  "path": "docs/docs/resources/index.mdx",
+                  "size": 2443,
+                  "language": "mdx"
+                }
+              ]
+            },
+            {
+              "name": "_category_.yaml",
+              "type": "file",
+              "path": "docs/docs/_category_.yaml",
+              "size": 30,
+              "language": "yaml"
+            },
+            {
+              "name": "index.mdx",
+              "type": "file",
+              "path": "docs/docs/index.mdx",
+              "size": 1580,
+              "language": "mdx"
+            }
+          ]
+        },
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "docs/src",
+          "children": [
+            {
+              "name": "components",
+              "type": "folder",
+              "path": "docs/src/components",
+              "children": [
+                {
+                  "name": "HomepageFeatures.js",
+                  "type": "file",
+                  "path": "docs/src/components/HomepageFeatures.js",
+                  "size": 1589,
+                  "language": "js"
+                },
+                {
+                  "name": "HomepageFeatures.module.css",
+                  "type": "file",
+                  "path": "docs/src/components/HomepageFeatures.module.css",
+                  "size": 265,
+                  "language": "css"
+                },
+                {
+                  "name": "HomepageProducts.js",
+                  "type": "file",
+                  "path": "docs/src/components/HomepageProducts.js",
+                  "size": 1931,
+                  "language": "js"
+                },
+                {
+                  "name": "HomepageProducts.module.css",
+                  "type": "file",
+                  "path": "docs/src/components/HomepageProducts.module.css",
+                  "size": 264,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "css",
+              "type": "folder",
+              "path": "docs/src/css",
+              "children": [
+                {
+                  "name": "custom.css",
+                  "type": "file",
+                  "path": "docs/src/css/custom.css",
+                  "size": 15461,
+                  "language": "css"
+                }
+              ]
+            },
+            {
+              "name": "pages",
+              "type": "folder",
+              "path": "docs/src/pages",
+              "children": [
+                {
+                  "name": "index.module.css",
+                  "type": "file",
+                  "path": "docs/src/pages/index.module.css",
+                  "size": 626,
+                  "language": "css"
+                },
+                {
+                  "name": "markdown-page.md",
+                  "type": "file",
+                  "path": "docs/src/pages/markdown-page.md",
+                  "size": 197,
+                  "language": "md"
+                },
+                {
+                  "name": "testimonials.tsx",
+                  "type": "file",
+                  "path": "docs/src/pages/testimonials.tsx",
+                  "size": 539,
+                  "language": "tsx"
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "folder",
+              "path": "docs/src/theme",
+              "children": [
+                {
+                  "name": "CustomDocItem.tsx",
+                  "type": "file",
+                  "path": "docs/src/theme/CustomDocItem.tsx",
+                  "size": 351,
+                  "language": "tsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "static",
+          "type": "folder",
+          "path": "docs/static",
+          "children": [
+            {
+              "name": "img",
+              "type": "folder",
+              "path": "docs/static/img",
+              "children": [
+                {
+                  "name": "datalayer",
+                  "type": "folder",
+                  "path": "docs/static/img/datalayer",
+                  "children": [
+                    {
+                      "name": "logo.png",
+                      "type": "file",
+                      "path": "docs/static/img/datalayer/logo.png",
+                      "size": 490,
+                      "language": "png"
+                    },
+                    {
+                      "name": "logo.svg",
+                      "type": "file",
+                      "path": "docs/static/img/datalayer/logo.svg",
+                      "size": 5003,
+                      "language": "svg"
+                    }
+                  ]
+                },
+                {
+                  "name": "favicon.ico",
+                  "type": "file",
+                  "path": "docs/static/img/favicon.ico",
+                  "size": 4286,
+                  "language": "ico"
+                },
+                {
+                  "name": "feature_1.svg",
+                  "type": "file",
+                  "path": "docs/static/img/feature_1.svg",
+                  "size": 6819,
+                  "language": "svg"
+                },
+                {
+                  "name": "feature_2.svg",
+                  "type": "file",
+                  "path": "docs/static/img/feature_2.svg",
+                  "size": 5862,
+                  "language": "svg"
+                },
+                {
+                  "name": "feature_3.svg",
+                  "type": "file",
+                  "path": "docs/static/img/feature_3.svg",
+                  "size": 16455,
+                  "language": "svg"
+                },
+                {
+                  "name": "product_1.svg",
+                  "type": "file",
+                  "path": "docs/static/img/product_1.svg",
+                  "size": 15731,
+                  "language": "svg"
+                },
+                {
+                  "name": "product_2.svg",
+                  "type": "file",
+                  "path": "docs/static/img/product_2.svg",
+                  "size": 38869,
+                  "language": "svg"
+                },
+                {
+                  "name": "product_3.svg",
+                  "type": "file",
+                  "path": "docs/static/img/product_3.svg",
+                  "size": 103500,
+                  "language": "svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": "docs/.gitignore",
+          "size": 241,
+          "language": "text"
+        },
+        {
+          "name": ".yarnrc.yml",
+          "type": "file",
+          "path": "docs/.yarnrc.yml",
+          "size": 608,
+          "language": "yml"
+        },
+        {
+          "name": "babel.config.js",
+          "type": "file",
+          "path": "docs/babel.config.js",
+          "size": 163,
+          "language": "js"
+        },
+        {
+          "name": "docusaurus.config.js",
+          "type": "file",
+          "path": "docs/docusaurus.config.js",
+          "size": 4418,
+          "language": "js"
+        },
+        {
+          "name": "LICENSE",
+          "type": "file",
+          "path": "docs/LICENSE",
+          "size": 1077,
+          "language": "text"
+        },
+        {
+          "name": "Makefile",
+          "type": "file",
+          "path": "docs/Makefile",
+          "size": 1842,
+          "language": "text"
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "docs/package.json",
+          "size": 1217,
+          "language": "json"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "docs/README.md",
+          "size": 774,
+          "language": "md"
+        },
+        {
+          "name": "sidebars.js",
+          "type": "file",
+          "path": "docs/sidebars.js",
+          "size": 590,
+          "language": "js"
+        }
+      ]
+    },
+    {
+      "name": "jupyter-config",
+      "type": "folder",
+      "path": "jupyter-config",
+      "children": [
+        {
+          "name": "jupyter_notebook_config",
+          "type": "folder",
+          "path": "jupyter-config/jupyter_notebook_config",
+          "children": [
+            {
+              "name": "jupyter_mcp_server.json",
+              "type": "file",
+              "path": "jupyter-config/jupyter_notebook_config/jupyter_mcp_server.json",
+              "size": 93,
+              "language": "json"
+            }
+          ]
+        },
+        {
+          "name": "jupyter_server_config.d",
+          "type": "folder",
+          "path": "jupyter-config/jupyter_server_config.d",
+          "children": [
+            {
+              "name": "jupyter_mcp_server.json",
+              "type": "file",
+              "path": "jupyter-config/jupyter_server_config.d/jupyter_mcp_server.json",
+              "size": 93,
+              "language": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jupyter_mcp_server",
+      "type": "folder",
+      "path": "jupyter_mcp_server",
+      "children": [
+        {
+          "name": "jupyter_extension",
+          "type": "folder",
+          "path": "jupyter_mcp_server/jupyter_extension",
+          "children": [
+            {
+              "name": "backends",
+              "type": "folder",
+              "path": "jupyter_mcp_server/jupyter_extension/backends",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "jupyter_mcp_server/jupyter_extension/backends/__init__.py",
+                  "size": 129,
+                  "language": "py"
+                },
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "jupyter_mcp_server/jupyter_extension/backends/base.py",
+                  "size": 6280,
+                  "language": "py"
+                },
+                {
+                  "name": "local_backend.py",
+                  "type": "file",
+                  "path": "jupyter_mcp_server/jupyter_extension/backends/local_backend.py",
+                  "size": 13912,
+                  "language": "py"
+                },
+                {
+                  "name": "remote_backend.py",
+                  "type": "file",
+                  "path": "jupyter_mcp_server/jupyter_extension/backends/remote_backend.py",
+                  "size": 6176,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "protocol",
+              "type": "folder",
+              "path": "jupyter_mcp_server/jupyter_extension/protocol",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "jupyter_mcp_server/jupyter_extension/protocol/__init__.py",
+                  "size": 127,
+                  "language": "py"
+                },
+                {
+                  "name": "messages.py",
+                  "type": "file",
+                  "path": "jupyter_mcp_server/jupyter_extension/protocol/messages.py",
+                  "size": 6543,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/jupyter_extension/__init__.py",
+              "size": 439,
+              "language": "py"
+            },
+            {
+              "name": "context.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/jupyter_extension/context.py",
+              "size": 6390,
+              "language": "py"
+            },
+            {
+              "name": "extension.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/jupyter_extension/extension.py",
+              "size": 10628,
+              "language": "py"
+            },
+            {
+              "name": "handlers.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/jupyter_extension/handlers.py",
+              "size": 29444,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "tools",
+          "type": "folder",
+          "path": "jupyter_mcp_server/tools",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/__init__.py",
+              "size": 2191,
+              "language": "py"
+            },
+            {
+              "name": "_base.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/_base.py",
+              "size": 1900,
+              "language": "py"
+            },
+            {
+              "name": "connect_jupyter_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/connect_jupyter_tool.py",
+              "size": 2586,
+              "language": "py"
+            },
+            {
+              "name": "delete_cell_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/delete_cell_tool.py",
+              "size": 7532,
+              "language": "py"
+            },
+            {
+              "name": "execute_cell_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/execute_cell_tool.py",
+              "size": 15692,
+              "language": "py"
+            },
+            {
+              "name": "execute_code_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/execute_code_tool.py",
+              "size": 7988,
+              "language": "py"
+            },
+            {
+              "name": "insert_cell_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/insert_cell_tool.py",
+              "size": 11306,
+              "language": "py"
+            },
+            {
+              "name": "jupyter_cite_prompt.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/jupyter_cite_prompt.py",
+              "size": 7214,
+              "language": "py"
+            },
+            {
+              "name": "list_files_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/list_files_tool.py",
+              "size": 9533,
+              "language": "py"
+            },
+            {
+              "name": "list_kernels_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/list_kernels_tool.py",
+              "size": 8641,
+              "language": "py"
+            },
+            {
+              "name": "list_notebooks_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/list_notebooks_tool.py",
+              "size": 2377,
+              "language": "py"
+            },
+            {
+              "name": "overwrite_cell_source_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/overwrite_cell_source_tool.py",
+              "size": 9221,
+              "language": "py"
+            },
+            {
+              "name": "read_cell_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/read_cell_tool.py",
+              "size": 3162,
+              "language": "py"
+            },
+            {
+              "name": "read_notebook_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/read_notebook_tool.py",
+              "size": 3118,
+              "language": "py"
+            },
+            {
+              "name": "restart_notebook_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/restart_notebook_tool.py",
+              "size": 3240,
+              "language": "py"
+            },
+            {
+              "name": "unuse_notebook_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/unuse_notebook_tool.py",
+              "size": 3729,
+              "language": "py"
+            },
+            {
+              "name": "use_notebook_tool.py",
+              "type": "file",
+              "path": "jupyter_mcp_server/tools/use_notebook_tool.py",
+              "size": 17094,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/__init__.py",
+          "size": 313,
+          "language": "py"
+        },
+        {
+          "name": "__main__.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/__main__.py",
+          "size": 283,
+          "language": "py"
+        },
+        {
+          "name": "__version__.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/__version__.py",
+          "size": 114,
+          "language": "py"
+        },
+        {
+          "name": "CLI.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/CLI.py",
+          "size": 16768,
+          "language": "py"
+        },
+        {
+          "name": "config.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/config.py",
+          "size": 5775,
+          "language": "py"
+        },
+        {
+          "name": "enroll.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/enroll.py",
+          "size": 4095,
+          "language": "py"
+        },
+        {
+          "name": "log.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/log.py",
+          "size": 169,
+          "language": "py"
+        },
+        {
+          "name": "models.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/models.py",
+          "size": 4593,
+          "language": "py"
+        },
+        {
+          "name": "notebook_manager.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/notebook_manager.py",
+          "size": 13510,
+          "language": "py"
+        },
+        {
+          "name": "server.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/server.py",
+          "size": 36643,
+          "language": "py"
+        },
+        {
+          "name": "server_context.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/server_context.py",
+          "size": 6117,
+          "language": "py"
+        },
+        {
+          "name": "server_modes.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/server_modes.py",
+          "size": 2264,
+          "language": "py"
+        },
+        {
+          "name": "tool_cache.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/tool_cache.py",
+          "size": 6143,
+          "language": "py"
+        },
+        {
+          "name": "utils.py",
+          "type": "file",
+          "path": "jupyter_mcp_server/utils.py",
+          "size": 37862,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "mcpb",
+      "type": "folder",
+      "path": "mcpb",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "path": "mcpb/src",
+          "children": [
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "mcpb/src/server.py",
+              "size": 608,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": ".mcpbignore",
+          "type": "file",
+          "path": "mcpb/.mcpbignore",
+          "size": 312,
+          "language": "text"
+        },
+        {
+          "name": "manifest.json",
+          "type": "file",
+          "path": "mcpb/manifest.json",
+          "size": 3901,
+          "language": "json"
+        },
+        {
+          "name": "pyproject.toml",
+          "type": "file",
+          "path": "mcpb/pyproject.toml",
+          "size": 300,
+          "language": "toml"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "mcpb/README.md",
+          "size": 2568,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "prompt",
+      "type": "folder",
+      "path": "prompt",
+      "children": [
+        {
+          "name": "general",
+          "type": "folder",
+          "path": "prompt/general",
+          "children": [
+            {
+              "name": "AGENT.md",
+              "type": "file",
+              "path": "prompt/general/AGENT.md",
+              "size": 5633,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "prompt/general/README.md",
+              "size": 2071,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "prompt/README.md",
+          "size": 2017,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 63,
+          "language": "py"
+        },
+        {
+          "name": "conftest.py",
+          "type": "file",
+          "path": "tests/conftest.py",
+          "size": 11513,
+          "language": "py"
+        },
+        {
+          "name": "test_common.py",
+          "type": "file",
+          "path": "tests/test_common.py",
+          "size": 19510,
+          "language": "py"
+        },
+        {
+          "name": "test_config.py",
+          "type": "file",
+          "path": "tests/test_config.py",
+          "size": 4442,
+          "language": "py"
+        },
+        {
+          "name": "test_jupyter_extension.py",
+          "type": "file",
+          "path": "tests/test_jupyter_extension.py",
+          "size": 6660,
+          "language": "py"
+        },
+        {
+          "name": "test_prompts.py",
+          "type": "file",
+          "path": "tests/test_prompts.py",
+          "size": 2008,
+          "language": "py"
+        },
+        {
+          "name": "test_tools.py",
+          "type": "file",
+          "path": "tests/test_tools.py",
+          "size": 17569,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 206,
+      "language": "text"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 1591,
+      "language": "text"
+    },
+    {
+      "name": ".licenserc.yaml",
+      "type": "file",
+      "path": ".licenserc.yaml",
+      "size": 270,
+      "language": "yaml"
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "type": "file",
+      "path": ".pre-commit-config.yaml",
+      "size": 993,
+      "language": "yaml"
+    },
+    {
+      "name": "ARCHITECTURE.md",
+      "type": "file",
+      "path": "ARCHITECTURE.md",
+      "size": 22754,
+      "language": "md"
+    },
+    {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "file",
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 3206,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 4712,
+      "language": "md"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 603,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1517,
+      "language": "text"
+    },
+    {
+      "name": "Makefile",
+      "type": "file",
+      "path": "Makefile",
+      "size": 4686,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 2832,
+      "language": "toml"
+    },
+    {
+      "name": "pytest.ini",
+      "type": "file",
+      "path": "pytest.ini",
+      "size": 120,
+      "language": "ini"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 15731,
+      "language": "md"
+    },
+    {
+      "name": "RELEASE.md",
+      "type": "file",
+      "path": "RELEASE.md",
+      "size": 3257,
+      "language": "md"
+    },
+    {
+      "name": "smithery.yaml",
+      "type": "file",
+      "path": "smithery.yaml",
+      "size": 955,
+      "language": "yaml"
+    }
+  ]
+}

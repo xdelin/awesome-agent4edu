@@ -1,0 +1,167 @@
+{
+  "name": "academic-paper-skills",
+  "full": true,
+  "tree": [
+    {
+      "name": "composer",
+      "type": "folder",
+      "path": "composer",
+      "children": [
+        {
+          "name": "references",
+          "type": "folder",
+          "path": "composer/references",
+          "children": [
+            {
+              "name": "section_guides.md",
+              "type": "file",
+              "path": "composer/references/section_guides.md",
+              "size": 21164,
+              "language": "md"
+            },
+            {
+              "name": "writing_standards.md",
+              "type": "file",
+              "path": "composer/references/writing_standards.md",
+              "size": 16488,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "scripts",
+          "type": "folder",
+          "path": "composer/scripts",
+          "children": [
+            {
+              "name": "chapter_quality_check.py",
+              "type": "file",
+              "path": "composer/scripts/chapter_quality_check.py",
+              "size": 16317,
+              "language": "py"
+            },
+            {
+              "name": "final_evaluation.py",
+              "type": "file",
+              "path": "composer/scripts/final_evaluation.py",
+              "size": 20073,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "SKILL.md",
+          "type": "file",
+          "path": "composer/SKILL.md",
+          "size": 25443,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "ai-ethics-paper.md",
+          "type": "file",
+          "path": "examples/ai-ethics-paper.md",
+          "size": 5678,
+          "language": "md"
+        },
+        {
+          "name": "consciousness-paper.md",
+          "type": "file",
+          "path": "examples/consciousness-paper.md",
+          "size": 4835,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "strategist",
+      "type": "folder",
+      "path": "strategist",
+      "children": [
+        {
+          "name": "references",
+          "type": "folder",
+          "path": "strategist/references",
+          "children": [
+            {
+              "name": "quality_standards.md",
+              "type": "file",
+              "path": "strategist/references/quality_standards.md",
+              "size": 9529,
+              "language": "md"
+            },
+            {
+              "name": "search_strategy.md",
+              "type": "file",
+              "path": "strategist/references/search_strategy.md",
+              "size": 13446,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "scripts",
+          "type": "folder",
+          "path": "strategist/scripts",
+          "children": [
+            {
+              "name": "evaluate_samples.py",
+              "type": "file",
+              "path": "strategist/scripts/evaluate_samples.py",
+              "size": 10557,
+              "language": "py"
+            },
+            {
+              "name": "gap_analysis.py",
+              "type": "file",
+              "path": "strategist/scripts/gap_analysis.py",
+              "size": 13708,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "SKILL.md",
+          "type": "file",
+          "path": "strategist/SKILL.md",
+          "size": 21878,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 1755,
+      "language": "md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1068,
+      "language": "text"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 5540,
+      "language": "md"
+    },
+    {
+      "name": "README_CN.md",
+      "type": "file",
+      "path": "README_CN.md",
+      "size": 5241,
+      "language": "md"
+    }
+  ]
+}

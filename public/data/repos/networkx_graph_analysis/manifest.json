@@ -1,0 +1,3149 @@
+{
+  "name": "NetworkX Graph Analysis",
+  "full": true,
+  "tree": [
+    {
+      "name": "benchmarks",
+      "type": "folder",
+      "path": "benchmarks",
+      "children": [
+        {
+          "name": "bench_algorithms.py",
+          "type": "file",
+          "path": "benchmarks/bench_algorithms.py",
+          "size": 13339,
+          "language": "py"
+        },
+        {
+          "name": "bench_graph_operations.py",
+          "type": "file",
+          "path": "benchmarks/bench_graph_operations.py",
+          "size": 8398,
+          "language": "py"
+        },
+        {
+          "name": "bench_mcp_handlers.py",
+          "type": "file",
+          "path": "benchmarks/bench_mcp_handlers.py",
+          "size": 10978,
+          "language": "py"
+        },
+        {
+          "name": "REAL_PERFORMANCE_REPORT.md",
+          "type": "file",
+          "path": "benchmarks/REAL_PERFORMANCE_REPORT.md",
+          "size": 1715,
+          "language": "md"
+        },
+        {
+          "name": "test_real_performance.py",
+          "type": "file",
+          "path": "benchmarks/test_real_performance.py",
+          "size": 21010,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "demos",
+      "type": "folder",
+      "path": "demos",
+      "children": [
+        {
+          "name": "knowledge_graph_analysis.md",
+          "type": "file",
+          "path": "demos/knowledge_graph_analysis.md",
+          "size": 2636,
+          "language": "md"
+        },
+        {
+          "name": "social_network_analysis.md",
+          "type": "file",
+          "path": "demos/social_network_analysis.md",
+          "size": 1628,
+          "language": "md"
+        },
+        {
+          "name": "transportation_routing.md",
+          "type": "file",
+          "path": "demos/transportation_routing.md",
+          "size": 2295,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "folder",
+      "path": "docs",
+      "children": [
+        {
+          "name": "api",
+          "type": "folder",
+          "path": "docs/api",
+          "children": [
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "docs/api/tools",
+              "children": [
+                {
+                  "name": "add_edges.md",
+                  "type": "file",
+                  "path": "docs/api/tools/add_edges.md",
+                  "size": 967,
+                  "language": "md"
+                },
+                {
+                  "name": "add_nodes.md",
+                  "type": "file",
+                  "path": "docs/api/tools/add_nodes.md",
+                  "size": 835,
+                  "language": "md"
+                },
+                {
+                  "name": "advanced_community_detection.md",
+                  "type": "file",
+                  "path": "docs/api/tools/advanced_community_detection.md",
+                  "size": 823,
+                  "language": "md"
+                },
+                {
+                  "name": "batch_graph_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/batch_graph_analysis.md",
+                  "size": 659,
+                  "language": "md"
+                },
+                {
+                  "name": "bipartite_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/bipartite_analysis.md",
+                  "size": 714,
+                  "language": "md"
+                },
+                {
+                  "name": "calculate_centrality.md",
+                  "type": "file",
+                  "path": "docs/api/tools/calculate_centrality.md",
+                  "size": 1097,
+                  "language": "md"
+                },
+                {
+                  "name": "clear_graph.md",
+                  "type": "file",
+                  "path": "docs/api/tools/clear_graph.md",
+                  "size": 440,
+                  "language": "md"
+                },
+                {
+                  "name": "clustering_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/clustering_analysis.md",
+                  "size": 944,
+                  "language": "md"
+                },
+                {
+                  "name": "community_detection.md",
+                  "type": "file",
+                  "path": "docs/api/tools/community_detection.md",
+                  "size": 464,
+                  "language": "md"
+                },
+                {
+                  "name": "connected_components.md",
+                  "type": "file",
+                  "path": "docs/api/tools/connected_components.md",
+                  "size": 995,
+                  "language": "md"
+                },
+                {
+                  "name": "create_analysis_workflow.md",
+                  "type": "file",
+                  "path": "docs/api/tools/create_analysis_workflow.md",
+                  "size": 669,
+                  "language": "md"
+                },
+                {
+                  "name": "create_dashboard.md",
+                  "type": "file",
+                  "path": "docs/api/tools/create_dashboard.md",
+                  "size": 575,
+                  "language": "md"
+                },
+                {
+                  "name": "create_graph.md",
+                  "type": "file",
+                  "path": "docs/api/tools/create_graph.md",
+                  "size": 1019,
+                  "language": "md"
+                },
+                {
+                  "name": "cycle_detection.md",
+                  "type": "file",
+                  "path": "docs/api/tools/cycle_detection.md",
+                  "size": 866,
+                  "language": "md"
+                },
+                {
+                  "name": "delete_graph.md",
+                  "type": "file",
+                  "path": "docs/api/tools/delete_graph.md",
+                  "size": 380,
+                  "language": "md"
+                },
+                {
+                  "name": "directed_graph_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/directed_graph_analysis.md",
+                  "size": 617,
+                  "language": "md"
+                },
+                {
+                  "name": "export_graph.md",
+                  "type": "file",
+                  "path": "docs/api/tools/export_graph.md",
+                  "size": 634,
+                  "language": "md"
+                },
+                {
+                  "name": "find_all_paths.md",
+                  "type": "file",
+                  "path": "docs/api/tools/find_all_paths.md",
+                  "size": 930,
+                  "language": "md"
+                },
+                {
+                  "name": "flow_paths.md",
+                  "type": "file",
+                  "path": "docs/api/tools/flow_paths.md",
+                  "size": 1013,
+                  "language": "md"
+                },
+                {
+                  "name": "generate_graph.md",
+                  "type": "file",
+                  "path": "docs/api/tools/generate_graph.md",
+                  "size": 744,
+                  "language": "md"
+                },
+                {
+                  "name": "generate_report.md",
+                  "type": "file",
+                  "path": "docs/api/tools/generate_report.md",
+                  "size": 635,
+                  "language": "md"
+                },
+                {
+                  "name": "get_graph_info.md",
+                  "type": "file",
+                  "path": "docs/api/tools/get_graph_info.md",
+                  "size": 686,
+                  "language": "md"
+                },
+                {
+                  "name": "graph-operations.md",
+                  "type": "file",
+                  "path": "docs/api/tools/graph-operations.md",
+                  "size": 20650,
+                  "language": "md"
+                },
+                {
+                  "name": "graph_metrics.md",
+                  "type": "file",
+                  "path": "docs/api/tools/graph_metrics.md",
+                  "size": 855,
+                  "language": "md"
+                },
+                {
+                  "name": "graph_statistics.md",
+                  "type": "file",
+                  "path": "docs/api/tools/graph_statistics.md",
+                  "size": 397,
+                  "language": "md"
+                },
+                {
+                  "name": "import_from_source.md",
+                  "type": "file",
+                  "path": "docs/api/tools/import_from_source.md",
+                  "size": 748,
+                  "language": "md"
+                },
+                {
+                  "name": "import_graph.md",
+                  "type": "file",
+                  "path": "docs/api/tools/import_graph.md",
+                  "size": 737,
+                  "language": "md"
+                },
+                {
+                  "name": "list_graphs.md",
+                  "type": "file",
+                  "path": "docs/api/tools/list_graphs.md",
+                  "size": 323,
+                  "language": "md"
+                },
+                {
+                  "name": "ml_graph_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/ml_graph_analysis.md",
+                  "size": 574,
+                  "language": "md"
+                },
+                {
+                  "name": "monitoring_stats.md",
+                  "type": "file",
+                  "path": "docs/api/tools/monitoring_stats.md",
+                  "size": 509,
+                  "language": "md"
+                },
+                {
+                  "name": "network_flow_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/network_flow_analysis.md",
+                  "size": 866,
+                  "language": "md"
+                },
+                {
+                  "name": "path_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/path_analysis.md",
+                  "size": 892,
+                  "language": "md"
+                },
+                {
+                  "name": "robustness_analysis.md",
+                  "type": "file",
+                  "path": "docs/api/tools/robustness_analysis.md",
+                  "size": 602,
+                  "language": "md"
+                },
+                {
+                  "name": "setup_monitoring.md",
+                  "type": "file",
+                  "path": "docs/api/tools/setup_monitoring.md",
+                  "size": 581,
+                  "language": "md"
+                },
+                {
+                  "name": "shortest_path.md",
+                  "type": "file",
+                  "path": "docs/api/tools/shortest_path.md",
+                  "size": 1088,
+                  "language": "md"
+                },
+                {
+                  "name": "specialized_algorithms.md",
+                  "type": "file",
+                  "path": "docs/api/tools/specialized_algorithms.md",
+                  "size": 571,
+                  "language": "md"
+                },
+                {
+                  "name": "subgraph_extraction.md",
+                  "type": "file",
+                  "path": "docs/api/tools/subgraph_extraction.md",
+                  "size": 1437,
+                  "language": "md"
+                },
+                {
+                  "name": "visualize_3d.md",
+                  "type": "file",
+                  "path": "docs/api/tools/visualize_3d.md",
+                  "size": 522,
+                  "language": "md"
+                },
+                {
+                  "name": "visualize_graph.md",
+                  "type": "file",
+                  "path": "docs/api/tools/visualize_graph.md",
+                  "size": 822,
+                  "language": "md"
+                },
+                {
+                  "name": "visualize_graph_simple.md",
+                  "type": "file",
+                  "path": "docs/api/tools/visualize_graph_simple.md",
+                  "size": 642,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "index.md",
+              "type": "file",
+              "path": "docs/api/index.md",
+              "size": 8551,
+              "language": "md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "docs/api/README.md",
+              "size": 5572,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "archive",
+          "type": "folder",
+          "path": "docs/archive",
+          "children": [
+            {
+              "name": "phase_1_2_history",
+              "type": "folder",
+              "path": "docs/archive/phase_1_2_history",
+              "children": [
+                {
+                  "name": "BRUTAL_COMPARISON.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/BRUTAL_COMPARISON.md",
+                  "size": 4353,
+                  "language": "md"
+                },
+                {
+                  "name": "BRUTAL_REALITY_IMPROVEMENT_PLAN.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/BRUTAL_REALITY_IMPROVEMENT_PLAN.md",
+                  "size": 7211,
+                  "language": "md"
+                },
+                {
+                  "name": "DEEP_REALITY_AUDIT.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/DEEP_REALITY_AUDIT.md",
+                  "size": 11255,
+                  "language": "md"
+                },
+                {
+                  "name": "PHASE_2_1_SUMMARY.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/PHASE_2_1_SUMMARY.md",
+                  "size": 6705,
+                  "language": "md"
+                },
+                {
+                  "name": "PHASE_2_BRUTAL_REALITY_PLAN.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/PHASE_2_BRUTAL_REALITY_PLAN.md",
+                  "size": 12257,
+                  "language": "md"
+                },
+                {
+                  "name": "PHASE_3_BRUTAL_HONESTY.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/PHASE_3_BRUTAL_HONESTY.md",
+                  "size": 9958,
+                  "language": "md"
+                },
+                {
+                  "name": "PHASE_3_USER_RESEARCH_REPORT.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/PHASE_3_USER_RESEARCH_REPORT.md",
+                  "size": 8346,
+                  "language": "md"
+                },
+                {
+                  "name": "README_PHASE2.md",
+                  "type": "file",
+                  "path": "docs/archive/phase_1_2_history/README_PHASE2.md",
+                  "size": 5681,
+                  "language": "md"
+                }
+              ]
+            },
+            {
+              "name": "ACTION_PLAN_FINAL.md",
+              "type": "file",
+              "path": "docs/archive/ACTION_PLAN_FINAL.md",
+              "size": 4403,
+              "language": "md"
+            },
+            {
+              "name": "ACTUAL_PERFORMANCE_REPORT.md",
+              "type": "file",
+              "path": "docs/archive/ACTUAL_PERFORMANCE_REPORT.md",
+              "size": 1715,
+              "language": "md"
+            },
+            {
+              "name": "ARCHITECTURAL_SURGERY_COMPLETE.md",
+              "type": "file",
+              "path": "docs/archive/ARCHITECTURAL_SURGERY_COMPLETE.md",
+              "size": 2500,
+              "language": "md"
+            },
+            {
+              "name": "ARCHITECTURE.md",
+              "type": "file",
+              "path": "docs/archive/ARCHITECTURE.md",
+              "size": 12171,
+              "language": "md"
+            },
+            {
+              "name": "asv.conf.json",
+              "type": "file",
+              "path": "docs/archive/asv.conf.json",
+              "size": 1421,
+              "language": "json"
+            },
+            {
+              "name": "claude_desktop_config.json",
+              "type": "file",
+              "path": "docs/archive/claude_desktop_config.json",
+              "size": 323,
+              "language": "json"
+            },
+            {
+              "name": "CLEANUP_PLAN.md",
+              "type": "file",
+              "path": "docs/archive/CLEANUP_PLAN.md",
+              "size": 3577,
+              "language": "md"
+            },
+            {
+              "name": "feature_flags.json",
+              "type": "file",
+              "path": "docs/archive/feature_flags.json",
+              "size": 8960,
+              "language": "json"
+            },
+            {
+              "name": "HONEST_ARCHITECTURE_SUMMARY.md",
+              "type": "file",
+              "path": "docs/archive/HONEST_ARCHITECTURE_SUMMARY.md",
+              "size": 2326,
+              "language": "md"
+            },
+            {
+              "name": "LAUNCH_ANNOUNCEMENT.md",
+              "type": "file",
+              "path": "docs/archive/LAUNCH_ANNOUNCEMENT.md",
+              "size": 3758,
+              "language": "md"
+            },
+            {
+              "name": "LAUNCH_EXECUTION_REPORT.md",
+              "type": "file",
+              "path": "docs/archive/LAUNCH_EXECUTION_REPORT.md",
+              "size": 6728,
+              "language": "md"
+            },
+            {
+              "name": "LAUNCH_METRICS_TRACKER.md",
+              "type": "file",
+              "path": "docs/archive/LAUNCH_METRICS_TRACKER.md",
+              "size": 4103,
+              "language": "md"
+            },
+            {
+              "name": "MANIFEST.in",
+              "type": "file",
+              "path": "docs/archive/MANIFEST.in",
+              "size": 412,
+              "language": "in"
+            },
+            {
+              "name": "MCP_SECURITY_LEADERSHIP_POSITION.md",
+              "type": "file",
+              "path": "docs/archive/MCP_SECURITY_LEADERSHIP_POSITION.md",
+              "size": 12039,
+              "language": "md"
+            },
+            {
+              "name": "MCP_SUBMISSION_TEXT.md",
+              "type": "file",
+              "path": "docs/archive/MCP_SUBMISSION_TEXT.md",
+              "size": 2046,
+              "language": "md"
+            },
+            {
+              "name": "MEMORY_BLOAT_ANALYSIS.md",
+              "type": "file",
+              "path": "docs/archive/MEMORY_BLOAT_ANALYSIS.md",
+              "size": 2691,
+              "language": "md"
+            },
+            {
+              "name": "MESSAGE_TO_USERS.md",
+              "type": "file",
+              "path": "docs/archive/MESSAGE_TO_USERS.md",
+              "size": 2820,
+              "language": "md"
+            },
+            {
+              "name": "MIGRATION_NOTICE.md",
+              "type": "file",
+              "path": "docs/archive/MIGRATION_NOTICE.md",
+              "size": 1794,
+              "language": "md"
+            },
+            {
+              "name": "MIGRATION_TO_MINIMAL.md",
+              "type": "file",
+              "path": "docs/archive/MIGRATION_TO_MINIMAL.md",
+              "size": 4519,
+              "language": "md"
+            },
+            {
+              "name": "MINIMAL_IMPLEMENTATION_SUMMARY.md",
+              "type": "file",
+              "path": "docs/archive/MINIMAL_IMPLEMENTATION_SUMMARY.md",
+              "size": 3378,
+              "language": "md"
+            },
+            {
+              "name": "mkdocs.yml",
+              "type": "file",
+              "path": "docs/archive/mkdocs.yml",
+              "size": 7335,
+              "language": "yml"
+            },
+            {
+              "name": "noxfile.py",
+              "type": "file",
+              "path": "docs/archive/noxfile.py",
+              "size": 9450,
+              "language": "py"
+            },
+            {
+              "name": "PHASE_4_COMPLETION_SUMMARY.md",
+              "type": "file",
+              "path": "docs/archive/PHASE_4_COMPLETION_SUMMARY.md",
+              "size": 3413,
+              "language": "md"
+            },
+            {
+              "name": "PHASE_4_STRATEGIC_LAUNCH_PLAN.md",
+              "type": "file",
+              "path": "docs/archive/PHASE_4_STRATEGIC_LAUNCH_PLAN.md",
+              "size": 7613,
+              "language": "md"
+            },
+            {
+              "name": "RELEASE_CHECKLIST.md",
+              "type": "file",
+              "path": "docs/archive/RELEASE_CHECKLIST.md",
+              "size": 2076,
+              "language": "md"
+            },
+            {
+              "name": "RELEASE_NOTES_v0.1.0-alpha.2.md",
+              "type": "file",
+              "path": "docs/archive/RELEASE_NOTES_v0.1.0-alpha.2.md",
+              "size": 2838,
+              "language": "md"
+            },
+            {
+              "name": "RELEASE_READINESS_CHECKLIST.md",
+              "type": "file",
+              "path": "docs/archive/RELEASE_READINESS_CHECKLIST.md",
+              "size": 4283,
+              "language": "md"
+            },
+            {
+              "name": "RESOURCE_LIMITS.md",
+              "type": "file",
+              "path": "docs/archive/RESOURCE_LIMITS.md",
+              "size": 5810,
+              "language": "md"
+            },
+            {
+              "name": "run_tests.sh",
+              "type": "file",
+              "path": "docs/archive/run_tests.sh",
+              "size": 839,
+              "language": "sh"
+            },
+            {
+              "name": "SECURITY_IMPROVEMENTS.md",
+              "type": "file",
+              "path": "docs/archive/SECURITY_IMPROVEMENTS.md",
+              "size": 3522,
+              "language": "md"
+            },
+            {
+              "name": "server_legacy_full.py",
+              "type": "file",
+              "path": "docs/archive/server_legacy_full.py",
+              "size": 2321,
+              "language": "py"
+            },
+            {
+              "name": "setup.cfg",
+              "type": "file",
+              "path": "docs/archive/setup.cfg",
+              "size": 3306,
+              "language": "cfg"
+            },
+            {
+              "name": "SOCIAL_MEDIA_ANNOUNCEMENTS.md",
+              "type": "file",
+              "path": "docs/archive/SOCIAL_MEDIA_ANNOUNCEMENTS.md",
+              "size": 6168,
+              "language": "md"
+            },
+            {
+              "name": "STRATEGIC_ROADMAP_2025.md",
+              "type": "file",
+              "path": "docs/archive/STRATEGIC_ROADMAP_2025.md",
+              "size": 9406,
+              "language": "md"
+            },
+            {
+              "name": "TRANSFORMATION_COMPLETE.md",
+              "type": "file",
+              "path": "docs/archive/TRANSFORMATION_COMPLETE.md",
+              "size": 9864,
+              "language": "md"
+            },
+            {
+              "name": "TRANSPORT_DECISION.md",
+              "type": "file",
+              "path": "docs/archive/TRANSPORT_DECISION.md",
+              "size": 2353,
+              "language": "md"
+            },
+            {
+              "name": "WEEK_4_FINAL_METRICS.md",
+              "type": "file",
+              "path": "docs/archive/WEEK_4_FINAL_METRICS.md",
+              "size": 4081,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "deployment",
+          "type": "folder",
+          "path": "docs/deployment",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "docs/deployment/README.md",
+              "size": 13816,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "development",
+          "type": "folder",
+          "path": "docs/development",
+          "children": [
+            {
+              "name": "code-quality.md",
+              "type": "file",
+              "path": "docs/development/code-quality.md",
+              "size": 13302,
+              "language": "md"
+            },
+            {
+              "name": "setup.md",
+              "type": "file",
+              "path": "docs/development/setup.md",
+              "size": 12184,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "javascripts",
+          "type": "folder",
+          "path": "docs/javascripts",
+          "children": [
+            {
+              "name": "mathjax.js",
+              "type": "file",
+              "path": "docs/javascripts/mathjax.js",
+              "size": 3665,
+              "language": "js"
+            }
+          ]
+        },
+        {
+          "name": "operations",
+          "type": "folder",
+          "path": "docs/operations",
+          "children": [
+            {
+              "name": "runbook.md",
+              "type": "file",
+              "path": "docs/operations/runbook.md",
+              "size": 17303,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "production",
+          "type": "folder",
+          "path": "docs/production",
+          "children": [
+            {
+              "name": "access_procedures.md",
+              "type": "file",
+              "path": "docs/production/access_procedures.md",
+              "size": 11115,
+              "language": "md"
+            },
+            {
+              "name": "honest_access_guide.md",
+              "type": "file",
+              "path": "docs/production/honest_access_guide.md",
+              "size": 7882,
+              "language": "md"
+            },
+            {
+              "name": "post_deployment_checklist.md",
+              "type": "file",
+              "path": "docs/production/post_deployment_checklist.md",
+              "size": 11847,
+              "language": "md"
+            },
+            {
+              "name": "realistic_deployment_checklist.md",
+              "type": "file",
+              "path": "docs/production/realistic_deployment_checklist.md",
+              "size": 11069,
+              "language": "md"
+            }
+          ]
+        },
+        {
+          "name": "stylesheets",
+          "type": "folder",
+          "path": "docs/stylesheets",
+          "children": [
+            {
+              "name": "extra.css",
+              "type": "file",
+              "path": "docs/stylesheets/extra.css",
+              "size": 6999,
+              "language": "css"
+            }
+          ]
+        },
+        {
+          "name": "ADR-001-remove-heavyweight-dependencies.md",
+          "type": "file",
+          "path": "docs/ADR-001-remove-heavyweight-dependencies.md",
+          "size": 4159,
+          "language": "md"
+        },
+        {
+          "name": "API.md",
+          "type": "file",
+          "path": "docs/API.md",
+          "size": 45795,
+          "language": "md"
+        },
+        {
+          "name": "ARCHITECTURE_BEFORE_AFTER.md",
+          "type": "file",
+          "path": "docs/ARCHITECTURE_BEFORE_AFTER.md",
+          "size": 9015,
+          "language": "md"
+        },
+        {
+          "name": "CI_CD_IMPLEMENTATION_ROADMAP.md",
+          "type": "file",
+          "path": "docs/CI_CD_IMPLEMENTATION_ROADMAP.md",
+          "size": 9614,
+          "language": "md"
+        },
+        {
+          "name": "CI_CD_MONITORING_STRATEGY.md",
+          "type": "file",
+          "path": "docs/CI_CD_MONITORING_STRATEGY.md",
+          "size": 6938,
+          "language": "md"
+        },
+        {
+          "name": "CI_CD_NEXT_GEN_ROADMAP.md",
+          "type": "file",
+          "path": "docs/CI_CD_NEXT_GEN_ROADMAP.md",
+          "size": 7621,
+          "language": "md"
+        },
+        {
+          "name": "CI_CD_NEXT_GEN_SUMMARY.md",
+          "type": "file",
+          "path": "docs/CI_CD_NEXT_GEN_SUMMARY.md",
+          "size": 6923,
+          "language": "md"
+        },
+        {
+          "name": "configuration.md",
+          "type": "file",
+          "path": "docs/configuration.md",
+          "size": 13820,
+          "language": "md"
+        },
+        {
+          "name": "DAY13_PERFORMANCE_SUMMARY.md",
+          "type": "file",
+          "path": "docs/DAY13_PERFORMANCE_SUMMARY.md",
+          "size": 5297,
+          "language": "md"
+        },
+        {
+          "name": "DEPLOYMENT_GUIDE.md",
+          "type": "file",
+          "path": "docs/DEPLOYMENT_GUIDE.md",
+          "size": 5617,
+          "language": "md"
+        },
+        {
+          "name": "ENTERPRISE_GUIDE.md",
+          "type": "file",
+          "path": "docs/ENTERPRISE_GUIDE.md",
+          "size": 14498,
+          "language": "md"
+        },
+        {
+          "name": "index.md",
+          "type": "file",
+          "path": "docs/index.md",
+          "size": 5226,
+          "language": "md"
+        },
+        {
+          "name": "MIGRATION_GUIDE_v0.1.0-alpha.2.md",
+          "type": "file",
+          "path": "docs/MIGRATION_GUIDE_v0.1.0-alpha.2.md",
+          "size": 4589,
+          "language": "md"
+        },
+        {
+          "name": "PERFORMANCE_REALITY_CHECK.md",
+          "type": "file",
+          "path": "docs/PERFORMANCE_REALITY_CHECK.md",
+          "size": 5568,
+          "language": "md"
+        },
+        {
+          "name": "PERSISTENCE_REALITY_CHECK.md",
+          "type": "file",
+          "path": "docs/PERSISTENCE_REALITY_CHECK.md",
+          "size": 6959,
+          "language": "md"
+        },
+        {
+          "name": "POST_MORTEM_118MB_MINIMAL_SERVER.md",
+          "type": "file",
+          "path": "docs/POST_MORTEM_118MB_MINIMAL_SERVER.md",
+          "size": 5162,
+          "language": "md"
+        },
+        {
+          "name": "PRODUCTION_DEPLOYMENT_DECISION.md",
+          "type": "file",
+          "path": "docs/PRODUCTION_DEPLOYMENT_DECISION.md",
+          "size": 6491,
+          "language": "md"
+        },
+        {
+          "name": "RELEASE_NOTES.md",
+          "type": "file",
+          "path": "docs/RELEASE_NOTES.md",
+          "size": 9192,
+          "language": "md"
+        },
+        {
+          "name": "TRANSPORT_REALITY.md",
+          "type": "file",
+          "path": "docs/TRANSPORT_REALITY.md",
+          "size": 2302,
+          "language": "md"
+        },
+        {
+          "name": "WEEK3_TRANSPORT_SUMMARY.md",
+          "type": "file",
+          "path": "docs/WEEK3_TRANSPORT_SUMMARY.md",
+          "size": 7110,
+          "language": "md"
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "folder",
+      "path": "examples",
+      "children": [
+        {
+          "name": "advanced_network_analysis.py",
+          "type": "file",
+          "path": "examples/advanced_network_analysis.py",
+          "size": 14790,
+          "language": "py"
+        },
+        {
+          "name": "basic_usage.py",
+          "type": "file",
+          "path": "examples/basic_usage.py",
+          "size": 8875,
+          "language": "py"
+        },
+        {
+          "name": "citation_network.py",
+          "type": "file",
+          "path": "examples/citation_network.py",
+          "size": 14827,
+          "language": "py"
+        },
+        {
+          "name": "docker_client.py",
+          "type": "file",
+          "path": "examples/docker_client.py",
+          "size": 5681,
+          "language": "py"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "examples/README.md",
+          "size": 1872,
+          "language": "md"
+        },
+        {
+          "name": "social_network_analysis.py",
+          "type": "file",
+          "path": "examples/social_network_analysis.py",
+          "size": 9002,
+          "language": "py"
+        },
+        {
+          "name": "transportation_network.py",
+          "type": "file",
+          "path": "examples/transportation_network.py",
+          "size": 15399,
+          "language": "py"
+        },
+        {
+          "name": "visualization_and_integration_demo.py",
+          "type": "file",
+          "path": "examples/visualization_and_integration_demo.py",
+          "size": 17157,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "build.sh",
+          "type": "file",
+          "path": "scripts/build.sh",
+          "size": 15474,
+          "language": "sh"
+        },
+        {
+          "name": "check_ci_status.py",
+          "type": "file",
+          "path": "scripts/check_ci_status.py",
+          "size": 1121,
+          "language": "py"
+        },
+        {
+          "name": "compare_versions.py",
+          "type": "file",
+          "path": "scripts/compare_versions.py",
+          "size": 5417,
+          "language": "py"
+        },
+        {
+          "name": "coverage_summary.py",
+          "type": "file",
+          "path": "scripts/coverage_summary.py",
+          "size": 3110,
+          "language": "py"
+        },
+        {
+          "name": "deploy.sh",
+          "type": "file",
+          "path": "scripts/deploy.sh",
+          "size": 14655,
+          "language": "sh"
+        },
+        {
+          "name": "dev_setup.py",
+          "type": "file",
+          "path": "scripts/dev_setup.py",
+          "size": 20515,
+          "language": "py"
+        },
+        {
+          "name": "final_assessment.py",
+          "type": "file",
+          "path": "scripts/final_assessment.py",
+          "size": 4020,
+          "language": "py"
+        },
+        {
+          "name": "fix_type_errors.py",
+          "type": "file",
+          "path": "scripts/fix_type_errors.py",
+          "size": 4615,
+          "language": "py"
+        },
+        {
+          "name": "generate_api_docs.py",
+          "type": "file",
+          "path": "scripts/generate_api_docs.py",
+          "size": 19781,
+          "language": "py"
+        },
+        {
+          "name": "git_history_cleanup.py",
+          "type": "file",
+          "path": "scripts/git_history_cleanup.py",
+          "size": 21378,
+          "language": "py"
+        },
+        {
+          "name": "git_history_cleanup.sh",
+          "type": "file",
+          "path": "scripts/git_history_cleanup.sh",
+          "size": 2419,
+          "language": "sh"
+        },
+        {
+          "name": "honest_benchmark.py",
+          "type": "file",
+          "path": "scripts/honest_benchmark.py",
+          "size": 6000,
+          "language": "py"
+        },
+        {
+          "name": "production_readiness.py",
+          "type": "file",
+          "path": "scripts/production_readiness.py",
+          "size": 24520,
+          "language": "py"
+        },
+        {
+          "name": "quality_gate.py",
+          "type": "file",
+          "path": "scripts/quality_gate.py",
+          "size": 23053,
+          "language": "py"
+        },
+        {
+          "name": "release.sh",
+          "type": "file",
+          "path": "scripts/release.sh",
+          "size": 2550,
+          "language": "sh"
+        },
+        {
+          "name": "release_checklist.py",
+          "type": "file",
+          "path": "scripts/release_checklist.py",
+          "size": 13769,
+          "language": "py"
+        },
+        {
+          "name": "run_comprehensive_tests.sh",
+          "type": "file",
+          "path": "scripts/run_comprehensive_tests.sh",
+          "size": 4887,
+          "language": "sh"
+        },
+        {
+          "name": "run_coverage_analysis.py",
+          "type": "file",
+          "path": "scripts/run_coverage_analysis.py",
+          "size": 3324,
+          "language": "py"
+        },
+        {
+          "name": "setup-monitoring.sh",
+          "type": "file",
+          "path": "scripts/setup-monitoring.sh",
+          "size": 8436,
+          "language": "sh"
+        },
+        {
+          "name": "setup_dev_env.sh",
+          "type": "file",
+          "path": "scripts/setup_dev_env.sh",
+          "size": 5979,
+          "language": "sh"
+        },
+        {
+          "name": "setup_git.sh",
+          "type": "file",
+          "path": "scripts/setup_git.sh",
+          "size": 8949,
+          "language": "sh"
+        },
+        {
+          "name": "test_automation.py",
+          "type": "file",
+          "path": "scripts/test_automation.py",
+          "size": 16378,
+          "language": "py"
+        },
+        {
+          "name": "trace_imports.py",
+          "type": "file",
+          "path": "scripts/trace_imports.py",
+          "size": 2648,
+          "language": "py"
+        },
+        {
+          "name": "update_badges.py",
+          "type": "file",
+          "path": "scripts/update_badges.py",
+          "size": 2409,
+          "language": "py"
+        },
+        {
+          "name": "update_version.py",
+          "type": "file",
+          "path": "scripts/update_version.py",
+          "size": 11415,
+          "language": "py"
+        },
+        {
+          "name": "validate_architecture_fix.py",
+          "type": "file",
+          "path": "scripts/validate_architecture_fix.py",
+          "size": 13375,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "path": "src",
+      "children": [
+        {
+          "name": "networkx_mcp",
+          "type": "folder",
+          "path": "src/networkx_mcp",
+          "children": [
+            {
+              "name": "academic",
+              "type": "folder",
+              "path": "src/networkx_mcp/academic",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/academic/__init__.py",
+                  "size": 817,
+                  "language": "py"
+                },
+                {
+                  "name": "analytics.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/academic/analytics.py",
+                  "size": 9662,
+                  "language": "py"
+                },
+                {
+                  "name": "citations.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/academic/citations.py",
+                  "size": 11641,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "config",
+              "type": "folder",
+              "path": "src/networkx_mcp/config",
+              "children": [
+                {
+                  "name": "production.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/config/production.py",
+                  "size": 6087,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "core",
+              "type": "folder",
+              "path": "src/networkx_mcp/core",
+              "children": [
+                {
+                  "name": "io",
+                  "type": "folder",
+                  "path": "src/networkx_mcp/core/io",
+                  "children": [
+                    {
+                      "name": "__init__.py",
+                      "type": "file",
+                      "path": "src/networkx_mcp/core/io/__init__.py",
+                      "size": 1854,
+                      "language": "py"
+                    },
+                    {
+                      "name": "base_handler.py",
+                      "type": "file",
+                      "path": "src/networkx_mcp/core/io/base_handler.py",
+                      "size": 250,
+                      "language": "py"
+                    },
+                    {
+                      "name": "csv_handler.py",
+                      "type": "file",
+                      "path": "src/networkx_mcp/core/io/csv_handler.py",
+                      "size": 248,
+                      "language": "py"
+                    },
+                    {
+                      "name": "excel_handler.py",
+                      "type": "file",
+                      "path": "src/networkx_mcp/core/io/excel_handler.py",
+                      "size": 252,
+                      "language": "py"
+                    },
+                    {
+                      "name": "gml_handler.py",
+                      "type": "file",
+                      "path": "src/networkx_mcp/core/io/gml_handler.py",
+                      "size": 248,
+                      "language": "py"
+                    },
+                    {
+                      "name": "graphml_handler.py",
+                      "type": "file",
+                      "path": "src/networkx_mcp/core/io/graphml_handler.py",
+                      "size": 256,
+                      "language": "py"
+                    },
+                    {
+                      "name": "json_handler.py",
+                      "type": "file",
+                      "path": "src/networkx_mcp/core/io/json_handler.py",
+                      "size": 250,
+                      "language": "py"
+                    }
+                  ]
+                },
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/__init__.py",
+                  "size": 669,
+                  "language": "py"
+                },
+                {
+                  "name": "algorithms.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/algorithms.py",
+                  "size": 16129,
+                  "language": "py"
+                },
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/base.py",
+                  "size": 10963,
+                  "language": "py"
+                },
+                {
+                  "name": "basic_operations.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/basic_operations.py",
+                  "size": 10712,
+                  "language": "py"
+                },
+                {
+                  "name": "cache_manager.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/cache_manager.py",
+                  "size": 17871,
+                  "language": "py"
+                },
+                {
+                  "name": "config.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/config.py",
+                  "size": 14005,
+                  "language": "py"
+                },
+                {
+                  "name": "container.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/container.py",
+                  "size": 11716,
+                  "language": "py"
+                },
+                {
+                  "name": "edge_ops.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/edge_ops.py",
+                  "size": 1346,
+                  "language": "py"
+                },
+                {
+                  "name": "error_handling.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/error_handling.py",
+                  "size": 18763,
+                  "language": "py"
+                },
+                {
+                  "name": "graceful_shutdown.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/graceful_shutdown.py",
+                  "size": 11076,
+                  "language": "py"
+                },
+                {
+                  "name": "graph_operations.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/graph_operations.py",
+                  "size": 12256,
+                  "language": "py"
+                },
+                {
+                  "name": "io_handlers.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/io_handlers.py",
+                  "size": 33130,
+                  "language": "py"
+                },
+                {
+                  "name": "lifecycle.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/lifecycle.py",
+                  "size": 18150,
+                  "language": "py"
+                },
+                {
+                  "name": "node_ops.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/node_ops.py",
+                  "size": 1266,
+                  "language": "py"
+                },
+                {
+                  "name": "protocols.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/protocols.py",
+                  "size": 10231,
+                  "language": "py"
+                },
+                {
+                  "name": "server_core.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/server_core.py",
+                  "size": 17914,
+                  "language": "py"
+                },
+                {
+                  "name": "service_config.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/service_config.py",
+                  "size": 11947,
+                  "language": "py"
+                },
+                {
+                  "name": "storage_manager.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/storage_manager.py",
+                  "size": 6076,
+                  "language": "py"
+                },
+                {
+                  "name": "thread_safe_graph_manager.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/thread_safe_graph_manager.py",
+                  "size": 13897,
+                  "language": "py"
+                },
+                {
+                  "name": "thread_safe_store.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/core/thread_safe_store.py",
+                  "size": 21529,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "handlers",
+              "type": "folder",
+              "path": "src/networkx_mcp/handlers",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/handlers/__init__.py",
+                  "size": 358,
+                  "language": "py"
+                },
+                {
+                  "name": "algorithms.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/handlers/algorithms.py",
+                  "size": 627,
+                  "language": "py"
+                },
+                {
+                  "name": "graph_ops.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/handlers/graph_ops.py",
+                  "size": 739,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "io",
+              "type": "folder",
+              "path": "src/networkx_mcp/io",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/io/__init__.py",
+                  "size": 1314,
+                  "language": "py"
+                },
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/io/base.py",
+                  "size": 2278,
+                  "language": "py"
+                },
+                {
+                  "name": "graphml.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/io/graphml.py",
+                  "size": 2072,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "monitoring",
+              "type": "folder",
+              "path": "src/networkx_mcp/monitoring",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/__init__.py",
+                  "size": 1177,
+                  "language": "py"
+                },
+                {
+                  "name": "ci_dashboard.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/ci_dashboard.py",
+                  "size": 16898,
+                  "language": "py"
+                },
+                {
+                  "name": "dashboard.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/dashboard.py",
+                  "size": 19173,
+                  "language": "py"
+                },
+                {
+                  "name": "dora_metrics.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/dora_metrics.py",
+                  "size": 11612,
+                  "language": "py"
+                },
+                {
+                  "name": "health_reporter.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/health_reporter.py",
+                  "size": 16226,
+                  "language": "py"
+                },
+                {
+                  "name": "intelligent_alerts.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/intelligent_alerts.py",
+                  "size": 16266,
+                  "language": "py"
+                },
+                {
+                  "name": "mcp_health.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/mcp_health.py",
+                  "size": 12859,
+                  "language": "py"
+                },
+                {
+                  "name": "ml_failure_predictor.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/ml_failure_predictor.py",
+                  "size": 24064,
+                  "language": "py"
+                },
+                {
+                  "name": "predictive_analytics.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/predictive_analytics.py",
+                  "size": 19237,
+                  "language": "py"
+                },
+                {
+                  "name": "sentry_integration.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/sentry_integration.py",
+                  "size": 12305,
+                  "language": "py"
+                },
+                {
+                  "name": "webhook_monitor.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/webhook_monitor.py",
+                  "size": 18432,
+                  "language": "py"
+                },
+                {
+                  "name": "webhooks.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/monitoring/webhooks.py",
+                  "size": 14093,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "plugins",
+              "type": "folder",
+              "path": "src/networkx_mcp/plugins",
+              "children": [
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/plugins/base.py",
+                  "size": 14085,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "schemas",
+              "type": "folder",
+              "path": "src/networkx_mcp/schemas",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/schemas/__init__.py",
+                  "size": 993,
+                  "language": "py"
+                },
+                {
+                  "name": "graph_schemas.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/schemas/graph_schemas.py",
+                  "size": 5109,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "security",
+              "type": "folder",
+              "path": "src/networkx_mcp/security",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/__init__.py",
+                  "size": 870,
+                  "language": "py"
+                },
+                {
+                  "name": "audit.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/audit.py",
+                  "size": 20940,
+                  "language": "py"
+                },
+                {
+                  "name": "auth.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/auth.py",
+                  "size": 12826,
+                  "language": "py"
+                },
+                {
+                  "name": "file_security.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/file_security.py",
+                  "size": 14988,
+                  "language": "py"
+                },
+                {
+                  "name": "input_validation.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/input_validation.py",
+                  "size": 12911,
+                  "language": "py"
+                },
+                {
+                  "name": "middleware.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/middleware.py",
+                  "size": 16246,
+                  "language": "py"
+                },
+                {
+                  "name": "rate_limiting.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/rate_limiting.py",
+                  "size": 13093,
+                  "language": "py"
+                },
+                {
+                  "name": "resource_limits.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/resource_limits.py",
+                  "size": 13410,
+                  "language": "py"
+                },
+                {
+                  "name": "validation.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/validation.py",
+                  "size": 10543,
+                  "language": "py"
+                },
+                {
+                  "name": "validator.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/security/validator.py",
+                  "size": 2975,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "storage",
+              "type": "folder",
+              "path": "src/networkx_mcp/storage",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/storage/__init__.py",
+                  "size": 659,
+                  "language": "py"
+                },
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/storage/base.py",
+                  "size": 3224,
+                  "language": "py"
+                },
+                {
+                  "name": "factory.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/storage/factory.py",
+                  "size": 5428,
+                  "language": "py"
+                },
+                {
+                  "name": "memory_backend.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/storage/memory_backend.py",
+                  "size": 9176,
+                  "language": "py"
+                },
+                {
+                  "name": "redis_backend.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/storage/redis_backend.py",
+                  "size": 15796,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "tools",
+              "type": "folder",
+              "path": "src/networkx_mcp/tools",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/tools/__init__.py",
+                  "size": 546,
+                  "language": "py"
+                },
+                {
+                  "name": "cicd_control.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/tools/cicd_control.py",
+                  "size": 15195,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "folder",
+              "path": "src/networkx_mcp/utils",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/utils/__init__.py",
+                  "size": 405,
+                  "language": "py"
+                },
+                {
+                  "name": "error_handler.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/utils/error_handler.py",
+                  "size": 567,
+                  "language": "py"
+                },
+                {
+                  "name": "formatters.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/utils/formatters.py",
+                  "size": 3225,
+                  "language": "py"
+                },
+                {
+                  "name": "monitoring.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/utils/monitoring.py",
+                  "size": 10038,
+                  "language": "py"
+                },
+                {
+                  "name": "performance.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/utils/performance.py",
+                  "size": 2205,
+                  "language": "py"
+                },
+                {
+                  "name": "validators.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/utils/validators.py",
+                  "size": 20872,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "validators",
+              "type": "folder",
+              "path": "src/networkx_mcp/validators",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/validators/__init__.py",
+                  "size": 430,
+                  "language": "py"
+                },
+                {
+                  "name": "algorithm_validator.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/validators/algorithm_validator.py",
+                  "size": 21702,
+                  "language": "py"
+                },
+                {
+                  "name": "graph_validator.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/validators/graph_validator.py",
+                  "size": 14471,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "visualization",
+              "type": "folder",
+              "path": "src/networkx_mcp/visualization",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/visualization/__init__.py",
+                  "size": 2245,
+                  "language": "py"
+                },
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/visualization/base.py",
+                  "size": 2061,
+                  "language": "py"
+                },
+                {
+                  "name": "matplotlib_visualizer.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/visualization/matplotlib_visualizer.py",
+                  "size": 13762,
+                  "language": "py"
+                },
+                {
+                  "name": "plotly_visualizer.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/visualization/plotly_visualizer.py",
+                  "size": 16727,
+                  "language": "py"
+                },
+                {
+                  "name": "pyvis_visualizer.py",
+                  "type": "file",
+                  "path": "src/networkx_mcp/visualization/pyvis_visualizer.py",
+                  "size": 14191,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/networkx_mcp/__init__.py",
+              "size": 1094,
+              "language": "py"
+            },
+            {
+              "name": "__main__.py",
+              "type": "file",
+              "path": "src/networkx_mcp/__main__.py",
+              "size": 1174,
+              "language": "py"
+            },
+            {
+              "name": "__version__.py",
+              "type": "file",
+              "path": "src/networkx_mcp/__version__.py",
+              "size": 255,
+              "language": "py"
+            },
+            {
+              "name": "auth.py",
+              "type": "file",
+              "path": "src/networkx_mcp/auth.py",
+              "size": 7950,
+              "language": "py"
+            },
+            {
+              "name": "cli.py",
+              "type": "file",
+              "path": "src/networkx_mcp/cli.py",
+              "size": 22061,
+              "language": "py"
+            },
+            {
+              "name": "errors.py",
+              "type": "file",
+              "path": "src/networkx_mcp/errors.py",
+              "size": 13901,
+              "language": "py"
+            },
+            {
+              "name": "features.py",
+              "type": "file",
+              "path": "src/networkx_mcp/features.py",
+              "size": 4432,
+              "language": "py"
+            },
+            {
+              "name": "graph_cache.py",
+              "type": "file",
+              "path": "src/networkx_mcp/graph_cache.py",
+              "size": 9479,
+              "language": "py"
+            },
+            {
+              "name": "logging_config.py",
+              "type": "file",
+              "path": "src/networkx_mcp/logging_config.py",
+              "size": 11394,
+              "language": "py"
+            },
+            {
+              "name": "monitoring_legacy.py",
+              "type": "file",
+              "path": "src/networkx_mcp/monitoring_legacy.py",
+              "size": 4338,
+              "language": "py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "src/networkx_mcp/server.py",
+              "size": 37901,
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "path": "tests",
+      "children": [
+        {
+          "name": "development_archive",
+          "type": "folder",
+          "path": "tests/development_archive",
+          "children": [
+            {
+              "name": "brutal_reality_check_report.json",
+              "type": "file",
+              "path": "tests/development_archive/brutal_reality_check_report.json",
+              "size": 726,
+              "language": "json"
+            },
+            {
+              "name": "BRUTAL_REALITY_REPORT.md",
+              "type": "file",
+              "path": "tests/development_archive/BRUTAL_REALITY_REPORT.md",
+              "size": 9033,
+              "language": "md"
+            },
+            {
+              "name": "brutal_reality_test.py",
+              "type": "file",
+              "path": "tests/development_archive/brutal_reality_test.py",
+              "size": 16768,
+              "language": "py"
+            },
+            {
+              "name": "MCP_IMPLEMENTATION_TEST_REPORT.md",
+              "type": "file",
+              "path": "tests/development_archive/MCP_IMPLEMENTATION_TEST_REPORT.md",
+              "size": 2546,
+              "language": "md"
+            },
+            {
+              "name": "mcp_test_config.json",
+              "type": "file",
+              "path": "tests/development_archive/mcp_test_config.json",
+              "size": 254,
+              "language": "json"
+            },
+            {
+              "name": "REALISTIC_ROADMAP_2025.md",
+              "type": "file",
+              "path": "tests/development_archive/REALISTIC_ROADMAP_2025.md",
+              "size": 9353,
+              "language": "md"
+            },
+            {
+              "name": "simple_reality_test.py",
+              "type": "file",
+              "path": "tests/development_archive/simple_reality_test.py",
+              "size": 8105,
+              "language": "py"
+            },
+            {
+              "name": "simple_reality_test_fixed.py",
+              "type": "file",
+              "path": "tests/development_archive/simple_reality_test_fixed.py",
+              "size": 4723,
+              "language": "py"
+            },
+            {
+              "name": "test_all_20_tools.py",
+              "type": "file",
+              "path": "tests/development_archive/test_all_20_tools.py",
+              "size": 20619,
+              "language": "py"
+            },
+            {
+              "name": "test_all_20_tools_fixed.py",
+              "type": "file",
+              "path": "tests/development_archive/test_all_20_tools_fixed.py",
+              "size": 21087,
+              "language": "py"
+            },
+            {
+              "name": "test_auth.py",
+              "type": "file",
+              "path": "tests/development_archive/test_auth.py",
+              "size": 5601,
+              "language": "py"
+            },
+            {
+              "name": "test_final_fixes.py",
+              "type": "file",
+              "path": "tests/development_archive/test_final_fixes.py",
+              "size": 8796,
+              "language": "py"
+            },
+            {
+              "name": "test_fixed_tools.py",
+              "type": "file",
+              "path": "tests/development_archive/test_fixed_tools.py",
+              "size": 7580,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_client.py",
+              "type": "file",
+              "path": "tests/development_archive/test_mcp_client.py",
+              "size": 3823,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "e2e",
+          "type": "folder",
+          "path": "tests/e2e",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/e2e/__init__.py",
+              "size": 24,
+              "language": "py"
+            },
+            {
+              "name": "test_e2e_workflow.py",
+              "type": "file",
+              "path": "tests/e2e/test_e2e_workflow.py",
+              "size": 16612,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_workflows.py",
+              "type": "file",
+              "path": "tests/e2e/test_mcp_workflows.py",
+              "size": 25108,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "fixtures",
+          "type": "folder",
+          "path": "tests/fixtures",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/fixtures/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "utils.py",
+              "type": "file",
+              "path": "tests/fixtures/utils.py",
+              "size": 2599,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "integration",
+          "type": "folder",
+          "path": "tests/integration",
+          "children": [
+            {
+              "name": "redis",
+              "type": "folder",
+              "path": "tests/integration/redis",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "tests/integration/redis/__init__.py",
+                  "size": 31,
+                  "language": "py"
+                },
+                {
+                  "name": "test_real_redis_persistence.py",
+                  "type": "file",
+                  "path": "tests/integration/redis/test_real_redis_persistence.py",
+                  "size": 11434,
+                  "language": "py"
+                },
+                {
+                  "name": "test_redis_persistence.py",
+                  "type": "file",
+                  "path": "tests/integration/redis/test_redis_persistence.py",
+                  "size": 6996,
+                  "language": "py"
+                },
+                {
+                  "name": "test_redis_reality.py",
+                  "type": "file",
+                  "path": "tests/integration/redis/test_redis_reality.py",
+                  "size": 15464,
+                  "language": "py"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/integration/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "claude_desktop_config.json",
+              "type": "file",
+              "path": "tests/integration/claude_desktop_config.json",
+              "size": 256,
+              "language": "json"
+            },
+            {
+              "name": "package.json",
+              "type": "file",
+              "path": "tests/integration/package.json",
+              "size": 476,
+              "language": "json"
+            },
+            {
+              "name": "run_integration_tests.py",
+              "type": "file",
+              "path": "tests/integration/run_integration_tests.py",
+              "size": 9775,
+              "language": "py"
+            },
+            {
+              "name": "test_all_transports.py",
+              "type": "file",
+              "path": "tests/integration/test_all_transports.py",
+              "size": 2306,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_client.js",
+              "type": "file",
+              "path": "tests/integration/test_mcp_client.js",
+              "size": 9052,
+              "language": "js"
+            },
+            {
+              "name": "test_mcp_clients.py",
+              "type": "file",
+              "path": "tests/integration/test_mcp_clients.py",
+              "size": 13476,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_features.py",
+              "type": "file",
+              "path": "tests/integration/test_mcp_features.py",
+              "size": 5566,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_protocol.py",
+              "type": "file",
+              "path": "tests/integration/test_mcp_protocol.py",
+              "size": 13959,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_protocol_compliance.py",
+              "type": "file",
+              "path": "tests/integration/test_mcp_protocol_compliance.py",
+              "size": 20799,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_tools.py",
+              "type": "file",
+              "path": "tests/integration/test_mcp_tools.py",
+              "size": 13166,
+              "language": "py"
+            },
+            {
+              "name": "test_modular_server.py",
+              "type": "file",
+              "path": "tests/integration/test_modular_server.py",
+              "size": 7023,
+              "language": "py"
+            },
+            {
+              "name": "test_server_startup.py",
+              "type": "file",
+              "path": "tests/integration/test_server_startup.py",
+              "size": 2666,
+              "language": "py"
+            },
+            {
+              "name": "test_stdio_server.py",
+              "type": "file",
+              "path": "tests/integration/test_stdio_server.py",
+              "size": 3172,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "mcp_client",
+          "type": "folder",
+          "path": "tests/mcp_client",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/mcp_client/__init__.py",
+              "size": 24,
+              "language": "py"
+            },
+            {
+              "name": "test_real_mcp_clients.py",
+              "type": "file",
+              "path": "tests/mcp_client/test_real_mcp_clients.py",
+              "size": 12809,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "performance",
+          "type": "folder",
+          "path": "tests/performance",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/performance/__init__.py",
+              "size": 25,
+              "language": "py"
+            },
+            {
+              "name": "test_basic_benchmarks.py",
+              "type": "file",
+              "path": "tests/performance/test_basic_benchmarks.py",
+              "size": 2363,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "production",
+          "type": "folder",
+          "path": "tests/production",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/production/__init__.py",
+              "size": 24,
+              "language": "py"
+            },
+            {
+              "name": "honest_validation.py",
+              "type": "file",
+              "path": "tests/production/honest_validation.py",
+              "size": 20553,
+              "language": "py"
+            },
+            {
+              "name": "validate_deployment.py",
+              "type": "file",
+              "path": "tests/production/validate_deployment.py",
+              "size": 30311,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "property",
+          "type": "folder",
+          "path": "tests/property",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/property/__init__.py",
+              "size": 61,
+              "language": "py"
+            },
+            {
+              "name": "test_property_based.py",
+              "type": "file",
+              "path": "tests/property/test_property_based.py",
+              "size": 3350,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "security",
+          "type": "folder",
+          "path": "tests/security",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/security/__init__.py",
+              "size": 55,
+              "language": "py"
+            },
+            {
+              "name": "test_dos_prevention_demo.py",
+              "type": "file",
+              "path": "tests/security/test_dos_prevention_demo.py",
+              "size": 6560,
+              "language": "py"
+            },
+            {
+              "name": "test_input_validation.py",
+              "type": "file",
+              "path": "tests/security/test_input_validation.py",
+              "size": 9238,
+              "language": "py"
+            },
+            {
+              "name": "test_input_validation_comprehensive.py",
+              "type": "file",
+              "path": "tests/security/test_input_validation_comprehensive.py",
+              "size": 21422,
+              "language": "py"
+            },
+            {
+              "name": "test_malicious_demo.py",
+              "type": "file",
+              "path": "tests/security/test_malicious_demo.py",
+              "size": 2731,
+              "language": "py"
+            },
+            {
+              "name": "test_resource_limits.py",
+              "type": "file",
+              "path": "tests/security/test_resource_limits.py",
+              "size": 9346,
+              "language": "py"
+            },
+            {
+              "name": "test_security_boundaries.py",
+              "type": "file",
+              "path": "tests/security/test_security_boundaries.py",
+              "size": 4647,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "standalone",
+          "type": "folder",
+          "path": "tests/standalone",
+          "children": [
+            {
+              "name": "academic_test.py",
+              "type": "file",
+              "path": "tests/standalone/academic_test.py",
+              "size": 5498,
+              "language": "py"
+            },
+            {
+              "name": "mcp_client_test.py",
+              "type": "file",
+              "path": "tests/standalone/mcp_client_test.py",
+              "size": 11999,
+              "language": "py"
+            },
+            {
+              "name": "performance_test.py",
+              "type": "file",
+              "path": "tests/standalone/performance_test.py",
+              "size": 10996,
+              "language": "py"
+            },
+            {
+              "name": "security_test.py",
+              "type": "file",
+              "path": "tests/standalone/security_test.py",
+              "size": 11039,
+              "language": "py"
+            },
+            {
+              "name": "test_critical_fixes.py",
+              "type": "file",
+              "path": "tests/standalone/test_critical_fixes.py",
+              "size": 3955,
+              "language": "py"
+            },
+            {
+              "name": "test_efficiency_improvement.py",
+              "type": "file",
+              "path": "tests/standalone/test_efficiency_improvement.py",
+              "size": 1894,
+              "language": "py"
+            },
+            {
+              "name": "test_shortest_path_bug.py",
+              "type": "file",
+              "path": "tests/standalone/test_shortest_path_bug.py",
+              "size": 923,
+              "language": "py"
+            },
+            {
+              "name": "verification_test.py",
+              "type": "file",
+              "path": "tests/standalone/verification_test.py",
+              "size": 26553,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "unit",
+          "type": "folder",
+          "path": "tests/unit",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/unit/__init__.py",
+              "size": 0,
+              "language": "py"
+            },
+            {
+              "name": "test_algorithms.py",
+              "type": "file",
+              "path": "tests/unit/test_algorithms.py",
+              "size": 18192,
+              "language": "py"
+            },
+            {
+              "name": "test_algorithms_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_algorithms_comprehensive.py",
+              "size": 21415,
+              "language": "py"
+            },
+            {
+              "name": "test_algorithms_handler.py",
+              "type": "file",
+              "path": "tests/unit/test_algorithms_handler.py",
+              "size": 3083,
+              "language": "py"
+            },
+            {
+              "name": "test_auth_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_auth_comprehensive.py",
+              "size": 17444,
+              "language": "py"
+            },
+            {
+              "name": "test_auth_security.py",
+              "type": "file",
+              "path": "tests/unit/test_auth_security.py",
+              "size": 20236,
+              "language": "py"
+            },
+            {
+              "name": "test_base_handler.py",
+              "type": "file",
+              "path": "tests/unit/test_base_handler.py",
+              "size": 1322,
+              "language": "py"
+            },
+            {
+              "name": "test_basic.py",
+              "type": "file",
+              "path": "tests/unit/test_basic.py",
+              "size": 528,
+              "language": "py"
+            },
+            {
+              "name": "test_cli_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_cli_comprehensive.py",
+              "size": 20322,
+              "language": "py"
+            },
+            {
+              "name": "test_core_operations.py",
+              "type": "file",
+              "path": "tests/unit/test_core_operations.py",
+              "size": 5164,
+              "language": "py"
+            },
+            {
+              "name": "test_core_ops.py",
+              "type": "file",
+              "path": "tests/unit/test_core_ops.py",
+              "size": 10970,
+              "language": "py"
+            },
+            {
+              "name": "test_coverage_boost_massive.py",
+              "type": "file",
+              "path": "tests/unit/test_coverage_boost_massive.py",
+              "size": 25746,
+              "language": "py"
+            },
+            {
+              "name": "test_csv_handler.py",
+              "type": "file",
+              "path": "tests/unit/test_csv_handler.py",
+              "size": 1301,
+              "language": "py"
+            },
+            {
+              "name": "test_doi_error_handling.py",
+              "type": "file",
+              "path": "tests/unit/test_doi_error_handling.py",
+              "size": 5911,
+              "language": "py"
+            },
+            {
+              "name": "test_error_handler.py",
+              "type": "file",
+              "path": "tests/unit/test_error_handler.py",
+              "size": 4664,
+              "language": "py"
+            },
+            {
+              "name": "test_error_handling.py",
+              "type": "file",
+              "path": "tests/unit/test_error_handling.py",
+              "size": 18616,
+              "language": "py"
+            },
+            {
+              "name": "test_errors_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_errors_comprehensive.py",
+              "size": 13722,
+              "language": "py"
+            },
+            {
+              "name": "test_formatters.py",
+              "type": "file",
+              "path": "tests/unit/test_formatters.py",
+              "size": 15794,
+              "language": "py"
+            },
+            {
+              "name": "test_graph_cache.py",
+              "type": "file",
+              "path": "tests/unit/test_graph_cache.py",
+              "size": 15091,
+              "language": "py"
+            },
+            {
+              "name": "test_graph_operations.py",
+              "type": "file",
+              "path": "tests/unit/test_graph_operations.py",
+              "size": 18482,
+              "language": "py"
+            },
+            {
+              "name": "test_graph_operations_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_graph_operations_comprehensive.py",
+              "size": 16981,
+              "language": "py"
+            },
+            {
+              "name": "test_graph_ops_handler.py",
+              "type": "file",
+              "path": "tests/unit/test_graph_ops_handler.py",
+              "size": 5337,
+              "language": "py"
+            },
+            {
+              "name": "test_handlers_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_handlers_comprehensive.py",
+              "size": 9853,
+              "language": "py"
+            },
+            {
+              "name": "test_handlers_init.py",
+              "type": "file",
+              "path": "tests/unit/test_handlers_init.py",
+              "size": 2034,
+              "language": "py"
+            },
+            {
+              "name": "test_io_base.py",
+              "type": "file",
+              "path": "tests/unit/test_io_base.py",
+              "size": 16610,
+              "language": "py"
+            },
+            {
+              "name": "test_io_handlers.py",
+              "type": "file",
+              "path": "tests/unit/test_io_handlers.py",
+              "size": 11761,
+              "language": "py"
+            },
+            {
+              "name": "test_io_handlers_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_io_handlers_comprehensive.py",
+              "size": 24520,
+              "language": "py"
+            },
+            {
+              "name": "test_io_stub_handlers.py",
+              "type": "file",
+              "path": "tests/unit/test_io_stub_handlers.py",
+              "size": 4087,
+              "language": "py"
+            },
+            {
+              "name": "test_main.py",
+              "type": "file",
+              "path": "tests/unit/test_main.py",
+              "size": 6644,
+              "language": "py"
+            },
+            {
+              "name": "test_mcp_error_handling.py",
+              "type": "file",
+              "path": "tests/unit/test_mcp_error_handling.py",
+              "size": 24427,
+              "language": "py"
+            },
+            {
+              "name": "test_minimal_coverage.py",
+              "type": "file",
+              "path": "tests/unit/test_minimal_coverage.py",
+              "size": 4056,
+              "language": "py"
+            },
+            {
+              "name": "test_monitoring.py",
+              "type": "file",
+              "path": "tests/unit/test_monitoring.py",
+              "size": 15587,
+              "language": "py"
+            },
+            {
+              "name": "test_monitoring_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_monitoring_comprehensive.py",
+              "size": 14056,
+              "language": "py"
+            },
+            {
+              "name": "test_performance_utils.py",
+              "type": "file",
+              "path": "tests/unit/test_performance_utils.py",
+              "size": 8512,
+              "language": "py"
+            },
+            {
+              "name": "test_real_modules_comprehensive.py",
+              "type": "file",
+              "path": "tests/unit/test_real_modules_comprehensive.py",
+              "size": 21487,
+              "language": "py"
+            },
+            {
+              "name": "test_schemas_init.py",
+              "type": "file",
+              "path": "tests/unit/test_schemas_init.py",
+              "size": 4760,
+              "language": "py"
+            },
+            {
+              "name": "test_security_init.py",
+              "type": "file",
+              "path": "tests/unit/test_security_init.py",
+              "size": 2911,
+              "language": "py"
+            },
+            {
+              "name": "test_security_sweep.py",
+              "type": "file",
+              "path": "tests/unit/test_security_sweep.py",
+              "size": 31890,
+              "language": "py"
+            },
+            {
+              "name": "test_security_validation.py",
+              "type": "file",
+              "path": "tests/unit/test_security_validation.py",
+              "size": 9530,
+              "language": "py"
+            },
+            {
+              "name": "test_server_core.py",
+              "type": "file",
+              "path": "tests/unit/test_server_core.py",
+              "size": 33234,
+              "language": "py"
+            },
+            {
+              "name": "test_server_minimal.py",
+              "type": "file",
+              "path": "tests/unit/test_server_minimal.py",
+              "size": 1376,
+              "language": "py"
+            },
+            {
+              "name": "test_simple.py",
+              "type": "file",
+              "path": "tests/unit/test_simple.py",
+              "size": 357,
+              "language": "py"
+            },
+            {
+              "name": "test_storage_init.py",
+              "type": "file",
+              "path": "tests/unit/test_storage_init.py",
+              "size": 3341,
+              "language": "py"
+            },
+            {
+              "name": "test_thread_safety.py",
+              "type": "file",
+              "path": "tests/unit/test_thread_safety.py",
+              "size": 10147,
+              "language": "py"
+            },
+            {
+              "name": "test_utils_validators.py",
+              "type": "file",
+              "path": "tests/unit/test_utils_validators.py",
+              "size": 25219,
+              "language": "py"
+            },
+            {
+              "name": "test_validators_init.py",
+              "type": "file",
+              "path": "tests/unit/test_validators_init.py",
+              "size": 2287,
+              "language": "py"
+            },
+            {
+              "name": "test_visualization.py",
+              "type": "file",
+              "path": "tests/unit/test_visualization.py",
+              "size": 325,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "working",
+          "type": "folder",
+          "path": "tests/working",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "tests/working/__init__.py",
+              "size": 31,
+              "language": "py"
+            },
+            {
+              "name": "conftest.py",
+              "type": "file",
+              "path": "tests/working/conftest.py",
+              "size": 1037,
+              "language": "py"
+            },
+            {
+              "name": "test_aggressive_coverage.py",
+              "type": "file",
+              "path": "tests/working/test_aggressive_coverage.py",
+              "size": 18607,
+              "language": "py"
+            },
+            {
+              "name": "test_basic_operations.py",
+              "type": "file",
+              "path": "tests/working/test_basic_operations.py",
+              "size": 5969,
+              "language": "py"
+            },
+            {
+              "name": "test_coverage_60_push.py",
+              "type": "file",
+              "path": "tests/working/test_coverage_60_push.py",
+              "size": 23757,
+              "language": "py"
+            },
+            {
+              "name": "test_coverage_boost.py",
+              "type": "file",
+              "path": "tests/working/test_coverage_boost.py",
+              "size": 15866,
+              "language": "py"
+            },
+            {
+              "name": "test_module_imports.py",
+              "type": "file",
+              "path": "tests/working/test_module_imports.py",
+              "size": 8340,
+              "language": "py"
+            },
+            {
+              "name": "test_new_operations.py",
+              "type": "file",
+              "path": "tests/working/test_new_operations.py",
+              "size": 8321,
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "size": 40,
+          "language": "py"
+        },
+        {
+          "name": "conftest.py",
+          "type": "file",
+          "path": "tests/conftest.py",
+          "size": 1025,
+          "language": "py"
+        },
+        {
+          "name": "factories.py",
+          "type": "file",
+          "path": "tests/factories.py",
+          "size": 10504,
+          "language": "py"
+        },
+        {
+          "name": "test_actual_server_stdio.py",
+          "type": "file",
+          "path": "tests/test_actual_server_stdio.py",
+          "size": 9852,
+          "language": "py"
+        },
+        {
+          "name": "test_actual_tools.py",
+          "type": "file",
+          "path": "tests/test_actual_tools.py",
+          "size": 10105,
+          "language": "py"
+        },
+        {
+          "name": "test_brutal_reality_check.py",
+          "type": "file",
+          "path": "tests/test_brutal_reality_check.py",
+          "size": 22434,
+          "language": "py"
+        },
+        {
+          "name": "test_brutally_honest_tools.py",
+          "type": "file",
+          "path": "tests/test_brutally_honest_tools.py",
+          "size": 9043,
+          "language": "py"
+        },
+        {
+          "name": "test_core_algorithms_audit.py",
+          "type": "file",
+          "path": "tests/test_core_algorithms_audit.py",
+          "size": 5111,
+          "language": "py"
+        },
+        {
+          "name": "test_feature_audit.py",
+          "type": "file",
+          "path": "tests/test_feature_audit.py",
+          "size": 8339,
+          "language": "py"
+        },
+        {
+          "name": "test_mcp_protocol.py",
+          "type": "file",
+          "path": "tests/test_mcp_protocol.py",
+          "size": 10158,
+          "language": "py"
+        },
+        {
+          "name": "test_memory_fixed.py",
+          "type": "file",
+          "path": "tests/test_memory_fixed.py",
+          "size": 5795,
+          "language": "py"
+        },
+        {
+          "name": "test_server_runs.py",
+          "type": "file",
+          "path": "tests/test_server_runs.py",
+          "size": 4542,
+          "language": "py"
+        },
+        {
+          "name": "test_stdio_robustness.py",
+          "type": "file",
+          "path": "tests/test_stdio_robustness.py",
+          "size": 12959,
+          "language": "py"
+        },
+        {
+          "name": "test_stress_and_edge_cases.py",
+          "type": "file",
+          "path": "tests/test_stress_and_edge_cases.py",
+          "size": 16594,
+          "language": "py"
+        },
+        {
+          "name": "test_stress_limits.py",
+          "type": "file",
+          "path": "tests/test_stress_limits.py",
+          "size": 15708,
+          "language": "py"
+        }
+      ]
+    },
+    {
+      "name": ".dockerignore",
+      "type": "file",
+      "path": ".dockerignore",
+      "size": 1138,
+      "language": "text"
+    },
+    {
+      "name": ".env.example",
+      "type": "file",
+      "path": ".env.example",
+      "size": 1108,
+      "language": "example"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "path": ".gitignore",
+      "size": 1080,
+      "language": "text"
+    },
+    {
+      "name": ".gitmessage",
+      "type": "file",
+      "path": ".gitmessage",
+      "size": 1647,
+      "language": "text"
+    },
+    {
+      "name": ".markdownlint.yml",
+      "type": "file",
+      "path": ".markdownlint.yml",
+      "size": 994,
+      "language": "yml"
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "type": "file",
+      "path": ".pre-commit-config.yaml",
+      "size": 2047,
+      "language": "yaml"
+    },
+    {
+      "name": ".quality-config.json",
+      "type": "file",
+      "path": ".quality-config.json",
+      "size": 6352,
+      "language": "json"
+    },
+    {
+      "name": ".releaserc.json",
+      "type": "file",
+      "path": ".releaserc.json",
+      "size": 3829,
+      "language": "json"
+    },
+    {
+      "name": ".secrets.baseline",
+      "type": "file",
+      "path": ".secrets.baseline",
+      "size": 2268,
+      "language": "baseline"
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "size": 3050,
+      "language": "md"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "size": 13390,
+      "language": "md"
+    },
+    {
+      "name": "docker-compose.yml",
+      "type": "file",
+      "path": "docker-compose.yml",
+      "size": 857,
+      "language": "yml"
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "size": 2191,
+      "language": "text"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "size": 1089,
+      "language": "text"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml",
+      "size": 6901,
+      "language": "toml"
+    },
+    {
+      "name": "pytest.ini",
+      "type": "file",
+      "path": "pytest.ini",
+      "size": 770,
+      "language": "ini"
+    },
+    {
+      "name": "QUICKSTART.md",
+      "type": "file",
+      "path": "QUICKSTART.md",
+      "size": 1562,
+      "language": "md"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 9796,
+      "language": "md"
+    },
+    {
+      "name": "SECURITY.md",
+      "type": "file",
+      "path": "SECURITY.md",
+      "size": 5675,
+      "language": "md"
+    }
+  ]
+}
