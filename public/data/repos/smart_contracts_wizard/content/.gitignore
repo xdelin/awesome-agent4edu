@@ -1,9 +1,0 @@
-dist
-*.tsbuildinfo
-node_modules
-
-.env
-.env.local
-.vscode/settings.json
-
-fhevmTemp

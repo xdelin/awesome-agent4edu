@@ -1,1 +1,0 @@
-# RDKit MCP Server Evaluations

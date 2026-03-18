@@ -1,1 +1,0 @@
-from .property_prediction import PropertyPredictor

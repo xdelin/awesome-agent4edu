@@ -1,6 +1,0 @@
-openai
-gradio
-httpx
-requests
-python-dotenv
-Pillow

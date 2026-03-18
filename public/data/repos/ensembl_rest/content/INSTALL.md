@@ -1,1 +1,0 @@
-# Please refer to https://github.com/Ensembl/ensembl-rest/wiki/REST-Installation-and-Development for the latest installation instructions.

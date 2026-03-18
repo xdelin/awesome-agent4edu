@@ -1,4 +1,0 @@
-401	PROTEIN_TREES	ProteinTree.protein_tree_node	protein-trees
-201	ENSEMBL_ORTHOLOGUES	Homology.homology	orthologues
-202	ENSEMBL_PARALOGUES	Homology.homology	paralogues
-402	NC_TREES	NCTree.nc_tree_node	ncRNA-trees

@@ -1,8 +1,0 @@
-{
-  "name": "slack-browser-ops-worker",
-  "private": true,
-  "type": "module",
-  "dependencies": {
-    "@cloudflare/puppeteer": "^0.0.14"
-  }
-}

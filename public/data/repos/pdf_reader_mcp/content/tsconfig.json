@@ -1,8 +1,0 @@
-{
-  "extends": "@sylphx/tsconfig",
-  "compilerOptions": {
-    "skipLibCheck": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "test", "docs"]
-}

@@ -1,5 +1,0 @@
-dist/
-node_modules/
-credentials.json
-.env
-.agents/*

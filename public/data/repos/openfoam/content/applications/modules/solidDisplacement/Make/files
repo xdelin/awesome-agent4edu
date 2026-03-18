@@ -1,5 +1,0 @@
-derivedFvPatchFields/tractionDisplacement/tractionDisplacementFvPatchVectorField.C
-derivedFvPatchFields/hydrostaticDisplacement/hydrostaticDisplacementFvPatchVectorField.C
-solidDisplacement.C
-
-LIB = $(FOAM_LIBBIN)/libsolidDisplacementSolver

@@ -1,8 +1,0 @@
-# Physics MCP terminology guardrails
-# Keep this list alphabetised. Terms marked with * prefer the given capitalisation.
-
-CAS
-Diátaxis*
-Experiment Orchestrator
-Physics MCP*
-StatMech
