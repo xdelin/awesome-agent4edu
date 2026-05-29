@@ -4,6 +4,11 @@ A comprehensive curated list of AI resources for education, including **Model Co
 
 [English](./README.md) | [中文](./README_CN.md)
 
+
+## Student Tools
+
+- [Shiori](https://github.com/kaorii-ako/Shiori-v1) - Open-source AI study companion. Google Classroom sync, Gemini AI study plans, SRS flashcards, AI quiz generator, MCP server for Claude Code. ([Demo](https://shiori-v1.vercel.app))
+
 ## Table of Contents
 
 - [Intelligent Tutoring](#intelligent-tutoring)
