@@ -832,6 +832,10 @@ A comprehensive curated list of AI resources for education, including **Model Co
   - **Description**: Framework for orchestrating role-playing, autonomous AI agents working together.
   - **Use Case**: Classroom simulation, multi-perspective debate, lesson planning teams.
 
+- **[EduMirror](https://edumirror.net/)**
+  - **Description**: A value-driven multi-agent simulator for educational social dynamics, grounded in psychological needs and social value orientation. [[Paper](https://arxiv.org/abs/2606.07948)]
+  - **Use Case**: Studying classroom and broader educational social dynamics, and conducting counterfactual intervention analysis.
+
 - **[AI-Tutor](https://github.com/Hawary00/AI-Tutor)**
   - **Description**: Modular educational assistant leveraging LangChain, LangGraph, and RAG for science learning.
   - **Use Case**: Science tutoring, personalized learning paths.
